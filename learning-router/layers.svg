@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="560" viewBox="0 0 1050 560" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1050" height="560" fill="#0f172a"/>
+
+  <text x="525" y="40" fill="#e2e8f0" font-size="18" text-anchor="middle" font-weight="bold">Three learning layers — outcomes flow down, provider truth flows up</text>
+
+  <!-- Layer 1: bandit -->
+  <rect x="60" y="70" width="930" height="130" rx="12" fill="#172554" stroke="#818cf8" stroke-width="2"/>
+  <text x="90" y="102" fill="#e0e7ff" font-size="15" font-weight="bold">Layer 1 — Model Bandit (per platform:model)</text>
+  <text x="90" y="128" fill="#a5b4fc" font-size="12">Beta posterior over success/failure · decayed exponentially, 2-day half-life (lazy, on touch)</text>
+  <text x="90" y="150" fill="#a5b4fc" font-size="12">score = 0.6 × reliability + 0.4 × speed (1s → 1.0, 10s → 0.1)</text>
+  <text x="90" y="172" fill="#a5b4fc" font-size="12">cold-start probe until 5 samples · 10% explore least-sampled · exploit: 0.7 × bandit + 0.3 × user preference</text>
+  <text x="960" y="102" fill="#818cf8" font-size="12" text-anchor="end">internal/router</text>
+
+  <!-- Layer 2: keypool -->
+  <rect x="60" y="215" width="930" height="130" rx="12" fill="#14532d" stroke="#22c55e" stroke-width="2"/>
+  <text x="90" y="247" fill="#dcfce7" font-size="15" font-weight="bold">Layer 2 — Key Pool (per key)</text>
+  <text x="90" y="273" fill="#86efac" font-size="12">EMA reliability + speed posteriors · model-scope whitelists · cooldown state</text>
+  <text x="90" y="295" fill="#86efac" font-size="12">cost-scaled cooldowns: free 5s · &lt;$0.5 30s · &lt;$3 60s · pricey 5min · 402 → 24h bench (only extends)</text>
+  <text x="90" y="317" fill="#86efac" font-size="12">free-first failover: paid keys route last · provider-informed benches survive success</text>
+  <text x="960" y="247" fill="#22c55e" font-size="12" text-anchor="end">internal/keypool</text>
+
+  <!-- Layer 3: quota -->
+  <rect x="60" y="360" width="930" height="130" rx="12" fill="#431407" stroke="#f97316" stroke-width="2"/>
+  <text x="90" y="392" fill="#ffedd5" font-size="15" font-weight="bold">Layer 3 — Quota Truth (per provider)</text>
+  <text x="90" y="418" fill="#fdba74" font-size="12">x-ratelimit-* / Retry-After parsed per vendor: NVIDIA swapped order · Cerebras -day/-minute namespaces · Anthropic family</text>
+  <text x="90" y="440" fill="#fdba74" font-size="12">confidence model: header 1.0 &gt; error body 0.75 &gt; probe 0.6 — most trustworthy source per (platform, key, pool, metric)</text>
+  <text x="90" y="462" fill="#fdba74" font-size="12">pool inference: groq::account · openrouter::free · google::project — two keys, one account = one budget</text>
+  <text x="960" y="392" fill="#f97316" font-size="12" text-anchor="end">internal/quota</text>
+
+  <!-- feedback arrows -->
+  <path d="M 180 200 L 180 215" stroke="#818cf8" stroke-width="2.5" marker-end="url(#a1)"/>
+  <text x="196" y="212" fill="#64748b" font-size="11">RouteEvent → ApplyFeedback (Redis Stream jimesh:events · inline fallback) · 4xx filtered out</text>
+  <path d="M 180 345 L 180 360" stroke="#22c55e" stroke-width="2.5" marker-end="url(#a2)"/>
+  <text x="196" y="357" fill="#64748b" font-size="11">429/402 → cost-aware cooldown · 200 with remaining=0 → precise bench (no failure stat)</text>
+
+  <defs>
+    <marker id="a1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#818cf8"/></marker>
+    <marker id="a2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#22c55e"/></marker>
+  </defs>
+
+  <line x1="60" y1="520" x2="990" y2="520" stroke="#334155" stroke-width="1"/>
+  <text x="525" y="545" fill="#475569" font-size="11" text-anchor="middle">jimesh open-source AI gateway · every proxied call teaches both upper layers</text>
+</svg>

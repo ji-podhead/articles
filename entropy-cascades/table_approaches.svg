@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1100" height="560" fill="#0f172a"/>
+
+  <text x="550" y="42" fill="#e2e8f0" font-size="18" text-anchor="middle" font-weight="bold">The cascade spectrum — what each approach needs to work</text>
+
+  <!-- header row -->
+  <rect x="40" y="70" width="280" height="46" fill="#1e293b"/>
+  <text x="60" y="99" fill="#e2e8f0" font-size="14" font-weight="bold">Approach</text>
+  <rect x="320" y="70" width="250" height="46" fill="#1e293b"/>
+  <text x="340" y="99" fill="#e2e8f0" font-size="14" font-weight="bold">Decision mechanism</text>
+  <rect x="570" y="70" width="250" height="46" fill="#1e293b"/>
+  <text x="590" y="99" fill="#e2e8f0" font-size="14" font-weight="bold">Training / data needed</text>
+  <rect x="820" y="70" width="240" height="46" fill="#1e293b"/>
+  <text x="840" y="99" fill="#e2e8f0" font-size="14" font-weight="bold">Weak point</text>
+
+  <!-- row 1: always big -->
+  <rect x="40" y="116" width="280" height="80" fill="#0b1120" stroke="#334155" stroke-width="1"/>
+  <text x="60" y="148" fill="#f1f5f9" font-size="13" font-weight="bold">Always the big model</text>
+  <text x="60" y="168" fill="#94a3b8" font-size="11">send everything to GPT-class</text>
+  <rect x="320" y="116" width="250" height="80" fill="#0b1120" stroke="#334155" stroke-width="1"/>
+  <text x="340" y="148" fill="#f1f5f9" font-size="12">none — always escalate</text>
+  <text x="340" y="168" fill="#94a3b8" font-size="11">quality floor by construction</text>
+  <rect x="570" y="116" width="250" height="80" fill="#0b1120" stroke="#334155" stroke-width="1"/>
+  <text x="590" y="152" fill="#86efac" font-size="12">none</text>
+  <rect x="820" y="116" width="240" height="80" fill="#0b1120" stroke="#334155" stroke-width="1"/>
+  <text x="840" y="148" fill="#fca5a5" font-size="12" font-weight="bold">cost</text>
+  <text x="840" y="168" fill="#94a3b8" font-size="11">max price for every token</text>
+
+  <!-- row 2: frugalgpt -->
+  <rect x="40" y="196" width="280" height="80" fill="#0b1120" stroke="#334155" stroke-width="1"/>
+  <text x="60" y="228" fill="#f1f5f9" font-size="13" font-weight="bold">FrugalGPT cascade</text>
+  <text x="60" y="248" fill="#94a3b8" font-size="11">arXiv:2305.05176 · up to −98% cost</text>
+  <rect x="320" y="196" width="250" height="80" fill="#0b1120" stroke="#334155" stroke-width="1"/>
+  <text x="340" y="228" fill="#f1f5f9" font-size="12">learned scorer</text>
+  <text x="340" y="248" fill="#94a3b8" font-size="11">g(query, answer) → confidence</text>
+  <rect x="570" y="196" width="250" height="80" fill="#0b1120" stroke="#334155" stroke-width="1"/>
+  <text x="590" y="228" fill="#fbbf24" font-size="12">labeled examples required</text>
+  <text x="590" y="248" fill="#94a3b8" font-size="11">must match test distribution</text>
+  <rect x="820" y="196" width="240" height="80" fill="#0b1120" stroke="#334155" stroke-width="1"/>
+  <text x="840" y="228" fill="#fca5a5" font-size="12" font-weight="bold">ML project upfront</text>
+  <text x="840" y="248" fill="#94a3b8" font-size="11">drift → retraining</text>
+
+  <!-- row 3: routellm -->
+  <rect x="40" y="276" width="280" height="80" fill="#0b1120" stroke="#334155" stroke-width="1"/>
+  <text x="60" y="308" fill="#f1f5f9" font-size="13" font-weight="bold">Trained router (RouteLLM)</text>
+  <text x="60" y="328" fill="#94a3b8" font-size="11">arXiv:2406.18665 · preference data</text>
+  <rect x="320" y="276" width="250" height="80" fill="#0b1120" stroke="#334155" stroke-width="1"/>
+  <text x="340" y="308" fill="#f1f5f9" font-size="12">router model picks per query</text>
+  <text x="340" y="328" fill="#94a3b8" font-size="11">before any generation</text>
+  <rect x="570" y="276" width="250" height="80" fill="#0b1120" stroke="#334155" stroke-width="1"/>
+  <text x="590" y="308" fill="#fbbf24" font-size="12">preference pairs + router training</text>
+  <text x="590" y="328" fill="#94a3b8" font-size="11">strong / weak model pair fixed</text>
+  <rect x="820" y="276" width="240" height="80" fill="#0b1120" stroke="#334155" stroke-width="1"/>
+  <text x="840" y="308" fill="#fca5a5" font-size="12" font-weight="bold">router is the product</text>
+  <text x="840" y="328" fill="#94a3b8" font-size="11">wrong pick = no retry signal</text>
+
+  <!-- row 4: entropy gate (ours) -->
+  <rect x="40" y="356" width="280" height="100" fill="#172554" stroke="#818cf8" stroke-width="2"/>
+  <text x="60" y="390" fill="#e0e7ff" font-size="13" font-weight="bold">Entropy gate (ours)</text>
+  <text x="60" y="410" fill="#a5b4fc" font-size="11">two-phase + mid-stream sliding window</text>
+  <text x="60" y="428" fill="#a5b4fc" font-size="11">threshold 0.45, tuned per chain</text>
+  <rect x="320" y="356" width="250" height="100" fill="#172554" stroke="#818cf8" stroke-width="2"/>
+  <text x="340" y="390" fill="#e0e7ff" font-size="12">avg H/log₂(k) over tokens</text>
+  <text x="340" y="410" fill="#a5b4fc" font-size="11">confident → serve, else discard + re-route</text>
+  <text x="340" y="428" fill="#a5b4fc" font-size="11">logprobs the API already returns</text>
+  <rect x="570" y="356" width="250" height="100" fill="#172554" stroke="#818cf8" stroke-width="2"/>
+  <text x="590" y="390" fill="#86efac" font-size="12" font-weight="bold">none — zero training</text>
+  <text x="590" y="410" fill="#a5b4fc" font-size="11">zero labeled data, zero extra infra</text>
+  <text x="590" y="428" fill="#a5b4fc" font-size="11">fail-open on probe error</text>
+  <rect x="820" y="356" width="240" height="100" fill="#172554" stroke="#818cf8" stroke-width="2"/>
+  <text x="840" y="390" fill="#fca5a5" font-size="12" font-weight="bold">uncertainty ≠ correctness</text>
+  <text x="840" y="410" fill="#a5b4fc" font-size="11">confident wrong answers pass;</text>
+  <text x="840" y="428" fill="#a5b4fc" font-size="11">escalation pays twice</text>
+
+  <!-- footnote -->
+  <text x="550" y="502" fill="#64748b" font-size="11" text-anchor="middle">The entropy gate trades a little wasted compute (discarded phase-1 answers) for the absence of any trained component.</text>
+  <text x="550" y="522" fill="#475569" font-size="10" text-anchor="middle">Semantic entropy (Farquhar et al., Nature 2024) catches confident confabulations — at 5–10× the cost of multiple sampled generations.</text>
+  <line x1="40" y1="540" x2="1060" y2="540" stroke="#334155" stroke-width="1"/>
+  <text x="550" y="553" fill="#475569" font-size="10" text-anchor="middle">jimesh open-source AI gateway · entropy-gated cascades</text>
+</svg>

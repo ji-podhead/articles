@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329"/>
+      <stop offset="60%" stop-color="#1c2541"/>
+      <stop offset="100%" stop-color="#3a506b"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bgGrad)"/>
+
+  <g opacity="0.05" stroke="#ffffff" stroke-width="1">
+    <path d="M 0,75 L 1200,75 M 0,150 L 1200,150 M 0,225 L 1200,225 M 0,300 L 1200,300 M 0,375 L 1200,375 M 0,450 L 1200,450 M 0,525 L 1200,525 M 0,600 L 1200,600"/>
+    <path d="M 150,0 L 150,675 M 300,0 L 300,675 M 450,0 L 450,675 M 600,0 L 600,675 M 750,0 L 750,675 M 900,0 L 900,675 M 1050,0 L 1050,675"/>
+  </g>
+
+  <g opacity="0.15">
+    <circle cx="950" cy="337" r="280" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="12,6"/>
+    <circle cx="950" cy="337" r="200" fill="none" stroke="#818cf8" stroke-width="4"/>
+    <circle cx="950" cy="337" r="120" fill="none" stroke="#10b981" stroke-width="1" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- left: typography -->
+  <g transform="translate(100, 170)">
+    <text x="0" y="50" fill="#ffffff" font-weight="900" font-size="52" letter-spacing="-1">We Didn't Build a Router.</text>
+    <text x="0" y="113" fill="url(#accentGrad)" font-weight="900" font-size="52" letter-spacing="-1">We Built an Economy.</text>
+
+    <text x="0" y="175" fill="#94a3b8" font-size="20">Decayed bandits · cost-scaled key cooldowns ·</text>
+    <text x="0" y="201" fill="#94a3b8" font-size="20">quota truth from the provider headers nobody reads</text>
+
+    <g transform="translate(0, 245)" font-family="monospace" font-size="15" fill="#64748b">
+      <text x="0" y="0"><tspan fill="#f43f5e"># </tspan>[keypool] 429 free → <tspan fill="#10b981">5s</tspan> · 429 paid → <tspan fill="#fbbf24">5min</tspan> · 402 → <tspan fill="#f87171">24h bench</tspan></text>
+      <text x="0" y="30" fill="#475569">➔ [bandit] groq:llama-3.3-70b score=0.87 (decay: 2-day half-life)</text>
+      <text x="0" y="55" fill="#10b981">➔ [quota] x-ratelimit-remaining: 0 → bench until provider reset</text>
+    </g>
+  </g>
+
+  <!-- right: hexagon with weighted node graph -->
+  <g transform="translate(950, 337)" filter="url(#softShadow)">
+    <polygon points="0,-130 112,-65 112,65 0,130 -112,65 -112,-65" fill="url(#bgGrad)" stroke="url(#accentGrad)" stroke-width="3"/>
+    <!-- edges: dim alternatives -->
+    <g stroke="#475569" stroke-width="2">
+      <line x1="0" y1="0" x2="-70" y2="-45"/>
+      <line x1="0" y1="0" x2="10" y2="-75"/>
+      <line x1="0" y1="0" x2="-60" y2="55"/>
+      <line x1="0" y1="0" x2="70" y2="-30"/>
+    </g>
+    <!-- chosen edge: highlighted -->
+    <line x1="0" y1="0" x2="62" y2="52" stroke="#22c55e" stroke-width="4"/>
+    <!-- nodes: outer -->
+    <g fill="#94a3b8">
+      <circle cx="-70" cy="-45" r="9"/>
+      <circle cx="10" cy="-75" r="9"/>
+      <circle cx="-60" cy="55" r="9"/>
+      <circle cx="70" cy="-30" r="9"/>
+    </g>
+    <!-- chosen provider node -->
+    <circle cx="62" cy="52" r="12" fill="#22c55e"/>
+    <text x="62" y="82" fill="#4ade80" font-size="11" text-anchor="middle" font-family="monospace">score 0.87</text>
+    <!-- center hub -->
+    <circle cx="0" cy="0" r="16" fill="#38bdf8"/>
+    <circle cx="0" cy="0" r="24" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.5"/>
+  </g>
+
+  <!-- bottom-left: mesh-cube mark + wordmark -->
+  <g color="#94a3b8">
+    <g transform="translate(145, 592) scale(0.12)">
+      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <g stroke-width="4" stroke-dasharray="8 5" opacity="0.55">
+          <line x1="0" y1="-150" x2="0" y2="-240"/>
+          <line x1="130" y1="-75" x2="208" y2="-120"/>
+          <line x1="130" y1="75" x2="208" y2="120"/>
+          <line x1="0" y1="150" x2="0" y2="240"/>
+          <line x1="-130" y1="75" x2="-208" y2="120"/>
+          <line x1="-130" y1="-75" x2="-208" y2="-120"/>
+        </g>
+        <g stroke-width="3">
+          <circle cx="0" cy="-240" r="8"/>
+          <circle cx="208" cy="-120" r="8"/>
+          <circle cx="208" cy="120" r="8"/>
+          <circle cx="0" cy="240" r="8"/>
+          <circle cx="-208" cy="120" r="8"/>
+          <circle cx="-208" cy="-120" r="8"/>
+        </g>
+        <g stroke-width="2.5" stroke-dasharray="6 4" opacity="0.35">
+          <line x1="0" y1="0" x2="0" y2="-150"/>
+          <line x1="0" y1="0" x2="-130" y2="75"/>
+          <line x1="0" y1="0" x2="130" y2="75"/>
+        </g>
+        <g stroke-width="8">
+          <polygon points="0,-150 130,-75 130,75 0,150 -130,75 -130,-75"/>
+          <line x1="0" y1="0" x2="130" y2="-75"/>
+          <line x1="0" y1="0" x2="-130" y2="-75"/>
+        </g>
+      </g>
+    </g>
+    <text x="190" y="598" fill="#94a3b8" font-size="17" font-weight="900" letter-spacing="4">JIMESH</text>
+  </g>
+</svg>

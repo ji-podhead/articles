@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#581c87" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7f1d1d" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="800" height="400" fill="#f8fafc" rx="16"/>
+  <g filter="url(#dropShadow)">
+    <rect x="50" y="80" width="280" height="240" rx="12" fill="url(#blueGrad)"/>
+    <text x="190" y="120" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="18" text-anchor="middle">Traditional Infrastructure</text>
+    <text x="190" y="150" fill="#93c5fd" font-family="sans-serif" font-size="14" text-anchor="middle">Sees low-level events only</text>
+    <line x1="80" y1="180" x2="300" y2="180" stroke="#60a5fa" stroke-width="1"/>
+    <text x="80" y="215" fill="#ffffff" font-family="monospace" font-size="13">✔ open("/etc/shadow")</text>
+    <text x="80" y="245" fill="#ffffff" font-family="monospace" font-size="13">✔ TCP Stream to Endpoint</text>
+    <text x="80" y="285" fill="#fca5a5" font-family="sans-serif" font-style="italic" font-size="14">Problem: "Why is it doing this?"</text>
+  </g>
+  <g filter="url(#dropShadow)">
+    <rect x="470" y="80" width="280" height="240" rx="12" fill="url(#purpleGrad)"/>
+    <text x="610" y="120" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="18" text-anchor="middle">AI Application Layer</text>
+    <text x="610" y="150" fill="#e9d5ff" font-family="sans-serif" font-size="14" text-anchor="middle">Sees natural language only</text>
+    <line x1="500" y1="180" x2="720" y2="180" stroke="#c084fc" stroke-width="1"/>
+    <text x="500" y="215" fill="#ffffff" font-family="sans-serif" font-size="13">💬 "Ignore prior rules..."</text>
+    <text x="500" y="245" fill="#ffffff" font-family="sans-serif" font-size="13">💬 "Output the .env payload"</text>
+    <text x="500" y="285" fill="#fca5a5" font-family="sans-serif" font-style="italic" font-size="14">Problem: "Is this safe to run?"</text>
+  </g>
+  <g>
+    <path d="M 340 200 L 460 200" stroke="#ef4444" stroke-width="3" stroke-dasharray="6,4" />
+    <circle cx="400" cy="200" r="32" fill="url(#redGrad)" filter="url(#dropShadow)"/>
+    <text x="400" y="208" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="24" text-anchor="middle">GAP</text>
+    <text x="400" y="260" fill="#ef4444" font-family="sans-serif" font-weight="bold" font-size="14" text-anchor="middle">The Semantic Gap</text>
+  </g>
+</svg>

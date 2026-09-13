@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 450" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  <rect width="1100" height="450" fill="#f8fafc" rx="12"/>
+  <text x="550" y="28" fill="#334155" font-family="sans-serif" font-weight="bold" font-size="15" text-anchor="middle">Glossary: Market Segments &amp; Customer Types</text>
+
+  <g filter="url(#shadow)">
+    <rect x="20" y="45" width="1060" height="385" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+  </g>
+
+  <!-- header -->
+  <rect x="20" y="45" width="1060" height="38" fill="#1e293b" rx="8"/>
+  <rect x="20" y="65" width="1060" height="18" fill="#1e293b"/>
+  <text x="120" y="69" fill="#38bdf8" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">TERM</text>
+  <text x="640" y="69" fill="#38bdf8" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">MEANING</text>
+
+  <!-- column separators -->
+  <line x1="220" y1="45" x2="220" y2="430" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- rows: y start 83, each height 57.8 -->
+  <g font-family="sans-serif" font-size="11">
+    <!-- Row 1: SMB / SME -->
+    <rect x="20" y="83" width="1060" height="57" fill="#ffffff"/>
+    <text x="35" y="116" fill="#334155" font-weight="bold">SMB / SME</text>
+    <text x="235" y="102" fill="#64748b">Small and Medium-sized Businesses (EN) / Kleine und mittlere Unternehmen — KMU (DE);</text>
+    <text x="235" y="118" fill="#64748b">firms up to ~500 employees, usually without a dedicated security team.</text>
+    <text x="235" y="134" fill="#64748b">The target market for "conveyor-belt" security products.</text>
+
+    <!-- Row 2: MSP -->
+    <rect x="20" y="140" width="1060" height="57" fill="#f1f5f9"/>
+    <text x="35" y="173" fill="#334155" font-weight="bold">MSP</text>
+    <text x="235" y="173" fill="#64748b">Managed Services Provider — runs IT (and often security) <tspan font-style="italic">for</tspan> SMBs.</text>
+
+    <!-- Row 3: MSSP -->
+    <rect x="20" y="197" width="1060" height="57" fill="#ffffff"/>
+    <text x="35" y="230" fill="#334155" font-weight="bold">MSSP</text>
+    <text x="235" y="222" fill="#64748b">Managed Security Services Provider — the security-specialized MSP;</text>
+    <text x="235" y="238" fill="#64748b">runs 24/7 detection/response for many clients.</text>
+
+    <!-- Row 4: SaaS -->
+    <rect x="20" y="254" width="1060" height="57" fill="#f1f5f9"/>
+    <text x="35" y="287" fill="#334155" font-weight="bold">SaaS</text>
+    <text x="235" y="279" fill="#64748b">Software as a Service — cloud software delivered over the internet;</text>
+    <text x="235" y="295" fill="#64748b">SOC 2 reports are usually a purchasing prerequisite for SaaS buyers.</text>
+
+    <!-- Row 5: Enterprise -->
+    <rect x="20" y="311" width="1060" height="57" fill="#ffffff"/>
+    <text x="35" y="344" fill="#334155" font-weight="bold">Enterprise</text>
+    <text x="235" y="336" fill="#64748b">Large organizations: multi-account/multi-cloud governance, central policies,</text>
+    <text x="235" y="352" fill="#64748b">compliance programs — a different sales motion than SMB.</text>
+
+    <!-- Row 6: KMU -->
+    <rect x="20" y="368" width="1060" height="57" fill="#f1f5f9" rx="8"/>
+    <text x="35" y="401" fill="#334155" font-weight="bold">KMU</text>
+    <text x="235" y="401" fill="#64748b">German abbreviation for SMB (kleine und mittlere Unternehmen).</text>
+  </g>
+</svg>

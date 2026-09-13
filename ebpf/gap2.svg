@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  <rect width="960" height="420" fill="#f8fafc" rx="12"/>
+
+  <!-- Left Subgraph: App Layer -->
+  <rect x="40" y="40" width="380" height="150" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
+  <text x="60" y="70" fill="#1e40af" font-family="sans-serif" font-weight="bold" font-size="14">AI Application Layer</text>
+  <rect x="60" y="90" width="340" height="70" rx="6" fill="#ffffff" stroke="#93c5fd" filter="url(#shadow)"/>
+  <text x="230" y="130" fill="#1e3a8a" font-family="sans-serif" font-weight="600" font-size="16" text-anchor="middle">Prompt &amp; Response Text</text>
+
+  <!-- Right Subgraph: OS Layer -->
+  <rect x="540" y="40" width="380" height="150" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="2"/>
+  <text x="560" y="70" fill="#166534" font-family="sans-serif" font-weight="bold" font-size="14">Operating System</text>
+  <rect x="560" y="90" width="340" height="70" rx="6" fill="#ffffff" stroke="#86efac" filter="url(#shadow)"/>
+  <text x="730" y="130" fill="#14532d" font-family="monospace" font-size="14" text-anchor="middle">open() read() connect() execve()</text>
+
+  <!-- Traditional Security Tools (Top & Sides) -->
+  <rect x="40" y="230" width="260" height="60" rx="6" fill="#ffffff" stroke="#cbd5e1" filter="url(#shadow)"/>
+  <text x="52" y="252" fill="#334155" font-family="sans-serif" font-weight="bold" font-size="12">WAF / Network Firewall</text>
+  <text x="52" y="272" fill="#64748b" font-family="sans-serif" font-size="11">Sees TLS packets, never the prompt</text>
+  <path d="M 170 230 L 170 190" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+  <rect x="350" y="230" width="260" height="60" rx="6" fill="#ffffff" stroke="#cbd5e1" filter="url(#shadow)"/>
+  <text x="362" y="252" fill="#334155" font-family="sans-serif" font-weight="bold" font-size="12">Guardrails / LLM Guard</text>
+  <text x="362" y="272" fill="#64748b" font-family="sans-serif" font-size="11">Sees text, never the syscalls</text>
+  <path d="M 400 230 L 300 160" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+  <rect x="660" y="230" width="260" height="60" rx="6" fill="#ffffff" stroke="#cbd5e1" filter="url(#shadow)"/>
+  <text x="672" y="252" fill="#334155" font-family="sans-serif" font-weight="bold" font-size="12">gVisor / Tetragon / Falco</text>
+  <text x="672" y="272" fill="#64748b" font-family="sans-serif" font-size="11">Sees syscalls, never the intent</text>
+  <path d="M 790 230 L 790 190" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+  <!-- The Bridge: eBPF Boundary Tracing -->
+  <rect x="260" y="330" width="440" height="60" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="480" y="352" fill="#991b1b" font-family="sans-serif" font-weight="bold" font-size="14" text-anchor="middle">⚡ eBPF Boundary Tracing</text>
+  <text x="480" y="372" fill="#b91c1c" font-family="sans-serif" font-size="12" text-anchor="middle">Correlates BOTH views simultaneously in real-time</text>
+  
+  <!-- Correlation Lines -->
+  <path d="M 320 330 C 220 280 220 220 220 160" fill="none" stroke="#ef4444" stroke-width="2"/>
+  <path d="M 640 330 C 740 280 740 220 740 160" fill="none" stroke="#ef4444" stroke-width="2"/>
+</svg>

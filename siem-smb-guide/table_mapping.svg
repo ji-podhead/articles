@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 440" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  <rect width="1100" height="440" fill="#f8fafc" rx="12"/>
+  <text x="550" y="28" fill="#334155" font-family="sans-serif" font-weight="bold" font-size="15" text-anchor="middle">Same function, two ways to get it: AWS-native vs. open source</text>
+
+  <g filter="url(#shadow)">
+    <rect x="20" y="45" width="1060" height="380" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+  </g>
+
+  <!-- header -->
+  <rect x="20" y="45" width="1060" height="38" fill="#1e293b" rx="8"/>
+  <rect x="20" y="65" width="1060" height="18" fill="#1e293b"/>
+  <text x="150" y="69" fill="#38bdf8" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">FUNCTION</text>
+  <text x="480" y="69" fill="#38bdf8" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">AWS-NATIVE</text>
+  <text x="850" y="69" fill="#38bdf8" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">OPEN SOURCE</text>
+
+  <!-- column separators -->
+  <line x1="300" y1="45" x2="300" y2="425" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="660" y1="45" x2="660" y2="425" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- rows: y start 83, each height 42.75 -> 8 rows to 425 -->
+  <g font-family="sans-serif" font-size="11">
+    <rect x="20" y="83" width="1060" height="43" fill="#ffffff"/>
+    <text x="35" y="108" fill="#334155" font-weight="bold">Network intrusion detection</text>
+    <text x="315" y="108" fill="#64748b">GuardDuty — ML over flow logs, DNS, runtime</text>
+    <text x="675" y="108" fill="#64748b">Suricata (signatures) + Falco/eBPF (syscalls)</text>
+
+    <rect x="20" y="126" width="1060" height="43" fill="#f1f5f9"/>
+    <text x="35" y="151" fill="#334155" font-weight="bold">Central findings &amp; scoring</text>
+    <text x="315" y="151" fill="#64748b">Security Hub — ASFF, CIS/PCI-DSS/GDPR score</text>
+    <text x="675" y="151" fill="#64748b">Wazuh Manager + self-hosted OpenSearch</text>
+
+    <rect x="20" y="169" width="1060" height="43" fill="#ffffff"/>
+    <text x="35" y="194" fill="#334155" font-weight="bold">Long-term log storage &amp; search</text>
+    <text x="315" y="194" fill="#64748b">OpenSearch Service + Security Lake (OCSF)</text>
+    <text x="675" y="194" fill="#64748b">Self-hosted OpenSearch / ELK stack</text>
+
+    <rect x="20" y="212" width="1060" height="43" fill="#f1f5f9"/>
+    <text x="35" y="237" fill="#334155" font-weight="bold">Signed API audit trail</text>
+    <text x="315" y="237" fill="#64748b">CloudTrail — 90-day LookupEvents</text>
+    <text x="675" y="237" fill="#64748b">auditd + centralized syslog shipping</text>
+
+    <rect x="20" y="255" width="1060" height="43" fill="#ffffff"/>
+    <text x="35" y="280" fill="#334155" font-weight="bold">Configuration drift detection</text>
+    <text x="315" y="280" fill="#64748b">AWS Config — rules, auto-remediation</text>
+    <text x="675" y="280" fill="#64748b">Checkov (IaC scans) + periodic drift checks</text>
+
+    <rect x="20" y="298" width="1060" height="43" fill="#f1f5f9"/>
+    <text x="35" y="323" fill="#334155" font-weight="bold">Image / host vulnerability scan</text>
+    <text x="315" y="323" fill="#64748b">Inspector — EC2, ECR, Lambda CVEs</text>
+    <text x="675" y="323" fill="#64748b">Trivy or Grype (container images)</text>
+
+    <rect x="20" y="341" width="1060" height="43" fill="#ffffff"/>
+    <text x="35" y="366" fill="#334155" font-weight="bold">Web application firewall</text>
+    <text x="315" y="366" fill="#64748b">AWS WAF + Shield</text>
+    <text x="675" y="366" fill="#64748b">Coraza or ModSecurity + OWASP CRS</text>
+
+    <rect x="20" y="384" width="1060" height="41" fill="#f1f5f9" rx="0"/>
+    <text x="35" y="409" fill="#334155" font-weight="bold">AI-assisted triage &amp; modeling</text>
+    <text x="315" y="409" fill="#64748b">Bedrock (triage) + SageMaker (custom ML)</text>
+    <text x="675" y="409" fill="#64748b">OpenSearch ML Commons + MLflow</text>
+  </g>
+</svg>
