@@ -148,5 +148,5 @@ Each layer's blind spot is precisely the next layer's job. That's the whole argu
 - **Gitpod / Ona:** [Architecture reference](https://ona.com/docs/classic/admin/reference/architecture) · [Networking docs](https://ona.com/docs/classic/admin/getting-started/networking) · [GitHub (AGPL-3.0 — referenced as prior art, not vendored)](https://github.com/gitpod-io/gitpod)
 - **Fly.io:** [Architecture reference](https://fly.io/docs/reference/architecture/) · [Firecracker vs. gVisor](https://fly.io/learn/firecracker-vs-gvisor/)
 - **Docker VLAN networking (macvlan/ipvlan):** [macvlan driver docs](https://docs.docker.com/engine/network/drivers/macvlan/) · [ipvlan driver docs](https://docs.docker.com/engine/network/drivers/ipvlan/)
-- **eBPF/K-LAF (referenced, not re-explained):** "Stopping Prompt Injection at the Kernel Level" — `docs/articles/ebpf/2026-09-07-ebpf-llm-guards-linkedin.md`
+- **eBPF/K-LAF (referenced, not re-explained):** "Stopping Prompt Injection at the Kernel Level" — `docs/articles/ebpf/2026-09-07-ebpf-llm-guards-blogpost.md`
 - **SIEM fundamentals (referenced, not re-explained):** "You Have Logs. You Don't Have a SIEM." — `docs/articles/siem-smb-guide/`

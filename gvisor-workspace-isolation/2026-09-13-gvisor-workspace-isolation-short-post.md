@@ -1,9 +1,9 @@
-# LinkedIn Short-Post — Teaser für den gVisor/VLAN/Identity-Routing-Artikel
+# Blog Post — Teaser für den gVisor/VLAN/Identity-Routing-Artikel
 
-> **Status:** Entwurf, fertig zur Veröffentlichung (Englisch, LinkedIn Post).
+> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog post).
 > **Datum:** 13. September 2026.
 > **Zweck:** Kurzer Feed-Post, der auf den Hauptartikel verlinkt
-> ([2026-09-13-gvisor-workspace-isolation-linkedin.md](2026-09-13-gvisor-workspace-isolation-linkedin.md)).
+> ([2026-09-13-gvisor-workspace-isolation-blogpost.md](2026-09-13-gvisor-workspace-isolation-blogpost.md)).
 > Bild: `titel.svg` (als PNG exportiert) als Post-Bild.
 
 ---

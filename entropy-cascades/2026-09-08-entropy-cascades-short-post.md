@@ -1,9 +1,9 @@
-# LinkedIn-Short-Post — Teaser für den Entropy-Cascades-Artikel
+# Blog-Post — Teaser für den Entropy-Cascades-Artikel
 
-> **Status:** Entwurf, fertig zur Veröffentlichung (Englisch, LinkedIn Post).
+> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog post).
 > **Datum:** 8. September 2026.
 > **Zweck:** Kurzer Feed-Post, der auf den Hauptartikel verlinkt
-> ([2026-09-08-entropy-cascades-linkedin.md](2026-09-08-entropy-cascades-linkedin.md)).
+> ([2026-09-08-entropy-cascades-blogpost.md](2026-09-08-entropy-cascades-blogpost.md)).
 > Bild: `titel.svg` (als PNG exportiert) als Post-Bild.
 
 ---
@@ -44,4 +44,4 @@ What does your gateway do when the small model was *sure*?
 - [ ] Alternativ: `pipeline.svg` als zweites Bild (die Two-Phase-Pipeline ist der visuelle Hook)
 - [ ] Platzhalter „(Link hier einfügen)" durch die URL des veröffentlichten Artikels ersetzen
 - [ ] Erst Artikel veröffentlichen, dann Post — der Link muss live sein
-- [ ] Hashtags: 5 Stück (LinkedIn-Optimum 3–5)
+- [ ] Hashtags: 5 Stück (3–5 work best)

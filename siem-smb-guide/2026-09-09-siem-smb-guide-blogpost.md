@@ -30,7 +30,7 @@ Is it reachable from the internet? What can it actually do? Does it touch PII/PC
 
 ## What small and mid-sized teams are actually defending against
 
-Teams running production on one or two clouds with a handful of engineers face a narrower but very real threat surface. A recent CloudMatos piece on AI-driven SMB cloud security ("The Power of AI-Driven Automation in SMB Cloud Security," LinkedIn, Sept 2025) frames it well as two buckets:
+Teams running production on one or two clouds with a handful of engineers face a narrower but very real threat surface. A recent CloudMatos piece on AI-driven SMB cloud security ("The Power of AI-Driven Automation in SMB Cloud Security," Sept 2025) frames it well as two buckets:
 
 **API attack surface:** endpoints with no rate limits or weak auth, "shadow APIs" that quietly bypass the gateway because someone exposed a service directly, credential stuffing and token replay against old handlers, and data exfiltration through overly broad response objects or chatty error messages.
 
@@ -277,7 +277,7 @@ Two things worth knowing cold (both documented, both easy to get wrong in an int
 
 ## The CNAPP playbook: what the AI-security vendors actually automate
 
-Vendor decks (CloudMatos, Wiz, Prisma) describe the same playbook. After CloudMatos' "AI for SMB Cloud Security" ([LinkedIn, 2025](https://www.linkedin.com/pulse/ai-smb-cloud-security-2025-cloudmatos-exxxc/)), here is the full playbook with the five worked examples worth stealing — each mapped to what we already built above:
+Vendor decks (CloudMatos, Wiz, Prisma) describe the same playbook. After CloudMatos' "AI for SMB Cloud Security" ([2025](https://www.linkedin.com/pulse/ai-smb-cloud-security-2025-cloudmatos-exxxc/)), here is the full playbook with the five worked examples worth stealing — each mapped to what we already built above:
 
 **1. The three-plane architecture** (this is how every CNAPP vendor structures it):
 
@@ -352,7 +352,7 @@ What does your team actually run today — self-hosted, managed, or the "we'll g
 - **Falco:** [The Falco Project](https://falco.org/docs/) — CNCF, modern eBPF driver, container-attributed syscall events
 - **Wazuh:** [Platform overview](https://wazuh.com/platform/overview/) · [Docker deployment guide](https://documentation.wazuh.com/current/docker/index.html)
 - **OCSF (Open Cybersecurity Schema Framework):** https://schema.ocsf.io/
-- **CloudMatos, "AI for SMB Cloud Security in 2025" (LinkedIn):** https://www.linkedin.com/pulse/ai-smb-cloud-security-2025-cloudmatos-exxxc/ — CNAPP playbook, three-plane architecture, worked examples, risk scoring, runbook, and compliance-automation diagram (Figure 7a) quoted with attribution
+- **CloudMatos, "AI for SMB Cloud Security in 2025" (Source:** https://www.linkedin.com/pulse/ai-smb-cloud-security-2025-cloudmatos-exxxc/ — CNAPP playbook, three-plane architecture, worked examples, risk scoring, runbook, and compliance-automation diagram (Figure 7a) quoted with attribution
 - **Sigma rules:** https://sigmahq.io/
 - **Coraza (OSS WAF):** https://coraza.io/ · **ModSecurity:** https://github.com/SpiderLabs/ModSecurity · **OWASP Core Rule Set:** https://coreruleset.org/
 - **Checkov (OSS IaC scanner):** https://www.checkov.io/
@@ -381,7 +381,7 @@ What does your team actually run today — self-hosted, managed, or the "we'll g
 - **Amazon Bedrock:** https://docs.aws.amazon.com/bedrock/
 - **Amazon SageMaker:** https://docs.aws.amazon.com/sagemaker/ · [Model Monitor](https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html)
 - **CloudiQS (AWS Advanced Tier Partner) — Security Assessment methodology:** https://cloudiqs.com/solution/security-assessment-solution/ — referenced as a real-world assembly pattern of the AWS-native services above, not as an endorsement.
-- **CloudMatos — "The Power of AI-Driven Automation in SMB Cloud Security," LinkedIn, Sept 11, 2025** — referenced for the SMB threat-class framing and the CNAPP architecture overview.
+- **CloudMatos — "The Power of AI-Driven Automation in SMB Cloud Security," Sept 11, 2025** — referenced for the SMB threat-class framing and the CNAPP architecture overview.
 
 ## Glossary — the alphabet soup, explained once
 

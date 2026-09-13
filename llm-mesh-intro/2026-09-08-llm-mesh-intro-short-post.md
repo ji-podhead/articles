@@ -1,9 +1,9 @@
-# LinkedIn-Short-Post — Teaser für den LLM-Mesh-Intro-Artikel
+# Blog-Post — Teaser für den LLM-Mesh-Intro-Artikel
 
-> **Status:** Entwurf, fertig zur Veröffentlichung (Englisch, LinkedIn Post).
+> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog post).
 > **Datum:** 8. September 2026.
 > **Zweck:** Kurzer Feed-Post, der auf den Hauptartikel verlinkt
-> ([2026-09-08-llm-mesh-intro-linkedin.md](2026-09-08-llm-mesh-intro-linkedin.md)).
+> ([2026-09-08-llm-mesh-intro-blogpost.md](2026-09-08-llm-mesh-intro-blogpost.md)).
 > Bild: `titel.svg` (als PNG exportiert) als Post-Bild.
 > **Hinweis:** Dies ist Post #0 der Serie — zuerst veröffentlichen.
 
@@ -44,4 +44,4 @@ How many separate API-key configs is your team babysitting right now?
 - [ ] `titel.svg` → PNG konvertieren (Snippet im Hauptartikel-Anhang) und als Post-Bild anhängen
 - [ ] Platzhalter „(Link hier einfügen)" durch die URL des veröffentlichten Artikels ersetzen
 - [ ] **Erst diesen Artikel veröffentlichen, dann die Deep-Dives** (#0 der Serie)
-- [ ] Hashtags: 5 Stück (LinkedIn-Optimum 3–5)
+- [ ] Hashtags: 5 Stück (3–5 work best)

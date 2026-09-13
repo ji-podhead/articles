@@ -1,9 +1,9 @@
-# LinkedIn-Short-Post — Teaser für den Hauptartikel
+# Blog-Post — Teaser für den Hauptartikel
 
-> **Status:** Entwurf, fertig zur Veröffentlichung (Englisch, LinkedIn Post).
+> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog post).
 > **Datum:** 7. September 2026.
 > **Zweck:** Kurzer Feed-Post, der auf den Hauptartikel verlinkt
-> ([2026-09-07-ebpf-llm-guards-linkedin.md](2026-09-07-ebpf-llm-guards-linkedin.md)).
+> ([2026-09-07-ebpf-llm-guards-blogpost.md](2026-09-07-ebpf-llm-guards-blogpost.md)).
 > Bild: `titel.svg` (als PNG exportiert) als Post-Bild.
 
 ---
@@ -38,4 +38,4 @@ What's your stack doing about prompt injection — guardrail library, gateway sc
 - [ ] Alternativ: `pipeline.svg` als zweites Bild (die 6-Schritte-Pipeline ist der visuelle Hook)
 - [ ] Platzhalter „(Link hier einfügen)" durch die URL des veröffentlichten Artikels ersetzen
 - [ ] Erst Artikel veröffentlichen, dann Post — der Link muss live sein
-- [ ] Hashtags am Ende: 10 Stück (LinkedIn-Optimum sind 3–5; notfalls die ersten 5 behalten: `#PromptInjection #eBPF #LLMSecurity #AIAgents #CyberSecurity`)
+- [ ] Hashtags am Ende: 10 Stück (3–5 work best; keep the first 5 if in doubt: `#PromptInjection #eBPF #LLMSecurity #AIAgents #CyberSecurity`)

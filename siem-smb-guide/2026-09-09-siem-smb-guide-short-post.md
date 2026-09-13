@@ -1,9 +1,9 @@
-# LinkedIn Short-Post — Teaser für den SIEM-SMB-Guide
+# Blog Post — Teaser für den SIEM-SMB-Guide
 
-> **Status:** Entwurf, fertig zur Veröffentlichung (Englisch, LinkedIn Post).
+> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog post).
 > **Datum:** 9. September 2026.
 > **Zweck:** Kurzer Feed-Post, der auf den Hauptartikel verlinkt
-> ([2026-09-09-siem-smb-guide-linkedin.md](2026-09-09-siem-smb-guide-linkedin.md)).
+> ([2026-09-09-siem-smb-guide-blogpost.md](2026-09-09-siem-smb-guide-blogpost.md)).
 > Bild: `titel.svg` (als PNG exportiert) als Post-Bild.
 
 ---
@@ -40,5 +40,5 @@ What does your team actually run today — self-hosted, managed, or "we'll get t
 - [ ] Alternativ: `table_mapping.svg` als zweites Bild (die AWS-vs-OSS-Tabelle ist der stärkste Save/Share-Hook)
 - [ ] Platzhalter „(Link hier einfügen)" durch die URL des veröffentlichten Artikels ersetzen
 - [ ] Erst Artikel veröffentlichen, dann Post — der Link muss live sein
-- [ ] Hashtags: 5–7 Stück (LinkedIn-Optimum 3–5, hier bewusst breiter wegen Cross-Audience AWS+OSS)
+- [ ] Hashtags: 5–7 Stück (3–5 work best, deliberately broader for cross-audience AWS+OSS)
 - [ ] Vor Veröffentlichung: alle sieben Figuren (`titel`, `pipeline`, `stack_oss`, `stack_aws`, `traffic_control`, `mlops_pipeline`, `table_mapping`) als PNG re-exportieren, falls die SVGs seit dem letzten Export nochmal geändert wurden

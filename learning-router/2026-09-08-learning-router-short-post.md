@@ -1,9 +1,9 @@
-# LinkedIn-Short-Post — Teaser für den Learning-Router-Artikel
+# Blog-Post — Teaser für den Learning-Router-Artikel
 
-> **Status:** Entwurf, fertig zur Veröffentlichung (Englisch, LinkedIn Post).
+> **Status:** Entwurf, fertig zur Veröffentlichung (English, blog post).
 > **Datum:** 8. September 2026.
 > **Zweck:** Kurzer Feed-Post, der auf den Hauptartikel verlinkt
-> ([2026-09-08-learning-router-linkedin.md](2026-09-08-learning-router-linkedin.md)).
+> ([2026-09-08-learning-router-blogpost.md](2026-09-08-learning-router-blogpost.md)).
 > Bild: `titel.svg` (als PNG exportiert) als Post-Bild.
 
 ---
@@ -38,4 +38,4 @@ What does your gateway do when a paid key and a free key rate-limit at the same 
 - [ ] Alternativ: `layers.svg` als zweites Bild (die 3-Layer-Struktur ist der visuelle Hook)
 - [ ] Platzhalter „(Link hier einfügen)" durch die URL des veröffentlichten Artikels ersetzen
 - [ ] Erst Artikel veröffentlichen, dann Post — der Link muss live sein
-- [ ] Hashtags: 5 Stück (LinkedIn-Optimum 3–5)
+- [ ] Hashtags: 5 Stück (3–5 work best)
