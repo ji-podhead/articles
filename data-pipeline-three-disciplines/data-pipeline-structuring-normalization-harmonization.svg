@@ -1,0 +1,249 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Data Structuring vs Normalization vs Harmonization — LinkedIn Article Diagram">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329"/>
+      <stop offset="100%" stop-color="#1c2541"/>
+    </linearGradient>
+    <linearGradient id="structGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="normGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="harmGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad)"/>
+  <rect width="1200" height="675" fill="none" stroke="#3a506b" stroke-width="1" opacity="0.3"/>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" fill="#fafafa" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="900" letter-spacing="1.5">
+    DATA PIPELINE: THREE DISTINCT DISCIPLINES
+  </text>
+  <text x="600" y="75" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="14">
+    structuring → normalization → harmonization
+  </text>
+
+  <!-- ═══ PIPELINE FLOW (horizontal) ═══ -->
+  <!-- Phase 1: STRUCTURING -->
+  <g transform="translate(50, 110)">
+    <rect width="340" height="380" rx="14" fill="#0f172a" stroke="url(#structGrad)" stroke-width="2"/>
+    <rect width="340" height="60" rx="14" fill="url(#structGrad)" opacity="0.15"/>
+    <text x="170" y="32" text-anchor="middle" fill="#38bdf8" font-family="Segoe UI" font-size="20" font-weight="900">
+      1. STRUCTURING
+    </text>
+    <text x="170" y="52" text-anchor="middle" fill="#7dd3fc" font-family="monospace" font-size="11">
+      raw → readable format
+    </text>
+
+    <!-- Unstructured blob -->
+    <g transform="translate(30, 90)">
+      <rect width="130" height="80" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="65" y="28" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="10">unstructured</text>
+      <text x="20" y="48" fill="#475569" font-family="monospace" font-size="9">~@#)($&amp;</text>
+      <text x="40" y="62" fill="#475569" font-family="monospace" font-size="9">xyz___??!!</text>
+      <text x="15" y="74" fill="#475569" font-family="monospace" font-size="9">(((raw)))</text>
+    </g>
+
+    <!-- Arrow -->
+    <line x1="175" y1="130" x2="175" y2="165" stroke="#38bdf8" stroke-width="2" filter="url(#glow)"/>
+    <polygon points="170,160 180,160 175,175" fill="#38bdf8"/>
+
+    <!-- Structured table -->
+    <g transform="translate(45, 180)">
+      <rect width="250" height="110" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+      <rect width="250" height="28" fill="#38bdf8" opacity="0.2"/>
+      <text x="125" y="18" text-anchor="middle" fill="#7dd3fc" font-family="monospace" font-size="10" font-weight="bold">structured table</text>
+      <line x1="0" y1="28" x2="250" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.5"/>
+      <text x="15" y="45" fill="#94a3b8" font-family="monospace" font-size="9">| id | name  | email    |</text>
+      <text x="15" y="60" fill="#64748b" font-family="monospace" font-size="9">|  1 | Alice | a@x.com  |</text>
+      <text x="15" y="75" fill="#64748b" font-family="monospace" font-size="9">|  2 | Bob   | b@y.com  |</text>
+      <text x="15" y="90" fill="#64748b" font-family="monospace" font-size="9">|  3 | Carol | c@z.com  |</text>
+    </g>
+
+    <!-- Key insight -->
+    <g transform="translate(20, 315)">
+      <rect width="300" height="50" rx="6" fill="#38bdf8" opacity="0.08"/>
+      <text x="150" y="20" text-anchor="middle" fill="#7dd3fc" font-family="Segoe UI" font-size="11" font-weight="700">WHY IT MATTERS</text>
+      <text x="150" y="38" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI" font-size="10">Machine-readable format for queries</text>
+    </g>
+  </g>
+
+  <!-- Flow arrow 1→2 -->
+  <g transform="translate(390, 280)">
+    <line x1="0" y1="0" x2="35" y2="0" stroke="#475569" stroke-width="2.5" filter="url(#glow)"/>
+    <polygon points="30,-6 30,6 42,0" fill="#818cf8"/>
+  </g>
+
+  <!-- Phase 2: NORMALIZATION -->
+  <g transform="translate(430, 110)">
+    <rect width="340" height="380" rx="14" fill="#0f172a" stroke="url(#normGrad)" stroke-width="2"/>
+    <rect width="340" height="60" rx="14" fill="url(#normGrad)" opacity="0.15"/>
+    <text x="170" y="32" text-anchor="middle" fill="#818cf8" font-family="Segoe UI" font-size="20" font-weight="900">
+      2. NORMALIZATION
+    </text>
+    <text x="170" y="52" text-anchor="middle" fill="#a5b4fc" font-family="monospace" font-size="11">
+      clean + deduplicate + rescale
+    </text>
+
+    <!-- A. Database Normalization -->
+    <g transform="translate(25, 80)">
+      <text x="0" y="12" fill="#a5b4fc" font-family="Segoe UI" font-size="12" font-weight="700">A. Database (1NF→2NF→3NF)</text>
+      <rect x="0" y="20" width="290" height="70" rx="6" fill="#1e293b" stroke="#475569" stroke-width="0.5"/>
+      <text x="15" y="40" fill="#7dd3fc" font-family="monospace" font-size="9">1NF: atomic values, unique rows</text>
+      <text x="15" y="55" fill="#94a3b8" font-family="monospace" font-size="9">2NF: no partial dependencies</text>
+      <text x="15" y="70" fill="#64748b" font-family="monospace" font-size="9">3NF: no transitive dependencies</text>
+    </g>
+
+    <!-- B. Statistical Normalization -->
+    <g transform="translate(25, 170)">
+      <text x="0" y="12" fill="#a5b4fc" font-family="Segoe UI" font-size="12" font-weight="700">B. Statistical / ML</text>
+      <rect x="0" y="20" width="135" height="60" rx="6" fill="#1e293b" stroke="#475569" stroke-width="0.5"/>
+      <text x="67" y="38" text-anchor="middle" fill="#7dd3fc" font-family="monospace" font-size="9">Min-Max</text>
+      <text x="67" y="55" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">[0 .. 1]</text>
+      <line x1="15" y1="65" x2="120" y2="65" stroke="#475569" stroke-width="0.5"/>
+      <rect x="15" y="63" width="60" height="4" fill="#818cf8" opacity="0.5"/>
+
+      <rect x="155" y="20" width="135" height="60" rx="6" fill="#1e293b" stroke="#475569" stroke-width="0.5"/>
+      <text x="222" y="38" text-anchor="middle" fill="#7dd3fc" font-family="monospace" font-size="9">Z-Score</text>
+      <text x="222" y="55" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">μ=0, σ=1</text>
+      <!-- Bell curve -->
+      <path d="M 170,72 Q 200,45 222,62 Q 244,78 265,72" fill="none" stroke="#818cf8" stroke-width="1.5" opacity="0.6"/>
+      <line x1="222" y1="40" x2="222" y2="72" stroke="#a5b4fc" stroke-width="1" stroke-dasharray="2,2"/>
+    </g>
+
+    <!-- Example -->
+    <g transform="translate(25, 265)">
+      <rect width="290" height="100" rx="6" fill="#818cf8" opacity="0.08"/>
+      <text x="145" y="20" text-anchor="middle" fill="#a5b4fc" font-family="Segoe UI" font-size="11" font-weight="700">EXAMPLE</text>
+      <text x="15" y="40" fill="#7dd3fc" font-family="monospace" font-size="9">Source A: DD/MM/YYYY → 2026-09-15</text>
+      <text x="15" y="55" fill="#7dd3fc" font-family="monospace" font-size="9">Source B: YYYY-MM-DD → 2026-09-15</text>
+      <text x="15" y="72" fill="#94a3b8" font-family="monospace" font-size="9">A: "USA"  ─┐</text>
+      <text x="100" y="82" fill="#94a3b8" font-family="monospace" font-size="9">└→ "United States"</text>
+      <text x="100" y="70" fill="#94a3b8" font-family="monospace" font-size="9">B: "United States" ─┘</text>
+      <text x="15" y="92" fill="#64748b" font-family="monospace" font-size="9">EUR ↔ USD → uniform scale</text>
+    </g>
+  </g>
+
+  <!-- Flow arrow 2→3 -->
+  <g transform="translate(770, 280)">
+    <line x1="0" y1="0" x2="35" y2="0" stroke="#475569" stroke-width="2.5" filter="url(#glow)"/>
+    <polygon points="30,-6 30,6 42,0" fill="#34d399"/>
+  </g>
+
+  <!-- Phase 3: HARMONIZATION -->
+  <g transform="translate(810, 110)">
+    <rect width="340" height="380" rx="14" fill="#0f172a" stroke="url(#harmGrad)" stroke-width="2"/>
+    <rect width="340" height="60" rx="14" fill="url(#harmGrad)" opacity="0.15"/>
+    <text x="170" y="32" text-anchor="middle" fill="#34d399" font-family="Segoe UI" font-size="20" font-weight="900">
+      3. HARMONIZATION
+    </text>
+    <text x="170" y="52" text-anchor="middle" fill="#6ee7b7" font-family="monospace" font-size="11">
+      multi-source → semantic unity
+    </text>
+
+    <!-- Multiple sources converging -->
+    <g transform="translate(20, 85)">
+      <rect x="0" y="0" width="80" height="30" rx="4" fill="#1e293b" stroke="#475569"/>
+      <text x="40" y="18" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">Source A</text>
+
+      <rect x="0" y="45" width="80" height="30" rx="4" fill="#1e293b" stroke="#475569"/>
+      <text x="40" y="63" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">Source B</text>
+
+      <rect x="0" y="90" width="80" height="30" rx="4" fill="#1e293b" stroke="#475569"/>
+      <text x="40" y="108" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">Source C</text>
+
+      <!-- Convergence lines -->
+      <line x1="80" y1="15" x2="130" y2="55" stroke="#34d399" stroke-width="1.5" opacity="0.7"/>
+      <line x1="80" y1="60" x2="130" y2="60" stroke="#34d399" stroke-width="1.5" opacity="0.7"/>
+      <line x1="80" y1="105" x2="130" y2="65" stroke="#34d399" stroke-width="1.5" opacity="0.7"/>
+    </g>
+
+    <!-- Unified result -->
+    <g transform="translate(135, 40)">
+      <rect x="0" y="10" width="180" height="90" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5" filter="url(#glow)"/>
+      <text x="90" y="32" text-anchor="middle" fill="#34d399" font-family="Segoe UI" font-size="11" font-weight="700">UNIFIED VIEW</text>
+      <text x="90" y="50" text-anchor="middle" fill="#6ee7b7" font-family="monospace" font-size="9">✓ consistent schemas</text>
+      <text x="90" y="65" text-anchor="middle" fill="#6ee7b7" font-family="monospace" font-size="9">✓ uniform standards</text>
+      <text x="90" y="80" text-anchor="middle" fill="#6ee7b7" font-family="monospace" font-size="9">✓ semantic unity</text>
+      <text x="90" y="95" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="8">comparable + error-free</text>
+    </g>
+
+    <!-- Integration vs Harmonization -->
+    <g transform="translate(20, 200)">
+      <rect width="145" height="60" rx="6" fill="#1e293b" stroke="#475569" stroke-width="0.5"/>
+      <text x="72" y="20" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9" font-weight="bold">Integration</text>
+      <text x="72" y="36" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="8">data in one place</text>
+      <text x="72" y="50" text-anchor="middle" fill="#475569" font-family="monospace" font-size="8">(just gathering)</text>
+
+      <rect x="160" width="145" height="60" rx="6" fill="#34d399" opacity="0.1" stroke="#34d399" stroke-width="1"/>
+      <text x="232" y="20" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="9" font-weight="bold">Harmonization</text>
+      <text x="232" y="36" text-anchor="middle" fill="#6ee7b7" font-family="monospace" font-size="8">+ resolves conflicts</text>
+      <text x="232" y="50" text-anchor="middle" fill="#6ee7b7" font-family="monospace" font-size="8">+ semantic unity</text>
+    </g>
+
+    <!-- Key insight -->
+    <g transform="translate(20, 280)">
+      <rect width="300" height="80" rx="6" fill="url(#harmGrad)" opacity="0.08"/>
+      <text x="150" y="22" text-anchor="middle" fill="#34d399" font-family="Segoe UI" font-size="12" font-weight="700">THE BOTTOM LINE</text>
+      <text x="150" y="45" text-anchor="middle" fill="#6ee7b7" font-family="Segoe UI" font-size="11">Don't just structure. Don't just normalize.</text>
+      <text x="150" y="65" text-anchor="middle" fill="#34d399" font-family="Segoe UI" font-size="13" font-weight="800">Aim for HARMONIZATION.</text>
+    </g>
+  </g>
+
+  <!-- ═══ LIFECYCLE BAR (bottom) ═══ -->
+  <g transform="translate(50, 520)">
+    <rect width="1100" height="120" rx="14" fill="#0f172a" stroke="#3a506b" stroke-width="1"/>
+    <text x="550" y="28" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI" font-size="14" font-weight="700" letter-spacing="1">
+      THE LIFECYCLE: MULTI-SOURCE PIPELINE (cycles repeat)
+    </text>
+
+    <!-- Step 1 -->
+    <g transform="translate(80, 45)">
+      <rect width="200" height="50" rx="8" fill="#38bdf8" opacity="0.15"/>
+      <rect x="0" y="0" width="4" height="50" fill="#38bdf8" rx="2"/>
+      <text x="100" y="22" text-anchor="middle" fill="#7dd3fc" font-family="Segoe UI" font-size="11" font-weight="700">INGESTION</text>
+      <text x="100" y="40" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">structuring (1st pass)</text>
+    </g>
+
+    <g transform="translate(300, 45)">
+      <rect width="220" height="50" rx="8" fill="#818cf8" opacity="0.15"/>
+      <rect x="0" y="0" width="4" height="50" fill="#818cf8" rx="2"/>
+      <text x="110" y="22" text-anchor="middle" fill="#a5b4fc" font-family="Segoe UI" font-size="11" font-weight="700">TRANSFORMATION</text>
+      <text x="110" y="40" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">normalization (clean + scale)</text>
+    </g>
+
+    <g transform="translate(540, 45)">
+      <rect width="200" height="50" rx="8" fill="#38bdf8" opacity="0.15"/>
+      <rect x="0" y="0" width="4" height="50" fill="#38bdf8" rx="2"/>
+      <text x="100" y="22" text-anchor="middle" fill="#7dd3fc" font-family="Segoe UI" font-size="11" font-weight="700">LOADING</text>
+      <text x="100" y="40" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">structuring (2nd pass)</text>
+    </g>
+
+    <g transform="translate(760, 45)">
+      <rect width="280" height="50" rx="8" fill="#34d399" opacity="0.15"/>
+      <rect x="0" y="0" width="4" height="50" fill="#34d399" rx="2"/>
+      <text x="140" y="22" text-anchor="middle" fill="#34d399" font-family="Segoe UI" font-size="11" font-weight="700">HARMONIZATION</text>
+      <text x="140" y="40" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">all 3 combined, cycled per batch</text>
+    </g>
+
+    <!-- Cycle arrows -->
+    <path d="M 100,105 Q 550,95 900,105" fill="none" stroke="#475569" stroke-width="1" stroke-dasharray="4,4"/>
+    <text x="550" y="98" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">↻ repeat per data batch</text>
+  </g>
+
+  <!-- Hashtags -->
+  <text x="600" y="665" text-anchor="middle" fill="#475569" font-family="monospace" font-size="10">
+    #DataEngineering #DataScience #DataHarmonization #MachineLearning #SystemArchitecture
+  </text>
+</svg>
