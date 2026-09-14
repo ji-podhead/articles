@@ -43,6 +43,10 @@ The fix set is short and applies uniformly across all of them:
 - **Isolate at the network layer, not just the application layer**, for anything holding model weights or embeddings. A container or VM on its own network segment with an explicit egress allowlist means a compromise of the AI service itself still can't pivot laterally into the rest of the environment — the boundary holds even when the application-layer check fails, which is the actual justification for running agent workspaces in their own sandbox (gVisor) behind a per-project VLAN rather than trusting the app's own auth to be the only line of defense.
 - **Firewall the well-known AI dev ports by default** — 6333, 7860, 8000, 8501, 8888, 11434, 19530 — deny inbound unless a specific rule opens them, rather than allowing everything and hoping the application catches it.
 
+## Coding Agents Specifically: Treat Their Local Server Like Any Other Service
+
+Part 1's finding here deserves its own line item because it's easy to assume a CLI tool has no network surface at all: if a coding agent's IDE companion, web mode, or webhook receiver opens a local listener, that listener follows the exact same rules as everything else in this article — no exceptions for "it's just a dev tool." CVE-2025-52882 (Claude Code's unauthenticated IDE WebSocket, patched by requiring a lock-file token on every connection) is the concrete proof that "it's local, so it's fine" is not a security boundary — a malicious webpage in the same browser session was enough to reach it. Practically: keep coding-agent tooling updated (that class of vulnerability gets patched, not just documented), never flip a local-only web mode (OpenCode, DeepSeek Harness, or equivalent) to `0.0.0.0` on a shared or internet-facing machine, and if a team genuinely needs remote access to one of these tools, put it behind the same reverse-proxy-plus-auth pattern as everything else here rather than exposing the tool's own default listener directly.
+
 ## Secret Leaks: Stop the Push, Not Just the Search
 
 Everything in Part 1's leak-discovery section (GitHub dorking, TruffleHog, Gitleaks, GitGuardian, IntelX) exists because secrets keep getting committed. The fix operates in layers, and the earliest layer is the cheapest:
@@ -63,6 +67,8 @@ Every finding across both articles reduces to the same root cause: a control tha
 - Scout Suite — https://github.com/nccgroup/ScoutSuite
 - ProjectDiscovery Nuclei — https://github.com/projectdiscovery/nuclei
 - Ollama API authentication issue — https://github.com/ollama/ollama/issues/2194
+- CVE-2025-52882 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2025-52882
+- OpenCode web docs — https://opencode.ai/docs/web/
 - vLLM quickstart (API key configuration) — https://docs.vllm.ai/en/stable/getting_started/quickstart/
 - Qdrant authentication docs — https://qdrant.tech/documentation/cloud/authentication/
 - Milvus connection/auth docs — https://milvus.io/docs/v2.3.x/manage_connection.md
