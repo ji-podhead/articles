@@ -1,5 +1,9 @@
 # Google's TabFM: The End of XGBoost Retraining Loops?
 
+![Title graphic — dark background, the headline "Google's TabFM: The End of Retraining Loops?" next to a frozen padlock over an attention-grid pattern, with a terminal snippet loading a frozen model and returning a zero-shot prediction](titel.svg)
+
+*Title image: frozen weights, row-column attention, zero retraining.*
+
 **Published:** 2026-09-15 · **Author:** Leonardo Jacobi · **Tags:** #MachineLearning #DataEngineering #MLOps #TabularAI #GoogleResearch
 
 ![Comparison of three tabular ML paradigms side by side — XGBoost (battle-tested static-table champion, retrain per dataset), River (incremental online learning, ultra-low latency, lightweight only), and Google TabFM (zero-shot foundation model with frozen weights and row-column attention) — plus a mechanism deep-dive on TabFM's cross-attention and row-compression, the synthetic-data-bottleneck risk, and a production verdict: streaming favors River, instant out-of-the-box favors TabFM](tabfm-zero-shot-landscape.svg)

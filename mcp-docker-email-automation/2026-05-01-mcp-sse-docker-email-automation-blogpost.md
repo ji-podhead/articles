@@ -1,5 +1,9 @@
 # Integrating MCP Servers via Docker + SSE Transport for Email Automation
 
+![Title graphic — dark background, the headline "MCP Servers via Docker + SSE Transport" next to a stylized Docker whale carrying containers, with a terminal snippet starting an isolated MCP bridge and auto-fetching tools over SSE](titel.svg)
+
+*Title image: a Docker whale carrying an isolated MCP bridge, reachable over SSE.*
+
 **Published:** 2026-05-01 · **Author:** Leonardo Jacobi · **Tags:** #MCP #Docker #GenAI #EmailAutomation #Agentics
 
 ![Architecture diagram showing Google GenAI (the LLM agent layer, using litellm for automatic tool-fetching) connected over an SSE transport bridge to a Docker container running an MCP-Bridge and an MCP Server (JS) that holds the email-automation credentials — with a benefits panel below covering CI/CD-friendly builds, container isolation, per-agent network segmentation, and automatic tool discovery](mcp-sse-docker-architecture.svg)

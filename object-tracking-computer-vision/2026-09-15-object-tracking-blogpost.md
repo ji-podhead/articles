@@ -1,5 +1,9 @@
 # Object Trackers for Computer Vision: Kalman Filter, DeepSORT, and the MOTA Benchmark
 
+![Title graphic — dark background, the headline "Object Trackers: Kalman Filter & DeepSORT" next to a target reticle with bounding-box corners and a dashed motion trail, with a terminal snippet fusing motion and appearance to preserve identity through occlusion](titel.svg)
+
+*Title image: a tracked target, its motion trail, and the identity that survives occlusion.*
+
 **Published:** 2026-09-15 · **Author:** Leonardo Jacobi · **Tags:** #ObjectTracking #ComputerVision #Robotics #AI #KalmanFilter #DeepSORT
 
 ![Side-by-side diagram of the Kalman Filter's recursive prediction-correction cycle next to DeepSORT's motion (Kalman) plus appearance (deep re-identification) modules fusing into data association, below which the MOTA accuracy formula (1 minus false positives, false negatives and identity switches over ground truth) is broken down term by term, alongside tools and benchmarks (py-motmetrics, MOT Challenge, OpenCV trackers, OC-SORT+CMC)](object-tracking-kalman-deepsort.svg)

@@ -1,5 +1,9 @@
 # The Evolution of AI Planning: From GOAP in Games to LLM-Driven Robotics
 
+![Title graphic — dark background, the headline "The Evolution of AI Planning" next to a decision tree branching into a glowing LLM node, with a terminal snippet translating a PDDL goal into an executed plan](titel.svg)
+
+*Title image: from branching decision trees to an LLM bridge into formal planning.*
+
 **Published:** 2026-09-15 · **Author:** Leonardo Jacobi · **Tags:** #AI #GOAP #BehaviorTrees #PDDL #LLM #Robotics
 
 ![Timeline from FSM state spaghetti through GOAP (F.E.A.R., 2005) to Behavior Trees (ROS 2 standard) and PDDL (ROSPlan solvers) to an LLM bridge, followed by a 3-layer stack diagram — execution via Behavior Trees for moment-to-moment reactive control, strategy via formal PDDL planners for complex multi-step tasks, and an LLM interface layer that translates human intent into structured PDDL without replacing either layer below it](ai-planning-stack-evolution.svg)

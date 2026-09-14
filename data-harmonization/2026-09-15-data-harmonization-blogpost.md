@@ -1,5 +1,9 @@
 # Data Harmonization: Structuring, Normalization, and the Semantic Unity That Makes Pipelines Work
 
+![Title graphic — dark background, the headline "Structuring, Normalization & Harmonization" next to three source nodes converging into one glowing checkmark, with a terminal snippet resolving "USA" and "United States" into one semantic value](titel.svg)
+
+*Title image: three separate disciplines, one converging pipeline.*
+
 **Published:** 2026-09-15 · **Author:** Leonardo Jacobi · **Tags:** #DataEngineering #DataScience #DataHarmonization
 
 ![Diagram of three sequential pipeline phases — structuring (turning raw unstructured blobs into a queryable table), normalization (1NF/2NF/3NF database normalization plus statistical Min-Max/Z-score scaling), and harmonization (multiple sources converging into one semantically unified view, contrasted against mere integration) — with a bottom lifecycle bar showing how ingestion, transformation, loading, and harmonization repeat per data batch](data-pipeline-structuring-normalization-harmonization.svg)

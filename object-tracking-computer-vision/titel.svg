@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="60%" stop-color="#1c2541" />
+      <stop offset="100%" stop-color="#3a506b" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bgGrad)"/>
+
+  <g opacity="0.05" stroke="#ffffff" stroke-width="1">
+    <path d="M 0,75 L 1200,75 M 0,150 L 1200,150 M 0,225 L 1200,225 M 0,300 L 1200,300 M 0,375 L 1200,375 M 0,450 L 1200,450 M 0,525 L 1200,525 M 0,600 L 1200,600" />
+    <path d="M 150,0 L 150,675 M 300,0 L 300,675 M 450,0 L 450,675 M 600,0 L 600,675 M 750,0 L 750,675 M 900,0 L 900,675 M 1050,0 L 1050,675" />
+  </g>
+
+  <g opacity="0.15">
+    <circle cx="950" cy="337" r="280" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="12,6"/>
+    <circle cx="950" cy="337" r="200" fill="none" stroke="#818cf8" stroke-width="4"/>
+    <circle cx="950" cy="337" r="120" fill="none" stroke="#a78bfa" stroke-width="1" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- Left Side: Typography & Title -->
+  <g transform="translate(100, 150)">
+    <rect x="0" y="0" width="230" height="30" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+    <text x="115" y="19" fill="#38bdf8" font-family="monospace" font-size="12" font-weight="bold" letter-spacing="1" text-anchor="middle">COMPUTER VISION</text>
+
+    <text x="0" y="90" fill="#ffffff" font-family="sans-serif" font-weight="900" font-size="48" letter-spacing="-1">Object Trackers:</text>
+    <text x="0" y="150" fill="url(#accentGrad)" font-family="sans-serif" font-weight="900" font-size="48" letter-spacing="-1">Kalman Filter &amp; DeepSORT</text>
+
+    <text x="0" y="205" fill="#94a3b8" font-family="sans-serif" font-weight="normal" font-size="20">From prediction-correction cycles to deep re-identification</text>
+
+    <g transform="translate(0, 255)" font-family="monospace" font-size="15" fill="#64748b">
+      <text x="0" y="0"><tspan fill="#f43f5e"># </tspan>track.py<tspan fill="#475569"> — track = kalman.predict().</tspan><tspan fill="#a78bfa">correct(detection)</tspan></text>
+      <text x="0" y="30" fill="#475569">➔ [DeepSORT] appearance + motion fused across frames...</text>
+      <text x="0" y="55" fill="#a78bfa">➔ [MOTA] identity preserved through full occlusion</text>
+    </g>
+  </g>
+
+  <!-- Right Side: tracking reticle icon -->
+  <g transform="translate(900, 337)" filter="url(#softShadow)">
+    <circle cx="0" cy="0" r="110" fill="#a78bfa" opacity="0.05" filter="url(#glow)"/>
+
+    <polygon points="0,-120 100,-70 100,40 0,120 -100,40 -100,-70" fill="url(#bgGrad)" stroke="url(#accentGrad)" stroke-width="4"/>
+    <polygon points="0,-100 80,-60 80,30 0,100 -80,30 -80,-60" fill="url(#heroGrad)" opacity="0.18"/>
+
+    <!-- motion trail -->
+    <path d="M -70,50 Q -30,-10 20,-30" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6,5" opacity="0.7"/>
+    <circle cx="-70" cy="50" r="6" fill="#38bdf8" opacity="0.5"/>
+
+    <!-- target reticle -->
+    <g transform="translate(30, -20)">
+      <circle cx="0" cy="0" r="34" fill="none" stroke="url(#heroGrad)" stroke-width="4" filter="url(#glow)"/>
+      <circle cx="0" cy="0" r="5" fill="#ffffff"/>
+      <line x1="-46" y1="0" x2="-40" y2="0" stroke="#ffffff" stroke-width="3"/>
+      <line x1="40" y1="0" x2="46" y2="0" stroke="#ffffff" stroke-width="3"/>
+      <line x1="0" y1="-46" x2="0" y2="-40" stroke="#ffffff" stroke-width="3"/>
+      <line x1="0" y1="40" x2="0" y2="46" stroke="#ffffff" stroke-width="3"/>
+      <!-- bounding box corners -->
+      <path d="M -58,-58 L -50,-58 M -58,-58 L -58,-50" stroke="#a78bfa" stroke-width="3" fill="none"/>
+      <path d="M 58,-58 L 50,-58 M 58,-58 L 58,-50" stroke="#a78bfa" stroke-width="3" fill="none"/>
+      <path d="M -58,58 L -50,58 M -58,58 L -58,50" stroke="#a78bfa" stroke-width="3" fill="none"/>
+      <path d="M 58,58 L 50,58 M 58,58 L 58,50" stroke="#a78bfa" stroke-width="3" fill="none"/>
+    </g>
+  </g>
+</svg>
