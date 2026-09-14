@@ -63,10 +63,10 @@
       <line x1="48" y1="26" x2="44" y2="34" stroke="#4285f4" stroke-width="1"/>
       <line x1="34" y1="36" x2="42" y2="40" stroke="#4285f4" stroke-width="1"/>
     </g>
-    <text x="140" y="125" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">litellm module</text>
-    <text x="140" y="140" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">simplified tool parsing</text>
-    <text x="140" y="158" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">no manual Pydantic errors</text>
-    <text x="140" y="176" text-anchor="middle" fill="#34a853" font-family="monospace" font-size="9" font-weight="bold">✓ auto-fetches all tools</text>
+    <text x="140" y="133" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">litellm module</text>
+    <text x="140" y="148" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">simplified tool parsing</text>
+    <text x="140" y="166" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">no manual Pydantic errors</text>
+    <text x="140" y="184" text-anchor="middle" fill="#34a853" font-family="monospace" font-size="9" font-weight="bold">✓ auto-fetches all tools</text>
   </g>
 
   <!-- ═══ SSE TRANSPORT (top-center arrow) ═══ -->
@@ -126,7 +126,7 @@
 
     <!-- MCP Server inside container -->
     <g transform="translate(90, 130)">
-      <rect x="0" y="0" width="180" height="55" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="1"/>
+      <rect x="0" y="0" width="180" height="60" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="1"/>
       <text x="90" y="20" text-anchor="middle" fill="#a78bfa" font-family="monospace" font-size="10" font-weight="bold">MCP Server (JS)</text>
       <text x="90" y="36" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">email automation tools</text>
       <text x="90" y="48" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="8">🔒 credentials stored here</text>

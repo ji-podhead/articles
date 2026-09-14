@@ -34,7 +34,7 @@
 
   <!-- ═══ KALMAN FILTER SECTION (left) ═══ -->
   <g transform="translate(50, 90)">
-    <rect width="520" height="280" rx="14" fill="#0f172a" stroke="url(#kalmanGrad)" stroke-width="2"/>
+    <rect width="520" height="295" rx="14" fill="#0f172a" stroke="url(#kalmanGrad)" stroke-width="2"/>
     <rect width="520" height="46" rx="14" fill="url(#kalmanGrad)" opacity="0.15"/>
     <text x="260" y="24" text-anchor="middle" fill="#38bdf8" font-family="Segoe UI" font-size="18" font-weight="900">
       KALMAN FILTER
@@ -81,7 +81,7 @@
 
   <!-- ═══ DEEPSORT SECTION (right) ═══ -->
   <g transform="translate(630, 90)">
-    <rect width="520" height="280" rx="14" fill="#0f172a" stroke="url(#deepsortGrad)" stroke-width="2" filter="url(#glow)"/>
+    <rect width="520" height="295" rx="14" fill="#0f172a" stroke="url(#deepsortGrad)" stroke-width="2" filter="url(#glow)"/>
     <rect width="520" height="46" rx="14" fill="url(#deepsortGrad)" opacity="0.15"/>
     <text x="260" y="24" text-anchor="middle" fill="#a78bfa" font-family="Segoe UI" font-size="18" font-weight="900">
       DeepSORT
@@ -115,11 +115,11 @@
     </g>
 
     <!-- Advantages -->
-    <g transform="translate(30, 180)">
-      <text x="0" y="12" fill="#a78bfa" font-family="Segoe UI" font-size="11" font-weight="700">KEY ADVANTAGES:</text>
-      <text x="0" y="32" fill="#94a3b8" font-family="monospace" font-size="9">✓ Robust to occlusions + motion blur</text>
-      <text x="0" y="48" fill="#94a3b8" font-family="monospace" font-size="9">✓ High accuracy (motion + appearance synergy)</text>
-      <text x="0" y="64" fill="#94a3b8" font-family="monospace" font-size="9">✓ Multi-target efficient    ✓ Dynamic environments</text>
+    <g transform="translate(30, 234)">
+      <text x="0" y="0" fill="#a78bfa" font-family="Segoe UI" font-size="11" font-weight="700">KEY ADVANTAGES:</text>
+      <text x="0" y="18" fill="#94a3b8" font-family="monospace" font-size="9">✓ Robust to occlusions + motion blur</text>
+      <text x="0" y="34" fill="#94a3b8" font-family="monospace" font-size="9">✓ High accuracy (motion + appearance synergy)</text>
+      <text x="0" y="50" fill="#94a3b8" font-family="monospace" font-size="9">✓ Multi-target efficient    ✓ Dynamic environments</text>
     </g>
   </g>
 
@@ -162,11 +162,11 @@
     </g>
   </g>
 
-  <!-- ═══ TOOLS & SOURCES (bottom-right) ═══ -->
+  <!-- ═══ TOOLS &amp; SOURCES (bottom-right) ═══ -->
   <g transform="translate(630, 400)">
     <rect width="520" height="220" rx="14" fill="#0f172a" stroke="#3a506b" stroke-width="1"/>
     <text x="260" y="25" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI" font-size="14" font-weight="700" letter-spacing="1">
-      🛠️ TOOLS & BENCHMARKS
+      🛠️ TOOLS &amp; BENCHMARKS
     </text>
 
     <g transform="translate(40, 50)">

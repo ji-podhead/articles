@@ -94,7 +94,7 @@
 
   <!-- ═══ LAYER 1: EXECUTION (Behavior Trees) ═══ -->
   <g transform="translate(50, 300)">
-    <rect width="340" height="250" rx="14" fill="#0f172a" stroke="url(#btGrad)" stroke-width="2"/>
+    <rect width="340" height="258" rx="14" fill="#0f172a" stroke="url(#btGrad)" stroke-width="2"/>
     <rect width="340" height="46" rx="14" fill="url(#btGrad)" opacity="0.15"/>
     <text x="170" y="22" text-anchor="middle" fill="#38bdf8" font-family="Segoe UI" font-size="16" font-weight="900">
       1️⃣ EXECUTION
@@ -132,7 +132,7 @@
 
   <!-- ═══ LAYER 2: STRATEGY (PDDL) ═══ -->
   <g transform="translate(430, 300)">
-    <rect width="340" height="250" rx="14" fill="#0f172a" stroke="url(#pddlGrad)" stroke-width="2"/>
+    <rect width="340" height="258" rx="14" fill="#0f172a" stroke="url(#pddlGrad)" stroke-width="2"/>
     <rect width="340" height="46" rx="14" fill="url(#pddlGrad)" opacity="0.15"/>
     <text x="170" y="22" text-anchor="middle" fill="#a78bfa" font-family="Segoe UI" font-size="16" font-weight="900">
       2️⃣ STRATEGY
@@ -162,7 +162,7 @@
 
   <!-- ═══ LAYER 3: INTERFACE (LLM) ═══ -->
   <g transform="translate(810, 300)">
-    <rect width="340" height="250" rx="14" fill="#0f172a" stroke="url(#llmGrad)" stroke-width="2" filter="url(#glow)"/>
+    <rect width="340" height="258" rx="14" fill="#0f172a" stroke="url(#llmGrad)" stroke-width="2" filter="url(#glow)"/>
     <rect width="340" height="46" rx="14" fill="url(#llmGrad)" opacity="0.15"/>
     <text x="170" y="22" text-anchor="middle" fill="#34d399" font-family="Segoe UI" font-size="16" font-weight="900">
       3️⃣ INTERFACE

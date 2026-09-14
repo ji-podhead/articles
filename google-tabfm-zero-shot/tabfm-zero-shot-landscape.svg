@@ -63,7 +63,7 @@
       <circle cx="70" cy="97" r="4" fill="#f59e0b" opacity="0.4"/>
     </g>
 
-    <g transform="translate(25, 180)">
+    <g transform="translate(25, 185)">
       <text x="0" y="0" fill="#fdba74" font-family="Segoe UI" font-size="11" font-weight="700">PROS</text>
       <text x="0" y="16" fill="#94a3b8" font-family="monospace" font-size="9">✓ Battle-tested accuracy</text>
       <text x="0" y="30" fill="#94a3b8" font-family="monospace" font-size="9">✓ Interpretable features</text>
@@ -162,7 +162,7 @@
 
   <!-- ═══ MECHANISM DEEP-DIVE (middle band) ═══ -->
   <g transform="translate(50, 350)">
-    <rect width="1100" height="130" rx="14" fill="#0f172a" stroke="#3a506b" stroke-width="1"/>
+    <rect width="1100" height="140" rx="14" fill="#0f172a" stroke="#3a506b" stroke-width="1"/>
     <text x="550" y="25" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI" font-size="14" font-weight="700" letter-spacing="1">
       ⚙️ HOW TabFM WORKS: THE MECHANISM
     </text>
@@ -191,16 +191,18 @@
 
     <!-- Synthetic bottleneck warning -->
     <g transform="translate(520, 40)">
-      <rect x="0" y="0" width="260" height="70" rx="8" fill="#f59e0b" opacity="0.08"/>
-      <rect x="0" y="0" width="4" height="70" fill="#f59e0b" rx="2"/>
-      <text x="10" y="22" fill="#f59e0b" font-family="Segoe UI" font-size="11" font-weight="700">⚠ THE SYNTHETIC BOTTLENECK</text>
-      <text x="10" y="40" fill="#94a3b8" font-family="monospace" font-size="9">Trained on millions of artificial data models</text>
-      <text x="10" y="56" fill="#64748b" font-family="monospace" font-size="9">Risk: searches for non-existent patterns → hallucination</text>
+      <rect x="0" y="0" width="260" height="84" rx="8" fill="#f59e0b" opacity="0.08"/>
+      <rect x="0" y="0" width="4" height="84" fill="#f59e0b" rx="2"/>
+      <text x="10" y="18" fill="#f59e0b" font-family="Segoe UI" font-size="11" font-weight="700">⚠ THE SYNTHETIC BOTTLENECK</text>
+      <text x="10" y="34" fill="#94a3b8" font-family="monospace" font-size="9">Trained on millions of</text>
+      <text x="10" y="48" fill="#94a3b8" font-family="monospace" font-size="9">artificial data models</text>
+      <text x="10" y="62" fill="#64748b" font-family="monospace" font-size="9">Risk: searches for non-existent</text>
+      <text x="10" y="76" fill="#64748b" font-family="monospace" font-size="9">patterns → hallucination</text>
     </g>
 
     <!-- Comparison verdict -->
     <g transform="translate(810, 40)">
-      <rect x="0" y="0" width="240" height="70" rx="8" fill="#1e293b" stroke="#475569"/>
+      <rect x="0" y="0" width="240" height="84" rx="8" fill="#1e293b" stroke="#475569"/>
       <text x="120" y="22" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI" font-size="11" font-weight="700">PRODUCTION VERDICT</text>
       <text x="120" y="42" text-anchor="middle" fill="#67e8f9" font-family="monospace" font-size="9">Streaming → River</text>
       <text x="120" y="58" text-anchor="middle" fill="#a5b4fc" font-family="monospace" font-size="9">Instant out-of-box → TabFM</text>
