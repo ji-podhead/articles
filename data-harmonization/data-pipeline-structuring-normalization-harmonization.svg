@@ -201,7 +201,7 @@
 
   <!-- ═══ LIFECYCLE BAR (bottom) ═══ -->
   <g transform="translate(50, 520)">
-    <rect width="1100" height="120" rx="14" fill="#0f172a" stroke="#3a506b" stroke-width="1"/>
+    <rect width="1100" height="130" rx="14" fill="#0f172a" stroke="#3a506b" stroke-width="1"/>
     <text x="550" y="28" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI" font-size="14" font-weight="700" letter-spacing="1">
       THE LIFECYCLE: MULTI-SOURCE PIPELINE (cycles repeat)
     </text>
@@ -236,12 +236,12 @@
     </g>
 
     <!-- Cycle arrows -->
-    <path d="M 100,105 Q 550,95 900,105" fill="none" stroke="#475569" stroke-width="1" stroke-dasharray="4,4"/>
-    <text x="550" y="98" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">↻ repeat per data batch</text>
+    <path d="M 100,125 Q 550,115 900,125" fill="none" stroke="#475569" stroke-width="1" stroke-dasharray="4,4"/>
+    <text x="550" y="118" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">↻ repeat per data batch</text>
   </g>
 
   <!-- Hashtags -->
-  <text x="600" y="665" text-anchor="middle" fill="#475569" font-family="monospace" font-size="10">
+  <text x="600" y="670" text-anchor="middle" fill="#475569" font-family="monospace" font-size="10">
     #DataEngineering #DataScience #DataHarmonization #MachineLearning #SystemArchitecture
   </text>
 </svg>

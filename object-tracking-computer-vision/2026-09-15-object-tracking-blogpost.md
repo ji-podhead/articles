@@ -2,6 +2,8 @@
 
 **Published:** 2026-09-15 · **Author:** Leonardo Jacobi · **Tags:** #ObjectTracking #ComputerVision #Robotics #AI #KalmanFilter #DeepSORT
 
+![Side-by-side diagram of the Kalman Filter's recursive prediction-correction cycle next to DeepSORT's motion (Kalman) plus appearance (deep re-identification) modules fusing into data association, below which the MOTA accuracy formula (1 minus false positives, false negatives and identity switches over ground truth) is broken down term by term, alongside tools and benchmarks (py-motmetrics, MOT Challenge, OpenCV trackers, OC-SORT+CMC)](object-tracking-kalman-deepsort.svg)
+
 Object trackers are essential when it's necessary to maintain information about a detected object that may not always be visible. Common scenarios include partially or fully occluded objects, or objects temporarily leaving the frame.
 
 ## The Kalman Filter

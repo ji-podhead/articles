@@ -2,6 +2,8 @@
 
 **Published:** 2026-09-15 · **Author:** Leonardo Jacobi · **Tags:** #MachineLearning #DataEngineering #MLOps #TabularAI #GoogleResearch
 
+![Comparison of three tabular ML paradigms side by side — XGBoost (battle-tested static-table champion, retrain per dataset), River (incremental online learning, ultra-low latency, lightweight only), and Google TabFM (zero-shot foundation model with frozen weights and row-column attention) — plus a mechanism deep-dive on TabFM's cross-attention and row-compression, the synthetic-data-bottleneck risk, and a production verdict: streaming favors River, instant out-of-the-box favors TabFM](tabfm-zero-shot-landscape.svg)
+
 Google Research just dropped the official Google Research Announcement. It promises zero-shot machine learning for structured databases. No more manual tuning or retraining loops.
 
 For years, processing structured data has been a battle between two dominant production paradigms. On one hand, you have XGBoost, the reigning champion for static tables, which unfortunately requires time-consuming retraining for every single new dataset. On the other hand, for live data feeds and high-throughput streams, you have frameworks like River, which employ true online learning (incremental learning) to adjust model weights on the fly.
