@@ -1,0 +1,243 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="TabFM vs XGBoost vs River — Zero-Shot Tabular ML Landscape">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329"/>
+      <stop offset="100%" stop-color="#1c2541"/>
+    </linearGradient>
+    <linearGradient id="xgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+    <linearGradient id="riverGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+    <linearGradient id="tabfmGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bgGrad)"/>
+  <rect width="1200" height="675" fill="none" stroke="#3a506b" stroke-width="1" opacity="0.3"/>
+
+  <!-- Title -->
+  <text x="600" y="42" text-anchor="middle" fill="#fafafa" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="900" letter-spacing="1.5">
+    ZERO-SHOT TABULAR ML: THE NEW LANDSCAPE
+  </text>
+  <text x="600" y="64" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="13">
+    XGBoost vs River (online) vs Google TabFM (foundation model)
+  </text>
+
+  <!-- ═══ THREE PARADIGMS (horizontal cards) ═══ -->
+
+  <!-- Card 1: XGBoost -->
+  <g transform="translate(50, 90)">
+    <rect width="350" height="240" rx="14" fill="#0f172a" stroke="url(#xgGrad)" stroke-width="2"/>
+    <rect width="350" height="50" rx="14" fill="url(#xgGrad)" opacity="0.15"/>
+    <text x="175" y="28" text-anchor="middle" fill="#f59e0b" font-family="Segoe UI" font-size="18" font-weight="900">
+      XGBoost
+    </text>
+    <text x="175" y="44" text-anchor="middle" fill="#fdba74" font-family="monospace" font-size="10">
+      static tables champion
+    </text>
+
+    <g transform="translate(25, 65)">
+      <!-- Tree diagram -->
+      <circle cx="40" cy="20" r="10" fill="none" stroke="#f59e0b" stroke-width="2"/>
+      <line x1="40" y1="30" x2="20" y2="55" stroke="#f59e0b" stroke-width="1" opacity="0.5"/>
+      <line x1="40" y1="30" x2="60" y2="55" stroke="#f59e0b" stroke-width="1" opacity="0.5"/>
+      <circle cx="20" cy="65" r="7" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.6"/>
+      <circle cx="60" cy="65" r="7" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.6"/>
+      <line x1="20" y1="72" x2="10" y2="90" stroke="#f59e0b" stroke-width="1" opacity="0.3"/>
+      <line x1="20" y1="72" x2="30" y2="90" stroke="#f59e0b" stroke-width="1" opacity="0.3"/>
+      <line x1="60" y1="72" x2="50" y2="90" stroke="#f59e0b" stroke-width="1" opacity="0.3"/>
+      <line x1="60" y1="72" x2="70" y2="90" stroke="#f59e0b" stroke-width="1" opacity="0.3"/>
+      <circle cx="10" cy="97" r="4" fill="#f59e0b" opacity="0.4"/>
+      <circle cx="30" cy="97" r="4" fill="#f59e0b" opacity="0.4"/>
+      <circle cx="50" cy="97" r="4" fill="#f59e0b" opacity="0.4"/>
+      <circle cx="70" cy="97" r="4" fill="#f59e0b" opacity="0.4"/>
+    </g>
+
+    <g transform="translate(25, 180)">
+      <text x="0" y="0" fill="#fdba74" font-family="Segoe UI" font-size="11" font-weight="700">PROS</text>
+      <text x="0" y="16" fill="#94a3b8" font-family="monospace" font-size="9">✓ Battle-tested accuracy</text>
+      <text x="0" y="30" fill="#94a3b8" font-family="monospace" font-size="9">✓ Interpretable features</text>
+      <text x="150" y="0" fill="#f87171" font-family="Segoe UI" font-size="11" font-weight="700">CONS</text>
+      <text x="150" y="16" fill="#94a3b8" font-family="monospace" font-size="9">✗ Retrain per dataset</text>
+      <text x="150" y="30" fill="#94a3b8" font-family="monospace" font-size="9">✗ No streaming</text>
+    </g>
+  </g>
+
+  <!-- Card 2: River (Online Learning) -->
+  <g transform="translate(425, 90)">
+    <rect width="350" height="240" rx="14" fill="#0f172a" stroke="url(#riverGrad)" stroke-width="2"/>
+    <rect width="350" height="50" rx="14" fill="url(#riverGrad)" opacity="0.15"/>
+    <text x="175" y="28" text-anchor="middle" fill="#06b6d4" font-family="Segoe UI" font-size="18" font-weight="900">
+      River (Online)
+    </text>
+    <text x="175" y="44" text-anchor="middle" fill="#67e8f9" font-family="monospace" font-size="10">
+      incremental / streaming champion
+    </text>
+
+    <!-- Stream diagram -->
+    <g transform="translate(25, 65)">
+      <text x="0" y="0" fill="#67e8f9" font-family="monospace" font-size="9">data points →</text>
+      <circle cx="80" cy="25" r="5" fill="#06b6d4" opacity="0.8">
+        <animate attributeName="cx" values="60;140;60" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="100" cy="45" r="5" fill="#06b6d4" opacity="0.6">
+        <animate attributeName="cx" values="80;160;80" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="90" cy="65" r="5" fill="#06b6d4" opacity="0.4">
+        <animate attributeName="cx" values="70;150;70" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Model box -->
+      <rect x="170" y="10" width="60" height="70" rx="8" fill="#1e293b" stroke="#06b6d4" stroke-width="1.5"/>
+      <text x="200" y="38" text-anchor="middle" fill="#06b6d4" font-family="monospace" font-size="9">model</text>
+      <text x="200" y="52" text-anchor="middle" fill="#67e8f9" font-family="monospace" font-size="8">weights</text>
+      <text x="200" y="66" text-anchor="middle" fill="#67e8f9" font-family="monospace" font-size="8">↑↓ update</text>
+      <!-- Arrows -->
+      <line x1="145" y1="25" x2="165" y2="25" stroke="#06b6d4" stroke-width="1.5" opacity="0.6"/>
+      <line x1="145" y1="45" x2="165" y2="45" stroke="#06b6d4" stroke-width="1.5" opacity="0.6"/>
+      <line x1="145" y1="65" x2="165" y2="65" stroke="#06b6d4" stroke-width="1.5" opacity="0.6"/>
+    </g>
+
+    <g transform="translate(25, 180)">
+      <text x="0" y="0" fill="#67e8f9" font-family="Segoe UI" font-size="11" font-weight="700">PROS</text>
+      <text x="0" y="16" fill="#94a3b8" font-family="monospace" font-size="9">✓ Ultra-low latency</text>
+      <text x="0" y="30" fill="#94a3b8" font-family="monospace" font-size="9">✓ Adapts on-the-fly</text>
+      <text x="150" y="0" fill="#f87171" font-family="Segoe UI" font-size="11" font-weight="700">CONS</text>
+      <text x="150" y="16" fill="#94a3b8" font-family="monospace" font-size="9">✗ Lightweight only</text>
+      <text x="150" y="30" fill="#94a3b8" font-family="monospace" font-size="9">✗ Parametric limits</text>
+    </g>
+  </g>
+
+  <!-- Card 3: TabFM (NEW) -->
+  <g transform="translate(800, 90)">
+    <rect width="350" height="240" rx="14" fill="#0f172a" stroke="url(#tabfmGrad)" stroke-width="2" filter="url(#glow)"/>
+    <rect width="350" height="50" rx="14" fill="url(#tabfmGrad)" opacity="0.15"/>
+    <text x="175" y="28" text-anchor="middle" fill="#818cf8" font-family="Segoe UI" font-size="18" font-weight="900">
+      TabFM ★ NEW
+    </text>
+    <text x="175" y="44" text-anchor="middle" fill="#a5b4fc" font-family="monospace" font-size="10">
+      zero-shot foundation model
+    </text>
+
+    <!-- Frozen weights + attention -->
+    <g transform="translate(25, 65)">
+      <rect x="0" y="0" width="80" height="70" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+      <text x="40" y="22" text-anchor="middle" fill="#818cf8" font-family="monospace" font-size="9" font-weight="bold">FROZEN</text>
+      <text x="40" y="38" text-anchor="middle" fill="#a5b4fc" font-family="monospace" font-size="8">weights</text>
+      <text x="40" y="52" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="7">🔒 never updated</text>
+      <!-- Lock icon -->
+      <rect x="32" y="56" width="16" height="10" rx="2" fill="none" stroke="#818cf8" stroke-width="1"/>
+      <path d="M 35,56 V 52 A 5,5 0 0 1 45,52 V 56" fill="none" stroke="#818cf8" stroke-width="1"/>
+
+      <!-- Attention lines to table -->
+      <line x1="80" y1="15" x2="130" y2="35" stroke="#818cf8" stroke-width="1" opacity="0.5"/>
+      <line x1="80" y1="35" x2="130" y2="35" stroke="#818cf8" stroke-width="1" opacity="0.5"/>
+      <line x1="80" y1="55" x2="130" y2="35" stroke="#818cf8" stroke-width="1" opacity="0.5"/>
+
+      <!-- Table (2D input) -->
+      <rect x="130" y="10" width="140" height="50" rx="6" fill="#1e293b" stroke="#6366f1" stroke-width="1"/>
+      <text x="200" y="28" text-anchor="middle" fill="#a5b4fc" font-family="monospace" font-size="8">row-col attention</text>
+      <text x="200" y="42" text-anchor="middle" fill="#818cf8" font-family="monospace" font-size="8">single forward pass</text>
+      <text x="200" y="54" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="7">2D + orderless tables</text>
+    </g>
+
+    <g transform="translate(25, 180)">
+      <text x="0" y="0" fill="#a5b4fc" font-family="Segoe UI" font-size="11" font-weight="700">PROS</text>
+      <text x="0" y="16" fill="#94a3b8" font-family="monospace" font-size="9">✓ Zero-shot predictions</text>
+      <text x="0" y="30" fill="#94a3b8" font-family="monospace" font-size="9">✓ No retraining loops</text>
+      <text x="150" y="0" fill="#f87171" font-family="Segoe UI" font-size="11" font-weight="700">RISK</text>
+      <text x="150" y="16" fill="#94a3b8" font-family="monospace" font-size="9">⚠ Synthetic pre-train</text>
+      <text x="150" y="30" fill="#94a3b8" font-family="monospace" font-size="9">⚠ Hallucinated patterns</text>
+    </g>
+  </g>
+
+  <!-- ═══ MECHANISM DEEP-DIVE (middle band) ═══ -->
+  <g transform="translate(50, 350)">
+    <rect width="1100" height="130" rx="14" fill="#0f172a" stroke="#3a506b" stroke-width="1"/>
+    <text x="550" y="25" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI" font-size="14" font-weight="700" letter-spacing="1">
+      ⚙️ HOW TabFM WORKS: THE MECHANISM
+    </text>
+
+    <!-- Cross-attention diagram -->
+    <g transform="translate(50, 40)">
+      <rect x="0" y="0" width="120" height="70" rx="8" fill="#1e293b" stroke="#475569"/>
+      <text x="60" y="25" text-anchor="middle" fill="#7dd3fc" font-family="monospace" font-size="10">Cross-Attention</text>
+      <text x="60" y="42" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">rows ↔ columns</text>
+      <text x="60" y="58" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="8">permutation-aware</text>
+    </g>
+
+    <g transform="translate(200, 40)">
+      <rect x="0" y="0" width="120" height="70" rx="8" fill="#1e293b" stroke="#475569"/>
+      <text x="60" y="25" text-anchor="middle" fill="#a5b4fc" font-family="monospace" font-size="10">Row Compression</text>
+      <text x="60" y="42" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">2D → fixed context</text>
+      <text x="60" y="58" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="8">orderless handling</text>
+    </g>
+
+    <g transform="translate(350, 40)">
+      <rect x="0" y="0" width="140" height="70" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
+      <text x="70" y="25" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="10">Ensemble Variant</text>
+      <text x="70" y="42" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">+ SVD features</text>
+      <text x="70" y="58" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="8">performance boost</text>
+    </g>
+
+    <!-- Synthetic bottleneck warning -->
+    <g transform="translate(520, 40)">
+      <rect x="0" y="0" width="260" height="70" rx="8" fill="#f59e0b" opacity="0.08"/>
+      <rect x="0" y="0" width="4" height="70" fill="#f59e0b" rx="2"/>
+      <text x="10" y="22" fill="#f59e0b" font-family="Segoe UI" font-size="11" font-weight="700">⚠ THE SYNTHETIC BOTTLENECK</text>
+      <text x="10" y="40" fill="#94a3b8" font-family="monospace" font-size="9">Trained on millions of artificial data models</text>
+      <text x="10" y="56" fill="#64748b" font-family="monospace" font-size="9">Risk: searches for non-existent patterns → hallucination</text>
+    </g>
+
+    <!-- Comparison verdict -->
+    <g transform="translate(810, 40)">
+      <rect x="0" y="0" width="240" height="70" rx="8" fill="#1e293b" stroke="#475569"/>
+      <text x="120" y="22" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI" font-size="11" font-weight="700">PRODUCTION VERDICT</text>
+      <text x="120" y="42" text-anchor="middle" fill="#67e8f9" font-family="monospace" font-size="9">Streaming → River</text>
+      <text x="120" y="58" text-anchor="middle" fill="#a5b4fc" font-family="monospace" font-size="9">Instant out-of-box → TabFM</text>
+    </g>
+  </g>
+
+  <!-- ═══ RESOURCES BAR (bottom) ═══ -->
+  <g transform="translate(50, 505)">
+    <rect width="1100" height="140" rx="14" fill="#0f172a" stroke="#3a506b" stroke-width="1"/>
+    <text x="550" y="25" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI" font-size="14" font-weight="700" letter-spacing="1">
+      📊 RESOURCES
+    </text>
+
+    <g transform="translate(50, 45)">
+      <rect width="300" height="70" rx="8" fill="#1e293b" stroke="#475569"/>
+      <text x="150" y="22" text-anchor="middle" fill="#818cf8" font-family="Segoe UI" font-size="11" font-weight="700">Google Research Blog</text>
+      <text x="150" y="42" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">research.google/blog</text>
+      <text x="150" y="58" text-anchor="middle" fill="#475569" font-family="monospace" font-size="8">introducing-tabfm</text>
+    </g>
+
+    <g transform="translate(380, 45)">
+      <rect x="0" y="0" width="300" height="70" rx="8" fill="#1e293b" stroke="#475569"/>
+      <text x="150" y="22" text-anchor="middle" fill="#34d399" font-family="Segoe UI" font-size="11" font-weight="700">GitHub Source Code</text>
+      <text x="150" y="42" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">github.com/google-research/tabfm</text>
+      <text x="150" y="58" text-anchor="middle" fill="#475569" font-family="monospace" font-size="8">official implementation</text>
+    </g>
+
+    <g transform="translate(710, 45)">
+      <rect x="0" y="0" width="340" height="70" rx="8" fill="#1e293b" stroke="#475569"/>
+      <text x="170" y="22" text-anchor="middle" fill="#f59e0b" font-family="Segoe UI" font-size="11" font-weight="700">Hugging Face Weights</text>
+      <text x="170" y="42" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">huggingface.co/google/tabfm-1.0.0</text>
+      <text x="170" y="58" text-anchor="middle" fill="#475569" font-family="monospace" font-size="8">PyTorch + JAX/Flax variants</text>
+    </g>
+  </g>
+
+  <!-- Hashtags -->
+  <text x="600" y="665" text-anchor="middle" fill="#475569" font-family="monospace" font-size="10">
+    #MachineLearning #DataEngineering #MLOps #DataScience #TabularAI #DeepLearning #GoogleResearch
+  </text>
+</svg>
