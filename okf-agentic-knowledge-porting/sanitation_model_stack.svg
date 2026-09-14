@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Sanitation Model Stack — three AI layers that turn research slop into clean OKF">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329"/>
+      <stop offset="100%" stop-color="#1c2541"/>
+    </linearGradient>
+    <linearGradient id="l1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+    <linearGradient id="l2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="l3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0,0 L 10,5 L 0,10" fill="none" stroke="#64748b" stroke-width="2"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <text x="600" y="48" text-anchor="middle" fill="#fafafa" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="900">
+    SANITATION STACK: MODELS &amp; GUARDRAILS
+  </text>
+  <text x="600" y="72" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="13">
+    classify → generate → guard — the 3 AI layers between slop and clean OKF
+  </text>
+
+  <!-- ═══ The 3 layers (left column flow) ═══ -->
+  <g transform="translate(60, 110)">
+    <rect width="1080" height="470" rx="16" fill="#0f172a" stroke="#3a506b" stroke-width="1"/>
+  </g>
+
+  <!-- Raw slop input -->
+  <g transform="translate(90, 135)">
+    <rect width="200" height="80" rx="10" fill="#450a0a" stroke="#7f1d1d" stroke-width="1.5"/>
+    <text x="100" y="30" text-anchor="middle" fill="#f87171" font-family="Segoe UI" font-size="13" font-weight="900">RAW SLOP</text>
+    <text x="100" y="50" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">chat logs · exports · notes</text>
+    <text x="100" y="65" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="8">paths, IPs, filler, tickets</text>
+  </g>
+
+  <!-- Arrow raw → L1 -->
+  <line x1="290" y1="175" x2="330" y2="175" stroke="#64748b" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- LAYER 1: BERT classification -->
+  <g transform="translate(340, 110)">
+    <rect width="330" height="130" rx="12" fill="#1e293b" stroke="url(#l1)" stroke-width="1.5"/>
+    <rect width="330" height="40" rx="12" fill="url(#l1)" opacity="0.12"/>
+    <text x="165" y="24" text-anchor="middle" fill="#f59e0b" font-family="Segoe UI" font-size="13" font-weight="900">LAYER 1 · CLASSIFY &amp; FLAG PII</text>
+    <text x="30" y="62" fill="#fdba74" font-family="monospace" font-size="10" font-weight="bold">DeBERTa-v3 (NER)</text>
+    <text x="30" y="78" fill="#94a3b8" font-family="monospace" font-size="9">flags IPs · passwords · AWS keys · paths</text>
+    <text x="30" y="100" fill="#fdba74" font-family="monospace" font-size="10" font-weight="bold">all-MiniLM-L6-v2 (embedding)</text>
+    <text x="30" y="116" fill="#94a3b8" font-family="monospace" font-size="9">pre-matches raw text → proposes topic/subtopic</text>
+    <text x="30" y="130" fill="#475569" font-family="monospace" font-size="8">local CPU · deterministic · cheap</text>
+  </g>
+
+  <line x1="675" y1="175" x2="715" y2="175" stroke="#64748b" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- LAYER 2: generative extraction -->
+  <g transform="translate(725, 110)">
+    <rect width="390" height="130" rx="12" fill="#1e293b" stroke="url(#l2)" stroke-width="1.5"/>
+    <rect width="390" height="40" rx="12" fill="url(#l2)" opacity="0.12"/>
+    <text x="195" y="24" text-anchor="middle" fill="#38bdf8" font-family="Segoe UI" font-size="13" font-weight="900">LAYER 2 · EXTRACT &amp; RESTRUCTURE</text>
+    <text x="30" y="62" fill="#7dd3fc" font-family="monospace" font-size="10" font-weight="bold">Llama-3-8B / Mistral-7B (local, Ollama)</text>
+    <text x="30" y="78" fill="#94a3b8" font-family="monospace" font-size="9">strips filler · splits into heading sections</text>
+    <text x="30" y="100" fill="#7dd3fc" font-family="monospace" font-size="10" font-weight="bold">Gemini response_schema / structured outputs</text>
+    <text x="30" y="116" fill="#94a3b8" font-family="monospace" font-size="9">forces frontmatter to the OKF schema exactly</text>
+    <text x="30" y="130" fill="#475569" font-family="monospace" font-size="8">transformation, not invention — low hallucination risk</text>
+  </g>
+
+  <!-- Down arrow to layer 3 -->
+  <line x1="920" y1="245" x2="920" y2="285" stroke="#64748b" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- LAYER 3: guardrails -->
+  <g transform="translate(340, 295)">
+    <rect width="775" height="130" rx="12" fill="#1e293b" stroke="url(#l3)" stroke-width="1.5"/>
+    <rect width="775" height="40" rx="12" fill="url(#l3)" opacity="0.12"/>
+    <text x="387" y="24" text-anchor="middle" fill="#818cf8" font-family="Segoe UI" font-size="13" font-weight="900">LAYER 3 · PROGRAMMATIC GUARDRAILS (PRE-COMMIT)</text>
+    <text x="30" y="62" fill="#a5b4fc" font-family="monospace" font-size="10" font-weight="bold">NeMo Guardrails (NVIDIA)</text>
+    <text x="30" y="78" fill="#94a3b8" font-family="monospace" font-size="9">blocks unverified code + conversational residue → triggers rewrite</text>
+    <text x="30" y="100" fill="#a5b4fc" font-family="monospace" font-size="10" font-weight="bold">Llama Guard 3</text>
+    <text x="30" y="116" fill="#94a3b8" font-family="monospace" font-size="9">final scan: no proprietary leak ships as visibility: public</text>
+    <text x="30" y="130" fill="#475569" font-family="monospace" font-size="8">rules live in code — reviewable, testable, deterministic</text>
+  </g>
+
+  <!-- Arrow to clean output -->
+  <line x1="340" y1="360" x2="300" y2="360" stroke="#64748b" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Clean OKF output -->
+  <g transform="translate(90, 315)">
+    <rect width="200" height="90" rx="10" fill="#052e16" stroke="#166534" stroke-width="1.5"/>
+    <text x="100" y="32" text-anchor="middle" fill="#34d399" font-family="Segoe UI" font-size="13" font-weight="900">CLEAN OKF</text>
+    <text x="100" y="52" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">frontmatter (v0.2 compliant)</text>
+    <text x="100" y="66" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">heading-bounded sections</text>
+    <text x="100" y="80" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="8">lifecycle · sources · provenance</text>
+  </g>
+
+  <!-- Why BERT-first band -->
+  <g transform="translate(60, 605)">
+    <rect width="1080" height="52" rx="10" fill="#f59e0b" opacity="0.07"/>
+    <text x="540" y="24" text-anchor="middle" fill="#f59e0b" font-family="Segoe UI" font-size="12" font-weight="900">
+      ⚠ ORDER MATTERS
+    </text>
+    <text x="540" y="42" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="10">
+      redact PII with a CPU encoder BEFORE the generative pass — discovering it after it's woven into a summary is far too late
+    </text>
+  </text>
+</svg>
