@@ -6,7 +6,7 @@
 
 At some point every growing team hits the same wall. You've got a handful of `iptables`/`ufw` rules, a dashboard that shows CPU and memory, and a gut feeling that you'd notice if something bad happened. Then something almost happens — a scan you can't explain in the access log, a port you didn't remember opening, an alert from a tool you installed eighteen months ago and forgot existed — and you realize you have logs, but you don't have a **SIEM**. You have data. Nobody is looking at it, nothing is correlating it, and nothing would tell you if three small, individually-boring events were actually one attack.
 
-This is the point where most small and mid-sized teams start Googling "SIEM for SMB" and get buried in vendor marketing. So let's do the un-marketed version: what a SIEM actually is, which components do the real work (Suricata, eBPF sensors, firewalls, WAF, log correlation), what specifically breaks for small teams, and — because this is the question everyone eventually asks — whether to build it yourself with open source or hand it to AWS.
+This is the point where most small and mid-sized teams start Googling "SIEM for SMB" and get buried in vendor marketing. So let's do the un-marketed version: what a SIEM actually is, which components do the real work (Suricata, eBPF sensors, firewalls, WAF, log correlation), what specifically breaks for small teams, and — because this is the question everyone eventually asks — whether to build it yourself with open source or hand it to AWS. Where a concrete example helps more than another abstract diagram, this guide points at JiMesh, an open-source AI gateway and container platform that ships both paths as a provider option under one identity chain.
 
 ## What a SIEM actually does (the 60-second version)
 
@@ -175,6 +175,36 @@ If you run more than one application, "something suspicious happened" is not use
 On AWS, this means resource tags (project, environment, team) applied consistently to every EC2 instance, ECS task, and Lambda function — GuardDuty and Security Hub findings carry the resource ARN, so a finding is filterable by tag from the moment it's created, and a per-application dashboard is just a filtered view of Security Hub, not a separate system. On the open-source side, the equivalent discipline is enriching every log line with container name, Docker/Kubernetes labels, and namespace *before* it's shipped to the SIEM — Suricata's flow metadata can be correlated with `conntrack`/container network namespaces to tie a network event back to the container that generated it, and the indexer (OpenSearch/Kibana) can then facet by that label the same way Security Hub facets by tag.
 
 The uncomfortable truth: this only works if the tagging/labeling discipline is enforced from day one. A SIEM cannot retroactively attribute an event to a deployment that was never tagged — "no owning tag" just becomes its own bucket, and a large one if the discipline slips.
+
+## How a Real Platform Implements This: the Identity Chain and the Provider-Swap Trick
+
+Everything above is the theory. Here is how one real, open-source AI gateway and container platform (JiMesh) actually implements attribution and provider-swapping, because the pattern is more concrete once you see the code shape.
+
+JiMesh runs a provisioning-based identity chain: every workspace container exists because JiMesh spawned it, and every event it produces carries `container_id → session_id → project_id` from the moment it's created — not attached after the fact by a tagging convention someone has to remember to apply. Commercial SIEMs return verdicts and stop there; none of them can pause the container that made the call, because none of them provisioned it. Attribution isn't a SIEM feature choice — whether you can act on a finding at all depends on whether something in your stack actually owns the workload's lifecycle.
+
+The second piece is what keeps "self-hosted OSS" and "AWS-native" from becoming two separate dashboards to maintain:
+
+![Architecture diagram showing a platform as the system of record — workspaces with a default-drop firewall flow through an identity-chain layer (container_id → session, minted at provisioning, never self-declared) into an extended security-events schema (source, raw_id, severity, confidence, model_version), which branches into two small interfaces for shipping findings out and pulling findings in, both feeding the identical dashboard API](architecture_kniff.svg)
+
+*The dashboard never talks to a SIEM directly — only to the platform's own schema. Wazuh, Security Hub, or a future third provider differ only in which adapter is plugged in, not in what the dashboard renders.*
+
+```go
+// Where do platform findings go? (shipper)
+type FindingSink interface {
+    Name() string // "builtin" | "wazuh" | "securityhub"
+    Ship(e SecurityEventRow) error
+}
+
+// Where do external findings come from? (ingest)
+type FindingSource interface {
+    Name() string
+    Poll(ctx context.Context) ([]SecurityEventRow, error)
+}
+```
+
+A single setting (`security_pipeline: builtin | wazuh | aws`) switches source/sink pairs. The dashboard API — events, freeze/release, the forensics report, the ports panel — stays byte-identical across all three. Switching provider costs one mapper and one setting, not a second dashboard, and since AWS's own finding format (ASFF) is OCSF-compatible, a third provider later is another mapper, not a migration.
+
+**The honest limits:** deep-dive UIs (the Wazuh dashboard vs. the AWS console) stay links, never embedded widgets — a SIEM's own UI is not worth re-implementing. GuardDuty's ML is a black box, which is exactly why a `builtin` path keeping a deterministic, testable rules layer underneath matters. And an AWS sink costs per event, so sampling and severity gates belong in configuration, not as a hardcoded assumption.
 
 ## The Two-Stage AI Security Response: Cheap Detection, Expensive Thinking
 
@@ -382,6 +412,8 @@ What does your team actually run today — self-hosted, managed, or the "we'll g
 - **Amazon SageMaker:** https://docs.aws.amazon.com/sagemaker/ · [Model Monitor](https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html)
 - **CloudiQS (AWS Advanced Tier Partner) — Security Assessment methodology:** https://cloudiqs.com/solution/security-assessment-solution/ — referenced as a real-world assembly pattern of the AWS-native services above, not as an endorsement.
 - **CloudMatos — "The Power of AI-Driven Automation in SMB Cloud Security," Sept 11, 2025** — referenced for the SMB threat-class framing and the CNAPP architecture overview.
+- **Wazuh + Falco official integration guide:** https://wazuh.com/blog/cloud-native-security-with-wazuh-and-falco/
+- **JiMesh (identity chain + provider-swap trick, internal references):** `docs/research/R26_Siem.md`, `docs/sprints/SPRINT-32-SIEM-FOUNDATION.md`, `docs/sprints/SPRINT-33-KLAF-AWS-MULTI-PROVIDER.md`
 
 ## Glossary — the alphabet soup, explained once
 
