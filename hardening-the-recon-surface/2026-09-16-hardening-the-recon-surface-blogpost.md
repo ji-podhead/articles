@@ -51,6 +51,8 @@ Part 1's finding here deserves its own line item because it's easy to assume a C
 
 **OpenHands is the one where the quick-start itself is the vulnerability, not a later misconfiguration** — the documented `-p 3000:3000` Docker command publishes to every interface with no separate step required, and the only credential the setup flow asks for secures LLM billing, not the instance. If you run OpenHands anywhere other than an isolated local machine, pin the port explicitly to loopback (`-p 127.0.0.1:3000:3000`, not bare `-p 3000:3000`) and put real authentication in front of it before anything else — and given CVE-2026-33718 showed the main API itself as a command-injection path directly into the code-execution sandbox, treat the web UI and the sandbox as one trust boundary, not two, regardless of which ports they each listen on.
 
+**LiteLLM is the case where "no auth by default" is documented, opt-in behavior, not an oversight** — which makes it worse in practice, because it reads as an intentional design choice someone has to actively override rather than a bug someone has to actively trigger. There's exactly one setting that matters: set `LITELLM_MASTER_KEY` before the proxy ever accepts its first request, in every environment, including throwaway internal test deployments — "it's just internal" is precisely the reasoning that put ~175,000 Ollama instances on the internet earlier in this article, and a proxy that exists specifically to guard paid provider credentials has less excuse for skipping it than almost anything else in this piece. Beyond the master key, patch to at least v1.65.4.dev6 for CVE-2024-6825 (the `post_call_rules` remote-code-execution bug) and, consistent with the rest of this article, never let a config-loading feature import an arbitrary, attacker-influenced module path — validate callback/module references against an explicit allowlist rather than trusting a naming convention.
+
 ## Secret Leaks: Stop the Push, Not Just the Search
 
 Everything in Part 1's leak-discovery section (GitHub dorking, TruffleHog, Gitleaks, GitGuardian, IntelX) exists because secrets keep getting committed. The fix operates in layers, and the earliest layer is the cheapest:
@@ -79,6 +81,8 @@ Every finding across both articles reduces to the same root cause: a control tha
 - CVE-2026-44112 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2026-44112
 - OpenHands local setup docs — https://docs.openhands.dev/usage/local-setup
 - CVE-2026-33718 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2026-33718
+- LiteLLM virtual keys / master key docs — https://docs.litellm.ai/docs/proxy/virtual_keys
+- CVE-2024-6825 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2024-6825
 - vLLM quickstart (API key configuration) — https://docs.vllm.ai/en/stable/getting_started/quickstart/
 - Qdrant authentication docs — https://qdrant.tech/documentation/cloud/authentication/
 - Milvus connection/auth docs — https://milvus.io/docs/v2.3.x/manage_connection.md

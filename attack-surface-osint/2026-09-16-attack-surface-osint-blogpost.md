@@ -88,6 +88,12 @@ Shodan:  port:18789 content-type:"application/json" "tools"
 
 Every mitigation OpenClaw's own team now recommends is a restatement of this article's recurring fixes: bind strictly to loopback, forward real client IPs correctly if a proxy sits in front, require the token even on localhost, and run the agent's own tool-execution surface inside an isolated sandbox rather than trusting the token check alone to hold.
 
+## LiteLLM: The Proxy That Sits in Front of Every Provider Key
+
+**LiteLLM** is a different kind of target from everything else in this article — not an agent, a proxy: teams run it as a central gateway that routes requests to OpenAI, Anthropic and other providers behind one internal endpoint, issuing "virtual keys" to internal users instead of handing out real provider credentials. That centralization is exactly what makes an exposed instance worse than a single leaked key. The proxy server defaults to port **4000** and binds `0.0.0.0` out of the box (the documented Docker quick-start is a bare `-p 4000:4000`), and — the detail worth being precise about — its own documentation states plainly that if `LITELLM_MASTER_KEY` is left unset, **no authentication is applied to the endpoints at all**. It's opt-in security on a tool whose entire purpose is guarding access to paid API keys.
+
+An exposed, keyless instance is identifiable by a Swagger UI titled "LiteLLM API" at `/` and `/docs`, and a `/health` endpoint returning a JSON shape (`{"healthy_endpoints": [...], "unhealthy_endpoints": [...]}`) — `http.title:"LiteLLM API"` is the reasonable starting query on Shodan (no dedicated product fingerprint exists, and this hasn't been confirmed against live results, so treat it as a starting point). Worst case for an unauthenticated instance isn't just inference theft on someone else's bill: with no master key set, the admin surface — key creation, spend tracking, model configuration — is reachable too, which is a wider compromise than the proxy's own "virtual key" model was designed to allow. Separately, and independently confirmed against NVD, **CVE-2024-6825** (CVSS 8.8) was a real remote-code-execution bug in LiteLLM's `post_call_rules` config handling: a callback value gets split at its final `.` and the remainder imported as a Python module, so setting the callback to something like `os.system` let an attacker run arbitrary commands whenever a chat response was processed — fixed in v1.65.4.dev6. That one required some existing configuration access to trigger, which is exactly why leaving the master key unset in the first place is the finding that actually matters here.
+
 ## Finding Leaked Secrets: Dorking and Beyond
 
 Public code hosting leaks credentials constantly, and there's a distinct tooling stack for finding it — separate from the port/banner scanners above, because Google's crawler doesn't index code deeply or quickly enough to be useful here.
@@ -149,3 +155,8 @@ Public code hosting leaks credentials constantly, and there's a distinct tooling
 - OpenHands local setup docs — https://docs.openhands.dev/usage/local-setup
 - CVE-2026-33718 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2026-33718
 - CVE-2026-19022 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2026-19022
+- LiteLLM — https://github.com/BerriAI/litellm
+- LiteLLM proxy deploy docs — https://docs.litellm.ai/docs/proxy/deploy
+- LiteLLM virtual keys / master key docs — https://docs.litellm.ai/docs/proxy/virtual_keys
+- LiteLLM health endpoint docs — https://docs.litellm.ai/docs/proxy/health
+- CVE-2024-6825 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2024-6825
