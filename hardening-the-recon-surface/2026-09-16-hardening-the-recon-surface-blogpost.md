@@ -47,6 +47,8 @@ The fix set is short and applies uniformly across all of them:
 
 Part 1's finding here deserves its own line item because it's easy to assume a CLI tool has no network surface at all: if a coding agent's IDE companion, web mode, or webhook receiver opens a local listener, that listener follows the exact same rules as everything else in this article — no exceptions for "it's just a dev tool." CVE-2025-52882 (Claude Code's unauthenticated IDE WebSocket, patched by requiring a lock-file token on every connection) is the concrete proof that "it's local, so it's fine" is not a security boundary — a malicious webpage in the same browser session was enough to reach it. Practically: keep coding-agent tooling updated (that class of vulnerability gets patched, not just documented), never flip a local-only web mode (OpenCode, DeepSeek Harness, or equivalent) to `0.0.0.0` on a shared or internet-facing machine, and if a team genuinely needs remote access to one of these tools, put it behind the same reverse-proxy-plus-auth pattern as everything else here rather than exposing the tool's own default listener directly.
 
+**OpenClaw is the case study for why the localhost shortcut itself needs to go away, not just get proxied correctly.** Its three confirmed CVEs (Part 1) all trace back to the same root idea — trust `127.0.0.1` unconditionally — failing in a different way each time: a stolen token via an unauthenticated WebSocket, a privilege-escalation bug in token rotation, and a sandbox-escape race condition. The fix OpenClaw's own team eventually shipped is the one to copy directly: make the localhost bypass an explicit, opt-in configuration flag (`require_token_on_localhost: true` by default, not by exception), get the real client IP from any reverse proxy in front of it (`X-Real-IP`/`X-Forwarded-For` set correctly — a proxy that silently drops these is indistinguishable, from the app's perspective, from a legitimate local caller), and treat a plugin marketplace (ClawHub, in OpenClaw's case) as its own, separately-audited attack surface — a supply-chain compromise there doesn't need any of the platform's own CVEs to do damage.
+
 ## Secret Leaks: Stop the Push, Not Just the Search
 
 Everything in Part 1's leak-discovery section (GitHub dorking, TruffleHog, Gitleaks, GitGuardian, IntelX) exists because secrets keep getting committed. The fix operates in layers, and the earliest layer is the cheapest:
@@ -69,6 +71,10 @@ Every finding across both articles reduces to the same root cause: a control tha
 - Ollama API authentication issue — https://github.com/ollama/ollama/issues/2194
 - CVE-2025-52882 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2025-52882
 - OpenCode web docs — https://opencode.ai/docs/web/
+- OpenClaw — https://openclaw.ai/
+- CVE-2026-25253 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2026-25253
+- CVE-2026-32922 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2026-32922
+- CVE-2026-44112 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2026-44112
 - vLLM quickstart (API key configuration) — https://docs.vllm.ai/en/stable/getting_started/quickstart/
 - Qdrant authentication docs — https://qdrant.tech/documentation/cloud/authentication/
 - Milvus connection/auth docs — https://milvus.io/docs/v2.3.x/manage_connection.md

@@ -71,6 +71,21 @@ This isn't hypothetical for the tools writing the code either. **Claude Code**'s
 
 The general rule, restated once more because it's the single most repeated root cause in this whole article: a CLI tool that takes no `-p` flag is not automatically network-invisible. If anything in its process tree — an IDE companion, a web UI mode, a webhook receiver — opens a listener, that listener is reachable the moment it's bound to `0.0.0.0` instead of `127.0.0.1`, regardless of how the main tool is normally invoked.
 
+## OpenClaw: A Full-Scale Case Study in the Same Failure Mode
+
+If the pattern above sounds abstract, **OpenClaw** — a real, MIT-licensed, self-hosted personal-AI-agent gateway stewarded by the OpenClaw Foundation — is the concrete, large-scale version of it, with a public CVE trail to match. Its gateway historically trusted any connection from `127.0.0.1` without a token, the same localhost-privilege shortcut every tool in this article uses for local convenience. Put OpenClaw behind a reverse proxy that doesn't forward the real client IP, and the gateway sees the proxy's own loopback address as the source — every request from the actual internet now looks locally-trusted, and the token requirement evaporates. Researcher @fmdz387's January 2026 Shodan sweep found instances exposed exactly this way, in numbers various scans since have put anywhere from the low tens of thousands to over 100,000, depending on the scan date.
+
+Three confirmed CVEs (verified directly against NVD) show how this compounds: **CVE-2026-25253** (CVSS 8.8) let a single malicious link steal a session's gateway token via an unvalidated `gatewayUrl` parameter and an unauthenticated WebSocket, fixed in 2026.1.29. **CVE-2026-32922** (CVSS 9.9) was a privilege-escalation bug in the gateway's own token-rotation call, letting a caller mint a broader-scoped token than it should have had. **CVE-2026-44112** (CVSS 9.6) was a TOCTOU race in OpenClaw's sandbox module — a symlink swap timed against a file check redirected a sandboxed write straight onto the host filesystem. Separately, and not a CVE but a supply-chain incident (the "ClawHavoc" campaign, disclosed by Koi Security): several hundred malicious skills were published to OpenClaw's plugin marketplace, ClawHub, delivering the Atomic macOS Stealer to anyone who installed them — a reminder that a plugin ecosystem is an attack surface independent of the core platform's own security.
+
+Finding an exposed instance doesn't need a dedicated fingerprint — OpenClaw has no distinct Shodan product tag, but its gateway has a consistent default port and response shape:
+
+```
+Shodan:  port:18789 "Clawdbot" 200
+Shodan:  port:18789 content-type:"application/json" "tools"
+```
+
+Every mitigation OpenClaw's own team now recommends is a restatement of this article's recurring fixes: bind strictly to loopback, forward real client IPs correctly if a proxy sits in front, require the token even on localhost, and run the agent's own tool-execution surface inside an isolated sandbox rather than trusting the token check alone to hold.
+
 ## Finding Leaked Secrets: Dorking and Beyond
 
 Public code hosting leaks credentials constantly, and there's a distinct tooling stack for finding it — separate from the port/banner scanners above, because Google's crawler doesn't index code deeply or quickly enough to be useful here.
@@ -123,3 +138,8 @@ Public code hosting leaks credentials constantly, and there's a distinct tooling
 - Claude Code CVE-2025-52882 writeup — https://securitylabs.datadoghq.com/articles/claude-mcp-cve-2025-52882/
 - OpenCode web docs — https://opencode.ai/docs/web/
 - DeepSeek Harness — https://deepseek.com/harness/en/
+- OpenClaw — https://openclaw.ai/
+- CVE-2026-25253 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2026-25253
+- CVE-2026-32922 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2026-32922
+- CVE-2026-44112 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2026-44112
+- ClawHavoc disclosure (Koi Security) — https://www.koi.ai/blog
