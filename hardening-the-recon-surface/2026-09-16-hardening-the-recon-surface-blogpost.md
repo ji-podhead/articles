@@ -49,6 +49,8 @@ Part 1's finding here deserves its own line item because it's easy to assume a C
 
 **OpenClaw is the case study for why the localhost shortcut itself needs to go away, not just get proxied correctly.** Its three confirmed CVEs (Part 1) all trace back to the same root idea — trust `127.0.0.1` unconditionally — failing in a different way each time: a stolen token via an unauthenticated WebSocket, a privilege-escalation bug in token rotation, and a sandbox-escape race condition. The fix OpenClaw's own team eventually shipped is the one to copy directly: make the localhost bypass an explicit, opt-in configuration flag (`require_token_on_localhost: true` by default, not by exception), get the real client IP from any reverse proxy in front of it (`X-Real-IP`/`X-Forwarded-For` set correctly — a proxy that silently drops these is indistinguishable, from the app's perspective, from a legitimate local caller), and treat a plugin marketplace (ClawHub, in OpenClaw's case) as its own, separately-audited attack surface — a supply-chain compromise there doesn't need any of the platform's own CVEs to do damage.
 
+**OpenHands is the one where the quick-start itself is the vulnerability, not a later misconfiguration** — the documented `-p 3000:3000` Docker command publishes to every interface with no separate step required, and the only credential the setup flow asks for secures LLM billing, not the instance. If you run OpenHands anywhere other than an isolated local machine, pin the port explicitly to loopback (`-p 127.0.0.1:3000:3000`, not bare `-p 3000:3000`) and put real authentication in front of it before anything else — and given CVE-2026-33718 showed the main API itself as a command-injection path directly into the code-execution sandbox, treat the web UI and the sandbox as one trust boundary, not two, regardless of which ports they each listen on.
+
 ## Secret Leaks: Stop the Push, Not Just the Search
 
 Everything in Part 1's leak-discovery section (GitHub dorking, TruffleHog, Gitleaks, GitGuardian, IntelX) exists because secrets keep getting committed. The fix operates in layers, and the earliest layer is the cheapest:
@@ -75,6 +77,8 @@ Every finding across both articles reduces to the same root cause: a control tha
 - CVE-2026-25253 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2026-25253
 - CVE-2026-32922 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2026-32922
 - CVE-2026-44112 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2026-44112
+- OpenHands local setup docs — https://docs.openhands.dev/usage/local-setup
+- CVE-2026-33718 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2026-33718
 - vLLM quickstart (API key configuration) — https://docs.vllm.ai/en/stable/getting_started/quickstart/
 - Qdrant authentication docs — https://qdrant.tech/documentation/cloud/authentication/
 - Milvus connection/auth docs — https://milvus.io/docs/v2.3.x/manage_connection.md

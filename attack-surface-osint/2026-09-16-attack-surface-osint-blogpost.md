@@ -69,6 +69,8 @@ This isn't hypothetical for the tools writing the code either. **Claude Code**'s
 
 **OpenCode** (the open-source coding agent) ships the same shape of risk with the opposite default: `opencode web` binds `127.0.0.1` and a random port out of the box — safe until someone sets `--hostname 0.0.0.0` or the equivalent `opencode.json` config to reach it from another machine, at which point it's an unauthenticated coding-agent control surface on the network. **DeepSeek's Harness (`dsh`)**, currently in developer preview, follows the identical pattern one level more explicitly: `npx @deepseek-ai/dsh web` starts its UI at a fixed `127.0.0.1:3080` with no authentication mentioned in its own quick-start docs — fine as long as nothing rebinds that port outward, exactly the Ollama failure mode again.
 
+**OpenHands** (the autonomous coding-agent platform, formerly OpenDevin) is the sharpest version of this pattern because its own documented quick-start ships the risk by default rather than requiring a misconfiguration to reach it: the official Docker run command binds the web GUI to port **3000** using Docker's `-p 3000:3000` syntax, which publishes to all host interfaces unless a host IP is explicitly pinned — no separate flag needed to expose it. The setup flow only asks for an LLM provider API key (Anthropic/OpenAI/Gemini), which secures inference billing, not access to the instance itself; anyone who reaches port 3000 gets the full interface. This isn't just a data-exposure risk — OpenHands executes agent actions inside a Docker-based sandbox, and **CVE-2026-33718** (CVSS 9.9, confirmed via NVD) was a command-injection bug in its git-diff handler reachable via `/api/conversations/{id}/git/diff` that executed directly inside that sandbox, fixed in 1.5.0. A second, lower-severity command-injection bug, **CVE-2026-19022** (CVSS 6.3), was fixed in 1.7.0. No dedicated Shodan or FOFA fingerprint tag exists for OpenHands yet; `port:3000 "OpenHands"` is the reasonable starting query, though its precision is unverified since the project's own frontend markup wasn't pinned down at time of writing — treat it as a starting point to refine, not a guaranteed hit.
+
 The general rule, restated once more because it's the single most repeated root cause in this whole article: a CLI tool that takes no `-p` flag is not automatically network-invisible. If anything in its process tree — an IDE companion, a web UI mode, a webhook receiver — opens a listener, that listener is reachable the moment it's bound to `0.0.0.0` instead of `127.0.0.1`, regardless of how the main tool is normally invoked.
 
 ## OpenClaw: A Full-Scale Case Study in the Same Failure Mode
@@ -143,3 +145,7 @@ Public code hosting leaks credentials constantly, and there's a distinct tooling
 - CVE-2026-32922 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2026-32922
 - CVE-2026-44112 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2026-44112
 - ClawHavoc disclosure (Koi Security) — https://www.koi.ai/blog
+- OpenHands — https://github.com/All-Hands-AI/OpenHands
+- OpenHands local setup docs — https://docs.openhands.dev/usage/local-setup
+- CVE-2026-33718 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2026-33718
+- CVE-2026-19022 (NVD) — https://nvd.nist.gov/vuln/detail/CVE-2026-19022
