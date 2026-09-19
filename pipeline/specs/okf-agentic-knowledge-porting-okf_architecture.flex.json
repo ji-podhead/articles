@@ -1,0 +1,59 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "Open Knowledge Format (OKF v1.0) Architecture",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 24,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k_frontmatter",
+            "title": "YAML Frontmatter Header",
+            "color": "blue",
+            "lines": [
+              "okf_version: \"1.0\"",
+              "id: \"okf-net-con-gvisor-networking\"",
+              "title: \"gVisor Container Isolation\"",
+              "topic: \"general/networking\"",
+              "subtopic: \"container-networking\"",
+              "tags: [\"networking\", \"sandboxing\"]",
+              "summary: \"Technical specification...\"",
+              "Indexed for Bi-Encoder Vector Embeddings"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "k_body",
+            "title": "Structured Markdown Body",
+            "color": "green",
+            "lines": [
+              "# Document Title",
+              "## Executive Summary",
+              "Self-contained 300-800 token chunk...",
+              "## Technical Architecture",
+              "GraphRAG Entity-Relation Triples...",
+              "Optimized for Cross-Encoder Reranking"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "k_frontmatter",
+      "to": "k_body",
+      "color": "blue"
+    }
+  ]
+}

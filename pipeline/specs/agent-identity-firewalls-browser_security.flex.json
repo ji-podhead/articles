@@ -1,0 +1,204 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "Browser agents: a real CVE, and the mitigation that actually works",
+  "subtitle": "\"The Hidden Dangers of Browsing AI Agents\", Mudryi, Chaklosh, Wójcik (ARIMLABS.AI), arXiv 2505.13076",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 20,
+      "align": "center"
+    },
+    "children": [
+      {
+        "type": "card",
+        "title": "CVE-2025-47241 (CVSS 9.3, Critical), a domain allowlist that trusts its own URL parsing",
+        "lines": [
+          "Browser Use's allowlist check split a URL on \":\" and compared the result against an operator-configured allowlist, it never accounted for HTTP Basic Auth syntax."
+        ],
+        "color": "red",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 24,
+          "align": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "lines": [
+              "https://example.com:pass@localhost:8080",
+              "\"example.com\" is a USERNAME here, not the hostname"
+            ],
+            "style": {
+              "maxWidth": 480
+            }
+          },
+          {
+            "type": "text",
+            "lines": [
+              "→"
+            ],
+            "style": {
+              "fontSize": 22,
+              "bold": true,
+              "color": "#8b949e",
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "type": "card",
+            "lines": [
+              "Agent believes: \"example.com\" (allowed) ✓",
+              "Real destination: localhost:8080 (never allowed)"
+            ],
+            "color": "red",
+            "style": {
+              "maxWidth": 470
+            }
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "lines": [
+          "The agent's own belief about its boundary was wrong, and it had no way to know. A textbook SSRF enabler, combined with the prompt-injection bug below, a path to full agent hijacking. Fixed upstream in v0.1.45. This is application-level trust in the agent's own URL parsing, exactly the class of check that a network-layer, default-deny egress firewall makes irrelevant regardless of any parsing bug inside the container."
+        ],
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "text",
+        "lines": [
+          "Mitigation effectiveness, as reported in the paper's own benchmarks"
+        ],
+        "style": {
+          "fontSize": 15,
+          "bold": true,
+          "color": "#e6edf3",
+          "width": 1120,
+          "height": 26
+        }
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 14
+        },
+        "children": [
+          {
+            "type": "card",
+            "title": "No defense (base rate)",
+            "color": "gray",
+            "style": {
+              "width": 420,
+              "maxWidth": 420
+            },
+            "lines": []
+          },
+          {
+            "type": "card",
+            "title": "~25% attack success",
+            "color": "red",
+            "style": {
+              "width": 660,
+              "maxWidth": 660
+            },
+            "lines": []
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 14
+        },
+        "children": [
+          {
+            "type": "card",
+            "title": "LLM-based injection detector",
+            "color": "gray",
+            "style": {
+              "width": 420,
+              "maxWidth": 420
+            },
+            "lines": []
+          },
+          {
+            "type": "card",
+            "title": "~8% attack success, better, not solved",
+            "color": "gray",
+            "style": {
+              "width": 660,
+              "maxWidth": 660
+            },
+            "lines": []
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 14
+        },
+        "children": [
+          {
+            "type": "card",
+            "title": "Planner/executor isolation",
+            "color": "gray",
+            "style": {
+              "width": 420,
+              "maxWidth": 420
+            },
+            "lines": []
+          },
+          {
+            "type": "card",
+            "title": "0% attack success, the only mitigation that reaches this",
+            "color": "green",
+            "style": {
+              "width": 660,
+              "maxWidth": 660
+            },
+            "lines": []
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "title": "Why planner/executor isolation wins, and the direct line to a tool-call gateway",
+        "lines": [
+          "A PLANNER component only ever sees trusted, pre-vetted input and makes decisions. A separate EXECUTOR component is the only one that touches untrusted content (the raw page HTML) and holds actual tool/browser privilege. A security monitor enforces that untrusted data can never flow back into the planner's own reasoning, the decision-maker never sees what the attacker controls.",
+          "This is architecturally the same shape a well-built tool-call gateway should take: the capability decision happens BEFORE the agent.s container executes anything, evaluated against server-side policy the agent's own output cannot influence, the planner/executor split, just for tool calls instead of a DOM."
+        ],
+        "color": "green",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "text",
+        "lines": [
+          "The field is still building this out, but the best-known answer is an architecture choice, not a bolt-on filter."
+        ],
+        "style": {
+          "fontSize": 14,
+          "color": "#8b949e",
+          "width": 1120,
+          "height": 24
+        }
+      }
+    ]
+  },
+  "connect": [],
+  "chips": []
+}

@@ -1,0 +1,165 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "GraphRAG pipeline - from triples to validated multi-hop answers",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k1",
+            "title": "Documents",
+            "lines": [
+              "text · manuals · charts"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "k2",
+            "title": "Entity/Relation Extraction",
+            "lines": [
+              "constraint-based",
+              "bound to ontology classes",
+              "(Metformin) -[treats]-> (Diabetes)"
+            ],
+            "color": "blue"
+          },
+          {
+            "type": "card",
+            "id": "k3",
+            "title": "Knowledge Graph",
+            "lines": [
+              "nodes + typed edges",
+              "semantic enrichment"
+            ],
+            "color": "green"
+          },
+          {
+            "type": "card",
+            "id": "k4",
+            "title": "Leiden Communities",
+            "lines": [
+              "cluster + summarize",
+              "per abstraction level"
+            ],
+            "color": "blue"
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k5",
+            "title": "Local Search",
+            "lines": [
+              "multi-hop walk",
+              "path-validated"
+            ],
+            "color": "green"
+          },
+          {
+            "type": "card",
+            "id": "k6",
+            "title": "Global Search",
+            "lines": [
+              "cluster summaries",
+              "corpus-wide Qs"
+            ],
+            "color": "blue"
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k7",
+            "title": "Grounded, explainable answer",
+            "lines": [
+              "retrieval path = evidence trail"
+            ],
+            "color": "blue"
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k8",
+            "title": "Without ontology: agent walks impossible paths",
+            "lines": [
+              "with ontology: constraint extraction + path validation",
+              "→ no invalid conclusions"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "id": "k9",
+        "lines": [
+          "adapted from Microsoft GraphRAG repository documentation (MIT)"
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "k1",
+      "to": "k2"
+    },
+    {
+      "from": "k2",
+      "to": "k3"
+    },
+    {
+      "from": "k3",
+      "to": "k4"
+    },
+    {
+      "from": "k4",
+      "to": "k5",
+      "color": "green"
+    },
+    {
+      "from": "k4",
+      "to": "k6",
+      "color": "blue"
+    },
+    {
+      "from": "k5",
+      "to": "k7"
+    },
+    {
+      "from": "k6",
+      "to": "k7"
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "OBJECT TRACKING: KALMAN FILTER + DEEPSORT",
+  "subtitle": "from prediction-correction cycles to deep re-identification",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "align": "stretch"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "kal",
+            "title": "KALMAN FILTER",
+            "lines": [
+              "the recursive predictor-corrector",
+              "",
+              "① PREDICTION",
+              "forecast next position",
+              "based on past states (pos, vel)",
+              "",
+              "② CORRECTION",
+              "compare with measurement",
+              "weight by uncertainty",
+              "",
+              "WHY IT'S STILL USED TODAY",
+              "✓ very fast (real-time capable) ✓ handles noisy measurements",
+              "✓ smooth consistent tracks ✓ works even with missing detections"
+            ],
+            "color": "blue",
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 550
+            }
+          },
+          {
+            "type": "card",
+            "id": "dsort",
+            "title": "DeepSORT",
+            "lines": [
+              "deep learning + SORT = robust multi-object tracking",
+              "",
+              "Motion Module",
+              "Kalman Filter",
+              "trajectory prediction",
+              "Appearance Module",
+              "ReID (Deep Learning)",
+              "identity across frames",
+              "Data Association",
+              "align detections ↔ existing tracks",
+              "",
+              "KEY ADVANTAGES:",
+              "✓ Robust to occlusions + motion blur",
+              "✓ High accuracy (motion + appearance synergy)",
+              "✓ Multi-target efficient ✓ Dynamic environments"
+            ],
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 550
+            }
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "align": "stretch"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "mota",
+            "title": "MOTA - TRACKING ACCURACY",
+            "lines": [
+              "MOTA = 1 − (FP + FN + IDS) / GT",
+              "100% = perfect tracking",
+              "",
+              "FP",
+              "False Positives (wrong detections)",
+              "FN",
+              "False Negatives (missed objects)",
+              "IDS",
+              "Identity Switches (wrong ID assignment)",
+              "GT",
+              "Ground Truth occurrences",
+              "",
+              "Also:",
+              "MOTP = position precision",
+              "OpenCV + YOLO compatible",
+              "MOT Challenge benchmarks"
+            ],
+            "color": "green",
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 550
+            }
+          },
+          {
+            "type": "card",
+            "id": "tools",
+            "title": "TOOLS & BENCHMARKS",
+            "lines": [
+              "py-motmetrics",
+              "Python MOT evaluation",
+              "github.com/cheind/py-motmetrics",
+              "MOT Challenge",
+              "official benchmark results",
+              "motchallenge.net",
+              "OpenCV Trackers",
+              "all models available",
+              "+ YOLO detection combo",
+              "OC-SORT + CMC",
+              "refined motion modeling",
+              "+ cross-modal consistency",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 550
+            }
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "lines": [
+          "#ObjectTracking #ComputerVision #Robotics #KalmanFilter #DeepSORT #MOTA #IsaacSim"
+        ],
+        "style": {
+          "fontSize": 13,
+          "color": "#6e7681",
+          "bold": false,
+          "width": 1120,
+          "height": 24
+        }
+      }
+    ]
+  },
+  "connect": []
+}

@@ -1,0 +1,42 @@
+{
+  "width": 1200,
+  "title": "The open-source stack: network, kernel, host and firewall signals under one roof",
+  "tree": {
+    "type": "column",
+    "style": { "gap": 22 },
+    "children": [
+      { "type": "text", "lines": ["SENSORS (per host / per container)"], "style": { "fontSize": 13, "bold": true, "color": "#8b949e", "height": 22 } },
+      {
+        "type": "row",
+        "style": { "gap": 16, "justify": "center", "align": "flex-start" },
+        "children": [
+          { "type": "card", "id": "suri", "title": "Suricata (network IDS/IPS)", "lines": ["signature rules on packets;", "XDP/eBPF capture at line rate"], "color": "gray", "style": { "maxWidth": 260 } },
+          { "type": "card", "id": "ebpf", "title": "eBPF sensor (e.g. Falco)", "lines": ["watches syscalls per container - escapes, shells, miners, no sidecar"], "color": "gray", "style": { "maxWidth": 260 } },
+          { "type": "card", "id": "host", "title": "Host agent (e.g. Wazuh agent)", "lines": ["file-integrity monitoring,", "vuln scan, Docker-engine visibility"], "color": "gray", "style": { "maxWidth": 260 } },
+          { "type": "card", "id": "fw", "title": "Firewall logs (nftables/ufw)", "lines": ["what got dropped, which ports", "are actually open, from where"], "color": "gray", "style": { "maxWidth": 260 } }
+        ]
+      },
+      {
+        "type": "row",
+        "style": { "justify": "center" },
+        "children": [
+          { "type": "card", "id": "siem", "title": "SIEM core (e.g. Wazuh manager, rules + correlation)", "lines": ["correlates all four sources against a ruleset, writes structured, timestamped alerts", "single-node docker-compose, roughly 4 GB RAM - no Kubernetes required"], "color": "blue", "style": { "maxWidth": 640 } }
+        ]
+      },
+      {
+        "type": "row",
+        "style": { "justify": "center" },
+        "children": [
+          { "type": "card", "id": "idx", "title": "Indexer + dashboard (OpenSearch) - full-text search, retention, compliance views", "color": "gray", "style": { "maxWidth": 720 } }
+        ]
+      }
+    ]
+  },
+  "connect": [
+    { "from": "suri", "to": "siem" },
+    { "from": "ebpf", "to": "siem" },
+    { "from": "host", "to": "siem" },
+    { "from": "fw", "to": "siem" },
+    { "from": "siem", "to": "idx" }
+  ]
+}

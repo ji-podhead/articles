@@ -1,0 +1,116 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "How Hackers Find Your Infra Weakpoints, Leaks and Unprotected AI",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 28
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 16,
+          "align": "stretch"
+        },
+        "children": [
+          {
+            "type": "chip",
+            "text": "PART 1 / OSINT",
+            "color": "blue"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "lines": [
+          "The public search engines that index every misconfiguration",
+          "on the internet - and how the queries are actually built."
+        ],
+        "style": {
+          "fontSize": 17,
+          "color": "#8b949e",
+          "bold": false,
+          "width": 1120,
+          "height": 52
+        }
+      },
+      {
+        "type": "text",
+        "lines": [
+          "FOFA: port=\"11434\" && body=\"Ollama is running\""
+        ],
+        "style": {
+          "fontSize": 15,
+          "color": "#60a5fa",
+          "bold": false,
+          "width": 1120,
+          "height": 27
+        }
+      },
+      {
+        "type": "text",
+        "lines": [
+          "Shodan: asn:AS24940 \"MongoDB\" port:27017",
+          "# 200 OK, no auth form in the body - the tell every scanner looks for"
+        ],
+        "style": {
+          "fontSize": 15,
+          "color": "#8b949e",
+          "bold": false,
+          "width": 1120,
+          "height": 47
+        }
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 120,
+          "align": "stretch"
+        },
+        "children": [
+          {
+            "type": "text",
+            "lines": [
+              "open"
+            ],
+            "style": {
+              "fontSize": 12,
+              "color": "#4ade80",
+              "bold": false,
+              "width": 60,
+              "height": 23
+            }
+          },
+          {
+            "type": "text",
+            "lines": [
+              "open"
+            ],
+            "style": {
+              "fontSize": 12,
+              "color": "#4ade80",
+              "bold": false,
+              "width": 60,
+              "height": 23
+            }
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "lines": [
+          "JIMESH"
+        ],
+        "style": {
+          "fontSize": 17,
+          "color": "#8b949e",
+          "bold": true,
+          "width": 300,
+          "height": 29
+        }
+      }
+    ]
+  }
+}

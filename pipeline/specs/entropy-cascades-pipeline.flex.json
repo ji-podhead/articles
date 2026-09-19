@@ -1,0 +1,138 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "client",
+            "title": "Client",
+            "lines": [
+              "request"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "gate",
+            "title": "Entropy Gate",
+            "lines": [
+              "logprobs · top_logprobs=5",
+              "H_norm = H / log₂(k)",
+              "avg over response · thr 0.45",
+              "phase-1 error → fail-open:",
+              "normal routing continues"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 24,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "p1",
+            "title": "Phase 1: Routing Model",
+            "lines": [
+              "cheap · full response · stream=false"
+            ],
+            "color": "green"
+          },
+          {
+            "type": "card",
+            "id": "reason",
+            "title": "Reasoning Model",
+            "lines": [
+              "expensive · chain routing"
+            ],
+            "color": "amber"
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 24,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "accept",
+            "title": "✓ Serve directly",
+            "lines": [
+              "fast · cheap-model price"
+            ],
+            "color": "green"
+          },
+          {
+            "type": "card",
+            "id": "esc",
+            "title": "✗ Discard answer · re-route original request",
+            "lines": [
+              "normal chain: bandit · failover · quota · feedback"
+            ],
+            "color": "amber"
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 12,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "chip",
+            "text": "jimesh gateway · entropy-gated cascade · no classifier, no labeled data"
+          }
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "client",
+      "to": "gate"
+    },
+    {
+      "from": "gate",
+      "to": "p1",
+      "label": "probe",
+      "color": "green"
+    },
+    {
+      "from": "gate",
+      "to": "reason",
+      "label": "escalate",
+      "color": "amber"
+    },
+    {
+      "from": "p1",
+      "to": "accept",
+      "label": "H < 0.45",
+      "color": "green"
+    },
+    {
+      "from": "reason",
+      "to": "esc",
+      "label": "H ≥ 0.45",
+      "color": "amber"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "Structuring, Normalization & Harmonization",
+  "subtitle": "Why conflating these three breaks pipelines and ML models",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 28
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 16,
+          "align": "stretch"
+        },
+        "children": [
+          {
+            "type": "chip",
+            "text": "DATA ENGINEERING",
+            "color": "blue"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "lines": [
+          "# normalize.py - source_a[\"country\"] = \"USA\" → \"United States\"",
+          "➔ [Merge] 3 sources compared field by field..."
+        ],
+        "style": {
+          "fontSize": 16,
+          "color": "#8b949e",
+          "bold": false,
+          "width": 1120,
+          "height": 50
+        }
+      },
+      {
+        "type": "text",
+        "lines": [
+          "➔ [Harmonize] semantic conflicts resolved → 1 unified schema"
+        ],
+        "style": {
+          "fontSize": 16,
+          "color": "#4ade80",
+          "bold": false,
+          "width": 1120,
+          "height": 28
+        }
+      }
+    ]
+  }
+}

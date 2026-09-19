@@ -1,0 +1,41 @@
+direction: right
+vars: {
+  d2-config: {
+    theme-id: 3
+    sketch: false
+  }
+}
+title: {
+  label: "Adapters as Skills, Adapters as Conscience"
+  near: top-center
+}
+
+SKILL adapter: {
+  label: "SSH deploys, firewall ops, agent tools"
+  style: {stroke: "#3fb950"; stroke-width: 2; fill: "#161b22"; font-color: "#3fb950"; font-size: 15}
+}
+MEMORY adapter: {
+  label: "knowledge baked in, not a claude.md"
+  style: {stroke: "#3fb950"; stroke-width: 2; fill: "#161b22"; font-color: "#3fb950"; font-size: 15}
+}
+GUARDRAIL adapter: {
+  label: "expert switching, one swap per request"
+  style: {stroke: "#3fb950"; stroke-width: 2; fill: "#161b22"; font-color: "#3fb950"; font-size: 15}
+}
+Base Model: {
+  label: "serverless edge (Workers AI) or self-hosted GPU (vLLM)"
+  style: {stroke: "#30363d"; stroke-width: 2; fill: "#1c2128"; font-color: "#e6edf3"; font-size: 24}
+}
+honest persona: {
+  label: "reviews outputs, cannot influence them"
+  style: {stroke: "#4493f8"; stroke-width: 2; fill: "#161b22"; font-color: "#4493f8"; font-size: 15}
+}
+flag: {
+  label: "93-99% alignment faking flagged, 0% baseline"
+  style: {stroke: "#4493f8"; stroke-width: 2; fill: "#161b22"; font-color: "#e6edf3"; font-size: 14}
+}
+SKILL adapter -> Base Model: swap in
+MEMORY adapter -> Base Model: swap in
+GUARDRAIL adapter -> Base Model: swap in
+Base Model -> honest persona: review
+honest persona -> flag: flags, never edits

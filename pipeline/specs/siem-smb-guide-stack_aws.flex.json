@@ -1,0 +1,59 @@
+{
+  "width": 1200,
+  "title": "The AWS-native stack: same job, managed instead of self-hosted",
+  "tree": {
+    "type": "column",
+    "style": { "gap": 20 },
+    "children": [
+      { "type": "text", "lines": ["INGEST + EDGE"], "style": { "fontSize": 13, "bold": true, "color": "#8b949e", "height": 22 } },
+      {
+        "type": "row",
+        "style": { "gap": 20, "justify": "center", "align": "flex-start" },
+        "children": [
+          { "type": "card", "id": "ingest", "title": "Log ingestion (CloudWatch, Firehose)", "lines": ["streams logs into the pipeline, structured"], "color": "gray", "style": { "maxWidth": 340 } },
+          { "type": "card", "id": "netvis", "title": "Network visibility (VPC Flow Logs)", "lines": ["who talked to whom, on which port"], "color": "gray", "style": { "maxWidth": 340 } },
+          { "type": "card", "id": "edge", "title": "Edge protection (WAF + Shield)", "lines": ["L7 rules, rate limits, DDoS mitigation"], "color": "gray", "style": { "maxWidth": 340 } }
+        ]
+      },
+      { "type": "text", "lines": ["DETECTION (MANAGED) + CUSTOM ML"], "style": { "fontSize": 13, "bold": true, "color": "#8b949e", "height": 22 } },
+      {
+        "type": "row",
+        "style": { "gap": 14, "justify": "center", "align": "flex-start" },
+        "children": [
+          { "type": "card", "id": "gd", "title": "GuardDuty", "lines": ["ML threat detection", "flow logs, DNS, runtime"], "color": "gray", "style": { "maxWidth": 210 } },
+          { "type": "card", "id": "insp", "title": "Inspector", "lines": ["vulnerability scanning", "CVEs: EC2, images, Lambda"], "color": "gray", "style": { "maxWidth": 210 } },
+          { "type": "card", "id": "ct", "title": "CloudTrail", "lines": ["signed API audit log", "who did what, from where"], "color": "gray", "style": { "maxWidth": 210 } },
+          { "type": "card", "id": "cfg", "title": "Config", "lines": ["configuration drift", "flags issues before they're live"], "color": "gray", "style": { "maxWidth": 210 } },
+          { "type": "card", "id": "sm", "title": "SageMaker", "lines": ["custom ML models", "e.g. Isolation Forest"], "color": "gray", "style": { "maxWidth": 210 } }
+        ]
+      },
+      {
+        "type": "row",
+        "style": { "justify": "center" },
+        "children": [
+          { "type": "card", "id": "hub", "title": "AWS Security Hub", "lines": ["aggregates every finding, scores against CIS/PCI-DSS/GDPR"], "color": "blue", "style": { "maxWidth": 480 } }
+        ]
+      },
+      {
+        "type": "row",
+        "style": { "gap": 24, "justify": "center", "align": "flex-start" },
+        "children": [
+          { "type": "card", "id": "os", "title": "OpenSearch Service", "lines": ["dashboard, full-text search, Sigma rules"], "color": "gray", "style": { "maxWidth": 340 } },
+          { "type": "card", "id": "lake", "title": "Security Lake", "lines": ["OCSF long-term storage, queried with Athena"], "color": "gray", "style": { "maxWidth": 340 } }
+        ]
+      }
+    ]
+  },
+  "connect": [
+    { "from": "ingest", "to": "gd" },
+    { "from": "netvis", "to": "ct" },
+    { "from": "edge", "to": "sm" },
+    { "from": "gd", "to": "hub" },
+    { "from": "insp", "to": "hub" },
+    { "from": "ct", "to": "hub" },
+    { "from": "cfg", "to": "hub" },
+    { "from": "sm", "to": "hub" },
+    { "from": "hub", "to": "os" },
+    { "from": "hub", "to": "lake" }
+  ]
+}

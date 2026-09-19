@@ -1,0 +1,236 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "A worked example: an AI-agent gateway, today vs. where this is headed",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 24,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "column",
+            "style": {
+              "gap": 16
+            },
+            "children": [
+              {
+                "type": "card",
+                "id": "today",
+                "title": "TODAY - shipped and real",
+                "lines": []
+              },
+              {
+                "type": "card",
+                "id": "you",
+                "title": "You (browser)",
+                "lines": [
+                  "or a coding agent"
+                ]
+              },
+              {
+                "type": "card",
+                "id": "gateway",
+                "title": "Gateway backend",
+                "lines": [
+                  "auth + budget check"
+                ]
+              },
+              {
+                "type": "card",
+                "id": "ssh",
+                "title": "Remote SSH target",
+                "lines": [
+                  "any existing server"
+                ]
+              },
+              {
+                "type": "card",
+                "id": "agent",
+                "title": "Agent container",
+                "color": "green",
+                "lines": [
+                  "gVisor-sandboxed",
+                  "egress allowlist active",
+                  "✓ never a raw port exposed to the internet",
+                  "✓ kernel-isolated, egress-restricted"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "style": {
+              "gap": 16
+            },
+            "children": [
+              {
+                "type": "card",
+                "id": "target",
+                "title": "TARGET - planned, not yet built",
+                "lines": []
+              },
+              {
+                "type": "card",
+                "id": "client2",
+                "title": "Client",
+                "lines": []
+              },
+              {
+                "type": "card",
+                "id": "router",
+                "title": "Identity Router",
+                "lines": []
+              },
+              {
+                "type": "row",
+                "style": {
+                  "gap": 16,
+                  "justify": "center"
+                },
+                "children": [
+                  {
+                    "type": "card",
+                    "id": "wsa",
+                    "title": "Workspace A",
+                    "color": "green",
+                    "lines": [
+                      "VLAN 101 · gVisor",
+                      "same host",
+                      "✕"
+                    ]
+                  },
+                  {
+                    "type": "card",
+                    "id": "wsb",
+                    "title": "Workspace B",
+                    "color": "green",
+                    "lines": [
+                      "VLAN 102 · gVisor",
+                      "same host",
+                      "✕"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "card",
+                "id": "tgtnote",
+                "title": "Same egress allowlist + gVisor sandboxing as today, now with per-workspace VLANs",
+                "lines": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "id": "gap",
+        "title": "Honest gap today:",
+        "color": "red",
+        "lines": [
+          "one host at a time - no VLAN segmentation between two workspaces on the SAME remote server yet (Layer B, not built)."
+        ]
+      },
+      {
+        "type": "card",
+        "id": "mesh",
+        "title": "Further out: one mesh across many servers and clouds",
+        "lines": [
+          "the same Gitpod/Ona pattern - a control plane that provisions this same 3-layer stack wherever a customer's workload actually runs"
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "cp",
+            "title": "Central control plane",
+            "lines": [
+              "identity, policy, routing table",
+              "reached over a WireGuard mesh - no public SSH exposure"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "ownhw",
+            "title": "Own hardware / VPS",
+            "lines": [
+              "3-layer stack, local VLANs"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "cloud",
+            "title": "AWS / GCP node",
+            "lines": [
+              "same stack, cloud VPC instead"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "id": "why",
+        "title": "Why this matters for a real product",
+        "lines": [
+          "a customer picks WHERE a workload runs (their own box, or a cloud region) without ever changing how they reach it, and without the platform operator needing a different security story per environment - one identity layer, one policy engine, many physical locations"
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "you",
+      "to": "gateway"
+    },
+    {
+      "from": "gateway",
+      "to": "ssh",
+      "label": "SSH tunnel, no published port"
+    },
+    {
+      "from": "ssh",
+      "to": "agent",
+      "label": "direct-dial to internal container IP"
+    },
+    {
+      "from": "client2",
+      "to": "router"
+    },
+    {
+      "from": "router",
+      "to": "wsa"
+    },
+    {
+      "from": "router",
+      "to": "wsb"
+    },
+    {
+      "from": "wsa",
+      "to": "wsb",
+      "label": "no route between VLANs",
+      "color": "red"
+    },
+    {
+      "from": "cp",
+      "to": "ownhw"
+    },
+    {
+      "from": "cp",
+      "to": "cloud"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "width": 1200,
+  "title": "How a SIEM actually works - the seven stages nobody shows you",
+  "tree": {
+    "type": "column",
+    "style": { "gap": 22 },
+    "children": [
+      { "type": "text", "lines": ["1 · COLLECT"], "style": { "fontSize": 13, "bold": true, "color": "#8b949e", "height": 22 } },
+      {
+        "type": "row",
+        "style": { "gap": 12, "justify": "center" },
+        "children": [
+          { "type": "card", "title": "Logs", "lines": ["app · proxy · agents"], "color": "gray", "style": { "maxWidth": 210 } },
+          { "type": "card", "title": "Network", "lines": ["flow · eve.json · IDS"], "color": "gray", "style": { "maxWidth": 210 } },
+          { "type": "card", "title": "Identity", "lines": ["auth events · API audit"], "color": "gray", "style": { "maxWidth": 210 } },
+          { "type": "card", "title": "Runtime", "lines": ["syscalls (eBPF/Falco)"], "color": "gray", "style": { "maxWidth": 210 } },
+          { "type": "card", "id": "pos", "title": "Posture", "lines": ["IaC scan · config state"], "color": "gray", "style": { "maxWidth": 210 } }
+        ]
+      },
+      {
+        "type": "row",
+        "style": { "justify": "center" },
+        "children": [
+          { "type": "card", "id": "norm", "title": "2 · Normalize (one schema)", "lines": ["OCSF / ASFF / your own schema"], "color": "blue", "style": { "maxWidth": 320 } }
+        ]
+      },
+      {
+        "type": "row",
+        "style": { "gap": 20, "justify": "center" },
+        "children": [
+          { "type": "card", "id": "dr", "title": "3 · Detect - rules", "lines": ["signatures · regex · FIM checks"], "color": "gray", "style": { "maxWidth": 330 } },
+          { "type": "card", "id": "dm", "title": "4 · Detect - ML/behavior", "lines": ["baselines · anomaly scores", "carries confidence + model version"], "color": "gray", "style": { "maxWidth": 340 } }
+        ]
+      },
+      {
+        "type": "row",
+        "style": { "justify": "center" },
+        "children": [
+          { "type": "card", "id": "corr", "title": "5 · Correlate + attribute", "lines": ["container/workload → session → app (the attribution chain)", "chained events within seconds = one incident, not three separate alerts"], "color": "blue", "style": { "maxWidth": 620 } }
+        ]
+      },
+      {
+        "type": "row",
+        "style": { "gap": 20, "justify": "center" },
+        "children": [
+          { "type": "card", "id": "alert", "title": "6 · Alert → triage (HITL)", "lines": ["risk-score ranked queue · operator decides"], "color": "gray", "style": { "maxWidth": 360 } },
+          { "type": "card", "id": "resp", "title": "7 · Respond + retain", "lines": ["block → isolate → revoke · long-term store"], "color": "green", "style": { "maxWidth": 380 } }
+        ]
+      },
+      { "type": "card", "title": "WASN'T", "lines": ["A SIEM is not a scanner. It is a correlate-and-retain engine over EVERY log source - with the alert as the output,", "not the feature."], "color": "gray", "style": { "maxWidth": 340 } }
+    ]
+  },
+  "connect": [
+    { "from": "pos", "to": "norm" },
+    { "from": "norm", "to": "dr" },
+    { "from": "norm", "to": "dm" },
+    { "from": "dr", "to": "corr" },
+    { "from": "dm", "to": "corr" },
+    { "from": "corr", "to": "alert" },
+    { "from": "alert", "to": "resp" }
+  ]
+}

@@ -1,115 +1,60 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1000" width="100%" height="100%">
-  <defs>
-    <filter id="shadow" x="-5%" y="-2%" width="110%" height="104%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
-    </filter>
-  </defs>
-  <rect width="1100" height="1000" fill="#f8fafc" rx="12"/>
-  <text x="550" y="28" fill="#334155" font-family="sans-serif" font-weight="bold" font-size="15" text-anchor="middle">Glossary: Detection &amp; Response Concepts</text>
-
-  <g filter="url(#shadow)">
-    <rect x="20" y="45" width="1060" height="935" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
-  </g>
-
-  <!-- header -->
-  <rect x="20" y="45" width="1060" height="38" fill="#1e293b" rx="8"/>
-  <rect x="20" y="65" width="1060" height="18" fill="#1e293b"/>
-  <text x="120" y="69" fill="#38bdf8" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">TERM</text>
-  <text x="640" y="69" fill="#38bdf8" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">MEANING</text>
-
-  <!-- column separators -->
-  <line x1="220" y1="45" x2="220" y2="980" stroke="#e2e8f0" stroke-width="1"/>
-
-  <!-- rows: y start 83, each height 50 -->
-  <g font-family="sans-serif" font-size="11">
-    <!-- Row 1: SIEM -->
-    <rect x="20" y="83" width="1060" height="50" fill="#ffffff"/>
-    <text x="35" y="112" fill="#334155" font-weight="bold">SIEM</text>
-    <text x="235" y="112" fill="#64748b">Security Information &amp; Event Management — collect → normalize → detect → correlate → alert → retain.</text>
-
-    <!-- Row 2: Attribution -->
-    <rect x="20" y="133" width="1060" height="50" fill="#f1f5f9"/>
-    <text x="35" y="162" fill="#334155" font-weight="bold">Attribution</text>
-    <text x="235" y="162" fill="#64748b">Mapping an event to the workload/identity that caused it (container → session → project) — the layer that makes findings actionable.</text>
-
-    <!-- Row 3: eBPF -->
-    <rect x="20" y="183" width="1060" height="50" fill="#ffffff"/>
-    <text x="35" y="212" fill="#334155" font-weight="bold">eBPF</text>
-    <text x="235" y="212" fill="#64748b">Linux kernel technology to run sandboxed programs in the kernel — syscall/network observation and enforcement without app instrumentation.</text>
-
-    <!-- Row 4: LSM / BPF-LSM -->
-    <rect x="20" y="233" width="1060" height="50" fill="#f1f5f9"/>
-    <text x="35" y="262" fill="#334155" font-weight="bold">LSM / BPF-LSM</text>
-    <text x="235" y="262" fill="#64748b">Linux Security Module hook framework (optionally via eBPF) — synchronous enforcement: deny syscalls before they execute.</text>
-
-    <!-- Row 5: XDP / XDP_DROP -->
-    <rect x="20" y="283" width="1060" height="50" fill="#ffffff"/>
-    <text x="35" y="312" fill="#334155" font-weight="bold">XDP / XDP_DROP</text>
-    <text x="235" y="312" fill="#64748b">eXpress Data Path — eBPF programs attached at the NIC; <tspan font-family="monospace">XDP_DROP</tspan> discards packets at the driver, before the TCP stack.</text>
-
-    <!-- Row 6: RCF -->
-    <rect x="20" y="333" width="1060" height="50" fill="#f1f5f9"/>
-    <text x="35" y="362" fill="#334155" font-weight="bold">RCF</text>
-    <text x="235" y="362" fill="#64748b">Random Cut Forest — unsupervised streaming anomaly-detection algorithm (used by OpenSearch AD and AWS GuardDuty-class services).</text>
-
-    <!-- Row 7: FIM -->
-    <rect x="20" y="383" width="1060" height="50" fill="#ffffff"/>
-    <text x="35" y="412" fill="#334155" font-weight="bold">FIM</text>
-    <text x="235" y="412" fill="#64748b">File Integrity Monitoring — watching sensitive files for unauthorized changes.</text>
-
-    <!-- Row 8: IaC -->
-    <rect x="20" y="433" width="1060" height="50" fill="#f1f5f9"/>
-    <text x="35" y="462" fill="#334155" font-weight="bold">IaC</text>
-    <text x="235" y="462" fill="#64748b">Infrastructure as Code — Terraform, CloudFormation, Helm, Kustomize, compose files; scannable by Checkov et al.</text>
-
-    <!-- Row 9: SBOM -->
-    <rect x="20" y="483" width="1060" height="50" fill="#ffffff"/>
-    <text x="35" y="512" fill="#334155" font-weight="bold">SBOM</text>
-    <text x="235" y="512" fill="#64748b">Software Bill of Materials — a machine-readable inventory of an artifact's components; CycloneDX is the common format.</text>
-
-    <!-- Row 10: HITL -->
-    <rect x="20" y="533" width="1060" height="50" fill="#f1f5f9"/>
-    <text x="35" y="562" fill="#334155" font-weight="bold">HITL</text>
-    <text x="235" y="562" fill="#64748b">Human-in-the-Loop — irreversible actions wait for an operator decision; automation proposes, humans dispose.</text>
-
-    <!-- Row 11: Shadow API -->
-    <rect x="20" y="583" width="1060" height="50" fill="#ffffff"/>
-    <text x="35" y="612" fill="#334155" font-weight="bold">Shadow API</text>
-    <text x="235" y="612" fill="#64748b">An endpoint that exists in traffic but not in documented routes/OpenAPI — the classic gateway-bypass surface.</text>
-
-    <!-- Row 12: Data Drift -->
-    <rect x="20" y="633" width="1060" height="50" fill="#f1f5f9"/>
-    <text x="35" y="662" fill="#334155" font-weight="bold">Data Drift</text>
-    <text x="235" y="662" fill="#64748b">Model signal decay when live traffic distribution changes vs. training data — triggers retrain, not retuning of rules.</text>
-
-    <!-- Row 13: MTTR (p75) -->
-    <rect x="20" y="683" width="1060" height="50" fill="#ffffff"/>
-    <text x="35" y="712" fill="#334155" font-weight="bold">MTTR (p75)</text>
-    <text x="235" y="712" fill="#64748b">Mean Time To Respond/Remediate, 75th percentile — the runtime KPI containment playbooks can halve.</text>
-
-    <!-- Row 14: Blast Radius -->
-    <rect x="20" y="733" width="1060" height="50" fill="#f1f5f9"/>
-    <text x="35" y="762" fill="#334155" font-weight="bold">Blast Radius</text>
-    <text x="235" y="762" fill="#64748b">How much damage a compromise of one asset can do — the ranking dimension CSPM tools sort findings by.</text>
-
-    <!-- Row 15: Warm-start model -->
-    <rect x="20" y="783" width="1060" height="50" fill="#ffffff"/>
-    <text x="35" y="812" fill="#334155" font-weight="bold">Warm-start model</text>
-    <text x="235" y="812" fill="#64748b">A globally trained baseline, fine-tuned per tenant — cheaper than per-tenant training and still isolated.</text>
-
-    <!-- Row 16: OCSF / ASFF -->
-    <rect x="20" y="833" width="1060" height="50" fill="#f1f5f9"/>
-    <text x="35" y="862" fill="#334155" font-weight="bold">OCSF / ASFF</text>
-    <text x="235" y="862" fill="#64748b">Open Cybersecurity Schema Framework / AWS Security Finding Format — schemas that make cross-source correlation possible.</text>
-
-    <!-- Row 17: Sigma -->
-    <rect x="20" y="883" width="1060" height="50" fill="#ffffff"/>
-    <text x="35" y="912" fill="#334155" font-weight="bold">Sigma</text>
-    <text x="235" y="912" fill="#64748b">Open signature format for detection rules (YAML), consumable by OpenSearch Security Analytics and friends.</text>
-
-    <!-- Row 18: Token binding -->
-    <rect x="20" y="933" width="1060" height="50" fill="#f1f5f9" rx="8"/>
-    <text x="35" y="962" fill="#334155" font-weight="bold">Token binding</text>
-    <text x="235" y="962" fill="#64748b">Binding an API token to a client trait (e.g., TLS fingerprint) so a stolen token fails replay from another machine.</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1502" viewBox="0 0 1200 1502" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="1502" fill="#0d1117"/>
+<text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">Glossary: Detection &amp; Response Concepts</text>
+<text x="60" y="103" font-size="13" font-weight="bold" fill="#60a5fa">TERM</text>
+<text x="320" y="103" font-size="13" font-weight="bold" fill="#60a5fa">MEANING</text>
+<rect x="40" y="144" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="170" font-size="15" font-weight="bold" fill="#8b949e">SIEM</text>
+<text x="58" y="191" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Security Information &amp; Event Management - collect → normalize → detect → correlate → alert → retain.</text>
+<rect x="40" y="218" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="244" font-size="15" font-weight="bold" fill="#8b949e">Attribution</text>
+<text x="58" y="265" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Mapping an event to the workload/identity that caused it (container → session → project) - the layer that makes findings actionable.</text>
+<rect x="40" y="292" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="318" font-size="15" font-weight="bold" fill="#8b949e">eBPF</text>
+<text x="58" y="339" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Linux kernel technology to run sandboxed programs in the kernel - syscall/network observation and enforcement without app instrumentation.</text>
+<rect x="40" y="366" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="392" font-size="15" font-weight="bold" fill="#8b949e">LSM / BPF-LSM</text>
+<text x="58" y="413" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Linux Security Module hook framework (optionally via eBPF) - synchronous enforcement: deny syscalls before they execute.</text>
+<rect x="40" y="440" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="466" font-size="15" font-weight="bold" fill="#8b949e">XDP / XDP_DROP</text>
+<text x="58" y="487" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">eXpress Data Path - eBPF programs attached at the NIC; XDP_DROP discards packets at the driver, before the TCP stack.</text>
+<rect x="40" y="514" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="540" font-size="15" font-weight="bold" fill="#8b949e">RCF</text>
+<text x="58" y="561" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Random Cut Forest - unsupervised streaming anomaly-detection algorithm (used by OpenSearch AD and AWS GuardDuty-class services).</text>
+<rect x="40" y="588" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="614" font-size="15" font-weight="bold" fill="#8b949e">FIM</text>
+<text x="58" y="635" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">File Integrity Monitoring - watching sensitive files for unauthorized changes.</text>
+<rect x="40" y="662" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="688" font-size="15" font-weight="bold" fill="#8b949e">IaC</text>
+<text x="58" y="709" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Infrastructure as Code - Terraform, CloudFormation, Helm, Kustomize, compose files; scannable by Checkov et al.</text>
+<rect x="40" y="736" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="762" font-size="15" font-weight="bold" fill="#8b949e">SBOM</text>
+<text x="58" y="783" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Software Bill of Materials - a machine-readable inventory of an artifact's components; CycloneDX is the common format.</text>
+<rect x="40" y="810" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="836" font-size="15" font-weight="bold" fill="#8b949e">HITL</text>
+<text x="58" y="857" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Human-in-the-Loop - irreversible actions wait for an operator decision; automation proposes, humans dispose.</text>
+<rect x="40" y="884" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="910" font-size="15" font-weight="bold" fill="#8b949e">Shadow API</text>
+<text x="58" y="931" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">An endpoint that exists in traffic but not in documented routes/OpenAPI - the classic gateway-bypass surface.</text>
+<rect x="40" y="958" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="984" font-size="15" font-weight="bold" fill="#8b949e">Data Drift</text>
+<text x="58" y="1005" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Model signal decay when live traffic distribution changes vs. training data - triggers retrain, not retuning of rules.</text>
+<rect x="40" y="1032" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="1058" font-size="15" font-weight="bold" fill="#8b949e">MTTR (p75)</text>
+<text x="58" y="1079" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Mean Time To Respond/Remediate, 75th percentile - the runtime KPI containment playbooks can halve.</text>
+<rect x="40" y="1106" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="1132" font-size="15" font-weight="bold" fill="#8b949e">Blast Radius</text>
+<text x="58" y="1153" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">How much damage a compromise of one asset can do - the ranking dimension CSPM tools sort findings by.</text>
+<rect x="40" y="1180" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="1206" font-size="15" font-weight="bold" fill="#8b949e">Warm-start model</text>
+<text x="58" y="1227" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">A globally trained baseline, fine-tuned per tenant - cheaper than per-tenant training and still isolated.</text>
+<rect x="40" y="1254" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="1280" font-size="15" font-weight="bold" fill="#8b949e">OCSF / ASFF</text>
+<text x="58" y="1301" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Open Cybersecurity Schema Framework / AWS Security Finding Format - schemas that make cross-source correlation possible.</text>
+<rect x="40" y="1328" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="1354" font-size="15" font-weight="bold" fill="#8b949e">Sigma</text>
+<text x="58" y="1375" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Open signature format for detection rules (YAML), consumable by OpenSearch Security Analytics and friends.</text>
+<rect x="40" y="1402" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="1428" font-size="15" font-weight="bold" fill="#8b949e">Token binding</text>
+<text x="58" y="1449" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Binding an API token to a client trait (e.g., TLS fingerprint) so a stolen token fails replay from another machine.</text>
 </svg>

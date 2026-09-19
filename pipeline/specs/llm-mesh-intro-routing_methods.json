@@ -1,0 +1,49 @@
+{
+  "mode": "table",
+  "title": "Five families of routing methods - they compose",
+  "cols": [
+    "Family",
+    "How it decides",
+    "Needs",
+    "Role in a mesh"
+  ],
+  "rows": [
+    [
+      "Static\npriority chains, weighted shuffle,\nleast-busy, latency-, cost-based",
+      "fixed rules - operator encodes the\npolicy; identical for every request",
+      "nothing (config only)",
+      "the floor - fallback graph\nevery mesh needs anyway"
+    ],
+    [
+      "Learned\nbandits from outcome feedback\n(with decay) · trained routers",
+      "which provider:model served similar\ntraffic reliably, fast - lately?",
+      "outcome stream (bandit), or\npreference data (RouteLLM)",
+      "provider selection within\nthe chain nodes"
+    ],
+    [
+      "Content-aware cascade\nFrugalGPT scorer · entropy gates\nreading the model's own logprobs",
+      "look at the request or the cheap\nanswer: confident? serve. else escalate",
+      "labeled data (scorer) or\nlogprobs-capable provider (gate)",
+      "cost gate in front of the chain:\ndecide whether to spend at all"
+    ],
+    [
+      "kNN / similarity\nembed the prompt, find nearest\nhistorical prompts (semantic router)",
+      "\"which model served prompts like this\nwell and cheap?\" - your traffic is\nthe classifier",
+      "embedding calls (cheap) + history\nstore; cold start needs seeds",
+      "cache-like routing memory;\ngreat for repeated workloads"
+    ],
+    [
+      "Mesh / graph routing\nmodels as nodes, chains, pools and\nfallback edges as the graph",
+      "failover walks the graph, not a list;\na \"model\" your app picks can itself be\na whole sub-routing policy",
+      "nothing - structure only",
+      "the skeleton the other four\nfamilies live inside"
+    ],
+    [
+      "RouteLLM arXiv:2406.18665 · FrugalGPT arXiv:2305.05176 · entropy gate: previous article in this series",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "boldFirstCol": true
+}

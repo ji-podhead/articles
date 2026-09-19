@@ -1,59 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 450" width="100%" height="100%">
-  <defs>
-    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
-    </filter>
-  </defs>
-  <rect width="1100" height="450" fill="#f8fafc" rx="12"/>
-  <text x="550" y="28" fill="#334155" font-family="sans-serif" font-weight="bold" font-size="15" text-anchor="middle">Glossary: Frameworks &amp; Certifications</text>
-
-  <g filter="url(#shadow)">
-    <rect x="20" y="45" width="1060" height="385" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
-  </g>
-
-  <!-- header -->
-  <rect x="20" y="45" width="1060" height="38" fill="#1e293b" rx="8"/>
-  <rect x="20" y="65" width="1060" height="18" fill="#1e293b"/>
-  <text x="120" y="69" fill="#38bdf8" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">TERM</text>
-  <text x="640" y="69" fill="#38bdf8" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">MEANING</text>
-
-  <!-- column separators -->
-  <line x1="220" y1="45" x2="220" y2="430" stroke="#e2e8f0" stroke-width="1"/>
-
-  <!-- rows: y start 83, each height 57.8 -->
-  <g font-family="sans-serif" font-size="11">
-    <!-- Row 1: SOC 2 -->
-    <rect x="20" y="83" width="1060" height="57" fill="#ffffff"/>
-    <text x="35" y="116" fill="#334155" font-weight="bold">SOC 2</text>
-    <text x="235" y="108" fill="#64748b">Audit standard for SaaS operations (security, availability, confidentiality) —</text>
-    <text x="235" y="124" fill="#64748b">proof-of-controls report by an independent CPA firm.</text>
-
-    <!-- Row 2: HIPAA -->
-    <rect x="20" y="140" width="1060" height="57" fill="#f1f5f9"/>
-    <text x="35" y="173" fill="#334155" font-weight="bold">HIPAA</text>
-    <text x="235" y="173" fill="#64748b">US law protecting health data (PHI); mandatory for healthcare workloads.</text>
-
-    <!-- Row 3: PCI-DSS -->
-    <rect x="20" y="197" width="1060" height="57" fill="#ffffff"/>
-    <text x="35" y="230" fill="#334155" font-weight="bold">PCI-DSS</text>
-    <text x="235" y="222" fill="#64748b">Payment card industry security standard; mandatory for anything touching card data</text>
-    <text x="235" y="238" fill="#64748b">(including your token-budget/billing flows).</text>
-
-    <!-- Row 4: NIST CSF -->
-    <rect x="20" y="254" width="1060" height="57" fill="#f1f5f9"/>
-    <text x="35" y="287" fill="#334155" font-weight="bold">NIST CSF</text>
-    <text x="235" y="287" fill="#64748b">US framework catalog for security programs; the "N" in many evidence-pack exports.</text>
-
-    <!-- Row 5: CIS Benchmarks -->
-    <rect x="20" y="311" width="1060" height="57" fill="#ffffff"/>
-    <text x="35" y="344" fill="#334155" font-weight="bold">CIS Benchmarks</text>
-    <text x="235" y="336" fill="#64748b">Center for Internet Security best-practice configuration catalogs (e.g., AWS Foundations Benchmark)</text>
-    <text x="235" y="352" fill="#64748b">that posture tools score against.</text>
-
-    <!-- Row 6: GDPR / DSGVO -->
-    <rect x="20" y="368" width="1060" height="57" fill="#f1f5f9" rx="8"/>
-    <text x="35" y="401" fill="#334155" font-weight="bold">GDPR / DSGVO</text>
-    <text x="235" y="393" fill="#64748b">EU data protection law — the reason security tooling must prove</text>
-    <text x="235" y="409" fill="#64748b">what it stores, not just that it stores it.</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="614" viewBox="0 0 1200 614" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="614" fill="#0d1117"/>
+<text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">Glossary: Frameworks &amp; Certifications</text>
+<text x="60" y="103" font-size="13" font-weight="bold" fill="#60a5fa">TERM</text>
+<text x="320" y="103" font-size="13" font-weight="bold" fill="#60a5fa">MEANING</text>
+<rect x="40" y="144" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="170" font-size="15" font-weight="bold" fill="#8b949e">SOC 2</text>
+<text x="58" y="191" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Audit standard for SaaS operations (security, availability, confidentiality) - proof-of-controls report by an independent CPA firm.</text>
+<rect x="40" y="218" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="244" font-size="15" font-weight="bold" fill="#8b949e">HIPAA</text>
+<text x="58" y="265" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">US law protecting health data (PHI); mandatory for healthcare workloads.</text>
+<rect x="40" y="292" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="318" font-size="15" font-weight="bold" fill="#8b949e">PCI-DSS</text>
+<text x="58" y="339" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Payment card industry security standard; mandatory for anything touching card data (including your token-budget/billing flows).</text>
+<rect x="40" y="366" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="392" font-size="15" font-weight="bold" fill="#8b949e">NIST CSF</text>
+<text x="58" y="413" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">US framework catalog for security programs; the &quot;N&quot; in many evidence-pack exports.</text>
+<rect x="40" y="440" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="466" font-size="15" font-weight="bold" fill="#8b949e">CIS Benchmarks</text>
+<text x="58" y="487" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Center for Internet Security best-practice configuration catalogs (e.g., AWS Foundations Benchmark) that posture tools score against.</text>
+<rect x="40" y="514" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="540" font-size="15" font-weight="bold" fill="#8b949e">GDPR / DSGVO</text>
+<text x="58" y="561" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">EU data protection law - the reason security tooling must prove what it stores, not just that it stores it.</text>
 </svg>

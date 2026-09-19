@@ -1,0 +1,44 @@
+{
+  "width": 1200,
+  "title": "You Have Logs. You Don’t Have a SIEM.",
+  "subtitle": "How to Build One - AWS-Native vs. Open Source",
+  "tree": {
+    "type": "column",
+    "style": { "gap": 26 },
+    "children": [
+      { "type": "text", "lines": ["NEXT-GEN SIEM · 2026 FIELD GUIDE"], "style": { "fontSize": 13, "bold": true, "color": "#8b949e", "height": 22 } },
+      { "type": "text", "lines": ["Real-time anomaly triage, kernel-level mitigation,", "and the two-stage AI response layer - completely explained."], "style": { "fontSize": 15, "color": "#8b949e", "height": 46 } },
+      {
+        "type": "row",
+        "style": { "gap": 44, "justify": "center", "align": "flex-start" },
+        "children": [
+          {
+            "type": "column",
+            "style": { "gap": 10 },
+            "children": [
+              { "type": "code", "lines": ["# Stage 1: streaming RCF → anomaly_grade > 0.85"] },
+              { "type": "text", "lines": ["➤ [Agent] DeepSeek-R1 / Claude verification"], "style": { "fontSize": 14, "color": "#f59e0b", "height": 25 } },
+              { "type": "text", "lines": ["➤ [Kernel] eBPF mitigation → XDP_DROP + SIGKILL"], "style": { "fontSize": 14, "color": "#4ade80", "height": 25 } }
+            ]
+          },
+          {
+            "type": "column",
+            "style": { "gap": 56 },
+            "children": [
+              { "type": "card", "title": "OPEN SOURCE · SELF-HOSTED", "lines": ["Falco · OpenSearch · Wazuh + nftables egress"], "color": "green" },
+              { "type": "card", "title": "AWS-NATIVE · MANAGED", "lines": ["GuardDuty · Security Hub · OpenSearch · WAF", "Bedrock agents · Lambda · eBPF response"], "color": "amber" }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": { "justify": "center" },
+        "children": [
+          { "type": "text", "lines": ["Same job, two ways to build it - the identity chain decides, not the vendor."], "style": { "fontSize": 13, "color": "#8b949e", "width": 640, "height": 22 } }
+        ]
+      }
+    ]
+  },
+  "connect": []
+}

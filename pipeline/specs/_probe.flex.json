@@ -1,0 +1,15 @@
+{
+  "width": 1200,
+  "title": "Probe",
+  "tree": {
+    "type": "row",
+    "style": { "gap": 22, "justify": "center" },
+    "children": [
+      { "type": "card", "id": "nocolor", "title": "NoColor title", "lines": ["body line one"] },
+      { "type": "card", "id": "gray", "title": "Gray title", "lines": ["body line one"], "color": "gray" },
+      { "type": "chip", "id": "chipnc", "text": "chip no color" },
+      { "type": "text", "lines": ["plain text node"] }
+    ]
+  },
+  "connect": []
+}

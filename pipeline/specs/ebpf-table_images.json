@@ -1,0 +1,31 @@
+{
+  "mode": "table",
+  "cols": [
+    "File",
+    "Placement",
+    "Caption (English)"
+  ],
+  "rows": [
+    [
+      "titel.svg",
+      "Title image / post preview",
+      "Title image: kernel-level interception meets LLM guardrails - the two halves this article connects."
+    ],
+    [
+      "gap2.svg",
+      "Section \"The semantic gap\" (Figure 1)",
+      "The semantic gap - infrastructure tools see the \"how\", AI guardrails see the \"what\", and nothing correlates the two."
+    ],
+    [
+      "pipeline.svg",
+      "Section \"How eBPF-based interception actually works (Figure 2)\"",
+      "The eBPF interception pipeline - capture at the TLS boundary, judge in userspace, enforce in the kernel."
+    ],
+    [
+      "freeze_latter.svg",
+      "Section \"The part that actually matters: identity\" (Figure 4)",
+      "The identity chain and the response ladder - identity flows from the kernel-visible PID down to the minted session token, and enforcement escalates from revocation to egress blackhole."
+    ]
+  ],
+  "boldFirstCol": true
+}

@@ -1,0 +1,36 @@
+{
+  "mode": "table",
+  "cols": [
+    "Class",
+    "Examples",
+    "What you get",
+    "What you don't"
+  ],
+  "rows": [
+    [
+      "Gateway / Proxy (OSS)",
+      "LiteLLM Proxy",
+      "✔ Unified provider routing; ✔ User budgets & rate limits",
+      "❌ No process or container identity; ❌ No operating system enforcement"
+    ],
+    [
+      "In-Process Guards (OSS)",
+      "LLM Guard, Guardrails AI, NeMo Guardrails",
+      "✔ Native PII masking; ✔ Prompt injection & toxicity scanning",
+      "❌ Runs inside the application code; ❌ Not at a centralized network chokepoint"
+    ],
+    [
+      "Commercial Platforms",
+      "Lakera (Check Point), Prompt Security, Portkey (Palo Alto)",
+      "✔ Low-latency real-time defense; ✔ Enterprise \"Shadow AI\" discovery",
+      "❌ Closed-source black box; ❌ Foreign data/trust model requirement"
+    ],
+    [
+      "Kernel / Runtime (eBPF)",
+      "TigerGate, AgentSight",
+      "✔ Zero-instrumentation intercept; ✔ Operates directly at TLS/Crypto boundary",
+      "❌ They see the host, but lack context on the identity chain that provisioned the agent"
+    ]
+  ],
+  "boldFirstCol": true
+}

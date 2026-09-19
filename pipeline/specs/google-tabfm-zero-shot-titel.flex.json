@@ -1,0 +1,55 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "Google's TabFM: The End of Retraining Loops?",
+  "subtitle": "Zero-shot foundation models vs. XGBoost vs. River",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 28
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 16,
+          "align": "stretch"
+        },
+        "children": [
+          {
+            "type": "chip",
+            "text": "MACHINE LEARNING",
+            "color": "blue"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "lines": [
+          "# inference.py - model = TabFM.load(frozen=True)"
+        ],
+        "style": {
+          "fontSize": 16,
+          "color": "#8b949e",
+          "bold": false,
+          "width": 1120,
+          "height": 28
+        }
+      },
+      {
+        "type": "text",
+        "lines": [
+          "➔ [Forward Pass] row-col attention over 2D table...",
+          "➔ [Zero-Shot] prediction returned - 0 retraining loops"
+        ],
+        "style": {
+          "fontSize": 16,
+          "color": "#60a5fa",
+          "bold": false,
+          "width": 1120,
+          "height": 50
+        }
+      }
+    ]
+  }
+}

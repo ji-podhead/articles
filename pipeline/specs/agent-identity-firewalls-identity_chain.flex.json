@@ -1,0 +1,100 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "Ingress-derived-only: the gateway is the only place identity is ever decided",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24,
+      "align": "center"
+    },
+    "children": [
+      {
+        "type": "card",
+        "id": "arrival",
+        "title": "Agent's own request arrives",
+        "lines": [
+          "carrying whatever identity claim it wants"
+        ],
+        "color": "red",
+        "style": {
+          "maxWidth": 420
+        }
+      },
+      {
+        "type": "card",
+        "id": "s1",
+        "title": "STEP 1, Strip every client-supplied identity header, unconditionally",
+        "lines": [
+          "Before any other logic runs. A client-supplied copy of an identity claim is treated as spoofing by definition, it never even reaches a decision.",
+          "This is the step most home-grown gateways skip, trusting a header the caller itself set."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "id": "s2",
+        "title": "STEP 2, Resolve real identity server-side, from the credential that actually authenticated",
+        "lines": [
+          "Not from anything the client claims. The credential is looked up against a store that distinguishes a human, a workspace, and one specific agent instance.",
+          "Each agent instance gets its own row, independently revocable, independently attributable, never shared."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "id": "s3",
+        "title": "STEP 3, Re-stamp the identity headers from the VERIFIED row, only now",
+        "lines": [
+          "Every downstream handler reads a workspace/agent identity header, but the value now came from the database row the credential resolved to, never from the client.",
+          "One ingress point re-stamps, everywhere else just trusts, no downstream code re-derives identity on its own."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "id": "s4",
+        "title": "STEP 4, Deterministic policy decides, outside the model entirely",
+        "lines": [
+          "A policy-as-code engine (Rego, Cedar) evaluates the verified identity against granted capabilities, allow, escalate for approval, or deny. Fail-closed on any error."
+        ],
+        "color": "green",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "arrival",
+      "to": "s1"
+    },
+    {
+      "from": "s1",
+      "to": "s2"
+    },
+    {
+      "from": "s2",
+      "to": "s3"
+    },
+    {
+      "from": "s3",
+      "to": "s4"
+    }
+  ],
+  "chips": []
+}

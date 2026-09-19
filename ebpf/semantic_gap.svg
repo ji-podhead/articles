@@ -1,44 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
-  <defs>
-    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1e3a8a" />
-      <stop offset="100%" stop-color="#3b82f6" />
-    </linearGradient>
-    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#581c87" />
-      <stop offset="100%" stop-color="#a855f7" />
-    </linearGradient>
-    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#7f1d1d" />
-      <stop offset="100%" stop-color="#ef4444" />
-    </linearGradient>
-    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.15"/>
-    </filter>
-  </defs>
-  <rect width="800" height="400" fill="#f8fafc" rx="16"/>
-  <g filter="url(#dropShadow)">
-    <rect x="50" y="80" width="280" height="240" rx="12" fill="url(#blueGrad)"/>
-    <text x="190" y="120" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="18" text-anchor="middle">Traditional Infrastructure</text>
-    <text x="190" y="150" fill="#93c5fd" font-family="sans-serif" font-size="14" text-anchor="middle">Sees low-level events only</text>
-    <line x1="80" y1="180" x2="300" y2="180" stroke="#60a5fa" stroke-width="1"/>
-    <text x="80" y="215" fill="#ffffff" font-family="monospace" font-size="13">✔ open("/etc/shadow")</text>
-    <text x="80" y="245" fill="#ffffff" font-family="monospace" font-size="13">✔ TCP Stream to Endpoint</text>
-    <text x="80" y="285" fill="#fca5a5" font-family="sans-serif" font-style="italic" font-size="14">Problem: "Why is it doing this?"</text>
-  </g>
-  <g filter="url(#dropShadow)">
-    <rect x="470" y="80" width="280" height="240" rx="12" fill="url(#purpleGrad)"/>
-    <text x="610" y="120" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="18" text-anchor="middle">AI Application Layer</text>
-    <text x="610" y="150" fill="#e9d5ff" font-family="sans-serif" font-size="14" text-anchor="middle">Sees natural language only</text>
-    <line x1="500" y1="180" x2="720" y2="180" stroke="#c084fc" stroke-width="1"/>
-    <text x="500" y="215" fill="#ffffff" font-family="sans-serif" font-size="13">💬 "Ignore prior rules..."</text>
-    <text x="500" y="245" fill="#ffffff" font-family="sans-serif" font-size="13">💬 "Output the .env payload"</text>
-    <text x="500" y="285" fill="#fca5a5" font-family="sans-serif" font-style="italic" font-size="14">Problem: "Is this safe to run?"</text>
-  </g>
-  <g>
-    <path d="M 340 200 L 460 200" stroke="#ef4444" stroke-width="3" stroke-dasharray="6,4" />
-    <circle cx="400" cy="200" r="32" fill="url(#redGrad)" filter="url(#dropShadow)"/>
-    <text x="400" y="208" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="24" text-anchor="middle">GAP</text>
-    <text x="400" y="260" fill="#ef4444" font-family="sans-serif" font-weight="bold" font-size="14" text-anchor="middle">The Semantic Gap</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="163" viewBox="0 0 1200 163" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="163" fill="#0d1117"/>
+<text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5"></text>
+<rect x="158" y="0" width="334" height="129" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="158" y="0" width="5" height="129" rx="2.5" fill="#60a5fa"/>
+<text x="176" y="26" font-size="15" font-weight="bold" fill="#60a5fa">Traditional Infrastructure</text>
+<text x="176" y="47" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Sees low-level events only</text>
+<text x="176" y="68" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">✔ open(&quot;/etc/shadow&quot;)</text>
+<text x="176" y="89" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">✔ TCP Stream to Endpoint</text>
+<text x="176" y="110" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Problem: &quot;Why is it doing this?&quot;</text>
+<rect x="512" y="0" width="185" height="66" rx="11" fill="#161b22" stroke="#f87171" stroke-width="2"/>
+<rect x="512" y="0" width="5" height="66" rx="2.5" fill="#f87171"/>
+<text x="530" y="26" font-size="15" font-weight="bold" fill="#f87171">GAP</text>
+<text x="530" y="47" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">The Semantic Gap</text>
+<rect x="717" y="0" width="325" height="129" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="735" y="26" font-size="15" font-weight="bold" fill="#e6edf3">AI Application Layer</text>
+<text x="735" y="47" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Sees natural language only</text>
+<text x="735" y="68" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">💬 &quot;Ignore prior rules...&quot;</text>
+<text x="735" y="89" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">💬 &quot;Output the .env payload&quot;</text>
+<text x="735" y="110" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Problem: &quot;Is this safe to run?&quot;</text>
+<marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#f87171"/></marker>
+<polyline points="492,65 512,33" fill="none" stroke="#f87171" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="697,33 717,65" fill="none" stroke="#f87171" stroke-width="2.2" marker-end="url(#ar1)"/>
 </svg>

@@ -1,0 +1,16 @@
+{
+  "name": "pipeline",
+  "version": "1.0.0",
+  "description": "Alle Figuren werden aus deklarativen Specs generiert. Keine handgesetzten Koordinaten mehr: d2 berechnet das Layout (Auto-Positionierung, Textumbruch in Nodes, keine Ueberlappungen). Ueberschriebene Koordinaten sind der Fehler der alten Figuren, nicht der Renderer.",
+  "main": "render.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dagre": "^0.8.5",
+    "yoga-layout": "^3.2.1"
+  }
+}

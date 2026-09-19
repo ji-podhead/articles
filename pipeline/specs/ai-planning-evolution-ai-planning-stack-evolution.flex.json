@@ -1,0 +1,246 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "AI PLANNING: THE 3-LAYER STACK",
+  "subtitle": "from F.E.A.R.'s GOAP to LLM-driven robotics",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "text",
+        "lines": [
+          "THE EVOLUTION"
+        ],
+        "style": {
+          "fontSize": 15,
+          "color": "#8b949e",
+          "bold": true,
+          "width": 1120,
+          "height": 27
+        }
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "align": "stretch"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "fsm",
+            "title": "FSM",
+            "lines": [
+              "state spaghetti",
+              "",
+              ""
+            ],
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 208
+            }
+          },
+          {
+            "type": "card",
+            "id": "goap",
+            "title": "GOAP",
+            "lines": [
+              "F.E.A.R. (2005)",
+              "goal→action planning"
+            ],
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 208
+            }
+          },
+          {
+            "type": "card",
+            "id": "bt",
+            "title": "Behavior Trees",
+            "lines": [
+              "ROS 2 standard",
+              "reactive control",
+              ""
+            ],
+            "color": "blue",
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 208
+            }
+          },
+          {
+            "type": "card",
+            "id": "pddl",
+            "title": "PDDL",
+            "lines": [
+              "ROSPlan solvers",
+              "formal planning",
+              ""
+            ],
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 208
+            }
+          },
+          {
+            "type": "card",
+            "id": "llm",
+            "title": "LLM Bridge",
+            "lines": [
+              "cutting edge",
+              "human → PDDL translation"
+            ],
+            "color": "green",
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 208
+            }
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 26,
+          "align": "stretch"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "l1",
+            "title": "1 EXECUTION",
+            "lines": [
+              "Behavior Trees",
+              "",
+              "?",
+              "action",
+              "action",
+              "skill",
+              "skill",
+              "skill",
+              "skill",
+              "",
+              "✓ Moment-to-moment reactive control",
+              "✓ BehaviorTree.CPP (ROS 2)",
+              "✓ Skills can be NN-powered"
+            ],
+            "color": "blue",
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 356
+            }
+          },
+          {
+            "type": "card",
+            "id": "l2",
+            "title": "2 STRATEGY",
+            "lines": [
+              "Formal Planners (PDDL)",
+              "",
+              "PDDL Domain + Problem",
+              "Dedicated Solver",
+              "Optimal Plan → Behavior Tree",
+              "",
+              "✓ Complex multi-step tasks",
+              "✓ ROSPlan framework",
+              "✓ Formal guarantees",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 356
+            }
+          },
+          {
+            "type": "card",
+            "id": "l3",
+            "title": "3 INTERFACE",
+            "lines": [
+              "LLM Bridge",
+              "",
+              "Human",
+              "\"clean the table\"",
+              "LLM",
+              "translate",
+              "structured PDDL → formal planner",
+              "solver finds the optimal plan",
+              "",
+              "✓ Doesn't replace layers 1+2",
+              "✓ Bridges human intent → formal",
+              "✓ Cutting edge (recent papers)",
+              ""
+            ],
+            "color": "green",
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 356
+            }
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "lines": [
+          "THE KEY INSIGHT: LLMs don't replace the planning stack - they interface with it"
+        ],
+        "style": {
+          "fontSize": 15,
+          "color": "#e6edf3",
+          "bold": true,
+          "width": 1120,
+          "height": 27
+        }
+      },
+      {
+        "type": "text",
+        "lines": [
+          "GOAP (F.E.A.R.) → Behavior Trees (ROS 2) → PDDL (ROSPlan) → LLM Bridge (human → PDDL)"
+        ],
+        "style": {
+          "fontSize": 13,
+          "color": "#6e7681",
+          "bold": false,
+          "width": 1120,
+          "height": 24
+        }
+      },
+      {
+        "type": "text",
+        "lines": [
+          "#AI #GOAP #BehaviorTrees #PDDL #LLM #Robotics #ROS #IsaacSim #AutonomousSystems"
+        ],
+        "style": {
+          "fontSize": 13,
+          "color": "#6e7681",
+          "bold": false,
+          "width": 1120,
+          "height": 24
+        }
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "fsm",
+      "to": "goap"
+    },
+    {
+      "from": "goap",
+      "to": "bt"
+    },
+    {
+      "from": "bt",
+      "to": "pddl"
+    },
+    {
+      "from": "pddl",
+      "to": "llm"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "width": 1200,
+  "title": "The two-stage AI security response: cheap detection, expensive thinking - only when it matters",
+  "tree": {
+    "type": "column",
+    "style": { "gap": 30 },
+    "children": [
+      { "type": "text", "lines": ["Stage 1 = the always-on sorter · Stage 2 = the reasoning agent,", "fired only when Stage 1 flags · edge-to-core triage"], "style": { "fontSize": 15, "color": "#8b949e", "height": 46 } },
+      { "type": "card", "title": "STAGE 1 · DETECT - always-on, ~free", "color": "green", "style": { "width": 1120, "maxWidth": 1120 } },
+      {
+        "type": "row",
+        "style": { "gap": 16, "justify": "center", "align": "flex-start" },
+        "children": [
+          { "type": "card", "id": "logs", "title": "Log streams", "lines": ["egress drops · bytes_sent", "model invocations · syscalls", "every event, 24/7"], "color": "gray", "style": { "maxWidth": 240 } },
+          { "type": "card", "id": "det", "title": "Anomaly detector - the sorter", "lines": ["RCF / embeddings+KNN / SLM distills", "AWS: GuardDuty ML · OSS: ML Commons", "statistical, not generative - pure math:", "\"pod B sends 400× its 14-day baseline\""], "color": "green", "style": { "maxWidth": 340 } },
+          { "type": "card", "id": "arch", "title": "Archive (normal path)", "lines": ["the 99.9% of events that are business", "as usual. Long-term retention earns", "its keep here - nothing is dropped."], "color": "gray", "style": { "maxWidth": 320 } }
+        ]
+      },
+      {
+        "type": "row",
+        "style": { "justify": "center" },
+        "children": [
+          { "type": "card", "id": "an", "title": "anomaly?", "color": "gray" }
+        ]
+      },
+      { "type": "card", "id": "band2", "title": "STAGE 2 · THINK + ACT - only on anomaly (LLM tokens spent here, nowhere else)", "color": "red", "style": { "width": 1120, "maxWidth": 1120 } },
+      {
+        "type": "row",
+        "style": { "gap": 12, "justify": "center", "align": "flex-start" },
+        "children": [
+          { "type": "card", "id": "orch", "title": "Orchestration fires", "lines": ["AWS: GuardDuty findings are", "EventBridge events →", "Step Functions state machine", "OSS: alerting monitor watches", "the anomaly-results index"], "color": "gray", "style": { "maxWidth": 306 } },
+          { "type": "card", "id": "think", "title": "The thinker - reasoning agent", "lines": ["2026 class: DeepSeek-R1 / Claude 5-gen", "chain-of-thought before the verdict", "AWS: Bedrock Agent · OSS: agents-tools", "RAG over runbooks + context tools:", "IP rep · maintenance windows · identity"], "color": "red", "style": { "maxWidth": 340 } },
+          { "type": "card", "id": "ra", "title": "real attack?", "color": "gray" }
+        ]
+      },
+      {
+        "type": "row",
+        "style": { "justify": "flex-end" },
+        "children": [
+          { "type": "card", "id": "fp", "title": "False positive", "lines": ["documented - and fed back:", "detector threshold + baseline retrain", "(the loop keeps the model alive", "when a sprint feature changes", "legitimate traffic patterns)"], "color": "gray", "style": { "maxWidth": 320 } }
+        ]
+      },
+      {
+        "type": "row",
+        "style": { "justify": "flex-end" },
+        "children": [
+          { "type": "chip", "text": "false-positive feedback → threshold + retrain", "color": "red" }
+        ]
+      },
+      {
+        "type": "row",
+        "style": { "gap": 14, "justify": "center", "align": "flex-start" },
+        "children": [
+          { "type": "card", "id": "why", "title": "Why two stages (the cost math)", "lines": ["RCF/ML over every event: ~$0, sub-ms, 24/7.", "LLM triage: cents per call - spent only on", "the ~0.1% of events the sorter flags.", "An LLM on raw streams: too slow, too", "expensive, too hallucination-prone."], "color": "gray", "style": { "maxWidth": 360 } },
+          { "type": "code", "id": "resp", "title": "Response - agent tool-calls (scoped Lambda)", "lines": ["kernel-injection - live", "action: inject_kernel_profile --target=ji-auth-pod", "➔ network_layer: XDP_DROP [malicious_ip]", "➔ syscall_layer: SIGKILL [unauthorized_binary]", "# process dies, container survives for forensics - no app downtime"], "style": { "maxWidth": 460 } },
+          { "type": "card", "id": "sensor", "title": "Runtime sensor (Falco/eBPF)", "lines": ["the sensor side of the loop:", "syscalls per container, container-attributed - the same events that feed Stage 1 make the kill precise.", "(Falco doubles as the OSS Stage-1 runtime source in this architecture)"], "color": "gray", "style": { "maxWidth": 260 } }
+        ]
+      },
+      { "type": "card", "title": "The guardrail that makes the automation safe", "lines": ["the agent gets a read-mostly tool catalog (query findings, read policies) - irreversible actions (kill a container, blackhole egress) stay policy-gated or two-step.", "every automated action writes an audit event. An ML finding always carries confidence + model_version and ADDS to the rule layer - it never replaces it."], "color": "gray", "style": { "width": 1120, "maxWidth": 1120 } },
+      { "type": "text", "lines": ["The LLM is the orchestrator, never the sensor."], "style": { "fontSize": 14, "bold": true, "color": "#f87171", "height": 23 } },
+      { "type": "text", "lines": ["AWS chain: GuardDuty (incl. AI Protection) → EventBridge → Step Functions → Bedrock Agent → Lambda → eBPF   |", "OSS chain: ML Commons detector → results index → alerting → agents (plan-execute-reflect) → tool"], "style": { "fontSize": 12, "color": "#8b949e", "height": 37 } },
+      { "type": "text", "lines": ["sources: docs.opensearch.org/latest/ml-commons-plugin/ · docs.aws.amazon.com/guardduty/latest/ug/ai-protection.html"], "style": { "fontSize": 12, "color": "#8b949e", "height": 20 } },
+      { "type": "text", "lines": ["aws.amazon.com/blogs/machine-learning/automate-cloud-security-vulnerability-assessment-and-alerting-using-amazon-bedrock/"], "style": { "fontSize": 12, "color": "#8b949e", "height": 20 } }
+    ]
+  },
+  "connect": [
+    { "from": "logs", "to": "det" },
+    { "from": "det", "to": "an" },
+    { "from": "an", "to": "band2", "color": "red", "label": "YES → fire the agent" },
+    { "from": "orch", "to": "think" },
+    { "from": "think", "to": "ra" },
+    { "from": "ra", "to": "fp" },
+    { "from": "ra", "to": "resp", "color": "red", "label": "yes → execute playbook" }
+  ]
+}

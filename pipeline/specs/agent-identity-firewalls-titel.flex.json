@@ -1,0 +1,160 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "The Badge, Not the Master Key",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 26,
+      "align": "stretch"
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 40,
+          "align": "stretch",
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "column",
+            "style": {
+              "width": 560,
+              "gap": 24,
+              "justify": "space-between"
+            },
+            "children": [
+              {
+                "type": "text",
+                "lines": [
+                  "Why AI agents need their own identity,",
+                  "not a shared service account, and what a",
+                  "real 2026 incident proved about it."
+                ],
+                "style": {
+                  "fontSize": 17,
+                  "color": "#8b949e",
+                  "width": 560,
+                  "height": 76
+                }
+              },
+              {
+                "type": "card",
+                "lines": [
+                  "# X-Agent-Identity: stripped on every request, always",
+                  "➔ identity resolved server-side, from the credential",
+                  "➔ policy = deterministic code, never a model call"
+                ],
+                "style": {
+                  "width": 560,
+                  "maxWidth": 560
+                }
+              },
+              {
+                "type": "text",
+                "lines": [
+                  "JIMESH"
+                ],
+                "style": {
+                  "fontSize": 17,
+                  "bold": true,
+                  "color": "#8b949e",
+                  "width": 240,
+                  "height": 26
+                }
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "style": {
+              "width": 486,
+              "gap": 22,
+              "align": "center"
+            },
+            "children": [
+              {
+                "type": "row",
+                "style": {
+                  "gap": 12,
+                  "justify": "center"
+                },
+                "children": [
+                  {
+                    "type": "card",
+                    "id": "agA",
+                    "title": "Agent A",
+                    "lines": [
+                      "own key"
+                    ],
+                    "color": "gray"
+                  },
+                  {
+                    "type": "card",
+                    "id": "agB",
+                    "title": "Agent B",
+                    "lines": [
+                      "own key"
+                    ],
+                    "color": "gray"
+                  },
+                  {
+                    "type": "card",
+                    "id": "agC",
+                    "title": "Agent C",
+                    "lines": [
+                      "own key"
+                    ],
+                    "color": "gray"
+                  }
+                ]
+              },
+              {
+                "type": "card",
+                "id": "gw",
+                "title": "GATEWAY",
+                "lines": [
+                  "deterministic policy, per request"
+                ],
+                "color": "green"
+              },
+              {
+                "type": "row",
+                "style": {
+                  "gap": 12,
+                  "justify": "center"
+                },
+                "children": [
+                  {
+                    "type": "chip",
+                    "text": "ONE SHARED SERVICE ACCOUNT",
+                    "color": "red"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "agA",
+      "to": "gw",
+      "color": "green"
+    },
+    {
+      "from": "agB",
+      "to": "gw",
+      "color": "green"
+    },
+    {
+      "from": "agC",
+      "to": "gw",
+      "color": "green"
+    }
+  ],
+  "chips": []
+}

@@ -1,0 +1,108 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "Four different teams, the same underlying answer: deterministic policy, outside the model",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 22,
+      "align": "center"
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 24
+        },
+        "children": [
+          {
+            "type": "card",
+            "title": "Meta, LlamaFirewall (Purple Llama, real, arXiv 2505.03574)",
+            "lines": [
+              "PromptGuard 2 (jailbreak detector) → Agent Alignment Checks (a chain-of-thought auditor reading the agent's own reasoning for goal misalignment) → CodeShield (static analysis before generated code executes).",
+              "Scope: content-safety, not authorization, answers \"is this dangerous,\" not \"is this agent allowed.\""
+            ],
+            "color": "red",
+            "style": {
+              "width": 548,
+              "maxWidth": 548
+            }
+          },
+          {
+            "type": "card",
+            "title": "OpenAI, tool approvals + moderation pipeline",
+            "lines": [
+              "Separates prompt from tool execution; a synchronous moderation layer screens input/output before a tool call is even generated; human-in-the-loop approval is the default for higher-risk actions.",
+              "See the real July 2026 incident below, even this didn't stop a benchmark exploit chain."
+            ],
+            "color": "red",
+            "style": {
+              "width": 548,
+              "maxWidth": 548
+            }
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 24
+        },
+        "children": [
+          {
+            "type": "card",
+            "title": "Google, Vertex AI / Agent Development Kit",
+            "lines": [
+              "Tool calls are matched deterministically against a pre-defined OpenAPI schema: a call that doesn't exactly match the schema is rejected by the API gateway itself, not by asking the model to reconsider.",
+              "Same shape as a well-built capability gate: the schema/policy check is code, not a second model call."
+            ],
+            "color": "green",
+            "style": {
+              "width": 548,
+              "maxWidth": 548
+            }
+          },
+          {
+            "type": "card",
+            "title": "AWS, Bedrock AgentCore (2025)",
+            "lines": [
+              "AgentCore Identity brokers short-lived, per-agent STS credentials (AssumeRole + a per-call session policy) instead of a standing IAM role; AgentCore Gateway sits in front of every tool call, evaluated against Cedar, AWS's own deterministic, formally-verified policy language."
+            ],
+            "color": "gray",
+            "style": {
+              "width": 548,
+              "maxWidth": 548
+            }
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "title": "The pattern every one of them converges on",
+        "color": "green",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        },
+        "lines": [
+          "1. A short-lived, per-agent credential, never a standing role or a secret shared across every agent instance.",
+          "2. The identity is resolved server-side, from the credential, never trusted from what the agent's own output claims to be.",
+          "3. The allow/deny decision is deterministic code (Rego, Cedar, an OpenAPI schema match), not a second model asked to judge the first one's tool call.",
+          "4. Content-safety scanners (PromptGuard/CodeShield-style) are a SEPARATE, complementary layer, never a substitute for the authorization decision above."
+        ]
+      },
+      {
+        "type": "card",
+        "title": "A platform combining short-lived per-agent keys, server-side header re-stamping, and a deterministic policy gate is a working instance of the same shape.",
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        },
+        "lines": []
+      }
+    ]
+  },
+  "connect": [],
+  "chips": []
+}

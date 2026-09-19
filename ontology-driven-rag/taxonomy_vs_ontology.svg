@@ -1,72 +1,74 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="560" viewBox="0 0 1050 560" font-family="Helvetica, Arial, sans-serif">
-  <rect width="1050" height="560" fill="#0f172a"/>
-
-  <text x="30" y="42" fill="#e2e8f0" font-size="20" font-weight="bold">Taxonomy vs. Ontology — the two halves of the blueprint</text>
-
-  <!-- taxonomy panel -->
-  <rect x="30" y="70" width="450" height="440" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
-  <text x="255" y="102" fill="#e2e8f0" font-size="15" text-anchor="middle" font-weight="bold">Taxonomy — classify</text>
-  <text x="255" y="122" fill="#94a3b8" font-size="12" text-anchor="middle">one home per document · instant exclusion</text>
-  <g stroke="#475569" stroke-width="1.5" fill="none">
-    <path d="M 255,160 L 255,160 M 255,160 L 135,215 M 255,160 L 255,215 M 255,160 L 375,215"/>
-    <path d="M 255,241 L 155,300 M 255,241 L 275,300 M 375,241 L 395,300"/>
-    <path d="M 155,326 L 125,385 M 155,326 L 215,385"/>
-  </g>
-  <g font-family="monospace" font-size="12" text-anchor="middle">
-    <rect x="205" y="138" width="100" height="26" rx="6" fill="#312e81" stroke="#818cf8" stroke-width="1.5"/>
-    <text x="255" y="155" fill="#c7d2fe">Domain</text>
-    <rect x="90" y="215" width="90" height="26" rx="6" fill="#1e293b" stroke="#475569"/>
-    <text x="135" y="232" fill="#94a3b8">Kingdom</text>
-    <rect x="210" y="215" width="90" height="26" rx="6" fill="#1e293b" stroke="#475569"/>
-    <text x="255" y="232" fill="#94a3b8">Phylum</text>
-    <rect x="330" y="215" width="90" height="26" rx="6" fill="#1e293b" stroke="#475569"/>
-    <text x="375" y="232" fill="#94a3b8">Class</text>
-    <rect x="110" y="300" width="90" height="26" rx="6" fill="#1e293b" stroke="#475569"/>
-    <text x="155" y="317" fill="#94a3b8">Order</text>
-    <rect x="230" y="300" width="90" height="26" rx="6" fill="#1e293b" stroke="#475569"/>
-    <text x="275" y="317" fill="#94a3b8">Family</text>
-    <rect x="350" y="300" width="90" height="26" rx="6" fill="#1e293b" stroke="#475569"/>
-    <text x="395" y="317" fill="#94a3b8">Genus</text>
-    <rect x="85" y="385" width="80" height="26" rx="6" fill="#052e16" stroke="#22c55e"/>
-    <text x="125" y="402" fill="#4ade80">Species</text>
-    <rect x="175" y="385" width="80" height="26" rx="6" fill="#1e293b" stroke="#475569"/>
-    <text x="215" y="402" fill="#94a3b8">Species</text>
-  </g>
-  <text x="255" y="460" fill="#64748b" font-size="11" text-anchor="middle" font-family="monospace">job: route + exclude irrelevant domains · 100% certain</text>
-  <text x="255" y="478" fill="#64748b" font-size="11" text-anchor="middle" font-family="monospace">rigid · one home per doc · no relations</text>
-
-  <!-- ontology panel -->
-  <rect x="570" y="70" width="450" height="440" rx="12" fill="#1e293b" stroke="#818cf8" stroke-width="1.5"/>
-  <text x="795" y="102" fill="#e2e8f0" font-size="15" text-anchor="middle" font-weight="bold">Ontology — reason</text>
-  <text x="795" y="122" fill="#94a3b8" font-size="12" text-anchor="middle">formal concepts · properties · typed relations</text>
-  <g stroke="#475569" stroke-width="2" fill="none">
-    <line x1="795" y1="255" x2="655" y2="180"/>
-    <line x1="795" y1="255" x2="935" y2="180"/>
-    <line x1="795" y1="255" x2="655" y2="350"/>
-    <line x1="795" y1="255" x2="935" y2="350"/>
-  </g>
-  <line x1="795" y1="255" x2="655" y2="180" stroke="#22c55e" stroke-width="3"/>
-  <g font-family="monospace" font-size="11" fill="#64748b" text-anchor="middle">
-    <text x="715" y="205" fill="#4ade80" transform="rotate(-30 715 205)">TREATS ✓</text>
-    <text x="880" y="205">HAS_SYMPTOM</text>
-    <text x="715" y="315">IS_INDICATOR_FOR</text>
-    <text x="880" y="315">TAKES</text>
-  </g>
-  <g font-family="monospace" font-size="12" text-anchor="middle">
-    <rect x="735" y="230" width="120" height="30" rx="8" fill="#312e81" stroke="#818cf8" stroke-width="2"/>
-    <text x="795" y="250" fill="#c7d2fe">Diagnosis</text>
-    <circle cx="655" cy="180" r="9" fill="#22c55e"/>
-    <text x="655" y="160" fill="#4ade80">Medication ✓</text>
-    <circle cx="935" cy="180" r="9" fill="#64748b"/>
-    <text x="935" y="160" fill="#64748b">Symptom</text>
-    <circle cx="655" cy="350" r="9" fill="#64748b"/>
-    <text x="655" y="375" fill="#64748b">LabValue</text>
-    <circle cx="935" cy="350" r="9" fill="#64748b"/>
-    <text x="935" y="375" fill="#64748b">Patient</text>
-  </g>
-  <text x="795" y="460" fill="#64748b" font-size="11" text-anchor="middle" font-family="monospace">job: precise traversal · validates multi-hop paths</text>
-  <text x="795" y="478" fill="#64748b" font-size="11" text-anchor="middle" font-family="monospace">SNOMED CT · ICD-10 · LOINC · Brick Schema</text>
-
-  <line x1="30" y1="535" x2="1020" y2="535" stroke="#334155" stroke-width="1"/>
-  <text x="525" y="552" fill="#475569" font-size="10" text-anchor="middle">taxonomy routes · ontology reasons · both together = blueprint of knowledge</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="567" viewBox="0 0 1200 567" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="567" fill="#0d1117"/>
+<text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">Taxonomy vs. Ontology - the two halves of the blueprint</text>
+<rect x="148" y="70" width="380" height="129" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="166" y="96" font-size="15" font-weight="bold" fill="#e6edf3">Taxonomy - classify</text>
+<text x="166" y="117" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">one home per document · instant exclusion</text>
+<text x="166" y="138" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">job: route + exclude irrelevant domains ·</text>
+<text x="166" y="159" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">100% certain</text>
+<text x="166" y="180" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">rigid · one home per doc · no relations</text>
+<rect x="148" y="215" width="156" height="45" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="148" y="215" width="5" height="45" rx="2.5" fill="#60a5fa"/>
+<text x="166" y="241" font-size="15" font-weight="bold" fill="#60a5fa">Domain</text>
+<rect x="148" y="276" width="156" height="45" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="166" y="302" font-size="15" font-weight="bold" fill="#e6edf3">Kingdom</text>
+<rect x="320" y="276" width="156" height="45" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="338" y="302" font-size="15" font-weight="bold" fill="#e6edf3">Phylum</text>
+<rect x="492" y="276" width="156" height="45" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="510" y="302" font-size="15" font-weight="bold" fill="#e6edf3">Class</text>
+<rect x="148" y="337" width="156" height="45" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="166" y="363" font-size="15" font-weight="bold" fill="#e6edf3">Order</text>
+<rect x="320" y="337" width="156" height="45" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="338" y="363" font-size="15" font-weight="bold" fill="#e6edf3">Family</text>
+<rect x="492" y="337" width="156" height="45" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="510" y="363" font-size="15" font-weight="bold" fill="#e6edf3">Genus</text>
+<rect x="234" y="398" width="156" height="45" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="234" y="398" width="5" height="45" rx="2.5" fill="#4ade80"/>
+<text x="252" y="424" font-size="15" font-weight="bold" fill="#4ade80">Species</text>
+<rect x="406" y="398" width="156" height="45" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="424" y="424" font-size="15" font-weight="bold" fill="#e6edf3">Species</text>
+<rect x="672" y="70" width="380" height="129" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="672" y="70" width="5" height="129" rx="2.5" fill="#60a5fa"/>
+<text x="690" y="96" font-size="15" font-weight="bold" fill="#60a5fa">Ontology - reason</text>
+<text x="690" y="117" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">formal concepts · properties · typed relations</text>
+<text x="690" y="138" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">job: precise traversal · validates multi-hop</text>
+<text x="690" y="159" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">paths</text>
+<text x="690" y="180" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">SNOMED CT · ICD-10 · LOINC · Brick Schema</text>
+<rect x="672" y="215" width="156" height="45" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="672" y="215" width="5" height="45" rx="2.5" fill="#60a5fa"/>
+<text x="690" y="241" font-size="15" font-weight="bold" fill="#60a5fa">Diagnosis</text>
+<rect x="697" y="276" width="159" height="45" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="697" y="276" width="5" height="45" rx="2.5" fill="#4ade80"/>
+<text x="715" y="302" font-size="15" font-weight="bold" fill="#4ade80">Medication ✓</text>
+<rect x="872" y="276" width="156" height="45" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="890" y="302" font-size="15" font-weight="bold" fill="#e6edf3">Symptom</text>
+<rect x="698" y="337" width="156" height="45" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="716" y="363" font-size="15" font-weight="bold" fill="#e6edf3">LabValue</text>
+<rect x="870" y="337" width="156" height="45" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="888" y="363" font-size="15" font-weight="bold" fill="#e6edf3">Patient</text>
+<rect x="40" y="467" width="380" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="58" y="493" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">taxonomy routes · ontology reasons · both</text>
+<text x="58" y="514" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">together = blueprint of knowledge</text>
+<marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/></marker>
+<polyline points="226,260 226,276" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="226,260 434,260 434,276 398,276" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="226,260 606,260 606,276 570,276" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="398,321 226,337" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="398,321 398,337" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="570,321 570,337" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4ade80"/></marker>
+<polyline points="226,382 312,398" fill="none" stroke="#4ade80" stroke-width="2.2" marker-end="url(#ar2)"/>
+<polyline points="226,382 484,398" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="777,276 750,260" fill="none" stroke="#4ade80" stroke-width="2.2" marker-end="url(#ar2)"/>
+<rect x="724" y="256" width="78" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="763" y="271" font-size="13" fill="#8b949e" text-anchor="middle">TREATS ✓</text>
+<polyline points="750,260 986,260 986,276 950,276" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<rect x="812" y="248" width="112" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="868" y="263" font-size="13" fill="#8b949e" text-anchor="middle">HAS_SYMPTOM</text>
+<polyline points="750,260 662,260 662,360 698,360" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<rect x="594" y="297" width="136" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="662" y="312" font-size="13" fill="#8b949e" text-anchor="middle">IS_INDICATOR_FOR</text>
+<polyline points="750,260 1062,260 1062,360 1026,360" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<rect x="879" y="248" width="55" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="906" y="263" font-size="13" fill="#8b949e" text-anchor="middle">TAKES</text>
 </svg>

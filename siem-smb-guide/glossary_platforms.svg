@@ -1,81 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 660" width="100%" height="100%">
-  <defs>
-    <filter id="shadow" x="-5%" y="-3%" width="110%" height="106%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
-    </filter>
-  </defs>
-  <rect width="1100" height="660" fill="#f8fafc" rx="12"/>
-  <text x="550" y="28" fill="#334155" font-family="sans-serif" font-weight="bold" font-size="15" text-anchor="middle">Glossary: Platform Categories (The CNAPP Alphabet)</text>
-
-  <g filter="url(#shadow)">
-    <rect x="20" y="45" width="1060" height="594" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
-  </g>
-
-  <!-- header -->
-  <rect x="20" y="45" width="1060" height="38" fill="#1e293b" rx="8"/>
-  <rect x="20" y="65" width="1060" height="18" fill="#1e293b"/>
-  <text x="120" y="69" fill="#38bdf8" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">TERM</text>
-  <text x="640" y="69" fill="#38bdf8" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">MEANING</text>
-
-  <!-- column separators -->
-  <line x1="220" y1="45" x2="220" y2="639" stroke="#e2e8f0" stroke-width="1"/>
-
-  <!-- rows: y start 83, each height 50.5 -->
-  <g font-family="sans-serif" font-size="11">
-    <!-- Row 1: CNAPP -->
-    <rect x="20" y="83" width="1060" height="50" fill="#ffffff"/>
-    <text x="35" y="112" fill="#334155" font-weight="bold">CNAPP</text>
-    <text x="235" y="112" fill="#64748b">Cloud-Native Application Protection Platform — one platform combining posture + workload + data + API security.</text>
-
-    <!-- Row 2: CSPM -->
-    <rect x="20" y="133" width="1060" height="50" fill="#f1f5f9"/>
-    <text x="35" y="162" fill="#334155" font-weight="bold">CSPM</text>
-    <text x="235" y="162" fill="#64748b">Cloud Security Posture Management — finds and ranks cloud misconfigurations (public buckets, open security groups).</text>
-
-    <!-- Row 3: AI-SPM / SPM -->
-    <rect x="20" y="183" width="1060" height="50" fill="#ffffff"/>
-    <text x="35" y="212" fill="#334155" font-weight="bold">AI-SPM / SPM</text>
-    <text x="235" y="212" fill="#64748b">Security Posture Management with AI-driven behavior analytics and risk scoring — proactive threat finding before exploitation.</text>
-
-    <!-- Row 4: CIEM -->
-    <rect x="20" y="233" width="1060" height="50" fill="#f1f5f9"/>
-    <text x="35" y="262" fill="#334155" font-weight="bold">CIEM</text>
-    <text x="235" y="258" fill="#64748b">Cloud Infrastructure Entitlement Management — least-privilege over identities: finds <tspan font-family="monospace">s3:*</tspan>-style wildcards,</text>
-    <text x="235" y="274" fill="#64748b">unused keys, and over-privileged roles.</text>
-
-    <!-- Row 5: CWPP -->
-    <rect x="20" y="283" width="1060" height="50" fill="#ffffff"/>
-    <text x="35" y="312" fill="#334155" font-weight="bold">CWPP</text>
-    <text x="235" y="312" fill="#64748b">Cloud Workload Protection Platform — runtime protection of hosts and containers (syscall- and process-level).</text>
-
-    <!-- Row 6: DSPM -->
-    <rect x="20" y="333" width="1060" height="50" fill="#f1f5f9"/>
-    <text x="35" y="362" fill="#334155" font-weight="bold">DSPM</text>
-    <text x="235" y="362" fill="#64748b">Data Security Posture Management — discovers where sensitive data lives and who flows it out.</text>
-
-    <!-- Row 7: ASPM -->
-    <rect x="20" y="383" width="1060" height="50" fill="#ffffff"/>
-    <text x="35" y="412" fill="#334155" font-weight="bold">ASPM</text>
-    <text x="235" y="412" fill="#64748b">Application Security Posture Management — bridges code vulnerabilities to cloud infrastructure exposure.</text>
-
-    <!-- Row 8: CTEM -->
-    <rect x="20" y="433" width="1060" height="50" fill="#f1f5f9"/>
-    <text x="35" y="462" fill="#334155" font-weight="bold">CTEM</text>
-    <text x="235" y="462" fill="#64748b">Continuous Threat Exposure Management — operating loop: enumerate attack surface → prioritize → validate → remediate.</text>
-
-    <!-- Row 9: XDR -->
-    <rect x="20" y="483" width="1060" height="50" fill="#ffffff"/>
-    <text x="35" y="512" fill="#334155" font-weight="bold">XDR</text>
-    <text x="235" y="512" fill="#64748b">Extended Detection &amp; Response — SIEM + endpoint detection + correlation under one umbrella.</text>
-
-    <!-- Row 10: MDR / managed SOC -->
-    <rect x="20" y="533" width="1060" height="50" fill="#f1f5f9"/>
-    <text x="35" y="562" fill="#334155" font-weight="bold">MDR / managed SOC</text>
-    <text x="235" y="562" fill="#64748b">Managed Detection &amp; Response — a partner runs 24/7 detection/response for you (the "agentic SOC" products live here).</text>
-
-    <!-- Row 11: SOAR -->
-    <rect x="20" y="583" width="1060" height="50" fill="#ffffff" rx="8"/>
-    <text x="35" y="612" fill="#334155" font-weight="bold">SOAR</text>
-    <text x="235" y="612" fill="#64748b">Security Orchestration, Automation &amp; Response — playbook engine that chains detections into automated actions (with HITL gates).</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="984" viewBox="0 0 1200 984" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="984" fill="#0d1117"/>
+<text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">Glossary: Platform Categories (The CNAPP Alphabet)</text>
+<text x="60" y="103" font-size="13" font-weight="bold" fill="#60a5fa">TERM</text>
+<text x="320" y="103" font-size="13" font-weight="bold" fill="#60a5fa">MEANING</text>
+<rect x="40" y="144" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="170" font-size="15" font-weight="bold" fill="#8b949e">CNAPP</text>
+<text x="58" y="191" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Cloud-Native Application Protection Platform - one platform combining posture + workload + data + API security.</text>
+<rect x="40" y="218" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="244" font-size="15" font-weight="bold" fill="#8b949e">CSPM</text>
+<text x="58" y="265" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Cloud Security Posture Management - finds and ranks cloud misconfigurations (public buckets, open security groups).</text>
+<rect x="40" y="292" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="318" font-size="15" font-weight="bold" fill="#8b949e">AI-SPM / SPM</text>
+<text x="58" y="339" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Security Posture Management with AI-driven behavior analytics and risk scoring - proactive threat finding before exploitation.</text>
+<rect x="40" y="366" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="392" font-size="15" font-weight="bold" fill="#8b949e">CIEM</text>
+<text x="58" y="413" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Cloud Infrastructure Entitlement Management - least-privilege over identities: finds s3:*-style wildcards, unused keys, and over-privileged roles.</text>
+<rect x="40" y="440" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="466" font-size="15" font-weight="bold" fill="#8b949e">CWPP</text>
+<text x="58" y="487" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Cloud Workload Protection Platform - runtime protection of hosts and containers (syscall- and process-level).</text>
+<rect x="40" y="514" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="540" font-size="15" font-weight="bold" fill="#8b949e">DSPM</text>
+<text x="58" y="561" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Data Security Posture Management - discovers where sensitive data lives and who flows it out.</text>
+<rect x="40" y="588" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="614" font-size="15" font-weight="bold" fill="#8b949e">ASPM</text>
+<text x="58" y="635" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Application Security Posture Management - bridges code vulnerabilities to cloud infrastructure exposure.</text>
+<rect x="40" y="662" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="688" font-size="15" font-weight="bold" fill="#8b949e">CTEM</text>
+<text x="58" y="709" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Continuous Threat Exposure Management - operating loop: enumerate attack surface → prioritize → validate → remediate.</text>
+<rect x="40" y="736" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="762" font-size="15" font-weight="bold" fill="#8b949e">XDR</text>
+<text x="58" y="783" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Extended Detection &amp; Response - SIEM + endpoint detection + correlation under one umbrella.</text>
+<rect x="40" y="810" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="836" font-size="15" font-weight="bold" fill="#8b949e">MDR / managed SOC</text>
+<text x="58" y="857" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Managed Detection &amp; Response - a partner runs 24/7 detection/response for you (the &quot;agentic SOC&quot; products live here).</text>
+<rect x="40" y="884" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="910" font-size="15" font-weight="bold" fill="#8b949e">SOAR</text>
+<text x="58" y="931" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Security Orchestration, Automation &amp; Response - playbook engine that chains detections into automated actions (with HITL gates).</text>
 </svg>

@@ -1,0 +1,134 @@
+{
+  "width": 1200,
+  "title": "Controlling traffic: ports, IP allowlists, and the WAF layer",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 30
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 24
+        },
+        "children": [
+          {
+            "id": "client",
+            "type": "card",
+            "title": "Client / Internet",
+            "lines": [
+              "bots · scanners · users"
+            ],
+            "color": "gray"
+          },
+          {
+            "id": "edge",
+            "type": "card",
+            "title": "Edge: firewall + WAF",
+            "color": "gray",
+            "style": {
+              "maxWidth": 430
+            },
+            "lines": [
+              "firewall: only required ports open (443)",
+              "source-IP allowlist (VPN / Tailscale CIDR) for admin ports",
+              "WAF: OWASP CRS · rate limits · geo/IP · bot control",
+              "classic pitfall: a published container port bypasses host firewall",
+              "via Docker NAT - always check from OUTSIDE the host"
+            ]
+          },
+          {
+            "id": "app",
+            "type": "card",
+            "title": "Application / gateway",
+            "color": "gray",
+            "style": {
+              "maxWidth": 350
+            },
+            "lines": [
+              "checks identity (minted sessions),",
+              "inspects payload (secret scanner),",
+              "enforces per-user rate limits",
+              "the only point that sees fully",
+              "decrypted content"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 24
+        },
+        "children": [
+          {
+            "type": "column",
+            "style": {
+              "width": 241
+            },
+            "children": []
+          },
+          {
+            "id": "blocked",
+            "type": "card",
+            "title": "Blocked & logged",
+            "color": "red",
+            "style": {
+              "maxWidth": 500
+            },
+            "lines": [
+              "a rejected connection is a log entry, never a silent drop -",
+              "drops are what the SIEM correlates"
+            ]
+          },
+          {
+            "id": "allowed",
+            "type": "card",
+            "title": "Allowed → backend",
+            "color": "green",
+            "lines": [
+              "egress-allowlisted upstream only"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "children": [
+          {
+            "id": "tools",
+            "type": "card",
+            "color": "gray",
+            "style": {
+              "width": 1120,
+              "maxWidth": 1120
+            },
+            "lines": [
+              "Open source: nftables/ufw + Coraza or ModSecurity (OWASP CRS)",
+              "AWS: Security Groups / NACLs + AWS WAF & Shield"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "client",
+      "to": "edge"
+    },
+    {
+      "from": "edge",
+      "to": "app"
+    },
+    {
+      "from": "app",
+      "to": "allowed"
+    },
+    {
+      "from": "edge",
+      "to": "blocked"
+    }
+  ]
+}

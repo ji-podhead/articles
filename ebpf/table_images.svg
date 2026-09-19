@@ -1,60 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 540" width="100%" height="100%">
-  <defs>
-    <filter id="subtleShadow" x="-5%" y="-5%" width="110%" height="110%">
-      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.05"/>
-    </filter>
-  </defs>
-
-  <!-- Background Canvas -->
-  <rect width="1100" height="540" fill="#f8fafc" rx="12"/>
-
-  <!-- Table Container Background -->
-  <rect x="30" y="30" width="1040" height="470" fill="#ffffff" rx="8" stroke="#e2e8f0" stroke-width="1" filter="url(#subtleShadow)"/>
-
-  <!-- HEADER ROW -->
-  <rect x="30" y="30" width="1040" height="50" fill="#0f172a" rx="8"/>
-  <rect x="30" y="65" width="1040" height="15" fill="#0f172a"/>
-
-  <g font-family="sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">
-    <text x="55" y="61">File</text>
-    <text x="250" y="61">Placement</text>
-    <text x="590" y="61">Caption (English)</text>
-  </g>
-
-  <!-- ROW 1: titel.svg -->
-  <rect x="30" y="80" width="1040" height="105" fill="#ffffff"/>
-  <line x1="30" y1="185" x2="1070" y2="185" stroke="#f1f5f9" stroke-width="1"/>
-  <text x="55" y="135" font-family="monospace" font-weight="bold" fill="#2563eb" font-size="13">titel.svg</text>
-  <text x="250" y="135" font-family="sans-serif" fill="#1e293b" font-size="12">Title image / post preview</text>
-  <text x="590" y="123" font-family="sans-serif" font-style="italic" fill="#475569" font-size="12">Title image: kernel-level interception meets LLM</text>
-  <text x="590" y="143" font-family="sans-serif" font-style="italic" fill="#475569" font-size="12">guardrails — the two halves this article connects.</text>
-
-  <!-- ROW 2: gap2.svg -->
-  <rect x="30" y="185" width="1040" height="105" fill="#f8fafc"/>
-  <line x1="30" y1="290" x2="1070" y2="290" stroke="#f1f5f9" stroke-width="1"/>
-  <text x="55" y="240" font-family="monospace" font-weight="bold" fill="#2563eb" font-size="13">gap2.svg</text>
-  <text x="250" y="232" font-family="sans-serif" fill="#1e293b" font-size="12">Section "The semantic gap"</text>
-  <text x="250" y="252" font-family="sans-serif" font-weight="bold" fill="#64748b" font-size="12">(Figure 1)</text>
-  <text x="590" y="228" font-family="sans-serif" font-style="italic" fill="#475569" font-size="12">The semantic gap — infrastructure tools see the "how",</text>
-  <text x="590" y="248" font-family="sans-serif" font-style="italic" fill="#475569" font-size="12">AI guardrails see the "what", and nothing correlates the two.</text>
-
-  <!-- ROW 3: pipeline.svg -->
-  <rect x="30" y="290" width="1040" height="105" fill="#ffffff"/>
-  <line x1="30" y1="395" x2="1070" y2="395" stroke="#f1f5f9" stroke-width="1"/>
-  <text x="55" y="345" font-family="monospace" font-weight="bold" fill="#2563eb" font-size="13">pipeline.svg</text>
-  <text x="250" y="337" font-family="sans-serif" fill="#1e293b" font-size="12">Section "How eBPF-based interception</text>
-  <text x="250" y="357" font-family="sans-serif" fill="#1e293b" font-size="12">actually works (Figure 2)</text>
-  <text x="590" y="333" font-family="sans-serif" font-style="italic" fill="#475569" font-size="12">The eBPF interception pipeline — capture at the TLS</text>
-  <text x="590" y="353" font-family="sans-serif" font-style="italic" fill="#475569" font-size="12">boundary, judge in userspace, enforce in the kernel.</text>
-
-  <!-- ROW 4: freeze_latter.svg -->
-  <rect x="30" y="395" width="1040" height="105" fill="#f0fdf4" stroke="#10b981" stroke-width="1.5"/>
-  <rect x="31" y="395" width="1038" height="15" fill="#f0fdf4"/>
-  <text x="55" y="450" font-family="monospace" font-weight="bold" fill="#059669" font-size="13">freeze_latter.svg</text>
-  <text x="250" y="435" font-family="sans-serif" fill="#14532d" font-size="12">Section "The part that actually</text>
-  <text x="250" y="455" font-family="sans-serif" fill="#14532d" font-size="12">matters: identity"</text>
-  <text x="250" y="475" font-family="sans-serif" font-weight="bold" fill="#4d7c0f" font-size="12">(Figure 4)</text>
-  <text x="590" y="438" font-family="sans-serif" font-style="italic" fill="#475569" font-size="12">The identity chain and the response ladder — identity flows from</text>
-  <text x="590" y="458" font-family="sans-serif" font-style="italic" fill="#475569" font-size="12">the kernel-visible PID down to the minted session token, and enforcement</text>
-  <text x="590" y="478" font-family="sans-serif" font-style="italic" fill="#475569" font-size="12">escalates from revocation to egress blackhole.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="949" height="569" viewBox="0 0 949 569" font-family="DejaVu Sans, Verdana, sans-serif">
+<rect width="949" height="569" fill="#0d1117"/>
+<rect x="30" y="52" width="191" height="45" fill="#1c2128" stroke="#30363d"/>
+<text x="46" y="66" font-size="15" font-weight="bold" fill="#ffffff">File</text>
+<rect x="221" y="52" width="349" height="45" fill="#1c2128" stroke="#30363d"/>
+<text x="237" y="66" font-size="15" font-weight="bold" fill="#ffffff">Placement</text>
+<rect x="570" y="52" width="349" height="45" fill="#1c2128" stroke="#30363d"/>
+<text x="586" y="66" font-size="15" font-weight="bold" fill="#ffffff">Caption (English)</text>
+<rect x="30" y="97" width="191" height="108" fill="none" stroke="#30363d"/>
+<text x="46" y="111" font-size="15" font-weight="bold" fill="#ffffff">titel.svg</text>
+<rect x="221" y="97" width="349" height="108" fill="none" stroke="#30363d"/>
+<text x="237" y="111" font-size="15" fill="#c9d1d9">Title image / post preview</text>
+<rect x="570" y="97" width="349" height="108" fill="none" stroke="#30363d"/>
+<text x="586" y="111" font-size="15" fill="#c9d1d9">Title image: kernel-level</text>
+<text x="586" y="132" font-size="15" fill="#c9d1d9">interception meets LLM guardrails</text>
+<text x="586" y="153" font-size="15" fill="#c9d1d9">- the two halves this article</text>
+<text x="586" y="174" font-size="15" fill="#c9d1d9">connects.</text>
+<rect x="30" y="205" width="191" height="108" fill="#11161d"/>
+<rect x="30" y="205" width="191" height="108" fill="none" stroke="#30363d"/>
+<text x="46" y="219" font-size="15" font-weight="bold" fill="#ffffff">gap2.svg</text>
+<rect x="221" y="205" width="349" height="108" fill="#11161d"/>
+<rect x="221" y="205" width="349" height="108" fill="none" stroke="#30363d"/>
+<text x="237" y="219" font-size="15" fill="#c9d1d9">Section &quot;The semantic gap&quot; (Figure</text>
+<text x="237" y="240" font-size="15" fill="#c9d1d9">1)</text>
+<rect x="570" y="205" width="349" height="108" fill="#11161d"/>
+<rect x="570" y="205" width="349" height="108" fill="none" stroke="#30363d"/>
+<text x="586" y="219" font-size="15" fill="#c9d1d9">The semantic gap - infrastructure</text>
+<text x="586" y="240" font-size="15" fill="#c9d1d9">tools see the &quot;how&quot;, AI guardrails</text>
+<text x="586" y="261" font-size="15" fill="#c9d1d9">see the &quot;what&quot;, and nothing</text>
+<text x="586" y="282" font-size="15" fill="#c9d1d9">correlates the two.</text>
+<rect x="30" y="313" width="191" height="108" fill="none" stroke="#30363d"/>
+<text x="46" y="327" font-size="15" font-weight="bold" fill="#ffffff">pipeline.svg</text>
+<rect x="221" y="313" width="349" height="108" fill="none" stroke="#30363d"/>
+<text x="237" y="327" font-size="15" fill="#c9d1d9">Section &quot;How eBPF-based</text>
+<text x="237" y="348" font-size="15" fill="#c9d1d9">interception actually works</text>
+<text x="237" y="369" font-size="15" fill="#c9d1d9">(Figure 2)&quot;</text>
+<rect x="570" y="313" width="349" height="108" fill="none" stroke="#30363d"/>
+<text x="586" y="327" font-size="15" fill="#c9d1d9">The eBPF interception pipeline -</text>
+<text x="586" y="348" font-size="15" fill="#c9d1d9">capture at the TLS boundary, judge</text>
+<text x="586" y="369" font-size="15" fill="#c9d1d9">in userspace, enforce in the</text>
+<text x="586" y="390" font-size="15" fill="#c9d1d9">kernel.</text>
+<rect x="30" y="421" width="191" height="150" fill="#11161d"/>
+<rect x="30" y="421" width="191" height="150" fill="none" stroke="#30363d"/>
+<text x="46" y="435" font-size="15" font-weight="bold" fill="#ffffff">freeze_latter.svg</text>
+<rect x="221" y="421" width="349" height="150" fill="#11161d"/>
+<rect x="221" y="421" width="349" height="150" fill="none" stroke="#30363d"/>
+<text x="237" y="435" font-size="15" fill="#c9d1d9">Section &quot;The part that actually</text>
+<text x="237" y="456" font-size="15" fill="#c9d1d9">matters: identity&quot; (Figure 4)</text>
+<rect x="570" y="421" width="349" height="150" fill="#11161d"/>
+<rect x="570" y="421" width="349" height="150" fill="none" stroke="#30363d"/>
+<text x="586" y="435" font-size="15" fill="#c9d1d9">The identity chain and the</text>
+<text x="586" y="456" font-size="15" fill="#c9d1d9">response ladder - identity flows</text>
+<text x="586" y="477" font-size="15" fill="#c9d1d9">from the kernel-visible PID down</text>
+<text x="586" y="498" font-size="15" fill="#c9d1d9">to the minted session token, and</text>
+<text x="586" y="519" font-size="15" fill="#c9d1d9">enforcement escalates from</text>
+<text x="586" y="540" font-size="15" fill="#c9d1d9">revocation to egress blackhole.</text>
 </svg>

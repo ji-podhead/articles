@@ -1,0 +1,31 @@
+{
+  "mode": "table",
+  "title": "Same three-layer pattern, three real production platforms",
+  "cols": [
+    "PLATFORM",
+    "LAYER A - KERNEL SANDBOX",
+    "LAYER B - LOCAL SEGMENTATION",
+    "LAYER C - PROXY"
+  ],
+  "rows": [
+    [
+      "Kubernetes Agent Sandbox (CNCF SIG, 2026 - official reference for AI agents / untrusted code on k8s)",
+      "gVisor via runtimeClassName: gvisor",
+      "Host-level L2/L3 segmentation below the pods",
+      "\"Sandbox Router\" - X-Sandbox-ID header-based routing"
+    ],
+    [
+      "Gitpod / Ona (dev-workspace platform, millions of parallel workspaces)",
+      "gVisor (runsc), default for every workspace",
+      "Cilium (eBPF) network policies + dedicated tunnels - tenants can't ping each other",
+      "Envoy ingress, subdomain + session-cookie routing, zero raw ports to internet"
+    ],
+    [
+      "Fly.io (production VM hosting - different sandbox tech, same 3-layer shape)",
+      "Firecracker microVMs (hardware-virtualized, own guest kernel per tenant)",
+      "Proprietary L2 network \"6PN\" - no local route between VMs",
+      "fly-proxy (Rust) - TLS termination + identity-based routing straight into the VM"
+    ]
+  ],
+  "boldFirstCol": true
+}

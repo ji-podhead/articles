@@ -1,0 +1,176 @@
+{
+  "width": 1200,
+  "title": "Glossary: Platform Categories (The CNAPP Alphabet)",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 8
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 0,
+          "padding": 20
+        },
+        "children": [
+          {
+            "type": "text",
+            "lines": [
+              "TERM"
+            ],
+            "style": {
+              "width": 260,
+              "fontSize": 13,
+              "bold": true,
+              "color": "#60a5fa"
+            }
+          },
+          {
+            "type": "text",
+            "lines": [
+              "MEANING"
+            ],
+            "style": {
+              "fontSize": 13,
+              "bold": true,
+              "color": "#60a5fa"
+            }
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "title": "CNAPP",
+        "lines": [
+          "Cloud-Native Application Protection Platform - one platform combining posture + workload + data + API security."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "CSPM",
+        "lines": [
+          "Cloud Security Posture Management - finds and ranks cloud misconfigurations (public buckets, open security groups)."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "AI-SPM / SPM",
+        "lines": [
+          "Security Posture Management with AI-driven behavior analytics and risk scoring - proactive threat finding before exploitation."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "CIEM",
+        "lines": [
+          "Cloud Infrastructure Entitlement Management - least-privilege over identities: finds s3:*-style wildcards, unused keys, and over-privileged roles."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "CWPP",
+        "lines": [
+          "Cloud Workload Protection Platform - runtime protection of hosts and containers (syscall- and process-level)."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "DSPM",
+        "lines": [
+          "Data Security Posture Management - discovers where sensitive data lives and who flows it out."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "ASPM",
+        "lines": [
+          "Application Security Posture Management - bridges code vulnerabilities to cloud infrastructure exposure."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "CTEM",
+        "lines": [
+          "Continuous Threat Exposure Management - operating loop: enumerate attack surface → prioritize → validate → remediate."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "XDR",
+        "lines": [
+          "Extended Detection & Response - SIEM + endpoint detection + correlation under one umbrella."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "MDR / managed SOC",
+        "lines": [
+          "Managed Detection & Response - a partner runs 24/7 detection/response for you (the \"agentic SOC\" products live here)."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "SOAR",
+        "lines": [
+          "Security Orchestration, Automation & Response - playbook engine that chains detections into automated actions (with HITL gates)."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      }
+    ]
+  }
+}

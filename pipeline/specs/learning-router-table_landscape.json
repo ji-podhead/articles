@@ -1,0 +1,38 @@
+{
+  "mode": "table",
+  "title": "Static scheduler vs learning economy",
+  "cols": [
+    "Aspect",
+    "LiteLLM Router (static policy)",
+    "JiMesh router (learning economy)"
+  ],
+  "boldFirstCol": true,
+  "footer": "LiteLLM: docs.litellm.ai/docs/routing (verified Sep 8, 2026) - jimesh: internal/router + internal/keypool + internal/quota",
+  "rows": [
+    [
+      "Selection",
+      "weighted shuffle (rpm/tpm), least-busy,\nlatency-, usage-, cost-based strategies",
+      "decayed per-model posteriors + exploration,\nblended 0.7×bandit + 0.3×user preference"
+    ],
+    [
+      "429 response",
+      "immediate cooldown, 5 seconds default\nsame for free and paid deployments",
+      "cost-scaled: free 5s · $0.5 30s · $3 60s · 5min\n402 → 24h bench (only extends, never shortens)"
+    ],
+    [
+      "Quota knowledge",
+      "rpm/tpm limits you configure yourself;\nheaders not parsed into a quota model",
+      "x-ratelimit-* parsed per vendor with\nconfidence model + shared-pool inference"
+    ],
+    [
+      "Free vs paid",
+      "order/priority parameters per deployment -\noperator must encode the preference",
+      "free-first failover as ordering principle:\npaid key never picked while free key is healthy"
+    ],
+    [
+      "State & maturity",
+      "✓ battle-tested, Redis-shared across instances,\nmature per-error retry policies",
+      "✓ learns provider drift via decay; in-memory state\n(restart re-learns - honest limit)"
+    ]
+  ]
+}

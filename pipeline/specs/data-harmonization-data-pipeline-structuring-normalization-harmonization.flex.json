@@ -1,0 +1,250 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "DATA PIPELINE: THREE DISTINCT DISCIPLINES",
+  "subtitle": "structuring → normalization → harmonization",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 26,
+          "align": "stretch"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "p1",
+            "title": "1. STRUCTURING",
+            "lines": [
+              "raw → readable format",
+              "",
+              "unstructured",
+              "~@#)($&",
+              "xyz___??!!",
+              "(((raw)))",
+              "",
+              "structured table",
+              "| id | name | email |",
+              "| 1 | Alice | a@x.com |",
+              "| 2 | Bob | b@y.com |",
+              "| 3 | Carol | c@z.com |",
+              "",
+              "WHY IT MATTERS",
+              "Machine-readable format for queries",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "color": "blue",
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 356
+            }
+          },
+          {
+            "type": "card",
+            "id": "p2",
+            "title": "2. NORMALIZATION",
+            "lines": [
+              "clean + deduplicate + rescale",
+              "",
+              "A. Database (1NF→2NF→3NF)",
+              "1NF: atomic values, unique rows",
+              "2NF: no partial dependencies",
+              "3NF: no transitive dependencies",
+              "",
+              "B. Statistical / ML",
+              "Min-Max",
+              "[0 .. 1]",
+              "Z-Score",
+              "μ=0, σ=1",
+              "",
+              "EXAMPLE",
+              "Source A: DD/MM/YYYY → 2026-09-15",
+              "Source B: YYYY-MM-DD → 2026-09-15",
+              "A:\"USA\" + B:\"United States\" → \"United States\"",
+              "EUR ↔ USD → uniform scale",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "color": "blue",
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 356
+            }
+          },
+          {
+            "type": "card",
+            "id": "p3",
+            "title": "3. HARMONIZATION",
+            "lines": [
+              "multi-source → semantic unity",
+              "",
+              "Source A",
+              "Source B",
+              "Source C",
+              "",
+              "UNIFIED VIEW",
+              "✓ consistent schemas",
+              "✓ uniform standards",
+              "✓ semantic unity",
+              "comparable + error-free",
+              "",
+              "Integration",
+              "data in one place",
+              "(just gathering)",
+              "Harmonization",
+              "+ resolves conflicts",
+              "+ semantic unity",
+              "",
+              "THE BOTTOM LINE",
+              "Don't just structure. Don't just normalize.",
+              "Aim for HARMONIZATION."
+            ],
+            "color": "green",
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 356
+            }
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "lines": [
+          "THE LIFECYCLE: MULTI-SOURCE PIPELINE (cycles repeat)"
+        ],
+        "style": {
+          "fontSize": 15,
+          "color": "#8b949e",
+          "bold": true,
+          "width": 1120,
+          "height": 27
+        }
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "align": "stretch"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "ing",
+            "title": "INGESTION",
+            "lines": [
+              "structuring (1st pass)",
+              ""
+            ],
+            "color": "blue",
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 265
+            }
+          },
+          {
+            "type": "card",
+            "id": "trans",
+            "title": "TRANSFORMATION",
+            "lines": [
+              "normalization (clean + scale)"
+            ],
+            "color": "blue",
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 265
+            }
+          },
+          {
+            "type": "card",
+            "id": "load",
+            "title": "LOADING",
+            "lines": [
+              "structuring (2nd pass)",
+              ""
+            ],
+            "color": "blue",
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 265
+            }
+          },
+          {
+            "type": "card",
+            "id": "harm",
+            "title": "HARMONIZATION",
+            "lines": [
+              "all 3 combined, cycled per batch"
+            ],
+            "color": "green",
+            "style": {
+              "flexGrow": 1,
+              "maxWidth": 265
+            }
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "lines": [
+          "↻ repeat per data batch"
+        ],
+        "style": {
+          "fontSize": 14,
+          "color": "#6e7681",
+          "bold": false,
+          "width": 1120,
+          "height": 25
+        }
+      },
+      {
+        "type": "text",
+        "lines": [
+          "#DataEngineering #DataScience #DataHarmonization #MachineLearning #SystemArchitecture"
+        ],
+        "style": {
+          "fontSize": 13,
+          "color": "#6e7681",
+          "bold": false,
+          "width": 1120,
+          "height": 24
+        }
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "p1",
+      "to": "p2"
+    },
+    {
+      "from": "p2",
+      "to": "p3"
+    },
+    {
+      "from": "ing",
+      "to": "trans"
+    },
+    {
+      "from": "trans",
+      "to": "load"
+    },
+    {
+      "from": "load",
+      "to": "harm"
+    }
+  ]
+}

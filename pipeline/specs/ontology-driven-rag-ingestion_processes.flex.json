@@ -1,0 +1,87 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "Two ingestion processes, one synthesis engine",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 24,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k1",
+            "title": "Process A - build the knowledge base",
+            "lines": [
+              "textbooks · guidelines · studies",
+              "smart chunk",
+              "entities",
+              "rerank",
+              "embed + store",
+              "expensive ONCE · LLM-intensive · reused forever",
+              "→ collection: medical_knowledge"
+            ],
+            "color": "blue"
+          },
+          {
+            "type": "card",
+            "id": "k2",
+            "title": "Process B - ingest instance data",
+            "lines": [
+              "discharge letter · maintenance log · lab report",
+              "classify + metadata",
+              "simple chunk",
+              "embed + store",
+              "payload filter ✓",
+              "cheap PER DOCUMENT · schema-driven · repeatable",
+              "→ collection: patients_data / building_documents"
+            ],
+            "color": "green"
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k3",
+            "title": "RAG = synthesis engine",
+            "lines": [
+              "filtered facts + deep context → answer"
+            ],
+            "color": "blue"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "id": "k4",
+        "lines": [
+          "payloads: patient_id · document_type · date · device_id - the primary, exact filter"
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "k1",
+      "to": "k3"
+    },
+    {
+      "from": "k2",
+      "to": "k3"
+    }
+  ]
+}

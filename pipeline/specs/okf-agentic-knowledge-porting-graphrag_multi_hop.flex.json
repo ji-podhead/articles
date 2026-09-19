@@ -1,0 +1,89 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "Multi-Hop GraphRAG Entity & Chunk Traversal",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 24,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "n_domain",
+            "title": "Domain",
+            "lines": [
+              "networking"
+            ],
+            "color": "blue"
+          },
+          {
+            "type": "card",
+            "id": "n_doc",
+            "title": "OKF Document",
+            "lines": [
+              "gVisor Sandboxing"
+            ],
+            "color": "green"
+          },
+          {
+            "type": "card",
+            "id": "n_entity",
+            "title": "Entity",
+            "lines": [
+              "gVisor Sentry"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "n_chunk",
+            "title": "Chunk",
+            "lines": [
+              "300-800 Tokens"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "n_entity_b",
+            "title": "Entity B",
+            "lines": [
+              "Host Kernel"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "n_domain",
+      "to": "n_doc",
+      "label": "contains",
+      "color": "blue"
+    },
+    {
+      "from": "n_doc",
+      "to": "n_entity",
+      "label": "extracts entity",
+      "color": "blue"
+    },
+    {
+      "from": "n_doc",
+      "to": "n_chunk",
+      "label": "chunks into",
+      "color": "blue"
+    },
+    {
+      "from": "n_entity",
+      "to": "n_entity_b",
+      "label": "intercepts syscalls"
+    }
+  ]
+}

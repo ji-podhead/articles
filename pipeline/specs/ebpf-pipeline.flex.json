@@ -1,0 +1,87 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "tree": {
+    "type": "row",
+    "style": {
+      "gap": 20,
+      "justify": "center"
+    },
+    "children": [
+      {
+        "type": "card",
+        "id": "s1",
+        "title": "1. Agent Process",
+        "lines": [
+          "Plaintext in memory"
+        ]
+      },
+      {
+        "type": "card",
+        "id": "s2",
+        "title": "2. SSL Uprobe",
+        "lines": [
+          "SSL_write / read"
+        ],
+        "color": "blue"
+      },
+      {
+        "type": "card",
+        "id": "s3",
+        "title": "3. eBPF Ring Buffer",
+        "lines": [
+          "Kernel-to-Userspace"
+        ]
+      },
+      {
+        "type": "card",
+        "id": "s4",
+        "title": "4. Userspace Daemon",
+        "lines": [
+          "Prompt Guard (22M)",
+          "or Embeddings + XGBoost"
+        ]
+      },
+      {
+        "type": "card",
+        "id": "s5",
+        "title": "5. Verdict Map",
+        "lines": [
+          "eBPF Map Update"
+        ]
+      },
+      {
+        "type": "card",
+        "id": "s6",
+        "title": "6. Action",
+        "lines": [
+          "SIGSTOP",
+          "TCP-RST / Drop"
+        ],
+        "color": "red"
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "s1",
+      "to": "s2"
+    },
+    {
+      "from": "s2",
+      "to": "s3"
+    },
+    {
+      "from": "s3",
+      "to": "s4"
+    },
+    {
+      "from": "s4",
+      "to": "s5"
+    },
+    {
+      "from": "s5",
+      "to": "s6"
+    }
+  ]
+}

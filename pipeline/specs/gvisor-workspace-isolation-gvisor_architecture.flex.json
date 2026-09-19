@@ -1,0 +1,110 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "What actually happens inside gVisor when your app makes a syscall",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "card",
+        "id": "app",
+        "title": "UNTRUSTED USER SPACE",
+        "color": "red",
+        "lines": [
+          "App process (e.g. Node.js)"
+        ]
+      },
+      {
+        "type": "card",
+        "id": "intercept",
+        "title": "INTERCEPTION",
+        "lines": [
+          "Systrap stub (per-CPU) or KVM platform traps the instruction here, before the host kernel ever sees it"
+        ]
+      },
+      {
+        "type": "card",
+        "id": "trusted",
+        "title": "TRUSTED USER SPACE - the gVisor sandbox",
+        "lines": []
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "sentry",
+            "title": "Sentry - the Go userspace kernel",
+            "color": "blue",
+            "lines": [
+              "emulates 300+ Linux syscalls in memory",
+              "Netstack (embedded, not a process)",
+              "full Go TCP/IP stack - builds L2/L3 frames in-process"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "gofer",
+            "title": "Gofer",
+            "color": "blue",
+            "lines": [
+              "filesystem proxy, one per container",
+              "Sentry never touches the real host FS directly"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "cage",
+            "title": "Both are seccomp-bpf caged:",
+            "lines": [
+              "Sentry: only network + memory syscalls reach the real host.",
+              "Gofer: only file read/write on handles it already validated."
+            ]
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "id": "host",
+        "title": "PRIVILEGED SYSTEM SPACE",
+        "lines": [
+          "Host Linux Kernel",
+          "the application process never speaks to this box directly - every arrow above is the redirection that guarantees it"
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "app",
+      "to": "intercept",
+      "label": "fires a syscall (open, socket, read...)"
+    },
+    {
+      "from": "intercept",
+      "to": "sentry"
+    },
+    {
+      "from": "sentry",
+      "to": "gofer",
+      "label": "shared-mem ring (LISFS)"
+    },
+    {
+      "from": "sentry",
+      "to": "host",
+      "label": "restricted host syscalls"
+    },
+    {
+      "from": "gofer",
+      "to": "host",
+      "label": "restricted host syscalls"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "SNOMED CT concept model: IS-A hierarchy + defining attributes",
+  "subtitle": "a concept is defined by its parent (IS-A) plus attribute-value pairs, not by a label alone",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k1",
+            "title": "Disease",
+            "lines": [
+              "(disorder)"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "k2",
+            "title": "Pneumonia",
+            "lines": [
+              "(disorder)"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "k3",
+            "title": "Bacterial pneumonia",
+            "lines": [
+              "(disorder) - the concept being defined"
+            ],
+            "color": "blue"
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k4",
+            "title": "Structure of lung",
+            "lines": [
+              "(body structure)"
+            ],
+            "color": "blue"
+          },
+          {
+            "type": "card",
+            "id": "k5",
+            "title": "Inflammation",
+            "lines": [
+              "(morphologic abnormality)"
+            ],
+            "color": "blue"
+          },
+          {
+            "type": "card",
+            "id": "k6",
+            "title": "Bacterium",
+            "lines": [
+              "(organism)"
+            ],
+            "color": "blue"
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k7",
+            "title": "domain / range",
+            "lines": [
+              "Each attribute has a fixed:",
+              "domain - which concepts may carry it",
+              "range - which concepts are valid values",
+              "e.g. |Finding site| ranges over |body structure| and its",
+              "descendants only - an agent cannot bind it to a random node.",
+              "Why RAG cares:",
+              "an LLM extracting \"treats\" or \"finding site\" edges can be",
+              "constrained to these domains - no more inventing relations."
+            ]
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "id": "k8",
+        "lines": [
+          "polyhierarchy: IS-A can have multiple parents - one concept, several valid classifications",
+          "original figure, modeled on the SNOMED CT concept model (SNOMED International documentation, docs.snomed.org)"
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "k1",
+      "to": "k2"
+    },
+    {
+      "from": "k2",
+      "to": "k3",
+      "label": "IS A",
+      "color": "green"
+    },
+    {
+      "from": "k3",
+      "to": "k4",
+      "label": "Finding site",
+      "color": "blue"
+    },
+    {
+      "from": "k3",
+      "to": "k5",
+      "label": "Associated morphology",
+      "color": "blue"
+    },
+    {
+      "from": "k3",
+      "to": "k6",
+      "label": "Causative agent",
+      "color": "blue"
+    }
+  ]
+}

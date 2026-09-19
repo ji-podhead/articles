@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="789" viewBox="0 0 1200 789" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="789" fill="#0d1117"/>
+<text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">Four different teams, the same underlying answer: deterministic</text>
+<text x="40" y="94" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">policy, outside the model</text>
+<rect x="40" y="110" width="548" height="171" rx="11" fill="#161b22" stroke="#f87171" stroke-width="2"/>
+<rect x="40" y="110" width="5" height="171" rx="2.5" fill="#f87171"/>
+<text x="58" y="136" font-size="15" font-weight="bold" fill="#f87171">Meta, LlamaFirewall (Purple Llama, real, arXiv 2505.03574)</text>
+<text x="58" y="157" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">PromptGuard 2 (jailbreak detector) → Agent Alignment Checks (a</text>
+<text x="58" y="178" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">chain-of-thought auditor reading the agent's own reasoning for goal</text>
+<text x="58" y="199" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">misalignment) → CodeShield (static analysis before generated code</text>
+<text x="58" y="220" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">executes).</text>
+<text x="58" y="241" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Scope: content-safety, not authorization, answers &quot;is this</text>
+<text x="58" y="262" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">dangerous,&quot; not &quot;is this agent allowed.&quot;</text>
+<rect x="612" y="110" width="548" height="150" rx="11" fill="#161b22" stroke="#f87171" stroke-width="2"/>
+<rect x="612" y="110" width="5" height="150" rx="2.5" fill="#f87171"/>
+<text x="630" y="136" font-size="15" font-weight="bold" fill="#f87171">OpenAI, tool approvals + moderation pipeline</text>
+<text x="630" y="157" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Separates prompt from tool execution; a synchronous moderation</text>
+<text x="630" y="178" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">layer screens input/output before a tool call is even generated;</text>
+<text x="630" y="199" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">human-in-the-loop approval is the default for higher-risk actions.</text>
+<text x="630" y="220" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">See the real July 2026 incident below, even this didn't stop a</text>
+<text x="630" y="241" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">benchmark exploit chain.</text>
+<rect x="40" y="303" width="548" height="171" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="40" y="303" width="5" height="171" rx="2.5" fill="#4ade80"/>
+<text x="58" y="329" font-size="15" font-weight="bold" fill="#4ade80">Google, Vertex AI / Agent Development Kit</text>
+<text x="58" y="350" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Tool calls are matched deterministically against a pre-defined</text>
+<text x="58" y="371" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">OpenAPI schema: a call that doesn't exactly match the schema is</text>
+<text x="58" y="392" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">rejected by the API gateway itself, not by asking the model to</text>
+<text x="58" y="413" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">reconsider.</text>
+<text x="58" y="434" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Same shape as a well-built capability gate: the schema/policy</text>
+<text x="58" y="455" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">check is code, not a second model call.</text>
+<rect x="612" y="303" width="548" height="150" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="630" y="329" font-size="15" font-weight="bold" fill="#8b949e">AWS, Bedrock AgentCore (2025)</text>
+<text x="630" y="350" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">AgentCore Identity brokers short-lived, per-agent STS credentials</text>
+<text x="630" y="371" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">(AssumeRole + a per-call session policy) instead of a standing IAM</text>
+<text x="630" y="392" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">role; AgentCore Gateway sits in front of every tool call, evaluated</text>
+<text x="630" y="413" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">against Cedar, AWS's own deterministic, formally-verified policy</text>
+<text x="630" y="434" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">language.</text>
+<rect x="40" y="496" width="1120" height="171" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="40" y="496" width="5" height="171" rx="2.5" fill="#4ade80"/>
+<text x="58" y="522" font-size="15" font-weight="bold" fill="#4ade80">The pattern every one of them converges on</text>
+<text x="58" y="543" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">1. A short-lived, per-agent credential, never a standing role or a secret shared across every agent instance.</text>
+<text x="58" y="564" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">2. The identity is resolved server-side, from the credential, never trusted from what the agent's own output claims to be.</text>
+<text x="58" y="585" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">3. The allow/deny decision is deterministic code (Rego, Cedar, an OpenAPI schema match), not a second model asked to judge the first one's</text>
+<text x="58" y="606" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">tool call.</text>
+<text x="58" y="627" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">4. Content-safety scanners (PromptGuard/CodeShield-style) are a SEPARATE, complementary layer, never a substitute for the authorization</text>
+<text x="58" y="648" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">decision above.</text>
+<rect x="40" y="689" width="1120" height="66" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="715" font-size="15" font-weight="bold" fill="#8b949e">A platform combining short-lived per-agent keys, server-side header re-stamping, and a deterministic policy gate is a working</text>
+<text x="58" y="736" font-size="15" font-weight="bold" fill="#8b949e">instance of the same shape.</text>
+</svg>

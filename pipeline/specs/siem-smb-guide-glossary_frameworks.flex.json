@@ -1,0 +1,116 @@
+{
+  "width": 1200,
+  "title": "Glossary: Frameworks & Certifications",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 8
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 0,
+          "padding": 20
+        },
+        "children": [
+          {
+            "type": "text",
+            "lines": [
+              "TERM"
+            ],
+            "style": {
+              "width": 260,
+              "fontSize": 13,
+              "bold": true,
+              "color": "#60a5fa"
+            }
+          },
+          {
+            "type": "text",
+            "lines": [
+              "MEANING"
+            ],
+            "style": {
+              "fontSize": 13,
+              "bold": true,
+              "color": "#60a5fa"
+            }
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "title": "SOC 2",
+        "lines": [
+          "Audit standard for SaaS operations (security, availability, confidentiality) - proof-of-controls report by an independent CPA firm."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "HIPAA",
+        "lines": [
+          "US law protecting health data (PHI); mandatory for healthcare workloads."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "PCI-DSS",
+        "lines": [
+          "Payment card industry security standard; mandatory for anything touching card data (including your token-budget/billing flows)."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "NIST CSF",
+        "lines": [
+          "US framework catalog for security programs; the \"N\" in many evidence-pack exports."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "CIS Benchmarks",
+        "lines": [
+          "Center for Internet Security best-practice configuration catalogs (e.g., AWS Foundations Benchmark) that posture tools score against."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "GDPR / DSGVO",
+        "lines": [
+          "EU data protection law - the reason security tooling must prove what it stores, not just that it stores it."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "Knowledge-based AI, 1965 → 2026 - the ideas never left",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k1965",
+            "title": "1965",
+            "lines": [
+              "Zadeh: fuzzy sets",
+              "degrees of truth"
+            ],
+            "color": "amber"
+          },
+          {
+            "type": "card",
+            "id": "k1970s",
+            "title": "1970s",
+            "lines": [
+              "DENDRAL · MYCIN",
+              "expert systems born"
+            ],
+            "color": "amber"
+          },
+          {
+            "type": "card",
+            "id": "k1980s",
+            "title": "1980s",
+            "lines": [
+              "Lisp machines · XCON",
+              "XPS boom → bottleneck"
+            ],
+            "color": "amber"
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k1995",
+            "title": "1995",
+            "lines": [
+              "Wooldridge: agents",
+              "autonomy defined"
+            ],
+            "color": "green"
+          },
+          {
+            "type": "card",
+            "id": "k2017",
+            "title": "2017+",
+            "lines": [
+              "transformers · LLMs",
+              "knowledge returns, implicit"
+            ],
+            "color": "green"
+          },
+          {
+            "type": "card",
+            "id": "k2022",
+            "title": "2022 →",
+            "lines": [
+              "ReAct · agentic RAG",
+              "KB + verifier, explicit again"
+            ],
+            "color": "green"
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "id": "constant",
+        "title": "The constant: knowledge base + inference machine",
+        "lines": [
+          "rule base → curated vector collection · rule interpreter → evidence verifier · acquisition bottleneck → LLM ingest pipelines"
+        ]
+      },
+      {
+        "type": "card",
+        "id": "foot",
+        "lines": [
+          "hallucination is the grounding problem of 1980 - verification is still the fix"
+        ]
+      }
+    ]
+  }
+}

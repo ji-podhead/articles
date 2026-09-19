@@ -1,67 +1,60 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 400" width="100%" height="100%">
-  <defs>
-    <filter id="sh" x="-5%" y="-5%" width="110%" height="110%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
-    </filter>
-  </defs>
-  <rect width="1050" height="400" fill="#f8fafc" rx="12"/>
-  <text x="525" y="30" fill="#334155" font-family="sans-serif" font-weight="bold" font-size="15" text-anchor="middle">Same three-layer pattern, three real production platforms</text>
-
-  <g filter="url(#sh)">
-    <rect x="20" y="48" width="1010" height="330" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
-  </g>
-  <rect x="20" y="48" width="1010" height="36" fill="#1e293b" rx="8"/>
-  <rect x="20" y="66" width="1010" height="18" fill="#1e293b"/>
-  <text x="150" y="71" fill="#38bdf8" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">PLATFORM</text>
-  <text x="430" y="71" fill="#38bdf8" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">LAYER A — KERNEL SANDBOX</text>
-  <text x="720" y="71" fill="#38bdf8" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">LAYER B — LOCAL SEGMENTATION</text>
-  <text x="960" y="71" fill="#38bdf8" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">LAYER C — PROXY</text>
-
-  <line x1="290" y1="48" x2="290" y2="378" stroke="#e2e8f0"/>
-  <line x1="580" y1="48" x2="580" y2="378" stroke="#e2e8f0"/>
-  <line x1="850" y1="48" x2="850" y2="378" stroke="#e2e8f0"/>
-
-  <g font-family="sans-serif" font-size="11">
-    <rect x="20" y="84" width="1010" height="98" fill="#ffffff"/>
-    <text x="35" y="110" fill="#334155" font-weight="bold">Kubernetes Agent Sandbox</text>
-    <text x="35" y="128" fill="#64748b" font-size="9">(CNCF SIG, 2026 — official</text>
-    <text x="35" y="140" fill="#64748b" font-size="9">reference for AI agents /</text>
-    <text x="35" y="152" fill="#64748b" font-size="9">untrusted code on k8s)</text>
-    <text x="305" y="115" fill="#64748b">gVisor via</text>
-    <text x="305" y="130" fill="#64748b" font-family="monospace" font-size="10">runtimeClassName: gvisor</text>
-    <text x="595" y="115" fill="#64748b">Host-level L2/L3</text>
-    <text x="595" y="130" fill="#64748b">segmentation below the pods</text>
-    <text x="865" y="115" fill="#64748b">"Sandbox Router" —</text>
-    <text x="865" y="130" fill="#64748b" font-family="monospace" font-size="10">X-Sandbox-ID</text>
-    <text x="865" y="145" fill="#64748b">header-based routing</text>
-
-    <rect x="20" y="182" width="1010" height="98" fill="#f8fafc"/>
-    <text x="35" y="208" fill="#334155" font-weight="bold">Gitpod / Ona</text>
-    <text x="35" y="226" fill="#64748b" font-size="9">(dev-workspace platform,</text>
-    <text x="35" y="238" fill="#64748b" font-size="9">millions of parallel</text>
-    <text x="35" y="250" fill="#64748b" font-size="9">workspaces)</text>
-    <text x="305" y="213" fill="#64748b">gVisor (runsc), default</text>
-    <text x="305" y="228" fill="#64748b">for every workspace</text>
-    <text x="595" y="213" fill="#64748b">Cilium (eBPF) network</text>
-    <text x="595" y="228" fill="#64748b">policies + dedicated tunnels —</text>
-    <text x="595" y="243" fill="#64748b">tenants can't ping each other</text>
-    <text x="865" y="213" fill="#64748b">Envoy ingress, subdomain +</text>
-    <text x="865" y="228" fill="#64748b">session-cookie routing,</text>
-    <text x="865" y="243" fill="#64748b">zero raw ports to internet</text>
-
-    <rect x="20" y="280" width="1010" height="98" fill="#ffffff"/>
-    <text x="35" y="306" fill="#334155" font-weight="bold">Fly.io</text>
-    <text x="35" y="324" fill="#64748b" font-size="9">(production VM hosting —</text>
-    <text x="35" y="336" fill="#64748b" font-size="9">different sandbox tech,</text>
-    <text x="35" y="348" fill="#64748b" font-size="9">same 3-layer shape)</text>
-    <text x="305" y="311" fill="#64748b">Firecracker microVMs</text>
-    <text x="305" y="326" fill="#64748b">(hardware-virtualized,</text>
-    <text x="305" y="341" fill="#64748b">own guest kernel per tenant)</text>
-    <text x="595" y="311" fill="#64748b">Proprietary L2 network</text>
-    <text x="595" y="326" fill="#64748b" font-family="monospace" font-size="10">"6PN"</text>
-    <text x="595" y="341" fill="#64748b">— no local route between VMs</text>
-    <text x="865" y="311" fill="#64748b">fly-proxy (Rust) — TLS</text>
-    <text x="865" y="326" fill="#64748b">termination + identity-based</text>
-    <text x="865" y="341" fill="#64748b">routing straight into the VM</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1436" height="422" viewBox="0 0 1436 422" font-family="DejaVu Sans, Verdana, sans-serif">
+<rect width="1436" height="422" fill="#0d1117"/>
+<text x="30" y="52" font-size="30" font-weight="bold" fill="#ffffff">Same three-layer pattern, three real production</text>
+<text x="30" y="92" font-size="30" font-weight="bold" fill="#ffffff">platforms</text>
+<rect x="30" y="144" width="349" height="45" fill="#1c2128" stroke="#30363d"/>
+<text x="46" y="158" font-size="15" font-weight="bold" fill="#ffffff">PLATFORM</text>
+<rect x="379" y="144" width="339" height="45" fill="#1c2128" stroke="#30363d"/>
+<text x="395" y="158" font-size="15" font-weight="bold" fill="#ffffff">LAYER A - KERNEL SANDBOX</text>
+<rect x="718" y="144" width="339" height="45" fill="#1c2128" stroke="#30363d"/>
+<text x="734" y="158" font-size="15" font-weight="bold" fill="#ffffff">LAYER B - LOCAL SEGMENTATION</text>
+<rect x="1057" y="144" width="349" height="45" fill="#1c2128" stroke="#30363d"/>
+<text x="1073" y="158" font-size="15" font-weight="bold" fill="#ffffff">LAYER C - PROXY</text>
+<rect x="30" y="189" width="349" height="87" fill="none" stroke="#30363d"/>
+<text x="46" y="203" font-size="15" font-weight="bold" fill="#ffffff">Kubernetes Agent Sandbox (CNCF</text>
+<text x="46" y="224" font-size="15" font-weight="bold" fill="#ffffff">SIG, 2026 - official reference for</text>
+<text x="46" y="245" font-size="15" font-weight="bold" fill="#ffffff">AI agents / untrusted code on k8s)</text>
+<rect x="379" y="189" width="339" height="87" fill="none" stroke="#30363d"/>
+<text x="395" y="203" font-size="15" fill="#c9d1d9">gVisor via runtimeClassName:</text>
+<text x="395" y="224" font-size="15" fill="#c9d1d9">gvisor</text>
+<rect x="718" y="189" width="339" height="87" fill="none" stroke="#30363d"/>
+<text x="734" y="203" font-size="15" fill="#c9d1d9">Host-level L2/L3 segmentation</text>
+<text x="734" y="224" font-size="15" fill="#c9d1d9">below the pods</text>
+<rect x="1057" y="189" width="349" height="87" fill="none" stroke="#30363d"/>
+<text x="1073" y="203" font-size="15" fill="#c9d1d9">&quot;Sandbox Router&quot; - X-Sandbox-ID</text>
+<text x="1073" y="224" font-size="15" fill="#c9d1d9">header-based routing</text>
+<rect x="30" y="276" width="349" height="87" fill="#11161d"/>
+<rect x="30" y="276" width="349" height="87" fill="none" stroke="#30363d"/>
+<text x="46" y="290" font-size="15" font-weight="bold" fill="#ffffff">Gitpod / Ona (dev-workspace</text>
+<text x="46" y="311" font-size="15" font-weight="bold" fill="#ffffff">platform, millions of parallel</text>
+<text x="46" y="332" font-size="15" font-weight="bold" fill="#ffffff">workspaces)</text>
+<rect x="379" y="276" width="339" height="87" fill="#11161d"/>
+<rect x="379" y="276" width="339" height="87" fill="none" stroke="#30363d"/>
+<text x="395" y="290" font-size="15" fill="#c9d1d9">gVisor (runsc), default for every</text>
+<text x="395" y="311" font-size="15" fill="#c9d1d9">workspace</text>
+<rect x="718" y="276" width="339" height="87" fill="#11161d"/>
+<rect x="718" y="276" width="339" height="87" fill="none" stroke="#30363d"/>
+<text x="734" y="290" font-size="15" fill="#c9d1d9">Cilium (eBPF) network policies +</text>
+<text x="734" y="311" font-size="15" fill="#c9d1d9">dedicated tunnels - tenants can't</text>
+<text x="734" y="332" font-size="15" fill="#c9d1d9">ping each other</text>
+<rect x="1057" y="276" width="349" height="87" fill="#11161d"/>
+<rect x="1057" y="276" width="349" height="87" fill="none" stroke="#30363d"/>
+<text x="1073" y="290" font-size="15" fill="#c9d1d9">Envoy ingress, subdomain +</text>
+<text x="1073" y="311" font-size="15" fill="#c9d1d9">session-cookie routing, zero raw</text>
+<text x="1073" y="332" font-size="15" fill="#c9d1d9">ports to internet</text>
+<rect x="30" y="363" width="349" height="87" fill="none" stroke="#30363d"/>
+<text x="46" y="377" font-size="15" font-weight="bold" fill="#ffffff">Fly.io (production VM hosting -</text>
+<text x="46" y="398" font-size="15" font-weight="bold" fill="#ffffff">different sandbox tech, same</text>
+<text x="46" y="419" font-size="15" font-weight="bold" fill="#ffffff">3-layer shape)</text>
+<rect x="379" y="363" width="339" height="87" fill="none" stroke="#30363d"/>
+<text x="395" y="377" font-size="15" fill="#c9d1d9">Firecracker microVMs</text>
+<text x="395" y="398" font-size="15" fill="#c9d1d9">(hardware-virtualized, own guest</text>
+<text x="395" y="419" font-size="15" fill="#c9d1d9">kernel per tenant)</text>
+<rect x="718" y="363" width="339" height="87" fill="none" stroke="#30363d"/>
+<text x="734" y="377" font-size="15" fill="#c9d1d9">Proprietary L2 network &quot;6PN&quot; - no</text>
+<text x="734" y="398" font-size="15" fill="#c9d1d9">local route between VMs</text>
+<rect x="1057" y="363" width="349" height="87" fill="none" stroke="#30363d"/>
+<text x="1073" y="377" font-size="15" fill="#c9d1d9">fly-proxy (Rust) - TLS termination</text>
+<text x="1073" y="398" font-size="15" fill="#c9d1d9">+ identity-based routing straight</text>
+<text x="1073" y="419" font-size="15" fill="#c9d1d9">into the VM</text>
 </svg>

@@ -1,0 +1,255 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "Taxonomy vs. Ontology - the two halves of the blueprint",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 24,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "column",
+            "style": {
+              "gap": 16
+            },
+            "children": [
+              {
+                "type": "card",
+                "id": "taxh",
+                "title": "Taxonomy - classify",
+                "lines": [
+                  "one home per document · instant exclusion",
+                  "job: route + exclude irrelevant domains · 100% certain",
+                  "rigid · one home per doc · no relations"
+                ]
+              },
+              {
+                "type": "card",
+                "id": "domain",
+                "title": "Domain",
+                "lines": [],
+                "color": "blue"
+              },
+              {
+                "type": "row",
+                "style": {
+                  "gap": 16,
+                  "justify": "center"
+                },
+                "children": [
+                  {
+                    "type": "card",
+                    "id": "kingdom",
+                    "title": "Kingdom",
+                    "lines": []
+                  },
+                  {
+                    "type": "card",
+                    "id": "phylum",
+                    "title": "Phylum",
+                    "lines": []
+                  },
+                  {
+                    "type": "card",
+                    "id": "class",
+                    "title": "Class",
+                    "lines": []
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "style": {
+                  "gap": 16,
+                  "justify": "center"
+                },
+                "children": [
+                  {
+                    "type": "card",
+                    "id": "order",
+                    "title": "Order",
+                    "lines": []
+                  },
+                  {
+                    "type": "card",
+                    "id": "family",
+                    "title": "Family",
+                    "lines": []
+                  },
+                  {
+                    "type": "card",
+                    "id": "genus",
+                    "title": "Genus",
+                    "lines": []
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "style": {
+                  "gap": 16,
+                  "justify": "center"
+                },
+                "children": [
+                  {
+                    "type": "card",
+                    "id": "species1",
+                    "title": "Species",
+                    "lines": [],
+                    "color": "green"
+                  },
+                  {
+                    "type": "card",
+                    "id": "species2",
+                    "title": "Species",
+                    "lines": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "style": {
+              "gap": 16
+            },
+            "children": [
+              {
+                "type": "card",
+                "id": "onth",
+                "title": "Ontology - reason",
+                "lines": [
+                  "formal concepts · properties · typed relations",
+                  "job: precise traversal · validates multi-hop paths",
+                  "SNOMED CT · ICD-10 · LOINC · Brick Schema"
+                ],
+                "color": "blue"
+              },
+              {
+                "type": "card",
+                "id": "diagnosis",
+                "title": "Diagnosis",
+                "lines": [],
+                "color": "blue"
+              },
+              {
+                "type": "row",
+                "style": {
+                  "gap": 16,
+                  "justify": "center"
+                },
+                "children": [
+                  {
+                    "type": "card",
+                    "id": "medication",
+                    "title": "Medication ✓",
+                    "lines": [],
+                    "color": "green"
+                  },
+                  {
+                    "type": "card",
+                    "id": "symptom",
+                    "title": "Symptom",
+                    "lines": []
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "style": {
+                  "gap": 16,
+                  "justify": "center"
+                },
+                "children": [
+                  {
+                    "type": "card",
+                    "id": "labvalue",
+                    "title": "LabValue",
+                    "lines": []
+                  },
+                  {
+                    "type": "card",
+                    "id": "patient",
+                    "title": "Patient",
+                    "lines": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "id": "foot",
+        "lines": [
+          "taxonomy routes · ontology reasons · both together = blueprint of knowledge"
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "domain",
+      "to": "kingdom"
+    },
+    {
+      "from": "domain",
+      "to": "phylum"
+    },
+    {
+      "from": "domain",
+      "to": "class"
+    },
+    {
+      "from": "phylum",
+      "to": "order"
+    },
+    {
+      "from": "phylum",
+      "to": "family"
+    },
+    {
+      "from": "class",
+      "to": "genus"
+    },
+    {
+      "from": "order",
+      "to": "species1",
+      "color": "green"
+    },
+    {
+      "from": "order",
+      "to": "species2"
+    },
+    {
+      "from": "medication",
+      "to": "diagnosis",
+      "label": "TREATS ✓",
+      "color": "green"
+    },
+    {
+      "from": "diagnosis",
+      "to": "symptom",
+      "label": "HAS_SYMPTOM"
+    },
+    {
+      "from": "diagnosis",
+      "to": "labvalue",
+      "label": "IS_INDICATOR_FOR"
+    },
+    {
+      "from": "diagnosis",
+      "to": "patient",
+      "label": "TAKES"
+    }
+  ]
+}

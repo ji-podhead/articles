@@ -1,0 +1,74 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k1",
+            "title": "LLM Agent",
+            "lines": [
+              "Calls SSL_write()",
+              "Plaintext in RAM",
+              "USERSPACE"
+            ],
+            "color": "blue"
+          },
+          {
+            "type": "card",
+            "id": "k2",
+            "title": "2. eBPF Engine",
+            "lines": [
+              "uprobe / kprobe",
+              "Intercepts raw memory",
+              "KERNELSPACE"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "k3",
+            "title": "3. Shield Daemon",
+            "lines": [
+              "Prompt Guard (22M)",
+              "Classification < 1ms"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "v",
+            "title": "4. Verdict: Map Update / SIGSTOP",
+            "color": "red"
+          }
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "k1",
+      "to": "k2",
+      "label": "SSL Hook",
+      "color": "blue"
+    },
+    {
+      "from": "k2",
+      "to": "k3",
+      "label": "Ring Buffer"
+    },
+    {
+      "from": "k3",
+      "to": "v"
+    }
+  ]
+}

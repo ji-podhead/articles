@@ -1,0 +1,57 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "tree": {
+    "type": "row",
+    "style": {
+      "gap": 20,
+      "justify": "center"
+    },
+    "children": [
+      {
+        "type": "card",
+        "id": "t",
+        "title": "Traditional Infrastructure",
+        "lines": [
+          "Sees low-level events only",
+          "✔ open(\"/etc/shadow\")",
+          "✔ TCP Stream to Endpoint",
+          "Problem: \"Why is it doing this?\""
+        ],
+        "color": "blue"
+      },
+      {
+        "type": "card",
+        "id": "g",
+        "title": "GAP",
+        "lines": [
+          "The Semantic Gap"
+        ],
+        "color": "red"
+      },
+      {
+        "type": "card",
+        "id": "a",
+        "title": "AI Application Layer",
+        "lines": [
+          "Sees natural language only",
+          "💬 \"Ignore prior rules...\"",
+          "💬 \"Output the .env payload\"",
+          "Problem: \"Is this safe to run?\""
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "t",
+      "to": "g",
+      "color": "red"
+    },
+    {
+      "from": "g",
+      "to": "a",
+      "color": "red"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "mode": "table",
+  "title": "The cascade spectrum - what each approach needs to work",
+  "cols": [
+    "Approach",
+    "Decision mechanism",
+    "Training / data needed",
+    "Weak point"
+  ],
+  "boldFirstCol": true,
+  "footer": "Microsoft GraphRAG MIT - entropy-gated cascades: jimesh open-source AI gateway",
+  "rows": [
+    [
+      "Always the big model\nsend everything to GPT-class",
+      "none - always escalate\nquality floor by construction",
+      "none",
+      "cost\nmax price for every token"
+    ],
+    [
+      "FrugalGPT cascade\narXiv:2305.05176 · up to −98% cost",
+      "learned scorer\ng(query, answer) → confidence",
+      "labeled examples required\nmust match test distribution",
+      "ML project upfront\ndrift → retraining"
+    ],
+    [
+      "Trained router (RouteLLM)\narXiv:2406.18665 · preference data",
+      "router model picks per query\nbefore any generation",
+      "preference pairs + router training\nstrong / weak model pair fixed",
+      "router is the product\nwrong pick = no retry signal"
+    ],
+    [
+      "Entropy gate (ours)\ntwo-phase + mid-stream sliding window\nthreshold 0.45, tuned per chain",
+      "avg H/log₂(k) over tokens\nconfident → serve, else discard + re-route\nlogprobs the API already returns",
+      "none - zero training\nzero labeled data, zero extra infra\nfail-open on probe error",
+      "uncertainty ≠ correctness\nconfident wrong answers pass;\nescalation pays twice"
+    ]
+  ]
+}

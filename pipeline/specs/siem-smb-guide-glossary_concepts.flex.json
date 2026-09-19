@@ -1,0 +1,260 @@
+{
+  "width": 1200,
+  "title": "Glossary: Detection & Response Concepts",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 8
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 0,
+          "padding": 20
+        },
+        "children": [
+          {
+            "type": "text",
+            "lines": [
+              "TERM"
+            ],
+            "style": {
+              "width": 260,
+              "fontSize": 13,
+              "bold": true,
+              "color": "#60a5fa"
+            }
+          },
+          {
+            "type": "text",
+            "lines": [
+              "MEANING"
+            ],
+            "style": {
+              "fontSize": 13,
+              "bold": true,
+              "color": "#60a5fa"
+            }
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "title": "SIEM",
+        "lines": [
+          "Security Information & Event Management - collect → normalize → detect → correlate → alert → retain."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "Attribution",
+        "lines": [
+          "Mapping an event to the workload/identity that caused it (container → session → project) - the layer that makes findings actionable."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "eBPF",
+        "lines": [
+          "Linux kernel technology to run sandboxed programs in the kernel - syscall/network observation and enforcement without app instrumentation."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "LSM / BPF-LSM",
+        "lines": [
+          "Linux Security Module hook framework (optionally via eBPF) - synchronous enforcement: deny syscalls before they execute."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "XDP / XDP_DROP",
+        "lines": [
+          "eXpress Data Path - eBPF programs attached at the NIC; XDP_DROP discards packets at the driver, before the TCP stack."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "RCF",
+        "lines": [
+          "Random Cut Forest - unsupervised streaming anomaly-detection algorithm (used by OpenSearch AD and AWS GuardDuty-class services)."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "FIM",
+        "lines": [
+          "File Integrity Monitoring - watching sensitive files for unauthorized changes."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "IaC",
+        "lines": [
+          "Infrastructure as Code - Terraform, CloudFormation, Helm, Kustomize, compose files; scannable by Checkov et al."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "SBOM",
+        "lines": [
+          "Software Bill of Materials - a machine-readable inventory of an artifact's components; CycloneDX is the common format."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "HITL",
+        "lines": [
+          "Human-in-the-Loop - irreversible actions wait for an operator decision; automation proposes, humans dispose."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "Shadow API",
+        "lines": [
+          "An endpoint that exists in traffic but not in documented routes/OpenAPI - the classic gateway-bypass surface."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "Data Drift",
+        "lines": [
+          "Model signal decay when live traffic distribution changes vs. training data - triggers retrain, not retuning of rules."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "MTTR (p75)",
+        "lines": [
+          "Mean Time To Respond/Remediate, 75th percentile - the runtime KPI containment playbooks can halve."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "Blast Radius",
+        "lines": [
+          "How much damage a compromise of one asset can do - the ranking dimension CSPM tools sort findings by."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "Warm-start model",
+        "lines": [
+          "A globally trained baseline, fine-tuned per tenant - cheaper than per-tenant training and still isolated."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "OCSF / ASFF",
+        "lines": [
+          "Open Cybersecurity Schema Framework / AWS Security Finding Format - schemas that make cross-source correlation possible."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "Sigma",
+        "lines": [
+          "Open signature format for detection rules (YAML), consumable by OpenSearch Security Analytics and friends."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "Token binding",
+        "lines": [
+          "Binding an API token to a client trait (e.g., TLS fingerprint) so a stolen token fails replay from another machine."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      }
+    ]
+  }
+}

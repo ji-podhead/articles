@@ -1,139 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Taxonomy vs Ontology — the two structures inside every OKF knowledge base">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b1329"/>
-      <stop offset="100%" stop-color="#1c2541"/>
-    </linearGradient>
-    <marker id="rel" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-      <path d="M 0,0 L 10,5 L 0,10" fill="none" stroke="#34d399" stroke-width="1.8"/>
-    </marker>
-  </defs>
-
-  <rect width="1200" height="675" fill="url(#bg)"/>
-
-  <text x="600" y="48" text-anchor="middle" fill="#fafafa" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="900">
-    TAXONOMY + ONTOLOGY = OKF'S SUPERPOWER
-  </text>
-  <text x="600" y="72" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="13">
-    rigid hierarchy for filtering · relational graph for traversal
-  </text>
-
-  <!-- ═══ LEFT: TAXONOMY (tree) ═══ -->
-  <g transform="translate(50, 110)">
-    <rect width="530" height="420" rx="14" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect width="530" height="52" rx="14" fill="#38bdf8" opacity="0.1"/>
-    <text x="265" y="28" text-anchor="middle" fill="#38bdf8" font-family="Segoe UI" font-size="16" font-weight="900">
-      THE TAXONOMY — rigid tree
-    </text>
-    <text x="265" y="44" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="10">
-      directory structure + topic / subtopic · one home per document
-    </text>
-
-    <!-- Tree -->
-    <g transform="translate(40, 80)" font-family="monospace">
-      <!-- Root -->
-      <rect x="140" y="0" width="220" height="34" rx="7" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2"/>
-      <text x="250" y="21" text-anchor="middle" fill="#7dd3fc" font-size="11" font-weight="bold">general/</text>
-
-      <line x1="250" y1="34" x2="120" y2="62" stroke="#3a506b" stroke-width="1.4"/>
-      <line x1="250" y1="34" x2="390" y2="62" stroke="#3a506b" stroke-width="1.4"/>
-
-      <!-- Branch 1 -->
-      <rect x="40" y="62" width="160" height="30" rx="6" fill="#1e293b" stroke="#475569"/>
-      <text x="120" y="81" text-anchor="middle" fill="#94a3b8" font-size="10">networking/</text>
-      <line x1="120" y1="92" x2="120" y2="118" stroke="#3a506b" stroke-width="1.2"/>
-      <rect x="40" y="118" width="160" height="30" rx="6" fill="#1e293b" stroke="#475569"/>
-      <text x="120" y="137" text-anchor="middle" fill="#94a3b8" font-size="10">container-networking/</text>
-      <line x1="120" y1="148" x2="120" y2="174" stroke="#3a506b" stroke-width="1.2"/>
-      <rect x="40" y="174" width="160" height="34" rx="6" fill="#052e16" stroke="#34d399" stroke-width="1.2"/>
-      <text x="120" y="188" text-anchor="middle" fill="#34d399" font-size="10">gvisor.md</text>
-      <text x="120" y="202" text-anchor="middle" fill="#475569" font-size="8">the document (leaf)</text>
-
-      <!-- Branch 2 -->
-      <rect x="310" y="62" width="160" height="30" rx="6" fill="#1e293b" stroke="#475569"/>
-      <text x="390" y="81" text-anchor="middle" fill="#94a3b8" font-size="10">llm-orchestration/</text>
-      <line x1="390" y1="92" x2="390" y2="118" stroke="#3a506b" stroke-width="1.2"/>
-      <rect x="310" y="118" width="160" height="34" rx="6" fill="#052e16" stroke="#34d399" stroke-width="1.2"/>
-      <text x="390" y="132" text-anchor="middle" fill="#34d399" font-size="10">llama3-security.md</text>
-      <text x="390" y="146" text-anchor="middle" fill="#475569" font-size="8">the document (leaf)</text>
-    </g>
-
-    <g transform="translate(40, 300)">
-      <rect width="450" height="94" rx="10" fill="#38bdf8" opacity="0.06"/>
-      <text x="225" y="24" text-anchor="middle" fill="#38bdf8" font-family="Segoe UI" font-size="12" font-weight="900">JOB: INSTANT EXCLUSION</text>
-      <text x="225" y="46" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="10">filter: topic == "general/networking"</text>
-      <text x="225" y="62" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="10">→ irrelevant domains excluded with 100% certainty</text>
-      <text x="225" y="80" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">controlled vocabulary: no wild folder names allowed</text>
-    </g>
-  </g>
-
-  <!-- ═══ RIGHT: ONTOLOGY (graph) ═══ -->
-  <g transform="translate(620, 110)">
-    <rect width="530" height="420" rx="14" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect width="530" height="52" rx="14" fill="#34d399" opacity="0.1"/>
-    <text x="265" y="28" text-anchor="middle" fill="#34d399" font-family="Segoe UI" font-size="16" font-weight="900">
-      THE ONTOLOGY — relation web
-    </text>
-    <text x="265" y="44" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="10">
-      Markdown cross-links · any document relates to any other
-    </text>
-
-    <!-- Graph nodes -->
-    <g font-family="monospace">
-      <!-- edges -->
-      <line x1="265" y1="150" x2="110" y2="235" stroke="#34d399" stroke-width="1.4" opacity="0.7" marker-end="url(#rel)"/>
-      <line x1="265" y1="150" x2="420" y2="235" stroke="#34d399" stroke-width="1.4" opacity="0.7" marker-end="url(#rel)"/>
-      <line x1="110" y1="255" x2="265" y2="340" stroke="#34d399" stroke-width="1.4" opacity="0.7" marker-end="url(#rel)"/>
-      <line x1="420" y1="255" x2="265" y2="340" stroke="#34d399" stroke-width="1.4" opacity="0.7" marker-end="url(#rel)"/>
-      <line x1="265" y1="150" x2="265" y2="330" stroke="#34d399" stroke-width="1.2" opacity="0.5" stroke-dasharray="4,3"/>
-
-      <!-- edge labels -->
-      <text x="172" y="185" fill="#64748b" font-size="9" text-anchor="middle">isolates</text>
-      <text x="355" y="185" fill="#64748b" font-size="9" text-anchor="middle">is_used_by</text>
-      <text x="172" y="300" fill="#64748b" font-size="9" text-anchor="middle">runs_on</text>
-      <text x="355" y="300" fill="#64748b" font-size="9" text-anchor="middle">verifies</text>
-
-      <!-- center node -->
-      <circle cx="265" cy="140" r="26" fill="#052e16" stroke="#34d399" stroke-width="2"/>
-      <text x="265" y="137" text-anchor="middle" fill="#34d399" font-size="9" font-weight="bold">gVisor</text>
-      <text x="265" y="149" text-anchor="middle" fill="#34d399" font-size="9" font-weight="bold">Network.</text>
-
-      <!-- left node -->
-      <circle cx="110" cy="245" r="24" fill="#1e293b" stroke="#818cf8" stroke-width="2"/>
-      <text x="110" y="242" text-anchor="middle" fill="#a5b4fc" font-size="8.5" font-weight="bold">Docker</text>
-      <text x="110" y="253" text-anchor="middle" fill="#a5b4fc" font-size="8.5" font-weight="bold">Bridge</text>
-
-      <!-- right node -->
-      <circle cx="420" cy="245" r="24" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
-      <text x="420" y="242" text-anchor="middle" fill="#fdba74" font-size="8.5" font-weight="bold">Secure</text>
-      <text x="420" y="253" text-anchor="middle" fill="#fdba74" font-size="8.5" font-weight="bold">Gateway</text>
-
-      <!-- bottom node -->
-      <circle cx="265" cy="355" r="24" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
-      <text x="265" y="352" text-anchor="middle" fill="#7dd3fc" font-size="8.5" font-weight="bold">Kubernetes</text>
-      <text x="265" y="363" text-anchor="middle" fill="#7dd3fc" font-size="8.5" font-weight="bold">Cluster</text>
-    </g>
-
-    <g transform="translate(40, 405)">
-      <text x="225" y="0" text-anchor="middle" fill="#34d399" font-family="Segoe UI" font-size="11" font-weight="900">JOB: PRECISE TRAVERSAL</text>
-    </g>
-  </g>
-
-  <!-- ═══ BOTTOM: the bridge ═══ -->
-  <g transform="translate(50, 555)">
-    <rect width="1100" height="88" rx="14" fill="#818cf8" opacity="0.07"/>
-    <text x="550" y="28" text-anchor="middle" fill="#a5b4fc" font-family="Segoe UI" font-size="14" font-weight="900">
-      THE BRIDGE: manifest.json
-    </text>
-    <text x="550" y="52" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="10">
-      nodes from frontmatter (taxonomy members) + edges from directory structure AND cross-links scanned from the bodies (ontology)
-    </text>
-    <text x="550" y="70" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="10">
-      agent flow: taxonomy filter first → then follow the links — precise answers, no reranking, no cosine guessing
-    </text>
-  </g>
-
-  <text x="600" y="662" text-anchor="middle" fill="#475569" font-family="monospace" font-size="10">
-    #OKF #KnowledgeEngineering #Taxonomy #Ontology #GraphRAG #AIAgents
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1037" viewBox="0 0 1200 1037" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="1037" fill="#0d1117"/>
+<text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">TAXONOMY + ONTOLOGY = OKF'S SUPERPOWER</text>
+<text x="40" y="100" font-size="17" fill="#8b949e">rigid hierarchy for filtering · relational graph for traversal</text>
+<rect x="252" y="106" width="156" height="66" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="252" y="106" width="5" height="66" rx="2.5" fill="#4ade80"/>
+<text x="270" y="132" font-size="15" font-weight="bold" fill="#4ade80">gVisor</text>
+<text x="270" y="153" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Network.</text>
+<rect x="432" y="106" width="156" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="450" y="132" font-size="15" font-weight="bold" fill="#e6edf3">Docker</text>
+<text x="450" y="153" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Bridge</text>
+<rect x="612" y="106" width="156" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="630" y="132" font-size="15" font-weight="bold" fill="#e6edf3">Secure</text>
+<text x="630" y="153" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Gateway</text>
+<rect x="792" y="106" width="156" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="810" y="132" font-size="15" font-weight="bold" fill="#e6edf3">Kubernetes</text>
+<text x="810" y="153" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Cluster</text>
+<rect x="208" y="196" width="380" height="87" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="208" y="196" width="5" height="87" rx="2.5" fill="#60a5fa"/>
+<text x="226" y="222" font-size="15" font-weight="bold" fill="#60a5fa">THE TAXONOMY - rigid tree</text>
+<text x="226" y="243" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">directory structure + topic / subtopic · one</text>
+<text x="226" y="264" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">home per document</text>
+<rect x="208" y="299" width="213" height="129" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="208" y="299" width="5" height="129" rx="2.5" fill="#60a5fa"/>
+<text x="226" y="325" font-size="15" font-weight="bold" fill="#60a5fa">general/</text>
+<text x="226" y="346" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">networking/</text>
+<text x="226" y="367" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">container-networking/</text>
+<text x="226" y="388" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">gvisor.md</text>
+<text x="226" y="409" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">the document (leaf)</text>
+<rect x="208" y="444" width="213" height="87" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="208" y="444" width="5" height="87" rx="2.5" fill="#60a5fa"/>
+<text x="226" y="470" font-size="15" font-weight="bold" fill="#60a5fa">llm-orchestration/</text>
+<text x="226" y="491" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">llama3-security.md</text>
+<text x="226" y="512" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">the document (leaf)</text>
+<rect x="208" y="547" width="380" height="150" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="208" y="547" width="5" height="150" rx="2.5" fill="#60a5fa"/>
+<text x="226" y="573" font-size="15" font-weight="bold" fill="#60a5fa">JOB: INSTANT EXCLUSION</text>
+<text x="226" y="594" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">filter: topic == &quot;general/networking&quot;</text>
+<text x="226" y="615" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">→ irrelevant domains excluded with 100%</text>
+<text x="226" y="636" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">certainty</text>
+<text x="226" y="657" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">controlled vocabulary: no wild folder names</text>
+<text x="226" y="678" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">allowed</text>
+<rect x="612" y="196" width="380" height="87" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="612" y="196" width="5" height="87" rx="2.5" fill="#4ade80"/>
+<text x="630" y="222" font-size="15" font-weight="bold" fill="#4ade80">THE ONTOLOGY - relation web</text>
+<text x="630" y="243" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Markdown cross-links · any document relates</text>
+<text x="630" y="264" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">to any other</text>
+<rect x="612" y="299" width="261" height="45" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="612" y="299" width="5" height="45" rx="2.5" fill="#4ade80"/>
+<text x="630" y="325" font-size="15" font-weight="bold" fill="#4ade80">JOB: PRECISE TRAVERSAL</text>
+<rect x="40" y="721" width="380" height="192" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="40" y="721" width="5" height="192" rx="2.5" fill="#60a5fa"/>
+<text x="58" y="747" font-size="15" font-weight="bold" fill="#60a5fa">THE BRIDGE: manifest.json</text>
+<text x="58" y="768" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">nodes from frontmatter (taxonomy members)</text>
+<text x="58" y="789" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">+ edges from directory structure AND</text>
+<text x="58" y="810" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">cross-links scanned from the bodies</text>
+<text x="58" y="831" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">(ontology)</text>
+<text x="58" y="852" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">agent flow: taxonomy filter first → then follow</text>
+<text x="58" y="873" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">the links - precise answers, no reranking, no</text>
+<text x="58" y="894" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">cosine guessing</text>
+<rect x="415" y="937" width="371" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="433" y="963" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">#OKF #KnowledgeEngineering #Taxonomy</text>
+<text x="433" y="984" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">#Ontology #GraphRAG #AIAgents</text>
+<marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4ade80"/></marker>
+<polyline points="408,139 432,139" fill="none" stroke="#4ade80" stroke-width="2.2" marker-end="url(#ar1)"/>
+<rect x="388" y="127" width="64" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="420" y="142" font-size="13" fill="#8b949e" text-anchor="middle">isolates</text>
+<polyline points="408,139 408,70 690,70 690,106" fill="none" stroke="#4ade80" stroke-width="2.2" marker-end="url(#ar1)"/>
+<rect x="507" y="58" width="85" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="549" y="73" font-size="13" fill="#8b949e" text-anchor="middle">is_used_by</text>
+<polyline points="588,139 588,70 870,70 870,106" fill="none" stroke="#4ade80" stroke-width="2.2" marker-end="url(#ar1)"/>
+<rect x="696" y="58" width="65" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="729" y="73" font-size="13" fill="#8b949e" text-anchor="middle">runs_on</text>
+<polyline points="768,139 792,139" fill="none" stroke="#4ade80" stroke-width="2.2" marker-end="url(#ar1)"/>
+<rect x="749" y="127" width="62" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="780" y="142" font-size="13" fill="#8b949e" text-anchor="middle">verifies</text>
 </svg>

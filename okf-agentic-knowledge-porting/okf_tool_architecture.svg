@@ -1,137 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Agentic Tool Architecture — metadata-first retrieval over OKF">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b1329"/>
-      <stop offset="100%" stop-color="#1c2541"/>
-    </linearGradient>
-    <linearGradient id="cheap" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#34d399"/>
-      <stop offset="100%" stop-color="#10b981"/>
-    </linearGradient>
-    <linearGradient id="exact" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#818cf8"/>
-      <stop offset="100%" stop-color="#6366f1"/>
-    </linearGradient>
-    <linearGradient id="anti" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#f87171"/>
-      <stop offset="100%" stop-color="#ef4444"/>
-    </linearGradient>
-  </defs>
-
-  <rect width="1200" height="675" fill="url(#bg)"/>
-
-  <!-- Title -->
-  <text x="600" y="48" text-anchor="middle" fill="#fafafa" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="900">
-    AGENTIC TOOLS: METADATA FIRST, RAG SECOND
-  </text>
-  <text x="600" y="72" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="13">
-    two SQL-grade tools over OKF instead of one blind vector search
-  </text>
-
-  <!-- ══ LEFT: The anti-pattern ══ -->
-  <g transform="translate(50, 105)">
-    <rect width="330" height="440" rx="14" fill="#0f172a" stroke="#7f1d1d" stroke-width="1.5"/>
-    <rect width="330" height="56" rx="14" fill="#f87171" opacity="0.08"/>
-    <text x="165" y="30" text-anchor="middle" fill="#f87171" font-family="Segoe UI" font-size="15" font-weight="900">✗ THE ANTI-PATTERN</text>
-    <text x="165" y="47" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="10">one generic "search" tool</text>
-
-    <g transform="translate(35, 90)">
-      <rect width="260" height="52" rx="8" fill="#1e293b" stroke="#475569"/>
-      <text x="130" y="24" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI" font-size="12">User query</text>
-      <text x="130" y="41" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">"kubernetes leads, still cold"</text>
-    </g>
-
-    <g transform="translate(120, 160)">
-      <text text-anchor="middle" fill="#475569" font-size="16">↓</text>
-    </g>
-
-    <g transform="translate(35, 190)">
-      <rect width="260" height="74" rx="8" fill="#1e293b" stroke="url(#anti)" stroke-width="1.5"/>
-      <text x="130" y="28" text-anchor="middle" fill="#f87171" font-family="monospace" font-size="11" font-weight="bold">search(vector_db, query)</text>
-      <text x="130" y="46" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">embeds everything, reranks noise</text>
-      <text x="130" y="61" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">cookie banners, menus, filler chunks</text>
-    </g>
-
-    <g transform="translate(120, 282)">
-      <text text-anchor="middle" fill="#475569" font-size="16">↓</text>
-    </g>
-
-    <g transform="translate(35, 310)">
-      <rect width="260" height="88" rx="8" fill="#1e293b" stroke="#475569"/>
-      <text x="130" y="26" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI" font-size="11">expensive + imprecise</text>
-      <text x="130" y="45" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">• embedding cost on every query</text>
-      <text x="130" y="60" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">• missed details in the noise</text>
-      <text x="130" y="75" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">• relevance guessed, not filtered</text>
-    </g>
-  </g>
-
-  <!-- Center arrow -->
-  <g transform="translate(405, 320)">
-    <text text-anchor="middle" fill="#38bdf8" font-size="28" font-weight="900">→</text>
-  </g>
-
-  <!-- ══ RIGHT: The OKF tool pattern ══ -->
-  <g transform="translate(445, 105)">
-    <rect width="705" height="440" rx="14" fill="#0f172a" stroke="url(#cheap)" stroke-width="1.5"/>
-    <rect width="705" height="56" rx="14" fill="#34d399" opacity="0.08"/>
-    <text x="352" y="30" text-anchor="middle" fill="#34d399" font-family="Segoe UI" font-size="15" font-weight="900">✓ THE OKF TOOL PATTERN</text>
-    <text x="352" y="47" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="10">catalog query first — body fetch only for the filtered few</text>
-
-    <!-- Step 1: search_knowledge_metadata -->
-    <g transform="translate(35, 90)">
-      <rect width="300" height="100" rx="8" fill="#1e293b" stroke="url(#cheap)" stroke-width="1.5"/>
-      <text x="150" y="24" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="10.5" font-weight="bold">search_knowledge_metadata()</text>
-      <text x="150" y="42" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">filters manifest.json only</text>
-      <text x="150" y="57" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">topic · tags · status · lifecycle</text>
-      <text x="150" y="76" text-anchor="middle" fill="#6ee7b7" font-family="monospace" font-size="9">→ milliseconds · zero body tokens</text>
-      <text x="150" y="90" text-anchor="middle" fill="#475569" font-family="monospace" font-size="8">deterministic — no LLM call needed</text>
-    </g>
-
-    <!-- Step 2: fetch_knowledge_document -->
-    <g transform="translate(370, 90)">
-      <rect width="300" height="100" rx="8" fill="#1e293b" stroke="url(#exact)" stroke-width="1.5"/>
-      <text x="150" y="24" text-anchor="middle" fill="#a5b4fc" font-family="monospace" font-size="10.5" font-weight="bold">fetch_knowledge_document()</text>
-      <text x="150" y="42" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">loads body or ONE heading section</text>
-      <text x="150" y="57" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">by validated doc ID + anchor</text>
-      <text x="150" y="76" text-anchor="middle" fill="#c7d2fe" font-family="monospace" font-size="9">→ context budget spent only here</text>
-      <text x="150" y="90" text-anchor="middle" fill="#475569" font-family="monospace" font-size="8">heading-bounded jumps, no re-reads</text>
-    </g>
-
-    <!-- Flow arrows between the two -->
-    <g transform="translate(335, 140)">
-      <text text-anchor="middle" fill="#475569" font-size="15">→</text>
-    </g>
-
-    <!-- The manifest source -->
-    <g transform="translate(35, 220)">
-      <rect width="300" height="64" rx="8" fill="#052e16" stroke="#166534"/>
-      <text x="150" y="26" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="10" font-weight="bold">manifest.json</text>
-      <text x="150" y="44" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">nodes: docs · topics · tags</text>
-      <text x="150" y="57" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="8">edges: shared taxonomy + cross-links</text>
-    </g>
-
-    <g transform="translate(370, 220)">
-      <rect width="300" height="64" rx="8" fill="#1e1b4b" stroke="#4338ca"/>
-      <text x="150" y="26" text-anchor="middle" fill="#a5b4fc" font-family="monospace" font-size="10" font-weight="bold">okf document bodies</text>
-      <text x="150" y="44" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="9">markdown · ## sections</text>
-      <text x="150" y="57" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="8">lifecycle-expired → refused by agent</text>
-    </g>
-
-    <!-- Result band -->
-    <g transform="translate(35, 320)">
-      <rect width="635" height="96" rx="10" fill="#34d399" opacity="0.07"/>
-      <text x="317" y="28" text-anchor="middle" fill="#34d399" font-family="Segoe UI" font-size="13" font-weight="900">THE RESULT</text>
-      <text x="317" y="52" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="10">"find all enterprise leads on Kubernetes with status cold_outreach"</text>
-      <text x="317" y="72" text-anchor="middle" fill="#6ee7b7" font-family="monospace" font-size="10">→ metadata filter returns 5 IDs in milliseconds → only those 5 bodies enter the context</text>
-      <text x="317" y="88" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">~95% token cost avoided · zero missed detail · relevance by structure, not cosine guessing</text>
-    </g>
-  </g>
-
-  <!-- Bottom note -->
-  <text x="600" y="600" text-anchor="middle" fill="#475569" font-family="monospace" font-size="10">
-    tool definitions (JSON schema for function calling) — same pattern for leads, runbooks, ADRs, research
-  </text>
-  <text x="600" y="640" text-anchor="middle" fill="#475569" font-family="monospace" font-size="10">
-    #OKF #KnowledgeEngineering #GraphRAG #AIAgents #MLOps
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="815" viewBox="0 0 1200 815" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="815" fill="#0d1117"/>
+<text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">AGENTIC TOOLS: METADATA FIRST, RAG SECOND</text>
+<text x="40" y="100" font-size="17" fill="#8b949e">two SQL-grade tools over OKF instead of one blind vector search</text>
+<rect x="20" y="106" width="269" height="66" rx="11" fill="#161b22" stroke="#f87171" stroke-width="2"/>
+<rect x="20" y="106" width="5" height="66" rx="2.5" fill="#f87171"/>
+<text x="38" y="132" font-size="15" font-weight="bold" fill="#f87171">✗ THE ANTI-PATTERN</text>
+<text x="38" y="153" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">one generic &quot;search&quot; tool</text>
+<rect x="20" y="188" width="315" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="38" y="214" font-size="15" font-weight="bold" fill="#e6edf3">User query</text>
+<text x="38" y="235" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">&quot;kubernetes leads, still cold&quot;</text>
+<rect x="20" y="270" width="371" height="87" rx="11" fill="#161b22" stroke="#f87171" stroke-width="2"/>
+<rect x="20" y="270" width="5" height="87" rx="2.5" fill="#f87171"/>
+<text x="38" y="296" font-size="15" font-weight="bold" fill="#f87171">search(vector_db, query)</text>
+<text x="38" y="317" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">embeds everything, reranks noise</text>
+<text x="38" y="338" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">cookie banners, menus, filler chunks</text>
+<rect x="20" y="373" width="343" height="108" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="38" y="399" font-size="15" font-weight="bold" fill="#e6edf3">expensive + imprecise</text>
+<text x="38" y="420" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">• embedding cost on every query</text>
+<text x="38" y="441" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">• missed details in the noise</text>
+<text x="38" y="462" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">• relevance guessed, not filtered</text>
+<rect x="423" y="106" width="380" height="87" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="423" y="106" width="5" height="87" rx="2.5" fill="#4ade80"/>
+<text x="441" y="132" font-size="15" font-weight="bold" fill="#4ade80">✓ THE OKF TOOL PATTERN</text>
+<text x="441" y="153" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">catalog query first - body fetch only for the</text>
+<text x="441" y="174" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">filtered few</text>
+<rect x="423" y="209" width="353" height="129" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="423" y="209" width="5" height="129" rx="2.5" fill="#4ade80"/>
+<text x="441" y="235" font-size="15" font-weight="bold" fill="#4ade80">search_knowledge_metadata()</text>
+<text x="441" y="256" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">filters manifest.json only</text>
+<text x="441" y="277" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">topic · tags · status · lifecycle</text>
+<text x="441" y="298" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">→ milliseconds · zero body tokens</text>
+<text x="441" y="319" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">deterministic - no LLM call needed</text>
+<rect x="792" y="209" width="353" height="129" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="810" y="235" font-size="15" font-weight="bold" fill="#e6edf3">fetch_knowledge_document()</text>
+<text x="810" y="256" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">loads body or ONE heading section</text>
+<text x="810" y="277" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">by validated doc ID + anchor</text>
+<text x="810" y="298" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">→ context budget spent only here</text>
+<text x="810" y="319" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">heading-bounded jumps, no re-reads</text>
+<rect x="423" y="354" width="371" height="87" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="423" y="354" width="5" height="87" rx="2.5" fill="#4ade80"/>
+<text x="441" y="380" font-size="15" font-weight="bold" fill="#4ade80">manifest.json</text>
+<text x="441" y="401" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">nodes: docs · topics · tags</text>
+<text x="441" y="422" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">edges: shared taxonomy + cross-links</text>
+<rect x="810" y="354" width="371" height="87" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="828" y="380" font-size="15" font-weight="bold" fill="#e6edf3">okf document bodies</text>
+<text x="828" y="401" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">markdown · ## sections</text>
+<text x="828" y="422" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">lifecycle-expired → refused by agent</text>
+<rect x="423" y="457" width="380" height="213" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="423" y="457" width="5" height="213" rx="2.5" fill="#4ade80"/>
+<text x="441" y="483" font-size="15" font-weight="bold" fill="#4ade80">THE RESULT</text>
+<text x="441" y="504" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">&quot;find all enterprise leads on Kubernetes with</text>
+<text x="441" y="525" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">status cold_outreach&quot;</text>
+<text x="441" y="546" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">→ metadata filter returns 5 IDs in</text>
+<text x="441" y="567" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">milliseconds → only those 5 bodies enter the</text>
+<text x="441" y="588" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">context</text>
+<text x="441" y="609" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">~95% token cost avoided · zero missed</text>
+<text x="441" y="630" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">detail · relevance by structure, not cosine</text>
+<text x="441" y="651" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">guessing</text>
+<rect x="217" y="694" width="380" height="87" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="235" y="720" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">tool definitions (JSON schema for function</text>
+<text x="235" y="741" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">calling) - same pattern for leads, runbooks,</text>
+<text x="235" y="762" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">ADRs, research</text>
+<rect x="613" y="694" width="371" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="631" y="720" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">#OKF #KnowledgeEngineering #GraphRAG</text>
+<text x="631" y="741" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">#AIAgents #MLOps</text>
+<marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/></marker>
+<polyline points="178,254 206,270" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="206,357 192,373" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
 </svg>

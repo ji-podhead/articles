@@ -1,0 +1,55 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "The Evolution of AI Planning",
+  "subtitle": "From GOAP in games to LLM-driven robotics",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 28
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 16,
+          "align": "stretch"
+        },
+        "children": [
+          {
+            "type": "chip",
+            "text": "AI / ROBOTICS",
+            "color": "blue"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "lines": [
+          "# plan.pddl - (:goal (clean table))",
+          "➔ [LLM Bridge] human intent → structured PDDL..."
+        ],
+        "style": {
+          "fontSize": 16,
+          "color": "#8b949e",
+          "bold": false,
+          "width": 1120,
+          "height": 50
+        }
+      },
+      {
+        "type": "text",
+        "lines": [
+          "➔ [Solver] optimal plan found → Behavior Tree executed"
+        ],
+        "style": {
+          "fontSize": 16,
+          "color": "#4ade80",
+          "bold": false,
+          "width": 1120,
+          "height": 28
+        }
+      }
+    ]
+  }
+}

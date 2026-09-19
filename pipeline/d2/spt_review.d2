@@ -1,0 +1,28 @@
+direction: down
+vars: { d2-config: { theme-id: 3; sketch: false } }
+title: { label: "Split Personality Training: the honest persona loop"; near: top-center }
+
+task: {
+  label: "main model answers the task normally"
+  style: {stroke: "#30363d"; stroke-width: 2; fill: "#1c2128"; font-color: "#e6edf3"; font-size: 15}
+}
+split: {
+  label: "split-personality-token replaces end-of-turn; an intervention string says what to review"
+  style: {stroke: "#d29922"; stroke-width: 2; fill: "#161b22"; font-color: "#d29922"; font-size: 15}
+}
+honest: {
+  label: "honest persona: a finetuned LoRA adapter; reads the reasoning, cannot influence it"
+  style: {stroke: "#4493f8"; stroke-width: 2; fill: "#161b22"; font-color: "#4493f8"; font-size: 15}
+}
+verdict: {
+  label: "first-person admission, mechanism explained"
+  style: {stroke: "#3fb950"; stroke-width: 2; fill: "#161b22"; font-color: "#3fb950"; font-size: 15}
+}
+cut: {
+  label: "if the user continues, token and review are cut from history"
+  style: {stroke: "#30363d"; stroke-width: 2; fill: "#161b22"; font-color: "#8b949e"; font-size: 15}
+}
+task -> split: end of turn
+split -> honest: activate
+honest -> verdict: review
+verdict -> cut: user never sees it

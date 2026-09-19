@@ -1,0 +1,191 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "TAXONOMY + ONTOLOGY = OKF'S SUPERPOWER",
+  "subtitle": "rigid hierarchy for filtering · relational graph for traversal",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 24,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k_gvisor",
+            "title": "gVisor",
+            "lines": [
+              "Network."
+            ],
+            "color": "green"
+          },
+          {
+            "type": "card",
+            "id": "k_docker",
+            "title": "Docker",
+            "lines": [
+              "Bridge"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "k_gateway",
+            "title": "Secure",
+            "lines": [
+              "Gateway"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "k_k8s",
+            "title": "Kubernetes",
+            "lines": [
+              "Cluster"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 24,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "column",
+            "style": {
+              "gap": 16
+            },
+            "children": [
+              {
+                "type": "card",
+                "id": "k_tax_hdr",
+                "title": "THE TAXONOMY - rigid tree",
+                "lines": [
+                  "directory structure + topic / subtopic · one home per document"
+                ],
+                "color": "blue"
+              },
+              {
+                "type": "card",
+                "id": "k_tax_root",
+                "title": "general/",
+                "lines": [
+                  "networking/",
+                  "container-networking/",
+                  "gvisor.md",
+                  "the document (leaf)"
+                ],
+                "color": "blue"
+              },
+              {
+                "type": "card",
+                "id": "k_tax_llm",
+                "title": "llm-orchestration/",
+                "lines": [
+                  "llama3-security.md",
+                  "the document (leaf)"
+                ],
+                "color": "blue"
+              },
+              {
+                "type": "card",
+                "id": "k_tax_job",
+                "title": "JOB: INSTANT EXCLUSION",
+                "lines": [
+                  "filter: topic == \"general/networking\"",
+                  "→ irrelevant domains excluded with 100% certainty",
+                  "controlled vocabulary: no wild folder names allowed"
+                ],
+                "color": "blue"
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "style": {
+              "gap": 16
+            },
+            "children": [
+              {
+                "type": "card",
+                "id": "k_ont_hdr",
+                "title": "THE ONTOLOGY - relation web",
+                "lines": [
+                  "Markdown cross-links · any document relates to any other"
+                ],
+                "color": "green"
+              },
+              {
+                "type": "card",
+                "id": "k_ont_job",
+                "title": "JOB: PRECISE TRAVERSAL",
+                "lines": [],
+                "color": "green"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "id": "k_bridge",
+        "title": "THE BRIDGE: manifest.json",
+        "lines": [
+          "nodes from frontmatter (taxonomy members) + edges from directory structure AND cross-links scanned from the bodies (ontology)",
+          "agent flow: taxonomy filter first → then follow the links - precise answers, no reranking, no cosine guessing"
+        ],
+        "color": "blue"
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 16,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k_foot",
+            "lines": [
+              "#OKF #KnowledgeEngineering #Taxonomy #Ontology #GraphRAG #AIAgents"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "k_gvisor",
+      "to": "k_docker",
+      "label": "isolates",
+      "color": "green"
+    },
+    {
+      "from": "k_gvisor",
+      "to": "k_gateway",
+      "label": "is_used_by",
+      "color": "green"
+    },
+    {
+      "from": "k_docker",
+      "to": "k_k8s",
+      "label": "runs_on",
+      "color": "green"
+    },
+    {
+      "from": "k_gateway",
+      "to": "k_k8s",
+      "label": "verifies",
+      "color": "green"
+    }
+  ]
+}

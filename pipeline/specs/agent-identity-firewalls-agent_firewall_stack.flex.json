@@ -1,0 +1,173 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "The agent firewall stack: four layers, four questions",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 20,
+      "align": "center"
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 24,
+          "align": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "L1",
+            "title": "LAYER 1 · INGRESS IDENTITY",
+            "lines": [
+              "strip client claims unconditionally · resolve server-side · re-stamp from the verified row",
+              "per-agent credentials · token exchange (RFC 8693) · workload identity (SPIFFE SVIDs)"
+            ],
+            "color": "blue",
+            "style": {
+              "width": 976,
+              "maxWidth": 976
+            }
+          },
+          {
+            "type": "text",
+            "lines": [
+              "WHO"
+            ],
+            "style": {
+              "fontSize": 24,
+              "bold": true,
+              "color": "#60a5fa",
+              "width": 110,
+              "height": 34
+            }
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 24,
+          "align": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "L2",
+            "title": "LAYER 2 · TOOL-CALL POLICY",
+            "lines": [
+              "deterministic allow / ask / deny · fail-closed · policy-as-code, never a model call",
+              "OPA Rego · Cedar · YAML first-match · glob + argument rules · rate limits · kill switch"
+            ],
+            "color": "green",
+            "style": {
+              "width": 976,
+              "maxWidth": 976
+            }
+          },
+          {
+            "type": "text",
+            "lines": [
+              "WHAT"
+            ],
+            "style": {
+              "fontSize": 24,
+              "bold": true,
+              "color": "#4ade80",
+              "width": 110,
+              "height": 34
+            }
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 24,
+          "align": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "L3",
+            "title": "LAYER 3 · EGRESS & DATA",
+            "lines": [
+              "default-deny network paths · taint tracking (credential read poisons the session) · response DLP",
+              "kernel netfilter · redact secrets before the model sees them · RFC1918 + metadata blocks"
+            ],
+            "color": "gray",
+            "style": {
+              "width": 976,
+              "maxWidth": 976
+            }
+          },
+          {
+            "type": "text",
+            "lines": [
+              "WHERE"
+            ],
+            "style": {
+              "fontSize": 24,
+              "bold": true,
+              "color": "#8b949e",
+              "width": 110,
+              "height": 34
+            }
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 24,
+          "align": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "L4",
+            "title": "LAYER 4 · AUDIT & RECEIPTS",
+            "lines": [
+              "ground truth recorded outside the model · tamper-evident · replayable",
+              "HMAC-signed JSONL · mediator-signed action receipts · full execution trail for replay"
+            ],
+            "color": "gray",
+            "style": {
+              "width": 976,
+              "maxWidth": 976
+            }
+          },
+          {
+            "type": "text",
+            "lines": [
+              "WHEN"
+            ],
+            "style": {
+              "fontSize": 24,
+              "bold": true,
+              "color": "#8b949e",
+              "width": 110,
+              "height": 34
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "L1",
+      "to": "L2"
+    },
+    {
+      "from": "L2",
+      "to": "L3"
+    },
+    {
+      "from": "L3",
+      "to": "L4"
+    }
+  ],
+  "chips": []
+}

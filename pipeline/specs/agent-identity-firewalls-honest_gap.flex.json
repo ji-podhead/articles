@@ -1,0 +1,106 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "A worked example: a per-agent scoping field that is written, but never checked",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 22,
+      "align": "center"
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "align": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "title": "WRITE TIME: this part is real",
+            "lines": [
+              "A per-agent access-control field is written on",
+              "every secret creation and update.",
+              "Every access token records which agent",
+              "it was minted for."
+            ],
+            "color": "green",
+            "style": {
+              "width": 500,
+              "maxWidth": 500
+            }
+          },
+          {
+            "type": "text",
+            "lines": [
+              "≠"
+            ],
+            "style": {
+              "fontSize": 24,
+              "bold": true,
+              "color": "#8b949e",
+              "width": 44,
+              "height": 40
+            }
+          },
+          {
+            "type": "card",
+            "title": "ACCESS TIME: never checked",
+            "lines": [
+              "The secret lookup does not filter by the",
+              "per-agent field at all.",
+              "Token validation checks name, revocation,",
+              "expiry, never the agent binding."
+            ],
+            "color": "red",
+            "style": {
+              "width": 500,
+              "maxWidth": 500
+            }
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "title": "Practical consequence",
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        },
+        "lines": [
+          "If a per-user OAuth token for a connected inbox were stored today, scoping it to one agent via that field would be purely decorative.",
+          "Any caller holding a valid token for that secret NAME can read it, whatever the field says.",
+          "Mitigating factor: reaching the store at all still requires passing the gateway identity chain first. This is not a wide-open hole."
+        ]
+      },
+      {
+        "type": "card",
+        "title": "Why this is the good kind of finding",
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        },
+        "lines": [
+          "The data model for per-agent scoping already exists. This is a couple of missing comparisons in two functions, not a missing architecture: the verified identity already flows through every other code path in the system (the gateway diagram above). The store's own checks simply are not consuming it yet. Fixing it is small and surgical, precisely because everything else was built right."
+        ]
+      },
+      {
+        "type": "text",
+        "lines": [
+          "Flagged, not fixed silently. That is what shipping honest gaps instead of hiding them looks like in practice."
+        ],
+        "style": {
+          "fontSize": 14,
+          "color": "#8b949e",
+          "width": 1120,
+          "height": 24
+        }
+      }
+    ]
+  },
+  "connect": [],
+  "chips": []
+}

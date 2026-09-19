@@ -1,0 +1,92 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "ai",
+            "title": "AI Application Layer",
+            "lines": [
+              "Prompt & Response Text"
+            ],
+            "color": "blue"
+          },
+          {
+            "type": "card",
+            "id": "os",
+            "title": "Operating System",
+            "lines": [
+              "open() read() connect() execve()"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "waf",
+            "title": "WAF / Network Firewall",
+            "lines": [
+              "Sees TLS packets, never the prompt"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "guard",
+            "title": "Guardrails / LLM Guard",
+            "lines": [
+              "Sees text, never the syscalls"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "sys",
+            "title": "gVisor / Tetragon / Falco",
+            "lines": [
+              "Sees syscalls, never the intent"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "id": "bridge",
+        "title": "⚡ eBPF Boundary Tracing",
+        "lines": [
+          "Correlates BOTH views simultaneously in real-time"
+        ],
+        "color": "red"
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "bridge",
+      "to": "ai",
+      "color": "red"
+    },
+    {
+      "from": "bridge",
+      "to": "os",
+      "color": "red"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "width": 1200,
+  "title": "Anomaly detection as a managed lifecycle, not a one-off script",
+  "tree": {
+    "type": "column",
+    "style": { "gap": 22 },
+    "children": [
+      { "type": "text", "lines": ["continuous retrain - legitimate behavior changes must not break the model"], "style": { "fontSize": 13, "bold": true, "color": "#f87171", "height": 22 } },
+      {
+        "type": "row",
+        "style": { "gap": 18, "justify": "center" },
+        "children": [
+          { "type": "card", "id": "f1", "title": "1. Features", "lines": ["gateway/app logs:", "bytes_sent_rolling", "unique_dest_ips_10m"], "color": "gray" },
+          { "type": "card", "id": "f2", "title": "2. Training", "lines": ["Isolation Forest /", "Random Cut Forest", "SageMaker / MLflow"], "color": "gray" },
+          { "type": "card", "id": "f3", "title": "3. Evaluation", "lines": ["F1 · false-positive rate", "FPR < 1% gate"], "color": "red" }
+        ]
+      },
+      {
+        "type": "row",
+        "style": { "gap": 18, "justify": "center" },
+        "children": [
+          { "type": "card", "id": "f6", "title": "6. Model Monitor", "lines": ["live vs. training", "distribution", "data drift alarm"], "color": "red" },
+          { "type": "card", "id": "f5", "title": "5. Endpoint", "lines": ["{anomaly_score:0.89}", "realtime inference"], "color": "gray" },
+          { "type": "card", "id": "f4", "title": "4. Model Registry", "lines": ["v1.0.0", "pending manual", "approval (HITL)"], "color": "blue" }
+        ]
+      },
+      { "type": "text", "lines": ["Findings carry confidence + model_version and ADD to the rule layer - they never replace it"], "style": { "fontSize": 14, "height": 24 } },
+      { "type": "text", "lines": ["AWS: GuardDuty ML (black-box) · SageMaker (custom) · Bedrock (triage)   |   OSS: OpenSearch ML Commons · MLflow · Feast"], "style": { "fontSize": 12, "color": "#8b949e", "height": 20 } }
+    ]
+  },
+  "connect": [
+    { "from": "f1", "to": "f2" },
+    { "from": "f2", "to": "f3" },
+    { "from": "f3", "to": "f4" },
+    { "from": "f4", "to": "f5" },
+    { "from": "f5", "to": "f6" }
+  ]
+}

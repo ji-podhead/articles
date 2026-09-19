@@ -1,0 +1,14 @@
+{
+  "width": 1200,
+  "tree": {
+    "type": "column",
+    "style": { "gap": 10 },
+    "children": [
+      { "type": "text", "id": "t1", "lines": ["line one of t1", "line two of t1"], "style": { "fontSize": 15 } },
+      { "type": "text", "id": "t2", "lines": ["t2 follows"], "style": { "fontSize": 15 } },
+      { "type": "code", "id": "c1", "lines": ["action: inject_kernel_profile --target=ji-auth-pod", "➔ network_layer:  XDP_DROP  [malicious_ip]"] },
+      { "type": "text", "id": "t3", "lines": ["t3 after code card"], "style": { "fontSize": 15 } }
+    ]
+  },
+  "connect": []
+}

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1269" height="620" viewBox="0 0 1269 620" font-family="DejaVu Sans, Verdana, sans-serif">
+<rect width="1269" height="620" fill="#0d1117"/>
+<text x="30" y="52" font-size="30" font-weight="bold" fill="#ffffff">Serving LoRA agents: edge vs. self-hosted</text>
+<rect x="30" y="104" width="172" height="45" fill="#1c2128" stroke="#30363d"/>
+<text x="46" y="118" font-size="15" font-weight="bold" fill="#ffffff"></text>
+<rect x="202" y="104" width="349" height="45" fill="#1c2128" stroke="#30363d"/>
+<text x="218" y="118" font-size="15" font-weight="bold" fill="#ffffff">Cloudflare Workers AI</text>
+<rect x="551" y="104" width="349" height="45" fill="#1c2128" stroke="#30363d"/>
+<text x="567" y="118" font-size="15" font-weight="bold" fill="#ffffff">vLLM (self-hosted)</text>
+<rect x="900" y="104" width="339" height="45" fill="#1c2128" stroke="#30363d"/>
+<text x="916" y="118" font-size="15" font-weight="bold" fill="#ffffff">TGI (self-hosted)</text>
+<rect x="30" y="149" width="172" height="45" fill="none" stroke="#30363d"/>
+<text x="46" y="163" font-size="15" font-weight="bold" fill="#ffffff">Status</text>
+<rect x="202" y="149" width="349" height="45" fill="none" stroke="#30363d"/>
+<text x="218" y="163" font-size="15" fill="#c9d1d9">Open beta, free during beta</text>
+<rect x="551" y="149" width="349" height="45" fill="none" stroke="#30363d"/>
+<text x="567" y="163" font-size="15" fill="#c9d1d9">Active, high-throughput engine</text>
+<rect x="900" y="149" width="339" height="45" fill="none" stroke="#30363d"/>
+<text x="916" y="163" font-size="15" fill="#c9d1d9">GitHub repo archived (2026-09-18)</text>
+<rect x="30" y="194" width="172" height="87" fill="#11161d"/>
+<rect x="30" y="194" width="172" height="87" fill="none" stroke="#30363d"/>
+<text x="46" y="208" font-size="15" font-weight="bold" fill="#ffffff">Adapters</text>
+<rect x="202" y="194" width="349" height="87" fill="#11161d"/>
+<rect x="202" y="194" width="349" height="87" fill="none" stroke="#30363d"/>
+<text x="218" y="208" font-size="15" fill="#c9d1d9">BYO LoRA as finetunes: rank &lt;= 8</text>
+<text x="218" y="229" font-size="15" fill="#c9d1d9">(to 32), adapter &lt; 300 MB, up to</text>
+<text x="218" y="250" font-size="15" fill="#c9d1d9">100 per account</text>
+<rect x="551" y="194" width="349" height="87" fill="#11161d"/>
+<rect x="551" y="194" width="349" height="87" fill="none" stroke="#30363d"/>
+<text x="567" y="208" font-size="15" fill="#c9d1d9">LoRA per request, multi-adapter on</text>
+<text x="567" y="229" font-size="15" fill="#c9d1d9">one GPU (max_loras, max_lora_rank)</text>
+<rect x="900" y="194" width="339" height="87" fill="#11161d"/>
+<rect x="900" y="194" width="339" height="87" fill="none" stroke="#30363d"/>
+<text x="916" y="208" font-size="15" fill="#c9d1d9">LoRA supported, multi-adapter</text>
+<text x="916" y="229" font-size="15" fill="#c9d1d9">documented</text>
+<rect x="30" y="281" width="172" height="87" fill="none" stroke="#30363d"/>
+<text x="46" y="295" font-size="15" font-weight="bold" fill="#ffffff">APIs</text>
+<rect x="202" y="281" width="349" height="87" fill="none" stroke="#30363d"/>
+<text x="218" y="295" font-size="15" fill="#c9d1d9">OpenAI-style chat via env.AI.run</text>
+<rect x="551" y="281" width="349" height="87" fill="none" stroke="#30363d"/>
+<text x="567" y="295" font-size="15" fill="#c9d1d9">OpenAI compatible; Anthropic</text>
+<text x="567" y="316" font-size="15" fill="#c9d1d9">entrypoint in code; productized by</text>
+<text x="567" y="337" font-size="15" fill="#c9d1d9">NVIDIA NIM (/v1/messages)</text>
+<rect x="900" y="281" width="339" height="87" fill="none" stroke="#30363d"/>
+<text x="916" y="295" font-size="15" fill="#c9d1d9">OpenAI-style</text>
+<rect x="30" y="368" width="172" height="108" fill="#11161d"/>
+<rect x="30" y="368" width="172" height="108" fill="none" stroke="#30363d"/>
+<text x="46" y="382" font-size="15" font-weight="bold" fill="#ffffff">Context caching</text>
+<rect x="202" y="368" width="349" height="108" fill="#11161d"/>
+<rect x="202" y="368" width="349" height="108" fill="none" stroke="#30363d"/>
+<text x="218" y="382" font-size="15" fill="#c9d1d9">Native prefix caching with</text>
+<text x="218" y="403" font-size="15" fill="#c9d1d9">cached-token discount plus session</text>
+<text x="218" y="424" font-size="15" fill="#c9d1d9">affinity; KV 25 MiB per value,</text>
+<text x="218" y="445" font-size="15" fill="#c9d1d9">eventual consistency up to 60s</text>
+<rect x="551" y="368" width="349" height="108" fill="#11161d"/>
+<rect x="551" y="368" width="349" height="108" fill="none" stroke="#30363d"/>
+<text x="567" y="382" font-size="15" fill="#c9d1d9">Automatic Prefix Caching flag</text>
+<text x="567" y="403" font-size="15" fill="#c9d1d9">(enable_prefix_caching)</text>
+<rect x="900" y="368" width="339" height="108" fill="#11161d"/>
+<rect x="900" y="368" width="339" height="108" fill="none" stroke="#30363d"/>
+<text x="916" y="382" font-size="15" fill="#c9d1d9">Prefix caching documented</text>
+<rect x="30" y="476" width="172" height="66" fill="none" stroke="#30363d"/>
+<text x="46" y="490" font-size="15" font-weight="bold" fill="#ffffff">Economics</text>
+<rect x="202" y="476" width="349" height="66" fill="none" stroke="#30363d"/>
+<text x="218" y="490" font-size="15" fill="#c9d1d9">$0.011 per 1000 Neurons, ~300</text>
+<text x="218" y="511" font-size="15" fill="#c9d1d9">req/min text generation</text>
+<rect x="551" y="476" width="349" height="66" fill="none" stroke="#30363d"/>
+<text x="567" y="490" font-size="15" fill="#c9d1d9">You run the GPU fleet</text>
+<rect x="900" y="476" width="339" height="66" fill="none" stroke="#30363d"/>
+<text x="916" y="490" font-size="15" fill="#c9d1d9">You run the GPU fleet</text>
+<rect x="30" y="542" width="172" height="66" fill="#11161d"/>
+<rect x="30" y="542" width="172" height="66" fill="none" stroke="#30363d"/>
+<text x="46" y="556" font-size="15" font-weight="bold" fill="#ffffff">Best at</text>
+<rect x="202" y="542" width="349" height="66" fill="#11161d"/>
+<rect x="202" y="542" width="349" height="66" fill="none" stroke="#30363d"/>
+<text x="218" y="556" font-size="15" fill="#c9d1d9">Edge latency, elastic scale, many</text>
+<text x="218" y="577" font-size="15" fill="#c9d1d9">small experts</text>
+<rect x="551" y="542" width="349" height="66" fill="#11161d"/>
+<rect x="551" y="542" width="349" height="66" fill="none" stroke="#30363d"/>
+<text x="567" y="556" font-size="15" fill="#c9d1d9">Throughput: PagedAttention 2-4x,</text>
+<text x="567" y="577" font-size="15" fill="#c9d1d9">S-LoRA up to 4x over naive serving</text>
+<rect x="900" y="542" width="339" height="66" fill="#11161d"/>
+<rect x="900" y="542" width="339" height="66" fill="none" stroke="#30363d"/>
+<text x="916" y="556" font-size="15" fill="#c9d1d9">Batches, Hugging Face ecosystem</text>
+<text x="916" y="577" font-size="15" fill="#c9d1d9">(maintenance archived)</text>
+</svg>

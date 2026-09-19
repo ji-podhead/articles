@@ -1,0 +1,64 @@
+{
+  "width": 900,
+  "padding": 40,
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "card",
+        "id": "c1",
+        "title": "Host / VM Layer",
+        "lines": [
+          "PID + Socket ➔ eBPF Context"
+        ]
+      },
+      {
+        "type": "card",
+        "id": "c2",
+        "title": "Container Layer",
+        "lines": [
+          "Container ID ➔ Docker/CRI API"
+        ]
+      },
+      {
+        "type": "card",
+        "id": "c3",
+        "title": "Session Layer (Gateway)",
+        "lines": [
+          "Session ID: Minted at provisioning",
+          "Crucial: Never let the agent self-declare"
+        ],
+        "color": "blue"
+      },
+      {
+        "type": "card",
+        "id": "c4",
+        "title": "🚨 Graduated Incident Response Ladder",
+        "lines": [
+          "1. Revoke Session Token",
+          "2. Inject Controlled Error Response",
+          "3. SIGSTOP Container (Freeze RAM)",
+          "4. Blackhole Egress Network Routing"
+        ],
+        "color": "red"
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "c1",
+      "to": "c2"
+    },
+    {
+      "from": "c2",
+      "to": "c3"
+    },
+    {
+      "from": "c3",
+      "to": "c4"
+    }
+  ]
+}

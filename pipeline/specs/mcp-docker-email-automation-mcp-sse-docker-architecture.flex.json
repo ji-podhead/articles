@@ -1,0 +1,201 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "MCP-SSE DOCKER EMAIL AUTOMATION",
+  "subtitle": "remote MCP servers via SSE transport → GenAI agents → email workflows",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "genai",
+            "title": "Google GenAI",
+            "lines": [
+              "the LLM agent layer",
+              "litellm module",
+              "simplified tool parsing",
+              "no manual Pydantic errors",
+              "✓ auto-fetches all tools"
+            ],
+            "color": "blue"
+          },
+          {
+            "type": "card",
+            "id": "sse",
+            "title": "SSE Transport",
+            "lines": [
+              "Server-Sent Events",
+              "remote access bridge"
+            ],
+            "color": "amber"
+          },
+          {
+            "type": "card",
+            "id": "docker",
+            "title": "Docker Container",
+            "lines": [
+              "isolated per-agent environment",
+              "base image"
+            ],
+            "color": "blue"
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "bridge",
+            "title": "MCP-Bridge",
+            "lines": [
+              "remote access via SSE",
+              "script to start it"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "server",
+            "title": "MCP Server (JS)",
+            "lines": [
+              "email automation tools",
+              "🔒 credentials stored here"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "id": "why",
+        "title": "WHY THIS ARCHITECTURE"
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "cicd",
+            "title": "CI/CD SEAMLESS",
+            "lines": [
+              "Docker enables automated",
+              "build + deploy pipelines"
+            ],
+            "color": "blue"
+          },
+          {
+            "type": "card",
+            "id": "secure",
+            "title": "SECURE ISOLATION",
+            "lines": [
+              "Docker containers provide",
+              "isolated, portable runtime"
+            ],
+            "color": "blue"
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "network",
+            "title": "NETWORK SEGMENTATION",
+            "lines": [
+              "each agent = own container",
+              "restrict access per network"
+            ],
+            "color": "amber"
+          },
+          {
+            "type": "card",
+            "id": "notools",
+            "title": "NO MANUAL TOOLS",
+            "lines": [
+              "install all MCPs → fetch",
+              "all tools at once"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "id": "next",
+        "title": "🔮 WHAT'S NEXT"
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "fastapi",
+            "title": "FastAPI Dashboard Integration",
+            "lines": [
+              "dashboard + websockets"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "cron",
+            "title": "Cronjobs + Webhooks",
+            "lines": [
+              "scheduled + event-driven workflows"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "claude",
+            "title": "vs Claude Desktop",
+            "lines": [
+              "our approach: remote deployment + SSE transport"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "id": "foot",
+        "lines": [
+          "#MCP #Docker #GenAI #EmailAutomation #Agentics #SSE #CI/CD"
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "genai",
+      "to": "sse"
+    },
+    {
+      "from": "sse",
+      "to": "docker",
+      "color": "amber"
+    }
+  ]
+}

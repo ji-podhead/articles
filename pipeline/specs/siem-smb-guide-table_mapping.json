@@ -1,0 +1,52 @@
+{
+  "mode": "table",
+  "title": "Same function, two ways to get it: AWS-native vs. open source",
+  "boldFirstCol": true,
+  "cols": [
+    "FUNCTION",
+    "AWS-NATIVE",
+    "OPEN SOURCE"
+  ],
+  "rows": [
+    [
+      "Network intrusion detection",
+      "GuardDuty - ML over flow logs, DNS, runtime",
+      "Suricata (signatures) + Falco/eBPF (syscalls)"
+    ],
+    [
+      "Central findings & scoring",
+      "Security Hub - ASFF, CIS/PCI-DSS/GDPR score",
+      "Wazuh Manager + self-hosted OpenSearch"
+    ],
+    [
+      "Long-term log storage & search",
+      "OpenSearch Service + Security Lake (OCSF)",
+      "Self-hosted OpenSearch / ELK stack"
+    ],
+    [
+      "Signed API audit trail",
+      "CloudTrail - 90-day LookupEvents",
+      "auditd + centralized syslog shipping"
+    ],
+    [
+      "Configuration drift detection",
+      "AWS Config - rules, auto-remediation",
+      "Checkov (IaC scans) + periodic drift checks"
+    ],
+    [
+      "Image / host vulnerability scan",
+      "Inspector - EC2, ECR, Lambda CVEs",
+      "Trivy or Grype (container images)"
+    ],
+    [
+      "Web application firewall",
+      "AWS WAF + Shield",
+      "Coraza or ModSecurity + OWASP CRS"
+    ],
+    [
+      "AI-assisted triage & modeling",
+      "Bedrock (triage) + SageMaker (custom ML)",
+      "OpenSearch ML Commons + MLflow"
+    ]
+  ]
+}

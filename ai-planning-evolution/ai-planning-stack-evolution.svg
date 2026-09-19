@@ -1,215 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="AI Planning Evolution: GOAP → Behavior Trees → PDDL → LLM Interface">
-  <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b1329"/>
-      <stop offset="100%" stop-color="#1c2541"/>
-    </linearGradient>
-    <linearGradient id="goapGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#f59e0b"/>
-      <stop offset="100%" stop-color="#f97316"/>
-    </linearGradient>
-    <linearGradient id="btGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="100%" stop-color="#0ea5e9"/>
-    </linearGradient>
-    <linearGradient id="pddlGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#a78bfa"/>
-      <stop offset="100%" stop-color="#8b5cf6"/>
-    </linearGradient>
-    <linearGradient id="llmGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#34d399"/>
-      <stop offset="100%" stop-color="#10b981"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-
-  <rect width="1200" height="675" fill="url(#bgGrad)"/>
-  <rect width="1200" height="675" fill="none" stroke="#3a506b" stroke-width="1" opacity="0.3"/>
-
-  <text x="600" y="42" text-anchor="middle" fill="#fafafa" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="900" letter-spacing="1.5">
-    AI PLANNING: THE 3-LAYER STACK
-  </text>
-  <text x="600" y="64" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="13">
-    from F.E.A.R.'s GOAP to LLM-driven robotics
-  </text>
-
-  <!-- ═══ TIMELINE (top) ═══ -->
-  <g transform="translate(50, 90)">
-    <rect width="1100" height="180" rx="14" fill="#0f172a" stroke="#3a506b" stroke-width="1"/>
-    <text x="550" y="25" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI" font-size="14" font-weight="700" letter-spacing="1">
-      THE EVOLUTION
-    </text>
-
-    <!-- Timeline line -->
-    <line x1="80" y1="90" x2="1020" y2="90" stroke="#3a506b" stroke-width="2"/>
-
-    <!-- FSM (oldest) -->
-    <g transform="translate(80, 90)">
-      <circle cx="0" cy="0" r="8" fill="#64748b"/>
-      <text x="0" y="-20" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="10" font-weight="bold">FSM</text>
-      <text x="0" y="25" text-anchor="middle" fill="#475569" font-family="monospace" font-size="8">state spaghetti</text>
-    </g>
-
-    <!-- GOAP -->
-    <g transform="translate(280, 90)">
-      <circle cx="0" cy="0" r="10" fill="url(#goapGrad)" filter="url(#glow)"/>
-      <text x="0" y="-20" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="11" font-weight="bold">GOAP</text>
-      <text x="0" y="-32" text-anchor="middle" fill="#fdba74" font-family="Segoe UI" font-size="9">F.E.A.R. (2005)</text>
-      <text x="0" y="25" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="8">goal→action planning</text>
-    </g>
-
-    <!-- Behavior Trees -->
-    <g transform="translate(500, 90)">
-      <circle cx="0" cy="0" r="10" fill="url(#btGrad)" filter="url(#glow)"/>
-      <text x="0" y="-20" text-anchor="middle" fill="#38bdf8" font-family="monospace" font-size="11" font-weight="bold">Behavior Trees</text>
-      <text x="0" y="-32" text-anchor="middle" fill="#7dd3fc" font-family="Segoe UI" font-size="9">ROS 2 standard</text>
-      <text x="0" y="25" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="8">reactive control</text>
-    </g>
-
-    <!-- PDDL -->
-    <g transform="translate(700, 90)">
-      <circle cx="0" cy="0" r="10" fill="url(#pddlGrad)" filter="url(#glow)"/>
-      <text x="0" y="-20" text-anchor="middle" fill="#a78bfa" font-family="monospace" font-size="11" font-weight="bold">PDDL</text>
-      <text x="0" y="-32" text-anchor="middle" fill="#c4b5fd" font-family="Segoe UI" font-size="9">ROSPlan solvers</text>
-      <text x="0" y="25" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="8">formal planning</text>
-    </g>
-
-    <!-- LLM Interface -->
-    <g transform="translate(900, 90)">
-      <circle cx="0" cy="0" r="12" fill="url(#llmGrad)" filter="url(#glow)"/>
-      <text x="0" y="-20" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="11" font-weight="bold">LLM Bridge</text>
-      <text x="0" y="-32" text-anchor="middle" fill="#6ee7b7" font-family="Segoe UI" font-size="9">cutting edge</text>
-      <text x="0" y="25" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="8">human → PDDL translation</text>
-    </g>
-
-    <!-- Progression arrows -->
-    <line x1="100" y1="90" x2="260" y2="90" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowSmall)"/>
-    <line x1="300" y1="90" x2="480" y2="90" stroke="#475569" stroke-width="1.5"/>
-    <line x1="520" y1="90" x2="680" y2="90" stroke="#475569" stroke-width="1.5"/>
-    <line x1="720" y1="90" x2="880" y2="90" stroke="#475569" stroke-width="1.5"/>
-  </g>
-
-  <!-- ═══ LAYER 1: EXECUTION (Behavior Trees) ═══ -->
-  <g transform="translate(50, 300)">
-    <rect width="340" height="258" rx="14" fill="#0f172a" stroke="url(#btGrad)" stroke-width="2"/>
-    <rect width="340" height="46" rx="14" fill="url(#btGrad)" opacity="0.15"/>
-    <text x="170" y="22" text-anchor="middle" fill="#38bdf8" font-family="Segoe UI" font-size="16" font-weight="900">
-      1️⃣ EXECUTION
-    </text>
-    <text x="170" y="38" text-anchor="middle" fill="#7dd3fc" font-family="monospace" font-size="10">
-      Behavior Trees
-    </text>
-
-    <!-- BT diagram -->
-    <g transform="translate(100, 60)">
-      <circle cx="70" cy="20" r="10" fill="none" stroke="#38bdf8" stroke-width="2"/>
-      <text x="70" y="24" text-anchor="middle" fill="#38bdf8" font-family="monospace" font-size="8">?</text>
-      <line x1="70" y1="30" x2="30" y2="60" stroke="#38bdf8" stroke-width="1.5" opacity="0.5"/>
-      <line x1="70" y1="30" x2="110" y2="60" stroke="#38bdf8" stroke-width="1.5" opacity="0.5"/>
-      <rect x="10" y="60" width="40" height="24" rx="4" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
-      <text x="30" y="75" text-anchor="middle" fill="#7dd3fc" font-family="monospace" font-size="8">action</text>
-      <rect x="90" y="60" width="40" height="24" rx="4" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
-      <text x="110" y="75" text-anchor="middle" fill="#7dd3fc" font-family="monospace" font-size="8">action</text>
-      <line x1="30" y1="84" x2="15" y2="110" stroke="#38bdf8" stroke-width="1" opacity="0.3"/>
-      <line x1="30" y1="84" x2="45" y2="110" stroke="#38bdf8" stroke-width="1" opacity="0.3"/>
-      <line x1="110" y1="84" x2="95" y2="110" stroke="#38bdf8" stroke-width="1" opacity="0.3"/>
-      <line x1="110" y1="84" x2="125" y2="110" stroke="#38bdf8" stroke-width="1" opacity="0.3"/>
-      <text x="15" y="124" text-anchor="middle" fill="#475569" font-family="monospace" font-size="7">skill</text>
-      <text x="45" y="124" text-anchor="middle" fill="#475569" font-family="monospace" font-size="7">skill</text>
-      <text x="95" y="124" text-anchor="middle" fill="#475569" font-family="monospace" font-size="7">skill</text>
-      <text x="125" y="124" text-anchor="middle" fill="#475569" font-family="monospace" font-size="7">skill</text>
-    </g>
-
-    <g transform="translate(25, 210)">
-      <text x="0" y="0" fill="#94a3b8" font-family="monospace" font-size="9">✓ Moment-to-moment reactive control</text>
-      <text x="0" y="18" fill="#94a3b8" font-family="monospace" font-size="9">✓ BehaviorTree.CPP (ROS 2)</text>
-      <text x="0" y="36" fill="#34d399" font-family="monospace" font-size="9">✓ Skills can be NN-powered</text>
-    </g>
-  </g>
-
-  <!-- ═══ LAYER 2: STRATEGY (PDDL) ═══ -->
-  <g transform="translate(430, 300)">
-    <rect width="340" height="258" rx="14" fill="#0f172a" stroke="url(#pddlGrad)" stroke-width="2"/>
-    <rect width="340" height="46" rx="14" fill="url(#pddlGrad)" opacity="0.15"/>
-    <text x="170" y="22" text-anchor="middle" fill="#a78bfa" font-family="Segoe UI" font-size="16" font-weight="900">
-      2️⃣ STRATEGY
-    </text>
-    <text x="170" y="38" text-anchor="middle" fill="#c4b5fd" font-family="monospace" font-size="10">
-      Formal Planners (PDDL)
-    </text>
-
-    <!-- PDDL flow -->
-    <g transform="translate(40, 65)">
-      <rect x="0" y="0" width="260" height="30" rx="6" fill="#1e293b" stroke="#8b5cf6" stroke-width="1"/>
-      <text x="130" y="18" text-anchor="middle" fill="#a78bfa" font-family="monospace" font-size="9">PDDL Domain + Problem</text>
-      <line x1="130" y1="30" x2="130" y2="55" stroke="#a78bfa" stroke-width="1.5" opacity="0.5"/>
-      <rect x="20" y="55" width="220" height="30" rx="6" fill="#1e293b" stroke="#8b5cf6" stroke-width="1"/>
-      <text x="130" y="73" text-anchor="middle" fill="#c4b5fd" font-family="monospace" font-size="9">Dedicated Solver</text>
-      <line x1="130" y1="85" x2="130" y2="110" stroke="#a78bfa" stroke-width="1.5" opacity="0.5"/>
-      <rect x="20" y="110" width="220" height="30" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
-      <text x="130" y="128" text-anchor="middle" fill="#7dd3fc" font-family="monospace" font-size="9">Optimal Plan → Behavior Tree</text>
-    </g>
-
-    <g transform="translate(25, 210)">
-      <text x="0" y="0" fill="#94a3b8" font-family="monospace" font-size="9">✓ Complex multi-step tasks</text>
-      <text x="0" y="18" fill="#94a3b8" font-family="monospace" font-size="9">✓ ROSPlan framework</text>
-      <text x="0" y="36" fill="#a78bfa" font-family="monospace" font-size="9">✓ Formal guarantees</text>
-    </g>
-  </g>
-
-  <!-- ═══ LAYER 3: INTERFACE (LLM) ═══ -->
-  <g transform="translate(810, 300)">
-    <rect width="340" height="258" rx="14" fill="#0f172a" stroke="url(#llmGrad)" stroke-width="2" filter="url(#glow)"/>
-    <rect width="340" height="46" rx="14" fill="url(#llmGrad)" opacity="0.15"/>
-    <text x="170" y="22" text-anchor="middle" fill="#34d399" font-family="Segoe UI" font-size="16" font-weight="900">
-      3️⃣ INTERFACE
-    </text>
-    <text x="170" y="38" text-anchor="middle" fill="#6ee7b7" font-family="monospace" font-size="10">
-      LLM Bridge
-    </text>
-
-    <!-- Human → LLM → PDDL flow -->
-    <g transform="translate(40, 65)">
-      <rect x="0" y="0" width="100" height="40" rx="6" fill="#1e293b" stroke="#475569"/>
-      <text x="50" y="18" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI" font-size="10">👤 Human</text>
-      <text x="50" y="32" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="8">"clean the table"</text>
-
-      <line x1="100" y1="20" x2="140" y2="20" stroke="#34d399" stroke-width="1.5"/>
-      <polygon points="135,15 135,25 145,20" fill="#34d399"/>
-
-      <rect x="145" y="0" width="100" height="40" rx="6" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-      <text x="195" y="18" text-anchor="middle" fill="#34d399" font-family="Segoe UI" font-size="10">🧠 LLM</text>
-      <text x="195" y="32" text-anchor="middle" fill="#6ee7b7" font-family="monospace" font-size="8">translate</text>
-
-      <line x1="245" y1="20" x2="265" y2="20" stroke="#a78bfa" stroke-width="1.5"/>
-
-      <rect x="0" y="55" width="260" height="35" rx="6" fill="#1e293b" stroke="#8b5cf6" stroke-width="1"/>
-      <text x="130" y="72" text-anchor="middle" fill="#a78bfa" font-family="monospace" font-size="9">structured PDDL → formal planner</text>
-      <text x="130" y="85" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="8">solver finds the optimal plan</text>
-    </g>
-
-    <g transform="translate(25, 210)">
-      <text x="0" y="0" fill="#94a3b8" font-family="monospace" font-size="9">✓ Doesn't replace layers 1+2</text>
-      <text x="0" y="18" fill="#94a3b8" font-family="monospace" font-size="9">✓ Bridges human intent → formal</text>
-      <text x="0" y="36" fill="#34d399" font-family="monospace" font-size="9">✓ Cutting edge (recent papers)</text>
-    </g>
-  </g>
-
-  <!-- ═══ BOTTOM BAR ═══ -->
-  <g transform="translate(50, 575)">
-    <rect width="1100" height="70" rx="14" fill="#0f172a" stroke="#3a506b" stroke-width="1"/>
-    <text x="550" y="25" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI" font-size="12" font-weight="700">
-      THE KEY INSIGHT: LLMs don't replace the planning stack — they interface with it
-    </text>
-    <text x="550" y="48" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="10">
-      GOAP (F.E.A.R.) → Behavior Trees (ROS 2) → PDDL (ROSPlan) → LLM Bridge (human → PDDL)
-    </text>
-  </g>
-
-  <text x="600" y="668" text-anchor="middle" fill="#475569" font-family="monospace" font-size="10">
-    #AI #GOAP #BehaviorTrees #PDDL #LLM #Robotics #ROS #IsaacSim #AutonomousSystems
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="796" viewBox="0 0 1200 796" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="796" fill="#0d1117"/>
+<text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">AI PLANNING: THE 3-LAYER STACK</text>
+<text x="40" y="100" font-size="17" fill="#8b949e">from F.E.A.R.'s GOAP to LLM-driven robotics</text>
+<text x="40" y="121" font-size="15" font-weight="bold" fill="#8b949e">THE EVOLUTION</text>
+<rect x="40" y="159" width="208" height="108" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="58" y="185" font-size="15" font-weight="bold" fill="#e6edf3">FSM</text>
+<text x="58" y="206" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">state spaghetti</text>
+<text x="58" y="227" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
+<text x="58" y="248" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
+<rect x="268" y="159" width="208" height="87" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="286" y="185" font-size="15" font-weight="bold" fill="#e6edf3">GOAP</text>
+<text x="286" y="206" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">F.E.A.R. (2005)</text>
+<text x="286" y="227" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">goal→action planning</text>
+<rect x="496" y="159" width="208" height="108" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="496" y="159" width="5" height="108" rx="2.5" fill="#60a5fa"/>
+<text x="514" y="185" font-size="15" font-weight="bold" fill="#60a5fa">Behavior Trees</text>
+<text x="514" y="206" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">ROS 2 standard</text>
+<text x="514" y="227" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">reactive control</text>
+<text x="514" y="248" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
+<rect x="724" y="159" width="208" height="108" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="742" y="185" font-size="15" font-weight="bold" fill="#e6edf3">PDDL</text>
+<text x="742" y="206" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">ROSPlan solvers</text>
+<text x="742" y="227" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">formal planning</text>
+<text x="742" y="248" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
+<rect x="952" y="159" width="208" height="108" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="952" y="159" width="5" height="108" rx="2.5" fill="#4ade80"/>
+<text x="970" y="185" font-size="15" font-weight="bold" fill="#4ade80">LLM Bridge</text>
+<text x="970" y="206" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">cutting edge</text>
+<text x="970" y="227" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">human → PDDL</text>
+<text x="970" y="248" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">translation</text>
+<rect x="40" y="291" width="356" height="318" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="40" y="291" width="5" height="318" rx="2.5" fill="#60a5fa"/>
+<text x="58" y="317" font-size="15" font-weight="bold" fill="#60a5fa">1 EXECUTION</text>
+<text x="58" y="338" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Behavior Trees</text>
+<text x="58" y="359" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
+<text x="58" y="380" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">?</text>
+<text x="58" y="401" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">action</text>
+<text x="58" y="422" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">action</text>
+<text x="58" y="443" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">skill</text>
+<text x="58" y="464" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">skill</text>
+<text x="58" y="485" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">skill</text>
+<text x="58" y="506" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">skill</text>
+<text x="58" y="527" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
+<text x="58" y="548" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">✓ Moment-to-moment reactive control</text>
+<text x="58" y="569" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">✓ BehaviorTree.CPP (ROS 2)</text>
+<text x="58" y="590" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">✓ Skills can be NN-powered</text>
+<rect x="422" y="291" width="356" height="318" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="440" y="317" font-size="15" font-weight="bold" fill="#e6edf3">2 STRATEGY</text>
+<text x="440" y="338" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Formal Planners (PDDL)</text>
+<text x="440" y="359" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
+<text x="440" y="380" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">PDDL Domain + Problem</text>
+<text x="440" y="401" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Dedicated Solver</text>
+<text x="440" y="422" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Optimal Plan → Behavior Tree</text>
+<text x="440" y="443" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
+<text x="440" y="464" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">✓ Complex multi-step tasks</text>
+<text x="440" y="485" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">✓ ROSPlan framework</text>
+<text x="440" y="506" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">✓ Formal guarantees</text>
+<text x="440" y="527" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
+<text x="440" y="548" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
+<text x="440" y="569" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
+<text x="440" y="590" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
+<rect x="804" y="291" width="356" height="318" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="804" y="291" width="5" height="318" rx="2.5" fill="#4ade80"/>
+<text x="822" y="317" font-size="15" font-weight="bold" fill="#4ade80">3 INTERFACE</text>
+<text x="822" y="338" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">LLM Bridge</text>
+<text x="822" y="359" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
+<text x="822" y="380" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Human</text>
+<text x="822" y="401" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">&quot;clean the table&quot;</text>
+<text x="822" y="422" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">LLM</text>
+<text x="822" y="443" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">translate</text>
+<text x="822" y="464" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">structured PDDL → formal planner</text>
+<text x="822" y="485" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">solver finds the optimal plan</text>
+<text x="822" y="506" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
+<text x="822" y="527" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">✓ Doesn't replace layers 1+2</text>
+<text x="822" y="548" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">✓ Bridges human intent → formal</text>
+<text x="822" y="569" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">✓ Cutting edge (recent papers)</text>
+<text x="822" y="590" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
+<text x="40" y="648" font-size="15" font-weight="bold" fill="#e6edf3">THE KEY INSIGHT: LLMs don't replace the planning stack - they interface with it</text>
+<text x="40" y="699" font-size="13" fill="#6e7681">GOAP (F.E.A.R.) → Behavior Trees (ROS 2) → PDDL (ROSPlan) → LLM Bridge (human → PDDL)</text>
+<text x="40" y="749" font-size="13" fill="#6e7681">#AI #GOAP #BehaviorTrees #PDDL #LLM #Robotics #ROS #IsaacSim #AutonomousSystems</text>
+<marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/></marker>
+<polyline points="248,213 268,203" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="476,203 496,213" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="704,213 724,213" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="932,213 952,213" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
 </svg>

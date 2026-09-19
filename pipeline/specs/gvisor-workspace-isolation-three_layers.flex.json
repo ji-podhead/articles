@@ -1,0 +1,73 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "One request, three independent gates - and what each one catches if the others fail",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "card",
+        "id": "client",
+        "title": "Client request",
+        "lines": []
+      },
+      {
+        "type": "card",
+        "id": "lc",
+        "title": "LAYER C - Identity Proxy (the bouncer)",
+        "color": "amber",
+        "lines": [
+          "Terminates TLS · verifies the session/JWT · extracts app + owner from the URL · adds X-App-ID · no raw port is ever exposed",
+          "What it does NOT catch: anything that happens AFTER a legitimate, authenticated user is already inside their own workspace.",
+          "If this were the only layer: a legitimate user runs malicious code inside their own container - the proxy only watches the front door, never sees this \"east-west\" traffic."
+        ]
+      },
+      {
+        "type": "card",
+        "id": "lb",
+        "title": "LAYER B - VLAN / ipvlan (the soundproof wall)",
+        "lines": [
+          "Every tenant's traffic is 802.1Q-tagged (vlan.id) on a dedicated sub-interface · the kernel makes cross-tenant packets physically unroutable",
+          "What it does NOT catch: a kernel escape on the host itself.",
+          "If this were the only layer: a zero-day in the real Linux kernel lets an attacker break out of runc entirely - from there, one `ip link` command on the host undoes every VLAN you configured."
+        ]
+      },
+      {
+        "type": "card",
+        "id": "la",
+        "title": "LAYER A - gVisor (the straitjacket)",
+        "color": "green",
+        "lines": [
+          "Application syscalls never reach the real host kernel - the Sentry emulates them in a Go userspace process (see the architecture diagram above)",
+          "What it does NOT catch: an attacker already inside the sandbox scanning the LOCAL network.",
+          "If this were the only layer: gVisor hands normal Ethernet frames to the host bridge - nothing stops the sandboxed app from nmap-scanning a neighboring tenant's container on the same unsegmented bridge."
+        ]
+      },
+      {
+        "type": "card",
+        "id": "closing",
+        "title": "Each layer's blind spot is exactly the next layer's job",
+        "lines": [
+          "that's why all three run together, not any one alone."
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "client",
+      "to": "lc"
+    },
+    {
+      "from": "lc",
+      "to": "lb"
+    },
+    {
+      "from": "lb",
+      "to": "la"
+    }
+  ]
+}

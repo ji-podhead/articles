@@ -1,44 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350" width="100%" height="100%" style="background-color: #0f172a; border-radius: 8px;">
-  <text x="450" y="30" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">Multi-Hop GraphRAG Entity &amp; Chunk Traversal</text>
-
-  <!-- Node 1: Domain -->
-  <circle cx="150" cy="180" r="45" fill="#1e3a8a" stroke="#3b82f6" stroke-width="3"/>
-  <text x="150" y="175" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">Domain</text>
-  <text x="150" y="195" fill="#93c5fd" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">networking</text>
-
-  <!-- Edge 1 -->
-  <path d="M 195 180 L 295 180" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4" fill="none"/>
-  <text x="245" y="170" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">contains</text>
-
-  <!-- Node 2: OKF Document -->
-  <circle cx="350" cy="180" r="50" fill="#065f46" stroke="#10b981" stroke-width="3"/>
-  <text x="350" y="175" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">OKF Document</text>
-  <text x="350" y="195" fill="#6ee7b7" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">gVisor Sandboxing</text>
-
-  <!-- Edge 2a -->
-  <path d="M 390 150 L 530 100" stroke="#38bdf8" stroke-width="2" fill="none"/>
-  <text x="470" y="115" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">extracts entity</text>
-
-  <!-- Edge 2b -->
-  <path d="M 390 210 L 530 260" stroke="#38bdf8" stroke-width="2" fill="none"/>
-  <text x="470" y="250" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">chunks into</text>
-
-  <!-- Node 3a: Entity -->
-  <circle cx="580" cy="90" r="40" fill="#581c87" stroke="#a855f7" stroke-width="3"/>
-  <text x="580" y="85" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Entity</text>
-  <text x="580" y="102" fill="#e9d5ff" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">gVisor Sentry</text>
-
-  <!-- Node 3b: Chunk -->
-  <circle cx="580" cy="270" r="40" fill="#701a75" stroke="#ec4899" stroke-width="3"/>
-  <text x="580" y="265" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Chunk</text>
-  <text x="580" y="282" fill="#fbcfe8" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">300-800 Tokens</text>
-
-  <!-- Edge 3 (Triple Relation) -->
-  <path d="M 620 90 L 730 180" stroke="#a855f7" stroke-width="2" fill="none"/>
-  <text x="690" y="125" fill="#c084fc" font-family="system-ui, sans-serif" font-size="10" text-anchor="middle">intercepts syscalls</text>
-
-  <!-- Node 4: Related Entity -->
-  <circle cx="770" cy="180" r="45" fill="#1e293b" stroke="#f59e0b" stroke-width="3"/>
-  <text x="770" y="175" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Entity B</text>
-  <text x="770" y="195" fill="#fcd34d" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">Host Kernel</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="170" viewBox="0 0 1200 170" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="170" fill="#0d1117"/>
+<text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">Multi-Hop GraphRAG Entity &amp; Chunk Traversal</text>
+<rect x="137" y="70" width="156" height="66" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="137" y="70" width="5" height="66" rx="2.5" fill="#60a5fa"/>
+<text x="155" y="96" font-size="15" font-weight="bold" fill="#60a5fa">Domain</text>
+<text x="155" y="117" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">networking</text>
+<rect x="317" y="70" width="195" height="66" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="317" y="70" width="5" height="66" rx="2.5" fill="#4ade80"/>
+<text x="335" y="96" font-size="15" font-weight="bold" fill="#4ade80">OKF Document</text>
+<text x="335" y="117" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">gVisor Sandboxing</text>
+<rect x="536" y="70" width="157" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="554" y="96" font-size="15" font-weight="bold" fill="#e6edf3">Entity</text>
+<text x="554" y="117" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">gVisor Sentry</text>
+<rect x="717" y="70" width="167" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="735" y="96" font-size="15" font-weight="bold" fill="#e6edf3">Chunk</text>
+<text x="735" y="117" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">300-800 Tokens</text>
+<rect x="908" y="70" width="156" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="926" y="96" font-size="15" font-weight="bold" fill="#e6edf3">Entity B</text>
+<text x="926" y="117" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Host Kernel</text>
+<marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#60a5fa"/></marker>
+<polyline points="293,103 317,103" fill="none" stroke="#60a5fa" stroke-width="2.2" marker-end="url(#ar1)"/>
+<rect x="270" y="91" width="69" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="305" y="106" font-size="13" fill="#8b949e" text-anchor="middle">contains</text>
+<polyline points="512,103 536,103" fill="none" stroke="#60a5fa" stroke-width="2.2" marker-end="url(#ar1)"/>
+<rect x="457" y="91" width="135" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="524" y="106" font-size="13" fill="#8b949e" text-anchor="middle">extracts entity</text>
+<polyline points="512,103 512,34 801,34 801,70" fill="none" stroke="#60a5fa" stroke-width="2.2" marker-end="url(#ar1)"/>
+<rect x="605" y="22" width="103" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="656" y="37" font-size="13" fill="#8b949e" text-anchor="middle">chunks into</text>
+<marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/></marker>
+<polyline points="693,103 693,34 986,34 986,70" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar2)"/>
+<rect x="756" y="22" width="167" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="840" y="37" font-size="13" fill="#8b949e" text-anchor="middle">intercepts syscalls</text>
 </svg>

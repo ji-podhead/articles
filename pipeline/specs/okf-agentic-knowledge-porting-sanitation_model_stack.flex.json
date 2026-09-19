@@ -1,0 +1,122 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "SANITATION STACK: MODELS & GUARDRAILS",
+  "subtitle": "classify → generate → guard - the 3 AI layers between slop and clean OKF",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k_slop",
+            "title": "RAW SLOP",
+            "lines": [
+              "chat logs · exports · notes",
+              "paths, IPs, filler, tickets"
+            ],
+            "color": "red"
+          },
+          {
+            "type": "card",
+            "id": "k_l1",
+            "title": "LAYER 1 · CLASSIFY & FLAG PII",
+            "lines": [
+              "DeBERTa-v3 (NER)",
+              "flags IPs · passwords · AWS keys · paths",
+              "all-MiniLM-L6-v2 (embedding)",
+              "pre-matches raw text → proposes topic/subtopic",
+              "local CPU · deterministic · cheap"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "k_l2",
+            "title": "LAYER 2 · EXTRACT & RESTRUCTURE",
+            "lines": [
+              "Llama-3-8B / Mistral-7B (local, Ollama)",
+              "strips filler · splits into heading sections",
+              "Gemini response_schema / structured outputs",
+              "forces frontmatter to the OKF schema exactly",
+              "transformation, not invention - low hallucination risk"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k_clean",
+            "title": "CLEAN OKF",
+            "lines": [
+              "frontmatter (v0.2 compliant)",
+              "heading-bounded sections",
+              "lifecycle · sources · provenance"
+            ],
+            "color": "green"
+          },
+          {
+            "type": "card",
+            "id": "k_l3",
+            "title": "LAYER 3 · PROGRAMMATIC GUARDRAILS (PRE-COMMIT)",
+            "lines": [
+              "NeMo Guardrails (NVIDIA)",
+              "blocks unverified code + conversational residue → triggers rewrite",
+              "Llama Guard 3",
+              "final scan: no proprietary leak ships as visibility: public",
+              "rules live in code - reviewable, testable, deterministic"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 16,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k_warn",
+            "lines": [
+              "⚠ ORDER MATTERS"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "k_warn2",
+            "lines": [
+              "redact PII with a CPU encoder BEFORE the generative pass - discovering it after it's woven into a summary is far too late"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "k_slop",
+      "to": "k_l1"
+    },
+    {
+      "from": "k_l1",
+      "to": "k_l2"
+    }
+  ]
+}

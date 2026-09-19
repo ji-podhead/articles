@@ -1,0 +1,14 @@
+{
+  "mode": "table",
+  "title": "Serving LoRA agents: edge vs. self-hosted",
+  "boldFirstCol": true,
+  "cols": ["", "Cloudflare Workers AI", "vLLM (self-hosted)", "TGI (self-hosted)"],
+  "rows": [
+    ["Status", "Open beta, free during beta", "Active, high-throughput engine", "GitHub repo archived (2026-09-18)"],
+    ["Adapters", "BYO LoRA as finetunes: rank <= 8 (to 32), adapter < 300 MB, up to 100 per account", "LoRA per request, multi-adapter on one GPU (max_loras, max_lora_rank)", "LoRA supported, multi-adapter documented"],
+    ["APIs", "OpenAI-style chat via env.AI.run", "OpenAI compatible; Anthropic entrypoint in code; productized by NVIDIA NIM (/v1/messages)", "OpenAI-style"],
+    ["Context caching", "Native prefix caching with cached-token discount plus session affinity; KV 25 MiB per value, eventual consistency up to 60s", "Automatic Prefix Caching flag (enable_prefix_caching)", "Prefix caching documented"],
+    ["Economics", "$0.011 per 1000 Neurons, ~300 req/min text generation", "You run the GPU fleet", "You run the GPU fleet"],
+    ["Best at", "Edge latency, elastic scale, many small experts", "Throughput: PagedAttention 2-4x, S-LoRA up to 4x over naive serving", "Batches, Hugging Face ecosystem (maintenance archived)"]
+  ]
+}

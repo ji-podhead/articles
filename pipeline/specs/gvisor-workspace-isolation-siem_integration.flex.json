@@ -1,0 +1,85 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "Each isolation layer is also a log source - the SIEM is what turns three silent gates into one visible story",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "proxy",
+            "title": "Identity Proxy",
+            "color": "amber",
+            "lines": [
+              "Every request already carries a verified identity (X-App-ID) - log denied auth attempts + which workspace served which request",
+              "→ WAF/gateway-style audit log"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "vlan",
+            "title": "VLAN / ipvlan",
+            "lines": [
+              "A packet with the wrong VLAN tag trying to reach another tenant's segment is a real signal - an IDS - OSS: Suricata per VLAN; AWS: GuardDuty",
+              "→ network-IDS finding, per tenant"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "gvisor",
+            "title": "gVisor sandbox",
+            "color": "green",
+            "lines": [
+              "Every syscall the Sentry emulates is visible in-process - an eBPF sensor watching the sandbox catches anomalous syscall - OSS: Falco; AWS: GuardDuty",
+              "→ runtime-security finding"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "id": "siem",
+        "title": "Correlation (the SIEM core)",
+        "lines": [
+          "same workspace_id / owner attribution across all three sources - 3 unrelated-looking events become 1 incident"
+        ]
+      },
+      {
+        "type": "card",
+        "id": "incident",
+        "title": "One risk-ranked incident:",
+        "lines": [
+          "\"workspace X - proxy denial, then a VLAN-102 IDS hit, then an anomalous syscall in the same sandbox, within 3 seconds\""
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "proxy",
+      "to": "siem"
+    },
+    {
+      "from": "vlan",
+      "to": "siem"
+    },
+    {
+      "from": "gvisor",
+      "to": "siem"
+    },
+    {
+      "from": "siem",
+      "to": "incident"
+    }
+  ]
+}

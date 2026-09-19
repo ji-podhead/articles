@@ -1,0 +1,187 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "AGENTIC TOOLS: METADATA FIRST, RAG SECOND",
+  "subtitle": "two SQL-grade tools over OKF instead of one blind vector search",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 32,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "column",
+            "style": {
+              "gap": 16
+            },
+            "children": [
+              {
+                "type": "card",
+                "id": "k_anti_hdr",
+                "title": "✗ THE ANTI-PATTERN",
+                "lines": [
+                  "one generic \"search\" tool"
+                ],
+                "color": "red"
+              },
+              {
+                "type": "card",
+                "id": "k_query",
+                "title": "User query",
+                "lines": [
+                  "\"kubernetes leads, still cold\""
+                ]
+              },
+              {
+                "type": "card",
+                "id": "k_search",
+                "title": "search(vector_db, query)",
+                "lines": [
+                  "embeds everything, reranks noise",
+                  "cookie banners, menus, filler chunks"
+                ],
+                "color": "red"
+              },
+              {
+                "type": "card",
+                "id": "k_costs",
+                "title": "expensive + imprecise",
+                "lines": [
+                  "• embedding cost on every query",
+                  "• missed details in the noise",
+                  "• relevance guessed, not filtered"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "style": {
+              "gap": 16
+            },
+            "children": [
+              {
+                "type": "card",
+                "id": "k_okf_hdr",
+                "title": "✓ THE OKF TOOL PATTERN",
+                "lines": [
+                  "catalog query first - body fetch only for the filtered few"
+                ],
+                "color": "green"
+              },
+              {
+                "type": "row",
+                "style": {
+                  "gap": 16
+                },
+                "children": [
+                  {
+                    "type": "card",
+                    "id": "k_meta",
+                    "title": "search_knowledge_metadata()",
+                    "lines": [
+                      "filters manifest.json only",
+                      "topic · tags · status · lifecycle",
+                      "→ milliseconds · zero body tokens",
+                      "deterministic - no LLM call needed"
+                    ],
+                    "color": "green"
+                  },
+                  {
+                    "type": "card",
+                    "id": "k_fetch",
+                    "title": "fetch_knowledge_document()",
+                    "lines": [
+                      "loads body or ONE heading section",
+                      "by validated doc ID + anchor",
+                      "→ context budget spent only here",
+                      "heading-bounded jumps, no re-reads"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "style": {
+                  "gap": 16
+                },
+                "children": [
+                  {
+                    "type": "card",
+                    "id": "k_manifest",
+                    "title": "manifest.json",
+                    "lines": [
+                      "nodes: docs · topics · tags",
+                      "edges: shared taxonomy + cross-links"
+                    ],
+                    "color": "green"
+                  },
+                  {
+                    "type": "card",
+                    "id": "k_bodies",
+                    "title": "okf document bodies",
+                    "lines": [
+                      "markdown · ## sections",
+                      "lifecycle-expired → refused by agent"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "card",
+                "id": "k_result",
+                "title": "THE RESULT",
+                "lines": [
+                  "\"find all enterprise leads on Kubernetes with status cold_outreach\"",
+                  "→ metadata filter returns 5 IDs in milliseconds → only those 5 bodies enter the context",
+                  "~95% token cost avoided · zero missed detail · relevance by structure, not cosine guessing"
+                ],
+                "color": "green"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 16,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "k_foot1",
+            "lines": [
+              "tool definitions (JSON schema for function calling) - same pattern for leads, runbooks, ADRs, research"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "k_foot2",
+            "lines": [
+              "#OKF #KnowledgeEngineering #GraphRAG #AIAgents #MLOps"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "k_query",
+      "to": "k_search"
+    },
+    {
+      "from": "k_search",
+      "to": "k_costs"
+    }
+  ]
+}

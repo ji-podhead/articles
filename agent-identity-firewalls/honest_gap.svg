@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="582" viewBox="0 0 1200 582" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="582" fill="#0d1117"/>
+<text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">A worked example: a per-agent scoping field that is written, but</text>
+<text x="40" y="94" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">never checked</text>
+<rect x="58" y="110" width="500" height="129" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="58" y="110" width="5" height="129" rx="2.5" fill="#4ade80"/>
+<text x="76" y="136" font-size="15" font-weight="bold" fill="#4ade80">WRITE TIME: this part is real</text>
+<text x="76" y="157" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">A per-agent access-control field is written on</text>
+<text x="76" y="178" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">every secret creation and update.</text>
+<text x="76" y="199" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Every access token records which agent</text>
+<text x="76" y="220" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">it was minted for.</text>
+<text x="578" y="178" font-size="24" font-weight="bold" fill="#8b949e">≠</text>
+<rect x="642" y="110" width="500" height="129" rx="11" fill="#161b22" stroke="#f87171" stroke-width="2"/>
+<rect x="642" y="110" width="5" height="129" rx="2.5" fill="#f87171"/>
+<text x="660" y="136" font-size="15" font-weight="bold" fill="#f87171">ACCESS TIME: never checked</text>
+<text x="660" y="157" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">The secret lookup does not filter by the</text>
+<text x="660" y="178" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">per-agent field at all.</text>
+<text x="660" y="199" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Token validation checks name, revocation,</text>
+<text x="660" y="220" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">expiry, never the agent binding.</text>
+<rect x="40" y="261" width="1120" height="108" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="287" font-size="15" font-weight="bold" fill="#8b949e">Practical consequence</text>
+<text x="58" y="308" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">If a per-user OAuth token for a connected inbox were stored today, scoping it to one agent via that field would be purely decorative.</text>
+<text x="58" y="329" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Any caller holding a valid token for that secret NAME can read it, whatever the field says.</text>
+<text x="58" y="350" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Mitigating factor: reaching the store at all still requires passing the gateway identity chain first. This is not a wide-open hole.</text>
+<rect x="40" y="391" width="1120" height="108" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="417" font-size="15" font-weight="bold" fill="#8b949e">Why this is the good kind of finding</text>
+<text x="58" y="438" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">The data model for per-agent scoping already exists. This is a couple of missing comparisons in two functions, not a missing architecture: the</text>
+<text x="58" y="459" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">verified identity already flows through every other code path in the system (the gateway diagram above). The store's own checks simply are</text>
+<text x="58" y="480" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">not consuming it yet. Fixing it is small and surgical, precisely because everything else was built right.</text>
+<text x="40" y="535" font-size="14" fill="#8b949e">Flagged, not fixed silently. That is what shipping honest gaps instead of hiding them looks like in practice.</text>
+</svg>

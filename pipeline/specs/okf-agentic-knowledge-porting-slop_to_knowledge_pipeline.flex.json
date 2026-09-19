@@ -1,0 +1,120 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "8-Stage Slop-to-Knowledge Deconstruction Pipeline",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "s1",
+            "title": "1. Raw Slop & Transcripts",
+            "lines": [
+              "Chat logs, prompt dumps,",
+              "unformatted notes"
+            ],
+            "color": "red"
+          },
+          {
+            "type": "card",
+            "id": "s2",
+            "title": "2. Slop & Fluff Removal",
+            "lines": [
+              "Strip LLM greetings,",
+              "Q&A headers & transient UI"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "s3",
+            "title": "3. Dev Artifact Purging",
+            "lines": [
+              "Remove tickets, sprints,",
+              "internal repo code paths"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "s4",
+            "title": "4. Redaction & Privacy",
+            "lines": [
+              "Sanitize IPs, passwords,",
+              "tokens & developer paths"
+            ],
+            "color": "green"
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "s5",
+            "title": "5. Pattern Abstraction",
+            "lines": [
+              "Convert product names",
+              "to generic architectures"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "s6",
+            "title": "6. Audit-to-Guide Rewrite",
+            "lines": [
+              "Transform post-mortems",
+              "into technical guidebooks"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "s7",
+            "title": "7. English Translation",
+            "lines": [
+              "Translate 100% of body",
+              "& headings into English"
+            ]
+          },
+          {
+            "type": "card",
+            "id": "s8",
+            "title": "8. OKF + GraphRAG Synthesis",
+            "lines": [
+              "Prepend YAML frontmatter,",
+              "optimize chunk boundaries"
+            ],
+            "color": "green"
+          }
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "s1",
+      "to": "s2"
+    },
+    {
+      "from": "s2",
+      "to": "s3"
+    },
+    {
+      "from": "s3",
+      "to": "s4"
+    }
+  ]
+}

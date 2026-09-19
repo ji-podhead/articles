@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="363" viewBox="0 0 1200 363" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="363" fill="#0d1117"/>
+<text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">Adapters as Skills, Adapters as Conscience</text>
+<text x="40" y="100" font-size="17" fill="#8b949e">LoRA agents on Cloudflare Workers and self-hosted vLLM</text>
+<rect x="222" y="106" width="278" height="87" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="222" y="106" width="5" height="87" rx="2.5" fill="#4ade80"/>
+<text x="240" y="132" font-size="15" font-weight="bold" fill="#4ade80">SKILL adapter</text>
+<text x="240" y="153" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">SSH deploys, firewall ops,</text>
+<text x="240" y="174" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">agent tools</text>
+<rect x="522" y="106" width="213" height="87" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="522" y="106" width="5" height="87" rx="2.5" fill="#4ade80"/>
+<text x="540" y="132" font-size="15" font-weight="bold" fill="#4ade80">MEMORY adapter</text>
+<text x="540" y="153" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">knowledge baked in,</text>
+<text x="540" y="174" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">not a claude.md</text>
+<rect x="757" y="106" width="222" height="87" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="757" y="106" width="5" height="87" rx="2.5" fill="#4ade80"/>
+<text x="775" y="132" font-size="15" font-weight="bold" fill="#4ade80">GUARDRAIL adapter</text>
+<text x="775" y="153" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">expert switching,</text>
+<text x="775" y="174" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">one swap per request</text>
+<rect x="313" y="221" width="306" height="108" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<image href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmZmZmIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+Q2xvdWRmbGFyZTwvdGl0bGU+PHBhdGggZD0iTTE2LjUwODggMTYuODQ0N2MuMTQ3NS0uNTA2OC4wOTA4LS45NzA3LS4xNTUzLTEuMzE1NC0uMjI0Ni0uMzE2NC0uNjA0NS0uNDk5LTEuMDYxNS0uNTIwNWwtOC42NTkyLS4xMTIzYS4xNTU5LjE1NTkgMCAwIDEtLjEzMzMtLjA3MTNjLS4wMjgzLS4wNDItLjAzNTEtLjA5ODYtLjAyMS0uMTU1My4wMjc4LS4wODQuMTEyMy0uMTQ4NC4yMDM2LS4xNTYybDguNzM1OS0uMTEyM2MxLjAzNTEtLjA0ODkgMi4xNjAxLS44ODY4IDIuNTUzNy0xLjkxMzZsLjQ5OS0xLjMwMTNjLjAyMTUtLjA1NjEuMDI5My0uMTEyOC4wMTQ3LS4xNjgtLjU2MjUtMi41NDYzLTIuODM1LTQuNDQ1My01LjU0OTktNC40NDUzLTIuNTAzOSAwLTQuNjI4NCAxLjYxNzctNS4zODc2IDMuODYxNC0uNDkyNy0uMzY1OC0xLjExODctLjU2MjUtMS43OTQtLjQ5OS0xLjIwMjYuMTE5LTIuMTY2NSAxLjA4My0yLjI4NjEgMi4yODU2LS4wMjgzLjMxLS4wMDY5LjYxMjguMDYzNS44OTRDMS41NjgzIDEzLjE3MSAwIDE0Ljc3NTQgMCAxNi43NTJjMCAuMTc0OC4wMTQyLjM1MTUuMDM1Mi41MjczLjAxNDEuMDgzLjA4NDQuMTQ3NS4xNjg5LjE0NzVoMTUuOTgxNGMuMDkwOSAwIC4xNzU4LS4wNjQ1LjIwMzItLjE1NTNsLjEyLS40MjY4em0yLjc1NjgtNS41NjM0Yy0uMDc3MSAwLS4xNjExIDAtLjIzODMuMDExMi0uMDU2NiAwLS4xMDU0LjA0MTUtLjEyNy4wOTc2bC0uMzM3OCAxLjE3NDRjLS4xNDc1LjUwNjgtLjA5MTguOTcwNy4xNTQzIDEuMzE2NC4yMjU2LjMxNjQuNjA1NS40OTggMS4wNjI1LjUxOTVsMS44NDM3LjExMzNjLjA1NTcgMCAuMTA1NS4wMjYzLjEzMjkuMDcwMy4wMjgzLjA0My4wMzUxLjEwNzQuMDIxNC4xNTYyLS4wMjgzLjA4NC0uMTEzMi4xNDg1LS4yMDQuMTU1M2wtMS45MjEuMTEyM2MtMS4wNDEuMDQ4OC0yLjE1ODIuODg2Ny0yLjU1MjcgMS45MTRsLS4xNDA2LjM1ODVjLS4wMjgzLjA3MTMuMDIxNS4xNDE2LjA5ODYuMTQxNmg2LjU5NzdjLjA3NzEgMCAuMTQ3NC0uMDQ4OS4xNjktLjEyNi4xMTIyLS40MDgyLjE3NTctLjgzNy4xNzU3LTEuMjgwMyAwLTIuNjAyNS0yLjEyNS00LjcyNy00LjczNDQtNC43MjciLz48L3N2Zz4=" x="581" y="231" width="24" height="24"/>
+<text x="331" y="247" font-size="15" font-weight="bold" fill="#8b949e">Base Model</text>
+<text x="331" y="268" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">serverless edge (Workers AI)</text>
+<text x="331" y="289" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">or self-hosted GPU (vLLM)</text>
+<text x="331" y="310" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">same request, swapped adapter</text>
+<rect x="647" y="221" width="241" height="87" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="647" y="221" width="5" height="87" rx="2.5" fill="#60a5fa"/>
+<text x="665" y="247" font-size="15" font-weight="bold" fill="#60a5fa">honest persona (SPT)</text>
+<text x="665" y="268" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">reviews outputs,</text>
+<text x="665" y="289" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">cannot influence them</text>
+<marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4ade80"/></marker>
+<polyline points="361,193 466,221" fill="none" stroke="#4ade80" stroke-width="2.2" marker-end="url(#ar1)"/>
+<rect x="378" y="195" width="70" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="414" y="210" font-size="13" fill="#8b949e" text-anchor="middle">swap in</text>
+<polyline points="629,193 466,221" fill="none" stroke="#4ade80" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="868,193 466,221" fill="none" stroke="#4ade80" stroke-width="2.2" marker-end="url(#ar1)"/>
+<marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#60a5fa"/></marker>
+<polyline points="619,275 647,265" fill="none" stroke="#60a5fa" stroke-width="2.2" marker-end="url(#ar2)"/>
+<rect x="605" y="257" width="57" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="633" y="272" font-size="13" fill="#8b949e" text-anchor="middle">review</text>
+</svg>

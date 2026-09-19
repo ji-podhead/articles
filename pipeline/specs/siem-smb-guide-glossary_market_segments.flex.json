@@ -1,0 +1,116 @@
+{
+  "width": 1200,
+  "title": "Glossary: Market Segments & Customer Types",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 8
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 0,
+          "padding": 20
+        },
+        "children": [
+          {
+            "type": "text",
+            "lines": [
+              "TERM"
+            ],
+            "style": {
+              "width": 260,
+              "fontSize": 13,
+              "bold": true,
+              "color": "#60a5fa"
+            }
+          },
+          {
+            "type": "text",
+            "lines": [
+              "MEANING"
+            ],
+            "style": {
+              "fontSize": 13,
+              "bold": true,
+              "color": "#60a5fa"
+            }
+          }
+        ]
+      },
+      {
+        "type": "card",
+        "title": "SMB / SME",
+        "lines": [
+          "Small and Medium-sized Businesses (EN) / Kleine und mittlere Unternehmen - KMU (DE); firms up to ~500 employees, usually without a dedicated security team. The target market for \"conveyor-belt\" security products."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "MSP",
+        "lines": [
+          "Managed Services Provider - runs IT (and often security) for SMBs."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "MSSP",
+        "lines": [
+          "Managed Security Services Provider - the security-specialized MSP; runs 24/7 detection/response for many clients."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "SaaS",
+        "lines": [
+          "Software as a Service - cloud software delivered over the internet; SOC 2 reports are usually a purchasing prerequisite for SaaS buyers."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "Enterprise",
+        "lines": [
+          "Large organizations: multi-account/multi-cloud governance, central policies, compliance programs - a different sales motion than SMB."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      },
+      {
+        "type": "card",
+        "title": "KMU",
+        "lines": [
+          "German abbreviation for SMB (kleine und mittlere Unternehmen)."
+        ],
+        "color": "gray",
+        "style": {
+          "width": 1120,
+          "maxWidth": 1120
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "Object Trackers: Kalman Filter & DeepSORT",
+  "subtitle": "From prediction-correction cycles to deep re-identification",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 28
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 16,
+          "align": "stretch"
+        },
+        "children": [
+          {
+            "type": "chip",
+            "text": "COMPUTER VISION",
+            "color": "blue"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "lines": [
+          "# track.py - track = kalman.predict().correct(detection)",
+          "➔ [DeepSORT] appearance + motion fused across frames..."
+        ],
+        "style": {
+          "fontSize": 16,
+          "color": "#8b949e",
+          "bold": false,
+          "width": 1120,
+          "height": 50
+        }
+      },
+      {
+        "type": "text",
+        "lines": [
+          "➔ [MOTA] identity preserved through full occlusion"
+        ],
+        "style": {
+          "fontSize": 16,
+          "color": "#60a5fa",
+          "bold": false,
+          "width": 1120,
+          "height": 28
+        }
+      }
+    ]
+  }
+}

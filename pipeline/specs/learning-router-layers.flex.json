@@ -1,0 +1,113 @@
+{
+  "width": 1200,
+  "padding": 40,
+  "title": "Three learning layers - outcomes flow down, provider truth flows up",
+  "tree": {
+    "type": "column",
+    "style": {
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "style": {
+          "gap": 12,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "l1",
+            "title": "Layer 1 - Model Bandit (per platform:model)",
+            "lines": [
+              "Beta posterior over success/failure · decayed exponentially, 2-day half-life (lazy, on touch)",
+              "score = 0.6 × reliability + 0.4 × speed (1s → 1.0, 10s → 0.1)",
+              "cold-start probe until 5 samples · 10% explore least-sampled · exploit: 0.7 × bandit + 0.3 × user preference"
+            ]
+          },
+          {
+            "type": "chip",
+            "text": "internal/router"
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 12,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "l2",
+            "title": "Layer 2 - Key Pool (per key)",
+            "lines": [
+              "EMA reliability + speed posteriors · model-scope whitelists · cooldown state",
+              "cost-scaled cooldowns: free 5s · <$0.5 30s · <$3 60s · pricey 5min · 402 → 24h bench (only extends)",
+              "free-first failover: paid keys route last · provider-informed benches survive success"
+            ],
+            "color": "green"
+          },
+          {
+            "type": "chip",
+            "text": "internal/keypool",
+            "color": "green"
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 12,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "l3",
+            "title": "Layer 3 - Quota Truth (per provider)",
+            "lines": [
+              "x-ratelimit-* / Retry-After parsed per vendor: NVIDIA swapped order · Cerebras -day/-minute namespaces · Anthropic family",
+              "confidence model: header 1.0 > error body 0.75 > probe 0.6 - most trustworthy source per (platform, key, pool, metric)",
+              "pool inference: groq::account · openrouter::free · google::project - two keys, one account = one budget"
+            ],
+            "color": "amber"
+          },
+          {
+            "type": "chip",
+            "text": "internal/quota",
+            "color": "amber"
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 12,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "chip",
+            "text": "jimesh open-source AI gateway · every proxied call teaches both upper layers"
+          }
+        ]
+      }
+    ]
+  },
+  "connect": [
+    {
+      "from": "l1",
+      "to": "l2",
+      "label": "RouteEvent → ApplyFeedback (Redis Stream jimesh:events · inline fallback) · 4xx filtered out",
+      "color": "blue"
+    },
+    {
+      "from": "l2",
+      "to": "l3",
+      "label": "429/402 → cost-aware cooldown · 200 with remaining=0 → precise bench (no failure stat)",
+      "color": "green"
+    }
+  ]
+}
