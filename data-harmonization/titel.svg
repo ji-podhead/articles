@@ -1,10 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="316" viewBox="0 0 1200 316" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
-<rect width="1200" height="316" fill="#0d1117"/>
-<text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">Structuring, Normalization &amp; Harmonization</text>
-<text x="40" y="100" font-size="17" fill="#8b949e">Why conflating these three breaks pipelines and ML models</text>
-<rect x="40" y="106" width="174" height="38" rx="9" fill="#0d1117" stroke="#60a5fa" stroke-width="1.5"/>
-<text x="55" y="131" font-size="14.5" fill="#c9d1d9">DATA ENGINEERING</text>
-<text x="40" y="188" font-size="16" fill="#8b949e"># normalize.py - source_a[&quot;country&quot;] = &quot;USA&quot; → &quot;United States&quot;</text>
-<text x="40" y="210" font-size="16" fill="#8b949e">➔ [Merge] 3 sources compared field by field...</text>
-<text x="40" y="268" font-size="16" fill="#4ade80">➔ [Harmonize] semantic conflicts resolved → 1 unified schema</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="60%" stop-color="#1c2541" />
+      <stop offset="100%" stop-color="#3a506b" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bgGrad)"/>
+
+  <g opacity="0.05" stroke="#ffffff" stroke-width="1">
+    <path d="M 0,75 L 1200,75 M 0,150 L 1200,150 M 0,225 L 1200,225 M 0,300 L 1200,300 M 0,375 L 1200,375 M 0,450 L 1200,450 M 0,525 L 1200,525 M 0,600 L 1200,600" />
+    <path d="M 150,0 L 150,675 M 300,0 L 300,675 M 450,0 L 450,675 M 600,0 L 600,675 M 750,0 L 750,675 M 900,0 L 900,675 M 1050,0 L 1050,675" />
+  </g>
+
+  <g opacity="0.15">
+    <circle cx="950" cy="337" r="280" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="12,6"/>
+    <circle cx="950" cy="337" r="200" fill="none" stroke="#818cf8" stroke-width="4"/>
+    <circle cx="950" cy="337" r="120" fill="none" stroke="#34d399" stroke-width="1" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- Left Side: Typography & Title -->
+  <g transform="translate(100, 150)">
+    <rect x="0" y="0" width="230" height="30" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+    <text x="115" y="19" fill="#38bdf8" font-family="monospace" font-size="12" font-weight="bold" letter-spacing="1" text-anchor="middle">DATA ENGINEERING</text>
+
+    <text x="0" y="90" fill="#ffffff" font-family="sans-serif" font-weight="900" font-size="48" letter-spacing="-1">Structuring, Normalization</text>
+    <text x="0" y="150" fill="url(#accentGrad)" font-family="sans-serif" font-weight="900" font-size="48" letter-spacing="-1">&amp; Harmonization</text>
+
+    <text x="0" y="205" fill="#94a3b8" font-family="sans-serif" font-weight="normal" font-size="20">Why conflating these three breaks pipelines and ML models</text>
+
+    <g transform="translate(0, 255)" font-family="monospace" font-size="15" fill="#64748b">
+      <text x="0" y="0"><tspan fill="#f43f5e"># </tspan>normalize.py<tspan fill="#475569"> — source_a["country"] = </tspan><tspan fill="#10b981">"USA" → "United States"</tspan></text>
+      <text x="0" y="30" fill="#475569">➔ [Merge] 3 sources compared field by field...</text>
+      <text x="0" y="55" fill="#34d399">➔ [Harmonize] semantic conflicts resolved → 1 unified schema</text>
+    </g>
+  </g>
+
+  <!-- Right Side: convergence icon -->
+  <g transform="translate(900, 337)" filter="url(#softShadow)">
+    <circle cx="0" cy="0" r="110" fill="#34d399" opacity="0.05" filter="url(#glow)"/>
+
+    <polygon points="0,-120 100,-70 100,40 0,120 -100,40 -100,-70" fill="url(#bgGrad)" stroke="url(#accentGrad)" stroke-width="4"/>
+    <polygon points="0,-100 80,-60 80,30 0,100 -80,30 -80,-60" fill="url(#heroGrad)" opacity="0.15"/>
+
+    <!-- three sources converging into one -->
+    <g>
+      <circle cx="-55" cy="-45" r="14" fill="none" stroke="#38bdf8" stroke-width="3"/>
+      <circle cx="-55" cy="10" r="14" fill="none" stroke="#818cf8" stroke-width="3"/>
+      <circle cx="-55" cy="65" r="14" fill="none" stroke="#38bdf8" stroke-width="3"/>
+
+      <line x1="-41" y1="-45" x2="15" y2="-5" stroke="#38bdf8" stroke-width="2" opacity="0.6"/>
+      <line x1="-41" y1="10" x2="15" y2="5" stroke="#818cf8" stroke-width="2" opacity="0.6"/>
+      <line x1="-41" y1="65" x2="15" y2="15" stroke="#38bdf8" stroke-width="2" opacity="0.6"/>
+
+      <circle cx="45" cy="5" r="34" fill="url(#heroGrad)" filter="url(#glow)"/>
+      <path d="M 30,5 L 41,17 L 62,-8" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
 </svg>
