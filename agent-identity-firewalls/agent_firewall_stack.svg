@@ -1,30 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="512" viewBox="0 0 1200 512" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
-<rect width="1200" height="512" fill="#0d1117"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="506" viewBox="0 0 1200 506" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="506" fill="#0d1117"/>
 <text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">The agent firewall stack: four layers, four questions</text>
-<rect x="45" y="70" width="976" height="87" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
-<rect x="45" y="70" width="5" height="87" rx="2.5" fill="#60a5fa"/>
-<text x="63" y="96" font-size="15" font-weight="bold" fill="#60a5fa">LAYER 1 · INGRESS IDENTITY</text>
-<text x="63" y="117" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">strip client claims unconditionally · resolve server-side · re-stamp from the verified row</text>
-<text x="63" y="138" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">per-agent credentials · token exchange (RFC 8693) · workload identity (SPIFFE SVIDs)</text>
-<text x="1045" y="117" font-size="24" font-weight="bold" fill="#60a5fa">WHO</text>
-<rect x="45" y="177" width="976" height="87" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
-<rect x="45" y="177" width="5" height="87" rx="2.5" fill="#4ade80"/>
-<text x="63" y="203" font-size="15" font-weight="bold" fill="#4ade80">LAYER 2 · TOOL-CALL POLICY</text>
-<text x="63" y="224" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">deterministic allow / ask / deny · fail-closed · policy-as-code, never a model call</text>
-<text x="63" y="245" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">OPA Rego · Cedar · YAML first-match · glob + argument rules · rate limits · kill switch</text>
-<text x="1045" y="224" font-size="24" font-weight="bold" fill="#4ade80">WHAT</text>
-<rect x="45" y="284" width="976" height="87" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
-<text x="63" y="310" font-size="15" font-weight="bold" fill="#8b949e">LAYER 3 · EGRESS &amp; DATA</text>
-<text x="63" y="331" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">default-deny network paths · taint tracking (credential read poisons the session) · response DLP</text>
-<text x="63" y="352" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">kernel netfilter · redact secrets before the model sees them · RFC1918 + metadata blocks</text>
-<text x="1045" y="331" font-size="24" font-weight="bold" fill="#8b949e">WHERE</text>
-<rect x="45" y="391" width="976" height="87" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
-<text x="63" y="417" font-size="15" font-weight="bold" fill="#8b949e">LAYER 4 · AUDIT &amp; RECEIPTS</text>
-<text x="63" y="438" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">ground truth recorded outside the model · tamper-evident · replayable</text>
-<text x="63" y="459" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">HMAC-signed JSONL · mediator-signed action receipts · full execution trail for replay</text>
-<text x="1045" y="438" font-size="24" font-weight="bold" fill="#8b949e">WHEN</text>
+<rect x="47" y="70" width="976" height="87" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="47" y="70" width="5" height="87" rx="2.5" fill="#60a5fa"/>
+<text x="65" y="96" font-size="15" font-weight="bold" fill="#60a5fa">LAYER 1 · INGRESS IDENTITY</text>
+<text x="65" y="117" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">strip client claims unconditionally · resolve server-side · re-stamp from the verified row</text>
+<text x="65" y="138" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">per-agent credentials · token exchange (RFC 8693) · workload identity (SPIFFE SVIDs)</text>
+<text x="1043" y="117" font-size="24" font-weight="bold" fill="#60a5fa">WHO</text>
+<rect x="47" y="175" width="976" height="87" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="47" y="175" width="5" height="87" rx="2.5" fill="#4ade80"/>
+<text x="65" y="201" font-size="15" font-weight="bold" fill="#4ade80">LAYER 2 · TOOL-CALL POLICY</text>
+<text x="65" y="222" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">deterministic allow / ask / deny · fail-closed · policy-as-code, never a model call</text>
+<text x="65" y="243" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">OPA Rego · Cedar · YAML first-match · glob + argument rules · rate limits · kill switch</text>
+<text x="1043" y="222" font-size="24" font-weight="bold" fill="#4ade80">WHAT</text>
+<rect x="47" y="280" width="976" height="87" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="65" y="306" font-size="15" font-weight="bold" fill="#8b949e">LAYER 3 · EGRESS &amp; DATA</text>
+<text x="65" y="327" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">default-deny network paths · taint tracking (credential read poisons the session) · response DLP</text>
+<text x="65" y="348" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">kernel netfilter · redact secrets before the model sees them · RFC1918 + metadata blocks</text>
+<text x="1043" y="327" font-size="24" font-weight="bold" fill="#8b949e">WHERE</text>
+<rect x="47" y="385" width="976" height="87" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="65" y="411" font-size="15" font-weight="bold" fill="#8b949e">LAYER 4 · AUDIT &amp; RECEIPTS</text>
+<text x="65" y="432" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">ground truth recorded outside the model · tamper-evident · replayable</text>
+<text x="65" y="453" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">HMAC-signed JSONL · mediator-signed action receipts · full execution trail for replay</text>
+<text x="1043" y="432" font-size="24" font-weight="bold" fill="#8b949e">WHEN</text>
 <marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/></marker>
-<polyline points="533,157 533,177" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<polyline points="533,264 533,284" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<polyline points="533,371 533,391" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="535,157 535,175" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="535,262 535,280" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="535,367 535,385" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
 </svg>

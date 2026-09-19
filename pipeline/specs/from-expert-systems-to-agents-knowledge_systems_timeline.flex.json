@@ -5,7 +5,7 @@
   "tree": {
     "type": "column",
     "style": {
-      "gap": 24
+      "gap": 18
     },
     "children": [
       {
@@ -23,7 +23,10 @@
               "Zadeh: fuzzy sets",
               "degrees of truth"
             ],
-            "color": "amber"
+            "color": "amber",
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -33,7 +36,10 @@
               "DENDRAL · MYCIN",
               "expert systems born"
             ],
-            "color": "amber"
+            "color": "amber",
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -43,7 +49,10 @@
               "Lisp machines · XCON",
               "XPS boom → bottleneck"
             ],
-            "color": "amber"
+            "color": "amber",
+            "style": {
+              "padding": 16
+            }
           }
         ]
       },
@@ -62,7 +71,10 @@
               "Wooldridge: agents",
               "autonomy defined"
             ],
-            "color": "green"
+            "color": "green",
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -72,7 +84,10 @@
               "transformers · LLMs",
               "knowledge returns, implicit"
             ],
-            "color": "green"
+            "color": "green",
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -82,7 +97,10 @@
               "ReAct · agentic RAG",
               "KB + verifier, explicit again"
             ],
-            "color": "green"
+            "color": "green",
+            "style": {
+              "padding": 16
+            }
           }
         ]
       },
@@ -92,14 +110,20 @@
         "title": "The constant: knowledge base + inference machine",
         "lines": [
           "rule base → curated vector collection · rule interpreter → evidence verifier · acquisition bottleneck → LLM ingest pipelines"
-        ]
+        ],
+        "style": {
+          "padding": 16
+        }
       },
       {
         "type": "card",
         "id": "foot",
         "lines": [
           "hallucination is the grounding problem of 1980 - verification is still the fix"
-        ]
+        ],
+        "style": {
+          "padding": 14
+        }
       }
     ]
   }

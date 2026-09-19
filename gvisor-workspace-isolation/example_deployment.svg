@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1234" viewBox="0 0 1200 1234" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
-<rect width="1200" height="1234" fill="#0d1117"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1210" viewBox="0 0 1200 1210" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="1210" fill="#0d1117"/>
 <text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">A worked example: an AI-agent gateway, today vs. where this is</text>
 <text x="40" y="94" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">headed</text>
 <rect x="195" y="110" width="281" height="45" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
@@ -15,6 +15,7 @@
 <text x="213" y="382" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">any existing server</text>
 <rect x="195" y="417" width="380" height="129" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
 <rect x="195" y="417" width="5" height="129" rx="2.5" fill="#4ade80"/>
+<image href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmZmZmIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+RG9ja2VyPC90aXRsZT48cGF0aCBkPSJNMTMuOTgzIDExLjA3OGgyLjExOWEuMTg2LjE4NiAwIDAwLjE4Ni0uMTg1VjkuMDA2YS4xODYuMTg2IDAgMDAtLjE4Ni0uMTg2aC0yLjExOWEuMTg1LjE4NSAwIDAwLS4xODUuMTg1djEuODg4YzAgLjEwMi4wODMuMTg1LjE4NS4xODVtLTIuOTU0LTUuNDNoMi4xMThhLjE4Ni4xODYgMCAwMC4xODYtLjE4NlYzLjU3NGEuMTg2LjE4NiAwIDAwLS4xODYtLjE4NWgtMi4xMThhLjE4NS4xODUgMCAwMC0uMTg1LjE4NXYxLjg4OGMwIC4xMDIuMDgyLjE4NS4xODUuMTg1bTAgMi43MTZoMi4xMThhLjE4Ny4xODcgMCAwMC4xODYtLjE4NlY2LjI5YS4xODYuMTg2IDAgMDAtLjE4Ni0uMTg1aC0yLjExOGEuMTg1LjE4NSAwIDAwLS4xODUuMTg1djEuODg3YzAgLjEwMi4wODIuMTg1LjE4NS4xODZtLTIuOTMgMGgyLjEyYS4xODYuMTg2IDAgMDAuMTg0LS4xODZWNi4yOWEuMTg1LjE4NSAwIDAwLS4xODUtLjE4NUg4LjFhLjE4NS4xODUgMCAwMC0uMTg1LjE4NXYxLjg4N2MwIC4xMDIuMDgzLjE4NS4xODUuMTg2bS0yLjk2NCAwaDIuMTE5YS4xODYuMTg2IDAgMDAuMTg1LS4xODZWNi4yOWEuMTg1LjE4NSAwIDAwLS4xODUtLjE4NUg1LjEzNmEuMTg2LjE4NiAwIDAwLS4xODYuMTg1djEuODg3YzAgLjEwMi4wODQuMTg1LjE4Ni4xODZtNS44OTMgMi43MTVoMi4xMThhLjE4Ni4xODYgMCAwMC4xODYtLjE4NVY5LjAwNmEuMTg2LjE4NiAwIDAwLS4xODYtLjE4NmgtMi4xMThhLjE4NS4xODUgMCAwMC0uMTg1LjE4NXYxLjg4OGMwIC4xMDIuMDgyLjE4NS4xODUuMTg1bS0yLjkzIDBoMi4xMmEuMTg1LjE4NSAwIDAwLjE4NC0uMTg1VjkuMDA2YS4xODUuMTg1IDAgMDAtLjE4NC0uMTg2aC0yLjEyYS4xODUuMTg1IDAgMDAtLjE4NC4xODV2MS44ODhjMCAuMTAyLjA4My4xODUuMTg1LjE4NW0tMi45NjQgMGgyLjExOWEuMTg1LjE4NSAwIDAwLjE4NS0uMTg1VjkuMDA2YS4xODUuMTg1IDAgMDAtLjE4NC0uMTg2aC0yLjEyYS4xODYuMTg2IDAgMDAtLjE4Ni4xODZ2MS44ODdjMCAuMTAyLjA4NC4xODUuMTg2LjE4NW0tMi45MiAwaDIuMTJhLjE4NS4xODUgMCAwMC4xODQtLjE4NVY5LjAwNmEuMTg1LjE4NSAwIDAwLS4xODQtLjE4NmgtMi4xMmEuMTg1LjE4NSAwIDAwLS4xODQuMTg1djEuODg4YzAgLjEwMi4wODIuMTg1LjE4NS4xODVNMjMuNzYzIDkuODljLS4wNjUtLjA1MS0uNjcyLS41MS0xLjk1NC0uNTEtLjMzOC4wMDEtLjY3Ni4wMy0xLjAxLjA4Ny0uMjQ4LTEuNy0xLjY1My0yLjUzLTEuNzE2LTIuNTY2bC0uMzQ0LS4xOTktLjIyNi4zMjdjLS4yODQuNDM4LS40OS45MjItLjYxMiAxLjQzLS4yMy45Ny0uMDkgMS44ODIuNDAzIDIuNjYxLS41OTUuMzMyLTEuNTUuNDEzLTEuNzQ0LjQySC43NTFhLjc1MS43NTEgMCAwMC0uNzUuNzQ4IDExLjM3NiAxMS4zNzYgMCAwMC42OTIgNC4wNjJjLjU0NSAxLjQyOCAxLjM1NSAyLjQ4IDIuNDEgMy4xMjQgMS4xOC43MjMgMy4xIDEuMTM3IDUuMjc1IDEuMTM3Ljk4My4wMDMgMS45NjMtLjA4NiAyLjkzLS4yNjZhMTIuMjQ4IDEyLjI0OCAwIDAwMy44MjMtMS4zODljLjk4LS41NjcgMS44Ni0xLjI4OCAyLjYxLTIuMTM2IDEuMjUyLTEuNDE4IDEuOTk4LTIuOTk3IDIuNTUzLTQuNGguMjIxYzEuMzcyIDAgMi4yMTUtLjU0OSAyLjY4LTEuMDA5LjMwOS0uMjkzLjU1LS42NS43MDctMS4wNDZsLjA5OC0uMjg4WiIvPjwvc3ZnPg==" x="537" y="427" width="24" height="24"/>
 <text x="213" y="443" font-size="15" font-weight="bold" fill="#4ade80">Agent container</text>
 <text x="213" y="464" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">gVisor-sandboxed</text>
 <text x="213" y="485" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">egress allowlist active</text>
@@ -42,39 +43,39 @@
 <text x="617" y="443" font-size="15" font-weight="bold" fill="#e6edf3">Same egress allowlist + gVisor</text>
 <text x="617" y="464" font-size="15" font-weight="bold" fill="#e6edf3">sandboxing as today, now with</text>
 <text x="617" y="485" font-size="15" font-weight="bold" fill="#e6edf3">per-workspace VLANs</text>
-<rect x="40" y="570" width="380" height="108" rx="11" fill="#161b22" stroke="#f87171" stroke-width="2"/>
-<rect x="40" y="570" width="5" height="108" rx="2.5" fill="#f87171"/>
-<text x="58" y="596" font-size="15" font-weight="bold" fill="#f87171">Honest gap today:</text>
-<text x="58" y="617" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">one host at a time - no VLAN segmentation</text>
-<text x="58" y="638" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">between two workspaces on the SAME</text>
-<text x="58" y="659" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">remote server yet (Layer B, not built).</text>
-<rect x="40" y="702" width="380" height="150" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="58" y="728" font-size="15" font-weight="bold" fill="#e6edf3">Further out: one mesh across many</text>
-<text x="58" y="749" font-size="15" font-weight="bold" fill="#e6edf3">servers and clouds</text>
-<text x="58" y="770" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">the same Gitpod/Ona pattern - a control</text>
-<text x="58" y="791" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">plane that provisions this same 3-layer stack</text>
-<text x="58" y="812" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">wherever a customer's workload actually</text>
-<text x="58" y="833" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">runs</text>
-<rect x="98" y="876" width="380" height="108" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="116" y="902" font-size="15" font-weight="bold" fill="#e6edf3">Central control plane</text>
-<text x="116" y="923" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">identity, policy, routing table</text>
-<text x="116" y="944" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">reached over a WireGuard mesh - no public</text>
-<text x="116" y="965" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">SSH exposure</text>
-<rect x="498" y="876" width="278" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="516" y="902" font-size="15" font-weight="bold" fill="#e6edf3">Own hardware / VPS</text>
-<text x="516" y="923" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">3-layer stack, local VLANs</text>
-<rect x="796" y="876" width="306" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="814" y="902" font-size="15" font-weight="bold" fill="#e6edf3">AWS / GCP node</text>
-<text x="814" y="923" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">same stack, cloud VPC instead</text>
-<rect x="40" y="1008" width="380" height="192" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="58" y="1034" font-size="15" font-weight="bold" fill="#e6edf3">Why this matters for a real product</text>
-<text x="58" y="1055" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">a customer picks WHERE a workload runs</text>
-<text x="58" y="1076" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">(their own box, or a cloud region) without</text>
-<text x="58" y="1097" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">ever changing how they reach it, and without</text>
-<text x="58" y="1118" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">the platform operator needing a different</text>
-<text x="58" y="1139" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">security story per environment - one identity</text>
-<text x="58" y="1160" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">layer, one policy engine, many physical</text>
-<text x="58" y="1181" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">locations</text>
+<rect x="40" y="564" width="380" height="108" rx="11" fill="#161b22" stroke="#f87171" stroke-width="2"/>
+<rect x="40" y="564" width="5" height="108" rx="2.5" fill="#f87171"/>
+<text x="58" y="590" font-size="15" font-weight="bold" fill="#f87171">Honest gap today:</text>
+<text x="58" y="611" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">one host at a time - no VLAN segmentation</text>
+<text x="58" y="632" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">between two workspaces on the SAME</text>
+<text x="58" y="653" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">remote server yet (Layer B, not built).</text>
+<rect x="40" y="690" width="380" height="150" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="58" y="716" font-size="15" font-weight="bold" fill="#e6edf3">Further out: one mesh across many</text>
+<text x="58" y="737" font-size="15" font-weight="bold" fill="#e6edf3">servers and clouds</text>
+<text x="58" y="758" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">the same Gitpod/Ona pattern - a control</text>
+<text x="58" y="779" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">plane that provisions this same 3-layer stack</text>
+<text x="58" y="800" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">wherever a customer's workload actually</text>
+<text x="58" y="821" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">runs</text>
+<rect x="98" y="858" width="380" height="108" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="116" y="884" font-size="15" font-weight="bold" fill="#e6edf3">Central control plane</text>
+<text x="116" y="905" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">identity, policy, routing table</text>
+<text x="116" y="926" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">reached over a WireGuard mesh - no public</text>
+<text x="116" y="947" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">SSH exposure</text>
+<rect x="498" y="858" width="278" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="516" y="884" font-size="15" font-weight="bold" fill="#e6edf3">Own hardware / VPS</text>
+<text x="516" y="905" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">3-layer stack, local VLANs</text>
+<rect x="796" y="858" width="306" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="814" y="884" font-size="15" font-weight="bold" fill="#e6edf3">AWS / GCP node</text>
+<text x="814" y="905" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">same stack, cloud VPC instead</text>
+<rect x="40" y="984" width="380" height="192" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="58" y="1010" font-size="15" font-weight="bold" fill="#e6edf3">Why this matters for a real product</text>
+<text x="58" y="1031" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">a customer picks WHERE a workload runs</text>
+<text x="58" y="1052" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">(their own box, or a cloud region) without</text>
+<text x="58" y="1073" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">ever changing how they reach it, and without</text>
+<text x="58" y="1094" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">the platform operator needing a different</text>
+<text x="58" y="1115" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">security story per environment - one identity</text>
+<text x="58" y="1136" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">layer, one policy engine, many physical</text>
+<text x="58" y="1157" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">locations</text>
 <marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/></marker>
 <polyline points="293,237 302,253" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
 <polyline points="302,319 302,335" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
@@ -92,6 +93,6 @@
 <polyline points="794,347 810,347" fill="none" stroke="#f87171" stroke-width="2.2" marker-end="url(#ar2)"/>
 <rect x="706" y="335" width="191" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
 <text x="802" y="350" font-size="13" fill="#8b949e" text-anchor="middle">no route between VLANs</text>
-<polyline points="478,930 498,909" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<polyline points="478,930 478,966 796,966 796,909" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="478,912 498,891" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="478,912 478,948 796,948 796,891" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
 </svg>

@@ -2,7 +2,7 @@
   "width": 1200,
   "padding": 40,
   "title": "DATA PIPELINE: THREE DISTINCT DISCIPLINES",
-  "subtitle": "structuring → normalization → harmonization",
+  "subtitle": "structuring \u2192 normalization \u2192 harmonization",
   "tree": {
     "type": "column",
     "style": {
@@ -21,7 +21,7 @@
             "id": "p1",
             "title": "1. STRUCTURING",
             "lines": [
-              "raw → readable format",
+              "raw \u2192 readable format",
               "",
               "unstructured",
               "~@#)($&",
@@ -48,7 +48,8 @@
             "color": "blue",
             "style": {
               "flexGrow": 1,
-              "maxWidth": 356
+              "maxWidth": 356,
+              "padding": 16
             }
           },
           {
@@ -58,7 +59,7 @@
             "lines": [
               "clean + deduplicate + rescale",
               "",
-              "A. Database (1NF→2NF→3NF)",
+              "A. Database (1NF\u21922NF\u21923NF)",
               "1NF: atomic values, unique rows",
               "2NF: no partial dependencies",
               "3NF: no transitive dependencies",
@@ -67,13 +68,13 @@
               "Min-Max",
               "[0 .. 1]",
               "Z-Score",
-              "μ=0, σ=1",
+              "\u03bc=0, \u03c3=1",
               "",
               "EXAMPLE",
-              "Source A: DD/MM/YYYY → 2026-09-15",
-              "Source B: YYYY-MM-DD → 2026-09-15",
-              "A:\"USA\" + B:\"United States\" → \"United States\"",
-              "EUR ↔ USD → uniform scale",
+              "Source A: DD/MM/YYYY \u2192 2026-09-15",
+              "Source B: YYYY-MM-DD \u2192 2026-09-15",
+              "A:\"USA\" + B:\"United States\" \u2192 \"United States\"",
+              "EUR \u2194 USD \u2192 uniform scale",
               "",
               "",
               "",
@@ -82,7 +83,8 @@
             "color": "blue",
             "style": {
               "flexGrow": 1,
-              "maxWidth": 356
+              "maxWidth": 356,
+              "padding": 16
             }
           },
           {
@@ -90,16 +92,16 @@
             "id": "p3",
             "title": "3. HARMONIZATION",
             "lines": [
-              "multi-source → semantic unity",
+              "multi-source \u2192 semantic unity",
               "",
               "Source A",
               "Source B",
               "Source C",
               "",
               "UNIFIED VIEW",
-              "✓ consistent schemas",
-              "✓ uniform standards",
-              "✓ semantic unity",
+              "\u2713 consistent schemas",
+              "\u2713 uniform standards",
+              "\u2713 semantic unity",
               "comparable + error-free",
               "",
               "Integration",
@@ -116,7 +118,8 @@
             "color": "green",
             "style": {
               "flexGrow": 1,
-              "maxWidth": 356
+              "maxWidth": 356,
+              "padding": 16
             }
           }
         ]
@@ -152,7 +155,8 @@
             "color": "blue",
             "style": {
               "flexGrow": 1,
-              "maxWidth": 265
+              "maxWidth": 265,
+              "padding": 16
             }
           },
           {
@@ -165,7 +169,8 @@
             "color": "blue",
             "style": {
               "flexGrow": 1,
-              "maxWidth": 265
+              "maxWidth": 265,
+              "padding": 16
             }
           },
           {
@@ -179,7 +184,8 @@
             "color": "blue",
             "style": {
               "flexGrow": 1,
-              "maxWidth": 265
+              "maxWidth": 265,
+              "padding": 16
             }
           },
           {
@@ -192,7 +198,8 @@
             "color": "green",
             "style": {
               "flexGrow": 1,
-              "maxWidth": 265
+              "maxWidth": 265,
+              "padding": 16
             }
           }
         ]
@@ -200,7 +207,7 @@
       {
         "type": "text",
         "lines": [
-          "↻ repeat per data batch"
+          "\u21bb repeat per data batch"
         ],
         "style": {
           "fontSize": 14,

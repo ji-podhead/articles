@@ -1,16 +1,17 @@
 {
   "width": 1200,
   "padding": 40,
+  "title": "Correlating System Call Traces with Application Context",
   "tree": {
     "type": "column",
     "style": {
-      "gap": 24
+      "gap": 18
     },
     "children": [
       {
         "type": "row",
         "style": {
-          "gap": 20,
+          "gap": 18,
           "justify": "center"
         },
         "children": [
@@ -21,7 +22,10 @@
             "lines": [
               "Prompt & Response Text"
             ],
-            "color": "blue"
+            "color": "blue",
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -29,14 +33,17 @@
             "title": "Operating System",
             "lines": [
               "open() read() connect() execve()"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           }
         ]
       },
       {
         "type": "row",
         "style": {
-          "gap": 20,
+          "gap": 18,
           "justify": "center"
         },
         "children": [
@@ -46,7 +53,10 @@
             "title": "WAF / Network Firewall",
             "lines": [
               "Sees TLS packets, never the prompt"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -54,7 +64,10 @@
             "title": "Guardrails / LLM Guard",
             "lines": [
               "Sees text, never the syscalls"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -62,7 +75,10 @@
             "title": "gVisor / Tetragon / Falco",
             "lines": [
               "Sees syscalls, never the intent"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           }
         ]
       },
@@ -73,7 +89,10 @@
         "lines": [
           "Correlates BOTH views simultaneously in real-time"
         ],
-        "color": "red"
+        "color": "red",
+        "style": {
+          "padding": 16
+        }
       }
     ]
   },

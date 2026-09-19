@@ -1,26 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="454" viewBox="0 0 900 454" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
-<rect width="900" height="454" fill="#0d1117"/>
-<text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5"></text>
-<rect x="40" y="0" width="288" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="58" y="26" font-size="15" font-weight="bold" fill="#e6edf3">Host / VM Layer</text>
-<text x="58" y="47" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">PID + Socket ➔ eBPF Context</text>
-<rect x="40" y="90" width="306" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="58" y="116" font-size="15" font-weight="bold" fill="#e6edf3">Container Layer</text>
-<text x="58" y="137" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Container ID ➔ Docker/CRI API</text>
-<rect x="40" y="180" width="380" height="87" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
-<rect x="40" y="180" width="5" height="87" rx="2.5" fill="#60a5fa"/>
-<text x="58" y="206" font-size="15" font-weight="bold" fill="#60a5fa">Session Layer (Gateway)</text>
-<text x="58" y="227" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Session ID: Minted at provisioning</text>
-<text x="58" y="248" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Crucial: Never let the agent self-declare</text>
-<rect x="40" y="291" width="380" height="129" rx="11" fill="#161b22" stroke="#f87171" stroke-width="2"/>
-<rect x="40" y="291" width="5" height="129" rx="2.5" fill="#f87171"/>
-<text x="58" y="317" font-size="15" font-weight="bold" fill="#f87171">🚨 Graduated Incident Response Ladder</text>
-<text x="58" y="338" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">1. Revoke Session Token</text>
-<text x="58" y="359" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">2. Inject Controlled Error Response</text>
-<text x="58" y="380" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">3. SIGSTOP Container (Freeze RAM)</text>
-<text x="58" y="401" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">4. Blackhole Egress Network Routing</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="506" viewBox="0 0 900 506" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="900" height="506" fill="#0d1117"/>
+<text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">Graduated Incident Response Ladder</text>
+<rect x="40" y="70" width="288" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="58" y="96" font-size="15" font-weight="bold" fill="#e6edf3">Host / VM Layer</text>
+<text x="58" y="117" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">PID + Socket ➔ eBPF Context</text>
+<rect x="40" y="154" width="306" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<image href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmZmZmIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+RG9ja2VyPC90aXRsZT48cGF0aCBkPSJNMTMuOTgzIDExLjA3OGgyLjExOWEuMTg2LjE4NiAwIDAwLjE4Ni0uMTg1VjkuMDA2YS4xODYuMTg2IDAgMDAtLjE4Ni0uMTg2aC0yLjExOWEuMTg1LjE4NSAwIDAwLS4xODUuMTg1djEuODg4YzAgLjEwMi4wODMuMTg1LjE4NS4xODVtLTIuOTU0LTUuNDNoMi4xMThhLjE4Ni4xODYgMCAwMC4xODYtLjE4NlYzLjU3NGEuMTg2LjE4NiAwIDAwLS4xODYtLjE4NWgtMi4xMThhLjE4NS4xODUgMCAwMC0uMTg1LjE4NXYxLjg4OGMwIC4xMDIuMDgyLjE4NS4xODUuMTg1bTAgMi43MTZoMi4xMThhLjE4Ny4xODcgMCAwMC4xODYtLjE4NlY2LjI5YS4xODYuMTg2IDAgMDAtLjE4Ni0uMTg1aC0yLjExOGEuMTg1LjE4NSAwIDAwLS4xODUuMTg1djEuODg3YzAgLjEwMi4wODIuMTg1LjE4NS4xODZtLTIuOTMgMGgyLjEyYS4xODYuMTg2IDAgMDAuMTg0LS4xODZWNi4yOWEuMTg1LjE4NSAwIDAwLS4xODUtLjE4NUg4LjFhLjE4NS4xODUgMCAwMC0uMTg1LjE4NXYxLjg4N2MwIC4xMDIuMDgzLjE4NS4xODUuMTg2bS0yLjk2NCAwaDIuMTE5YS4xODYuMTg2IDAgMDAuMTg1LS4xODZWNi4yOWEuMTg1LjE4NSAwIDAwLS4xODUtLjE4NUg1LjEzNmEuMTg2LjE4NiAwIDAwLS4xODYuMTg1djEuODg3YzAgLjEwMi4wODQuMTg1LjE4Ni4xODZtNS44OTMgMi43MTVoMi4xMThhLjE4Ni4xODYgMCAwMC4xODYtLjE4NVY5LjAwNmEuMTg2LjE4NiAwIDAwLS4xODYtLjE4NmgtMi4xMThhLjE4NS4xODUgMCAwMC0uMTg1LjE4NXYxLjg4OGMwIC4xMDIuMDgyLjE4NS4xODUuMTg1bS0yLjkzIDBoMi4xMmEuMTg1LjE4NSAwIDAwLjE4NC0uMTg1VjkuMDA2YS4xODUuMTg1IDAgMDAtLjE4NC0uMTg2aC0yLjEyYS4xODUuMTg1IDAgMDAtLjE4NC4xODV2MS44ODhjMCAuMTAyLjA4My4xODUuMTg1LjE4NW0tMi45NjQgMGgyLjExOWEuMTg1LjE4NSAwIDAwLjE4NS0uMTg1VjkuMDA2YS4xODUuMTg1IDAgMDAtLjE4NC0uMTg2aC0yLjEyYS4xODYuMTg2IDAgMDAtLjE4Ni4xODZ2MS44ODdjMCAuMTAyLjA4NC4xODUuMTg2LjE4NW0tMi45MiAwaDIuMTJhLjE4NS4xODUgMCAwMC4xODQtLjE4NVY5LjAwNmEuMTg1LjE4NSAwIDAwLS4xODQtLjE4NmgtMi4xMmEuMTg1LjE4NSAwIDAwLS4xODQuMTg1djEuODg4YzAgLjEwMi4wODIuMTg1LjE4NS4xODVNMjMuNzYzIDkuODljLS4wNjUtLjA1MS0uNjcyLS41MS0xLjk1NC0uNTEtLjMzOC4wMDEtLjY3Ni4wMy0xLjAxLjA4Ny0uMjQ4LTEuNy0xLjY1My0yLjUzLTEuNzE2LTIuNTY2bC0uMzQ0LS4xOTktLjIyNi4zMjdjLS4yODQuNDM4LS40OS45MjItLjYxMiAxLjQzLS4yMy45Ny0uMDkgMS44ODIuNDAzIDIuNjYxLS41OTUuMzMyLTEuNTUuNDEzLTEuNzQ0LjQySC43NTFhLjc1MS43NTEgMCAwMC0uNzUuNzQ4IDExLjM3NiAxMS4zNzYgMCAwMC42OTIgNC4wNjJjLjU0NSAxLjQyOCAxLjM1NSAyLjQ4IDIuNDEgMy4xMjQgMS4xOC43MjMgMy4xIDEuMTM3IDUuMjc1IDEuMTM3Ljk4My4wMDMgMS45NjMtLjA4NiAyLjkzLS4yNjZhMTIuMjQ4IDEyLjI0OCAwIDAwMy44MjMtMS4zODljLjk4LS41NjcgMS44Ni0xLjI4OCAyLjYxLTIuMTM2IDEuMjUyLTEuNDE4IDEuOTk4LTIuOTk3IDIuNTUzLTQuNGguMjIxYzEuMzcyIDAgMi4yMTUtLjU0OSAyLjY4LTEuMDA5LjMwOS0uMjkzLjU1LS42NS43MDctMS4wNDZsLjA5OC0uMjg4WiIvPjwvc3ZnPg==" x="308" y="164" width="24" height="24"/>
+<text x="58" y="180" font-size="15" font-weight="bold" fill="#e6edf3">Container Layer</text>
+<text x="58" y="201" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Container ID ➔ Docker/CRI API</text>
+<rect x="40" y="238" width="380" height="87" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="40" y="238" width="5" height="87" rx="2.5" fill="#60a5fa"/>
+<text x="58" y="264" font-size="15" font-weight="bold" fill="#60a5fa">Session Layer (Gateway)</text>
+<text x="58" y="285" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Session ID: Minted at provisioning</text>
+<text x="58" y="306" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Crucial: Never let the agent self-declare</text>
+<rect x="40" y="343" width="380" height="129" rx="11" fill="#161b22" stroke="#f87171" stroke-width="2"/>
+<rect x="40" y="343" width="5" height="129" rx="2.5" fill="#f87171"/>
+<text x="58" y="369" font-size="15" font-weight="bold" fill="#f87171">🚨 Graduated Incident Response Ladder</text>
+<text x="58" y="390" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">1. Revoke Session Token</text>
+<text x="58" y="411" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">2. Inject Controlled Error Response</text>
+<text x="58" y="432" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">3. SIGSTOP Container (Freeze RAM)</text>
+<text x="58" y="453" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">4. Blackhole Egress Network Routing</text>
 <marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/></marker>
-<polyline points="184,66 193,90" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<polyline points="193,156 230,180" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<polyline points="230,267 230,291" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="184,136 193,154" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="193,220 230,238" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="230,325 230,343" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
 </svg>

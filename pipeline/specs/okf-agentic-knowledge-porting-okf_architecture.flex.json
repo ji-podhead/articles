@@ -5,7 +5,7 @@
   "tree": {
     "type": "column",
     "style": {
-      "gap": 24
+      "gap": 18
     },
     "children": [
       {
@@ -16,7 +16,7 @@
         },
         "children": [
           {
-            "type": "card",
+            "type": "code",
             "id": "k_frontmatter",
             "title": "YAML Frontmatter Header",
             "color": "blue",
@@ -29,10 +29,13 @@
               "tags: [\"networking\", \"sandboxing\"]",
               "summary: \"Technical specification...\"",
               "Indexed for Bi-Encoder Vector Embeddings"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           },
           {
-            "type": "card",
+            "type": "code",
             "id": "k_body",
             "title": "Structured Markdown Body",
             "color": "green",
@@ -43,7 +46,10 @@
               "## Technical Architecture",
               "GraphRAG Entity-Relation Triples...",
               "Optimized for Cross-Encoder Reranking"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           }
         ]
       }

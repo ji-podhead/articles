@@ -1,57 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="738" viewBox="0 0 1200 738" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
-<rect width="1200" height="738" fill="#0d1117"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="714" viewBox="0 0 1200 714" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="714" fill="#0d1117"/>
 <text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">What actually happens inside gVisor when your app makes a</text>
 <text x="40" y="94" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">syscall</text>
 <rect x="40" y="110" width="278" height="66" rx="11" fill="#161b22" stroke="#f87171" stroke-width="2"/>
 <rect x="40" y="110" width="5" height="66" rx="2.5" fill="#f87171"/>
 <text x="58" y="136" font-size="15" font-weight="bold" fill="#f87171">UNTRUSTED USER SPACE</text>
 <text x="58" y="157" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">App process (e.g. Node.js)</text>
-<rect x="40" y="200" width="380" height="108" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="58" y="226" font-size="15" font-weight="bold" fill="#e6edf3">INTERCEPTION</text>
-<text x="58" y="247" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Systrap stub (per-CPU) or KVM platform traps</text>
-<text x="58" y="268" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">the instruction here, before the host kernel</text>
-<text x="58" y="289" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">ever sees it</text>
-<rect x="40" y="332" width="353" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="58" y="358" font-size="15" font-weight="bold" fill="#e6edf3">TRUSTED USER SPACE - the gVisor</text>
-<text x="58" y="379" font-size="15" font-weight="bold" fill="#e6edf3">sandbox</text>
-<rect x="10" y="422" width="380" height="129" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
-<rect x="10" y="422" width="5" height="129" rx="2.5" fill="#60a5fa"/>
-<text x="28" y="448" font-size="15" font-weight="bold" fill="#60a5fa">Sentry - the Go userspace kernel</text>
-<text x="28" y="469" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">emulates 300+ Linux syscalls in memory</text>
-<text x="28" y="490" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Netstack (embedded, not a process)</text>
-<text x="28" y="511" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">full Go TCP/IP stack - builds L2/L3 frames</text>
-<text x="28" y="532" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">in-process</text>
-<rect x="410" y="422" width="380" height="108" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
-<rect x="410" y="422" width="5" height="108" rx="2.5" fill="#60a5fa"/>
-<text x="428" y="448" font-size="15" font-weight="bold" fill="#60a5fa">Gofer</text>
-<text x="428" y="469" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">filesystem proxy, one per container</text>
-<text x="428" y="490" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Sentry never touches the real host FS</text>
-<text x="428" y="511" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">directly</text>
-<rect x="810" y="422" width="380" height="129" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="828" y="448" font-size="15" font-weight="bold" fill="#e6edf3">Both are seccomp-bpf caged:</text>
-<text x="828" y="469" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Sentry: only network + memory syscalls</text>
-<text x="828" y="490" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">reach the real host.</text>
-<text x="828" y="511" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Gofer: only file read/write on handles it</text>
-<text x="828" y="532" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">already validated.</text>
-<rect x="40" y="575" width="380" height="129" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="58" y="601" font-size="15" font-weight="bold" fill="#e6edf3">PRIVILEGED SYSTEM SPACE</text>
-<text x="58" y="622" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Host Linux Kernel</text>
-<text x="58" y="643" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">the application process never speaks to this</text>
-<text x="58" y="664" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">box directly - every arrow above is the</text>
-<text x="58" y="685" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">redirection that guarantees it</text>
+<rect x="40" y="194" width="380" height="108" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="58" y="220" font-size="15" font-weight="bold" fill="#e6edf3">INTERCEPTION</text>
+<text x="58" y="241" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Systrap stub (per-CPU) or KVM platform traps</text>
+<text x="58" y="262" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">the instruction here, before the host kernel</text>
+<text x="58" y="283" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">ever sees it</text>
+<rect x="40" y="320" width="353" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="58" y="346" font-size="15" font-weight="bold" fill="#e6edf3">TRUSTED USER SPACE - the gVisor</text>
+<text x="58" y="367" font-size="15" font-weight="bold" fill="#e6edf3">sandbox</text>
+<rect x="10" y="404" width="380" height="129" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="10" y="404" width="5" height="129" rx="2.5" fill="#60a5fa"/>
+<text x="28" y="430" font-size="15" font-weight="bold" fill="#60a5fa">Sentry - the Go userspace kernel</text>
+<text x="28" y="451" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">emulates 300+ Linux syscalls in memory</text>
+<text x="28" y="472" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Netstack (embedded, not a process)</text>
+<text x="28" y="493" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">full Go TCP/IP stack - builds L2/L3 frames</text>
+<text x="28" y="514" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">in-process</text>
+<rect x="410" y="404" width="380" height="108" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="410" y="404" width="5" height="108" rx="2.5" fill="#60a5fa"/>
+<text x="428" y="430" font-size="15" font-weight="bold" fill="#60a5fa">Gofer</text>
+<text x="428" y="451" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">filesystem proxy, one per container</text>
+<text x="428" y="472" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Sentry never touches the real host FS</text>
+<text x="428" y="493" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">directly</text>
+<rect x="810" y="404" width="380" height="129" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="828" y="430" font-size="15" font-weight="bold" fill="#e6edf3">Both are seccomp-bpf caged:</text>
+<text x="828" y="451" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Sentry: only network + memory syscalls</text>
+<text x="828" y="472" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">reach the real host.</text>
+<text x="828" y="493" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Gofer: only file read/write on handles it</text>
+<text x="828" y="514" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">already validated.</text>
+<rect x="40" y="551" width="380" height="129" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="58" y="577" font-size="15" font-weight="bold" fill="#e6edf3">PRIVILEGED SYSTEM SPACE</text>
+<text x="58" y="598" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Host Linux Kernel</text>
+<text x="58" y="619" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">the application process never speaks to this</text>
+<text x="58" y="640" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">box directly - every arrow above is the</text>
+<text x="58" y="661" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">redirection that guarantees it</text>
 <marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/></marker>
-<polyline points="179,176 230,200" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<rect x="109" y="167" width="191" height="42" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
-<text x="205" y="182" font-size="13" fill="#8b949e" text-anchor="middle">fires a syscall (open,</text>
-<text x="205" y="199" font-size="13" fill="#8b949e" text-anchor="middle">socket, read...)</text>
-<polyline points="230,308 -26,308 -26,487 10,487" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<polyline points="390,487 410,476" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<rect x="300" y="469" width="199" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
-<text x="400" y="484" font-size="13" fill="#8b949e" text-anchor="middle">shared-mem ring (LISFS)</text>
-<polyline points="200,551 230,575" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<rect x="111" y="551" width="207" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
-<text x="215" y="566" font-size="13" fill="#8b949e" text-anchor="middle">restricted host syscalls</text>
-<polyline points="600,530 636,530 636,575 230,575" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<rect x="329" y="563" width="207" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
-<text x="433" y="578" font-size="13" fill="#8b949e" text-anchor="middle">restricted host syscalls</text>
+<polyline points="179,176 230,194" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<rect x="109" y="164" width="191" height="42" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="205" y="179" font-size="13" fill="#8b949e" text-anchor="middle">fires a syscall (open,</text>
+<text x="205" y="196" font-size="13" fill="#8b949e" text-anchor="middle">socket, read...)</text>
+<polyline points="230,302 -26,302 -26,469 10,469" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="390,469 410,458" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<rect x="300" y="451" width="199" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="400" y="466" font-size="13" fill="#8b949e" text-anchor="middle">shared-mem ring (LISFS)</text>
+<polyline points="200,533 230,551" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<rect x="111" y="530" width="207" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="215" y="545" font-size="13" fill="#8b949e" text-anchor="middle">restricted host syscalls</text>
+<polyline points="600,512 636,512 636,551 230,551" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<rect x="329" y="539" width="207" height="25" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+<text x="433" y="554" font-size="13" fill="#8b949e" text-anchor="middle">restricted host syscalls</text>
 </svg>

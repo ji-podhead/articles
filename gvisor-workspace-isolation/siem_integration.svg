@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="558" viewBox="0 0 1200 558" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
-<rect width="1200" height="558" fill="#0d1117"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="546" viewBox="0 0 1200 546" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="546" fill="#0d1117"/>
 <text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">Each isolation layer is also a log source - the SIEM is what turns</text>
 <text x="40" y="94" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">three silent gates into one visible story</text>
 <rect x="10" y="110" width="380" height="150" rx="11" fill="#161b22" stroke="#f59e0b" stroke-width="2"/>
@@ -25,19 +25,19 @@
 <text x="828" y="199" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">sandbox catches anomalous syscall - OSS:</text>
 <text x="828" y="220" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Falco; AWS: GuardDuty</text>
 <text x="828" y="241" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">→ runtime-security finding</text>
-<rect x="40" y="284" width="380" height="108" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="58" y="310" font-size="15" font-weight="bold" fill="#e6edf3">Correlation (the SIEM core)</text>
-<text x="58" y="331" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">same workspace_id / owner attribution</text>
-<text x="58" y="352" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">across all three sources - 3 unrelated-looking</text>
-<text x="58" y="373" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">events become 1 incident</text>
-<rect x="40" y="416" width="380" height="108" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="58" y="442" font-size="15" font-weight="bold" fill="#e6edf3">One risk-ranked incident:</text>
-<text x="58" y="463" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">&quot;workspace X - proxy denial, then a</text>
-<text x="58" y="484" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">VLAN-102 IDS hit, then an anomalous syscall</text>
-<text x="58" y="505" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">in the same sandbox, within 3 seconds&quot;</text>
+<rect x="40" y="278" width="380" height="108" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="58" y="304" font-size="15" font-weight="bold" fill="#e6edf3">Correlation (the SIEM core)</text>
+<text x="58" y="325" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">same workspace_id / owner attribution</text>
+<text x="58" y="346" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">across all three sources - 3 unrelated-looking</text>
+<text x="58" y="367" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">events become 1 incident</text>
+<rect x="40" y="404" width="380" height="108" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="58" y="430" font-size="15" font-weight="bold" fill="#e6edf3">One risk-ranked incident:</text>
+<text x="58" y="451" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">&quot;workspace X - proxy denial, then a</text>
+<text x="58" y="472" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">VLAN-102 IDS hit, then an anomalous syscall</text>
+<text x="58" y="493" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">in the same sandbox, within 3 seconds&quot;</text>
 <marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/></marker>
-<polyline points="200,260 230,284" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<polyline points="600,260 230,284" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<polyline points="1000,260 1036,260 1036,284 230,284" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<polyline points="230,392 230,416" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="200,260 230,278" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="600,260 230,278" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="1000,260 1036,260 1036,278 230,278" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="230,386 230,404" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
 </svg>

@@ -4,7 +4,7 @@
   "tree": {
     "type": "column",
     "style": {
-      "gap": 30
+      "gap": 18
     },
     "children": [
       {
@@ -20,7 +20,10 @@
             "lines": [
               "bots · scanners · users"
             ],
-            "color": "gray"
+            "color": "gray",
+            "style": {
+              "padding": 16
+            }
           },
           {
             "id": "edge",
@@ -28,7 +31,8 @@
             "title": "Edge: firewall + WAF",
             "color": "gray",
             "style": {
-              "maxWidth": 430
+              "maxWidth": 430,
+              "padding": 16
             },
             "lines": [
               "firewall: only required ports open (443)",
@@ -44,7 +48,8 @@
             "title": "Application / gateway",
             "color": "gray",
             "style": {
-              "maxWidth": 350
+              "maxWidth": 350,
+              "padding": 16
             },
             "lines": [
               "checks identity (minted sessions),",
@@ -75,7 +80,8 @@
             "title": "Blocked & logged",
             "color": "red",
             "style": {
-              "maxWidth": 500
+              "maxWidth": 500,
+              "padding": 16
             },
             "lines": [
               "a rejected connection is a log entry, never a silent drop -",
@@ -87,6 +93,9 @@
             "type": "card",
             "title": "Allowed → backend",
             "color": "green",
+            "style": {
+              "padding": 16
+            },
             "lines": [
               "egress-allowlisted upstream only"
             ]
@@ -102,7 +111,8 @@
             "color": "gray",
             "style": {
               "width": 1120,
-              "maxWidth": 1120
+              "maxWidth": 1120,
+              "padding": 16
             },
             "lines": [
               "Open source: nftables/ufw + Coraza or ModSecurity (OWASP CRS)",

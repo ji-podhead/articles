@@ -1,130 +1,99 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1111" viewBox="0 0 1200 1111" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
-<rect width="1200" height="1111" fill="#0d1117"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1127" viewBox="0 0 1200 1127" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="1127" fill="#0d1117"/>
 <text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">The real open-source landscape (every one of these</text>
 <text x="40" y="94" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">independently verified, not taken on an AI summary's word)</text>
-<rect x="40" y="110" width="410" height="45" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
-<text x="58" y="136" font-size="15" font-weight="bold" fill="#8b949e">Tool</text>
+<rect x="38" y="110" width="410" height="45" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="56" y="136" font-size="15" font-weight="bold" fill="#8b949e">Tool</text>
 <rect x="454" y="110" width="270" height="45" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
 <text x="472" y="136" font-size="15" font-weight="bold" fill="#8b949e">Layer</text>
-<rect x="728" y="110" width="432" height="45" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
-<text x="746" y="136" font-size="15" font-weight="bold" fill="#8b949e">What it actually does</text>
-<rect x="40" y="159" width="410" height="150" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
-<text x="58" y="185" font-size="15" font-weight="bold" fill="#8b949e">Pipelock</text>
-<text x="58" y="206" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">github.com/luckyPipewrench/pipelock</text>
-<text x="58" y="227" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Apache 2.0 core, Go</text>
-<text x="58" y="248" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="58" y="269" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="58" y="290" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<rect x="454" y="159" width="270" height="150" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
-<rect x="454" y="159" width="5" height="150" rx="2.5" fill="#60a5fa"/>
-<text x="472" y="185" font-size="15" font-weight="bold" fill="#60a5fa">Network mediation</text>
-<text x="472" y="206" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="472" y="227" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="472" y="248" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="472" y="269" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="472" y="290" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<rect x="728" y="159" width="432" height="150" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="746" y="185" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Agent holds secrets but no direct network access;</text>
-<text x="746" y="206" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Pipelock holds network access but no agent secrets.</text>
-<text x="746" y="227" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Emits mediator-signed action receipts per call,</text>
-<text x="746" y="248" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">offline-verifiable proof of which agent/thread did</text>
-<text x="746" y="269" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">what, without a shared credential ever being</text>
-<text x="746" y="290" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">trusted.</text>
-<rect x="40" y="313" width="410" height="129" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
-<text x="58" y="339" font-size="15" font-weight="bold" fill="#8b949e">Agent Wall</text>
-<text x="58" y="360" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">github.com/agent-wall/agent-wall</text>
-<text x="58" y="381" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">MIT</text>
-<text x="58" y="402" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="58" y="423" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<rect x="454" y="313" width="270" height="129" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
-<rect x="454" y="313" width="5" height="129" rx="2.5" fill="#60a5fa"/>
-<text x="472" y="339" font-size="15" font-weight="bold" fill="#60a5fa">MCP reverse proxy</text>
-<text x="472" y="360" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="472" y="381" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="472" y="402" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="472" y="423" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<rect x="728" y="313" width="432" height="129" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="746" y="339" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">&quot;Cloudflare for AI agents&quot;, wraps an MCP server</text>
-<text x="746" y="360" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">transparently. Inbound: kill switches, injection</text>
-<text x="746" y="381" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">detection. Outbound: scans responses for 14 secret</text>
-<text x="746" y="402" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">+ 5 PII patterns before they reach the LLM. YAML</text>
-<text x="746" y="423" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">policy, allow/deny/prompt per rule.</text>
-<rect x="40" y="446" width="410" height="108" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
-<text x="58" y="472" font-size="15" font-weight="bold" fill="#8b949e">LlamaFirewall</text>
-<text x="58" y="493" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">arxiv.org/abs/2505.03574 (Meta)</text>
-<text x="58" y="514" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Purple Llama, open source</text>
-<text x="58" y="535" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<rect x="454" y="446" width="270" height="108" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
-<rect x="454" y="446" width="5" height="108" rx="2.5" fill="#60a5fa"/>
-<text x="472" y="472" font-size="15" font-weight="bold" fill="#60a5fa">Content safety</text>
-<text x="472" y="493" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="472" y="514" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="472" y="535" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<rect x="728" y="446" width="432" height="108" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="746" y="472" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">PromptGuard 2 + Agent Alignment Checks</text>
-<text x="746" y="493" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">(chain-of-thought auditor) + CodeShield.</text>
-<text x="746" y="514" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Not authorization, see the Big Tech diagram for why</text>
-<text x="746" y="535" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">this is a separate layer.</text>
-<rect x="40" y="558" width="410" height="129" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
-<text x="58" y="584" font-size="15" font-weight="bold" fill="#8b949e">Cedar / Open Policy Agent</text>
-<text x="58" y="605" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">cedarpolicy.com/en · openpolicyagent.org</text>
-<text x="58" y="626" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Cedar: AWS. OPA: CNCF-graduated.</text>
-<text x="58" y="647" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="58" y="668" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<rect x="454" y="558" width="270" height="129" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
-<rect x="454" y="558" width="5" height="129" rx="2.5" fill="#60a5fa"/>
-<text x="472" y="584" font-size="15" font-weight="bold" fill="#60a5fa">Policy-as-code</text>
-<text x="472" y="605" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="472" y="626" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="472" y="647" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="472" y="668" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<rect x="728" y="558" width="432" height="129" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="746" y="584" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Deterministic, formally-checkable allow/deny</text>
-<text x="746" y="605" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">languages. The decision is plain code, an LLM</text>
-<text x="746" y="626" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">cannot argue its way past a Rego or Cedar policy. A</text>
-<text x="746" y="647" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">platform can already build its own capability gate</text>
-<text x="746" y="668" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">on top of either engine directly.</text>
-<rect x="40" y="691" width="410" height="129" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
-<text x="58" y="717" font-size="15" font-weight="bold" fill="#8b949e">SPIFFE / SPIRE</text>
-<text x="58" y="738" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">spiffe.io</text>
-<text x="58" y="759" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">CNCF standard</text>
-<text x="58" y="780" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="58" y="801" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<rect x="454" y="691" width="270" height="129" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
-<rect x="454" y="691" width="5" height="129" rx="2.5" fill="#60a5fa"/>
-<text x="472" y="717" font-size="15" font-weight="bold" fill="#60a5fa">Workload identity</text>
-<text x="472" y="738" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="472" y="759" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="472" y="780" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="472" y="801" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<rect x="728" y="691" width="432" height="129" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="746" y="717" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Short-lived X.509 (X.509-SVID) or JWT (JWT-SVID)</text>
-<text x="746" y="738" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">issued after a local attestor verifies HOW a process</text>
-<text x="746" y="759" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">launched, distinguishes process A from process B on</text>
-<text x="746" y="780" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">the same host, even sharing one container image</text>
-<text x="746" y="801" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">and one IAM role.</text>
-<rect x="40" y="824" width="410" height="129" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
-<text x="58" y="850" font-size="15" font-weight="bold" fill="#8b949e">Coder</text>
-<text x="58" y="871" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">coder.com/docs</text>
-<text x="58" y="892" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">verified via own docs</text>
-<text x="58" y="913" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="58" y="934" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<rect x="454" y="824" width="270" height="129" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
-<rect x="454" y="824" width="5" height="129" rx="2.5" fill="#60a5fa"/>
-<text x="472" y="850" font-size="15" font-weight="bold" fill="#60a5fa">Control-plane isolation</text>
-<text x="472" y="871" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="472" y="892" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="472" y="913" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<text x="472" y="934" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif"></text>
-<rect x="728" y="824" width="432" height="129" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="746" y="850" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">The agent LOOP runs in Coder's control plane, never</text>
-<text x="746" y="871" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">inside the workspace, so a workspace never holds</text>
-<text x="746" y="892" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">an LLM-calling credential at all, by construction. No</text>
-<text x="746" y="913" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">dedicated agent firewall or per-project RBAC</text>
-<text x="746" y="934" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">described in their own docs, though.</text>
-<rect x="40" y="969" width="1120" height="108" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
-<text x="58" y="995" font-size="15" font-weight="bold" fill="#8b949e">None of these is a substitute for the others, and none of them is &quot;infrastructure&quot;</text>
-<text x="58" y="1016" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Every tool above is a layer you bolt onto a network/containers/agents you already have. A platform that provisions the network, the egress</text>
-<text x="58" y="1037" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">firewall, and the containers itself gets that isolation by construction, the tools above add it gets deployed in the first place. The ideas above are</text>
-<text x="58" y="1058" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">worth adopting selectively, see the full research for exactly which two.</text>
+<rect x="730" y="110" width="432" height="45" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="748" y="136" font-size="15" font-weight="bold" fill="#8b949e">What it actually does</text>
+<rect x="38" y="161" width="410" height="87" rx="11" fill="#1c2128" stroke="#30363d" stroke-width="2"/>
+<image href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmZmZmIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+R2l0SHViPC90aXRsZT48cGF0aCBkPSJNMTIgLjI5N2MtNi42MyAwLTEyIDUuMzczLTEyIDEyIDAgNS4zMDMgMy40MzggOS44IDguMjA1IDExLjM4NS42LjExMy44Mi0uMjU4LjgyLS41NzcgMC0uMjg1LS4wMS0xLjA0LS4wMTUtMi4wNC0zLjMzOC43MjQtNC4wNDItMS42MS00LjA0Mi0xLjYxQzQuNDIyIDE4LjA3IDMuNjMzIDE3LjcgMy42MzMgMTcuN2MtMS4wODctLjc0NC4wODQtLjcyOS4wODQtLjcyOSAxLjIwNS4wODQgMS44MzggMS4yMzYgMS44MzggMS4yMzYgMS4wNyAxLjgzNSAyLjgwOSAxLjMwNSAzLjQ5NS45OTguMTA4LS43NzYuNDE3LTEuMzA1Ljc2LTEuNjA1LTIuNjY1LS4zLTUuNDY2LTEuMzMyLTUuNDY2LTUuOTMgMC0xLjMxLjQ2NS0yLjM4IDEuMjM1LTMuMjItLjEzNS0uMzAzLS41NC0xLjUyMy4xMDUtMy4xNzYgMCAwIDEuMDA1LS4zMjIgMy4zIDEuMjMuOTYtLjI2NyAxLjk4LS4zOTkgMy0uNDA1IDEuMDIuMDA2IDIuMDQuMTM4IDMgLjQwNSAyLjI4LTEuNTUyIDMuMjg1LTEuMjMgMy4yODUtMS4yMy42NDUgMS42NTMuMjQgMi44NzMuMTIgMy4xNzYuNzY1Ljg0IDEuMjMgMS45MSAxLjIzIDMuMjIgMCA0LjYxLTIuODA1IDUuNjI1LTUuNDc1IDUuOTIuNDIuMzYuODEgMS4wOTYuODEgMi4yMiAwIDEuNjA2LS4wMTUgMi44OTYtLjAxNSAzLjI4NiAwIC4zMTUuMjEuNjkuODI1LjU3QzIwLjU2NSAyMi4wOTIgMjQgMTcuNTkyIDI0IDEyLjI5N2MwLTYuNjI3LTUuMzczLTEyLTEyLTEyIi8+PC9zdmc+" x="410" y="171" width="24" height="24"/>
+<text x="56" y="187" font-size="15" font-weight="bold" fill="#e6edf3">Pipelock</text>
+<text x="56" y="208" font-size="13.5" fill="#79c0ff" font-family="'JetBrains Mono', 'DejaVu Sans Mono', monospace">github.com/luckyPipewrench/pipelock</text>
+<text x="56" y="229" font-size="13.5" fill="#79c0ff" font-family="'JetBrains Mono', 'DejaVu Sans Mono', monospace">Apache 2.0 core, Go</text>
+<rect x="454" y="161" width="270" height="45" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="454" y="161" width="5" height="45" rx="2.5" fill="#60a5fa"/>
+<text x="472" y="187" font-size="15" font-weight="bold" fill="#60a5fa">Network mediation</text>
+<rect x="730" y="161" width="432" height="150" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="748" y="187" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Agent holds secrets but no direct network access;</text>
+<text x="748" y="208" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Pipelock holds network access but no agent secrets.</text>
+<text x="748" y="229" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Emits mediator-signed action receipts per call,</text>
+<text x="748" y="250" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">offline-verifiable proof of which agent/thread did</text>
+<text x="748" y="271" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">what, without a shared credential ever being</text>
+<text x="748" y="292" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">trusted.</text>
+<rect x="38" y="317" width="410" height="87" rx="11" fill="#1c2128" stroke="#30363d" stroke-width="2"/>
+<image href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmZmZmIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+Q2xvdWRmbGFyZTwvdGl0bGU+PHBhdGggZD0iTTE2LjUwODggMTYuODQ0N2MuMTQ3NS0uNTA2OC4wOTA4LS45NzA3LS4xNTUzLTEuMzE1NC0uMjI0Ni0uMzE2NC0uNjA0NS0uNDk5LTEuMDYxNS0uNTIwNWwtOC42NTkyLS4xMTIzYS4xNTU5LjE1NTkgMCAwIDEtLjEzMzMtLjA3MTNjLS4wMjgzLS4wNDItLjAzNTEtLjA5ODYtLjAyMS0uMTU1My4wMjc4LS4wODQuMTEyMy0uMTQ4NC4yMDM2LS4xNTYybDguNzM1OS0uMTEyM2MxLjAzNTEtLjA0ODkgMi4xNjAxLS44ODY4IDIuNTUzNy0xLjkxMzZsLjQ5OS0xLjMwMTNjLjAyMTUtLjA1NjEuMDI5My0uMTEyOC4wMTQ3LS4xNjgtLjU2MjUtMi41NDYzLTIuODM1LTQuNDQ1My01LjU0OTktNC40NDUzLTIuNTAzOSAwLTQuNjI4NCAxLjYxNzctNS4zODc2IDMuODYxNC0uNDkyNy0uMzY1OC0xLjExODctLjU2MjUtMS43OTQtLjQ5OS0xLjIwMjYuMTE5LTIuMTY2NSAxLjA4My0yLjI4NjEgMi4yODU2LS4wMjgzLjMxLS4wMDY5LjYxMjguMDYzNS44OTRDMS41NjgzIDEzLjE3MSAwIDE0Ljc3NTQgMCAxNi43NTJjMCAuMTc0OC4wMTQyLjM1MTUuMDM1Mi41MjczLjAxNDEuMDgzLjA4NDQuMTQ3NS4xNjg5LjE0NzVoMTUuOTgxNGMuMDkwOSAwIC4xNzU4LS4wNjQ1LjIwMzItLjE1NTNsLjEyLS40MjY4em0yLjc1NjgtNS41NjM0Yy0uMDc3MSAwLS4xNjExIDAtLjIzODMuMDExMi0uMDU2NiAwLS4xMDU0LjA0MTUtLjEyNy4wOTc2bC0uMzM3OCAxLjE3NDRjLS4xNDc1LjUwNjgtLjA5MTguOTcwNy4xNTQzIDEuMzE2NC4yMjU2LjMxNjQuNjA1NS40OTggMS4wNjI1LjUxOTVsMS44NDM3LjExMzNjLjA1NTcgMCAuMTA1NS4wMjYzLjEzMjkuMDcwMy4wMjgzLjA0My4wMzUxLjEwNzQuMDIxNC4xNTYyLS4wMjgzLjA4NC0uMTEzMi4xNDg1LS4yMDQuMTU1M2wtMS45MjEuMTEyM2MtMS4wNDEuMDQ4OC0yLjE1ODIuODg2Ny0yLjU1MjcgMS45MTRsLS4xNDA2LjM1ODVjLS4wMjgzLjA3MTMuMDIxNS4xNDE2LjA5ODYuMTQxNmg2LjU5NzdjLjA3NzEgMCAuMTQ3NC0uMDQ4OS4xNjktLjEyNi4xMTIyLS40MDgyLjE3NTctLjgzNy4xNzU3LTEuMjgwMyAwLTIuNjAyNS0yLjEyNS00LjcyNy00LjczNDQtNC43MjciLz48L3N2Zz4=" x="410" y="327" width="24" height="24"/>
+<text x="56" y="343" font-size="15" font-weight="bold" fill="#e6edf3">Agent Wall</text>
+<text x="56" y="364" font-size="13.5" fill="#79c0ff" font-family="'JetBrains Mono', 'DejaVu Sans Mono', monospace">github.com/agent-wall/agent-wall</text>
+<text x="56" y="385" font-size="13.5" fill="#79c0ff" font-family="'JetBrains Mono', 'DejaVu Sans Mono', monospace">MIT</text>
+<rect x="454" y="317" width="270" height="45" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="454" y="317" width="5" height="45" rx="2.5" fill="#60a5fa"/>
+<text x="472" y="343" font-size="15" font-weight="bold" fill="#60a5fa">MCP reverse proxy</text>
+<rect x="730" y="317" width="432" height="129" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="748" y="343" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">&quot;Cloudflare for AI agents&quot;, wraps an MCP server</text>
+<text x="748" y="364" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">transparently. Inbound: kill switches, injection</text>
+<text x="748" y="385" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">detection. Outbound: scans responses for 14 secret</text>
+<text x="748" y="406" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">+ 5 PII patterns before they reach the LLM. YAML</text>
+<text x="748" y="427" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">policy, allow/deny/prompt per rule.</text>
+<rect x="38" y="452" width="410" height="87" rx="11" fill="#1c2128" stroke="#30363d" stroke-width="2"/>
+<image href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmZmZmIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+SHVnZ2luZyBGYWNlPC90aXRsZT48cGF0aCBkPSJNMTIuMDI1IDEuMTNjLTUuNzcgMC0xMC40NDkgNC42NDctMTAuNDQ5IDEwLjM3OCAwIDEuMTEyLjE3OCAyLjE4MS41MDMgMy4xODUuMDY0LS4yMjIuMjAzLS40NDQuNDE2LS41NzdhLjk2Ljk2IDAgMCAxIC41MjQtLjE1Yy4yOTMgMCAuNTg0LjEyNC44NC4yODQuMjc4LjE3My40OC40MDguNzEuNjk0LjIyNi4yODIuNDU4LjYxMS42ODQuOTUxdi0uMDE0Yy4wMTctLjMyNC4xMDYtLjYyMi4yNjQtLjg3NHMuNDAzLS40ODcuNzYyLS41NDNjLjMtLjA0Ny41OTYuMDYuNzg3LjIwM3MuMzEuMzEzLjQuNDY3Yy4xNS4yNTcuMjEyLjQ2OC4yMzMuNTQyLjAxLjAyNi42NTMgMS41NTIgMS42NTcgMi41NC42MTYuNjA1IDEuMDEgMS4yMjMgMS4wODIgMS45MTIuMDU1LjUzNy0uMDk2IDEuMDU5LS4zOCAxLjU3Mi42MzcuMTIxIDEuMjk0LjE4NyAxLjk2Ny4xODcuNjU3IDAgMS4yOTgtLjA2MyAxLjkyMS0uMTc4LS4yODctLjUxNy0uNDQtMS4wNDEtLjM4NC0xLjU4MS4wNy0uNjkuNDY1LTEuMzA3IDEuMDgxLTEuOTEzIDEuMDA0LS45ODcgMS42NDctMi41MTMgMS42NTctMi41MzkuMDIxLS4wNzQuMDgzLS4yODUuMjMzLS41NDIuMDktLjE1NC4yMDgtLjMyMy40LS40NjdhMS4wOCAxLjA4IDAgMCAxIC43ODctLjIwM2MuMzU5LjA1Ni42MDQuMjkuNzYyLjU0M3MuMjQ3LjU1LjI2NS44NzR2LjAxNWMuMjI1LS4zNC40NTctLjY3LjY4My0uOTUyLjIzLS4yODYuNDMyLS41Mi43MS0uNjk0LjI1Ny0uMTYuNTQ3LS4yODQuODQtLjI4NWEuOTcuOTcgMCAwIDEgLjUyNC4xNTFjLjIyOC4xNDMuMzczLjM4OC40My42MjVsLjAwNi4wNGExMC4zIDEwLjMgMCAwIDAgLjUzNC0zLjI3M2MwLTUuNzMxLTQuNjc4LTEwLjM3OC0xMC40NDktMTAuMzc4TTguMzI3IDYuNTgzYTEuNSAxLjUgMCAwIDEgLjcxMy4xNzQgMS40ODcgMS40ODcgMCAwIDEgLjYxNyAyLjAxM2MtLjE4My4zNDMtLjc2Mi0uMjE0LTEuMTAyLS4wOTQtLjM4LjEzNC0uNTMyLjkxNC0uOTE3LjcxYTEuNDg3IDEuNDg3IDAgMCAxIC42OS0yLjgwM203LjQ4NiAwYTEuNDg3IDEuNDg3IDAgMCAxIC42ODkgMi44MDNjLS4zODUuMjA0LS41MzYtLjU3Ni0uOTE2LS43MS0uMzQtLjEyLS45Mi40MzctMS4xMDMuMDk0YTEuNDg3IDEuNDg3IDAgMCAxIC42MTctMi4wMTMgMS41IDEuNSAwIDAgMSAuNzEzLS4xNzRtLTEwLjY4IDEuNTVhLjk2Ljk2IDAgMSAxIDAgMS45MjEuOTYuOTYgMCAwIDEgMC0xLjkybTEzLjgzOCAwYS45Ni45NiAwIDEgMSAwIDEuOTIuOTYuOTYgMCAwIDEgMC0xLjkyTTguNDg5IDExLjQ1OGMuNTg4LjAxIDEuOTY1IDEuMTU3IDMuNTcyIDEuMTY0IDEuNjA3LS4wMDcgMi45ODQtMS4xNTUgMy41NzItMS4xNjQuMTk2LS4wMDMuMzA1LjEyLjMwNS40NTQgMCAuODg2LS40MjQgMi4zMjgtMS41NjMgMy4yMDItLjIyLS43NTYtMS4zOTYtMS4zNjYtMS42My0xLjMycS0uMDExLjAwMS0uMDIuMDA2bC0uMDQ0LjAyNi0uMDEuMDA4LS4wMy4wMjRxLS4wMTguMDE3LS4wMzUuMDM2bC0uMDMyLjA0YTEgMSAwIDAgMC0uMDU4LjA5bC0uMDE0LjAyNXEtLjA0OS4wODgtLjExLjE5YTEgMSAwIDAgMS0uMDgzLjExNiAxLjIgMS4yIDAgMCAxLS4xNzMuMThxLS4wMzUuMDI5LS4wNzUuMDU4YTEuMyAxLjMgMCAwIDEtLjI1MS0uMjQzIDEgMSAwIDAgMS0uMDc2LS4xMDdjLS4xMjQtLjE5My0uMTc3LS4zNjMtLjMzNy0uNDQ0LS4wMzQtLjAxNi0uMTA0LS4wMDgtLjIuMDIycS0uMDk0LjAzLS4yMTYuMDg3LS4wNi4wMjgtLjEyNS4wNjNsLS4xMy4wNzRxLS4wNjcuMDQtLjEzNi4wODZhMyAzIDAgMCAwLS4xMzUuMDk2IDMgMyAwIDAgMC0uMjYuMjE5IDIgMiAwIDAgMC0uMTIuMTIxIDIgMiAwIDAgMC0uMTA2LjEyOGwtLjAwMi4wMDJhMiAyIDAgMCAwLS4wOS4xMzJsLS4wMDEuMDAxYTEuMiAxLjIgMCAwIDAtLjEwNS4yMTJxLS4wMTMuMDM2LS4wMjQuMDczYy0xLjEzOS0uODc1LTEuNTYzLTIuMzE3LTEuNTYzLTMuMjAzIDAtLjMzNC4xMDktLjQ1Ny4zMDUtLjQ1NG0uODM2IDEwLjM1NGMuODI0LTEuMTkuNzY2LTIuMDgyLS4zNjUtMy4xOTQtMS4xMy0xLjExMi0xLjc4OS0yLjczOC0xLjc4OS0yLjczOHMtLjI0Ni0uOTQ1LS44MDYtLjg1OC0uOTcgMS40OTkuMjAyIDIuMzYyYzEuMTczLjg2NC0uMjMzIDEuNDUtLjY4NS42NC0uNDUtLjgxMi0xLjY4My0yLjg5Ni0yLjMyMi0zLjI5NXMtMS4wODktLjE3NS0uOTM4LjY0NyAyLjgyMiAyLjgxMyAyLjU2MiAzLjI0NC0xLjE3Ni0uNTA2LTEuMTc2LS41MDYtMi44NjYtMi41NjctMy40OS0xLjg5OC40NzMgMS4yMyAyLjAzNyAyLjE2YzEuNTY0LjkzMiAxLjY4NiAxLjE3OCAxLjQ2NCAxLjUzcy0zLjY3NS0yLjUxMS00LTEuMjk3Yy0uMzIzIDEuMjE0IDMuNTI0IDEuNTY3IDMuMjg3IDIuNDA1LS4yMzguODM5LTIuNzEtMS41ODctMy4yMTYtLjY0Mi0uNTA2Ljk0NiAzLjQ5IDIuMDU2IDMuNTIyIDIuMDY0IDEuMjkuMzMgNC41NjggMS4wMjggNS43MTMtLjYyNG01LjM0OSAwYy0uODI0LTEuMTktLjc2Ni0yLjA4Mi4zNjUtMy4xOTQgMS4xMy0xLjExMiAxLjc4OS0yLjczOCAxLjc4OS0yLjczOHMuMjQ2LS45NDUuODA2LS44NTguOTcgMS40OTktLjIwMiAyLjM2MmMtMS4xNzMuODY0LjIzMyAxLjQ1LjY4NS42NC40NTEtLjgxMiAxLjY4My0yLjg5NiAyLjMyMi0zLjI5NXMxLjA4OS0uMTc1LjkzOC42NDctMi44MjIgMi44MTMtMi41NjIgMy4yNDQgMS4xNzYtLjUwNiAxLjE3Ni0uNTA2IDIuODY2LTIuNTY3IDMuNDktMS44OTgtLjQ3MyAxLjIzLTIuMDM3IDIuMTZjLTEuNTY0LjkzMi0xLjY4NiAxLjE3OC0xLjQ2NCAxLjUzczMuNjc1LTIuNTExIDQtMS4yOTdjLjMyMyAxLjIxNC0zLjUyNCAxLjU2Ny0zLjI4NyAyLjQwNS4yMzguODM5IDIuNzEtMS41ODcgMy4yMTYtLjY0Mi41MDYuOTQ2LTMuNDkgMi4wNTYtMy41MjIgMi4wNjQtMS4yOS4zMy00LjU2OCAxLjAyOC01LjcxMy0uNjI0Ii8+PC9zdmc+" x="410" y="462" width="24" height="24"/>
+<text x="56" y="478" font-size="15" font-weight="bold" fill="#e6edf3">LlamaFirewall</text>
+<text x="56" y="499" font-size="13.5" fill="#79c0ff" font-family="'JetBrains Mono', 'DejaVu Sans Mono', monospace">arxiv.org/abs/2505.03574 (Meta)</text>
+<text x="56" y="520" font-size="13.5" fill="#79c0ff" font-family="'JetBrains Mono', 'DejaVu Sans Mono', monospace">Purple Llama, open source</text>
+<rect x="454" y="452" width="270" height="45" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="454" y="452" width="5" height="45" rx="2.5" fill="#60a5fa"/>
+<text x="472" y="478" font-size="15" font-weight="bold" fill="#60a5fa">Content safety</text>
+<rect x="730" y="452" width="432" height="108" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="748" y="478" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">PromptGuard 2 + Agent Alignment Checks</text>
+<text x="748" y="499" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">(chain-of-thought auditor) + CodeShield.</text>
+<text x="748" y="520" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Not authorization, see the Big Tech diagram for why</text>
+<text x="748" y="541" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">this is a separate layer.</text>
+<rect x="38" y="566" width="410" height="87" rx="11" fill="#1c2128" stroke="#30363d" stroke-width="2"/>
+<image href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmZmZmIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+R2l0SHViPC90aXRsZT48cGF0aCBkPSJNMTIgLjI5N2MtNi42MyAwLTEyIDUuMzczLTEyIDEyIDAgNS4zMDMgMy40MzggOS44IDguMjA1IDExLjM4NS42LjExMy44Mi0uMjU4LjgyLS41NzcgMC0uMjg1LS4wMS0xLjA0LS4wMTUtMi4wNC0zLjMzOC43MjQtNC4wNDItMS42MS00LjA0Mi0xLjYxQzQuNDIyIDE4LjA3IDMuNjMzIDE3LjcgMy42MzMgMTcuN2MtMS4wODctLjc0NC4wODQtLjcyOS4wODQtLjcyOSAxLjIwNS4wODQgMS44MzggMS4yMzYgMS44MzggMS4yMzYgMS4wNyAxLjgzNSAyLjgwOSAxLjMwNSAzLjQ5NS45OTguMTA4LS43NzYuNDE3LTEuMzA1Ljc2LTEuNjA1LTIuNjY1LS4zLTUuNDY2LTEuMzMyLTUuNDY2LTUuOTMgMC0xLjMxLjQ2NS0yLjM4IDEuMjM1LTMuMjItLjEzNS0uMzAzLS41NC0xLjUyMy4xMDUtMy4xNzYgMCAwIDEuMDA1LS4zMjIgMy4zIDEuMjMuOTYtLjI2NyAxLjk4LS4zOTkgMy0uNDA1IDEuMDIuMDA2IDIuMDQuMTM4IDMgLjQwNSAyLjI4LTEuNTUyIDMuMjg1LTEuMjMgMy4yODUtMS4yMy42NDUgMS42NTMuMjQgMi44NzMuMTIgMy4xNzYuNzY1Ljg0IDEuMjMgMS45MSAxLjIzIDMuMjIgMCA0LjYxLTIuODA1IDUuNjI1LTUuNDc1IDUuOTIuNDIuMzYuODEgMS4wOTYuODEgMi4yMiAwIDEuNjA2LS4wMTUgMi44OTYtLjAxNSAzLjI4NiAwIC4zMTUuMjEuNjkuODI1LjU3QzIwLjU2NSAyMi4wOTIgMjQgMTcuNTkyIDI0IDEyLjI5N2MwLTYuNjI3LTUuMzczLTEyLTEyLTEyIi8+PC9zdmc+" x="410" y="576" width="24" height="24"/>
+<text x="56" y="592" font-size="15" font-weight="bold" fill="#e6edf3">Cedar / Open Policy Agent</text>
+<text x="56" y="613" font-size="13.5" fill="#79c0ff" font-family="'JetBrains Mono', 'DejaVu Sans Mono', monospace">cedarpolicy.com/en · openpolicyagent.org</text>
+<text x="56" y="634" font-size="13.5" fill="#79c0ff" font-family="'JetBrains Mono', 'DejaVu Sans Mono', monospace">Cedar: AWS. OPA: CNCF-graduated.</text>
+<rect x="454" y="566" width="270" height="45" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="454" y="566" width="5" height="45" rx="2.5" fill="#60a5fa"/>
+<text x="472" y="592" font-size="15" font-weight="bold" fill="#60a5fa">Policy-as-code</text>
+<rect x="730" y="566" width="432" height="129" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="748" y="592" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Deterministic, formally-checkable allow/deny</text>
+<text x="748" y="613" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">languages. The decision is plain code, an LLM</text>
+<text x="748" y="634" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">cannot argue its way past a Rego or Cedar policy. A</text>
+<text x="748" y="655" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">platform can already build its own capability gate</text>
+<text x="748" y="676" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">on top of either engine directly.</text>
+<rect x="38" y="701" width="410" height="87" rx="11" fill="#1c2128" stroke="#30363d" stroke-width="2"/>
+<text x="56" y="727" font-size="15" font-weight="bold" fill="#e6edf3">SPIFFE / SPIRE</text>
+<text x="56" y="748" font-size="13.5" fill="#79c0ff" font-family="'JetBrains Mono', 'DejaVu Sans Mono', monospace">spiffe.io</text>
+<text x="56" y="769" font-size="13.5" fill="#79c0ff" font-family="'JetBrains Mono', 'DejaVu Sans Mono', monospace">CNCF standard</text>
+<rect x="454" y="701" width="270" height="45" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="454" y="701" width="5" height="45" rx="2.5" fill="#60a5fa"/>
+<text x="472" y="727" font-size="15" font-weight="bold" fill="#60a5fa">Workload identity</text>
+<rect x="730" y="701" width="432" height="129" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="748" y="727" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Short-lived X.509 (X.509-SVID) or JWT (JWT-SVID)</text>
+<text x="748" y="748" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">issued after a local attestor verifies HOW a process</text>
+<text x="748" y="769" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">launched, distinguishes process A from process B on</text>
+<text x="748" y="790" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">the same host, even sharing one container image</text>
+<text x="748" y="811" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">and one IAM role.</text>
+<rect x="38" y="836" width="410" height="87" rx="11" fill="#1c2128" stroke="#30363d" stroke-width="2"/>
+<image href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmZmZmIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+R2l0SHViPC90aXRsZT48cGF0aCBkPSJNMTIgLjI5N2MtNi42MyAwLTEyIDUuMzczLTEyIDEyIDAgNS4zMDMgMy40MzggOS44IDguMjA1IDExLjM4NS42LjExMy44Mi0uMjU4LjgyLS41NzcgMC0uMjg1LS4wMS0xLjA0LS4wMTUtMi4wNC0zLjMzOC43MjQtNC4wNDItMS42MS00LjA0Mi0xLjYxQzQuNDIyIDE4LjA3IDMuNjMzIDE3LjcgMy42MzMgMTcuN2MtMS4wODctLjc0NC4wODQtLjcyOS4wODQtLjcyOSAxLjIwNS4wODQgMS44MzggMS4yMzYgMS44MzggMS4yMzYgMS4wNyAxLjgzNSAyLjgwOSAxLjMwNSAzLjQ5NS45OTguMTA4LS43NzYuNDE3LTEuMzA1Ljc2LTEuNjA1LTIuNjY1LS4zLTUuNDY2LTEuMzMyLTUuNDY2LTUuOTMgMC0xLjMxLjQ2NS0yLjM4IDEuMjM1LTMuMjItLjEzNS0uMzAzLS41NC0xLjUyMy4xMDUtMy4xNzYgMCAwIDEuMDA1LS4zMjIgMy4zIDEuMjMuOTYtLjI2NyAxLjk4LS4zOTkgMy0uNDA1IDEuMDIuMDA2IDIuMDQuMTM4IDMgLjQwNSAyLjI4LTEuNTUyIDMuMjg1LTEuMjMgMy4yODUtMS4yMy42NDUgMS42NTMuMjQgMi44NzMuMTIgMy4xNzYuNzY1Ljg0IDEuMjMgMS45MSAxLjIzIDMuMjIgMCA0LjYxLTIuODA1IDUuNjI1LTUuNDc1IDUuOTIuNDIuMzYuODEgMS4wOTYuODEgMi4yMiAwIDEuNjA2LS4wMTUgMi44OTYtLjAxNSAzLjI4NiAwIC4zMTUuMjEuNjkuODI1LjU3QzIwLjU2NSAyMi4wOTIgMjQgMTcuNTkyIDI0IDEyLjI5N2MwLTYuNjI3LTUuMzczLTEyLTEyLTEyIi8+PC9zdmc+" x="410" y="846" width="24" height="24"/>
+<text x="56" y="862" font-size="15" font-weight="bold" fill="#e6edf3">Coder</text>
+<text x="56" y="883" font-size="13.5" fill="#79c0ff" font-family="'JetBrains Mono', 'DejaVu Sans Mono', monospace">coder.com/docs</text>
+<text x="56" y="904" font-size="13.5" fill="#79c0ff" font-family="'JetBrains Mono', 'DejaVu Sans Mono', monospace">verified via own docs</text>
+<rect x="454" y="836" width="270" height="45" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="454" y="836" width="5" height="45" rx="2.5" fill="#60a5fa"/>
+<text x="472" y="862" font-size="15" font-weight="bold" fill="#60a5fa">Control-plane isolation</text>
+<rect x="730" y="836" width="432" height="129" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="748" y="862" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">The agent LOOP runs in Coder's control plane, never</text>
+<text x="748" y="883" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">inside the workspace, so a workspace never holds</text>
+<text x="748" y="904" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">an LLM-calling credential at all, by construction. No</text>
+<text x="748" y="925" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">dedicated agent firewall or per-project RBAC</text>
+<text x="748" y="946" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">described in their own docs, though.</text>
+<rect x="40" y="985" width="1120" height="108" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="58" y="1011" font-size="15" font-weight="bold" fill="#8b949e">None of these is a substitute for the others, and none of them is &quot;infrastructure&quot;</text>
+<text x="58" y="1032" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Every tool above is a layer you bolt onto a network/containers/agents you already have. A platform that provisions the network, the egress</text>
+<text x="58" y="1053" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">firewall, and the containers itself gets that isolation by construction, the tools above add it gets deployed in the first place. The ideas above are</text>
+<text x="58" y="1074" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">worth adopting selectively, see the full research for exactly which two.</text>
 </svg>

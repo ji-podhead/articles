@@ -40,7 +40,8 @@
             ],
             "style": {
               "flexGrow": 1,
-              "maxWidth": 208
+              "maxWidth": 208,
+              "padding": 16
             }
           },
           {
@@ -49,11 +50,12 @@
             "title": "GOAP",
             "lines": [
               "F.E.A.R. (2005)",
-              "goal→action planning"
+              "goal\u2192action planning"
             ],
             "style": {
               "flexGrow": 1,
-              "maxWidth": 208
+              "maxWidth": 208,
+              "padding": 16
             }
           },
           {
@@ -68,7 +70,8 @@
             "color": "blue",
             "style": {
               "flexGrow": 1,
-              "maxWidth": 208
+              "maxWidth": 208,
+              "padding": 16
             }
           },
           {
@@ -82,7 +85,8 @@
             ],
             "style": {
               "flexGrow": 1,
-              "maxWidth": 208
+              "maxWidth": 208,
+              "padding": 16
             }
           },
           {
@@ -91,12 +95,13 @@
             "title": "LLM Bridge",
             "lines": [
               "cutting edge",
-              "human → PDDL translation"
+              "human \u2192 PDDL translation"
             ],
             "color": "green",
             "style": {
               "flexGrow": 1,
-              "maxWidth": 208
+              "maxWidth": 208,
+              "padding": 16
             }
           }
         ]
@@ -123,14 +128,15 @@
               "skill",
               "skill",
               "",
-              "✓ Moment-to-moment reactive control",
-              "✓ BehaviorTree.CPP (ROS 2)",
-              "✓ Skills can be NN-powered"
+              "\u2713 Moment-to-moment reactive control",
+              "\u2713 BehaviorTree.CPP (ROS 2)",
+              "\u2713 Skills can be NN-powered"
             ],
             "color": "blue",
             "style": {
               "flexGrow": 1,
-              "maxWidth": 356
+              "maxWidth": 356,
+              "padding": 16
             }
           },
           {
@@ -142,11 +148,11 @@
               "",
               "PDDL Domain + Problem",
               "Dedicated Solver",
-              "Optimal Plan → Behavior Tree",
+              "Optimal Plan \u2192 Behavior Tree",
               "",
-              "✓ Complex multi-step tasks",
-              "✓ ROSPlan framework",
-              "✓ Formal guarantees",
+              "\u2713 Complex multi-step tasks",
+              "\u2713 ROSPlan framework",
+              "\u2713 Formal guarantees",
               "",
               "",
               "",
@@ -154,7 +160,8 @@
             ],
             "style": {
               "flexGrow": 1,
-              "maxWidth": 356
+              "maxWidth": 356,
+              "padding": 16
             }
           },
           {
@@ -168,18 +175,19 @@
               "\"clean the table\"",
               "LLM",
               "translate",
-              "structured PDDL → formal planner",
+              "structured PDDL \u2192 formal planner",
               "solver finds the optimal plan",
               "",
-              "✓ Doesn't replace layers 1+2",
-              "✓ Bridges human intent → formal",
-              "✓ Cutting edge (recent papers)",
+              "\u2713 Doesn't replace layers 1+2",
+              "\u2713 Bridges human intent \u2192 formal",
+              "\u2713 Cutting edge (recent papers)",
               ""
             ],
             "color": "green",
             "style": {
               "flexGrow": 1,
-              "maxWidth": 356
+              "maxWidth": 356,
+              "padding": 16
             }
           }
         ]
@@ -200,7 +208,7 @@
       {
         "type": "text",
         "lines": [
-          "GOAP (F.E.A.R.) → Behavior Trees (ROS 2) → PDDL (ROSPlan) → LLM Bridge (human → PDDL)"
+          "GOAP (F.E.A.R.) \u2192 Behavior Trees (ROS 2) \u2192 PDDL (ROSPlan) \u2192 LLM Bridge (human \u2192 PDDL)"
         ],
         "style": {
           "fontSize": 13,

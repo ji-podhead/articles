@@ -5,7 +5,7 @@
   "tree": {
     "type": "column",
     "style": {
-      "gap": 22,
+      "gap": 18,
       "align": "center"
     },
     "children": [
@@ -28,7 +28,8 @@
             "color": "green",
             "style": {
               "width": 500,
-              "maxWidth": 500
+              "maxWidth": 500,
+              "padding": 16
             }
           },
           {
@@ -56,7 +57,8 @@
             "color": "red",
             "style": {
               "width": 500,
-              "maxWidth": 500
+              "maxWidth": 500,
+              "padding": 16
             }
           }
         ]
@@ -67,7 +69,8 @@
         "color": "gray",
         "style": {
           "width": 1120,
-          "maxWidth": 1120
+          "maxWidth": 1120,
+          "padding": 16
         },
         "lines": [
           "If a per-user OAuth token for a connected inbox were stored today, scoping it to one agent via that field would be purely decorative.",
@@ -81,7 +84,8 @@
         "color": "gray",
         "style": {
           "width": 1120,
-          "maxWidth": 1120
+          "maxWidth": 1120,
+          "padding": 16
         },
         "lines": [
           "The data model for per-agent scoping already exists. This is a couple of missing comparisons in two functions, not a missing architecture: the verified identity already flows through every other code path in the system (the gateway diagram above). The store's own checks simply are not consuming it yet. Fixing it is small and surgical, precisely because everything else was built right."

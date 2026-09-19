@@ -5,7 +5,7 @@
   "tree": {
     "type": "column",
     "style": {
-      "gap": 24
+      "gap": 18
     },
     "children": [
       {
@@ -22,7 +22,10 @@
             "lines": [
               "networking"
             ],
-            "color": "blue"
+            "color": "blue",
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -31,7 +34,10 @@
             "lines": [
               "gVisor Sandboxing"
             ],
-            "color": "green"
+            "color": "green",
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -39,7 +45,10 @@
             "title": "Entity",
             "lines": [
               "gVisor Sentry"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -47,7 +56,10 @@
             "title": "Chunk",
             "lines": [
               "300-800 Tokens"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -55,7 +67,10 @@
             "title": "Entity B",
             "lines": [
               "Host Kernel"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           }
         ]
       }

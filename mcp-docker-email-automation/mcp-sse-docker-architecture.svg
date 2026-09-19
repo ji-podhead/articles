@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="962" viewBox="0 0 1200 962" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
-<rect width="1200" height="962" fill="#0d1117"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="920" viewBox="0 0 1200 920" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="920" fill="#0d1117"/>
 <text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">MCP-SSE DOCKER EMAIL AUTOMATION</text>
 <text x="40" y="100" font-size="17" fill="#8b949e">remote MCP servers via SSE transport → GenAI agents → email workflows</text>
 <rect x="177" y="106" width="269" height="150" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
@@ -17,53 +17,54 @@
 <text x="484" y="174" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">remote access bridge</text>
 <rect x="708" y="106" width="315" height="87" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
 <rect x="708" y="106" width="5" height="87" rx="2.5" fill="#60a5fa"/>
+<image href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmZmZmIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+RG9ja2VyPC90aXRsZT48cGF0aCBkPSJNMTMuOTgzIDExLjA3OGgyLjExOWEuMTg2LjE4NiAwIDAwLjE4Ni0uMTg1VjkuMDA2YS4xODYuMTg2IDAgMDAtLjE4Ni0uMTg2aC0yLjExOWEuMTg1LjE4NSAwIDAwLS4xODUuMTg1djEuODg4YzAgLjEwMi4wODMuMTg1LjE4NS4xODVtLTIuOTU0LTUuNDNoMi4xMThhLjE4Ni4xODYgMCAwMC4xODYtLjE4NlYzLjU3NGEuMTg2LjE4NiAwIDAwLS4xODYtLjE4NWgtMi4xMThhLjE4NS4xODUgMCAwMC0uMTg1LjE4NXYxLjg4OGMwIC4xMDIuMDgyLjE4NS4xODUuMTg1bTAgMi43MTZoMi4xMThhLjE4Ny4xODcgMCAwMC4xODYtLjE4NlY2LjI5YS4xODYuMTg2IDAgMDAtLjE4Ni0uMTg1aC0yLjExOGEuMTg1LjE4NSAwIDAwLS4xODUuMTg1djEuODg3YzAgLjEwMi4wODIuMTg1LjE4NS4xODZtLTIuOTMgMGgyLjEyYS4xODYuMTg2IDAgMDAuMTg0LS4xODZWNi4yOWEuMTg1LjE4NSAwIDAwLS4xODUtLjE4NUg4LjFhLjE4NS4xODUgMCAwMC0uMTg1LjE4NXYxLjg4N2MwIC4xMDIuMDgzLjE4NS4xODUuMTg2bS0yLjk2NCAwaDIuMTE5YS4xODYuMTg2IDAgMDAuMTg1LS4xODZWNi4yOWEuMTg1LjE4NSAwIDAwLS4xODUtLjE4NUg1LjEzNmEuMTg2LjE4NiAwIDAwLS4xODYuMTg1djEuODg3YzAgLjEwMi4wODQuMTg1LjE4Ni4xODZtNS44OTMgMi43MTVoMi4xMThhLjE4Ni4xODYgMCAwMC4xODYtLjE4NVY5LjAwNmEuMTg2LjE4NiAwIDAwLS4xODYtLjE4NmgtMi4xMThhLjE4NS4xODUgMCAwMC0uMTg1LjE4NXYxLjg4OGMwIC4xMDIuMDgyLjE4NS4xODUuMTg1bS0yLjkzIDBoMi4xMmEuMTg1LjE4NSAwIDAwLjE4NC0uMTg1VjkuMDA2YS4xODUuMTg1IDAgMDAtLjE4NC0uMTg2aC0yLjEyYS4xODUuMTg1IDAgMDAtLjE4NC4xODV2MS44ODhjMCAuMTAyLjA4My4xODUuMTg1LjE4NW0tMi45NjQgMGgyLjExOWEuMTg1LjE4NSAwIDAwLjE4NS0uMTg1VjkuMDA2YS4xODUuMTg1IDAgMDAtLjE4NC0uMTg2aC0yLjEyYS4xODYuMTg2IDAgMDAtLjE4Ni4xODZ2MS44ODdjMCAuMTAyLjA4NC4xODUuMTg2LjE4NW0tMi45MiAwaDIuMTJhLjE4NS4xODUgMCAwMC4xODQtLjE4NVY5LjAwNmEuMTg1LjE4NSAwIDAwLS4xODQtLjE4NmgtMi4xMmEuMTg1LjE4NSAwIDAwLS4xODQuMTg1djEuODg4YzAgLjEwMi4wODIuMTg1LjE4NS4xODVNMjMuNzYzIDkuODljLS4wNjUtLjA1MS0uNjcyLS41MS0xLjk1NC0uNTEtLjMzOC4wMDEtLjY3Ni4wMy0xLjAxLjA4Ny0uMjQ4LTEuNy0xLjY1My0yLjUzLTEuNzE2LTIuNTY2bC0uMzQ0LS4xOTktLjIyNi4zMjdjLS4yODQuNDM4LS40OS45MjItLjYxMiAxLjQzLS4yMy45Ny0uMDkgMS44ODIuNDAzIDIuNjYxLS41OTUuMzMyLTEuNTUuNDEzLTEuNzQ0LjQySC43NTFhLjc1MS43NTEgMCAwMC0uNzUuNzQ4IDExLjM3NiAxMS4zNzYgMCAwMC42OTIgNC4wNjJjLjU0NSAxLjQyOCAxLjM1NSAyLjQ4IDIuNDEgMy4xMjQgMS4xOC43MjMgMy4xIDEuMTM3IDUuMjc1IDEuMTM3Ljk4My4wMDMgMS45NjMtLjA4NiAyLjkzLS4yNjZhMTIuMjQ4IDEyLjI0OCAwIDAwMy44MjMtMS4zODljLjk4LS41NjcgMS44Ni0xLjI4OCAyLjYxLTIuMTM2IDEuMjUyLTEuNDE4IDEuOTk4LTIuOTk3IDIuNTUzLTQuNGguMjIxYzEuMzcyIDAgMi4yMTUtLjU0OSAyLjY4LTEuMDA5LjMwOS0uMjkzLjU1LS42NS43MDctMS4wNDZsLjA5OC0uMjg4WiIvPjwvc3ZnPg==" x="985" y="116" width="24" height="24"/>
 <text x="726" y="132" font-size="15" font-weight="bold" fill="#60a5fa">Docker Container</text>
 <text x="726" y="153" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">isolated per-agent environment</text>
 <text x="726" y="174" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">base image</text>
-<rect x="335" y="280" width="232" height="87" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="353" y="306" font-size="15" font-weight="bold" fill="#e6edf3">MCP-Bridge</text>
-<text x="353" y="327" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">remote access via SSE</text>
-<text x="353" y="348" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">script to start it</text>
-<rect x="587" y="280" width="278" height="87" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="605" y="306" font-size="15" font-weight="bold" fill="#e6edf3">MCP Server (JS)</text>
-<text x="605" y="327" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">email automation tools</text>
-<text x="605" y="348" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">🔒 credentials stored here</text>
-<rect x="40" y="391" width="251" height="45" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="58" y="417" font-size="15" font-weight="bold" fill="#e6edf3">WHY THIS ARCHITECTURE</text>
-<rect x="321" y="460" width="260" height="87" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
-<rect x="321" y="460" width="5" height="87" rx="2.5" fill="#60a5fa"/>
-<text x="339" y="486" font-size="15" font-weight="bold" fill="#60a5fa">CI/CD SEAMLESS</text>
-<text x="339" y="507" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Docker enables automated</text>
-<text x="339" y="528" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">build + deploy pipelines</text>
-<rect x="601" y="460" width="278" height="87" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
-<rect x="601" y="460" width="5" height="87" rx="2.5" fill="#60a5fa"/>
-<text x="619" y="486" font-size="15" font-weight="bold" fill="#60a5fa">SECURE ISOLATION</text>
-<text x="619" y="507" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Docker containers provide</text>
-<text x="619" y="528" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">isolated, portable runtime</text>
-<rect x="316" y="571" width="288" height="87" rx="11" fill="#161b22" stroke="#f59e0b" stroke-width="2"/>
-<rect x="316" y="571" width="5" height="87" rx="2.5" fill="#f59e0b"/>
-<text x="334" y="597" font-size="15" font-weight="bold" fill="#f59e0b">NETWORK SEGMENTATION</text>
-<text x="334" y="618" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">each agent = own container</text>
-<text x="334" y="639" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">restrict access per network</text>
-<rect x="624" y="571" width="260" height="87" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="642" y="597" font-size="15" font-weight="bold" fill="#e6edf3">NO MANUAL TOOLS</text>
-<text x="642" y="618" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">install all MCPs → fetch</text>
-<text x="642" y="639" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">all tools at once</text>
-<rect x="40" y="682" width="179" height="45" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="58" y="708" font-size="15" font-weight="bold" fill="#e6edf3">🔮 WHAT'S NEXT</text>
-<rect x="48" y="751" width="332" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="66" y="777" font-size="15" font-weight="bold" fill="#e6edf3">FastAPI Dashboard Integration</text>
-<text x="66" y="798" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">dashboard + websockets</text>
-<rect x="400" y="751" width="353" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="418" y="777" font-size="15" font-weight="bold" fill="#e6edf3">Cronjobs + Webhooks</text>
-<text x="418" y="798" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">scheduled + event-driven workflows</text>
-<rect x="773" y="751" width="380" height="87" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="791" y="777" font-size="15" font-weight="bold" fill="#e6edf3">vs Claude Desktop</text>
-<text x="791" y="798" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">our approach: remote deployment + SSE</text>
-<text x="791" y="819" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">transport</text>
-<rect x="40" y="862" width="371" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="58" y="888" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">#MCP #Docker #GenAI #EmailAutomation</text>
-<text x="58" y="909" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">#Agentics #SSE #CI/CD</text>
+<rect x="335" y="274" width="232" height="87" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="353" y="300" font-size="15" font-weight="bold" fill="#e6edf3">MCP-Bridge</text>
+<text x="353" y="321" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">remote access via SSE</text>
+<text x="353" y="342" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">script to start it</text>
+<rect x="587" y="274" width="278" height="87" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="605" y="300" font-size="15" font-weight="bold" fill="#e6edf3">MCP Server (JS)</text>
+<text x="605" y="321" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">email automation tools</text>
+<text x="605" y="342" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">🔒 credentials stored here</text>
+<rect x="40" y="379" width="251" height="45" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="58" y="405" font-size="15" font-weight="bold" fill="#e6edf3">WHY THIS ARCHITECTURE</text>
+<rect x="321" y="442" width="260" height="87" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="321" y="442" width="5" height="87" rx="2.5" fill="#60a5fa"/>
+<text x="339" y="468" font-size="15" font-weight="bold" fill="#60a5fa">CI/CD SEAMLESS</text>
+<text x="339" y="489" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Docker enables automated</text>
+<text x="339" y="510" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">build + deploy pipelines</text>
+<rect x="601" y="442" width="278" height="87" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="601" y="442" width="5" height="87" rx="2.5" fill="#60a5fa"/>
+<text x="619" y="468" font-size="15" font-weight="bold" fill="#60a5fa">SECURE ISOLATION</text>
+<text x="619" y="489" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Docker containers provide</text>
+<text x="619" y="510" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">isolated, portable runtime</text>
+<rect x="316" y="547" width="288" height="87" rx="11" fill="#161b22" stroke="#f59e0b" stroke-width="2"/>
+<rect x="316" y="547" width="5" height="87" rx="2.5" fill="#f59e0b"/>
+<text x="334" y="573" font-size="15" font-weight="bold" fill="#f59e0b">NETWORK SEGMENTATION</text>
+<text x="334" y="594" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">each agent = own container</text>
+<text x="334" y="615" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">restrict access per network</text>
+<rect x="624" y="547" width="260" height="87" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="642" y="573" font-size="15" font-weight="bold" fill="#e6edf3">NO MANUAL TOOLS</text>
+<text x="642" y="594" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">install all MCPs → fetch</text>
+<text x="642" y="615" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">all tools at once</text>
+<rect x="40" y="652" width="179" height="45" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="58" y="678" font-size="15" font-weight="bold" fill="#e6edf3">🔮 WHAT'S NEXT</text>
+<rect x="48" y="715" width="332" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="66" y="741" font-size="15" font-weight="bold" fill="#e6edf3">FastAPI Dashboard Integration</text>
+<text x="66" y="762" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">dashboard + websockets</text>
+<rect x="400" y="715" width="353" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="418" y="741" font-size="15" font-weight="bold" fill="#e6edf3">Cronjobs + Webhooks</text>
+<text x="418" y="762" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">scheduled + event-driven workflows</text>
+<rect x="773" y="715" width="380" height="87" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="791" y="741" font-size="15" font-weight="bold" fill="#e6edf3">vs Claude Desktop</text>
+<text x="791" y="762" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">our approach: remote deployment + SSE</text>
+<text x="791" y="783" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">transport</text>
+<rect x="40" y="820" width="371" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="58" y="846" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">#MCP #Docker #GenAI #EmailAutomation</text>
+<text x="58" y="867" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">#Agentics #SSE #CI/CD</text>
 <marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/></marker>
 <polyline points="446,181 466,150" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
 <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b"/></marker>

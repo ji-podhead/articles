@@ -1,58 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1242" viewBox="0 0 1200 1242" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
-<rect width="1200" height="1242" fill="#0d1117"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1218" viewBox="0 0 1200 1218" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="1218" fill="#0d1117"/>
 <text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">One request, three independent gates - and what each one</text>
 <text x="40" y="94" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">catches if the others fail</text>
 <rect x="40" y="110" width="179" height="45" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
 <text x="58" y="136" font-size="15" font-weight="bold" fill="#e6edf3">Client request</text>
-<rect x="40" y="179" width="380" height="255" rx="11" fill="#161b22" stroke="#f59e0b" stroke-width="2"/>
-<rect x="40" y="179" width="5" height="255" rx="2.5" fill="#f59e0b"/>
-<text x="58" y="205" font-size="15" font-weight="bold" fill="#f59e0b">LAYER C - Identity Proxy (the bouncer)</text>
-<text x="58" y="226" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Terminates TLS · verifies the session/JWT ·</text>
-<text x="58" y="247" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">extracts app + owner from the URL · adds</text>
-<text x="58" y="268" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">X-App-ID · no raw port is ever exposed</text>
-<text x="58" y="289" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">What it does NOT catch: anything that</text>
-<text x="58" y="310" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">happens AFTER a legitimate, authenticated</text>
-<text x="58" y="331" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">user is already inside their own workspace.</text>
-<text x="58" y="352" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">If this were the only layer: a legitimate user</text>
-<text x="58" y="373" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">runs malicious code inside their own</text>
-<text x="58" y="394" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">container - the proxy only watches the front</text>
-<text x="58" y="415" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">door, never sees this &quot;east-west&quot; traffic.</text>
-<rect x="40" y="458" width="380" height="297" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="58" y="484" font-size="15" font-weight="bold" fill="#e6edf3">LAYER B - VLAN / ipvlan (the soundproof</text>
-<text x="58" y="505" font-size="15" font-weight="bold" fill="#e6edf3">wall)</text>
-<text x="58" y="526" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Every tenant's traffic is 802.1Q-tagged</text>
-<text x="58" y="547" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">(vlan.id) on a dedicated sub-interface · the</text>
-<text x="58" y="568" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">kernel makes cross-tenant packets physically</text>
-<text x="58" y="589" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">unroutable</text>
-<text x="58" y="610" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">What it does NOT catch: a kernel escape on</text>
-<text x="58" y="631" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">the host itself.</text>
-<text x="58" y="652" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">If this were the only layer: a zero-day in the</text>
-<text x="58" y="673" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">real Linux kernel lets an attacker break out of</text>
-<text x="58" y="694" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">runc entirely - from there, one `ip link`</text>
-<text x="58" y="715" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">command on the host undoes every VLAN</text>
-<text x="58" y="736" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">you configured.</text>
-<rect x="40" y="779" width="380" height="297" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
-<rect x="40" y="779" width="5" height="297" rx="2.5" fill="#4ade80"/>
-<text x="58" y="805" font-size="15" font-weight="bold" fill="#4ade80">LAYER A - gVisor (the straitjacket)</text>
-<text x="58" y="826" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Application syscalls never reach the real host</text>
-<text x="58" y="847" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">kernel - the Sentry emulates them in a Go</text>
-<text x="58" y="868" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">userspace process (see the architecture</text>
-<text x="58" y="889" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">diagram above)</text>
-<text x="58" y="910" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">What it does NOT catch: an attacker already</text>
-<text x="58" y="931" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">inside the sandbox scanning the LOCAL</text>
-<text x="58" y="952" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">network.</text>
-<text x="58" y="973" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">If this were the only layer: gVisor hands</text>
-<text x="58" y="994" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">normal Ethernet frames to the host bridge -</text>
-<text x="58" y="1015" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">nothing stops the sandboxed app from</text>
-<text x="58" y="1036" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">nmap-scanning a neighboring tenant's</text>
-<text x="58" y="1057" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">container on the same unsegmented bridge.</text>
-<rect x="40" y="1100" width="380" height="108" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="58" y="1126" font-size="15" font-weight="bold" fill="#e6edf3">Each layer's blind spot is exactly the</text>
-<text x="58" y="1147" font-size="15" font-weight="bold" fill="#e6edf3">next layer's job</text>
-<text x="58" y="1168" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">that's why all three run together, not any one</text>
-<text x="58" y="1189" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">alone.</text>
+<rect x="40" y="173" width="380" height="255" rx="11" fill="#161b22" stroke="#f59e0b" stroke-width="2"/>
+<rect x="40" y="173" width="5" height="255" rx="2.5" fill="#f59e0b"/>
+<text x="58" y="199" font-size="15" font-weight="bold" fill="#f59e0b">LAYER C - Identity Proxy (the bouncer)</text>
+<text x="58" y="220" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Terminates TLS · verifies the session/JWT ·</text>
+<text x="58" y="241" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">extracts app + owner from the URL · adds</text>
+<text x="58" y="262" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">X-App-ID · no raw port is ever exposed</text>
+<text x="58" y="283" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">What it does NOT catch: anything that</text>
+<text x="58" y="304" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">happens AFTER a legitimate, authenticated</text>
+<text x="58" y="325" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">user is already inside their own workspace.</text>
+<text x="58" y="346" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">If this were the only layer: a legitimate user</text>
+<text x="58" y="367" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">runs malicious code inside their own</text>
+<text x="58" y="388" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">container - the proxy only watches the front</text>
+<text x="58" y="409" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">door, never sees this &quot;east-west&quot; traffic.</text>
+<rect x="40" y="446" width="380" height="297" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="58" y="472" font-size="15" font-weight="bold" fill="#e6edf3">LAYER B - VLAN / ipvlan (the soundproof</text>
+<text x="58" y="493" font-size="15" font-weight="bold" fill="#e6edf3">wall)</text>
+<text x="58" y="514" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Every tenant's traffic is 802.1Q-tagged</text>
+<text x="58" y="535" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">(vlan.id) on a dedicated sub-interface · the</text>
+<text x="58" y="556" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">kernel makes cross-tenant packets physically</text>
+<text x="58" y="577" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">unroutable</text>
+<text x="58" y="598" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">What it does NOT catch: a kernel escape on</text>
+<text x="58" y="619" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">the host itself.</text>
+<text x="58" y="640" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">If this were the only layer: a zero-day in the</text>
+<text x="58" y="661" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">real Linux kernel lets an attacker break out of</text>
+<text x="58" y="682" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">runc entirely - from there, one `ip link`</text>
+<text x="58" y="703" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">command on the host undoes every VLAN</text>
+<text x="58" y="724" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">you configured.</text>
+<rect x="40" y="761" width="380" height="297" rx="11" fill="#161b22" stroke="#4ade80" stroke-width="2"/>
+<rect x="40" y="761" width="5" height="297" rx="2.5" fill="#4ade80"/>
+<text x="58" y="787" font-size="15" font-weight="bold" fill="#4ade80">LAYER A - gVisor (the straitjacket)</text>
+<text x="58" y="808" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Application syscalls never reach the real host</text>
+<text x="58" y="829" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">kernel - the Sentry emulates them in a Go</text>
+<text x="58" y="850" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">userspace process (see the architecture</text>
+<text x="58" y="871" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">diagram above)</text>
+<text x="58" y="892" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">What it does NOT catch: an attacker already</text>
+<text x="58" y="913" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">inside the sandbox scanning the LOCAL</text>
+<text x="58" y="934" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">network.</text>
+<text x="58" y="955" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">If this were the only layer: gVisor hands</text>
+<text x="58" y="976" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">normal Ethernet frames to the host bridge -</text>
+<text x="58" y="997" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">nothing stops the sandboxed app from</text>
+<text x="58" y="1018" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">nmap-scanning a neighboring tenant's</text>
+<text x="58" y="1039" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">container on the same unsegmented bridge.</text>
+<rect x="40" y="1076" width="380" height="108" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="58" y="1102" font-size="15" font-weight="bold" fill="#e6edf3">Each layer's blind spot is exactly the</text>
+<text x="58" y="1123" font-size="15" font-weight="bold" fill="#e6edf3">next layer's job</text>
+<text x="58" y="1144" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">that's why all three run together, not any one</text>
+<text x="58" y="1165" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">alone.</text>
 <marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/></marker>
-<polyline points="130,155 230,179" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<polyline points="230,434 230,458" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<polyline points="230,755 230,779" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="130,155 230,173" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="230,428 230,446" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="230,743 230,761" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
 </svg>
