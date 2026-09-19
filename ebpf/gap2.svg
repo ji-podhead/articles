@@ -1,28 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="301" viewBox="0 0 1200 301" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
-<rect width="1200" height="301" fill="#0d1117"/>
-<text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5"></text>
-<rect x="303" y="0" width="241" height="66" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
-<rect x="303" y="0" width="5" height="66" rx="2.5" fill="#60a5fa"/>
-<text x="321" y="26" font-size="15" font-weight="bold" fill="#60a5fa">AI Application Layer</text>
-<text x="321" y="47" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Prompt &amp; Response Text</text>
-<rect x="564" y="0" width="334" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="582" y="26" font-size="15" font-weight="bold" fill="#e6edf3">Operating System</text>
-<text x="582" y="47" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">open() read() connect() execve()</text>
-<rect x="88" y="90" width="353" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="106" y="116" font-size="15" font-weight="bold" fill="#e6edf3">WAF / Network Firewall</text>
-<text x="106" y="137" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Sees TLS packets, never the prompt</text>
-<rect x="461" y="90" width="306" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="479" y="116" font-size="15" font-weight="bold" fill="#e6edf3">Guardrails / LLM Guard</text>
-<text x="479" y="137" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Sees text, never the syscalls</text>
-<rect x="787" y="90" width="325" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-<text x="805" y="116" font-size="15" font-weight="bold" fill="#e6edf3">gVisor / Tetragon / Falco</text>
-<text x="805" y="137" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Sees syscalls, never the intent</text>
-<rect x="40" y="180" width="380" height="87" rx="11" fill="#161b22" stroke="#f87171" stroke-width="2"/>
-<rect x="40" y="180" width="5" height="87" rx="2.5" fill="#f87171"/>
-<text x="58" y="206" font-size="15" font-weight="bold" fill="#f87171">⚡ eBPF Boundary Tracing</text>
-<text x="58" y="227" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Correlates BOTH views simultaneously in</text>
-<text x="58" y="248" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">real-time</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="359" viewBox="0 0 1200 359" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="359" fill="#0d1117"/>
+<text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">Correlating System Call Traces with Application Context</text>
+<rect x="304" y="70" width="241" height="66" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="304" y="70" width="5" height="66" rx="2.5" fill="#60a5fa"/>
+<text x="322" y="96" font-size="15" font-weight="bold" fill="#60a5fa">AI Application Layer</text>
+<text x="322" y="117" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Prompt &amp; Response Text</text>
+<rect x="563" y="70" width="334" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="581" y="96" font-size="15" font-weight="bold" fill="#e6edf3">Operating System</text>
+<text x="581" y="117" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">open() read() connect() execve()</text>
+<rect x="90" y="154" width="353" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="108" y="180" font-size="15" font-weight="bold" fill="#e6edf3">WAF / Network Firewall</text>
+<text x="108" y="201" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Sees TLS packets, never the prompt</text>
+<rect x="461" y="154" width="306" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="479" y="180" font-size="15" font-weight="bold" fill="#e6edf3">Guardrails / LLM Guard</text>
+<text x="479" y="201" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Sees text, never the syscalls</text>
+<rect x="785" y="154" width="325" height="66" rx="11" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<text x="803" y="180" font-size="15" font-weight="bold" fill="#e6edf3">gVisor / Tetragon / Falco</text>
+<text x="803" y="201" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Sees syscalls, never the intent</text>
+<rect x="40" y="238" width="380" height="87" rx="11" fill="#161b22" stroke="#f87171" stroke-width="2"/>
+<rect x="40" y="238" width="5" height="87" rx="2.5" fill="#f87171"/>
+<text x="58" y="264" font-size="15" font-weight="bold" fill="#f87171">⚡ eBPF Boundary Tracing</text>
+<text x="58" y="285" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Correlates BOTH views simultaneously in</text>
+<text x="58" y="306" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">real-time</text>
 <marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#f87171"/></marker>
-<polyline points="40,224 4,224 4,66 424,66" fill="none" stroke="#f87171" stroke-width="2.2" marker-end="url(#ar1)"/>
-<polyline points="230,180 731,66" fill="none" stroke="#f87171" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="40,282 4,282 4,136 425,136" fill="none" stroke="#f87171" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="230,238 730,136" fill="none" stroke="#f87171" stroke-width="2.2" marker-end="url(#ar1)"/>
 </svg>

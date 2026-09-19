@@ -1,44 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="486" viewBox="0 0 1200 486" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
-<rect width="1200" height="486" fill="#0d1117"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" font-family="'Space Grotesk', DejaVu Sans, Verdana, sans-serif">
+<rect width="1200" height="470" fill="#0d1117"/>
 <text x="40" y="54" font-size="30" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">Anomaly detection as a managed lifecycle, not a one-off script</text>
 <text x="40" y="83" font-size="13" font-weight="bold" fill="#f87171">continuous retrain - legitimate behavior changes must not break the model</text>
-<rect x="251" y="118" width="198" height="108" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
-<text x="269" y="144" font-size="15" font-weight="bold" fill="#8b949e">1. Features</text>
-<text x="269" y="165" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">gateway/app logs:</text>
-<text x="269" y="186" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">bytes_sent_rolling</text>
-<text x="269" y="207" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">unique_dest_ips_10m</text>
-<rect x="467" y="118" width="204" height="108" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
-<text x="485" y="144" font-size="15" font-weight="bold" fill="#8b949e">2. Training</text>
-<text x="485" y="165" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Isolation Forest /</text>
-<text x="485" y="186" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Random Cut Forest</text>
-<text x="485" y="207" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">SageMaker / MLflow</text>
-<rect x="689" y="118" width="260" height="87" rx="11" fill="#161b22" stroke="#f87171" stroke-width="2"/>
-<rect x="689" y="118" width="5" height="87" rx="2.5" fill="#f87171"/>
-<text x="707" y="144" font-size="15" font-weight="bold" fill="#f87171">3. Evaluation</text>
-<text x="707" y="165" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">F1 · false-positive rate</text>
-<text x="707" y="186" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">FPR &lt; 1% gate</text>
-<rect x="274" y="248" width="200" height="108" rx="11" fill="#161b22" stroke="#f87171" stroke-width="2"/>
-<rect x="274" y="248" width="5" height="108" rx="2.5" fill="#f87171"/>
-<text x="292" y="274" font-size="15" font-weight="bold" fill="#f87171">6. Model Monitor</text>
-<text x="292" y="295" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">live vs. training</text>
-<text x="292" y="316" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">distribution</text>
-<text x="292" y="337" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">data drift alarm</text>
-<rect x="492" y="248" width="207" height="87" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
-<text x="510" y="274" font-size="15" font-weight="bold" fill="#8b949e">5. Endpoint</text>
-<text x="510" y="295" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">{anomaly_score:0.89}</text>
-<text x="510" y="316" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">realtime inference</text>
-<rect x="717" y="248" width="210" height="108" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
-<rect x="717" y="248" width="5" height="108" rx="2.5" fill="#60a5fa"/>
-<text x="735" y="274" font-size="15" font-weight="bold" fill="#60a5fa">4. Model Registry</text>
-<text x="735" y="295" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">v1.0.0</text>
-<text x="735" y="316" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">pending manual</text>
-<text x="735" y="337" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">approval (HITL)</text>
-<text x="40" y="392" font-size="14" fill="#e6edf3">Findings carry confidence + model_version and ADD to the rule layer - they never replace it</text>
-<text x="40" y="439" font-size="12" fill="#8b949e">AWS: GuardDuty ML (black-box) · SageMaker (custom) · Bedrock (triage)   |   OSS: OpenSearch ML Commons · MLflow · Feast</text>
+<rect x="251" y="114" width="198" height="108" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="269" y="140" font-size="15" font-weight="bold" fill="#8b949e">1. Features</text>
+<text x="269" y="161" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">gateway/app logs:</text>
+<text x="269" y="182" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">bytes_sent_rolling</text>
+<text x="269" y="203" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">unique_dest_ips_10m</text>
+<rect x="467" y="114" width="204" height="108" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="485" y="140" font-size="15" font-weight="bold" fill="#8b949e">2. Training</text>
+<text x="485" y="161" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Isolation Forest /</text>
+<text x="485" y="182" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">Random Cut Forest</text>
+<text x="485" y="203" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">SageMaker / MLflow</text>
+<rect x="689" y="114" width="260" height="87" rx="11" fill="#161b22" stroke="#f87171" stroke-width="2"/>
+<rect x="689" y="114" width="5" height="87" rx="2.5" fill="#f87171"/>
+<text x="707" y="140" font-size="15" font-weight="bold" fill="#f87171">3. Evaluation</text>
+<text x="707" y="161" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">F1 · false-positive rate</text>
+<text x="707" y="182" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">FPR &lt; 1% gate</text>
+<rect x="274" y="240" width="200" height="108" rx="11" fill="#161b22" stroke="#f87171" stroke-width="2"/>
+<rect x="274" y="240" width="5" height="108" rx="2.5" fill="#f87171"/>
+<text x="292" y="266" font-size="15" font-weight="bold" fill="#f87171">6. Model Monitor</text>
+<text x="292" y="287" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">live vs. training</text>
+<text x="292" y="308" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">distribution</text>
+<text x="292" y="329" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">data drift alarm</text>
+<rect x="492" y="240" width="207" height="87" rx="11" fill="#161b22" stroke="#8b949e" stroke-width="2"/>
+<text x="510" y="266" font-size="15" font-weight="bold" fill="#8b949e">5. Endpoint</text>
+<text x="510" y="287" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">{anomaly_score:0.89}</text>
+<text x="510" y="308" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">realtime inference</text>
+<rect x="717" y="240" width="210" height="108" rx="11" fill="#161b22" stroke="#60a5fa" stroke-width="2"/>
+<rect x="717" y="240" width="5" height="108" rx="2.5" fill="#60a5fa"/>
+<text x="735" y="266" font-size="15" font-weight="bold" fill="#60a5fa">4. Model Registry</text>
+<text x="735" y="287" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">v1.0.0</text>
+<text x="735" y="308" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">pending manual</text>
+<text x="735" y="329" font-size="15" fill="#c9d1d9" font-family="'Space Grotesk', 'DejaVu Sans', Verdana, sans-serif">approval (HITL)</text>
+<text x="40" y="380" font-size="14" fill="#e6edf3">Findings carry confidence + model_version and ADD to the rule layer - they never replace it</text>
+<text x="40" y="423" font-size="12" fill="#8b949e">AWS: GuardDuty ML (black-box) · SageMaker (custom) · Bedrock (triage)   |   OSS: OpenSearch ML Commons · MLflow · Feast</text>
 <marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/></marker>
-<polyline points="449,172 467,172" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<polyline points="671,172 689,162" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<polyline points="819,205 822,248" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<polyline points="717,302 699,292" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
-<polyline points="492,292 474,302" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="449,168 467,168" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="671,168 689,158" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="819,201 822,240" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="717,294 699,284" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
+<polyline points="492,284 474,294" fill="none" stroke="#8b949e" stroke-width="2.2" marker-end="url(#ar1)"/>
 </svg>

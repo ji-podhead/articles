@@ -1,10 +1,11 @@
 {
   "width": 900,
   "padding": 40,
+  "title": "Graduated Incident Response Ladder",
   "tree": {
     "type": "column",
     "style": {
-      "gap": 24
+      "gap": 18
     },
     "children": [
       {
@@ -13,7 +14,10 @@
         "title": "Host / VM Layer",
         "lines": [
           "PID + Socket ➔ eBPF Context"
-        ]
+        ],
+        "style": {
+          "padding": 16
+        }
       },
       {
         "type": "card",
@@ -21,7 +25,11 @@
         "title": "Container Layer",
         "lines": [
           "Container ID ➔ Docker/CRI API"
-        ]
+        ],
+        "logo": "docker",
+        "style": {
+          "padding": 16
+        }
       },
       {
         "type": "card",
@@ -31,7 +39,10 @@
           "Session ID: Minted at provisioning",
           "Crucial: Never let the agent self-declare"
         ],
-        "color": "blue"
+        "color": "blue",
+        "style": {
+          "padding": 16
+        }
       },
       {
         "type": "card",
@@ -43,7 +54,10 @@
           "3. SIGSTOP Container (Freeze RAM)",
           "4. Blackhole Egress Network Routing"
         ],
-        "color": "red"
+        "color": "red",
+        "style": {
+          "padding": 16
+        }
       }
     ]
   },

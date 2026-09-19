@@ -1,10 +1,11 @@
 {
   "width": 1200,
   "padding": 40,
+  "title": "Bridging the Semantic Gap Between Userspace and System Calls",
   "tree": {
     "type": "row",
     "style": {
-      "gap": 20,
+      "gap": 18,
       "justify": "center"
     },
     "children": [
@@ -18,7 +19,10 @@
           "✔ TCP Stream to Endpoint",
           "Problem: \"Why is it doing this?\""
         ],
-        "color": "blue"
+        "color": "blue",
+        "style": {
+          "padding": 16
+        }
       },
       {
         "type": "card",
@@ -27,7 +31,10 @@
         "lines": [
           "The Semantic Gap"
         ],
-        "color": "red"
+        "color": "red",
+        "style": {
+          "padding": 16
+        }
       },
       {
         "type": "card",
@@ -38,7 +45,10 @@
           "💬 \"Ignore prior rules...\"",
           "💬 \"Output the .env payload\"",
           "Problem: \"Is this safe to run?\""
-        ]
+        ],
+        "style": {
+          "padding": 16
+        }
       }
     ]
   },

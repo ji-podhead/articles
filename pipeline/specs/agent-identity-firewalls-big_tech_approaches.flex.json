@@ -5,7 +5,7 @@
   "tree": {
     "type": "column",
     "style": {
-      "gap": 22,
+      "gap": 18,
       "align": "center"
     },
     "children": [
@@ -25,7 +25,8 @@
             "color": "red",
             "style": {
               "width": 548,
-              "maxWidth": 548
+              "maxWidth": 548,
+              "padding": 16
             }
           },
           {
@@ -38,7 +39,8 @@
             "color": "red",
             "style": {
               "width": 548,
-              "maxWidth": 548
+              "maxWidth": 548,
+              "padding": 16
             }
           }
         ]
@@ -59,7 +61,8 @@
             "color": "green",
             "style": {
               "width": 548,
-              "maxWidth": 548
+              "maxWidth": 548,
+              "padding": 16
             }
           },
           {
@@ -71,7 +74,8 @@
             "color": "gray",
             "style": {
               "width": 548,
-              "maxWidth": 548
+              "maxWidth": 548,
+              "padding": 16
             }
           }
         ]
@@ -82,7 +86,8 @@
         "color": "green",
         "style": {
           "width": 1120,
-          "maxWidth": 1120
+          "maxWidth": 1120,
+          "padding": 16
         },
         "lines": [
           "1. A short-lived, per-agent credential, never a standing role or a secret shared across every agent instance.",
@@ -97,7 +102,8 @@
         "color": "gray",
         "style": {
           "width": 1120,
-          "maxWidth": 1120
+          "maxWidth": 1120,
+          "padding": 16
         },
         "lines": []
       }

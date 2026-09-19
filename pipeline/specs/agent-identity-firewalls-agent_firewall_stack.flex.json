@@ -5,14 +5,14 @@
   "tree": {
     "type": "column",
     "style": {
-      "gap": 20,
+      "gap": 18,
       "align": "center"
     },
     "children": [
       {
         "type": "row",
         "style": {
-          "gap": 24,
+          "gap": 20,
           "align": "center"
         },
         "children": [
@@ -27,7 +27,8 @@
             "color": "blue",
             "style": {
               "width": 976,
-              "maxWidth": 976
+              "maxWidth": 976,
+              "padding": 16
             }
           },
           {
@@ -48,7 +49,7 @@
       {
         "type": "row",
         "style": {
-          "gap": 24,
+          "gap": 20,
           "align": "center"
         },
         "children": [
@@ -63,7 +64,8 @@
             "color": "green",
             "style": {
               "width": 976,
-              "maxWidth": 976
+              "maxWidth": 976,
+              "padding": 16
             }
           },
           {
@@ -84,7 +86,7 @@
       {
         "type": "row",
         "style": {
-          "gap": 24,
+          "gap": 20,
           "align": "center"
         },
         "children": [
@@ -99,7 +101,8 @@
             "color": "gray",
             "style": {
               "width": 976,
-              "maxWidth": 976
+              "maxWidth": 976,
+              "padding": 16
             }
           },
           {
@@ -120,7 +123,7 @@
       {
         "type": "row",
         "style": {
-          "gap": 24,
+          "gap": 20,
           "align": "center"
         },
         "children": [
@@ -135,7 +138,8 @@
             "color": "gray",
             "style": {
               "width": 976,
-              "maxWidth": 976
+              "maxWidth": 976,
+              "padding": 16
             }
           },
           {

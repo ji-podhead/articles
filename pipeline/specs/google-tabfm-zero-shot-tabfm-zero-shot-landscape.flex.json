@@ -24,12 +24,12 @@
               "static tables champion",
               "",
               "PROS",
-              "✓ Battle-tested accuracy",
-              "✓ Interpretable features",
+              "\u2713 Battle-tested accuracy",
+              "\u2713 Interpretable features",
               "",
               "CONS",
-              "✗ Retrain per dataset",
-              "✗ No streaming",
+              "\u2717 Retrain per dataset",
+              "\u2717 No streaming",
               "",
               "",
               "",
@@ -42,7 +42,8 @@
             "color": "amber",
             "style": {
               "flexGrow": 1,
-              "maxWidth": 360
+              "maxWidth": 360,
+              "padding": 16
             }
           },
           {
@@ -52,31 +53,32 @@
             "lines": [
               "incremental / streaming champion",
               "",
-              "data points →",
+              "data points \u2192",
               "model",
               "weights",
-              "↑↓ update",
+              "\u2191\u2193 update",
               "",
               "PROS",
-              "✓ Ultra-low latency",
-              "✓ Adapts on-the-fly",
+              "\u2713 Ultra-low latency",
+              "\u2713 Adapts on-the-fly",
               "",
               "CONS",
-              "✗ Lightweight only",
-              "✗ Parametric limits",
+              "\u2717 Lightweight only",
+              "\u2717 Parametric limits",
               "",
               "",
               ""
             ],
             "style": {
               "flexGrow": 1,
-              "maxWidth": 360
+              "maxWidth": 360,
+              "padding": 16
             }
           },
           {
             "type": "card",
             "id": "tabfm",
-            "title": "TabFM ★ NEW",
+            "title": "TabFM \u2605 NEW",
             "lines": [
               "zero-shot foundation model",
               "",
@@ -89,17 +91,18 @@
               "2D + orderless tables",
               "",
               "PROS",
-              "✓ Zero-shot predictions",
-              "✓ No retraining loops",
+              "\u2713 Zero-shot predictions",
+              "\u2713 No retraining loops",
               "",
               "RISK",
-              "⚠ Synthetic pre-train",
-              "⚠ Hallucinated patterns"
+              "\u26a0 Synthetic pre-train",
+              "\u26a0 Hallucinated patterns"
             ],
             "color": "green",
             "style": {
               "flexGrow": 1,
-              "maxWidth": 360
+              "maxWidth": 360,
+              "padding": 16
             }
           }
         ]
@@ -129,7 +132,7 @@
             "id": "ca",
             "title": "Cross-Attention",
             "lines": [
-              "rows ↔ columns",
+              "rows \u2194 columns",
               "permutation-aware",
               "",
               "",
@@ -140,7 +143,8 @@
             ],
             "style": {
               "flexGrow": 1,
-              "maxWidth": 208
+              "maxWidth": 208,
+              "padding": 16
             }
           },
           {
@@ -148,7 +152,7 @@
             "id": "rc",
             "title": "Row Compression",
             "lines": [
-              "2D → fixed context",
+              "2D \u2192 fixed context",
               "orderless handling",
               "",
               "",
@@ -159,7 +163,8 @@
             ],
             "style": {
               "flexGrow": 1,
-              "maxWidth": 208
+              "maxWidth": 208,
+              "padding": 16
             }
           },
           {
@@ -178,21 +183,23 @@
             ],
             "style": {
               "flexGrow": 1,
-              "maxWidth": 208
+              "maxWidth": 208,
+              "padding": 16
             }
           },
           {
             "type": "card",
             "id": "sb",
-            "title": "⚠ THE SYNTHETIC BOTTLENECK",
+            "title": "\u26a0 THE SYNTHETIC BOTTLENECK",
             "lines": [
               "Trained on millions of artificial data models",
-              "Risk: searches for non-existent patterns → hallucination"
+              "Risk: searches for non-existent patterns \u2192 hallucination"
             ],
             "color": "amber",
             "style": {
               "flexGrow": 1,
-              "maxWidth": 208
+              "maxWidth": 208,
+              "padding": 16
             }
           },
           {
@@ -200,8 +207,8 @@
             "id": "pv",
             "title": "PRODUCTION VERDICT",
             "lines": [
-              "Streaming → River",
-              "Instant out-of-box → TabFM",
+              "Streaming \u2192 River",
+              "Instant out-of-box \u2192 TabFM",
               "",
               "",
               "",
@@ -209,7 +216,8 @@
             ],
             "style": {
               "flexGrow": 1,
-              "maxWidth": 208
+              "maxWidth": 208,
+              "padding": 16
             }
           }
         ]
@@ -244,7 +252,8 @@
             ],
             "style": {
               "flexGrow": 1,
-              "maxWidth": 360
+              "maxWidth": 360,
+              "padding": 16
             }
           },
           {
@@ -257,7 +266,8 @@
             ],
             "style": {
               "flexGrow": 1,
-              "maxWidth": 360
+              "maxWidth": 360,
+              "padding": 16
             }
           },
           {
@@ -270,7 +280,8 @@
             ],
             "style": {
               "flexGrow": 1,
-              "maxWidth": 360
+              "maxWidth": 360,
+              "padding": 16
             }
           }
         ]

@@ -5,14 +5,14 @@
   "tree": {
     "type": "column",
     "style": {
-      "gap": 4,
+      "gap": 6,
       "align": "center"
     },
     "children": [
       {
         "type": "row",
         "style": {
-          "gap": 4
+          "gap": 6
         },
         "children": [
           {
@@ -21,7 +21,8 @@
             "color": "gray",
             "style": {
               "width": 410,
-              "maxWidth": 410
+              "maxWidth": 410,
+              "padding": 14
             },
             "lines": []
           },
@@ -31,7 +32,8 @@
             "color": "gray",
             "style": {
               "width": 270,
-              "maxWidth": 270
+              "maxWidth": 270,
+              "padding": 14
             },
             "lines": []
           },
@@ -41,7 +43,8 @@
             "color": "gray",
             "style": {
               "width": 432,
-              "maxWidth": 432
+              "maxWidth": 432,
+              "padding": 14
             },
             "lines": []
           }
@@ -50,23 +53,21 @@
       {
         "type": "row",
         "style": {
-          "gap": 4
+          "gap": 6
         },
         "children": [
           {
-            "type": "card",
+            "type": "code",
             "title": "Pipelock",
-            "color": "gray",
+            "logo": "github",
             "style": {
               "width": 410,
-              "maxWidth": 410
+              "maxWidth": 410,
+              "padding": 14
             },
             "lines": [
               "github.com/luckyPipewrench/pipelock",
-              "Apache 2.0 core, Go",
-              "",
-              "",
-              ""
+              "Apache 2.0 core, Go"
             ]
           },
           {
@@ -75,21 +76,17 @@
             "color": "blue",
             "style": {
               "width": 270,
-              "maxWidth": 270
+              "maxWidth": 270,
+              "padding": 14
             },
-            "lines": [
-              "",
-              "",
-              "",
-              "",
-              ""
-            ]
+            "lines": []
           },
           {
             "type": "card",
             "style": {
               "width": 432,
-              "maxWidth": 432
+              "maxWidth": 432,
+              "padding": 14
             },
             "lines": [
               "Agent holds secrets but no direct network access; Pipelock holds network access but no agent secrets. Emits mediator-signed action receipts per call, offline-verifiable proof of which agent/thread did what, without a shared credential ever being trusted."
@@ -100,22 +97,21 @@
       {
         "type": "row",
         "style": {
-          "gap": 4
+          "gap": 6
         },
         "children": [
           {
-            "type": "card",
+            "type": "code",
             "title": "Agent Wall",
-            "color": "gray",
+            "logo": "cloudflare",
             "style": {
               "width": 410,
-              "maxWidth": 410
+              "maxWidth": 410,
+              "padding": 14
             },
             "lines": [
               "github.com/agent-wall/agent-wall",
-              "MIT",
-              "",
-              ""
+              "MIT"
             ]
           },
           {
@@ -124,20 +120,17 @@
             "color": "blue",
             "style": {
               "width": 270,
-              "maxWidth": 270
+              "maxWidth": 270,
+              "padding": 14
             },
-            "lines": [
-              "",
-              "",
-              "",
-              ""
-            ]
+            "lines": []
           },
           {
             "type": "card",
             "style": {
               "width": 432,
-              "maxWidth": 432
+              "maxWidth": 432,
+              "padding": 14
             },
             "lines": [
               "\"Cloudflare for AI agents\", wraps an MCP server transparently. Inbound: kill switches, injection detection. Outbound: scans responses for 14 secret + 5 PII patterns before they reach the LLM. YAML policy, allow/deny/prompt per rule."
@@ -148,21 +141,21 @@
       {
         "type": "row",
         "style": {
-          "gap": 4
+          "gap": 6
         },
         "children": [
           {
-            "type": "card",
+            "type": "code",
             "title": "LlamaFirewall",
-            "color": "gray",
+            "logo": "huggingface",
             "style": {
               "width": 410,
-              "maxWidth": 410
+              "maxWidth": 410,
+              "padding": 14
             },
             "lines": [
               "arxiv.org/abs/2505.03574 (Meta)",
-              "Purple Llama, open source",
-              ""
+              "Purple Llama, open source"
             ]
           },
           {
@@ -171,19 +164,17 @@
             "color": "blue",
             "style": {
               "width": 270,
-              "maxWidth": 270
+              "maxWidth": 270,
+              "padding": 14
             },
-            "lines": [
-              "",
-              "",
-              ""
-            ]
+            "lines": []
           },
           {
             "type": "card",
             "style": {
               "width": 432,
-              "maxWidth": 432
+              "maxWidth": 432,
+              "padding": 14
             },
             "lines": [
               "PromptGuard 2 + Agent Alignment Checks (chain-of-thought auditor) + CodeShield.",
@@ -195,22 +186,21 @@
       {
         "type": "row",
         "style": {
-          "gap": 4
+          "gap": 6
         },
         "children": [
           {
-            "type": "card",
+            "type": "code",
             "title": "Cedar / Open Policy Agent",
-            "color": "gray",
+            "logo": "github",
             "style": {
               "width": 410,
-              "maxWidth": 410
+              "maxWidth": 410,
+              "padding": 14
             },
             "lines": [
               "cedarpolicy.com/en · openpolicyagent.org",
-              "Cedar: AWS. OPA: CNCF-graduated.",
-              "",
-              ""
+              "Cedar: AWS. OPA: CNCF-graduated."
             ]
           },
           {
@@ -219,20 +209,17 @@
             "color": "blue",
             "style": {
               "width": 270,
-              "maxWidth": 270
+              "maxWidth": 270,
+              "padding": 14
             },
-            "lines": [
-              "",
-              "",
-              "",
-              ""
-            ]
+            "lines": []
           },
           {
             "type": "card",
             "style": {
               "width": 432,
-              "maxWidth": 432
+              "maxWidth": 432,
+              "padding": 14
             },
             "lines": [
               "Deterministic, formally-checkable allow/deny languages. The decision is plain code, an LLM cannot argue its way past a Rego or Cedar policy. A platform can already build its own capability gate on top of either engine directly."
@@ -243,22 +230,20 @@
       {
         "type": "row",
         "style": {
-          "gap": 4
+          "gap": 6
         },
         "children": [
           {
-            "type": "card",
+            "type": "code",
             "title": "SPIFFE / SPIRE",
-            "color": "gray",
             "style": {
               "width": 410,
-              "maxWidth": 410
+              "maxWidth": 410,
+              "padding": 14
             },
             "lines": [
               "spiffe.io",
-              "CNCF standard",
-              "",
-              ""
+              "CNCF standard"
             ]
           },
           {
@@ -267,20 +252,17 @@
             "color": "blue",
             "style": {
               "width": 270,
-              "maxWidth": 270
+              "maxWidth": 270,
+              "padding": 14
             },
-            "lines": [
-              "",
-              "",
-              "",
-              ""
-            ]
+            "lines": []
           },
           {
             "type": "card",
             "style": {
               "width": 432,
-              "maxWidth": 432
+              "maxWidth": 432,
+              "padding": 14
             },
             "lines": [
               "Short-lived X.509 (X.509-SVID) or JWT (JWT-SVID) issued after a local attestor verifies HOW a process launched, distinguishes process A from process B on the same host, even sharing one container image and one IAM role."
@@ -291,22 +273,21 @@
       {
         "type": "row",
         "style": {
-          "gap": 4
+          "gap": 6
         },
         "children": [
           {
-            "type": "card",
+            "type": "code",
             "title": "Coder",
-            "color": "gray",
+            "logo": "github",
             "style": {
               "width": 410,
-              "maxWidth": 410
+              "maxWidth": 410,
+              "padding": 14
             },
             "lines": [
               "coder.com/docs",
-              "verified via own docs",
-              "",
-              ""
+              "verified via own docs"
             ]
           },
           {
@@ -315,20 +296,17 @@
             "color": "blue",
             "style": {
               "width": 270,
-              "maxWidth": 270
+              "maxWidth": 270,
+              "padding": 14
             },
-            "lines": [
-              "",
-              "",
-              "",
-              ""
-            ]
+            "lines": []
           },
           {
             "type": "card",
             "style": {
               "width": 432,
-              "maxWidth": 432
+              "maxWidth": 432,
+              "padding": 14
             },
             "lines": [
               "The agent LOOP runs in Coder's control plane, never inside the workspace, so a workspace never holds an LLM-calling credential at all, by construction. No dedicated agent firewall or per-project RBAC described in their own docs, though."
@@ -341,7 +319,7 @@
         "lines": [],
         "style": {
           "width": 10,
-          "height": 22
+          "height": 18
         }
       },
       {
@@ -350,7 +328,8 @@
         "color": "gray",
         "style": {
           "width": 1120,
-          "maxWidth": 1120
+          "maxWidth": 1120,
+          "padding": 16
         },
         "lines": [
           "Every tool above is a layer you bolt onto a network/containers/agents you already have. A platform that provisions the network, the egress firewall, and the containers itself gets that isolation by construction, the tools above add it gets deployed in the first place. The ideas above are worth adopting selectively, see the full research for exactly which two."

@@ -1,55 +1,294 @@
 {
   "width": 1200,
   "padding": 40,
-  "title": "Before / After - collapsing the N×M matrix",
-  "subtitle": "jimesh open-source AI gateway · the hub pattern",
+  "title": "Before / After - collapsing the N\u00d7M matrix",
+  "subtitle": "jimesh open-source AI gateway \u00b7 the hub pattern",
   "tree": {
     "type": "column",
-    "style": { "gap": 24 },
+    "style": {
+      "gap": 24
+    },
     "children": [
-      { "type": "row", "style": { "gap": 20, "justify": "center" }, "children": [
-        { "type": "card", "id": "before", "title": "BEFORE", "lines": ["N × M configs · N × M failure modes", "each app: own keys, own retry logic, own .env"], "color": "red" }
-      ]},
-      { "type": "row", "style": { "gap": 20, "justify": "center" }, "children": [
-        { "type": "card", "id": "bA", "title": "App A", "lines": [] },
-        { "type": "card", "id": "bB", "title": "App B", "lines": [] },
-        { "type": "card", "id": "bC", "title": "App C", "lines": [] }
-      ]},
-      { "type": "row", "style": { "gap": 20, "justify": "center" }, "children": [
-        { "type": "card", "id": "bP1", "title": "OpenAI", "lines": [] },
-        { "type": "card", "id": "bP2", "title": "Gemini", "lines": [] },
-        { "type": "card", "id": "bP3", "title": "Groq / DeepSeek / …", "lines": [] }
-      ]},
-      { "type": "row", "style": { "gap": 20, "justify": "center" }, "children": [
-        { "type": "card", "id": "after", "title": "AFTER", "lines": ["one OpenAI-compatible endpoint", "keys live here, in the vault - never in apps"], "color": "green" }
-      ]},
-      { "type": "row", "style": { "gap": 20, "justify": "center" }, "children": [
-        { "type": "card", "id": "aA", "title": "App A", "lines": [] },
-        { "type": "card", "id": "aB", "title": "App B", "lines": [] },
-        { "type": "card", "id": "aC", "title": "App C", "lines": [] }
-      ]},
-      { "type": "row", "style": { "gap": 20, "justify": "center" }, "children": [
-        { "type": "card", "id": "hub", "title": "LLM Mesh", "lines": ["keys · routing · fallback", "budgets · analytics · security", "one OpenAI-compatible endpoint"], "color": "green" }
-      ]},
-      { "type": "row", "style": { "gap": 20, "justify": "center" }, "children": [
-        { "type": "card", "id": "aP1", "title": "OpenAI", "lines": [] },
-        { "type": "card", "id": "aP2", "title": "Gemini", "lines": [] },
-        { "type": "card", "id": "aP3", "title": "Groq / DeepSeek / …", "lines": [] }
-      ]}
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "before",
+            "title": "BEFORE",
+            "lines": [
+              "N \u00d7 M configs \u00b7 N \u00d7 M failure modes",
+              "each app: own keys, own retry logic, own .env"
+            ],
+            "color": "red",
+            "style": {
+              "padding": 16
+            }
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "bA",
+            "title": "App A",
+            "lines": [],
+            "style": {
+              "padding": 16
+            }
+          },
+          {
+            "type": "card",
+            "id": "bB",
+            "title": "App B",
+            "lines": [],
+            "style": {
+              "padding": 16
+            }
+          },
+          {
+            "type": "card",
+            "id": "bC",
+            "title": "App C",
+            "lines": [],
+            "style": {
+              "padding": 16
+            }
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "bP1",
+            "title": "OpenAI",
+            "lines": [],
+            "style": {
+              "padding": 16
+            }
+          },
+          {
+            "type": "card",
+            "id": "bP2",
+            "title": "Gemini",
+            "lines": [],
+            "style": {
+              "padding": 16
+            }
+          },
+          {
+            "type": "card",
+            "id": "bP3",
+            "title": "Groq / DeepSeek / \u2026",
+            "lines": [],
+            "style": {
+              "padding": 16
+            }
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "after",
+            "title": "AFTER",
+            "lines": [
+              "one OpenAI-compatible endpoint",
+              "keys live here, in the vault - never in apps"
+            ],
+            "color": "green",
+            "style": {
+              "padding": 16
+            }
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "aA",
+            "title": "App A",
+            "lines": [],
+            "style": {
+              "padding": 16
+            }
+          },
+          {
+            "type": "card",
+            "id": "aB",
+            "title": "App B",
+            "lines": [],
+            "style": {
+              "padding": 16
+            }
+          },
+          {
+            "type": "card",
+            "id": "aC",
+            "title": "App C",
+            "lines": [],
+            "style": {
+              "padding": 16
+            }
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "hub",
+            "title": "LLM Mesh",
+            "lines": [
+              "keys \u00b7 routing \u00b7 fallback",
+              "budgets \u00b7 analytics \u00b7 security",
+              "one OpenAI-compatible endpoint"
+            ],
+            "color": "green",
+            "style": {
+              "padding": 16
+            }
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
+        "children": [
+          {
+            "type": "card",
+            "id": "aP1",
+            "title": "OpenAI",
+            "lines": [],
+            "style": {
+              "padding": 16
+            }
+          },
+          {
+            "type": "card",
+            "id": "aP2",
+            "title": "Gemini",
+            "lines": [],
+            "style": {
+              "padding": 16
+            }
+          },
+          {
+            "type": "card",
+            "id": "aP3",
+            "title": "Groq / DeepSeek / \u2026",
+            "lines": [],
+            "style": {
+              "padding": 16
+            }
+          }
+        ]
+      }
     ]
   },
   "connect": [
-    { "from": "bA", "to": "bP1", "label": "sk-…A1", "color": "red" },
-    { "from": "bA", "to": "bP2", "label": "gem-…B2", "color": "red" },
-    { "from": "bB", "to": "bP1", "label": "sk-…A2", "color": "red" },
-    { "from": "bB", "to": "bP3", "label": "gsk-…C1", "color": "red" },
-    { "from": "bC", "to": "bP2", "label": "ds-…C2", "color": "red" },
-    { "from": "bC", "to": "bP3", "label": "sk-…A3", "color": "red" },
-    { "from": "aA", "to": "hub", "label": "1 local key (or none)", "color": "green" },
-    { "from": "aB", "to": "hub", "color": "green" },
-    { "from": "aC", "to": "hub", "color": "green" },
-    { "from": "hub", "to": "aP1", "color": "green" },
-    { "from": "hub", "to": "aP2", "color": "green" },
-    { "from": "hub", "to": "aP3", "color": "green" }
+    {
+      "from": "bA",
+      "to": "bP1",
+      "label": "sk-\u2026A1",
+      "color": "red"
+    },
+    {
+      "from": "bA",
+      "to": "bP2",
+      "label": "gem-\u2026B2",
+      "color": "red"
+    },
+    {
+      "from": "bB",
+      "to": "bP1",
+      "label": "sk-\u2026A2",
+      "color": "red"
+    },
+    {
+      "from": "bB",
+      "to": "bP3",
+      "label": "gsk-\u2026C1",
+      "color": "red"
+    },
+    {
+      "from": "bC",
+      "to": "bP2",
+      "label": "ds-\u2026C2",
+      "color": "red"
+    },
+    {
+      "from": "bC",
+      "to": "bP3",
+      "label": "sk-\u2026A3",
+      "color": "red"
+    },
+    {
+      "from": "aA",
+      "to": "hub",
+      "label": "1 local key (or none)",
+      "color": "green"
+    },
+    {
+      "from": "aB",
+      "to": "hub",
+      "color": "green"
+    },
+    {
+      "from": "aC",
+      "to": "hub",
+      "color": "green"
+    },
+    {
+      "from": "hub",
+      "to": "aP1",
+      "color": "green"
+    },
+    {
+      "from": "hub",
+      "to": "aP2",
+      "color": "green"
+    },
+    {
+      "from": "hub",
+      "to": "aP3",
+      "color": "green"
+    }
   ]
 }

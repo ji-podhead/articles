@@ -3,21 +3,21 @@
   "title": "JiMesh as the system of record - every sensor feeds ONE finding schema",
   "tree": {
     "type": "column",
-    "style": { "gap": 30 },
+    "style": { "gap": 18 },
     "children": [
       {
         "type": "row",
         "style": { "gap": 16, "align": "flex-start" },
         "children": [
-          { "type": "card", "id": "ws", "title": "Workspaces (Docker)", "lines": ["nft default-drop egress", "socket-guard (docker.sock)", "metadata 169.254.169.254 deny"], "color": "green", "style": { "maxWidth": 250 } },
-          { "type": "card", "id": "idc", "title": "K-LAF Identity Chain", "lines": ["container_id → session", "session → project", "minted at provisioning - never self-declared"], "color": "blue", "style": { "maxWidth": 250 } },
-          { "type": "card", "id": "ev", "title": "security_events", "lines": ["+ source · raw_id · severity", "+ confidence · model_version", "one schema, every provider"], "color": "blue", "style": { "maxWidth": 250 } },
+          { "type": "card", "id": "ws", "title": "Workspaces (Docker)", "logo": "docker", "lines": ["nft default-drop egress", "socket-guard (docker.sock)", "metadata 169.254.169.254 deny"], "color": "green", "style": { "maxWidth": 250, "padding": 16 } },
+          { "type": "card", "id": "idc", "title": "K-LAF Identity Chain", "lines": ["container_id → session", "session → project", "minted at provisioning - never self-declared"], "color": "blue", "style": { "maxWidth": 250, "padding": 16 } },
+          { "type": "card", "id": "ev", "title": "security_events", "lines": ["+ source · raw_id · severity", "+ confidence · model_version", "one schema, every provider"], "color": "blue", "style": { "maxWidth": 250, "padding": 16 } },
           {
             "type": "column",
             "style": { "gap": 16, "maxWidth": 280 },
             "children": [
-              { "type": "card", "id": "fs", "title": "FindingSource / FindingSink", "lines": ["wazuh | securityhub | builtin"], "color": "gray", "style": { "maxWidth": 280 } },
-              { "type": "card", "id": "dash", "title": "JiMesh Dashboard API (identical)", "lines": ["/api/security/events · freeze · report"], "color": "gray", "style": { "maxWidth": 280 } }
+              { "type": "card", "id": "fs", "title": "FindingSource / FindingSink", "lines": ["wazuh | securityhub | builtin"], "color": "gray", "style": { "maxWidth": 280, "padding": 16 } },
+              { "type": "card", "id": "dash", "title": "JiMesh Dashboard API (identical)", "lines": ["/api/security/events · freeze · report"], "color": "gray", "style": { "maxWidth": 280, "padding": 16 } }
             ]
           }
         ]

@@ -6,7 +6,7 @@
   "tree": {
     "type": "column",
     "style": {
-      "gap": 24
+      "gap": 18
     },
     "children": [
       {
@@ -27,7 +27,10 @@
               "no manual Pydantic errors",
               "✓ auto-fetches all tools"
             ],
-            "color": "blue"
+            "color": "blue",
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -37,17 +40,24 @@
               "Server-Sent Events",
               "remote access bridge"
             ],
-            "color": "amber"
+            "color": "amber",
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
             "id": "docker",
             "title": "Docker Container",
+            "logo": "docker",
             "lines": [
               "isolated per-agent environment",
               "base image"
             ],
-            "color": "blue"
+            "color": "blue",
+            "style": {
+              "padding": 16
+            }
           }
         ]
       },
@@ -65,7 +75,10 @@
             "lines": [
               "remote access via SSE",
               "script to start it"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -74,14 +87,20 @@
             "lines": [
               "email automation tools",
               "🔒 credentials stored here"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           }
         ]
       },
       {
         "type": "card",
         "id": "why",
-        "title": "WHY THIS ARCHITECTURE"
+        "title": "WHY THIS ARCHITECTURE",
+        "style": {
+          "padding": 14
+        }
       },
       {
         "type": "row",
@@ -98,7 +117,10 @@
               "Docker enables automated",
               "build + deploy pipelines"
             ],
-            "color": "blue"
+            "color": "blue",
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -108,7 +130,10 @@
               "Docker containers provide",
               "isolated, portable runtime"
             ],
-            "color": "blue"
+            "color": "blue",
+            "style": {
+              "padding": 16
+            }
           }
         ]
       },
@@ -127,7 +152,10 @@
               "each agent = own container",
               "restrict access per network"
             ],
-            "color": "amber"
+            "color": "amber",
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -136,14 +164,20 @@
             "lines": [
               "install all MCPs → fetch",
               "all tools at once"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           }
         ]
       },
       {
         "type": "card",
         "id": "next",
-        "title": "🔮 WHAT'S NEXT"
+        "title": "🔮 WHAT'S NEXT",
+        "style": {
+          "padding": 14
+        }
       },
       {
         "type": "row",
@@ -158,7 +192,10 @@
             "title": "FastAPI Dashboard Integration",
             "lines": [
               "dashboard + websockets"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -166,7 +203,10 @@
             "title": "Cronjobs + Webhooks",
             "lines": [
               "scheduled + event-driven workflows"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -174,7 +214,10 @@
             "title": "vs Claude Desktop",
             "lines": [
               "our approach: remote deployment + SSE transport"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           }
         ]
       },
@@ -183,7 +226,10 @@
         "id": "foot",
         "lines": [
           "#MCP #Docker #GenAI #EmailAutomation #Agentics #SSE #CI/CD"
-        ]
+        ],
+        "style": {
+          "padding": 14
+        }
       }
     ]
   },

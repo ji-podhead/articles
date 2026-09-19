@@ -6,7 +6,7 @@
   "tree": {
     "type": "column",
     "style": {
-      "gap": 20,
+      "gap": 18,
       "align": "center"
     },
     "children": [
@@ -19,7 +19,8 @@
         "color": "red",
         "style": {
           "width": 1120,
-          "maxWidth": 1120
+          "maxWidth": 1120,
+          "padding": 16
         }
       },
       {
@@ -30,13 +31,14 @@
         },
         "children": [
           {
-            "type": "card",
+            "type": "code",
             "lines": [
               "https://example.com:pass@localhost:8080",
               "\"example.com\" is a USERNAME here, not the hostname"
             ],
             "style": {
-              "maxWidth": 480
+              "maxWidth": 480,
+              "padding": 16
             }
           },
           {
@@ -60,7 +62,8 @@
             ],
             "color": "red",
             "style": {
-              "maxWidth": 470
+              "maxWidth": 470,
+              "padding": 16
             }
           }
         ]
@@ -72,7 +75,8 @@
         ],
         "style": {
           "width": 1120,
-          "maxWidth": 1120
+          "maxWidth": 1120,
+          "padding": 16
         }
       },
       {
@@ -100,7 +104,8 @@
             "color": "gray",
             "style": {
               "width": 420,
-              "maxWidth": 420
+              "maxWidth": 420,
+              "padding": 14
             },
             "lines": []
           },
@@ -110,7 +115,8 @@
             "color": "red",
             "style": {
               "width": 660,
-              "maxWidth": 660
+              "maxWidth": 660,
+              "padding": 14
             },
             "lines": []
           }
@@ -128,7 +134,8 @@
             "color": "gray",
             "style": {
               "width": 420,
-              "maxWidth": 420
+              "maxWidth": 420,
+              "padding": 14
             },
             "lines": []
           },
@@ -138,7 +145,8 @@
             "color": "gray",
             "style": {
               "width": 660,
-              "maxWidth": 660
+              "maxWidth": 660,
+              "padding": 14
             },
             "lines": []
           }
@@ -156,7 +164,8 @@
             "color": "gray",
             "style": {
               "width": 420,
-              "maxWidth": 420
+              "maxWidth": 420,
+              "padding": 14
             },
             "lines": []
           },
@@ -166,7 +175,8 @@
             "color": "green",
             "style": {
               "width": 660,
-              "maxWidth": 660
+              "maxWidth": 660,
+              "padding": 14
             },
             "lines": []
           }
@@ -182,7 +192,8 @@
         "color": "green",
         "style": {
           "width": 1120,
-          "maxWidth": 1120
+          "maxWidth": 1120,
+          "padding": 16
         }
       },
       {

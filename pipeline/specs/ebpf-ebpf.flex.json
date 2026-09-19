@@ -1,16 +1,17 @@
 {
   "width": 1200,
   "padding": 40,
+  "title": "Kernel-Level Protection: eBPF Interception & Verification",
   "tree": {
     "type": "column",
     "style": {
-      "gap": 24
+      "gap": 18
     },
     "children": [
       {
         "type": "row",
         "style": {
-          "gap": 20,
+          "gap": 18,
           "justify": "center"
         },
         "children": [
@@ -23,7 +24,10 @@
               "Plaintext in RAM",
               "USERSPACE"
             ],
-            "color": "blue"
+            "color": "blue",
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -33,7 +37,10 @@
               "uprobe / kprobe",
               "Intercepts raw memory",
               "KERNELSPACE"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -42,13 +49,19 @@
             "lines": [
               "Prompt Guard (22M)",
               "Classification < 1ms"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
             "id": "v",
             "title": "4. Verdict: Map Update / SIGSTOP",
-            "color": "red"
+            "color": "red",
+            "style": {
+              "padding": 16
+            }
           }
         ]
       }

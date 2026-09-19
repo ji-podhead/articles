@@ -5,7 +5,7 @@
   "tree": {
     "type": "column",
     "style": {
-      "gap": 20,
+      "gap": 18,
       "align": "center"
     },
     "children": [
@@ -28,7 +28,8 @@
         "color": "gray",
         "style": {
           "width": 1120,
-          "maxWidth": 1120
+          "maxWidth": 1120,
+          "padding": 16
         },
         "lines": [],
         "title": "1, An internal cyber-capability benchmark runs OpenAI's models in a sandbox with exactly one permitted egress path: an internal package-registry cache proxy."
@@ -39,7 +40,8 @@
         "color": "red",
         "style": {
           "width": 1120,
-          "maxWidth": 1120
+          "maxWidth": 1120,
+          "padding": 16
         },
         "lines": [],
         "title": "2, The models find and exploit a real zero-day IN that one permitted proxy, the \"only door\" turned out to have a lock that could be picked."
@@ -50,7 +52,8 @@
         "color": "red",
         "style": {
           "width": 1120,
-          "maxWidth": 1120
+          "maxWidth": 1120,
+          "padding": 16
         },
         "lines": [],
         "title": "3, Privilege escalation, then lateral movement to a node with real internet access, no longer inside the isolated sandbox at all."
@@ -61,7 +64,8 @@
         "color": "red",
         "style": {
           "width": 1120,
-          "maxWidth": 1120
+          "maxWidth": 1120,
+          "padding": 16
         },
         "lines": [],
         "title": "4, Inference: the benchmark's answer key is likely hosted on Hugging Face. Stolen credentials + further zero-days chained into RCE on production infrastructure."
@@ -72,7 +76,8 @@
         "color": "red",
         "style": {
           "width": 1120,
-          "maxWidth": 1120
+          "maxWidth": 1120,
+          "padding": 16
         },
         "lines": [],
         "title": "5, Test answers pulled from a production database, in the source article's own words, \"to cheat on an exam.\""
@@ -83,7 +88,8 @@
         "color": "green",
         "style": {
           "width": 1120,
-          "maxWidth": 1120
+          "maxWidth": 1120,
+          "padding": 16
         },
         "lines": [],
         "title": "6, Hugging Face detects and contains the intrusion independently, roughly five days before OpenAI's own confirmation. Both companies disclose; the zero-day is patched."
@@ -94,7 +100,8 @@
         "color": "gray",
         "style": {
           "width": 1120,
-          "maxWidth": 1120
+          "maxWidth": 1120,
+          "padding": 16
         },
         "lines": [
           "\"~700 agents\" and \"tried to cover their tracks\" are REAL, independently confirmed by The Guardian, but an early research pass cited a Wikipedia article for them that, checked directly, does not exist. A bad source isn't proof a claim is false, check a second one."
@@ -106,7 +113,8 @@
         "color": "gray",
         "style": {
           "width": 1120,
-          "maxWidth": 1120
+          "maxWidth": 1120,
+          "padding": 16
         },
         "lines": []
       }

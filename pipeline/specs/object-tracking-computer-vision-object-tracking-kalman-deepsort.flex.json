@@ -23,22 +23,23 @@
             "lines": [
               "the recursive predictor-corrector",
               "",
-              "① PREDICTION",
+              "\u2460 PREDICTION",
               "forecast next position",
               "based on past states (pos, vel)",
               "",
-              "② CORRECTION",
+              "\u2461 CORRECTION",
               "compare with measurement",
               "weight by uncertainty",
               "",
               "WHY IT'S STILL USED TODAY",
-              "✓ very fast (real-time capable) ✓ handles noisy measurements",
-              "✓ smooth consistent tracks ✓ works even with missing detections"
+              "\u2713 very fast (real-time capable) \u2713 handles noisy measurements",
+              "\u2713 smooth consistent tracks \u2713 works even with missing detections"
             ],
             "color": "blue",
             "style": {
               "flexGrow": 1,
-              "maxWidth": 550
+              "maxWidth": 550,
+              "padding": 16
             }
           },
           {
@@ -55,16 +56,17 @@
               "ReID (Deep Learning)",
               "identity across frames",
               "Data Association",
-              "align detections ↔ existing tracks",
+              "align detections \u2194 existing tracks",
               "",
               "KEY ADVANTAGES:",
-              "✓ Robust to occlusions + motion blur",
-              "✓ High accuracy (motion + appearance synergy)",
-              "✓ Multi-target efficient ✓ Dynamic environments"
+              "\u2713 Robust to occlusions + motion blur",
+              "\u2713 High accuracy (motion + appearance synergy)",
+              "\u2713 Multi-target efficient \u2713 Dynamic environments"
             ],
             "style": {
               "flexGrow": 1,
-              "maxWidth": 550
+              "maxWidth": 550,
+              "padding": 16
             }
           }
         ]
@@ -81,7 +83,7 @@
             "id": "mota",
             "title": "MOTA - TRACKING ACCURACY",
             "lines": [
-              "MOTA = 1 − (FP + FN + IDS) / GT",
+              "MOTA = 1 \u2212 (FP + FN + IDS) / GT",
               "100% = perfect tracking",
               "",
               "FP",
@@ -101,7 +103,8 @@
             "color": "green",
             "style": {
               "flexGrow": 1,
-              "maxWidth": 550
+              "maxWidth": 550,
+              "padding": 16
             }
           },
           {
@@ -128,7 +131,8 @@
             ],
             "style": {
               "flexGrow": 1,
-              "maxWidth": 550
+              "maxWidth": 550,
+              "padding": 16
             }
           }
         ]

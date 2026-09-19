@@ -5,7 +5,7 @@
   "tree": {
     "type": "column",
     "style": {
-      "gap": 24
+      "gap": 18
     },
     "children": [
       {
@@ -25,7 +25,10 @@
                 "type": "card",
                 "id": "today",
                 "title": "TODAY - shipped and real",
-                "lines": []
+                "lines": [],
+                "style": {
+                  "padding": 16
+                }
               },
               {
                 "type": "card",
@@ -33,7 +36,10 @@
                 "title": "You (browser)",
                 "lines": [
                   "or a coding agent"
-                ]
+                ],
+                "style": {
+                  "padding": 16
+                }
               },
               {
                 "type": "card",
@@ -41,7 +47,10 @@
                 "title": "Gateway backend",
                 "lines": [
                   "auth + budget check"
-                ]
+                ],
+                "style": {
+                  "padding": 16
+                }
               },
               {
                 "type": "card",
@@ -49,19 +58,26 @@
                 "title": "Remote SSH target",
                 "lines": [
                   "any existing server"
-                ]
+                ],
+                "style": {
+                  "padding": 16
+                }
               },
               {
                 "type": "card",
                 "id": "agent",
                 "title": "Agent container",
                 "color": "green",
+                "logo": "docker",
                 "lines": [
                   "gVisor-sandboxed",
                   "egress allowlist active",
                   "✓ never a raw port exposed to the internet",
                   "✓ kernel-isolated, egress-restricted"
-                ]
+                ],
+                "style": {
+                  "padding": 16
+                }
               }
             ]
           },
@@ -75,19 +91,28 @@
                 "type": "card",
                 "id": "target",
                 "title": "TARGET - planned, not yet built",
-                "lines": []
+                "lines": [],
+                "style": {
+                  "padding": 16
+                }
               },
               {
                 "type": "card",
                 "id": "client2",
                 "title": "Client",
-                "lines": []
+                "lines": [],
+                "style": {
+                  "padding": 16
+                }
               },
               {
                 "type": "card",
                 "id": "router",
                 "title": "Identity Router",
-                "lines": []
+                "lines": [],
+                "style": {
+                  "padding": 16
+                }
               },
               {
                 "type": "row",
@@ -105,7 +130,10 @@
                       "VLAN 101 · gVisor",
                       "same host",
                       "✕"
-                    ]
+                    ],
+                    "style": {
+                      "padding": 16
+                    }
                   },
                   {
                     "type": "card",
@@ -116,7 +144,10 @@
                       "VLAN 102 · gVisor",
                       "same host",
                       "✕"
-                    ]
+                    ],
+                    "style": {
+                      "padding": 16
+                    }
                   }
                 ]
               },
@@ -124,7 +155,10 @@
                 "type": "card",
                 "id": "tgtnote",
                 "title": "Same egress allowlist + gVisor sandboxing as today, now with per-workspace VLANs",
-                "lines": []
+                "lines": [],
+                "style": {
+                  "padding": 16
+                }
               }
             ]
           }
@@ -137,7 +171,10 @@
         "color": "red",
         "lines": [
           "one host at a time - no VLAN segmentation between two workspaces on the SAME remote server yet (Layer B, not built)."
-        ]
+        ],
+        "style": {
+          "padding": 16
+        }
       },
       {
         "type": "card",
@@ -145,7 +182,10 @@
         "title": "Further out: one mesh across many servers and clouds",
         "lines": [
           "the same Gitpod/Ona pattern - a control plane that provisions this same 3-layer stack wherever a customer's workload actually runs"
-        ]
+        ],
+        "style": {
+          "padding": 16
+        }
       },
       {
         "type": "row",
@@ -161,7 +201,10 @@
             "lines": [
               "identity, policy, routing table",
               "reached over a WireGuard mesh - no public SSH exposure"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -169,7 +212,10 @@
             "title": "Own hardware / VPS",
             "lines": [
               "3-layer stack, local VLANs"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -177,7 +223,10 @@
             "title": "AWS / GCP node",
             "lines": [
               "same stack, cloud VPC instead"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           }
         ]
       },
@@ -187,7 +236,10 @@
         "title": "Why this matters for a real product",
         "lines": [
           "a customer picks WHERE a workload runs (their own box, or a cloud region) without ever changing how they reach it, and without the platform operator needing a different security story per environment - one identity layer, one policy engine, many physical locations"
-        ]
+        ],
+        "style": {
+          "padding": 16
+        }
       }
     ]
   },

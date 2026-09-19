@@ -5,7 +5,7 @@
   "tree": {
     "type": "column",
     "style": {
-      "gap": 24
+      "gap": 18
     },
     "children": [
       {
@@ -15,7 +15,10 @@
         "color": "red",
         "lines": [
           "App process (e.g. Node.js)"
-        ]
+        ],
+        "style": {
+          "padding": 16
+        }
       },
       {
         "type": "card",
@@ -23,13 +26,19 @@
         "title": "INTERCEPTION",
         "lines": [
           "Systrap stub (per-CPU) or KVM platform traps the instruction here, before the host kernel ever sees it"
-        ]
+        ],
+        "style": {
+          "padding": 16
+        }
       },
       {
         "type": "card",
         "id": "trusted",
         "title": "TRUSTED USER SPACE - the gVisor sandbox",
-        "lines": []
+        "lines": [],
+        "style": {
+          "padding": 16
+        }
       },
       {
         "type": "row",
@@ -47,7 +56,10 @@
               "emulates 300+ Linux syscalls in memory",
               "Netstack (embedded, not a process)",
               "full Go TCP/IP stack - builds L2/L3 frames in-process"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -57,7 +69,10 @@
             "lines": [
               "filesystem proxy, one per container",
               "Sentry never touches the real host FS directly"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -66,7 +81,10 @@
             "lines": [
               "Sentry: only network + memory syscalls reach the real host.",
               "Gofer: only file read/write on handles it already validated."
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           }
         ]
       },
@@ -77,7 +95,10 @@
         "lines": [
           "Host Linux Kernel",
           "the application process never speaks to this box directly - every arrow above is the redirection that guarantees it"
-        ]
+        ],
+        "style": {
+          "padding": 16
+        }
       }
     ]
   },

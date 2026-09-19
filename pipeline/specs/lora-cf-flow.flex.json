@@ -5,30 +5,111 @@
   "subtitle": "BYO-LoRA is four steps, open beta, free during beta",
   "tree": {
     "type": "column",
-    "style": { "gap": 26, "align": "stretch" },
+    "style": {
+      "gap": 26,
+      "align": "stretch"
+    },
     "children": [
       {
         "type": "row",
-        "style": { "gap": 20, "justify": "center" },
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
         "children": [
-          { "type": "card", "id": "train", "title": "1. TRAIN", "lines": ["PEFT/LoRA run on your data,", "rank r <= 8 (up to 32),", "save safetensors"], "color": "green" },
-          { "type": "card", "id": "files", "title": "2. TWO FILES", "lines": ["adapter_model.safetensors (< 300 MB)", "adapter_config.json with model_type:", "mistral, gemma or llama"], "color": "green" }
+          {
+            "type": "card",
+            "id": "train",
+            "title": "1. TRAIN",
+            "lines": [
+              "PEFT/LoRA run on your data,",
+              "rank r <= 8 (up to 32),",
+              "save safetensors"
+            ],
+            "color": "green",
+            "style": {
+              "padding": 16
+            }
+          },
+          {
+            "type": "card",
+            "id": "files",
+            "title": "2. TWO FILES",
+            "lines": [
+              "adapter_model.safetensors (< 300 MB)",
+              "adapter_config.json with model_type:",
+              "mistral, gemma or llama"
+            ],
+            "color": "green",
+            "style": {
+              "padding": 16
+            }
+          }
         ]
       },
       {
         "type": "row",
-        "style": { "gap": 20, "justify": "center" },
+        "style": {
+          "gap": 20,
+          "justify": "center"
+        },
         "children": [
-          { "type": "card", "id": "upload", "title": "3. UPLOAD", "lines": ["wrangler ai finetune create", "<model> <finetune> <folder>", "or REST: /ai/finetunes/{id}/finetune-assets/"], "color": "blue" },
-          { "type": "card", "id": "run", "title": "4. SWAP PER REQUEST", "lines": ["env.AI.run(model, { messages,", "raw: true, lora: finetuneId })", "no edit after upload: re-create"], "color": "blue" }
+          {
+            "type": "card",
+            "id": "upload",
+            "title": "3. UPLOAD",
+            "lines": [
+              "wrangler ai finetune create",
+              "<model> <finetune> <folder>",
+              "or REST: /ai/finetunes/{id}/finetune-assets/"
+            ],
+            "color": "blue",
+            "style": {
+              "padding": 16
+            }
+          },
+          {
+            "type": "card",
+            "id": "run",
+            "title": "4. SWAP PER REQUEST",
+            "lines": [
+              "env.AI.run(model, { messages,",
+              "raw: true, lora: finetuneId })",
+              "no edit after upload: re-create"
+            ],
+            "color": "blue",
+            "style": {
+              "padding": 16
+            }
+          }
         ]
       }
     ]
   },
   "connect": [
-    { "from": "train", "to": "files", "color": "green", "label": "export" },
-    { "from": "files", "to": "upload", "color": "blue", "label": "2 files exactly" },
-    { "from": "upload", "to": "run", "color": "blue", "label": "finetune id" }
+    {
+      "from": "train",
+      "to": "files",
+      "color": "green",
+      "label": "export"
+    },
+    {
+      "from": "files",
+      "to": "upload",
+      "color": "blue",
+      "label": "2 files exactly"
+    },
+    {
+      "from": "upload",
+      "to": "run",
+      "color": "blue",
+      "label": "finetune id"
+    }
   ],
-  "chips": ["up to 100 adapters per account", "public LoRA collection exists", "native prompt caching discount", "$0.011 per 1000 Neurons"]
+  "chips": [
+    "up to 100 adapters per account",
+    "public LoRA collection exists",
+    "native prompt caching discount",
+    "$0.011 per 1000 Neurons"
+  ]
 }

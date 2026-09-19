@@ -5,32 +5,125 @@
   "subtitle": "LoRA agents on Cloudflare Workers and self-hosted vLLM",
   "tree": {
     "type": "column",
-    "style": { "gap": 28, "align": "stretch" },
+    "style": {
+      "gap": 28,
+      "align": "stretch"
+    },
     "children": [
       {
         "type": "row",
-        "style": { "gap": 22, "align": "stretch", "justify": "center" },
+        "style": {
+          "gap": 22,
+          "align": "stretch",
+          "justify": "center"
+        },
         "children": [
-          { "type": "card", "id": "skill", "title": "SKILL adapter", "lines": ["SSH deploys, firewall ops,", "agent tools"], "color": "green" },
-          { "type": "card", "id": "memory", "title": "MEMORY adapter", "lines": ["knowledge baked in,", "not a claude.md"], "color": "green" },
-          { "type": "card", "id": "guardrail", "title": "GUARDRAIL adapter", "lines": ["expert switching,", "one swap per request"], "color": "green" }
+          {
+            "type": "card",
+            "id": "skill",
+            "title": "SKILL adapter",
+            "lines": [
+              "SSH deploys, firewall ops,",
+              "agent tools"
+            ],
+            "color": "green",
+            "style": {
+              "padding": 16
+            }
+          },
+          {
+            "type": "card",
+            "id": "memory",
+            "title": "MEMORY adapter",
+            "lines": [
+              "knowledge baked in,",
+              "not a claude.md"
+            ],
+            "color": "green",
+            "style": {
+              "padding": 16
+            }
+          },
+          {
+            "type": "card",
+            "id": "guardrail",
+            "title": "GUARDRAIL adapter",
+            "lines": [
+              "expert switching,",
+              "one swap per request"
+            ],
+            "color": "green",
+            "style": {
+              "padding": 16
+            }
+          }
         ]
       },
       {
         "type": "row",
-        "style": { "gap": 28, "align": "stretch", "justify": "center" },
+        "style": {
+          "gap": 28,
+          "align": "stretch",
+          "justify": "center"
+        },
         "children": [
-          { "type": "card", "id": "base", "title": "Base Model", "lines": ["serverless edge (Workers AI)", "or self-hosted GPU (vLLM)", "same request, swapped adapter"], "color": "gray", "logo": "cloudflare", "style": { "maxWidth": 420 } },
-          { "type": "card", "id": "persona", "title": "honest persona (SPT)", "lines": ["reviews outputs,", "cannot influence them"], "color": "blue", "style": { "maxWidth": 340 } }
+          {
+            "type": "card",
+            "id": "base",
+            "title": "Base Model",
+            "lines": [
+              "serverless edge (Workers AI)",
+              "or self-hosted GPU (vLLM)",
+              "same request, swapped adapter"
+            ],
+            "color": "gray",
+            "logo": "cloudflare",
+            "style": {
+              "maxWidth": 420,
+              "padding": 16
+            }
+          },
+          {
+            "type": "card",
+            "id": "persona",
+            "title": "honest persona (SPT)",
+            "lines": [
+              "reviews outputs,",
+              "cannot influence them"
+            ],
+            "color": "blue",
+            "style": {
+              "maxWidth": 340,
+              "padding": 16
+            }
+          }
         ]
       }
     ]
   },
   "connect": [
-    { "from": "skill", "to": "base", "color": "green", "label": "swap in" },
-    { "from": "memory", "to": "base", "color": "green" },
-    { "from": "guardrail", "to": "base", "color": "green" },
-    { "from": "base", "to": "persona", "color": "blue", "label": "review" }
+    {
+      "from": "skill",
+      "to": "base",
+      "color": "green",
+      "label": "swap in"
+    },
+    {
+      "from": "memory",
+      "to": "base",
+      "color": "green"
+    },
+    {
+      "from": "guardrail",
+      "to": "base",
+      "color": "green"
+    },
+    {
+      "from": "base",
+      "to": "persona",
+      "color": "blue",
+      "label": "review"
+    }
   ],
   "chips": []
 }

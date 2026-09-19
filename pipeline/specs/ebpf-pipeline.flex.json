@@ -1,10 +1,11 @@
 {
   "width": 1200,
   "padding": 40,
+  "title": "eBPF Monitoring & Enforcing Pipeline",
   "tree": {
     "type": "row",
     "style": {
-      "gap": 20,
+      "gap": 18,
       "justify": "center"
     },
     "children": [
@@ -14,7 +15,10 @@
         "title": "1. Agent Process",
         "lines": [
           "Plaintext in memory"
-        ]
+        ],
+        "style": {
+          "padding": 16
+        }
       },
       {
         "type": "card",
@@ -23,7 +27,10 @@
         "lines": [
           "SSL_write / read"
         ],
-        "color": "blue"
+        "color": "blue",
+        "style": {
+          "padding": 16
+        }
       },
       {
         "type": "card",
@@ -31,7 +38,10 @@
         "title": "3. eBPF Ring Buffer",
         "lines": [
           "Kernel-to-Userspace"
-        ]
+        ],
+        "style": {
+          "padding": 16
+        }
       },
       {
         "type": "card",
@@ -40,7 +50,10 @@
         "lines": [
           "Prompt Guard (22M)",
           "or Embeddings + XGBoost"
-        ]
+        ],
+        "style": {
+          "padding": 16
+        }
       },
       {
         "type": "card",
@@ -48,7 +61,10 @@
         "title": "5. Verdict Map",
         "lines": [
           "eBPF Map Update"
-        ]
+        ],
+        "style": {
+          "padding": 16
+        }
       },
       {
         "type": "card",
@@ -58,7 +74,10 @@
           "SIGSTOP",
           "TCP-RST / Drop"
         ],
-        "color": "red"
+        "color": "red",
+        "style": {
+          "padding": 16
+        }
       }
     ]
   },

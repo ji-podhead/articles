@@ -5,7 +5,7 @@
   "tree": {
     "type": "column",
     "style": {
-      "gap": 24
+      "gap": 18
     },
     "children": [
       {
@@ -23,7 +23,10 @@
             "lines": [
               "Every request already carries a verified identity (X-App-ID) - log denied auth attempts + which workspace served which request",
               "→ WAF/gateway-style audit log"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -32,7 +35,10 @@
             "lines": [
               "A packet with the wrong VLAN tag trying to reach another tenant's segment is a real signal - an IDS - OSS: Suricata per VLAN; AWS: GuardDuty",
               "→ network-IDS finding, per tenant"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "card",
@@ -42,7 +48,10 @@
             "lines": [
               "Every syscall the Sentry emulates is visible in-process - an eBPF sensor watching the sandbox catches anomalous syscall - OSS: Falco; AWS: GuardDuty",
               "→ runtime-security finding"
-            ]
+            ],
+            "style": {
+              "padding": 16
+            }
           }
         ]
       },
@@ -52,7 +61,10 @@
         "title": "Correlation (the SIEM core)",
         "lines": [
           "same workspace_id / owner attribution across all three sources - 3 unrelated-looking events become 1 incident"
-        ]
+        ],
+        "style": {
+          "padding": 16
+        }
       },
       {
         "type": "card",
@@ -60,7 +72,10 @@
         "title": "One risk-ranked incident:",
         "lines": [
           "\"workspace X - proxy denial, then a VLAN-102 IDS hit, then an anomalous syscall in the same sandbox, within 3 seconds\""
-        ]
+        ],
+        "style": {
+          "padding": 16
+        }
       }
     ]
   },

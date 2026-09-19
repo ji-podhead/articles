@@ -20,10 +20,13 @@
             "id": "l1",
             "title": "Layer 1 - Model Bandit (per platform:model)",
             "lines": [
-              "Beta posterior over success/failure · decayed exponentially, 2-day half-life (lazy, on touch)",
-              "score = 0.6 × reliability + 0.4 × speed (1s → 1.0, 10s → 0.1)",
-              "cold-start probe until 5 samples · 10% explore least-sampled · exploit: 0.7 × bandit + 0.3 × user preference"
-            ]
+              "Beta posterior over success/failure \u00b7 decayed exponentially, 2-day half-life (lazy, on touch)",
+              "score = 0.6 \u00d7 reliability + 0.4 \u00d7 speed (1s \u2192 1.0, 10s \u2192 0.1)",
+              "cold-start probe until 5 samples \u00b7 10% explore least-sampled \u00b7 exploit: 0.7 \u00d7 bandit + 0.3 \u00d7 user preference"
+            ],
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "chip",
@@ -43,11 +46,14 @@
             "id": "l2",
             "title": "Layer 2 - Key Pool (per key)",
             "lines": [
-              "EMA reliability + speed posteriors · model-scope whitelists · cooldown state",
-              "cost-scaled cooldowns: free 5s · <$0.5 30s · <$3 60s · pricey 5min · 402 → 24h bench (only extends)",
-              "free-first failover: paid keys route last · provider-informed benches survive success"
+              "EMA reliability + speed posteriors \u00b7 model-scope whitelists \u00b7 cooldown state",
+              "cost-scaled cooldowns: free 5s \u00b7 <$0.5 30s \u00b7 <$3 60s \u00b7 pricey 5min \u00b7 402 \u2192 24h bench (only extends)",
+              "free-first failover: paid keys route last \u00b7 provider-informed benches survive success"
             ],
-            "color": "green"
+            "color": "green",
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "chip",
@@ -68,11 +74,14 @@
             "id": "l3",
             "title": "Layer 3 - Quota Truth (per provider)",
             "lines": [
-              "x-ratelimit-* / Retry-After parsed per vendor: NVIDIA swapped order · Cerebras -day/-minute namespaces · Anthropic family",
+              "x-ratelimit-* / Retry-After parsed per vendor: NVIDIA swapped order \u00b7 Cerebras -day/-minute namespaces \u00b7 Anthropic family",
               "confidence model: header 1.0 > error body 0.75 > probe 0.6 - most trustworthy source per (platform, key, pool, metric)",
-              "pool inference: groq::account · openrouter::free · google::project - two keys, one account = one budget"
+              "pool inference: groq::account \u00b7 openrouter::free \u00b7 google::project - two keys, one account = one budget"
             ],
-            "color": "amber"
+            "color": "amber",
+            "style": {
+              "padding": 16
+            }
           },
           {
             "type": "chip",
@@ -90,7 +99,7 @@
         "children": [
           {
             "type": "chip",
-            "text": "jimesh open-source AI gateway · every proxied call teaches both upper layers"
+            "text": "jimesh open-source AI gateway \u00b7 every proxied call teaches both upper layers"
           }
         ]
       }
@@ -100,13 +109,13 @@
     {
       "from": "l1",
       "to": "l2",
-      "label": "RouteEvent → ApplyFeedback (Redis Stream jimesh:events · inline fallback) · 4xx filtered out",
+      "label": "RouteEvent \u2192 ApplyFeedback (Redis Stream jimesh:events \u00b7 inline fallback) \u00b7 4xx filtered out",
       "color": "blue"
     },
     {
       "from": "l2",
       "to": "l3",
-      "label": "429/402 → cost-aware cooldown · 200 with remaining=0 → precise bench (no failure stat)",
+      "label": "429/402 \u2192 cost-aware cooldown \u00b7 200 with remaining=0 \u2192 precise bench (no failure stat)",
       "color": "green"
     }
   ]
