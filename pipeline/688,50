@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+<style>@page { size: 900,00pt 688,50pt; margin: 0 }</style></head>
+<body>
+<h1>OBJECT TRACKING: KALMAN FILTER + DEEPSORT</h1>
+<div class="sub">from prediction-correction cycles to deep re-identification</div>
+<div class="col root"><div class="row"><div class="card blue"><div class="t">KALMAN FILTER</div><div class="d">the recursive predictor-corrector</div>
+<div class="d"></div>
+<div class="d">① PREDICTION</div>
+<div class="d">forecast next position</div>
+<div class="d">based on past states (pos, vel)</div>
+<div class="d"></div>
+<div class="d">② CORRECTION</div>
+<div class="d">compare with measurement</div>
+<div class="d">weight by uncertainty</div>
+<div class="d"></div>
+<div class="d">WHY IT'S STILL USED TODAY</div>
+<div class="d">✓ very fast (real-time capable) ✓ handles noisy measurements</div>
+<div class="d">✓ smooth consistent tracks ✓ works even with missing detections</div></div>
+<div class="card"><div class="t">DeepSORT</div><div class="d">deep learning + SORT = robust multi-object tracking</div>
+<div class="d"></div>
+<div class="d">Motion Module</div>
+<div class="d">Kalman Filter</div>
+<div class="d">trajectory prediction</div>
+<div class="d">Appearance Module</div>
+<div class="d">ReID (Deep Learning)</div>
+<div class="d">identity across frames</div>
+<div class="d">Data Association</div>
+<div class="d">align detections ↔ existing tracks</div>
+<div class="d"></div>
+<div class="d">KEY ADVANTAGES:</div>
+<div class="d">✓ Robust to occlusions + motion blur</div>
+<div class="d">✓ High accuracy (motion + appearance synergy)</div>
+<div class="d">✓ Multi-target efficient ✓ Dynamic environments</div></div></div>
+<div class="row"><div class="card green"><div class="t">MOTA - TRACKING ACCURACY</div><div class="d">MOTA = 1 − (FP + FN + IDS) / GT</div>
+<div class="d">100% = perfect tracking</div>
+<div class="d"></div>
+<div class="d">FP</div>
+<div class="d">False Positives (wrong detections)</div>
+<div class="d">FN</div>
+<div class="d">False Negatives (missed objects)</div>
+<div class="d">IDS</div>
+<div class="d">Identity Switches (wrong ID assignment)</div>
+<div class="d">GT</div>
+<div class="d">Ground Truth occurrences</div>
+<div class="d"></div>
+<div class="d">Also:</div>
+<div class="d">MOTP = position precision</div>
+<div class="d">OpenCV + YOLO compatible</div>
+<div class="d">MOT Challenge benchmarks</div></div>
+<div class="card"><div class="t">TOOLS &amp; BENCHMARKS</div><div class="d">py-motmetrics</div>
+<div class="d">Python MOT evaluation</div>
+<div class="d">github.com/cheind/py-motmetrics</div>
+<div class="d">MOT Challenge</div>
+<div class="d">official benchmark results</div>
+<div class="d">motchallenge.net</div>
+<div class="d">OpenCV Trackers</div>
+<div class="d">all models available</div>
+<div class="d">+ YOLO detection combo</div>
+<div class="d">OC-SORT + CMC</div>
+<div class="d">refined motion modeling</div>
+<div class="d">+ cross-modal consistency</div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div></div></div>
+<div><div style="font-size:13px;color:var(--ink2)">&#35;ObjectTracking &#35;ComputerVision &#35;Robotics &#35;KalmanFilter &#35;DeepSORT &#35;MOTA &#35;IsaacSim</div></div></div>
+
+
+</body>
+</html>

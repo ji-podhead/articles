@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+<style>@page { size: 900,00pt 973,50pt; margin: 0 }</style></head>
+<body>
+<h1>Glossary: Platform Categories (The CNAPP Alphabet)</h1>
+
+<div class="col root"><div class="row"><div><div style="font-weight:700;font-size:13px;color:#4493f8">TERM</div></div>
+<div><div style="font-weight:700;font-size:13px;color:#4493f8">MEANING</div></div></div>
+<div class="card"><div class="t">CNAPP</div><div class="d">Cloud-Native Application Protection Platform - one platform combining posture + workload + data + API security.</div></div>
+<div class="card"><div class="t">CSPM</div><div class="d">Cloud Security Posture Management - finds and ranks cloud misconfigurations (public buckets, open security groups).</div></div>
+<div class="card"><div class="t">AI-SPM / SPM</div><div class="d">Security Posture Management with AI-driven behavior analytics and risk scoring - proactive threat finding before exploitation.</div></div>
+<div class="card"><div class="t">CIEM</div><div class="d">Cloud Infrastructure Entitlement Management - least-privilege over identities: finds s3:*-style wildcards, unused keys, and over-privileged roles.</div></div>
+<div class="card"><div class="t">CWPP</div><div class="d">Cloud Workload Protection Platform - runtime protection of hosts and containers (syscall- and process-level).</div></div>
+<div class="card"><div class="t">DSPM</div><div class="d">Data Security Posture Management - discovers where sensitive data lives and who flows it out.</div></div>
+<div class="card"><div class="t">ASPM</div><div class="d">Application Security Posture Management - bridges code vulnerabilities to cloud infrastructure exposure.</div></div>
+<div class="card"><div class="t">CTEM</div><div class="d">Continuous Threat Exposure Management - operating loop: enumerate attack surface → prioritize → validate → remediate.</div></div>
+<div class="card"><div class="t">XDR</div><div class="d">Extended Detection &amp; Response - SIEM + endpoint detection + correlation under one umbrella.</div></div>
+<div class="card"><div class="t">MDR / managed SOC</div><div class="d">Managed Detection &amp; Response - a partner runs 24/7 detection/response for you (the &quot;agentic SOC&quot; products live here).</div></div>
+<div class="card"><div class="t">SOAR</div><div class="d">Security Orchestration, Automation &amp; Response - playbook engine that chains detections into automated actions (with HITL gates).</div></div></div>
+
+
+</body>
+</html>

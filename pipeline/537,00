@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+<style>@page { size: 900,00pt 537,00pt; margin: 0 }</style></head>
+<body>
+<h1>The open-source stack: network, kernel, host and firewall signals under one roof</h1>
+
+<div class="col root"><div><div style="font-weight:700;font-size:13px;color:#8b949e">SENSORS (per host / per container)</div></div>
+<div class="row"><div class="card"><div class="t">Suricata (network IDS/IPS)</div><div class="d">signature rules on packets;</div>
+<div class="d">XDP/eBPF capture at line rate</div></div>
+<div class="card"><div class="t">eBPF sensor (e.g. Falco)</div><div class="d">watches syscalls per container - escapes, shells, miners, no sidecar</div></div>
+<div class="card"><div class="t">Host agent (e.g. Wazuh agent)</div><div class="d">file-integrity monitoring,</div>
+<div class="d">vuln scan, Docker-engine visibility</div></div>
+<div class="card"><div class="t">Firewall logs (nftables/ufw)</div><div class="d">what got dropped, which ports</div>
+<div class="d">are actually open, from where</div></div></div>
+<div class="row"><div class="card blue"><div class="t">SIEM core (e.g. Wazuh manager, rules + correlation)</div><div class="d">correlates all four sources against a ruleset, writes structured, timestamped alerts</div>
+<div class="d">single-node docker-compose, roughly 4 GB RAM - no Kubernetes required</div></div></div>
+<div class="row"><div class="card"><div class="t">Indexer + dashboard (OpenSearch) - full-text search, retention, compliance views</div></div></div></div>
+<div class="flowstrip"><div>Suricata (network IDS/IPS) &#8594; SIEM core (e.g. Wazuh manager, rules + correlation)</div>
+<div>eBPF sensor (e.g. Falco) &#8594; SIEM core (e.g. Wazuh manager, rules + correlation)</div>
+<div>Host agent (e.g. Wazuh agent) &#8594; SIEM core (e.g. Wazuh manager, rules + correlation)</div>
+<div>Firewall logs (nftables/ufw) &#8594; SIEM core (e.g. Wazuh manager, rules + correlation)</div>
+<div>SIEM core (e.g. Wazuh manager, rules + correlation) &#8594; Indexer + dashboard (OpenSearch) - full-text search, retention, compliance views</div></div>
+
+</body>
+</html>

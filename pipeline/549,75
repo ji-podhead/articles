@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+table.fig { border-collapse: collapse; width: 100%; }
+table.fig th { background: #1c2128; color: #e6edf3; font-size: 15px; font-weight: 700; text-align: left; padding: 12px 16px; border: 1px solid #30363d; }
+table.fig td { color: #c9d1d9; font-size: 14px; line-height: 1.5; padding: 12px 16px; border: 1px solid #30363d; vertical-align: top; }
+table.fig tbody tr:nth-child(even) { background: #161b22; }
+table.fig td:first-child { font-weight: 700; color: #ffffff; }
+table.fig tr.foot td { color: #8b949e; font-size: 13.5px; font-weight: 400; background: #0d1117; }
+</style>
+<style>@page { size: 900,00pt 549,75pt; margin: 0 }</style></head>
+<body>
+<h1>Five families of routing methods - they compose</h1>
+<table class="fig">
+<thead>
+<tr>
+<th>Family</th>
+<th>How it decides</th>
+<th>Needs</th>
+<th>Role in a mesh</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div>Static</div>
+<div>priority chains, weighted shuffle,</div>
+<div>least-busy, latency-, cost-based</div></td>
+<td><div>fixed rules - operator encodes the</div>
+<div>policy; identical for every request</div></td>
+<td><div>nothing (config only)</div></td>
+<td><div>the floor - fallback graph</div>
+<div>every mesh needs anyway</div></td>
+</tr>
+<tr>
+<td><div>Learned</div>
+<div>bandits from outcome feedback</div>
+<div>(with decay) · trained routers</div></td>
+<td><div>which provider:model served similar</div>
+<div>traffic reliably, fast - lately?</div></td>
+<td><div>outcome stream (bandit), or</div>
+<div>preference data (RouteLLM)</div></td>
+<td><div>provider selection within</div>
+<div>the chain nodes</div></td>
+</tr>
+<tr>
+<td><div>Content-aware cascade</div>
+<div>FrugalGPT scorer · entropy gates</div>
+<div>reading the model's own logprobs</div></td>
+<td><div>look at the request or the cheap</div>
+<div>answer: confident? serve. else escalate</div></td>
+<td><div>labeled data (scorer) or</div>
+<div>logprobs-capable provider (gate)</div></td>
+<td><div>cost gate in front of the chain:</div>
+<div>decide whether to spend at all</div></td>
+</tr>
+<tr>
+<td><div>kNN / similarity</div>
+<div>embed the prompt, find nearest</div>
+<div>historical prompts (semantic router)</div></td>
+<td><div>&quot;which model served prompts like this</div>
+<div>well and cheap?&quot; - your traffic is</div>
+<div>the classifier</div></td>
+<td><div>embedding calls (cheap) + history</div>
+<div>store; cold start needs seeds</div></td>
+<td><div>cache-like routing memory;</div>
+<div>great for repeated workloads</div></td>
+</tr>
+<tr>
+<td><div>Mesh / graph routing</div>
+<div>models as nodes, chains, pools and</div>
+<div>fallback edges as the graph</div></td>
+<td><div>failover walks the graph, not a list;</div>
+<div>a &quot;model&quot; your app picks can itself be</div>
+<div>a whole sub-routing policy</div></td>
+<td><div>nothing - structure only</div></td>
+<td><div>the skeleton the other four</div>
+<div>families live inside</div></td>
+</tr>
+<tr class="foot">
+<td colspan="4"><div>RouteLLM arXiv:2406.18665 · FrugalGPT arXiv:2305.05176 · entropy gate: previous article in this series</div></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

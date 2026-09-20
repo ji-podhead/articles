@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+<style>@page { size: 900,00pt 327,00pt; margin: 0 }</style></head>
+<body>
+<h1>JiMesh as the system of record - every sensor feeds ONE finding schema</h1>
+
+<div class="col root"><div class="row"><div class="card green"><div class="t">Workspaces (Docker)</div><div class="d">nft default-drop egress</div>
+<div class="d">socket-guard (docker.sock)</div>
+<div class="d">metadata 169.254.169.254 deny</div></div>
+<div class="arrow">→</div>
+<div class="card blue"><div class="t">K-LAF Identity Chain</div><div class="d">container_id → session</div>
+<div class="d">session → project</div>
+<div class="d">minted at provisioning - never self-declared</div></div>
+<div class="arrow">→</div>
+<div class="card blue"><div class="t">security_events</div><div class="d">+ source · raw_id · severity</div>
+<div class="d">+ confidence · model_version</div>
+<div class="d">one schema, every provider</div></div>
+<div class="col"><div class="card"><div class="t">FindingSource / FindingSink</div><div class="d">wazuh | securityhub | builtin</div></div>
+<div class="card"><div class="t">JiMesh Dashboard API (identical)</div><div class="d">/api/security/events · freeze · report</div></div></div></div></div>
+<div class="flowstrip"><div>security_events &#8594; FindingSource / FindingSink</div>
+<div>security_events &#8594; JiMesh Dashboard API (identical)</div></div>
+
+</body>
+</html>

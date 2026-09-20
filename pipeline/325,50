@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+table.fig { border-collapse: collapse; width: 100%; table-layout: fixed; }
+table.fig th { background: #1c2128; color: #ffffff; font-size: 15.5px; text-align: left; padding: 13px 16px; border: 1px solid #30363d; }
+table.fig td { color: #c9d1d9; font-size: 14.5px; line-height: 1.5; padding: 13px 16px; border: 1px solid #30363d; vertical-align: top; }
+table.fig tr:nth-child(odd) td { background: #161b22; }
+table.fig td.b { font-weight: 700; color: #e6edf3; }
+table.fig td.m { font-family: var(--font-mono); color: #79c0ff; font-weight: 700; }
+table.fig th:nth-child(1) { width: 16%; }
+table.fig th:nth-child(2) { width: 33%; }
+table.fig th:nth-child(3) { width: 51%; }
+</style>
+<style>@page { size: 900,00pt 325,50pt; margin: 0 }</style></head>
+<body>
+<table class="fig">
+<tr><th>File</th><th>Placement</th><th>Caption (English)</th></tr>
+<tr><td class="m">titel.svg</td><td>Title image / post preview</td><td>Title image: kernel-level interception meets LLM guardrails - the two halves this article connects.</td></tr>
+<tr><td class="m">gap2.svg</td><td>Section &quot;The semantic gap&quot; (Figure 1)</td><td>The semantic gap - infrastructure tools see the &quot;how&quot;, AI guardrails see the &quot;what&quot;, and nothing correlates the two.</td></tr>
+<tr><td class="m">pipeline.svg</td><td>Section &quot;How eBPF-based interception actually works (Figure 2)&quot;</td><td>The eBPF interception pipeline - capture at the TLS boundary, judge in userspace, enforce in the kernel.</td></tr>
+<tr><td class="m">freeze_latter.svg</td><td>Section &quot;The part that actually matters: identity&quot; (Figure 4)</td><td>The identity chain and the response ladder - identity flows from the kernel-visible PID down to the minted session token, and enforcement escalates from revocation to egress blackhole.</td></tr>
+</table>
+</body>
+</html>

@@ -58,3 +58,4 @@ None of these four controls substitutes for the others. Together, they're the di
 - OWASP Top 10 for LLM Applications (Prompt Injection, LLM04 Data Poisoning) — https://owasp.org/www-project-top-10-for-large-language-model-applications/
 - SolidGoldMagikarp / glitch token research (LessWrong, original writeup) — https://www.lesswrong.com/posts/aPeJE8bSo6rAFoLqg/solidgoldmagikarp-plus-prompt-generation
 - gVisor — https://gvisor.dev
+- https://labs.snyk.io/resources/ragpoison-prompt-injection/

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+<style>@page { size: 1200px 780px; margin: 0 } @media print { body { padding: 40px } }</style></head>
+<body>
+<h1>Adapters as Skills, Adapters as Conscience</h1>
+<div class="sub">LoRA agents on Cloudflare Workers and self-hosted vLLM</div>
+<div class="col root"><div class="row"><div class="card green"><div class="t">SKILL adapter</div><div class="d">SSH deploys, firewall ops,</div>
+<div class="d">agent tools</div></div>
+<div class="card green"><div class="t">MEMORY adapter</div><div class="d">knowledge baked in,</div>
+<div class="d">not a claude.md</div></div>
+<div class="card green"><div class="t">GUARDRAIL adapter</div><div class="d">expert switching,</div>
+<div class="d">one swap per request</div></div></div>
+<div class="row"><div class="card"><img class="cardlogo" src="../logos/cloudflare.svg" alt="cloudflare"><div class="t">Base Model</div><div class="d">serverless edge (Workers AI)</div>
+<div class="d">or self-hosted GPU (vLLM)</div>
+<div class="d">same request, swapped adapter</div></div>
+<div class="col"></div>
+<div class="card blue"><div class="t">honest persona (SPT)</div><div class="d">reviews outputs,</div>
+<div class="d">cannot influence them</div></div></div></div>
+<div class="flowstrip"><div>SKILL adapter &#8594; swap in &#8594; Base Model</div>
+<div>MEMORY adapter &#8594; Base Model</div>
+<div>GUARDRAIL adapter &#8594; Base Model</div>
+<div>Base Model &#8594; review &#8594; honest persona (SPT)</div></div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+table.fig { border-collapse: collapse; width: 100%; table-layout: fixed; }
+table.fig th { background: #1c2128; color: #ffffff; font-size: 15.5px; text-align: left; padding: 13px 16px; border: 1px solid #30363d; }
+table.fig td { color: #c9d1d9; font-size: 14.5px; line-height: 1.5; padding: 13px 16px; border: 1px solid #30363d; vertical-align: top; }
+table.fig tr:nth-child(odd) td { background: #161b22; }
+table.fig td.b { font-weight: 700; color: #e6edf3; }
+table.fig td.m { font-family: var(--font-mono); color: #79c0ff; }
+table.fig th:nth-child(1) { width: 17%; }
+table.fig th:nth-child(2) { width: 25%; }
+table.fig th:nth-child(3) { width: 29%; }
+table.fig th:nth-child(4) { width: 29%; }
+td div { margin: 0 0 4px 0; }
+div.g { color: #3fb950; }
+div.r { color: #f85149; }
+td div:last-child { margin-bottom: 0; }
+</style>
+<style>@page { size: 900,00pt 370,50pt; margin: 0 }</style></head>
+<body>
+<table class="fig">
+<tr><th>Class</th><th>Examples</th><th>What you get</th><th>What you don't</th></tr>
+<tr><td class="b">Gateway / Proxy (OSS)</td><td class="m">LiteLLM Proxy</td><td><div class="g">✔ Unified provider routing</div><div class="g">✔ User budgets &amp; rate limits</div></td><td><div class="r">❌ No process or container identity</div><div class="r">❌ No operating system enforcement</div></td></tr>
+<tr><td class="b">In-Process Guards (OSS)</td><td class="m">LLM Guard, Guardrails AI, NeMo Guardrails</td><td><div class="g">✔ Native PII masking</div><div class="g">✔ Prompt injection &amp; toxicity scanning</div></td><td><div class="r">❌ Runs inside the application code</div><div class="r">❌ Not at a centralized network chokepoint</div></td></tr>
+<tr><td class="b">Commercial Platforms</td><td class="m">Lakera (Check Point), Prompt Security, Portkey (Palo Alto)</td><td><div class="g">✔ Low-latency real-time defense</div><div class="g">✔ Enterprise &quot;Shadow AI&quot; discovery</div></td><td><div class="r">❌ Closed-source black box</div><div class="r">❌ Foreign data/trust model requirement</div></td></tr>
+<tr><td class="b">Kernel / Runtime (eBPF)</td><td class="m">TigerGate, AgentSight</td><td><div class="g">✔ Zero-instrumentation intercept</div><div class="g">✔ Operates directly at TLS/Crypto boundary</div></td><td><div class="r">❌ They see the host, but lack context on the identity chain that provisioned the agent</div></td></tr>
+</table>
+</body>
+</html>

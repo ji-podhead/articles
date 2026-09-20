@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+<style>@page { size: 900,00pt 313,50pt; margin: 0 }</style></head>
+<body>
+<h1>8-Stage Slop-to-Knowledge Deconstruction Pipeline</h1>
+
+<div class="col root"><div class="row"><div class="card red"><div class="t">1. Raw Slop &amp; Transcripts</div><div class="d">Chat logs, prompt dumps,</div>
+<div class="d">unformatted notes</div></div>
+<div class="arrow">&#8594;</div>
+<div class="card"><div class="t">2. Slop &amp; Fluff Removal</div><div class="d">Strip LLM greetings,</div>
+<div class="d">Q&amp;A headers &amp; transient UI</div></div>
+<div class="arrow">&#8594;</div>
+<div class="card"><div class="t">3. Dev Artifact Purging</div><div class="d">Remove tickets, sprints,</div>
+<div class="d">internal repo code paths</div></div>
+<div class="arrow">&#8594;</div>
+<div class="card green"><div class="t">4. Redaction &amp; Privacy</div><div class="d">Sanitize IPs, passwords,</div>
+<div class="d">tokens &amp; developer paths</div></div></div>
+<div class="row"><div class="card"><div class="t">5. Pattern Abstraction</div><div class="d">Convert product names</div>
+<div class="d">to generic architectures</div></div>
+<div class="card"><div class="t">6. Audit-to-Guide Rewrite</div><div class="d">Transform post-mortems</div>
+<div class="d">into technical guidebooks</div></div>
+<div class="card"><div class="t">7. English Translation</div><div class="d">Translate 100% of body</div>
+<div class="d">&amp; headings into English</div></div>
+<div class="card green"><div class="t">8. OKF + GraphRAG Synthesis</div><div class="d">Prepend YAML frontmatter,</div>
+<div class="d">optimize chunk boundaries</div></div></div></div>
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+<style>@page { size: 900,00pt 478,50pt; margin: 0 }</style></head>
+<body>
+<h1>Anomaly detection as a managed lifecycle, not a one-off script</h1>
+
+<div class="col root"><div><div style="font-weight:700;font-size:13px;color:#f85149">continuous retrain - legitimate behavior changes must not break the model</div></div>
+<div class="row"><div class="card"><div class="t">1. Features</div><div class="d">gateway/app logs:</div>
+<div class="d">bytes_sent_rolling</div>
+<div class="d">unique_dest_ips_10m</div></div>
+<div class="arrow">→</div>
+<div class="card"><div class="t">2. Training</div><div class="d">Isolation Forest /</div>
+<div class="d">Random Cut Forest</div>
+<div class="d">SageMaker / MLflow</div></div>
+<div class="arrow">→</div>
+<div class="card red"><div class="t">3. Evaluation</div><div class="d">F1 · false-positive rate</div>
+<div class="d">FPR &lt; 1% gate</div></div></div>
+<div class="row"><div class="card red"><div class="t">6. Model Monitor</div><div class="d">live vs. training</div>
+<div class="d">distribution</div>
+<div class="d">data drift alarm</div></div>
+<div class="card"><div class="t">5. Endpoint</div><div class="d">{anomaly_score:0.89}</div>
+<div class="d">realtime inference</div></div>
+<div class="card blue"><div class="t">4. Model Registry</div><div class="d">v1.0.0</div>
+<div class="d">pending manual</div>
+<div class="d">approval (HITL)</div></div></div>
+<div><div style="font-size:14px;color:var(--ink2)">Findings carry confidence + model_version and ADD to the rule layer - they never replace it</div></div>
+<div><div style="font-size:12px;color:var(--ink2)">AWS: GuardDuty ML (black-box) · SageMaker (custom) · Bedrock (triage)   |   OSS: OpenSearch ML Commons · MLflow · Feast</div></div></div>
+<div class="flowstrip"><div>3. Evaluation &#8594; 4. Model Registry</div>
+<div>4. Model Registry &#8594; 5. Endpoint</div>
+<div>5. Endpoint &#8594; 6. Model Monitor</div></div>
+
+</body>
+</html>

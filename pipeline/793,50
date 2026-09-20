@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+<style>@page { size: 900,00pt 793,50pt; margin: 0 }</style></head>
+<body>
+<h1>TAXONOMY + ONTOLOGY = OKF'S SUPERPOWER</h1>
+<div class="sub">rigid hierarchy for filtering · relational graph for traversal</div>
+<div class="col root"><div class="row"><div class="card green"><div class="t">gVisor</div><div class="d">Network.</div></div>
+<div class="arrow green">&#8594;<span class="lbl">isolates</span></div>
+<div class="card"><div class="t">Docker</div><div class="d">Bridge</div></div>
+<div class="card"><div class="t">Secure</div><div class="d">Gateway</div></div>
+<div class="arrow green">&#8594;<span class="lbl">verifies</span></div>
+<div class="card"><div class="t">Kubernetes</div><div class="d">Cluster</div></div></div>
+<div class="row"><div class="col"><div class="card blue"><div class="t">THE TAXONOMY - rigid tree</div><div class="d">directory structure + topic / subtopic · one home per document</div></div>
+<div class="card blue"><div class="t">general/</div><div class="d">networking/</div>
+<div class="d">container-networking/</div>
+<div class="d">gvisor.md</div>
+<div class="d">the document (leaf)</div></div>
+<div class="card blue"><div class="t">llm-orchestration/</div><div class="d">llama3-security.md</div>
+<div class="d">the document (leaf)</div></div>
+<div class="card blue"><div class="t">JOB: INSTANT EXCLUSION</div><div class="d">filter: topic == &quot;general/networking&quot;</div>
+<div class="d">→ irrelevant domains excluded with 100% certainty</div>
+<div class="d">controlled vocabulary: no wild folder names allowed</div></div></div>
+<div class="col"><div class="card green"><div class="t">THE ONTOLOGY - relation web</div><div class="d">Markdown cross-links · any document relates to any other</div></div>
+<div class="card green"><div class="t">JOB: PRECISE TRAVERSAL</div></div></div></div>
+<div class="card blue"><div class="t">THE BRIDGE: manifest.json</div><div class="d">nodes from frontmatter (taxonomy members) + edges from directory structure AND cross-links scanned from the bodies (ontology)</div>
+<div class="d">agent flow: taxonomy filter first → then follow the links - precise answers, no reranking, no cosine guessing</div></div>
+<div class="row"><div class="card"><div class="d">#OKF #KnowledgeEngineering #Taxonomy #Ontology #GraphRAG #AIAgents</div></div></div></div>
+<div class="flowstrip"><div>gVisor &#8594; is_used_by &#8594; Secure</div>
+<div>Docker &#8594; runs_on &#8594; Kubernetes</div></div>
+
+</body>
+</html>

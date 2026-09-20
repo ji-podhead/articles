@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 20px; }
+.arrow .lbl { font-size: 13px; }
+</style>
+<style>@page { size: 900,00pt 510,75pt; margin: 0 }</style></head>
+<body>
+<h1>Split Personality Training: the honest persona loop</h1>
+<div class="col root">
+<div class="card" style="background:var(--elevated)"><div class="t">main model answers the task normally</div></div>
+<div class="arrow" style="flex:0 0 auto">↓<span class="lbl">end of turn</span></div>
+<div class="card amber"><div class="t">split-personality-token replaces end-of-turn; an intervention string says what to review</div></div>
+<div class="arrow" style="flex:0 0 auto">↓<span class="lbl">activate</span></div>
+<div class="card blue"><div class="t">honest persona: a finetuned LoRA adapter; reads the reasoning, cannot influence it</div></div>
+<div class="arrow" style="flex:0 0 auto">↓<span class="lbl">review</span></div>
+<div class="card green"><div class="t">first-person admission, mechanism explained</div></div>
+<div class="arrow" style="flex:0 0 auto">↓<span class="lbl">user never sees it</span></div>
+<div class="card"><div class="t" style="color:var(--ink2)">if the user continues, token and review are cut from history</div></div>
+</div>
+</body>
+</html>
