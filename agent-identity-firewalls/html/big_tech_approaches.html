@@ -4,29 +4,44 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="styles/_house.css">
 <style>
-.root { gap: 28px; }
-.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
-.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
-.card.code { background: var(--elevated); }
-.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+.root { gap: 18px; }
+.card { padding: 14px 18px; }
+.team .t { font-size: 15px; }
+.team .d { font-size: 13.5px; }
+.num { display: flex; flex-direction: row; gap: 10px; align-items: baseline; margin-bottom: 5px; }
+.num .n { flex: 0 0 20px; font-family: var(--font-mono); font-size: 13px; color: var(--code); }
+.num .d { margin: 0; }
+.conv { padding: 15px 20px; }
+.conv .t { font-size: 15px; }
+.foot { border-top: 1px solid var(--line); padding-top: 12px; font-size: 14.5px; color: var(--ink2); }
+.foot b { color: var(--red); }
 </style>
 </head>
 <body>
-<h1>Four different teams, the same underlying answer: deterministic policy, outside the model</h1>
-
-<div class="col root"><div class="row"><div class="card red"><div class="t">Meta, LlamaFirewall (Purple Llama, real, arXiv 2505.03574)</div><div class="d">PromptGuard 2 (jailbreak detector) → Agent Alignment Checks (a chain-of-thought auditor reading the agent's own reasoning for goal misalignment) → CodeShield (static analysis before generated code executes).</div>
-<div class="d">Scope: content-safety, not authorization, answers &quot;is this dangerous,&quot; not &quot;is this agent allowed.&quot;</div></div>
-<div class="card red"><div class="t">OpenAI, tool approvals + moderation pipeline</div><div class="d">Separates prompt from tool execution; a synchronous moderation layer screens input/output before a tool call is even generated; human-in-the-loop approval is the default for higher-risk actions.</div>
-<div class="d">See the real July 2026 incident below, even this didn't stop a benchmark exploit chain.</div></div></div>
-<div class="row"><div class="card green"><div class="t">Google, Vertex AI / Agent Development Kit</div><div class="d">Tool calls are matched deterministically against a pre-defined OpenAPI schema: a call that doesn't exactly match the schema is rejected by the API gateway itself, not by asking the model to reconsider.</div>
-<div class="d">Same shape as a well-built capability gate: the schema/policy check is code, not a second model call.</div></div>
-<div class="card"><div class="t">AWS, Bedrock AgentCore (2025)</div><div class="d">AgentCore Identity brokers short-lived, per-agent STS credentials (AssumeRole + a per-call session policy) instead of a standing IAM role; AgentCore Gateway sits in front of every tool call, evaluated against Cedar, AWS's own deterministic, formally-verified policy language.</div></div></div>
-<div class="card green"><div class="t">The pattern every one of them converges on</div><div class="d">1. A short-lived, per-agent credential, never a standing role or a secret shared across every agent instance.</div>
-<div class="d">2. The identity is resolved server-side, from the credential, never trusted from what the agent's own output claims to be.</div>
-<div class="d">3. The allow/deny decision is deterministic code (Rego, Cedar, an OpenAPI schema match), not a second model asked to judge the first one's tool call.</div>
-<div class="d">4. Content-safety scanners (PromptGuard/CodeShield-style) are a SEPARATE, complementary layer, never a substitute for the authorization decision above.</div></div>
-<div class="card"><div class="t">A platform combining short-lived per-agent keys, server-side header re-stamping, and a deterministic policy gate is a working instance of the same shape.</div></div></div>
-
-
+<h1>Layer 2, tool-call policy: four teams converged on the same shape</h1>
+<div class="sub">That convergence is a signal, not a coincidence: the decision is deterministic code, outside the model</div>
+<div class="col root">
+  <div class="row">
+    <div class="card team"><div class="t">Meta · LlamaFirewall (Purple Llama, arXiv 2505.03574)</div>
+      <div class="d">PromptGuard 2 and CodeShield are content layers; Agent Alignment Checks audit the reasoning, they don't authorize. Kept separate on purpose.</div>
+      <div class="d">CodeShield's engineering spec: Insecure Code Detector covers 7 languages and 50+ CWEs, and a two-stage scan keeps ~99% of requests under 70 ms, with only suspicious code paying a 450 ms p90 deep scan. That latency shape is what makes a scanning stage viable inside a gateway.</div></div>
+    <div class="card team"><div class="t">OpenAI · Operator, the ask layer in numbers</div>
+      <div class="d">Proactive refusals: 97% recall on agentic harms, 94% on high-risk categories like banking. Model mistakes: a 13-per-100-task baseline (5 irreversible or severe) cut by ~90% through confirmations with 92% recall. Watch mode pauses execution on email sites when the user looks away.</div>
+      <div class="d">The honest bill: the tightened ask layer overrefuses much more than GPT-4o, 55% vs 90% on their not-overrefuse metric. A safer ask layer costs convenience, OpenAI published the invoice.</div></div>
+  </div>
+  <div class="row">
+    <div class="card team"><div class="t">Google · Vertex AI / Agent Development Kit</div>
+      <div class="d">Tool calls are matched deterministically against a pre-defined OpenAPI schema: a call that doesn't exactly match is rejected by the API gateway itself, not by asking the model to reconsider. The schema check is code, not a second model call.</div></div>
+    <div class="card team"><div class="t">AWS · Bedrock AgentCore (2025)</div>
+      <div class="d">AgentCore Identity brokers short-lived, per-agent STS credentials (AssumeRole plus a per-call session policy) instead of a standing IAM role; AgentCore Gateway sits in front of every tool call, evaluated against Cedar, AWS's own deterministic, formally verified policy language.</div></div>
+  </div>
+  <div class="card green conv"><div class="t">The pattern all four converge on</div>
+    <div class="num"><div class="n">1</div><div class="d">A short-lived, per-agent credential, never a standing role or a secret shared across every agent instance.</div></div>
+    <div class="num"><div class="n">2</div><div class="d">Identity resolved server-side, from the credential, never from what the request or the model's output claims.</div></div>
+    <div class="num"><div class="n">3</div><div class="d">The allow/deny decision is deterministic code: Rego, Cedar, an OpenAPI schema match, not a second model judging the first one's tool call.</div></div>
+    <div class="num"><div class="n">4</div><div class="d">Content-safety scanners are a separate, complementary layer, never a substitute for the authorization decision.</div></div>
+  </div>
+  <div class="foot"><b>The most common conflation in this space:</b> content-safety scanners answer "is this text or code dangerous." They don't answer "is this agent allowed to call this tool."</div>
+</div>
 </body>
 </html>

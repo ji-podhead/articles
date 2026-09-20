@@ -4,29 +4,57 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="styles/_house.css">
 <style>
-.root { gap: 28px; }
-.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
-.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
-.card.code { background: var(--elevated); }
-.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+.root { gap: 22px; }
+.chain .card { padding: 15px 18px; }
+.stephead { display: flex; flex-direction: row; gap: 12px; align-items: baseline; margin-bottom: 6px; }
+.num { flex: 0 0 34px; font-family: var(--font-mono); font-size: 15px; font-weight: 700; color: var(--code); }
+.stephead .t { margin-bottom: 0; }
+.pat { padding: 13px 16px; }
+.pat .t { font-size: 14.5px; }
+.pat .d { font-size: 13.5px; }
+.mini { display: flex; flex-direction: row; gap: 10px; align-items: baseline; margin-bottom: 4px; }
+.mini .n { flex: 0 0 22px; font-family: var(--font-mono); font-size: 13px; color: var(--ink3); }
+.secnote { font-size: 15px; font-weight: 700; color: var(--ink2); }
+.foot { border-top: 1px solid var(--line); padding-top: 12px; font-size: 14px; color: var(--ink2); }
 </style>
 </head>
 <body>
-<h1>Ingress-derived-only: the gateway is the only place identity is ever decided</h1>
-
-<div class="col root"><div class="card red"><div class="t">Agent's own request arrives</div><div class="d">carrying whatever identity claim it wants</div></div>
-<div class="arrow">↓</div>
-<div class="card"><div class="t">STEP 1, Strip every client-supplied identity header, unconditionally</div><div class="d">Before any other logic runs. A client-supplied copy of an identity claim is treated as spoofing by definition, it never even reaches a decision.</div>
-<div class="d">This is the step most home-grown gateways skip, trusting a header the caller itself set.</div></div>
-<div class="arrow">↓</div>
-<div class="card"><div class="t">STEP 2, Resolve real identity server-side, from the credential that actually authenticated</div><div class="d">Not from anything the client claims. The credential is looked up against a store that distinguishes a human, a workspace, and one specific agent instance.</div>
-<div class="d">Each agent instance gets its own row, independently revocable, independently attributable, never shared.</div></div>
-<div class="arrow">↓</div>
-<div class="card"><div class="t">STEP 3, Re-stamp the identity headers from the VERIFIED row, only now</div><div class="d">Every downstream handler reads a workspace/agent identity header, but the value now came from the database row the credential resolved to, never from the client.</div>
-<div class="d">One ingress point re-stamps, everywhere else just trusts, no downstream code re-derives identity on its own.</div></div>
-<div class="arrow">↓</div>
-<div class="card green"><div class="t">STEP 4, Deterministic policy decides, outside the model entirely</div><div class="d">A policy-as-code engine (Rego, Cedar) evaluates the verified identity against granted capabilities, allow, escalate for approval, or deny. Fail-closed on any error.</div></div></div>
-
-
+<h1>Layer 1, ingress identity: the gateway is the only place identity is ever decided</h1>
+<div class="sub">The client never gets a vote on its own identity: strip, resolve server-side, re-stamp, decide</div>
+<div class="col root">
+  <div class="col chain" style="gap:12px">
+    <div class="card red"><div class="t">An agent request arrives, carrying whatever identity claim it wants</div>
+      <div class="d">Ten agents sharing one connector: compromised agent #7 signs as agent #3, and no log ever says which one did what.</div></div>
+    <div class="arrow">↓</div>
+    <div class="card"><div class="stephead"><div class="num">1</div><div class="t">STRIP every client-supplied identity header, unconditionally</div></div>
+      <div class="d">Before any other logic runs. A client-supplied copy of an identity claim is spoofing by definition, it never reaches a decision.</div></div>
+    <div class="arrow">↓</div>
+    <div class="card"><div class="stephead"><div class="num">2</div><div class="t">RESOLVE the real identity server-side, from the credential that authenticated</div></div>
+      <div class="d">Never from anything the request claims. The credential resolves to one row: a hashed, revocable key for a human, a workspace, or one specific spawned agent instance. Own row, independently revocable, independently attributable, never shared.</div></div>
+    <div class="arrow">↓</div>
+    <div class="card"><div class="stephead"><div class="num">3</div><div class="t">RE-STAMP downstream identity headers from the verified row, only now</div></div>
+      <div class="d">One ingress point re-stamps, everywhere else just trusts. No downstream code re-derives identity on its own.</div></div>
+    <div class="arrow">↓</div>
+    <div class="card green"><div class="stephead"><div class="num">4</div><div class="t">DECIDE with a deterministic policy engine, outside the model entirely</div></div>
+      <div class="d">Allow, escalate to a human, or deny. Fail-closed on any error. RBAC becomes a hierarchy question: which role the agent got at spawn, what it is asking for now.</div></div>
+  </div>
+  <div class="secnote">What the agent carries instead of a human's API key, four patterns, weakest to strongest isolation</div>
+  <div class="row" style="gap:18px">
+    <div class="card pat"><div class="mini"><div class="n">1</div><div class="t">Per-agent server-issued credentials</div></div>
+      <div class="d">Minted at spawn, scoped at issuance (tools, budget, session), revoked per row.</div></div>
+    <div class="card pat"><div class="mini"><div class="n">2</div><div class="t">OAuth token exchange, RFC 8693</div></div>
+      <div class="d">Trade the incoming token for a narrower one: this action, this user, short TTL. The inbox agent never holds the user's Gmail grant.</div></div>
+    <div class="card pat"><div class="mini"><div class="n">3</div><div class="t">Workload identity, SPIFFE SVIDs</div></div>
+      <div class="d">Short-lived crypto identities attested from how the process launched. Stolen credentials expire in minutes.</div></div>
+    <div class="card pat"><div class="mini"><div class="n">4</div><div class="t">Use-time injection</div></div>
+      <div class="d">A sidecar holds the secret and injects it into the outbound call only. No credential file in the container to steal.</div></div>
+  </div>
+  <div class="chips">
+    <div class="chip">win: blast radius, a compromised agent stays trapped in its own session and role</div>
+    <div class="chip">win: attribution, logs say session, agent, user</div>
+    <div class="chip">win: tenant separation, the boundary check happens at the gateway</div>
+  </div>
+  <div class="foot">Multi-agent extension: one IAM role for the framework, per agent thread an AssumeRole call with a session policy scoped to that agent, 15-minute credentials injected into that process alone.</div>
+</div>
 </body>
 </html>

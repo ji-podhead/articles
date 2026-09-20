@@ -4,77 +4,49 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="styles/_house.css">
 <style>
-.root { gap: 28px; }
-.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
-.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
-.card.code { background: var(--elevated); }
-.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+.root { gap: 18px; }
+table.fig { border-collapse: collapse; width: 100%; table-layout: fixed; }
+table.fig th { background: var(--elevated); color: var(--ink); font-size: 14px; font-weight: 700; text-align: left; padding: 10px 14px; border: 1px solid var(--line); }
+table.fig td { color: var(--ink2); font-size: 13.5px; line-height: 1.45; padding: 10px 14px; border: 1px solid var(--line); vertical-align: top; }
+table.fig td:first-child { font-weight: 700; color: var(--ink); }
+table.fig td:first-child .m { font-family: var(--font-mono); font-size: 12px; font-weight: 400; color: var(--ink3); overflow-wrap: anywhere; }
+table.fig td.lay { font-family: var(--font-mono); font-size: 13px; color: var(--code); }
+.secnote { font-size: 15px; font-weight: 700; color: var(--ink2); }
+.trap .t { font-size: 14.5px; }
+.trap .d { font-size: 13.5px; }
+.trap .m { font-family: var(--font-mono); font-size: 12px; color: var(--ink3); }
+.foot { border-top: 1px solid var(--line); padding-top: 10px; font-size: 14px; color: var(--ink2); }
 </style>
 </head>
 <body>
-<h1>The real open-source landscape (every one of these independently verified, not taken on an AI summary's word)</h1>
-
-<div class="col root"><div class="row"><div class="card"><div class="t">Tool</div></div>
-<div class="card"><div class="t">Layer</div></div>
-<div class="card"><div class="t">What it actually does</div></div></div>
-<div class="row"><div class="card"><div class="t">Pipelock</div><div class="d">github.com/luckyPipewrench/pipelock</div>
-<div class="d">Apache 2.0 core, Go</div>
-<div class="d"></div>
-<div class="d"></div>
-<div class="d"></div></div>
-<div class="card blue"><div class="t">Network mediation</div><div class="d"></div>
-<div class="d"></div>
-<div class="d"></div>
-<div class="d"></div>
-<div class="d"></div></div>
-<div class="card"><div class="d">Agent holds secrets but no direct network access; Pipelock holds network access but no agent secrets. Emits mediator-signed action receipts per call, offline-verifiable proof of which agent/thread did what, without a shared credential ever being trusted.</div></div></div>
-<div class="row"><div class="card"><div class="t">Agent Wall</div><div class="d">github.com/agent-wall/agent-wall</div>
-<div class="d">MIT</div>
-<div class="d"></div>
-<div class="d"></div></div>
-<div class="card blue"><div class="t">MCP reverse proxy</div><div class="d"></div>
-<div class="d"></div>
-<div class="d"></div>
-<div class="d"></div></div>
-<div class="card"><div class="d">&quot;Cloudflare for AI agents&quot;, wraps an MCP server transparently. Inbound: kill switches, injection detection. Outbound: scans responses for 14 secret + 5 PII patterns before they reach the LLM. YAML policy, allow/deny/prompt per rule.</div></div></div>
-<div class="row"><div class="card"><div class="t">LlamaFirewall</div><div class="d">arxiv.org/abs/2505.03574 (Meta)</div>
-<div class="d">Purple Llama, open source</div>
-<div class="d"></div></div>
-<div class="card blue"><div class="t">Content safety</div><div class="d"></div>
-<div class="d"></div>
-<div class="d"></div></div>
-<div class="card"><div class="d">PromptGuard 2 + Agent Alignment Checks (chain-of-thought auditor) + CodeShield.</div>
-<div class="d">Not authorization, see the Big Tech diagram for why this is a separate layer.</div></div></div>
-<div class="row"><div class="card"><div class="t">Cedar / Open Policy Agent</div><div class="d">cedarpolicy.com/en · openpolicyagent.org</div>
-<div class="d">Cedar: AWS. OPA: CNCF-graduated.</div>
-<div class="d"></div>
-<div class="d"></div></div>
-<div class="card blue"><div class="t">Policy-as-code</div><div class="d"></div>
-<div class="d"></div>
-<div class="d"></div>
-<div class="d"></div></div>
-<div class="card"><div class="d">Deterministic, formally-checkable allow/deny languages. The decision is plain code, an LLM cannot argue its way past a Rego or Cedar policy. A platform can already build its own capability gate on top of either engine directly.</div></div></div>
-<div class="row"><div class="card"><div class="t">SPIFFE / SPIRE</div><div class="d">spiffe.io</div>
-<div class="d">CNCF standard</div>
-<div class="d"></div>
-<div class="d"></div></div>
-<div class="card blue"><div class="t">Workload identity</div><div class="d"></div>
-<div class="d"></div>
-<div class="d"></div>
-<div class="d"></div></div>
-<div class="card"><div class="d">Short-lived X.509 (X.509-SVID) or JWT (JWT-SVID) issued after a local attestor verifies HOW a process launched, distinguishes process A from process B on the same host, even sharing one container image and one IAM role.</div></div></div>
-<div class="row"><div class="card"><div class="t">Coder</div><div class="d">coder.com/docs</div>
-<div class="d">verified via own docs</div>
-<div class="d"></div>
-<div class="d"></div></div>
-<div class="card blue"><div class="t">Control-plane isolation</div><div class="d"></div>
-<div class="d"></div>
-<div class="d"></div>
-<div class="d"></div></div>
-<div class="card"><div class="d">The agent LOOP runs in Coder's control plane, never inside the workspace, so a workspace never holds an LLM-calling credential at all, by construction. No dedicated agent firewall or per-project RBAC described in their own docs, though.</div></div></div>
-<div></div>
-<div class="card"><div class="t">None of these is a substitute for the others, and none of them is &quot;infrastructure&quot;</div><div class="d">Every tool above is a layer you bolt onto a network/containers/agents you already have. A platform that provisions the network, the egress firewall, and the containers itself gets that isolation by construction, the tools above add it gets deployed in the first place. The ideas above are worth adopting selectively, see the full research for exactly which two.</div></div></div>
-
-
+<h1>The landscape: who ships what</h1>
+<div class="sub">Every entry verified against a live primary source · none substitutes for the layers, each implements part of one</div>
+<div class="col root">
+  <table class="fig">
+    <tr><th style="width:285px">Tool</th><th style="width:170px">Layer</th><th>What it actually does</th></tr>
+    <tr><td>Pipelock<div class="m">github.com/luckyPipewrench/pipelock · Apache-2.0</div></td><td class="lay">network mediation</td>
+      <td>The agent holds secrets but no direct network access; Pipelock holds network access but no agent secrets. Emits mediator-signed action receipts per call, offline-verifiable proof of which agent or thread did what.</td></tr>
+    <tr><td>Agent Wall<div class="m">github.com/agent-wall/agent-wall · MIT</div></td><td class="lay">MCP reverse proxy</td>
+      <td>Wraps an MCP server transparently. Inbound: kill switches, injection detection. Outbound: scans responses for 14 secret patterns and 5 PII patterns before they reach the model. YAML policy, allow / deny / prompt per rule.</td></tr>
+    <tr><td>LlamaFirewall<div class="m">Meta · Purple Llama · arXiv 2505.03574</div></td><td class="lay">content safety</td>
+      <td>PromptGuard 2, Agent Alignment Checks, CodeShield. Audits and scans content; never authorizes a tool call, a separate layer by design.</td></tr>
+    <tr><td>Cedar / OPA<div class="m">cedarpolicy.com/en · openpolicyagent.org</div></td><td class="lay">policy as code</td>
+      <td>Deterministic, formally checkable allow/deny languages. An LLM cannot argue its way past a Rego or Cedar policy; any platform can build its capability gate on either engine.</td></tr>
+    <tr><td>SPIFFE / SPIRE<div class="m">spiffe.io · CNCF</div></td><td class="lay">workload identity</td>
+      <td>Short-lived X.509 or JWT SVIDs issued after a local attestor verifies how a process launched, distinguishing process A from process B on one host.</td></tr>
+    <tr><td>Coder<div class="m">coder.com/docs</div></td><td class="lay">control-plane isolation</td>
+      <td>The agent loop runs in Coder's control plane, never inside the workspace, so a workspace never holds an LLM-calling credential at all. No dedicated agent firewall described in its own docs.</td></tr>
+  </table>
+  <div class="secnote">A naming trap worth ten seconds, two projects, one hyphen apart</div>
+  <div class="row">
+    <div class="card trap"><div class="t">Agent Wall (with hyphen)</div>
+      <div class="d">The MCP reverse proxy from the table above, MIT license, the dashboard screenshot in this article runs it live.</div>
+      <div class="m">github.com/agent-wall/agent-wall</div></div>
+    <div class="card red trap"><div class="t">AgentWall (no hyphen), a different project, Apache-2.0</div>
+      <div class="d">Has the published paper (arXiv 2605.16265): 92.9% enforcement accuracy with sub-millisecond overhead across 14 benchmarks, and stateful taint tracking that blocks outbound calls after a credential read. In February 2026 a runaway OpenClaw agent deleted a user's inbox with 142 bulk calls that AgentWall would have denied at call #1.</div>
+      <div class="m">github.com/agentwall/Agentwall</div></div>
+  </div>
+  <div class="foot">Cite the right one. And provisioning the network and containers is the part none of these tools can do for you.</div>
+</div>
 </body>
 </html>

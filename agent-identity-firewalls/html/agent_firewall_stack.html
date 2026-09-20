@@ -4,32 +4,49 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="styles/_house.css">
 <style>
-.root { gap: 28px; }
-.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
-.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
-.card.code { background: var(--elevated); }
-.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+.root { gap: 18px; }
+.band { display: flex; flex-direction: row; gap: 18px; align-items: stretch; }
+.band .card { flex: 1 1 0; padding: 16px 18px; }
+.band .card .t { font-size: 15px; }
+.lay { flex: 0 0 118px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; border: 2px solid var(--line); border-radius: 11px; background: var(--panel); }
+.lay .q { font-family: var(--font-mono); font-size: 26px; font-weight: 700; color: var(--blue); letter-spacing: 1px; }
+.lay .s { font-size: 11.5px; color: var(--ink3); }
+.tag { font-family: var(--font-mono); font-size: 12px; color: var(--code); }
+.foot { display: flex; flex-direction: row; gap: 16px; align-items: stretch; }
+.foot .card { padding: 12px 18px; }
 </style>
 </head>
 <body>
-<h1>The agent firewall stack: four layers, four questions</h1>
-
-<div class="col root"><div class="row" style="align-items:center"><div class="card blue"><div class="t">LAYER 1 · INGRESS IDENTITY</div><div class="d">strip client claims unconditionally · resolve server-side · re-stamp from the verified row</div>
-<div class="d">per-agent credentials · token exchange (RFC 8693) · workload identity (SPIFFE SVIDs)</div></div>
-<div><div style="font-weight:700;font-size:24px;color:var(--blue)">WHO</div></div></div>
-<div class="arrow">↓</div>
-<div class="row" style="align-items:center"><div class="card green"><div class="t">LAYER 2 · TOOL-CALL POLICY</div><div class="d">deterministic allow / ask / deny · fail-closed · policy-as-code, never a model call</div>
-<div class="d">OPA Rego · Cedar · YAML first-match · glob + argument rules · rate limits · kill switch</div></div>
-<div><div style="font-weight:700;font-size:24px;color:var(--green)">WHAT</div></div></div>
-<div class="arrow">↓</div>
-<div class="row" style="align-items:center"><div class="card"><div class="t">LAYER 3 · EGRESS &amp; DATA</div><div class="d">default-deny network paths · taint tracking (credential read poisons the session) · response DLP</div>
-<div class="d">kernel netfilter · redact secrets before the model sees them · RFC1918 + metadata blocks</div></div>
-<div><div style="font-weight:700;font-size:24px;color:var(--ink2)">WHERE</div></div></div>
-<div class="arrow">↓</div>
-<div class="row" style="align-items:center"><div class="card"><div class="t">LAYER 4 · AUDIT &amp; RECEIPTS</div><div class="d">ground truth recorded outside the model · tamper-evident · replayable</div>
-<div class="d">HMAC-signed JSONL · mediator-signed action receipts · full execution trail for replay</div></div>
-<div><div style="font-weight:700;font-size:24px;color:var(--ink2)">WHEN</div></div></div></div>
-
-
+<h1>The defense: four layers, four questions</h1>
+<div class="sub">Identity answers who, policy answers what, egress answers where, audit answers what happened</div>
+<div class="col root">
+  <div class="band">
+    <div class="card blue"><div class="t">LAYER 1 · INGRESS IDENTITY</div>
+      <div class="d">Who is calling? Strip client claims unconditionally, resolve server-side from the credential, re-stamp from the verified row.</div>
+      <div class="d"><span class="tag">per-agent credentials · RFC 8693 token exchange · SPIFFE SVIDs · use-time injection</span></div></div>
+    <div class="lay"><div class="q">WHO</div><div class="s">layer 1</div></div>
+  </div>
+  <div class="band">
+    <div class="card blue"><div class="t">LAYER 2 · TOOL-CALL POLICY</div>
+      <div class="d">Is this agent allowed to call this tool? Deterministic allow / escalate / deny, fail-closed, evaluated as code.</div>
+      <div class="d"><span class="tag">OPA Rego · Cedar · OpenAPI schema match · never a model call</span></div></div>
+    <div class="lay"><div class="q">WHAT</div><div class="s">layer 2</div></div>
+  </div>
+  <div class="band">
+    <div class="card blue"><div class="t">LAYER 3 · EGRESS AND DATA</div>
+      <div class="d">Where can data go? Default-deny routes: the path to the destination doesn't exist, whatever the container believes. Taint tracking kills read-then-exfiltrate chains; response scanning redacts secrets and PII before they reach the model's context.</div>
+      <div class="d"><span class="tag">14 secret patterns + 5 PII patterns · pass / redact / block</span></div></div>
+    <div class="lay"><div class="q">WHERE</div><div class="s">layer 3</div></div>
+  </div>
+  <div class="band">
+    <div class="card blue"><div class="t">LAYER 4 · AUDIT AND RECEIPTS</div>
+      <div class="d">What actually happened? Ground truth recorded outside the model, tamper-evident and replayable. Hugging Face caught the July 2026 breach through its own telemetry, five days before the operator confirmed anything.</div>
+      <div class="d"><span class="tag">HMAC-signed JSONL logs · mediator-signed receipts, verifiable offline · full execution trail for replay</span></div></div>
+    <div class="lay"><div class="q">WHEN</div><div class="s">layer 4</div></div>
+  </div>
+  <div class="row foot">
+    <div class="card"><div class="d">Miss one layer and the rest carry the weight alone. The nastier failure: a layer that exists but is never consulted.</div></div>
+  </div>
+</div>
 </body>
 </html>
