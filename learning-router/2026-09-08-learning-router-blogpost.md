@@ -14,7 +14,7 @@ So we built three learning layers instead of one static strategy — and the int
 
 ## Layer 1: The model bandit (with memory that decays)
 
-![Diagram: three stacked layers — top: model bandit (Beta posterior per platform:model, decayed with a 2-day half-life, score = 0.6×reliability + 0.4×speed, blended 0.7×bandit + 0.3×user preference); middle: key pool (cost-scaled cooldowns, free-first failover, EMA posteriors per key); bottom: quota truth (provider headers parsed per vendor, confidence model, shared pool inference)](layers.svg)
+![Diagram: three stacked layers — top: model bandit (Beta posterior per platform:model, decayed with a 2-day half-life, score = 0.6×reliability + 0.4×speed, blended 0.7×bandit + 0.3×user preference); middle: key pool (cost-scaled cooldowns, free-first failover, EMA posteriors per key); bottom: quota truth (provider headers parsed per vendor, confidence model, shared pool inference)](svg/layers.svg)
 
 *Figure 1: Three learning layers. Outcomes flow down as feedback, provider quota truth flows up as benches.*
 
@@ -78,7 +78,7 @@ One filter matters more than it looks: **deterministic client errors (4xx that a
 
 ## Where this sits against the landscape
 
-![Comparison table: LiteLLM (static strategies: weighted/least-busy/latency/cost, fixed 5s cooldowns, Redis-shared state, mature fallbacks) vs JiMesh router (decayed per-model posteriors, cost-scaled cooldowns, 24h benches on 402, provider-header quota with confidence model and pool inference, free-first failover as ordering principle)](table_landscape.svg)
+![Comparison table: LiteLLM (static strategies: weighted/least-busy/latency/cost, fixed 5s cooldowns, Redis-shared state, mature fallbacks) vs JiMesh router (decayed per-model posteriors, cost-scaled cooldowns, 24h benches on 402, provider-header quota with confidence model and pool inference, free-first failover as ordering principle)](svg/table_landscape.svg)
 
 *Figure 2: The trade. LiteLLM's router is a battle-tested scheduler with static policy. Ours is a smaller machine that learns two things static strategies can't express: that evidence decays, and that failures have prices.*
 

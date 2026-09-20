@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 16px; }
+.layer .d { margin-top: 4px; }
+.flow { display: flex; flex-direction: row; gap: 40px; justify-content: center; font-size: 13.5px; color: var(--ink2); }
+.flow b { color: var(--ink); }
+.mono { font-family: var(--font-mono); font-size: 13px; color: var(--code); }
+.chipsrow { display: flex; flex-direction: row; gap: 14px; justify-content: center; }
+</style>
+</head>
+<body>
+<h1>Three learning layers - outcomes flow down, provider truth flows up</h1>
+<div class="sub">Figure 1 &middot; Not one static strategy: a model bandit with decaying memory, a key pool that punishes proportionally to price, and quota truth parsed from headers nobody reads.</div>
+
+<div class="col root">
+  <div class="card green layer"><div class="t">Layer 1 &middot; Model bandit - one Beta posterior per platform:model</div>
+    <div class="d">Evidence goes stale, so it decays: exponential decay with a <b>2-day half-life</b>, applied lazily on touch - recent behavior dominates.</div>
+    <div class="d">score = <span class="mono">0.6 &times; reliability + 0.4 &times; speed</span> (speed = normalized inverse latency: 1s &rarr; 1.0, 10s+ &rarr; 0.1). A provider that answers correctly in 30 seconds is not "reliable" for a waiting agent.</div>
+    <div class="d">Selection: cold-start probe until 5 samples &middot; 10% exploration budget on the least-sampled pair &middot; then greedy on the score, blended <span class="mono">0.7 &times; bandit + 0.3 &times; user preference</span>. Honest corner: posterior mean, not a Thompson sample - shipped that way so behavior stays debuggable from logs.</div>
+  </div>
+  <div class="flow"><div>&darr; <b>feedback:</b> every proxied call emits a RouteEvent (platform, model, key, latency, tokens, cost, failure) - deterministic 4xx never reach the learners</div><div>&uarr; <b>benches:</b> provider-reported resets, cost-scaled</div></div>
+  <div class="card amber layer"><div class="t">Layer 2 &middot; Key pool - punishment scaled to price</div>
+    <div class="d">Per key: EMA reliability + speed posteriors &middot; a model whitelist &middot; cooldown state. The cooldown table is the economy: <span class="mono">free 5s &middot; &lt;$0.50 30s &middot; &lt;$3.00 60s &middot; $3.00+ 5 min</span> - and <b>402 benches the key for 24 hours</b>: retrying an empty paid account on a schedule is poker with your own money.</div>
+    <div class="d">Benches only extend, never shorten - a provider-informed bench survives a lucky 200. And the ordering principle: <b>paid keys route last</b>; a paid key is never picked while a healthy free key exists.</div>
+  </div>
+  <div class="flow"><div>&darr; <b>price-scaled cooldowns</b> applied per key</div><div>&uarr; <b>quota truth:</b> x-ratelimit-* parsed per vendor</div></div>
+  <div class="card layer"><div class="t">Layer 3 &middot; Quota truth - the headers nobody reads</div>
+    <div class="d">No <span class="mono">GET /v1/quota</span> exists - but every authenticated response carries live quota state in <span class="mono">x-ratelimit-*</span> headers, plus 429/402 bodies and <span class="mono">Retry-After</span>. Parsed per provider, vendor quirks encoded: NVIDIA swaps the header family order, Cerebras namespaces its windows, Anthropic uses its own family.</div>
+    <div class="d">Confidence model over sources: <span class="mono">header 1.0 &middot; error body 0.75 &middot; probe 0.6</span> - keep the most trustworthy observation per (platform, key, pool, metric), not the newest. Pool inference: Groq meters per account, OpenRouter per :free vs account, Gemini per Cloud project - two keys on one account share one budget. A 200 with <span class="mono">remaining: 0</span> benches the key until the reported reset, with zero failure-stat pollution.</div>
+  </div>
+  <div class="chipsrow"><div class="chip">internal/router</div><div class="chip">internal/keypool</div><div class="chip">internal/quota</div><div class="chip">RouteEvents on a capped Redis Stream - feedback applies inline if Redis is off</div></div>
+</div>
+</body>
+</html>
