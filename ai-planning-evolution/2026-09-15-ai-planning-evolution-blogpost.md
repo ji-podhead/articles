@@ -6,7 +6,7 @@
 
 **Published:** 2026-09-15 · **Author:** Leonardo Jacobi · **Tags:** #AI #GOAP #BehaviorTrees #PDDL #LLM #Robotics
 
-![Timeline from FSM state spaghetti through GOAP (F.E.A.R., 2005) to Behavior Trees (ROS 2 standard) and PDDL (ROSPlan solvers) to an LLM bridge, followed by a 3-layer stack diagram — execution via Behavior Trees for moment-to-moment reactive control, strategy via formal PDDL planners for complex multi-step tasks, and an LLM interface layer that translates human intent into structured PDDL without replacing either layer below it](ai-planning-stack-evolution.svg)
+![Timeline from FSM state spaghetti through GOAP (F.E.A.R., 2005) to Behavior Trees (ROS 2 standard) and PDDL (ROSPlan solvers) to an LLM bridge, followed by a 3-layer stack diagram — execution via Behavior Trees for moment-to-moment reactive control, strategy via formal PDDL planners for complex multi-step tasks, and an LLM interface layer that translates human intent into structured PDDL without replacing either layer below it](svg/ai-planning-stack-evolution.svg)
 
 A major milestone was Goal-Oriented Action Planning (GOAP), famously showcased in F.E.A.R.'s AI. Its ability to dynamically find a sequence of actions to achieve a goal was a huge step up from the "state spaghetti" of complex Finite State Machines (FSMs). This planner-first approach was also adopted in robotics, with modules available in frameworks like ROS.
 
