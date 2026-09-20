@@ -122,7 +122,7 @@ The split is not cosmetic: **`general/` is publishable to a public knowledge rep
 
 The frontmatter is not decoration — **it is the cheap part an agent reads before deciding whether the expensive part (the body) is worth loading into its context window at all.**
 
-![OKF architecture: frontmatter as the cheap filter, markdown bodies as the expensive load](okf_architecture.svg)
+![OKF architecture: frontmatter as the cheap filter, markdown bodies as the expensive load](svg/okf_architecture.svg)
 
 1. **List, don't load.** The agent scans only frontmatter (topic, subtopic, tags, summary) — a few hundred bytes per document, regardless of body length.
 2. **Filter on structured fields, not prose.** Because the vocabulary is fixed, filtering is deterministic — *`topic == "general/container-runtime-security"`* — instead of an LLM call guessing relevance from unstructured text.
@@ -148,7 +148,7 @@ With OKF, a chunker splits on real semantic boundaries, an embedding model embed
 
 To transform messy transcripts into production-grade OKF documents we run a strict 8-stage pipeline:
 
-![The 8-stage slop-to-knowledge pipeline](slop_to_knowledge_pipeline.svg)
+![The 8-stage slop-to-knowledge pipeline](svg/slop_to_knowledge_pipeline.svg)
 
 ```
 [Raw Research Slop]
@@ -203,13 +203,13 @@ Every push validates the frontmatter (a malformed document **fails the workflow*
 
 The result is [live here](https://ji-podhead.github.io/agentic-knowledge/): a Docsify portal with a D3.js force-directed graph supporting multi-hop drill-down (click to select neighbors, double-click to open a document), a chunk explorer that splits documents by headings, and a floating retrieval assistant.
 
-![GraphRAG multi-hop drill-down in the live portal](graphrag_multi_hop.svg)
+![GraphRAG multi-hop drill-down in the live portal](svg/graphrag_multi_hop.svg)
 
 ## 8. Agentic Tools: Metadata First, RAG Second
 
 Instead of handing the LLM one generic "search" tool over a vector store, give it **two SQL-grade tools over the OKF structure** — the document equivalent of querying the catalog before SELECTing rows:
 
-![Agentic tool architecture: metadata-first retrieval](okf_tool_architecture.svg)
+![Agentic tool architecture: metadata-first retrieval](svg/okf_tool_architecture.svg)
 
 ```json
 [
@@ -255,7 +255,7 @@ For *"find all leads touching Kubernetes with status `cold_outreach`"* this skip
 
 Transforming raw slop into clean OKF is a three-layer AI problem — classification, generation, and safety:
 
-![The three-layer sanitation model stack](sanitation_model_stack.svg)
+![The three-layer sanitation model stack](svg/sanitation_model_stack.svg)
 
 **Layer 1 — PII recognition &amp; pre-classification (BERT family).** Small encoder models run locally, deterministic and fast:
 - [DeBERTa-v3](https://huggingface.co/microsoft/deberta-v3-base) (token classification/NER): flags IPs, passwords, AWS keys, local paths *before* anything reaches a generative model.
@@ -299,7 +299,7 @@ Now *"all enterprise leads working on Kubernetes, still cold"* is a metadata que
 
 Classic RAG leans on vector similarity alone. OKF gives you both deterministic structure *and* relational depth:
 
-![Taxonomy (rigid tree) vs. Ontology (relation web), bridged by manifest.json](taxonomy_vs_ontology.svg)
+![Taxonomy (rigid tree) vs. Ontology (relation web), bridged by manifest.json](svg/taxonomy_vs_ontology.svg)
 
 - **The taxonomy** (hierarchy) is the directory tree + `topic`/`subtopic` — rigid, predefined, one home per document. Its job: instant, 100%-certain exclusion of irrelevant domains.
 - **The ontology** (relation graph) emerges from the Markdown cross-links — any document can relate to any other, independent of folders: *uses*, *isolates*, *depends on*. Its job: traversal that semantic search can't fake.
