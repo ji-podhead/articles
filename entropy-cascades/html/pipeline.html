@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 22px; }
+.mono { font-family: var(--font-mono); font-size: 13px; color: var(--code); }
+.step { padding: 12px 16px; }
+.step .t { margin-bottom: 5px; font-size: 14.5px; }
+.arrow .lbl { white-space: nowrap; }
+.branch .t { margin-bottom: 5px; }
+</style>
+</head>
+<body>
+<h1>The two-phase entropy gate - the router is already in the response</h1>
+<div class="sub">Figure 1 &middot; The model's own token distribution decides: one threshold, no classifier, no labeled data, no second inference system.</div>
+
+<div class="col root">
+  <div class="row">
+    <div class="card step"><div class="t">Request</div><div class="d">any proxied call, e.g. "what's the capital of France?" next to "refactor this payment module"</div></div>
+    <div class="arrow">&#8594;<span class="lbl">phase 1: a full normal call -<br>bandit routing, quota tracking, feedback</span></div>
+    <div class="card step"><div class="t">Phase 1 - small routing model</div>
+      <div class="d">cheap model with <span class="mono">logprobs: true</span>, <span class="mono">top_logprobs: 5</span> - the top-5 token candidates with probabilities at every position, the complete uncertainty signal, free.</div>
+    </div>
+    <div class="arrow">&#8594;</div>
+    <div class="card step"><div class="t">Normalized entropy, per response</div>
+      <div class="d">1. top-k logprobs back to probabilities <span class="mono">p_i</span> &middot; 2. Shannon entropy <span class="mono">H = -&Sigma; p_i &middot; log₂(p_i)</span> &middot; 3. normalize <span class="mono">H_norm = H / log₂(k)</span> - 0 means the model was certain, 1 means a uniform coin flip &middot; 4. average over <b>all</b> output tokens.</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card green branch"><div class="t">Average below 0.45 (ours, configurable)</div>
+      <div class="d">The cheap model was confident - <b>serve its response directly</b>. Easy requests get faster (small model) at cheap-model price.</div>
+    </div>
+    <div class="card amber branch"><div class="t">At or above the threshold</div>
+      <div class="d"><b>Discard the entire generated answer</b> and re-route the original request through the normal chain to the reasoning model. Escalation pays twice - the price of not having a trained router.</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card step"><div class="t">Fail-open by design</div>
+      <div class="d">If phase 1 errors out (400 included), the request falls through to normal routing. A chain whose providers all reject the parameter degrades to "no cascade", never to "no service" - the gate must never be a single point of failure.</div>
+    </div>
+    <div class="card step"><div class="t">Streaming variant: pull the ripcord mid-flight</div>
+      <div class="d">A sliding window (10 tokens, valid after the first 5) tracks the running average; the moment it crosses the threshold, the stream is cancelled and re-routed - the speculative-decoding trick applied to cost: draft optimistically, verify cheaply.</div>
+    </div>
+  </div>
+  <div class="card"><div class="t">The honest arithmetic</div>
+    <div class="d">Every request pays phase-1 tokens; hard requests get slower because you only know they're hard after the cheap model tried. If 90% of traffic is easy (typical for mixed agent workloads), you pay ~10% of cheap-model price for 90% of requests instead of 100% of big-model price. The threshold is the risk dial: lower it for more quality at more cost, raise it to save more - and quietly keep more marginal answers.</div>
+  </div>
+</div>
+</body>
+</html>

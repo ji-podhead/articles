@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+body { align-items: flex-start; }
+table.fig { border-collapse: collapse; width: 1120px; table-layout: fixed; }
+table.fig th { background: #1c2128; color: #e6edf3; font-size: 12.5px; font-weight: 700; letter-spacing: 1.2px; text-align: left; padding: 13px 16px; border: 1px solid #30363d; }
+table.fig td { color: #c9d1d9; font-size: 14px; line-height: 1.5; padding: 12px 16px; border: 1px solid #30363d; vertical-align: top; }
+table.fig tbody tr:nth-child(odd) td { background: #161b22; }
+table.fig tbody tr:nth-child(even) td { background: #0d1117; }
+table.fig td:first-child { font-weight: 700; color: #e6edf3; }
+table.fig td:first-child small { display: block; font-weight: 400; color: #8b949e; font-size: 12.5px; margin-top: 4px; line-height: 1.4; }
+table.fig tr.ours td { border-top: 2px solid #3fb950; border-bottom: 2px solid #3fb950; }
+.foot { font-size: 13.5px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 12px; width: 1120px; }
+.foot b { color: var(--ink); }
+</style>
+</head>
+<body>
+<h1>The cascade spectrum - what each approach needs to work</h1>
+<div class="sub">Figure 2 &middot; The entropy gate trades a little wasted compute (discarded answers) for the absence of any trained component. FrugalGPT and RouteLLM are strong - and both start with an ML task; the entropy gate starts with a boolean flag.</div>
+<table class="fig">
+<colgroup><col style="width:22%"><col style="width:27%"><col style="width:26%"><col style="width:25%"></colgroup>
+<thead><tr><th>APPROACH</th><th>DECISION MECHANISM</th><th>TRAINING / DATA NEEDED</th><th>WEAK POINT</th></tr></thead>
+<tbody>
+<tr><td>Always the big model<small>send everything to the GPT class</small></td><td>none - always escalate; the quality floor holds by construction</td><td>none</td><td>cost - maximum price for every token, thousands of times a day</td></tr>
+<tr><td>Static routing by rule<small>patterns, regexes, model lists</small></td><td>fixed rules decide per query, before any generation</td><td>none</td><td>cheap, but wrong on the exceptions the rules didn't foresee</td></tr>
+<tr><td>FrugalGPT-style cascade<small>arXiv:2305.05176 &middot; up to -98% cost at equal quality</small></td><td>learned scorer g(query, answer) &rarr; confidence</td><td>labeled examples required, must match the test distribution</td><td>an ML project upfront; drift &rarr; retraining</td></tr>
+<tr><td>Trained router (RouteLLM)<small>arXiv:2406.18665 &middot; preference data</small></td><td>a router model picks per query, before any generation</td><td>preference pairs + router training; the strong/weak model pair is fixed</td><td>the router is the product - a wrong pick leaves no retry signal</td></tr>
+<tr class="ours"><td>Entropy gate (ours)<small>two-phase + mid-stream sliding window &middot; threshold 0.45, tuned per chain</small></td><td>average H/log₂(k) over all tokens: confident &rarr; serve, else discard + re-route - the logprobs the API already returns</td><td>none: zero training, zero labeled data, zero extra infrastructure; fail-open on probe error</td><td>uncertainty &ne; correctness - confidently wrong answers sail through; escalation pays twice</td></tr>
+</tbody>
+</table>
+<div class="foot"><b>Sources:</b> FrugalGPT - arXiv:2305.05176 &middot; RouteLLM - arXiv:2406.18665 &middot; semantic entropy (Farquhar et al., Nature 2024) detects confabulations far better but needs multi-sample generations at 5-10&times; the cost - token-level entropy is the cheap approximation. Entropy-gated cascades: jimesh open-source AI gateway.</div>
+</body>
+</html>
