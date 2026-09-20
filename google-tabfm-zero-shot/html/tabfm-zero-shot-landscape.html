@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 26px; }
+.sect { font-size: 13px; font-weight: 700; letter-spacing: 1.4px; color: var(--ink3); }
+.k { font-size: 11.5px; font-weight: 700; letter-spacing: 1px; color: var(--ink3); margin-top: 8px; }
+.card .d b { color: var(--ink); font-weight: 600; }
+.res { font-family: var(--font-mono); font-size: 13px; color: var(--code); line-height: 1.55; }
+</style>
+</head>
+<body>
+<h1>Zero-Shot Tabular ML: The New Landscape</h1>
+<div class="sub">Google's TabFM vs the two reigning production paradigms · weight optimization vs context attention</div>
+
+<div class="col root">
+  <div class="row" style="gap: 22px">
+    <div class="card amber">
+      <div class="t">XGBoost</div>
+      <div class="d">The battle-tested reigning champion for static tables.</div>
+      <div class="k">PROS</div>
+      <div class="d">Battle-tested accuracy on structured, static datasets.</div>
+      <div class="k">CONS</div>
+      <div class="d">Time-consuming retraining for every new dataset; no live-stream support.</div>
+    </div>
+    <div class="card">
+      <div class="t">River · Online Learning</div>
+      <div class="d">True online learning: incremental updates on live feeds and high-throughput streams.</div>
+      <div class="k">PROS</div>
+      <div class="d">Ultra-low latency; weights adjust on the fly.</div>
+      <div class="k">CONS</div>
+      <div class="d">Parametric and lightweight only; no foundation-model depth.</div>
+    </div>
+    <div class="card green">
+      <div class="t">Google TabFM</div>
+      <div class="d">A zero-shot foundation model for structured databases: 100% frozen weights, the table acts like a prompt. Single forward pass via row-column attention.</div>
+      <div class="k">PROS</div>
+      <div class="d">Zero-shot predictions, no retraining loops, no manual tuning.</div>
+    </div>
+  </div>
+
+  <div class="sect">HOW TABFM WORKS · AN LLM FOR PERMUTATIONS</div>
+  <div class="row" style="gap: 18px">
+    <div class="card">
+      <div class="t">Cross-attention</div>
+      <div class="d">Reads rows against columns; tables are 2D and orderless, and the model stays permutation-aware.</div>
+    </div>
+    <div class="card">
+      <div class="t">Row compression</div>
+      <div class="d">Compresses each row into a fixed context the attention layers can consume.</div>
+    </div>
+    <div class="card">
+      <div class="t">Ensemble variant</div>
+      <div class="d">Injects SVD features for a performance boost on top of the base model.</div>
+    </div>
+  </div>
+
+  <div class="row" style="gap: 22px">
+    <div class="card amber">
+      <div class="t">The synthetic bottleneck</div>
+      <div class="d">Pre-trained entirely on millions of artificial data models. The trap: it can search for non-existent patterns. The risk: real-world anomalies can lead to optimized hallucinations.</div>
+    </div>
+    <div class="card green">
+      <div class="t">The production verdict</div>
+      <div class="d">Choose River for ultra-low latency streaming data. Choose TabFM for instant, out-of-the-box predictions.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="k" style="margin-top: 0">RESOURCES</div>
+    <div class="res">github.com/google-research/tabfm · official source code<br>huggingface.co/google/tabfm-1.0.0-pytorch · PyTorch model weights<br>research.google/blog/introducing-tabfm · original announcement</div>
+  </div>
+</div>
+</body>
+</html>
