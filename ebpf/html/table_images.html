@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+body { align-items: flex-start; }
+table.fig { border-collapse: collapse; width: 1120px; table-layout: fixed; }
+table.fig th { background: var(--elevated); font-size: 12.5px; font-weight: 700; letter-spacing: 1.6px; text-align: left; padding: 13px 16px; border: 1px solid var(--line); }
+table.fig th.f { color: var(--blue); }
+table.fig td { color: var(--code-ink); font-size: 14px; line-height: 1.5; padding: 12px 16px; border: 1px solid var(--line); vertical-align: top; }
+table.fig tbody tr:nth-child(odd) td { background: var(--panel); }
+table.fig tbody tr:nth-child(even) td { background: var(--canvas); }
+table.fig td.m { font-family: var(--font-mono); color: var(--code); font-weight: 700; }
+</style>
+</head>
+<body>
+<h1>Figure catalog: what goes where</h1>
+<div class="sub">The five embedded figures of this article, the section each one carries, and its caption.</div>
+<table class="fig">
+<colgroup><col style="width:17%"><col style="width:32%"><col style="width:51%"></colgroup>
+<thead><tr><th class="f">FIGURE</th><th>PLACEMENT</th><th>CAPTION</th></tr></thead>
+<tbody>
+<tr><td class="m">titel.svg</td><td>Title image / post preview</td><td>Title image: kernel-level interception meets LLM guardrails - the two halves this article connects.</td></tr>
+<tr><td class="m">svg/gap2.svg</td><td>Figure 1 · "The semantic gap nobody talks about"</td><td>The semantic gap - infrastructure tools see the "how", AI guardrails see the "what", and nothing correlates the two.</td></tr>
+<tr><td class="m">svg/pipeline.svg</td><td>Figure 2 · "How eBPF-based interception actually works"</td><td>The eBPF interception pipeline - capture at the TLS boundary, judge in userspace, enforce in the kernel.</td></tr>
+<tr><td class="m">svg/table_landscape.svg</td><td>Figure 3 · "The actual option landscape"</td><td>The tool landscape - four classes, and none of them owns the identity chain.</td></tr>
+<tr><td class="m">svg/freeze_latter.svg</td><td>Figure 4 · "The part that actually matters: identity"</td><td>The identity chain and the response ladder - identity flows from the kernel-visible PID down to the minted session token, and enforcement escalates from revocation to egress blackhole.</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+table.fig { border-collapse: collapse; width: 1120px; table-layout: fixed; }
+table.fig th { background: var(--elevated); font-size: 12.5px; font-weight: 700; letter-spacing: 1.6px; text-align: left; padding: 13px 16px; border: 1px solid var(--line); }
+table.fig td { color: var(--code-ink); font-size: 14px; line-height: 1.5; padding: 12px 16px; border: 1px solid var(--line); vertical-align: top; }
+table.fig tbody tr:nth-child(odd) td { background: var(--panel); }
+table.fig tbody tr:nth-child(even) td { background: var(--canvas); }
+table.fig td.b { font-weight: 700; color: var(--ink); }
+table.fig td .m { font-family: var(--font-mono); color: var(--code); font-size: 13px; }
+div.g { color: var(--green); margin: 0 0 4px 0; }
+div.r { color: var(--red); margin: 0 0 4px 0; }
+td div:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+<h1>Four tool classes at a glance</h1>
+<div class="sub">What each class gets you - and what it structurally can't give you. None of the four owns the identity chain.</div>
+<table class="fig">
+<colgroup><col style="width:32%"><col style="width:34%"><col style="width:34%"></colgroup>
+<thead><tr><th>CLASS</th><th>WHAT YOU GET</th><th>WHAT YOU DON'T</th></tr></thead>
+<tbody>
+<tr>
+  <td class="b">Gateway / Proxy (OSS)<div class="m">LiteLLM Proxy</div></td>
+  <td><div class="g">+ unified provider routing</div><div class="g">+ user budgets and rate limits</div></td>
+  <td><div class="r">- no process or container identity</div><div class="r">- no operating-system enforcement</div></td>
+</tr>
+<tr>
+  <td class="b">In-Process Guards (OSS)<div class="m">LLM Guard · Guardrails AI · NeMo Guardrails</div></td>
+  <td><div class="g">+ native PII masking</div><div class="g">+ prompt-injection and toxicity scanning</div></td>
+  <td><div class="r">- runs inside the application process</div><div class="r">- not at a centralized network chokepoint</div></td>
+</tr>
+<tr>
+  <td class="b">Commercial Platforms<div class="m">Lakera (Check Point) · Prompt Security · Portkey (Palo Alto)</div></td>
+  <td><div class="g">+ low-latency real-time defense</div><div class="g">+ enterprise shadow-AI discovery</div></td>
+  <td><div class="r">- closed-source black box</div><div class="r">- external data and trust model</div></td>
+</tr>
+<tr>
+  <td class="b">Kernel / Runtime (eBPF)<div class="m">TigerGate · AgentSight</div></td>
+  <td><div class="g">+ zero-instrumentation intercept</div><div class="g">+ operates directly at the TLS / crypto boundary</div></td>
+  <td><div class="r">- sees the host, but lacks the identity chain that provisioned the agent</div></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.stagelabel { font-size: 12.5px; font-weight: 700; letter-spacing: 1.6px; color: var(--ink3); }
+.zone { display: inline-block; font-family: var(--font-mono); font-size: 10.5px; font-weight: 700; letter-spacing: 1.2px; color: var(--ink3); border: 1.5px solid var(--line); border-radius: 6px; padding: 2px 8px; margin-top: 8px; }
+.zone.k { color: var(--blue); border-color: var(--blue); }
+.footer { font-family: var(--font-mono); font-size: 12px; color: var(--ink3); border-top: 1px solid var(--line); padding-top: 12px; }
+</style>
+</head>
+<body>
+<h1>The eBPF interception pipeline</h1>
+<div class="sub">Capture at the TLS boundary, judge in userspace, enforce in the kernel - the pattern used by AgentSight and commercial eBPF AI gateways.</div>
+
+<div class="stagelabel">CAPTURE - ZERO INSTRUMENTATION</div>
+<div class="row">
+  <div class="card"><div class="t">1 · Agent process</div><div class="d">the prompt as plaintext in process memory</div><div class="zone">USERSPACE</div></div>
+  <div class="arrow">→</div>
+  <div class="card blue"><div class="t">2 · SSL uprobe</div><div class="d">hooks <code>SSL_write</code> / <code>SSL_read</code> in the crypto library - the tap before encryption</div><div class="zone k">KERNEL</div></div>
+  <div class="arrow">→</div>
+  <div class="card blue"><div class="t">3 · eBPF ring buffer</div><div class="d">streams the captured plaintext from kernel to userspace</div><div class="zone k">KERNEL</div></div>
+</div>
+
+<div class="stagelabel">JUDGE - THEN ENFORCE</div>
+<div class="row">
+  <div class="card"><div class="t">4 · Classifier daemon</div><div class="d">Prompt Guard 2 (22M) or embeddings + XGBoost, sub-millisecond verdict</div><div class="zone">USERSPACE</div></div>
+  <div class="arrow">→</div>
+  <div class="card blue"><div class="t">5 · Verdict map</div><div class="d">verdict written into an eBPF map - kernel memory the packet path reads</div><div class="zone k">KERNEL</div></div>
+  <div class="arrow">→</div>
+  <div class="card red"><div class="t">6 · Action</div><div class="d">SIGSTOP the process · TCP-RST · drop the packet</div><div class="zone k">KERNEL</div></div>
+</div>
+
+<div class="footer">capture: one line of attaching, and you see everything a process does, in real time · judge: no ML in the kernel, a verified VM with loop limits · enforce: fail-closed by definition</div>
+</body>
+</html>

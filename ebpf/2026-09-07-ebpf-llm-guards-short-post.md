@@ -35,7 +35,7 @@ What's your stack doing about prompt injection — guardrail library, gateway sc
 ## Veröffentlichungs-Checkliste
 
 - [ ] `titel.svg` → PNG konvertieren (`rsvg-convert -w 1200 titel.svg > titel.png`) und als Post-Bild anhängen
-- [ ] Alternativ: `pipeline.svg` als zweites Bild (die 6-Schritte-Pipeline ist der visuelle Hook)
+- [ ] Alternativ: `svg/pipeline.svg` als zweites Bild (die 6-Schritte-Pipeline ist der visuelle Hook)
 - [ ] Platzhalter „(Link hier einfügen)" durch die URL des veröffentlichten Artikels ersetzen
 - [ ] Erst Artikel veröffentlichen, dann Post — der Link muss live sein
 - [ ] Hashtags am Ende: 10 Stück (3–5 work best; keep the first 5 if in doubt: `#PromptInjection #eBPF #LLMSecurity #AIAgents #CyberSecurity`)

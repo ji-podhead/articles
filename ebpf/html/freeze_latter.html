@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.stagelabel { font-size: 12.5px; font-weight: 700; letter-spacing: 1.6px; color: var(--ink3); }
+.varrow { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--ink2); font-size: 19px; }
+.varrow .lbl { font-size: 12.5px; }
+.step { display: flex; align-items: baseline; gap: 10px; font-size: 14px; line-height: 1.45; padding: 8px 0; border-bottom: 1.5px solid var(--line); color: var(--ink); }
+.step:last-child { border-bottom: none; padding-bottom: 0; }
+.step .n { font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: var(--red); flex: 0 0 14px; }
+</style>
+</head>
+<body>
+<h1>The identity chain and the response ladder</h1>
+<div class="sub">A verdict is worthless if you don't know whom to freeze - commercial LLM firewalls return a judgment, and that's where it ends. None of them can pause the container that made the call, because none of them provisioned it.</div>
+
+<div class="row">
+  <div class="col" style="flex:1.55; gap: 0">
+    <div class="stagelabel">IDENTITY - FLOWS DOWN FROM THE KERNEL-VISIBLE TRUTH</div>
+    <div class="card"><div class="t">Host / VM</div><div class="d">PID + socket → eBPF context. The kernel-visible truth about who is calling.</div></div>
+    <div class="varrow">↓ <span class="lbl">Docker / CRI API</span></div>
+    <div class="card"><div class="t">Container</div><div class="d">container ID → Docker API. Which workload the PID belongs to.</div></div>
+    <div class="varrow">↓ <span class="lbl">gateway lookup</span></div>
+    <div class="card blue"><div class="t">Session</div><div class="d">session ID, minted at provisioning - the agent <b>presents</b> it, never chooses it. Self-declared identity is fine for observability, worthless for enforcement. When network binding and token diverge, that divergence is itself a threat signal.</div></div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="card red" style="flex:1">
+    <div class="t">Graduated incident response - enforcement escalates as identity becomes certain</div>
+    <div class="step"><span class="n">1</span><span>revoke the session token</span></div>
+    <div class="step"><span class="n">2</span><span>inject a controlled error response</span></div>
+    <div class="step"><span class="n">3</span><span>SIGSTOP the container - memory intact for forensics</span></div>
+    <div class="step"><span class="n">4</span><span>blackhole its egress</span></div>
+  </div>
+</div>
+</body>
+</html>

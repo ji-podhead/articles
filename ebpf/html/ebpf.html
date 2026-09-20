@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.note { border: 2px solid var(--line); border-radius: 11px; background: var(--elevated); padding: 13px 18px; font-size: 14px; line-height: 1.5; color: var(--ink2); }
+.note b { color: var(--ink); }
+</style>
+</head>
+<body>
+<h1>The kernel-level pattern in four steps</h1>
+<div class="sub">eBPF: small, verified, sandboxed programs inside the kernel - programmable hooks, no app changes, no restarts.</div>
+
+<div class="row">
+  <div class="card blue"><div class="t">1 · Uprobes on SSL_write / SSL_read</div>
+  <div class="d">Attach to the crypto library's symbols. There - before TLS encryption - the prompt exists as plaintext in process memory. "Zero instrumentation": you don't touch the app; the kernel does the tapping.</div></div>
+  <div class="arrow">→</div>
+  <div class="card blue"><div class="t">2 · Ring buffer transport</div>
+  <div class="d">The captured plaintext is streamed to a userspace daemon via an eBPF ring buffer - kernel events handed over without polling.</div></div>
+  <div class="arrow">→</div>
+  <div class="card blue"><div class="t">3 · A small classifier, not an 8B judge</div>
+  <div class="d">No ML in the kernel - eBPF programs run in a verified VM with loop limits. Instead: a 22M-86M prompt-guard model in a Rust/C++ sidecar, or embeddings + XGBoost, sub-millisecond.</div></div>
+  <div class="arrow">→</div>
+  <div class="card blue"><div class="t">4 · Verdict back via eBPF map</div>
+  <div class="d">The verdict lands in kernel memory the packet path reads - drop, TCP-RST, or freeze the offending process.</div></div>
+</div>
+
+<div class="card red"><div class="t">The honest limits</div>
+<div class="d">Uprobes bind to library symbols - Go's inlined <code>crypto/tls</code>, rustls and custom TLS stacks break "zero instrumentation" · streamed prompts must be reassembled in userspace anyway (eBPF reads only a few KB per invocation) · eBPF doesn't run inside gVisor - the sensor watches from the outside · kernel enforcement is fail-closed by definition: if your posture demands fail-open, the verdict belongs in a threat event, not in a kernel map.</div></div>
+</body>
+</html>

@@ -8,7 +8,7 @@ Most teams securing AI agents reach for the same three tools: a guardrail librar
 
 ## The semantic gap nobody talks about
 
-![Diagram: the AI Application Layer (prompt and response text) and the Operating System (open, read, connect, execve) sit at the top; WAF, guardrails, and syscall sandboxes each see only one side from below; an eBPF boundary-tracing box at the bottom correlates both views simultaneously](gap2.svg)
+![Diagram: the AI Application Layer (prompt and response text) and the Operating System (open, read, connect, execve) sit at the top; WAF, guardrails, and syscall sandboxes each see only one side from below; an eBPF boundary-tracing box at the bottom correlates both views simultaneously](svg/gap2.svg)
 
 *Figure 1: The semantic gap — infrastructure tools see the "how", AI guardrails see the "what", and nothing correlates the two.*
 
@@ -24,7 +24,7 @@ This is the gap. Detection means correlating semantic content with system state 
 
 First, the 60-second version: **eBPF** (extended Berkeley Packet Filter) is a Linux kernel technology that lets you run small, sandboxed programs *inside* the kernel — verified for memory safety and termination before loading — to observe or act on system events (syscalls, network traffic, even function calls in libraries) without changing or restarting the application. Think of it as programmable hooks in the kernel: one line of attaching, and you see everything a process does, in real time.
 
-![Six-step pipeline: agent process with plaintext in memory → SSL uprobe on SSL_write/read → eBPF ring buffer crossing kernel-to-userspace → userspace daemon running Prompt Guard 22M or embeddings plus XGBoost → verdict written to an eBPF map → action: SIGSTOP, TCP-RST or drop](pipeline.svg)
+![Six-step pipeline: agent process with plaintext in memory → SSL uprobe on SSL_write/read → eBPF ring buffer crossing kernel-to-userspace → userspace daemon running Prompt Guard 22M or embeddings plus XGBoost → verdict written to an eBPF map → action: SIGSTOP, TCP-RST or drop](svg/pipeline.svg)
 
 *Figure 2: The eBPF interception pipeline — capture at the TLS boundary, judge in userspace, enforce in the kernel.*
 
@@ -44,7 +44,7 @@ The kernel-level pattern (used by research projects like AgentSight and commerci
 
 ## The actual option landscape
 
-![Comparison table of the four tool classes: Gateway/Proxy OSS such as LiteLLM Proxy gives unified routing and budgets but no process identity; In-Process Guards OSS such as LLM Guard and NeMo give PII and injection scanning but run inside the app; Commercial platforms such as Lakera, Prompt Security and Portkey give real-time defense and shadow-AI discovery but are closed black boxes; Kernel/Runtime eBPF tools TigerGate and AgentSight intercept at the TLS boundary but lack the identity chain that provisioned the agent](table_landscape.svg)
+![Comparison table of the four tool classes: Gateway/Proxy OSS such as LiteLLM Proxy gives unified routing and budgets but no process identity; In-Process Guards OSS such as LLM Guard and NeMo give PII and injection scanning but run inside the app; Commercial platforms such as Lakera, Prompt Security and Portkey give real-time defense and shadow-AI discovery but are closed black boxes; Kernel/Runtime eBPF tools TigerGate and AgentSight intercept at the TLS boundary but lack the identity chain that provisioned the agent](svg/table_landscape.svg)
 
 *Figure 3: The tool landscape — four classes, and none of them owns the identity chain.*
 
@@ -52,7 +52,7 @@ The kernel-level pattern (used by research projects like AgentSight and commerci
 
 Here's the uncomfortable truth we concluded after the incident: **a verdict is worthless if you don't know whom to freeze.** Commercial LLM firewalls return a judgment — and that's where it ends. None of them can pause the container that made the call, because none of them provisioned it.
 
-![Vertical chain of four layers: Host/VM (PID plus socket into eBPF context) → Container (container ID via Docker API) → Session at the gateway (session ID minted at provisioning, never self-declared by the agent) → a red panel with the graduated incident response ladder: revoke session token, inject controlled error response, SIGSTOP container, blackhole egress](freeze_latter.svg)
+![Vertical chain of four layers: Host/VM (PID plus socket into eBPF context) → Container (container ID via Docker API) → Session at the gateway (session ID minted at provisioning, never self-declared by the agent) → a red panel with the graduated incident response ladder: revoke session token, inject controlled error response, SIGSTOP container, blackhole egress](svg/freeze_latter.svg)
 
 *Figure 4: The identity chain and the response ladder — identity flows from the kernel-visible PID down to the minted session token, and enforcement escalates from revocation to egress blackhole.*
 
