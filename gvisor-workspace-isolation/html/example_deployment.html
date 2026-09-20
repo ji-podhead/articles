@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 20px; }
+.headcard { padding: 10px 16px; }
+.headcard .t { margin-bottom: 0; font-size: 13px; letter-spacing: 1.6px; }
+.pane { gap: 14px; }
+.mono { font-family: var(--font-mono); font-size: 13px; color: var(--code); }
+.arrow .lbl { white-space: nowrap; }
+</style>
+</head>
+<body>
+<h1>A worked example: an AI-agent gateway - today, target, and the honest gap</h1>
+<div class="sub">Figure 5 &middot; Left: the real, shipped path (honestly one host at a time). Right: the planned identity-router. Bottom: the multi-location direction - none of the right side is a claim about what exists now.</div>
+
+<div class="col root">
+  <div class="row">
+    <div class="col pane">
+      <div class="card green headcard"><div class="t">TODAY - SHIPPED AND REAL</div></div>
+      <div class="card"><div class="t">You (browser)</div><div class="d">or a coding agent driving the workspace</div></div>
+      <div class="arrow">↓ <span class="lbl">identity + budget check</span></div>
+      <div class="card"><div class="t">Gateway backend</div><div class="d">validates identity and budget, then opens an SSH tunnel to whichever remote server the workspace lives on</div></div>
+      <div class="arrow">↓ <span class="lbl">SSH tunnel - no port is ever published on that host</span></div>
+      <div class="card"><div class="t">Remote server</div><div class="d">any existing server; direct-dial straight into the container's internal IP</div></div>
+      <div class="arrow">↓</div>
+      <div class="card green"><div class="t">Agent container</div><div class="d">gVisor-sandboxed &middot; egress allowlist active - kernel-isolated, egress-restricted, never a raw port exposed to the internet</div></div>
+    </div>
+    <div class="col pane">
+      <div class="card headcard"><div class="t">TARGET - PLANNED, NOT YET BUILT</div></div>
+      <div class="card"><div class="t">Client</div></div>
+      <div class="arrow">↓ <span class="lbl">routes by identity, not by port</span></div>
+      <div class="card"><div class="t">Identity Router</div><div class="d">in-memory table <span class="mono">workspace_id → {ownerID, backendIP}</span> - one shared proxy in front of all workspaces on the host</div></div>
+      <div class="row">
+        <div class="card green"><div class="t">Workspace A</div><div class="d">VLAN 101 &middot; gVisor &middot; egress allowlist</div></div>
+        <div class="arrow">→<span class="lbl">no route<br>between<br>VLANs</span></div>
+        <div class="card green"><div class="t">Workspace B</div><div class="d">VLAN 102 &middot; gVisor &middot; egress allowlist</div></div>
+      </div>
+      <div class="card"><div class="t">Same host, two segments</div><div class="d">the kernel makes cross-tenant packets physically unroutable - the missing Layer B from today's path</div></div>
+    </div>
+  </div>
+  <div class="card red"><div class="t">Honest gap today</div><div class="d">No VLAN segmentation yet between two workspaces on the same remote server - co-located isolation currently relies on gVisor and container networking alone. That is exactly the gap this article spends paragraphs explaining isn't sufficient on its own; it is the next concrete piece of work.</div></div>
+  <div class="col pane">
+    <div class="card headcard"><div class="t">FURTHER OUT - ONE MESH, MANY LOCATIONS</div></div>
+    <div class="row">
+      <div class="card"><div class="t">Central control plane</div><div class="d">identity, policy, routing table - reached over a WireGuard-style mesh, not public SSH</div></div>
+      <div class="arrow">→<span class="lbl">provisions the same<br>3-layer stack</span></div>
+      <div class="card"><div class="t">Customer's own hardware / VPS</div><div class="d">same stack, local VLANs</div></div>
+      <div class="card"><div class="t">AWS / GCP node</div><div class="d">same stack, cloud VPC instead</div></div>
+    </div>
+    <div class="card"><div class="t">Why this matters</div><div class="d">A customer picks <b>where</b> a workload runs - their own box, or a cloud region - without ever changing <b>how</b> they reach it: one identity layer, one policy engine, many physical locations (the Gitpod/Ona pattern across multiple datacenters).</div></div>
+  </div>
+</div>
+</body>
+</html>

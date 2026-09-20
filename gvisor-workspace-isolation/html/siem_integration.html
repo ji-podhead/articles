@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 20px; }
+.srccard .t small { font-weight: 400; color: var(--ink2); font-size: 12px; }
+.out { font-family: var(--font-mono); font-size: 12.5px; color: var(--code); border-top: 1px solid var(--line); margin-top: 8px; padding-top: 8px; }
+</style>
+</head>
+<body>
+<h1>Three silent gates become one visible story</h1>
+<div class="sub">Figure 3 &middot; Every isolation layer is also a log source; standard SIEM correlation, attributed to one workspace ID, turns three unremarkable events into one incident.</div>
+
+<div class="col root">
+  <div class="row">
+    <div class="card amber srccard"><div class="t">Identity Proxy <small>(Layer C)</small></div>
+      <div class="d">The access log is a ready-made audit trail: who reached what, and when they were denied.</div>
+      <div class="d out">→ gateway-style audit log</div>
+    </div>
+    <div class="card srccard"><div class="t">VLAN / ipvlan <small>(Layer B)</small></div>
+      <div class="d">A network IDS like Suricata watching each VLAN segment flags a packet that shouldn't exist at all - one tenant's traffic trying to cross into another's.</div>
+      <div class="d out">→ network-IDS finding, per tenant segment</div>
+    </div>
+    <div class="card green srccard"><div class="t">gVisor sandbox <small>(Layer A)</small></div>
+      <div class="d">An eBPF runtime sensor like Falco watches the sandbox's syscalls directly (no sidecar needed) - a shell spawned where one shouldn't be, a known miner binary executing.</div>
+      <div class="d out">→ runtime-security finding</div>
+    </div>
+  </div>
+  <div class="arrow">↓ <span class="lbl">all three attributed to the same workspace_id / owner</span></div>
+  <div class="card"><div class="t">Correlation - the SIEM core</div>
+    <div class="d">Same workspace/owner attribution across all three sources, within a few seconds of each other. No new infrastructure required - just a pipeline that treats these as first-class sources.</div>
+  </div>
+  <div class="arrow">↓</div>
+  <div class="card"><div class="t">One risk-ranked incident</div>
+    <div class="d">"workspace X - a proxy denial, then a VLAN-102 IDS hit, then an anomalous syscall in the same sandbox, within seconds" - instead of three unremarkable-looking events nobody would have connected.</div>
+  </div>
+</div>
+</body>
+</html>
