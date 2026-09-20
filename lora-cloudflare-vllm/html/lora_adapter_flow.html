@@ -4,32 +4,58 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="styles/_house.css">
 <style>
-.root { gap: 28px; }
-.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
-.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
-.card.code { background: var(--elevated); }
-.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+.root { gap: 18px; }
+.role { padding: 14px 16px; }
+.role .t { font-size: 15px; }
+.role .d { font-size: 13.5px; }
+.merge { display: flex; flex-direction: row; gap: 18px; justify-content: center; }
+.merge .arrow { flex: 0 0 auto; }
+.base { padding: 15px 20px; }
+.base .t { font-size: 15px; }
+.facts { display: flex; flex-direction: row; gap: 14px; margin-top: 8px; }
+.fact { flex: 1 1 0; border: 1px solid var(--line); border-radius: 9px; padding: 8px 12px; background: var(--elevated); }
+.fact .k { font-size: 11.5px; color: var(--ink3); font-family: var(--font-mono); }
+.fact .v { font-size: 14px; color: var(--ink); }
+.rev .card { padding: 12px 16px; }
+.rev .card .t { font-size: 14.5px; }
+.mono { font-family: var(--font-mono); }
 </style>
 </head>
 <body>
-<h1>Adapters as Skills, Adapters as Conscience</h1>
-<div class="sub">LoRA agents on Cloudflare Workers and self-hosted vLLM</div>
-<div class="col root"><div class="row"><div class="card green"><div class="t">SKILL adapter</div><div class="d">SSH deploys, firewall ops,</div>
-<div class="d">agent tools</div></div>
-<div class="card green"><div class="t">MEMORY adapter</div><div class="d">knowledge baked in,</div>
-<div class="d">not a claude.md</div></div>
-<div class="card green"><div class="t">GUARDRAIL adapter</div><div class="d">expert switching,</div>
-<div class="d">one swap per request</div></div></div>
-<div class="row"><div class="card"><img class="cardlogo" src="../logos/cloudflare.svg" alt="cloudflare"><div class="t">Base Model</div><div class="d">serverless edge (Workers AI)</div>
-<div class="d">or self-hosted GPU (vLLM)</div>
-<div class="d">same request, swapped adapter</div></div>
-<div class="col"></div>
-<div class="card blue"><div class="t">honest persona (SPT)</div><div class="d">reviews outputs,</div>
-<div class="d">cannot influence them</div></div></div></div>
-<div class="flowstrip"><div>SKILL adapter &#8594; swap in &#8594; Base Model</div>
-<div>MEMORY adapter &#8594; Base Model</div>
-<div>GUARDRAIL adapter &#8594; Base Model</div>
-<div>Base Model &#8594; review &#8594; honest persona (SPT)</div></div>
-
+<h1>Adapters as skills, adapters as memory, adapters as conscience</h1>
+<div class="sub">Three roles, one mechanism: a small weight delta over a frozen base model, swapped per request</div>
+<div class="col root">
+  <div class="row">
+    <div class="card green role"><div class="t">SKILL adapter</div>
+      <div class="d">Deploy flows, firewall operations, agent tools: trained, not prompted. No prompt grows when a skill is added.</div></div>
+    <div class="card green role"><div class="t">MEMORY adapter</div>
+      <div class="d">Procedural knowledge baked into weights, not a memory file that grows until retrieval drowns. A domain's behavior, not its encyclopedia: retrieval stays external.</div></div>
+    <div class="card green role"><div class="t">GUARDRAIL adapter</div>
+      <div class="d">The honest persona: a second personality that reviews what the first one did. It flags, it never edits.</div></div>
+  </div>
+  <div class="merge">
+    <div class="arrow green">↓<span class="lbl">base + delta, chosen per request</span></div>
+  </div>
+  <div class="card blue base"><div class="t">BASE MODEL, frozen weights + low-rank deltas</div>
+    <div class="d">Training learns two tiny low-rank matrices per touched layer (typically the attention projections q_proj and v_proj); their product is the weight update, scaled by the adapter's alpha. Inference is base plus delta, selected per request. Llama, Mistral, and Gemma bases served by Workers AI or vLLM; QLoRA trains the same deltas on a quantized base.</div>
+    <div class="facts">
+      <div class="fact"><div class="k">rank r</div><div class="v">8 default, up to 32</div></div>
+      <div class="fact"><div class="k">adapter file</div><div class="v">tens of MB, not multi-GB</div></div>
+      <div class="fact"><div class="k">per base model</div><div class="v">dozens of behaviors at once</div></div>
+      <div class="fact"><div class="k">serving</div><div class="v">Workers AI edge or self-hosted vLLM</div></div>
+    </div>
+  </div>
+  <div class="row rev">
+    <div class="card"><div class="t">The base model produces its answer</div>
+      <div class="d">Reasoning and output stay exactly as the task persona produced them.</div></div>
+    <div class="arrow blue">→<span class="lbl">review pass</span></div>
+    <div class="card blue"><div class="t">The guardrail adapter reviews</div>
+      <div class="d">A separate adapter, activated by a split-personality-token, with access to the reasoning but no ability to influence it.</div></div>
+    <div class="arrow blue">→</div>
+    <div class="card"><div class="t">Flags only, the user never sees the review</div>
+      <div class="d">The reviewed conversation is untouched; auditing without capability cost.</div></div>
+  </div>
+  <div class="sub" style="font-size:13.5px">The conscience case is published evidence, not a design fantasy: Split Personality Training flags alignment-faking setups at 93 to 99% where the baseline sits at 0%.</div>
+</div>
 </body>
 </html>

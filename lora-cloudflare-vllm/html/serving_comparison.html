@@ -4,63 +4,50 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="styles/_house.css">
 <style>
-table.fig { border-collapse: collapse; width: 100%; }
-table.fig th { background: #1c2128; color: #e6edf3; font-size: 15px; font-weight: 700; text-align: left; padding: 12px 16px; border: 1px solid #30363d; }
-table.fig td { color: #c9d1d9; font-size: 14px; line-height: 1.5; padding: 12px 16px; border: 1px solid #30363d; vertical-align: top; }
-table.fig tbody tr:nth-child(even) { background: #161b22; }
-table.fig td:first-child { font-weight: 700; color: #ffffff; }
-table.fig tr.foot td { color: #8b949e; font-size: 13.5px; font-weight: 400; background: #0d1117; }
+table.fig { border-collapse: collapse; width: 100%; table-layout: fixed; }
+table.fig th { background: var(--elevated); color: var(--ink); font-size: 14.5px; font-weight: 700; text-align: left; padding: 11px 15px; border: 2px solid var(--line); }
+table.fig td { color: var(--ink2); font-size: 13.5px; line-height: 1.5; padding: 11px 15px; border: 1px solid var(--line); vertical-align: top; }
+table.fig td:first-child { font-weight: 700; color: var(--ink); background: var(--panel); }
+table.fig td.arch { color: var(--red); font-weight: 700; }
+table.fig td .m { font-family: var(--font-mono); font-size: 12.5px; color: var(--code); }
+.foot { border-top: 1px solid var(--line); padding-top: 11px; font-size: 14px; color: var(--ink2); }
+.foot b { color: var(--ink); }
 </style>
 </head>
 <body>
-<h1>Serving LoRA agents: edge vs. self-hosted</h1>
+<h1>The honest comparison: edge vs. self-hosted serving</h1>
+<div class="sub">Workers AI · vLLM · TGI, verified against live docs (2026-09-18)</div>
 <table class="fig">
 <thead>
-<tr>
-<th></th>
-<th>Cloudflare Workers AI</th>
-<th>vLLM (self-hosted)</th>
-<th>TGI (self-hosted)</th>
-</tr>
+<tr><th style="width:130px"></th><th>Cloudflare Workers AI</th><th>vLLM (self-hosted)</th><th>TGI (self-hosted)</th></tr>
 </thead>
 <tbody>
-<tr>
-<td><div>Status</div></td>
-<td><div>Open beta, free during beta</div></td>
-<td><div>Active, high-throughput engine</div></td>
-<td><div>GitHub repo archived (2026-09-18)</div></td>
-</tr>
-<tr>
-<td><div>Adapters</div></td>
-<td><div>BYO LoRA as finetunes: rank &lt;= 8 (to 32), adapter &lt; 300 MB, up to 100 per account</div></td>
-<td><div>LoRA per request, multi-adapter on one GPU (max_loras, max_lora_rank)</div></td>
-<td><div>LoRA supported, multi-adapter documented</div></td>
-</tr>
-<tr>
-<td><div>APIs</div></td>
-<td><div>OpenAI-style chat via env.AI.run</div></td>
-<td><div>OpenAI compatible; Anthropic entrypoint in code; productized by NVIDIA NIM (/v1/messages)</div></td>
-<td><div>OpenAI-style</div></td>
-</tr>
-<tr>
-<td><div>Context caching</div></td>
-<td><div>Native prefix caching with cached-token discount plus session affinity; KV 25 MiB per value, eventual consistency up to 60s</div></td>
-<td><div>Automatic Prefix Caching flag (enable_prefix_caching)</div></td>
-<td><div>Prefix caching documented</div></td>
-</tr>
-<tr>
-<td><div>Economics</div></td>
-<td><div>$0.011 per 1000 Neurons, ~300 req/min text generation</div></td>
-<td><div>You run the GPU fleet</div></td>
-<td><div>You run the GPU fleet</div></td>
-</tr>
-<tr>
-<td><div>Best at</div></td>
-<td><div>Edge latency, elastic scale, many small experts</div></td>
-<td><div>Throughput: PagedAttention 2-4x, S-LoRA up to 4x over naive serving</div></td>
-<td><div>Batches, Hugging Face ecosystem (maintenance archived)</div></td>
-</tr>
+<tr><td>Status</td>
+  <td>Open beta, free during beta</td>
+  <td>Active, high-throughput engine</td>
+  <td class="arch">GitHub repo archived (2026-09-18)</td></tr>
+<tr><td>Adapters</td>
+  <td>BYO LoRA as finetunes: rank 8 documented default, ranks to 32, adapter under 300 MB, up to 100 per account</td>
+  <td>LoRA per request, multi-adapter on one GPU <span class="m">(max_loras, max_lora_rank)</span></td>
+  <td>LoRA supported, multi-adapter documented</td></tr>
+<tr><td>APIs</td>
+  <td>Chat via <span class="m">env.AI.run</span>, adapter attached with the <span class="m">lora</span> parameter</td>
+  <td>OpenAI-compatible; Anthropic entrypoint in code, productized by NVIDIA NIM: <span class="m">/v1/messages</span>, <span class="m">/generative_scoring</span> (log-probability referee), <span class="m">/inference/v1/generate</span></td>
+  <td>OpenAI-style</td></tr>
+<tr><td>Context caching</td>
+  <td>Native prompt caching with cached-token discount plus session affinity; KV values up to 25 MiB, eventual consistency up to 60 s</td>
+  <td>Automatic prefix caching, one flag away <span class="m">(enable_prefix_caching)</span></td>
+  <td>Prefix caching documented</td></tr>
+<tr><td>Economics</td>
+  <td>$0.011 per 1,000 Neurons, ~300 requests/min text generation on the paid plan</td>
+  <td>You run the GPU fleet</td>
+  <td>You run the GPU fleet</td></tr>
+<tr><td>Best at</td>
+  <td>Edge latency, elastic scale, many small experts; adapter metadata stays in Cloudflare's account model</td>
+  <td>Throughput: PagedAttention 2-4x, S-LoRA up to 4x over naive LoRA serving; disaggregated prefill/decode, data residency</td>
+  <td>Hugging Face ecosystem (maintenance archived)</td></tr>
 </tbody>
 </table>
+<div class="foot"><b>The fork:</b> edge when you want zero infrastructure and elastic scale; vLLM when throughput, per-request multi-LoRA, or data residency justify running the fleet. Betting a 2026 deployment on an archived server is a decision, not a default.</div>
 </body>
 </html>

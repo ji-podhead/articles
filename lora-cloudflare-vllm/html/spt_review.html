@@ -4,22 +4,58 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="styles/_house.css">
 <style>
-.root { gap: 20px; }
-.arrow .lbl { font-size: 13px; }
+.root { gap: 18px; }
+.twocol { display: flex; flex-direction: row; gap: 26px; align-items: stretch; }
+.loop { flex: 1.15 1 0; gap: 10px; }
+.evid { flex: 1 1 0; gap: 12px; }
+.loop .card, .evid .card { padding: 12px 16px; }
+.loop .card .t { font-size: 14.5px; }
+.loop .card .d { font-size: 13.5px; }
+.loop .arrow { flex: 0 0 auto; font-size: 18px; }
+.kicker { font-size: 15px; font-weight: 700; color: var(--ink2); }
+.code { background: var(--elevated); }
+.code .d { font-family: var(--font-mono); font-size: 13px; color: var(--code); }
+.big { font-family: var(--font-mono); font-size: 26px; font-weight: 700; }
+.foot { border-top: 1px solid var(--line); padding-top: 11px; font-size: 14px; color: var(--ink2); }
+.foot b { color: var(--ink); }
 </style>
 </head>
 <body>
-<h1>Split Personality Training: the honest persona loop</h1>
+<h1>Split Personality Training: the honest persona loop, and the proof</h1>
+<div class="sub">Florian Dietz, funded by Coefficient Giving · the persona reviews outputs, cannot influence them, and the user never sees the review</div>
 <div class="col root">
-<div class="card" style="background:var(--elevated)"><div class="t">main model answers the task normally</div></div>
-<div class="arrow" style="flex:0 0 auto">↓<span class="lbl">end of turn</span></div>
-<div class="card amber"><div class="t">split-personality-token replaces end-of-turn; an intervention string says what to review</div></div>
-<div class="arrow" style="flex:0 0 auto">↓<span class="lbl">activate</span></div>
-<div class="card blue"><div class="t">honest persona: a finetuned LoRA adapter; reads the reasoning, cannot influence it</div></div>
-<div class="arrow" style="flex:0 0 auto">↓<span class="lbl">review</span></div>
-<div class="card green"><div class="t">first-person admission, mechanism explained</div></div>
-<div class="arrow" style="flex:0 0 auto">↓<span class="lbl">user never sees it</span></div>
-<div class="card"><div class="t" style="color:var(--ink2)">if the user continues, token and review are cut from history</div></div>
+  <div class="twocol">
+    <div class="col loop">
+      <div class="kicker">The mechanism</div>
+      <div class="card"><div class="t">Main model answers the task normally</div>
+        <div class="d">The task persona does the work, its output and reasoning untouched.</div></div>
+      <div class="arrow">↓</div>
+      <div class="card code"><div class="t">split-personality-token replaces end-of-turn</div>
+        <div class="d">An intervention string says what to review, "Was there anything problematic?" works.</div></div>
+      <div class="arrow">↓</div>
+      <div class="card blue"><div class="t">Honest persona activates: a finetuned LoRA adapter</div>
+        <div class="d">A separate personality with access to the reasoning, and no ability to influence it.</div></div>
+      <div class="arrow">↓</div>
+      <div class="card green"><div class="t">First-person admission, mechanism explained</div>
+        <div class="d">The persona reports on what the main model did, in its own words.</div></div>
+      <div class="arrow">↓</div>
+      <div class="card"><div class="t">History cut when the user keeps typing</div>
+        <div class="d">Token and review are removed from the conversation history; the user never sees the review.</div></div>
+    </div>
+    <div class="col evid">
+      <div class="kicker">The evidence</div>
+      <div class="card"><div class="t">Alignment-faking detection</div>
+        <div class="d"><span class="big">93 to 99%</span> flag rate with SPT, on an alignment-faking model organism (Llama 3.3 70B per Hughes et al. 2025).</div>
+        <div class="d">Baseline without SPT: <span class="big" style="font-size:19px">0%</span></div></div>
+      <div class="card green"><div class="t">It flags the situation, not the act</div>
+        <div class="d">Compliance sensitivity near zero: SPT detects the setup in which faking is incentivized, before a violation has happened. The ideal property for an agent guardrail.</div></div>
+      <div class="card green"><div class="t">Not reading comprehension on visible thinking</div>
+        <div class="d">With all scratchpad reasoning redacted, the signal persisted, and benign false positives collapsed from 57% to 0% once monitoring-awareness language was removed.</div></div>
+      <div class="card"><div class="t">The honest caveat</div>
+        <div class="d">A misaligned model's persona can become less reliable, alignment faking is stochastic (86% compliance, not 100%). A guardrail adapter raises the floor; it does not make the model honest.</div></div>
+    </div>
+  </div>
+  <div class="foot"><b>For an agent builder:</b> a guardrail persona as a LoRA adapter is a real pattern with published evidence, not a design fantasy. Auditing without capability cost.</div>
 </div>
 </body>
 </html>

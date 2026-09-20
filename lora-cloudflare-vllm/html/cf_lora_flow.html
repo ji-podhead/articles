@@ -4,34 +4,55 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="styles/_house.css">
 <style>
-.root { gap: 28px; }
-.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
-.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
-.card.code { background: var(--elevated); }
-.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+.root { gap: 18px; }
+.steps .card { padding: 14px 16px; }
+.steps .card .t { font-size: 14.5px; }
+.steps .card .d { font-size: 13px; }
+.steps .card .m { font-family: var(--font-mono); font-size: 12.5px; color: var(--code); margin-top: 4px; }
+.steps .arrow { flex: 0 0 30px; }
+.duo .card { padding: 14px 18px; }
+.duo .card .t { font-size: 15px; }
+.duo .card .m { font-family: var(--font-mono); font-size: 13px; color: var(--code); margin-top: 6px; overflow-wrap: anywhere; }
+.cf { display: flex; flex-direction: row; gap: 8px; align-items: center; }
+.cf img { height: 20px; opacity: 0.85; }
 </style>
 </head>
 <body>
-<h1>Cloudflare Workers AI, end to end: train, upload, swap</h1>
-<div class="sub">BYO-LoRA is four steps, open beta, free during beta</div>
-<div class="col root"><div class="row"><div class="card green"><div class="t">1. TRAIN</div><div class="d">PEFT/LoRA run on your data,</div>
-<div class="d">rank r &lt;= 8 (up to 32),</div>
-<div class="d">save safetensors</div></div>
-<div class="arrow" style="color:var(--green)">&#8594;<span class="lbl">export</span></div>
-<div class="card green"><div class="t">2. TWO FILES</div><div class="d">adapter_model.safetensors (&lt; 300 MB)</div>
-<div class="d">adapter_config.json with model_type:</div>
-<div class="d">mistral, gemma or llama</div></div></div>
-<div class="row"><div class="card blue"><div class="t">3. UPLOAD</div><div class="d">wrangler ai finetune create</div>
-<div class="d">&lt;model&gt; &lt;finetune&gt; &lt;folder&gt;</div>
-<div class="d">or REST: /ai/finetunes/{id}/finetune-assets/</div></div>
-<div class="arrow" style="color:var(--blue)">&#8594;<span class="lbl">finetune id</span></div>
-<div class="card blue"><div class="t">4. SWAP PER REQUEST</div><div class="d">env.AI.run(model, { messages,</div>
-<div class="d">raw: true, lora: finetuneId })</div>
-<div class="d">no edit after upload: re-create</div></div></div></div>
-<div class="flowstrip"><div>2. TWO FILES &#8594; 2 files exactly &#8594; 3. UPLOAD</div></div>
-<div class="chips"><div class="chip">up to 100 adapters per account</div>
-<div class="chip">public LoRA collection exists</div>
-<div class="chip">native prompt caching discount</div>
-<div class="chip">$0.011 per 1000 Neurons</div></div>
+<h1><span class="cf"><img src="logos/cloudflare.svg" alt="Cloudflare"></span> Workers AI BYO-LoRA, end to end: train, upload, swap</h1>
+<div class="sub">Open beta, free during the beta period · exactly two files in, one request parameter out</div>
+<div class="col root">
+  <div class="row steps">
+    <div class="card green"><div class="t">1 · TRAIN</div>
+      <div class="d">PEFT/LoRA on your own examples. Rank 8 is the documented default, ranks up to 32 are accepted.</div>
+      <div class="m">adapter_model.safetensors + adapter_config.json</div></div>
+    <div class="arrow green">&#8594;</div>
+    <div class="card green"><div class="t">2 · DECLARE the base family</div>
+      <div class="d">model_type in the config: mistral, gemma, or llama. The adapter rides a base name with a -lora suffix.</div>
+      <div class="m">@cf/mistralai/mistral-7b-instruct-v0.2-lora</div></div>
+    <div class="arrow green">&#8594;</div>
+    <div class="card green"><div class="t">3 · UPLOAD</div>
+      <div class="d">wrangler or REST; no editing after upload, a changed adapter means re-creating the finetune.</div>
+      <div class="m">npx wrangler ai finetune create &lt;model&gt; &lt;finetune&gt; &lt;folder&gt;</div></div>
+    <div class="arrow green">&#8594;</div>
+    <div class="card green"><div class="t">4 · SWAP PER REQUEST</div>
+      <div class="d">The worker attaches the adapter with one parameter, inference is base plus delta.</div>
+      <div class="m">env.AI.run(model, { messages, raw: true, lora: "&lt;id&gt;" })</div></div>
+  </div>
+  <div class="chips">
+    <div class="chip">adapter under 300 MB</div>
+    <div class="chip">up to 100 adapters per account</div>
+    <div class="chip">$0.011 per 1,000 Neurons</div>
+    <div class="chip">~300 requests/min on the paid plan</div>
+    <div class="chip">native prompt caching with cached-token discount</div>
+  </div>
+  <div class="row duo">
+    <div class="card"><div class="t">Context at the edge</div>
+      <div class="d">Prompt caching ships natively with a session affinity header. Long documents do not belong in KV as a prompt: values up to 25 MiB with eventual consistency (up to 60 seconds), so the honest pattern is KV for hot prompt fragments and Vectorize for retrieval-heavy RAG.</div>
+      <div class="d">The adapter-as-memory limit holds: a 300 MB rank-32 adapter holds a domain's behavior, not its encyclopedia.</div></div>
+    <div class="card blue"><div class="t">The vLLM counterpart reads the same shape</div>
+      <div class="d">Self-hosted multi-LoRA on one GPU, adapter selected per request with the model field.</div>
+      <div class="m">vllm serve &lt;base&gt; --enable-lora --max-loras 4 --max-lora-rank 32 --lora-modules my-skill=/path/to/adapter</div></div>
+  </div>
+</div>
 </body>
 </html>

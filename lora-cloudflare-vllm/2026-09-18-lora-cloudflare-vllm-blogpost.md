@@ -6,7 +6,7 @@
 
 The agent stack has a storage problem, and it lives in text. Skills, system prompts, and ever-growing memory files try to hold everything an agent knows and everything it should refuse, and every new fact makes the prompt longer, the retrieval fuzzier, and the context window more crowded. A LoRA adapter is the opposite storage model: a small weight delta trained on exactly the behavior you want, applied to a frozen base model, swappable per request. This piece takes the idea seriously across its three roles: the adapter as a **skill** (deploy, operate), the adapter as **memory** (knowledge baked into weights instead of a claude.md), and the adapter as a **conscience** (a second persona that reviews what the first one did).
 
-![Diagram: skill, memory, and guardrail adapter cards feeding one base model, an honest persona reviewing outputs without editing them](lora_adapter_flow.svg)
+![Diagram: skill, memory, and guardrail adapter cards feeding one base model, an honest persona reviewing outputs without editing them](svg/lora_adapter_flow.svg)
 
 *Figure 1: three adapter roles, one base model. The review side flags, it never edits.*
 
@@ -18,9 +18,9 @@ The surprising part is that the conscience case is no longer hypothetical. Split
 
 ## The proof: a LoRA adapter that audits its own model
 
-![Split Personality Training loop: task, split-personality-token, honest persona adapter, admission, history cut](spt_review.svg)
+![Split Personality Training loop: task, split-personality-token, honest persona adapter, admission, history cut](svg/spt_review.svg)
 
-*Figure 3: the honest persona reviews the main model's outputs but cannot influence them, and the user never sees the review.*
+*Figure 2: the honest persona reviews the main model's outputs but cannot influence them, and the user never sees the review.*
 
 Split Personality Training (SPT), initiated and led by Florian Dietz with funding from Coefficient Giving, trains a second personality into a model: an "honest persona" implemented as a finetuned LoRA adapter that reviews the main model's outputs, with access to its reasoning but no ability to influence it. The architecture detail that matters here is architectural, not philosophical: the persona is a separate adapter, activated by a split-personality-token, and cut from the conversation history the moment the user keeps typing. Auditing without capability cost, and the reviewed conversation is untouched.
 
@@ -43,9 +43,9 @@ The adapter-as-memory claim keeps its honest limit on the edge: a 300 MB rank-32
 
 ## Cloudflare, end to end: train, upload, swap
 
-![Four-step Cloudflare flow: train, two files, wrangler upload, swap per request](cf_lora_flow.svg)
+![Four-step Cloudflare flow: train, two files, wrangler upload, swap per request](svg/cf_lora_flow.svg)
 
-*Figure 2: the whole BYO-LoRA loop on Workers AI. Two files in, one request parameter out.*
+*Figure 3: the whole BYO-LoRA loop on Workers AI. Two files in, one request parameter out.*
 
 The concrete loop, verified against the current documentation:
 
@@ -99,9 +99,9 @@ Catastrophic forgetting, the classic objection to knowledge-in-the-adapter, now 
 
 ## The honest comparison
 
-![Comparison table: Workers AI vs vLLM vs TGI across status, adapters, APIs, caching, economics, best at](serving_comparison.svg)
+![Comparison table: Workers AI vs vLLM vs TGI across status, adapters, APIs, caching, economics, best at](svg/serving_comparison.svg)
 
-*Figure 4: the serving decision table. One of these three rows is archived.*
+*Figure 4: the serving decision table. One of these three columns is archived.*
 
 The uncomfortable row: Text Generation Inference, the Hugging Face server most tutorials still recommend for self-hosted LoRA, has an **archived GitHub repository** as of this writing, even though its LoRA documentation remains online. Betting a 2026 deployment on an archived server is a decision, not a default. The real fork is simpler: edge (Workers AI) when you want zero infrastructure, elastic scale, and adapter metadata in Cloudflare's account model; vLLM when throughput, per-request multi-LoRA, disaggregated prefill/decode, or data residency justify running the fleet.
 
