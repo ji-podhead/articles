@@ -111,11 +111,7 @@ const ovLink = override ? '<link rel="stylesheet" href="styles/' + esc(override)
 
 const html = '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n' +
   '<link rel="stylesheet" href="styles/_house.css">\n' + ovLink +
-  '<style>\n.root { gap: 28px; }\n.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }\n.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }\n.card.code { background: var(--elevated); }\n.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
-.arrow.green { color: var(--green); }
-.arrow.blue { color: var(--blue); }
-.arrow.amber { color: var(--amber); }
-.arrow.red { color: var(--red); }\n</style>\n</head>\n<body>\n' +
+  '<style>\n.root { gap: 28px; }\n.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }\n.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }\n.card.code { background: var(--elevated); }\n.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }\n.arrow.green { color: var(--green); }\n.arrow.blue { color: var(--blue); }\n.arrow.amber { color: var(--amber); }\n.arrow.red { color: var(--red); }\n</style>\n</head>\n<body>\n' +
   titleHtml + "\n" + subHtml + "\n" + treeHtml + "\n" + flowHtml + "\n" + chipHtml + "\n</body>\n</html>\n";
 
 fs.writeFileSync(out, html);
