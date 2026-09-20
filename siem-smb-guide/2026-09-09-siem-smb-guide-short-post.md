@@ -37,7 +37,7 @@ What does your team actually run today — self-hosted, managed, or "we'll get t
 ## Veröffentlichungs-Checkliste
 
 - [ ] `titel.svg` → PNG konvertieren (bereits unter `png/titel.png`) und als Post-Bild anhängen
-- [ ] Alternativ: `table_mapping.svg` als zweites Bild (die AWS-vs-OSS-Tabelle ist der stärkste Save/Share-Hook)
+- [ ] Alternativ: `svg/table_mapping.svg` als zweites Bild (die AWS-vs-OSS-Tabelle ist der stärkste Save/Share-Hook)
 - [ ] Platzhalter „(Link hier einfügen)" durch die URL des veröffentlichten Artikels ersetzen
 - [ ] Erst Artikel veröffentlichen, dann Post — der Link muss live sein
 - [ ] Hashtags: 5–7 Stück (3–5 work best, deliberately broader for cross-audience AWS+OSS)

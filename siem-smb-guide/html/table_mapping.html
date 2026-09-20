@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+body { align-items: flex-start; }
+table.fig { border-collapse: collapse; width: 1120px; table-layout: fixed; }
+table.fig th { background: var(--elevated); font-size: 12.5px; font-weight: 700; letter-spacing: 1.6px; text-align: left; padding: 13px 16px; border: 1px solid var(--line); }
+table.fig th.aws { color: var(--blue); }
+table.fig th.oss { color: var(--green); }
+table.fig td { color: var(--code-ink); font-size: 14.5px; line-height: 1.5; padding: 12px 16px; border: 1px solid var(--line); vertical-align: top; }
+table.fig tbody tr:nth-child(odd) td { background: var(--panel); }
+table.fig tbody tr:nth-child(even) td { background: var(--canvas); }
+table.fig td:first-child { font-weight: 700; color: var(--ink); }
+table.fig td .m { font-family: var(--font-mono); color: var(--code); }
+</style>
+</head>
+<body>
+<h1>Same eight functions, two ways to get them</h1>
+<div class="sub">Nothing on the open-source side is a toy - every entry is a production-grade project used at real scale.</div>
+<table class="fig">
+<colgroup><col style="width:24%"><col style="width:38%"><col style="width:38%"></colgroup>
+<thead><tr><th>FUNCTION</th><th class="aws">AWS-NATIVE</th><th class="oss">OPEN SOURCE</th></tr></thead>
+<tbody>
+<tr><td>Network intrusion detection</td><td><span class="m">GuardDuty</span> - ML over flow logs, DNS, CloudTrail, container runtime</td><td><span class="m">Suricata</span> (signatures, XDP/eBPF capture) + <span class="m">Falco</span> (syscalls per container)</td></tr>
+<tr><td>Central findings + scoring</td><td><span class="m">Security Hub</span> - ASFF, scored against CIS / PCI-DSS</td><td><span class="m">Wazuh Manager</span> + self-hosted <span class="m">OpenSearch</span></td></tr>
+<tr><td>Long-term log storage + search</td><td><span class="m">OpenSearch Service</span> + <span class="m">Security Lake</span> (OCSF, Athena)</td><td>Self-hosted <span class="m">OpenSearch</span> or the Elastic Stack</td></tr>
+<tr><td>Signed API audit trail</td><td><span class="m">CloudTrail</span> - signed, immutable, 90-day LookupEvents</td><td><span class="m">auditd</span> + centralized syslog shipping</td></tr>
+<tr><td>Configuration drift detection</td><td><span class="m">AWS Config</span> - rules over live resource state</td><td><span class="m">Checkov</span> (IaC scans) + periodic runtime checks</td></tr>
+<tr><td>Vulnerability scanning</td><td><span class="m">Inspector</span> - EC2, ECR images, Lambda</td><td><span class="m">Trivy</span> or <span class="m">Grype</span></td></tr>
+<tr><td>Web application firewall</td><td><span class="m">AWS WAF + Shield</span> - managed rule groups</td><td><span class="m">Coraza</span> or <span class="m">ModSecurity</span> + OWASP Core Rule Set</td></tr>
+<tr><td>AI-assisted triage + modeling</td><td><span class="m">Bedrock</span> (agent triage) + <span class="m">SageMaker</span> (custom ML)</td><td><span class="m">OpenSearch ML Commons</span> + <span class="m">MLflow</span></td></tr>
+</tbody>
+</table>
+</body>
+</html>

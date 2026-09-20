@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.stagelabel { font-size: 12.5px; font-weight: 700; letter-spacing: 1.6px; color: var(--ink3); }
+.stagelabel.g { color: var(--green); }
+.stagelabel.r { color: var(--red); }
+.varrow { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--ink2); font-size: 19px; }
+.varrow .lbl { font-size: 12.5px; }
+.card.code { background: var(--elevated); }
+.card.code .d { font-family: var(--font-mono); font-size: 12.5px; color: var(--code); line-height: 1.55; }
+.footer { font-family: var(--font-mono); font-size: 12px; color: var(--ink3); border-top: 1px solid var(--line); padding-top: 12px; }
+</style>
+</head>
+<body>
+<h1>The two-stage AI security response: cheap detection, expensive thinking</h1>
+<div class="sub">A small, always-on statistical model does the initial sorting; the expensive LLM agent only wakes up when the sorter flags something - edge-to-core triage.</div>
+
+<div class="stagelabel g">STAGE 1 · DETECT - ALWAYS-ON, STATISTICAL, ~FREE</div>
+<div class="row">
+  <div class="card"><div class="t">Log streams</div><div class="d">egress drops · bytes_sent · model invocations · syscalls - every event, 24/7, zero tokens.</div></div>
+  <div class="arrow">→</div>
+  <div class="card green"><div class="t">Anomaly detector - the sorter</div><div class="d">RCF / embeddings + KNN / SLM distills - statistical, not generative. Knows "pod B sends 400x its 14-day baseline"; has no idea what an SQL injection <i>is</i>. AWS: GuardDuty ML · OSS: OpenSearch ML Commons.</div></div>
+  <div class="arrow">→</div>
+  <div class="card"><div class="t">Archive - the normal path</div><div class="d">The 99.9% of events that are business as usual go to long-term retention. Nothing is dropped.</div></div>
+</div>
+<div class="varrow">↓ <span class="lbl">anomaly? - the only gate into Stage 2; LLM tokens are spent nowhere else</span></div>
+
+<div class="stagelabel r">STAGE 2 · THINK + ACT - ONLY ON FLAGGED EVENTS</div>
+<div class="row">
+  <div class="card"><div class="t">Orchestration fires</div><div class="d">AWS: GuardDuty finding → EventBridge rule → Step Functions state machine. OSS: an alerting monitor watches the anomaly-results index.</div></div>
+  <div class="arrow">→</div>
+  <div class="card red"><div class="t">Reasoning agent - the thinker</div><div class="d">2026-class models (DeepSeek-R1 / Claude 5-gen) reason step by step before a verdict. RAG over runbooks + context tools: IP reputation, maintenance windows, identity history, FIM state. AWS: Bedrock Agent · OSS: agents-tools.</div></div>
+  <div class="arrow">→</div>
+  <div class="card"><div class="t">Verdict: real attack?</div><div class="d">The agent correlates the numeric anomaly with everything the math alone could not understand.</div></div>
+</div>
+
+<div class="row">
+  <div class="card code"><div class="t">Scoped response playbook - agent tool-calls</div>
+    <div class="d">network kill: attacker IP → eBPF map<br>&nbsp;&nbsp;→ XDP_DROP at the NIC, before the TCP stack<br>syscall kill: BPF-LSM intercepts execve<br>&nbsp;&nbsp;→ EACCES or SIGKILL the PID<br># the process dies, the container survives - forensics</div></div>
+  <div class="card"><div class="t">False positive - documented, then fed back</div><div class="d">Detector thresholds and baseline retrain absorb the lesson. The loop keeps the model alive when a legitimate traffic pattern changes.</div></div>
+  <div class="card"><div class="t">Why two stages - the cost math</div><div class="d">Statistical detection over every event: ~$0, sub-millisecond, 24/7. LLM triage: cents per call - spent only on the ~0.1% of events the sorter flags. An LLM watching raw streams would be too slow, too expensive, too hallucination-prone.</div></div>
+</div>
+
+<div class="row"><div class="card"><div class="t">The guardrails that make the automation safe</div>
+<div class="d">Read-mostly tool catalog for the agent (query findings, read policies) · irreversible actions stay policy-gated with a human in the loop · every automated action writes an audit trail · every ML finding carries confidence + model_version and <b>adds to</b> the rule layer - it never replaces it. <b style="color:var(--red)">The LLM is the orchestrator, never the sensor.</b></div></div></div>
+
+<div class="footer">AWS chain: GuardDuty (incl. AI Protection) → EventBridge → Step Functions → Bedrock Agent → Lambda → eBPF map (XDP) · OSS chain: ML Commons detector → results index → alerting → agents-tools → Tetragon/Tracee</div>
+</body>
+</html>

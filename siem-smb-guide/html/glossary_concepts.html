@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.card { padding: 12px 16px; }
+.card .t { font-size: 14.5px; margin-bottom: 4px; color: var(--blue); }
+.card .d { font-size: 13.5px; line-height: 1.42; }
+</style>
+</head>
+<body>
+<h1>Glossary: detection and response concepts</h1>
+<div class="sub">The vocabulary the rest of this guide uses deliberately.</div>
+<div class="grid">
+  <div class="card"><div class="t">SIEM</div><div class="d">Security Information and Event Management - collect, normalize, detect, correlate, alert, retain. Not a scanner, not an alert generator.</div></div>
+  <div class="card"><div class="t">Attribution</div><div class="d">Mapping an event to the workload and identity that caused it (container → session → project) - the layer that turns findings into something you can act on.</div></div>
+  <div class="card"><div class="t">eBPF</div><div class="d">Linux kernel technology that runs small, verified, sandboxed programs inside the kernel - syscall and network observation plus enforcement, without touching the app.</div></div>
+  <div class="card"><div class="t">LSM / BPF-LSM</div><div class="d">Linux Security Module hooks (optionally via eBPF) - synchronous enforcement: deny a syscall before it executes.</div></div>
+  <div class="card"><div class="t">XDP / XDP_DROP</div><div class="d">eXpress Data Path - eBPF programs attached at the NIC; XDP_DROP discards a packet at the driver, before the TCP stack or the app sees it.</div></div>
+  <div class="card"><div class="t">RCF</div><div class="d">Random Cut Forest - unsupervised streaming anomaly-detection algorithm, built into OpenSearch anomaly detection and GuardDuty-class services.</div></div>
+  <div class="card"><div class="t">FIM</div><div class="d">File Integrity Monitoring - watching sensitive files for unexpected changes (a system binary that quietly changed).</div></div>
+  <div class="card"><div class="t">IaC</div><div class="d">Infrastructure as Code - Terraform, CloudFormation, Kubernetes manifests, compose files; statically scannable by Checkov and friends before anything ships.</div></div>
+  <div class="card"><div class="t">SBOM</div><div class="d">Software Bill of Materials - a machine-readable inventory of an artifact's components (CycloneDX is the common format).</div></div>
+  <div class="card"><div class="t">HITL</div><div class="d">Human-in-the-Loop - irreversible actions wait for an operator decision; automation proposes, humans dispose.</div></div>
+  <div class="card"><div class="t">Shadow API</div><div class="d">An endpoint that exists in traffic but not in documented routes or the OpenAPI spec - the classic gateway-bypass surface.</div></div>
+  <div class="card"><div class="t">Data drift</div><div class="d">Model signal decay when live traffic no longer matches the training distribution - triggers a retrain, not a rule retune.</div></div>
+  <div class="card"><div class="t">MTTR (p75)</div><div class="d">Mean Time To Respond/Remediate, 75th percentile - the runtime KPI that containment playbooks move.</div></div>
+  <div class="card"><div class="t">Blast radius</div><div class="d">How much damage a compromise of one asset can do - a ranking dimension posture tools sort findings by.</div></div>
+  <div class="card"><div class="t">Warm-start model</div><div class="d">A shared global baseline, fine-tuned per tenant - cheaper than per-tenant training and keeps tenants separate.</div></div>
+  <div class="card"><div class="t">OCSF / ASFF</div><div class="d">Open Cybersecurity Schema Framework / AWS Security Finding Format - the schemas that make cross-source correlation possible (ASFF is OCSF-compatible).</div></div>
+  <div class="card"><div class="t">Sigma</div><div class="d">Open signature format for detection rules (YAML), consumable by OpenSearch Security Analytics and friends.</div></div>
+  <div class="card"><div class="t">Token binding</div><div class="d">Binding an API token to a client trait (e.g. a TLS fingerprint) so a stolen token fails replay from another machine.</div></div>
+</div>
+</body>
+</html>

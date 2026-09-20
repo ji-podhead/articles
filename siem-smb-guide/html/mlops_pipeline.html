@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.stagelabel { font-size: 12.5px; font-weight: 700; letter-spacing: 1.6px; color: var(--ink3); }
+.varrow { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--ink2); font-size: 19px; }
+.varrow .lbl { font-size: 12.5px; }
+.loopnote { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; color: var(--red); font-weight: 700; border: 1.5px solid var(--red); border-radius: 9px; padding: 9px 14px; }
+</style>
+</head>
+<body>
+<h1>Anomaly detection as a managed lifecycle, not a one-off notebook</h1>
+<div class="sub">The false-positive gate and the retrain loop are what separate a production detector from a script that ran once.</div>
+
+<div class="stagelabel">TRAIN - AND GATE</div>
+<div class="row">
+  <div class="card"><div class="t">1 · Features</div><div class="d">gateway / app logs: <code>bytes_sent</code> rolling windows, <code>unique_dest_ips</code> - the same egress numbers the rules see.</div></div>
+  <div class="arrow">→</div>
+  <div class="card"><div class="t">2 · Training</div><div class="d">Isolation Forest / Random Cut Forest - SageMaker Pipelines or MLflow track the run.</div></div>
+  <div class="arrow">→</div>
+  <div class="card red"><div class="t">3 · Evaluation gate</div><div class="d">false-positive rate below 1% or it does not ship - an alert-spam generator is worse than no detector.</div></div>
+</div>
+<div class="varrow">↓ <span class="lbl">approved by a human</span></div>
+
+<div class="stagelabel">SERVE - AND WATCH</div>
+<div class="row">
+  <div class="card blue"><div class="t">4 · Model registry</div><div class="d">versioned, pending manual approval - the model in production is always a choice, never a surprise.</div></div>
+  <div class="arrow">→</div>
+  <div class="card"><div class="t">5 · Realtime endpoint</div><div class="d">scores every event: <code>{anomaly_score, confidence, model_version}</code>.</div></div>
+  <div class="arrow">→</div>
+  <div class="card"><div class="t">6 · Model monitor</div><div class="d">live traffic vs. the training distribution - drift fires an alarm, not a shrug.</div></div>
+</div>
+<div class="loopnote">6 → 1 · continuous retrain - legitimate behavior changes must not break the model</div>
+
+<div class="row"><div class="card"><div class="t">The golden rule</div><div class="d">An ML-generated finding carries confidence + model_version and <b>adds</b> to the rule layer - it never replaces it. A detector that cannot explain why it fired is an alert-spam generator with extra steps.</div></div></div>
+
+<div class="chips">
+  <div class="chip">AWS: GuardDuty built-in ML · SageMaker (Feature Store, Pipelines, Model Monitor)</div>
+  <div class="chip">OSS: OpenSearch ML Commons (RCF built in) · MLflow (registry)</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.card { padding: 12px 16px; }
+.card .t { font-size: 14.5px; margin-bottom: 4px; color: var(--blue); }
+.card .d { font-size: 13.5px; line-height: 1.42; }
+</style>
+</head>
+<body>
+<h1>Glossary: frameworks and certifications</h1>
+<div class="sub">The compliance anchors a SIEM's retention and reporting layers have to satisfy.</div>
+<div class="grid">
+  <div class="card"><div class="t">SOC 2</div><div class="d">Audit standard for SaaS operations (security, availability, confidentiality) - proof-of-controls report by an independent CPA firm.</div></div>
+  <div class="card"><div class="t">HIPAA</div><div class="d">US law protecting health data (PHI); mandatory for healthcare workloads.</div></div>
+  <div class="card"><div class="t">PCI-DSS</div><div class="d">Payment card industry security standard - mandatory for anything touching card data, including your billing flows.</div></div>
+  <div class="card"><div class="t">NIST CSF</div><div class="d">US framework catalog for security programs; the "N" many evidence-pack exports are mapped to.</div></div>
+  <div class="card"><div class="t">CIS Benchmarks</div><div class="d">Center for Internet Security configuration catalogs (e.g. the AWS Foundations Benchmark) that posture tools score your account against.</div></div>
+  <div class="card"><div class="t">GDPR / DSGVO</div><div class="d">EU data protection law - the reason security tooling must prove what it stores, not just that it stores it.</div></div>
+</div>
+</body>
+</html>

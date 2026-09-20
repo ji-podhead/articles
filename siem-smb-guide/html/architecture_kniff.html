@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.stagelabel { font-size: 12.5px; font-weight: 700; letter-spacing: 1.6px; color: var(--ink3); }
+.varrow { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--ink2); font-size: 19px; }
+.varrow .lbl { font-size: 12.5px; }
+.card.code { background: var(--elevated); }
+.card.code .d { font-family: var(--font-mono); font-size: 13px; color: var(--code); }
+</style>
+</head>
+<body>
+<h1>One finding schema, swappable SIEM providers</h1>
+<div class="sub">The dashboard never talks to a SIEM directly - only to the platform's own schema. Wazuh, Security Hub or a future provider differ only in which adapter is plugged in.</div>
+
+<div class="row">
+  <div class="card green"><div class="t">Workspaces</div><div class="d">default-drop egress firewall · docker.sock behind a guard · metadata endpoint denied. Every event carries <code>container_id → session_id → project_id</code> from the moment it is created.</div></div>
+  <div class="arrow">→</div>
+  <div class="card blue"><div class="t">Identity chain</div><div class="d">minted at provisioning, never self-declared - attribution is a property of provisioning, not a tagging convention someone has to remember.</div></div>
+  <div class="arrow">→</div>
+  <div class="card blue"><div class="t">security_events</div><div class="d">+ source · raw_id · severity · confidence · model_version - one extended schema, every provider, no exceptions.</div></div>
+</div>
+<div class="varrow">↓ <span class="lbl">ship out · pull in - one mapper per provider</span></div>
+
+<div class="row">
+  <div class="card code"><div class="t">FindingSink - where platform findings go</div><div class="d">Name() string&nbsp;&nbsp;// "builtin" | "wazuh" | "securityhub"<br>Ship(e SecurityEventRow) error</div></div>
+  <div class="card code"><div class="t">FindingSource - where external findings come from</div><div class="d">Name() string<br>Poll(ctx) ([]SecurityEventRow, error)</div></div>
+</div>
+<div class="varrow">↓ <span class="lbl">byte-identical in all three modes</span></div>
+
+<div class="row"><div class="card green"><div class="t">Dashboard API</div><div class="d">events · freeze/release · forensics report · ports panel - one API, one UI. Switching provider costs one mapper and one setting, not a second dashboard.</div></div></div>
+
+<div class="chips">
+  <div class="chip"><code>security_pipeline: builtin | wazuh | aws</code> - one setting switches the source/sink pair</div>
+  <div class="chip">ASFF is OCSF-compatible: a third provider later is another mapper, not a migration</div>
+  <div class="chip">Honest limits: deep-dive UIs stay links · GuardDuty ML is a black box - the builtin path keeps a deterministic rules layer · AWS sinks cost per event, so severity gates live in config</div>
+</div>
+</body>
+</html>

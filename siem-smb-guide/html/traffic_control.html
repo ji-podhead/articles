@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.split { display: flex; flex-direction: column; gap: 10px; }
+.split .half { background: var(--elevated); border: 1.5px solid var(--line); border-radius: 9px; padding: 10px 13px; }
+.split .half .ht { font-size: 13.5px; font-weight: 700; margin-bottom: 4px; color: var(--ink); }
+.split .half .d { font-size: 13px; }
+.varrow { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--ink2); font-size: 19px; }
+.varrow .lbl { font-size: 12.5px; }
+</style>
+</head>
+<body>
+<h1>Controlling traffic: ports, IP allowlists, and the WAF layer</h1>
+<div class="sub">Two layers, two different jobs - the firewall decides who gets to knock, the WAF decides which knocks look malicious.</div>
+
+<div class="row">
+  <div class="card"><div class="t">Client / Internet</div><div class="d">bots · scanners · users - plus the traffic you invited and the port you forgot you opened. Every knock is a log line waiting to happen.</div></div>
+  <div class="arrow">→</div>
+  <div class="card" style="flex:1.5"><div class="t">Edge: firewall + WAF</div>
+    <div class="split">
+      <div class="half"><div class="ht">Firewall</div><div class="d">default-deny · only required ports open (443) · admin ports behind a source-IP allowlist</div></div>
+      <div class="half"><div class="ht">WAF</div><div class="d">OWASP CRS patterns (SQLi, XSS, path traversal) · rate limits · geo/IP blocking</div></div>
+    </div>
+  </div>
+  <div class="arrow">→<span class="lbl">allowed</span></div>
+  <div class="card"><div class="t">Application / gateway</div><div class="d">identity check on minted sessions · payload inspection · per-user rate limits - the only point guaranteed to see fully decrypted, parsed content</div></div>
+  <div class="arrow">→</div>
+  <div class="card green"><div class="t">Backend</div><div class="d">answers only to allowlisted upstreams - everything else is egress-dropped. The blast radius of a compromised pod stays this small.</div></div>
+</div>
+
+<div class="varrow">↓ <span class="lbl">rejected traffic</span></div>
+<div class="row">
+  <div class="card red"><div class="t">Blocked - and logged</div><div class="d">A rejected connection is a log entry, never a silent drop: which ports were probed, from where, how often. Exactly the data an investigation wants.</div></div>
+  <div class="card red"><div class="t">The Docker NAT pitfall</div><div class="d">A published container port routes around host firewall front-ends via the nat table - the UI says "blocked", the port is open. Verify actual reachability: <code>ss -tlnp</code> vs <code>docker ps</code>, not the firewall config.</div></div>
+</div>
+
+<div class="chips">
+  <div class="chip">Self-hosted: <code>nftables/ufw</code> + <code>Coraza</code> or <code>ModSecurity</code> (OWASP CRS)</div>
+  <div class="chip">AWS: <code>Security Groups + NACLs</code> + <code>AWS WAF &amp; Shield</code></div>
+</div>
+</body>
+</html>

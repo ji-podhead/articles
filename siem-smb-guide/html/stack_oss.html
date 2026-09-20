@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.stagelabel { font-size: 12.5px; font-weight: 700; letter-spacing: 1.6px; color: var(--ink3); }
+.varrow { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--ink2); font-size: 19px; }
+.varrow .lbl { font-size: 12.5px; }
+</style>
+</head>
+<body>
+<h1>The open-source stack: four sensors, one manager, one indexer</h1>
+<div class="sub">Every box is a real, separately maintained open-source project - nothing here is a single vendor's product.</div>
+
+<div class="stagelabel">SENSORS - ONE PER SIGNAL TYPE, PER HOST AND PER CONTAINER</div>
+<div class="row">
+  <div class="card"><div class="t">Suricata - network IDS/IPS</div><div class="d">signature rules on raw packets; the XDP/eBPF capture mode drops matches at the NIC. Blind spot: inside TLS, inside a process.</div></div>
+  <div class="card"><div class="t">eBPF sensor - e.g. Falco</div><div class="d">watches syscalls per container, no sidecar, no code change: shell spawns, namespace escapes, crypto-miners.</div></div>
+  <div class="card"><div class="t">Host agent - e.g. Wazuh agent</div><div class="d">file-integrity monitoring, vulnerability scanning, container-engine visibility.</div></div>
+  <div class="card"><div class="t">Firewall logs - nftables / ufw</div><div class="d">which ports were probed, from where, how often. The most underrated signal - if you turn drop logging on.</div></div>
+</div>
+<div class="varrow">↓ <span class="lbl">ship every signal</span></div>
+
+<div class="row"><div class="card blue"><div class="t">SIEM core - e.g. the Wazuh manager: rules + correlation</div>
+<div class="d">Answers the question no sensor can answer alone: is this one incident or four unrelated events? Runs as a single-node docker-compose stack, roughly 4 GB of RAM.</div></div></div>
+<div class="varrow">↓ <span class="lbl">structured, timestamped alerts</span></div>
+
+<div class="row"><div class="card green"><div class="t">Indexer + dashboard - OpenSearch</div>
+<div class="d">Full-text search over months of history, retention, and pre-built compliance views for PCI-DSS, GDPR and HIPAA.</div></div></div>
+
+<div class="row">
+  <div class="card"><div class="t">What you get</div><div class="d">compliance dashboards, a maintained detection ruleset, search over history - and every byte stays in infrastructure you control, the simplest answer to a data-residency question.</div></div>
+  <div class="card"><div class="t">What it costs</div><div class="d">roughly 4 GB RAM, the discipline of applying updates, and you now operate something Elasticsearch-adjacent.</div></div>
+</div>
+</body>
+</html>
