@@ -3,16 +3,11 @@
   "padding": 40,
   "tree": {
     "type": "column",
-    "style": {
-      "gap": 24
-    },
+    "style": { "gap": 24 },
     "children": [
       {
         "type": "row",
-        "style": {
-          "gap": 20,
-          "justify": "center"
-        },
+        "style": { "gap": 20, "justify": "center" },
         "children": [
           {
             "type": "card",
@@ -35,10 +30,22 @@
       },
       {
         "type": "row",
-        "style": {
-          "gap": 20,
-          "justify": "center"
-        },
+        "style": { "gap": 20, "justify": "center" },
+        "children": [
+          {
+            "type": "card",
+            "id": "bridge",
+            "title": "\u26a1 eBPF Boundary Tracing",
+            "lines": [
+              "Correlates BOTH views simultaneously in real-time"
+            ],
+            "color": "red"
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "style": { "gap": 20, "justify": "center" },
         "children": [
           {
             "type": "card",
@@ -65,28 +72,11 @@
             ]
           }
         ]
-      },
-      {
-        "type": "card",
-        "id": "bridge",
-        "title": "⚡ eBPF Boundary Tracing",
-        "lines": [
-          "Correlates BOTH views simultaneously in real-time"
-        ],
-        "color": "red"
       }
     ]
   },
   "connect": [
-    {
-      "from": "bridge",
-      "to": "ai",
-      "color": "red"
-    },
-    {
-      "from": "bridge",
-      "to": "os",
-      "color": "red"
-    }
+    { "from": "bridge", "to": "ai", "color": "red" },
+    { "from": "bridge", "to": "os", "color": "red" }
   ]
 }
