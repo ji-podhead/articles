@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 20px; }
+.defs .d { font-family: var(--font-mono); font-size: 12.5px; color: var(--code); }
+.defs .t { margin-bottom: 4px; }
+.chart svg { width: 100%; height: auto; display: block; }
+.chart .t { margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<h1>Fuzzy sets: membership degrees for a temperature controller</h1>
+<div class="sub">Classical logic knows two states. Fuzzy logic (Zadeh, 1965) knows degrees of truth: membership grades between 0 and 1, so one reading carries two partial memberships at once.</div>
+
+<div class="col root">
+  <div class="row">
+    <div class="card blue defs"><div class="t">cold</div><div class="d">1.0 up to 12 &deg;C</div><div class="d">falls linearly to 0 at 22 &deg;C</div></div>
+    <div class="card green defs"><div class="t">warm</div><div class="d">0 at 15 &deg;C</div><div class="d">1.0 from 22 to 28 &deg;C</div><div class="d">0 again at 35 &deg;C</div></div>
+    <div class="card defs"><div class="t">hot</div><div class="d">0 up to 30 &deg;C</div><div class="d">1.0 from 38 &deg;C</div></div>
+  </div>
+  <div class="card chart"><div class="t">Membership functions &mu;(T) - one 19 &deg;C reading, two memberships: 0.30 cold and 0.57 warm</div>
+    <svg viewBox="0 0 1040 360" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#30363d" stroke-width="1">
+        <line x1="60" y1="60" x2="60" y2="300"/>
+        <line x1="290" y1="60" x2="290" y2="300"/>
+        <line x1="520" y1="60" x2="520" y2="300"/>
+        <line x1="750" y1="60" x2="750" y2="300"/>
+        <line x1="980" y1="60" x2="980" y2="300"/>
+        <line x1="60" y1="240" x2="980" y2="240"/>
+        <line x1="60" y1="180" x2="980" y2="180"/>
+        <line x1="60" y1="120" x2="980" y2="120"/>
+        <line x1="60" y1="60" x2="980" y2="60"/>
+      </g>
+      <g font-family="JetBrains Mono, monospace" font-size="13" fill="#8b949e">
+        <text x="52" y="305" text-anchor="end">0</text>
+        <text x="52" y="245" text-anchor="end">0.25</text>
+        <text x="52" y="185" text-anchor="end">0.5</text>
+        <text x="52" y="125" text-anchor="end">0.75</text>
+        <text x="52" y="65" text-anchor="end">1.0</text>
+        <text x="60" y="322" text-anchor="middle">0</text>
+        <text x="290" y="322" text-anchor="middle">10</text>
+        <text x="520" y="322" text-anchor="middle">20</text>
+        <text x="750" y="322" text-anchor="middle">30</text>
+        <text x="980" y="322" text-anchor="middle">40 &deg;C</text>
+      </g>
+      <path d="M60,60 L336,60 L566,300 L980,300" fill="none" stroke="#4493f8" stroke-width="3"/>
+      <path d="M60,300 L405,300 L566,60 L704,60 L865,300 L980,300" fill="none" stroke="#3fb950" stroke-width="3"/>
+      <path d="M60,300 L750,300 L934,60 L980,60" fill="none" stroke="#8b949e" stroke-width="2.5" stroke-dasharray="7 5"/>
+      <line x1="497" y1="60" x2="497" y2="300" stroke="#e6edf3" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <circle cx="497" cy="228" r="6" fill="#4493f8"/>
+      <circle cx="497" cy="163" r="6" fill="#3fb950"/>
+      <g font-family="Space Grotesk, sans-serif" font-size="15" font-weight="700">
+        <text x="510" y="232" fill="#4493f8">0.30 cold</text>
+        <text x="510" y="150" fill="#3fb950">0.57 warm</text>
+        <text x="510" y="80" fill="#e6edf3">19 &deg;C reading</text>
+      </g>
+      <g font-family="Space Grotesk, sans-serif" font-size="14">
+        <text x="700" y="45" fill="#8b949e">hot</text>
+        <text x="640" y="285" fill="#3fb950">warm</text>
+        <text x="380" y="45" fill="#4493f8">cold</text>
+      </g>
+    </svg>
+  </div>
+  <div class="row">
+    <div class="card green"><div class="t">The rule fires with a degree</div><div class="d">IF temperature IS warm AND rising, THEN reduce heating slightly - at 19 &deg;C it fires at degree 0.57. No cliff, no hard threshold: rules blend continuously.</div></div>
+    <div class="card"><div class="t">Why it mattered then - and now</div><div class="d">Fuzzy logic let early AI reason over vague, rule-encoded knowledge. Its descendants are everywhere in modern RAG: relevance scores and membership-style gates on what enters memory are degrees of truth in new clothes.</div></div>
+  </div>
+  <div class="card"><div class="d">Original figure - fuzzy sets after Zadeh 1965. The numbers on the reading line follow from the drawn piecewise-linear functions: cold(19) = (22-19)/10 = 0.30, warm(19) = (19-15)/7 = 0.57.</div></div>
+</div>
+</body>
+</html>

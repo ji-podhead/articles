@@ -27,7 +27,7 @@ They worked because the domains were narrow and the knowledge could be written d
 
 Classical logic knows two states. Fuzzy logic, introduced by Lotfi Zadeh in 1965, knows degrees of truth: fuzzy sets with membership grades between 0 and 1 instead of crisp boundaries.
 
-![Fuzzy sets: membership degrees](fuzzy_logic_membership.svg)
+![Fuzzy sets: membership degrees](svg/fuzzy_logic_membership.svg)
 *Fuzzy sets for a temperature controller: cold, warm, hot overlap, and one temperature reading carries two partial memberships at once. (Original figure.)*
 
 The classic example is the temperature controller: instead of a hard threshold, "warm" is a membership function that rises and falls, and the rule "if temperature is warm and rising, reduce heating slightly" fires with a degree. Fuzzy logic let early AI systems produce reasonable inferences from vague, rule-encoded knowledge — an early, formal answer to a problem that haunts every LLM system today: reasoning under imprecision.
@@ -38,7 +38,7 @@ Michael Wooldridge notes there is no universally accepted definition of an agent
 
 Two properties matter for what came next. **Statefulness**: agents store information about past actions and let it shape future decisions — the precondition for anything resembling memory. And a split in temperament: **ReAct agents** are reactive thinkers, waiting for a trigger and looping through reasoning and acting, adapting their plan as new results arrive — inspired by the way humans think in inner monologue rather than by preprogrammed workflows. **Proactive agents** are initiative agents: they analyze patterns and environment data, anticipate needs, and act without being asked — reminders, workflow management, real-time coaching.
 
-![Knowledge systems timeline](knowledge_systems_timeline.svg)
+![Knowledge systems timeline](svg/knowledge_systems_timeline.svg)
 *From rule bases to ReAct: the knowledge base and the inference machine never left. (Original figure.)*
 
 ## Why This History Matters for RAG
