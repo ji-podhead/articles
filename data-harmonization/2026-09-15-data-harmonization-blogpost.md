@@ -6,7 +6,7 @@
 
 **Published:** 2026-09-15 · **Author:** Leonardo Jacobi · **Tags:** #DataEngineering #DataScience #DataHarmonization
 
-![Diagram of three sequential pipeline phases — structuring (turning raw unstructured blobs into a queryable table), normalization (1NF/2NF/3NF database normalization plus statistical Min-Max/Z-score scaling), and harmonization (multiple sources converging into one semantically unified view, contrasted against mere integration) — with a bottom lifecycle bar showing how ingestion, transformation, loading, and harmonization repeat per data batch](data-pipeline-structuring-normalization-harmonization.svg)
+![Diagram of three sequential pipeline phases — structuring (turning raw unstructured blobs into a queryable table), normalization (1NF/2NF/3NF database normalization plus statistical Min-Max/Z-score scaling), and harmonization (multiple sources converging into one semantically unified view, contrasted against mere integration) — with a bottom lifecycle bar showing how ingestion, transformation, loading, and harmonization repeat per data batch](svg/data-pipeline-structuring-normalization-harmonization.svg)
 
 I recently observed a technical interview where a Data Scientist conflated Data Structuring with Data Normalization and Data Harmonization. It's a surprisingly common mix-up, but in a production-grade data pipeline, mixing these up can lead to broken schemas, skewed ML models, and high operational chaos.
 
