@@ -6,7 +6,7 @@
 
 **Published:** 2026-05-01 · **Author:** Leonardo Jacobi · **Tags:** #MCP #Docker #GenAI #EmailAutomation #Agentics
 
-![Architecture diagram showing Google GenAI (the LLM agent layer, using litellm for automatic tool-fetching) connected over an SSE transport bridge to a Docker container running an MCP-Bridge and an MCP Server (JS) that holds the email-automation credentials — with a benefits panel below covering CI/CD-friendly builds, container isolation, per-agent network segmentation, and automatic tool discovery](mcp-sse-docker-architecture.svg)
+![Architecture diagram showing Google GenAI (the LLM agent layer, using litellm for automatic tool-fetching) connected over an SSE transport bridge to a Docker container running an MCP-Bridge and an MCP Server (JS) that holds the email-automation credentials — with a benefits panel below covering CI/CD-friendly builds, container isolation, per-agent network segmentation, and automatic tool discovery](svg/mcp-sse-docker-architecture.svg)
 
 We've been working on an exciting project that integrates Model Context Protocol (MCP) servers running in Docker with Google's GenAI for email automation. Here's a quick overview.
 

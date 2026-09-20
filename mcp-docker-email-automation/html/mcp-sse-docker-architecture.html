@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 26px; }
+.sect { font-size: 13px; font-weight: 700; letter-spacing: 1.4px; color: var(--ink3); }
+.box { border: 1.5px solid var(--line); border-radius: 9px; padding: 10px 14px; flex: 1 1 0; min-width: 0; background: var(--elevated); }
+.box .t { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.box .d { font-size: 13px; line-height: 1.45; color: var(--ink2); }
+</style>
+</head>
+<body>
+<h1>MCP Servers via Docker + SSE Transport</h1>
+<div class="sub">A GenAI agent drives isolated email automation over Server-Sent Events</div>
+
+<div class="col root">
+  <div class="row">
+    <div class="card blue">
+      <div class="t">Google GenAI · agent layer</div>
+      <div class="d">Interacts with the MCP server through the litellm module: simplified tool parsing, no manual tool handling, no Pydantic error fixing.</div>
+      <div class="d">Fetches every tool the MCP exposes, automatically.</div>
+    </div>
+    <div class="arrow blue">&#8594;<span class="lbl">tool calls</span></div>
+    <div class="card amber">
+      <div class="t">SSE Transport</div>
+      <div class="d">Server-Sent Events as the remote access bridge: the agent talks to a running container, not to a local process.</div>
+    </div>
+    <div class="arrow amber">&#8594;</div>
+    <div class="card blue" style="flex: 1.6 1 0">
+      <div class="t">Docker Container</div>
+      <div class="d">Base image with the bridge preinstalled; a start script boots the stack. One isolated container per agent.</div>
+      <div class="row" style="margin-top: 10px; gap: 12px">
+        <div class="box">
+          <div class="t">MCP-Bridge</div>
+          <div class="d">Exposes the MCP remotely via SSE transport.</div>
+        </div>
+        <div class="box">
+          <div class="t">MCP Server (JS)</div>
+          <div class="d">Email automation tools. Credentials live here in the container, never in the agent.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sect">WHY THIS ARCHITECTURE</div>
+  <div class="row" style="gap: 18px">
+    <div class="card">
+      <div class="t">CI/CD friendly</div>
+      <div class="d">Docker enables seamless continuous integration and deployment pipelines.</div>
+    </div>
+    <div class="card">
+      <div class="t">Secure isolation</div>
+      <div class="d">Docker provides a secure and isolated deployment environment.</div>
+    </div>
+    <div class="card">
+      <div class="t">Network segmentation</div>
+      <div class="d">Each agent gets its own container: restrict access and segment the network.</div>
+    </div>
+    <div class="card">
+      <div class="t">Automatic tool discovery</div>
+      <div class="d">Install all MCP servers in the container, fetch all tools at once. No manual per-tool adds.</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <div class="t">vs Claude Desktop</div>
+      <div class="d">Similar solutions also run MCP in Docker, but locally; this stack deploys remotely over SSE transport.</div>
+    </div>
+    <div class="card">
+      <div class="t">Where it is heading</div>
+      <div class="d">FastAPI dashboard with WebSockets, cronjobs that access the agent, webhooks and events that run workflows.</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
