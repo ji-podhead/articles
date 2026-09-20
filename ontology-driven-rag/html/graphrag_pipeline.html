@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 24px; }
+.step { padding: 12px 16px; }
+.step .t { margin-bottom: 4px; font-size: 14.5px; }
+.mono { font-family: var(--font-mono); font-size: 12.5px; color: var(--code); }
+.arrow .lbl { white-space: nowrap; }
+</style>
+</head>
+<body>
+<h1>GraphRAG - from triples to communities to answers</h1>
+<div class="sub">Rebuilding the topology a flat index loses: entities and edges become a graph, Leiden clusters summarize it, and two search modes answer what similarity never could.</div>
+
+<div class="col root">
+  <div class="row">
+    <div class="card step"><div class="t">Documents</div><div class="d">unstructured text &middot; manuals &middot; charts</div></div>
+    <div class="arrow">→</div>
+    <div class="card blue step"><div class="t">Entity + relation extraction</div>
+      <div class="d">An LLM identifies nodes (entities like "Metformin" or "Patient M&uuml;ller") and edges (relations like "treats" or "takes"), producing triples:</div>
+      <div class="d mono">(Metformin) -[treats]-&gt; (Diabetes)</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="card green step"><div class="t">Knowledge graph</div>
+      <div class="d">nodes + typed edges - the pipeline finally knows what is <i>related</i>, not just what is similar</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="card blue step"><div class="t">Leiden communities</div>
+      <div class="d">Community detection groups related nodes into clusters, summarized at several abstraction levels</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card green step"><div class="t">Local search</div>
+      <div class="d">Navigates the edges around a specific node - multi-hop detail ("which devices are affected when pump X fails?"), validated against the ontology.</div>
+    </div>
+    <div class="card blue step"><div class="t">Global search</div>
+      <div class="d">Reads the precomputed cluster summaries and answers corpus-level questions - "What are the most common side effects in this patient group?" - without scanning a single raw document.</div>
+    </div>
+  </div>
+  <div class="card step"><div class="t">Grounded, explainable answer</div>
+    <div class="d">The retrieval path is the evidence trail.</div>
+  </div>
+  <div class="card step"><div class="t">Where the ontology meets the graph</div>
+    <div class="d"><b>Constraint-based extraction:</b> the LLM is bound to the ontology classes (SNOMED, Brick) - a clean entity base, no cleanup project. <b>Semantic enrichment:</b> node "Room 101" acquires every property of class "office room". <b>Path validation:</b> the graph says what is connected; the ontology says what is <i>allowed</i> to be connected.</div>
+  </div>
+  <div class="card step"><div class="d">Adapted from the Microsoft GraphRAG repository documentation (MIT License).</div></div>
+</div>
+</body>
+</html>

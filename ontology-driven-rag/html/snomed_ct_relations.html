@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 22px; }
+.node { padding: 11px 16px; }
+.node .t { margin-bottom: 2px; font-size: 14.5px; }
+.attr .t { font-family: var(--font-mono); font-size: 13px; color: var(--code); }
+.arrow .lbl { white-space: nowrap; }
+</style>
+</head>
+<body>
+<h1>SNOMED CT concept model: IS-A hierarchy plus defining attributes</h1>
+<div class="sub">A concept is defined by its parent (IS-A) plus attribute-value pairs - not by its label alone. Every attribute has a fixed domain and range, which is exactly what makes machine-checked extraction possible.</div>
+
+<div class="col root">
+  <div class="row">
+    <div class="card node"><div class="t">Disease</div><div class="d">(disorder)</div></div>
+    <div class="arrow blue">→<span class="lbl">IS A</span></div>
+    <div class="card node"><div class="t">Pneumonia</div><div class="d">(disorder)</div></div>
+    <div class="arrow blue">→<span class="lbl">IS A</span></div>
+    <div class="card green node"><div class="t">Bacterial pneumonia</div><div class="d">(disorder) - the concept being defined</div></div>
+  </div>
+  <div class="arrow">↓ <span class="lbl">defining attributes</span></div>
+  <div class="row">
+    <div class="card green attr"><div class="t">|Finding site|</div><div class="d"><b>Structure of lung</b><br>(body structure)</div></div>
+    <div class="card green attr"><div class="t">|Associated morphology|</div><div class="d"><b>Inflammation</b><br>(morphologic abnormality)</div></div>
+    <div class="card green attr"><div class="t">|Causative agent|</div><div class="d"><b>Bacterium</b><br>(organism)</div></div>
+  </div>
+  <div class="card"><div class="t">Domain and range - the machine-checkable part</div>
+    <div class="d">Each attribute has a fixed <b>domain</b> (which concepts may carry it) and <b>range</b> (which concepts are valid values). |Finding site| ranges over |body structure| and its descendants only - an extraction cannot bind it to a random node.</div>
+  </div>
+  <div class="row">
+    <div class="card"><div class="t">Why RAG cares</div>
+      <div class="d">Constraint-based extraction: an LLM extracting "treats" or "finding site" edges can be bound to these domains and ranges - it stops inventing relations, and entity resolution stops being a cleanup project.</div>
+    </div>
+    <div class="card"><div class="t">Polyhierarchy</div>
+      <div class="d">IS-A can have multiple parents: one concept, several valid classifications. The IS-A tree routes; the defining attributes reason.</div>
+    </div>
+  </div>
+  <div class="card"><div class="d">Original figure, modeled on the SNOMED CT concept model (SNOMED International documentation, docs.snomed.org).</div></div>
+</div>
+</body>
+</html>

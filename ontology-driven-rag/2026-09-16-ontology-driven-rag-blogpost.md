@@ -2,7 +2,7 @@
 
 Your RAG pipeline retrieved five chunks, and the answer sounded right. Sounding right is not being right — and no amount of cosine similarity will tell you the difference. What separates a demo from a production system is not a better embedding model. It is structure: a taxonomy to route, an ontology to reason with, and a graph to walk.
 
-![Taxonomy vs. Ontology](taxonomy_vs_ontology.svg)
+![Taxonomy vs. Ontology](svg/taxonomy_vs_ontology.svg)
 *Taxonomy routes, ontology reasons — the two halves of the blueprint of knowledge. (Original figure.)*
 
 ## The Flatness Problem
@@ -35,7 +35,7 @@ How data lands in the database has two very different answers, depending on the 
 
 RAG is the synthesis engine between the two: precise, filtered queries against instance data, enriched with deep context from the knowledge base. The expensive investment in A is what makes every cheap document in B retrievable with surgical precision.
 
-![GraphRAG pipeline](graphrag_pipeline.svg)
+![GraphRAG pipeline](svg/graphrag_pipeline.svg)
 *From triples to communities to answers. (Adapted from the Microsoft GraphRAG repository documentation, MIT License — confirmed.)*
 
 ## GraphRAG: Rebuilding the Topology
@@ -60,7 +60,7 @@ A physician faces a patient with a rare condition and needs the best evidence-ba
 
 The ontology runs on established standards: ICD-10-GM codes every diagnosis ("I10.0 — Essential hypertension"), LOINC gives every lab value a global identity regardless of which lab produced it, and defined relations connect them: patient HAS_DIAGNOSIS code, lab value IS_INDICATOR_FOR diagnosis, medication TREATS diagnosis.
 
-![SNOMED CT relations](snomed_ct_relations.svg)
+![SNOMED CT relations](svg/snomed_ct_relations.svg)
 *SNOMED CT concept model: IS-A hierarchy plus defining attributes (finding site, associated morphology, causative agent). (Original figure, modeled on the SNOMED CT concept model — SNOMED International documentation, docs.snomed.org.)*
 
 The Qdrant collections mirror the two ingestion processes: patients_data — the digital twin of the chart, every chunk tagged with ICD-10 codes, LOINC IDs, patient_id and date — and medical_knowledge — curated guidelines and systematic reviews. The agent's toolset closes the loop: it reads the exact diagnosis and the relevant lab parameters from patients_data, formulates a precise English query for PubMed or the Cochrane Library, and returns a synthesis of the newest evidence. When the anamnese runs dry or the case is rare, that tool bridges the gap between static internal data and the current state of research.
