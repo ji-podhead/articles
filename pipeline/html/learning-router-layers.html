@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+</head>
+<body>
+<h1>Three learning layers - outcomes flow down, provider truth flows up</h1>
+
+<div class="col root"><div class="row"><div class="card"><div class="t">Layer 1 - Model Bandit (per platform:model)</div><div class="d">Beta posterior over success/failure · decayed exponentially, 2-day half-life (lazy, on touch)</div>
+<div class="d">score = 0.6 × reliability + 0.4 × speed (1s → 1.0, 10s → 0.1)</div>
+<div class="d">cold-start probe until 5 samples · 10% explore least-sampled · exploit: 0.7 × bandit + 0.3 × user preference</div></div>
+<div class="chip" style="align-self:center">internal/router</div></div>
+<div class="row"><div class="card green"><div class="t">Layer 2 - Key Pool (per key)</div><div class="d">EMA reliability + speed posteriors · model-scope whitelists · cooldown state</div>
+<div class="d">cost-scaled cooldowns: free 5s · &lt;$0.5 30s · &lt;$3 60s · pricey 5min · 402 → 24h bench (only extends)</div>
+<div class="d">free-first failover: paid keys route last · provider-informed benches survive success</div></div>
+<div class="chip" style="align-self:center">internal/keypool</div></div>
+<div class="row"><div class="card amber"><div class="t">Layer 3 - Quota Truth (per provider)</div><div class="d">x-ratelimit-* / Retry-After parsed per vendor: NVIDIA swapped order · Cerebras -day/-minute namespaces · Anthropic family</div>
+<div class="d">confidence model: header 1.0 &gt; error body 0.75 &gt; probe 0.6 - most trustworthy source per (platform, key, pool, metric)</div>
+<div class="d">pool inference: groq::account · openrouter::free · google::project - two keys, one account = one budget</div></div>
+<div class="chip" style="align-self:center">internal/quota</div></div>
+<div class="row"><div class="chip">jimesh open-source AI gateway · every proxied call teaches both upper layers</div></div></div>
+<div class="flowstrip"><div>Layer 1 - Model Bandit (per platform:model) &#8594; RouteEvent → ApplyFeedback (Redis Stream jimesh:events · inline fallback) · 4xx filtered out &#8594; Layer 2 - Key Pool (per key)</div>
+<div>Layer 2 - Key Pool (per key) &#8594; 429/402 → cost-aware cooldown · 200 with remaining=0 → precise bench (no failure stat) &#8594; Layer 3 - Quota Truth (per provider)</div></div>
+
+</body>
+</html>

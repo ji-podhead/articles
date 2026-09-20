@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+</head>
+<body>
+<h1>SANITATION STACK: MODELS &amp; GUARDRAILS</h1>
+<div class="sub">classify → generate → guard - the 3 AI layers between slop and clean OKF</div>
+<div class="col root"><div class="row"><div class="card red"><div class="t">RAW SLOP</div><div class="d">chat logs · exports · notes</div>
+<div class="d">paths, IPs, filler, tickets</div></div>
+<div class="arrow">&#8594;</div>
+<div class="card"><div class="t">LAYER 1 · CLASSIFY &amp; FLAG PII</div><div class="d">DeBERTa-v3 (NER)</div>
+<div class="d">flags IPs · passwords · AWS keys · paths</div>
+<div class="d">all-MiniLM-L6-v2 (embedding)</div>
+<div class="d">pre-matches raw text → proposes topic/subtopic</div>
+<div class="d">local CPU · deterministic · cheap</div></div>
+<div class="arrow">&#8594;</div>
+<div class="card"><div class="t">LAYER 2 · EXTRACT &amp; RESTRUCTURE</div><div class="d">Llama-3-8B / Mistral-7B (local, Ollama)</div>
+<div class="d">strips filler · splits into heading sections</div>
+<div class="d">Gemini response_schema / structured outputs</div>
+<div class="d">forces frontmatter to the OKF schema exactly</div>
+<div class="d">transformation, not invention - low hallucination risk</div></div></div>
+<div class="row"><div class="card green"><div class="t">CLEAN OKF</div><div class="d">frontmatter (v0.2 compliant)</div>
+<div class="d">heading-bounded sections</div>
+<div class="d">lifecycle · sources · provenance</div></div>
+<div class="card"><div class="t">LAYER 3 · PROGRAMMATIC GUARDRAILS (PRE-COMMIT)</div><div class="d">NeMo Guardrails (NVIDIA)</div>
+<div class="d">blocks unverified code + conversational residue → triggers rewrite</div>
+<div class="d">Llama Guard 3</div>
+<div class="d">final scan: no proprietary leak ships as visibility: public</div>
+<div class="d">rules live in code - reviewable, testable, deterministic</div></div></div>
+<div class="row"><div class="card"><div class="d">⚠ ORDER MATTERS</div></div>
+<div class="card"><div class="d">redact PII with a CPU encoder BEFORE the generative pass - discovering it after it's woven into a summary is far too late</div></div></div></div>
+
+
+</body>
+</html>

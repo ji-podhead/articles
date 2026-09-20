@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="JiMesh LLM-Security">
+  <defs>
+    <linearGradient id="sec-grad" x1="10%" y1="10%" x2="90%" y2="90%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#sec-grad)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 256,44 C 360,44 420,76 436,116 C 436,250 360,370 256,464 C 152,370 76,250 76,116 C 92,76 152,44 256,44 Z" stroke-width="24"/>
+    <path d="M 256,84 C 326,84 368,106 380,134 C 380,230 324,324 256,400 C 188,324 132,230 132,134 C 144,106 186,84 256,84 Z" stroke-width="12"/>
+    <line x1="256" y1="140" x2="256" y2="320" stroke-width="16"/>
+    <path d="M 190,190 L 256,220 L 322,190" stroke-width="12"/>
+    <path d="M 180,270 L 256,250 L 332,270" stroke-width="12"/>
+    <circle cx="256" cy="140" r="12" fill="url(#sec-grad)" stroke="none"/>
+    <circle cx="190" cy="190" r="10" fill="url(#sec-grad)" stroke="none"/>
+    <circle cx="322" cy="190" r="10" fill="url(#sec-grad)" stroke="none"/>
+    <circle cx="180" cy="270" r="10" fill="url(#sec-grad)" stroke="none"/>
+    <circle cx="332" cy="270" r="10" fill="url(#sec-grad)" stroke="none"/>
+    <circle cx="256" cy="320" r="12" fill="url(#sec-grad)" stroke="none"/>
+  </g>
+</svg>

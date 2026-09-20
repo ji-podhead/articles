@@ -1,0 +1,8 @@
+:root {
+  --canvas: #0d1117; --panel: #161b22; --elevated: #1c2128;
+  --ink: #e6edf3; --ink2: #8b949e; --ink3: #6e7681; --line: #30363d;
+  --green: #3fb950; --blue: #4493f8; --amber: #d29922; --red: #f85149;
+  --font-text: "Space Grotesk", "DejaVu Sans", sans-serif;
+  --font-mono: "JetBrains Mono", "DejaVu Sans Mono", monospace;
+}
+* { margin: 0; box-sizing: border-box; }

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="JiMesh Igel-Variante: Circular Hub (monochrom)">
+  <g fill="none" stroke="currentColor" stroke-linecap="round" transform="translate(400, 230)">
+    <circle cx="0" cy="0" r="95" stroke-width="8"/>
+
+    <g stroke-width="6">
+      <line x1="-39" y1="-39" x2="-67" y2="-67"/>
+      <line x1="-67" y1="-67" x2="-103" y2="-103"/>
+      <line x1="0" y1="-55" x2="0" y2="-95"/>
+      <line x1="0" y1="-95" x2="0" y2="-145"/>
+      <line x1="39" y1="-39" x2="67" y2="-67"/>
+      <line x1="67" y1="-67" x2="103" y2="-103"/>
+      <line x1="-55" y1="0" x2="-95" y2="0"/>
+      <line x1="-95" y1="0" x2="-145" y2="0"/>
+    </g>
+
+    <g fill="currentColor" stroke="none">
+      <circle cx="-103" cy="-103" r="10"/>
+      <circle cx="0" cy="-145" r="13"/>
+      <circle cx="103" cy="-103" r="10"/>
+      <circle cx="-145" cy="0" r="9"/>
+    </g>
+
+    <!-- Igel-Kern als reine Kontur (kein Fuellton) -> Auge bleibt Leerraum, kein Cutout noetig -->
+    <g transform="translate(0, -7)">
+      <circle cx="0" cy="0" r="55" stroke-width="7"/>
+      <circle cx="18" cy="1" r="9" fill="currentColor" stroke="none"/>
+    </g>
+  </g>
+</svg>

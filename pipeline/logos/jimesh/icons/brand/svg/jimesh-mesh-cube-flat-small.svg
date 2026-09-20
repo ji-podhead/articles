@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="JiMesh Mesh-Cube Flat Color (Small, ohne Glow/Gradient)">
+  <!-- "Minimal + Farbe": gleiche schlanke Linienform wie die Mono-Variante, aber in echten Markenfarben
+       (Cyan = Mesh/Netzwerk, Gruen = Core/Security) statt Schwarz-Weiss. Kein Blur/Glow, keine Gradients - flach. -->
+  <circle cx="400" cy="400" r="380" fill="#05070b"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(400,400)">
+
+    <!-- Aeussere Connector-Linien: Cyan -->
+    <g stroke="#00e5ff" stroke-width="7" stroke-dasharray="14 9" opacity="0.65">
+      <line x1="0" y1="-150" x2="0" y2="-240"/>
+      <line x1="130" y1="-75" x2="208" y2="-120"/>
+      <line x1="130" y1="75" x2="208" y2="120"/>
+      <line x1="0" y1="150" x2="0" y2="240"/>
+      <line x1="-130" y1="75" x2="-208" y2="120"/>
+      <line x1="-130" y1="-75" x2="-208" y2="-120"/>
+    </g>
+
+    <!-- Mesh-Nodes: Gruen -->
+    <g stroke="#00ffcc" stroke-width="9">
+      <circle cx="0" cy="-240" r="15"/>
+      <circle cx="208" cy="-120" r="15"/>
+      <circle cx="208" cy="120" r="15"/>
+      <circle cx="0" cy="240" r="15"/>
+      <circle cx="-208" cy="120" r="15"/>
+      <circle cx="-208" cy="-120" r="15"/>
+    </g>
+    <g fill="#00ffcc" stroke="none">
+      <circle cx="0" cy="-240" r="7"/>
+      <circle cx="208" cy="-120" r="7"/>
+      <circle cx="208" cy="120" r="7"/>
+      <circle cx="0" cy="240" r="7"/>
+      <circle cx="-208" cy="120" r="7"/>
+      <circle cx="-208" cy="-120" r="7"/>
+    </g>
+
+    <!-- Verdeckte Cube-Kanten: Cyan, gedimmt -->
+    <g stroke="#00e5ff" stroke-width="5" stroke-dasharray="10 7" opacity="0.4">
+      <line x1="0" y1="0" x2="0" y2="-150"/>
+      <line x1="0" y1="0" x2="-130" y2="75"/>
+      <line x1="0" y1="0" x2="130" y2="75"/>
+    </g>
+
+    <!-- Sichtbare Cube-Kanten: Cyan, voll -->
+    <g stroke="#00e5ff" stroke-width="14">
+      <polygon points="0,-150 130,-75 130,75 0,150 -130,75 -130,-75"/>
+      <line x1="0" y1="0" x2="130" y2="-75"/>
+      <line x1="0" y1="0" x2="-130" y2="-75"/>
+    </g>
+
+    <!-- Core-Cube: zwei flache Gruentoene (Top hell, Seiten dunkler) statt Gradient -->
+    <g stroke="none">
+      <polygon points="0,-49.5 44.98,-23.5 0,2.5 -44.98,-23.5" fill="#00ffcc"/>
+      <polygon points="-44.98,-23.5 0,2.5 0,54.5 -44.98,28.5" fill="#00c78f"/>
+      <polygon points="0,2.5 44.98,-23.5 44.98,28.5 0,54.5" fill="#00a344"/>
+    </g>
+  </g>
+</svg>

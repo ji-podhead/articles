@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+</head>
+<body>
+<h1>Ingress-derived-only: the gateway is the only place identity is ever decided</h1>
+
+<div class="col root"><div class="card red"><div class="t">Agent's own request arrives</div><div class="d">carrying whatever identity claim it wants</div></div>
+<div class="arrow">↓</div>
+<div class="card"><div class="t">STEP 1, Strip every client-supplied identity header, unconditionally</div><div class="d">Before any other logic runs. A client-supplied copy of an identity claim is treated as spoofing by definition, it never even reaches a decision.</div>
+<div class="d">This is the step most home-grown gateways skip, trusting a header the caller itself set.</div></div>
+<div class="arrow">↓</div>
+<div class="card"><div class="t">STEP 2, Resolve real identity server-side, from the credential that actually authenticated</div><div class="d">Not from anything the client claims. The credential is looked up against a store that distinguishes a human, a workspace, and one specific agent instance.</div>
+<div class="d">Each agent instance gets its own row, independently revocable, independently attributable, never shared.</div></div>
+<div class="arrow">↓</div>
+<div class="card"><div class="t">STEP 3, Re-stamp the identity headers from the VERIFIED row, only now</div><div class="d">Every downstream handler reads a workspace/agent identity header, but the value now came from the database row the credential resolved to, never from the client.</div>
+<div class="d">One ingress point re-stamps, everywhere else just trusts, no downstream code re-derives identity on its own.</div></div>
+<div class="arrow">↓</div>
+<div class="card green"><div class="t">STEP 4, Deterministic policy decides, outside the model entirely</div><div class="d">A policy-as-code engine (Rego, Cedar) evaluates the verified identity against granted capabilities, allow, escalate for approval, or deny. Fail-closed on any error.</div></div></div>
+
+
+</body>
+</html>

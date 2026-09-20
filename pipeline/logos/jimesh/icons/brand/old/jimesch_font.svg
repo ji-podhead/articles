@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 160" width="100%" height="100%">
+  <defs>
+    <!-- Deep Tech Text Gradient (Passend zum Shield-Verlauf) -->
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="75%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#00e5ff" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    /* Hauptmarke: Extrem fett, moderner Cyber-Schnitt, weites Letter-Spacing */
+    .brand-text-solo {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      font-weight: 900;
+      font-size: 64px;
+      fill: url(#text-grad);
+      letter-spacing: 12px;
+      text-anchor: middle;
+    }
+
+    /* Untertitel: Klar, technisch, cyanfarbener Glow-Effekt */
+    .sub-text-solo {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      fill: #00e5ff;
+      letter-spacing: 5px;
+      text-anchor: middle;
+      opacity: 0.9;
+    }
+  </style>
+
+  <!-- Hintergrund ist transparent für maximale Flexibilität -->
+  <g transform="translate(350, 75)">
+    <!-- Hauptschriftzug (JiMesh) -->
+    <text x="6" y="0" class="brand-text-solo">JIMESH</text>
+    
+    <!-- Neuer angepasster Untertitel -->
+    <text x="2.5" y="48" class="sub-text-solo">GATEWAY, LLM &amp; APP SECURITY</text>
+  </g>
+</svg>

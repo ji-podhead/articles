@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="JiMesh — LLM Proxy Router (Igel-Maskottchen)">
+  <defs>
+    <!-- Hintergrund-Verlauf -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </radialGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glow-intense" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Stacheln / Routing-Pfade Farbverläufe -->
+    <linearGradient id="routerNeon1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="routerNeon2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="routerNeon3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+
+    <!-- Tech/Metallic Körper Verläufe -->
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="60%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <linearGradient id="faceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Hintergrund -->
+  <rect width="800" height="800" fill="url(#bgGrad)"/>
+
+  <!-- Matrix/Router-Ringe im Hintergrund -->
+  <g opacity="0.15">
+    <circle cx="400" cy="400" r="320" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="10 15"/>
+    <circle cx="400" cy="400" r="260" fill="none" stroke="#818cf8" stroke-width="4"/>
+    <circle cx="400" cy="400" r="180" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="5 5"/>
+  </g>
+
+  <!-- Torso/Schultern (liegt HINTER dem Kopf, damit der Igel sichtbar einen Körper hat) -->
+  <path d="M 280 500 Q 280 702 400 702 Q 520 702 520 500 Z" fill="url(#bodyGrad)" stroke="#1e293b" stroke-width="4"/>
+  <path d="M 300 610 Q 300 670 400 675 Q 500 670 500 610" fill="none" stroke="#334155" stroke-width="2" opacity="0.4"/>
+
+  <!-- Ohren (groesser, mit Fuellung + Kontur, klar erkennbar an den Kopfseiten) -->
+  <path d="M 258 452 C 205 435 170 385 205 355 C 235 380 262 415 270 448 Z" fill="url(#bodyGrad)" stroke="#475569" stroke-width="3"/>
+  <path d="M 542 452 C 595 435 630 385 595 355 C 565 380 538 415 530 448 Z" fill="url(#bodyGrad)" stroke="#475569" stroke-width="3"/>
+  <path d="M 232 425 C 215 405 210 383 222 368" fill="none" stroke="#1e293b" stroke-width="2" opacity="0.5"/>
+  <path d="M 568 425 C 585 405 590 383 578 368" fill="none" stroke="#1e293b" stroke-width="2" opacity="0.5"/>
+
+  <!-- Kopf/Panzer-Aussenschale (Kreisboden r=150 um (400,460) -> Stacheln unten sitzen EXAKT auf dieser Kontur) -->
+  <path d="M 250 460 A 150 150 0 0 1 550 460 C 550 545 480 600 400 600 C 320 600 250 545 250 460 Z" fill="url(#bodyGrad)" stroke="#1e293b" stroke-width="4"/>
+
+  <!-- Stacheln: solide, an der Kopfkontur verankerte Dreiecke + duenne Datenlinien zu den Router-Nodes (kein Spalt zum Koerper) -->
+  <g filter="url(#glow)">
+    <!-- links: routerNeon1 -->
+    <polygon points="274,412 192,404 268,438" fill="url(#routerNeon1)"/>
+    <path d="M 192,404 L 101,380" fill="none" stroke="url(#routerNeon1)" stroke-width="5" stroke-linecap="round"/>
+    <polygon points="305,364 235,322 289,384" fill="url(#routerNeon1)"/>
+    <path d="M 235,322 L 162,261" fill="none" stroke="url(#routerNeon1)" stroke-width="5" stroke-linecap="round"/>
+    <polygon points="356,334 310,265 332,345" fill="url(#routerNeon1)"/>
+    <path d="M 310,265 L 269,179" fill="none" stroke="url(#routerNeon1)" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Scheitel: routerNeon3 -->
+    <polygon points="413,326 400,245 387,326" fill="url(#routerNeon3)"/>
+    <path d="M 400,245 L 400,150" fill="none" stroke="url(#routerNeon3)" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- rechts: routerNeon2 -->
+    <polygon points="444,334 491,265 468,345" fill="url(#routerNeon2)"/>
+    <path d="M 491,265 L 531,179" fill="none" stroke="url(#routerNeon2)" stroke-width="5" stroke-linecap="round"/>
+    <polygon points="511,384 565,322 495,364" fill="url(#routerNeon2)"/>
+    <path d="M 565,322 L 638,261" fill="none" stroke="url(#routerNeon2)" stroke-width="5" stroke-linecap="round"/>
+    <polygon points="533,438 608,404 527,412" fill="url(#routerNeon2)"/>
+    <path d="M 608,404 L 700,380" fill="none" stroke="url(#routerNeon2)" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Router API Endpunkte (Leuchtende Nodes an den Stachel-Spitzen) -->
+  <g filter="url(#glow-intense)">
+    <circle cx="101" cy="380" r="8" fill="#38bdf8"/>
+    <circle cx="162" cy="261" r="7" fill="#38bdf8"/>
+    <circle cx="269" cy="179" r="9" fill="#38bdf8"/>
+    <circle cx="400" cy="150" r="10" fill="#3b82f6"/>
+    <circle cx="531" cy="179" r="9" fill="#ec4899"/>
+    <circle cx="638" cy="261" r="7" fill="#ec4899"/>
+    <circle cx="700" cy="380" r="8" fill="#ec4899"/>
+  </g>
+
+  <!-- Cyber-Gesicht (Frontal, minimalistisch/stylisch) -->
+  <path d="M 280 460 A 120 120 0 0 1 520 460 C 520 525 465 565 400 565 C 335 565 280 525 280 460 Z" fill="url(#faceGrad)"/>
+
+  <!-- Futuristische Brille/Visor (Das Router Interface) -->
+  <g filter="url(#glow)">
+    <path d="M 315 500 C 315 470 485 470 485 500 C 485 530 445 542 400 542 C 355 542 315 530 315 500 Z" fill="#0f172a" stroke="#38bdf8" stroke-width="4"/>
+    <!-- Daten-Streams auf dem Visor -->
+    <path d="M 330 500 L 470 500" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-dasharray="15 5 5 5"/>
+    <path d="M 345 512 L 455 512" fill="none" stroke="#06b6d4" stroke-width="1.5" opacity="0.8"/>
+  </g>
+
+  <!-- Igel-Nase -->
+  <polygon points="390,555 410,555 400,570" fill="#1e293b"/>
+  <circle cx="400" cy="558" r="4" fill="#334155"/>
+
+  <!-- Status-LEDs auf den Wangen (Proxy Aktivität) -->
+  <circle cx="345" cy="540" r="5" fill="#10b981" opacity="0.6" filter="url(#glow)"/>
+  <circle cx="455" cy="540" r="5" fill="#10b981" opacity="0.6" filter="url(#glow)"/>
+
+  <!-- Text Branding -->
+  <text x="400" y="750" font-family="'Segoe UI', Roboto, sans-serif" font-size="46" font-weight="900" fill="#f8fafc" text-anchor="middle" letter-spacing="8">JIMESH</text>
+  <text x="400" y="778" font-family="'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="700" fill="#38bdf8" text-anchor="middle" letter-spacing="6" filter="url(#glow)">LLM PROXY ROUTER</text>
+</svg>

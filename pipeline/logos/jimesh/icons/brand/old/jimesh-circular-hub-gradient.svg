@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="JiMesh Igel-Variante: Circular Hub (Gradient)">
+  <defs>
+    <!-- userSpaceOnUse: EIN Verlaufsfeld ueber alle Shapes (Ring/Spokes/Kern) hinweg, sonst
+         bekommt jede Form ihre eigene objectBoundingBox und die Toene laufen auseinander -->
+    <linearGradient id="hubGrad" gradientUnits="userSpaceOnUse" x1="-150" y1="-150" x2="150" y2="150">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(400, 230)">
+    <!-- Ring in Markenverlauf statt Slate -->
+    <circle cx="0" cy="0" r="95" fill="none" stroke="url(#hubGrad)" stroke-width="8"/>
+
+    <g stroke="url(#hubGrad)" stroke-width="6" stroke-linecap="round">
+      <line x1="-39" y1="-39" x2="-67" y2="-67"/>
+      <line x1="-67" y1="-67" x2="-103" y2="-103"/>
+      <line x1="0" y1="-55" x2="0" y2="-95"/>
+      <line x1="0" y1="-95" x2="0" y2="-145"/>
+      <line x1="39" y1="-39" x2="67" y2="-67"/>
+      <line x1="67" y1="-67" x2="103" y2="-103"/>
+      <line x1="-55" y1="0" x2="-95" y2="0"/>
+      <line x1="-95" y1="0" x2="-145" y2="0"/>
+    </g>
+
+    <!-- Nodes: Endpunkte in den beiden Markenfarben -->
+    <circle cx="-103" cy="-103" r="14" fill="#22d3ee"/>
+    <circle cx="0" cy="-145" r="18" fill="url(#hubGrad)"/>
+    <circle cx="103" cy="-103" r="14" fill="#a78bfa"/>
+    <circle cx="-145" cy="0" r="12" fill="#22d3ee"/>
+
+    <!-- Igel-Kern: eingerollte Kugelform in Markenverlauf gefuellt -->
+    <g transform="translate(0, -7)">
+      <circle cx="0" cy="0" r="55" fill="url(#hubGrad)"/>
+      <circle cx="39" cy="27" r="14" fill="url(#hubGrad)"/>
+      <circle cx="18" cy="1" r="10" fill="#0f172a"/>
+      <circle cx="21" cy="-2" r="3.5" fill="#e0f2fe"/>
+    </g>
+  </g>
+
+  <text x="400" y="460" font-family="system-ui, sans-serif" font-size="44" font-weight="700" fill="#0f172a" text-anchor="middle">JiMesh</text>
+  <text x="400" y="500" font-family="system-ui, sans-serif" font-size="16" font-weight="500" fill="#7c6ee8" text-anchor="middle" letter-spacing="4">INTELLIGENT LLM ROUTING</text>
+</svg>

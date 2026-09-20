@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+</head>
+<body>
+<h1>AI PLANNING: THE 3-LAYER STACK</h1>
+<div class="sub">from F.E.A.R.'s GOAP to LLM-driven robotics</div>
+<div class="col root"><div><div style="font-weight:700;font-size:15px">THE EVOLUTION</div></div>
+<div class="row"><div class="card"><div class="t">FSM</div><div class="d">state spaghetti</div>
+<div class="d"></div>
+<div class="d"></div></div>
+<div class="arrow">&#8594;</div>
+<div class="card"><div class="t">GOAP</div><div class="d">F.E.A.R. (2005)</div>
+<div class="d">goal→action planning</div></div>
+<div class="arrow">&#8594;</div>
+<div class="card blue"><div class="t">Behavior Trees</div><div class="d">ROS 2 standard</div>
+<div class="d">reactive control</div>
+<div class="d"></div></div>
+<div class="arrow">&#8594;</div>
+<div class="card"><div class="t">PDDL</div><div class="d">ROSPlan solvers</div>
+<div class="d">formal planning</div>
+<div class="d"></div></div>
+<div class="arrow">&#8594;</div>
+<div class="card green"><div class="t">LLM Bridge</div><div class="d">cutting edge</div>
+<div class="d">human → PDDL translation</div></div></div>
+<div class="row"><div class="card blue"><div class="t">1 EXECUTION</div><div class="d">Behavior Trees</div>
+<div class="d"></div>
+<div class="d">?</div>
+<div class="d">action</div>
+<div class="d">action</div>
+<div class="d">skill</div>
+<div class="d">skill</div>
+<div class="d">skill</div>
+<div class="d">skill</div>
+<div class="d"></div>
+<div class="d">✓ Moment-to-moment reactive control</div>
+<div class="d">✓ BehaviorTree.CPP (ROS 2)</div>
+<div class="d">✓ Skills can be NN-powered</div></div>
+<div class="card"><div class="t">2 STRATEGY</div><div class="d">Formal Planners (PDDL)</div>
+<div class="d"></div>
+<div class="d">PDDL Domain + Problem</div>
+<div class="d">Dedicated Solver</div>
+<div class="d">Optimal Plan → Behavior Tree</div>
+<div class="d"></div>
+<div class="d">✓ Complex multi-step tasks</div>
+<div class="d">✓ ROSPlan framework</div>
+<div class="d">✓ Formal guarantees</div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div></div>
+<div class="card green"><div class="t">3 INTERFACE</div><div class="d">LLM Bridge</div>
+<div class="d"></div>
+<div class="d">Human</div>
+<div class="d">&quot;clean the table&quot;</div>
+<div class="d">LLM</div>
+<div class="d">translate</div>
+<div class="d">structured PDDL → formal planner</div>
+<div class="d">solver finds the optimal plan</div>
+<div class="d"></div>
+<div class="d">✓ Doesn't replace layers 1+2</div>
+<div class="d">✓ Bridges human intent → formal</div>
+<div class="d">✓ Cutting edge (recent papers)</div>
+<div class="d"></div></div></div>
+<div><div style="font-weight:700;font-size:15px">THE KEY INSIGHT: LLMs don't replace the planning stack - they interface with it</div></div>
+<div><div style="font-size:13px;color:var(--ink2)">GOAP (F.E.A.R.) → Behavior Trees (ROS 2) → PDDL (ROSPlan) → LLM Bridge (human → PDDL)</div></div>
+<div><div style="font-size:13px;color:var(--ink2)">#AI #GOAP #BehaviorTrees #PDDL #LLM #Robotics #ROS #IsaacSim #AutonomousSystems</div></div></div>
+
+
+</body>
+</html>

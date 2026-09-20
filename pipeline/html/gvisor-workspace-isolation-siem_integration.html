@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+</head>
+<body>
+<h1>Each isolation layer is also a log source - the SIEM is what turns three silent gates into one visible story</h1>
+
+<div class="col root"><div class="row"><div class="card amber"><div class="t">Identity Proxy</div><div class="d">Every request already carries a verified identity (X-App-ID) - log denied auth attempts + which workspace served which request</div>
+<div class="d">→ WAF/gateway-style audit log</div></div>
+<div class="card"><div class="t">VLAN / ipvlan</div><div class="d">A packet with the wrong VLAN tag trying to reach another tenant's segment is a real signal - an IDS - OSS: Suricata per VLAN; AWS: GuardDuty</div>
+<div class="d">→ network-IDS finding, per tenant</div></div>
+<div class="card green"><div class="t">gVisor sandbox</div><div class="d">Every syscall the Sentry emulates is visible in-process - an eBPF sensor watching the sandbox catches anomalous syscall - OSS: Falco; AWS: GuardDuty</div>
+<div class="d">→ runtime-security finding</div></div></div>
+<div class="card"><div class="t">Correlation (the SIEM core)</div><div class="d">same workspace_id / owner attribution across all three sources - 3 unrelated-looking events become 1 incident</div></div>
+<div class="arrow">↓</div>
+<div class="card"><div class="t">One risk-ranked incident:</div><div class="d">&quot;workspace X - proxy denial, then a VLAN-102 IDS hit, then an anomalous syscall in the same sandbox, within 3 seconds&quot;</div></div></div>
+<div class="flowstrip"><div>Identity Proxy &#8594; Correlation (the SIEM core)</div>
+<div>VLAN / ipvlan &#8594; Correlation (the SIEM core)</div>
+<div>gVisor sandbox &#8594; Correlation (the SIEM core)</div>
+
+
+</body>
+</html>

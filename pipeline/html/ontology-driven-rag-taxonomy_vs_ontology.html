@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+</head>
+<body>
+<h1>Taxonomy vs. Ontology - the two halves of the blueprint</h1>
+
+<div class="col root"><div class="row"><div class="col"><div class="card"><div class="t">Taxonomy - classify</div><div class="d">one home per document · instant exclusion</div>
+<div class="d">job: route + exclude irrelevant domains · 100% certain</div>
+<div class="d">rigid · one home per doc · no relations</div></div>
+<div class="card blue"><div class="t">Domain</div></div>
+<div class="row"><div class="card"><div class="t">Kingdom</div></div>
+<div class="card"><div class="t">Phylum</div></div>
+<div class="card"><div class="t">Class</div></div></div>
+<div class="row"><div class="card"><div class="t">Order</div></div>
+<div class="card"><div class="t">Family</div></div>
+<div class="card"><div class="t">Genus</div></div></div>
+<div class="row"><div class="card green"><div class="t">Species</div></div>
+<div class="card"><div class="t">Species</div></div></div></div>
+<div class="col"><div class="card blue"><div class="t">Ontology - reason</div><div class="d">formal concepts · properties · typed relations</div>
+<div class="d">job: precise traversal · validates multi-hop paths</div>
+<div class="d">SNOMED CT · ICD-10 · LOINC · Brick Schema</div></div>
+<div class="card blue"><div class="t">Diagnosis</div></div>
+<div class="row"><div class="card green"><div class="t">Medication ✓</div></div>
+<div class="card"><div class="t">Symptom</div></div></div>
+<div class="row"><div class="card"><div class="t">LabValue</div></div>
+<div class="card"><div class="t">Patient</div></div></div></div></div>
+<div class="card"><div class="d">taxonomy routes · ontology reasons · both together = blueprint of knowledge</div></div></div>
+<div class="flowstrip"><div>Domain &#8594; Kingdom</div>
+<div>Domain &#8594; Phylum</div>
+<div>Domain &#8594; Class</div>
+<div>Phylum &#8594; Order</div>
+<div>Phylum &#8594; Family</div>
+<div>Class &#8594; Genus</div>
+<div>Order &#8594; Species</div>
+<div>Order &#8594; Species</div>
+<div>Medication ✓ &#8594; TREATS ✓ &#8594; Diagnosis</div>
+<div>Diagnosis &#8594; HAS_SYMPTOM &#8594; Symptom</div>
+<div>Diagnosis &#8594; IS_INDICATOR_FOR &#8594; LabValue</div>
+<div>Diagnosis &#8594; TAKES &#8594; Patient</div></div>
+
+</body>
+</html>

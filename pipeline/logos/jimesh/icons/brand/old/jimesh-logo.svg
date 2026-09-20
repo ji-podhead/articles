@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="JiMesh Logo">
+  <defs>
+    <linearGradient id="logo-grad" x1="10%" y1="10%" x2="90%" y2="90%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#logo-grad)" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="256,40 440,146 440,358 256,464 72,358 72,146" stroke-width="24"/>
+    <line x1="256" y1="40" x2="256" y2="180" stroke-width="16"/>
+    <line x1="440" y1="146" x2="334" y2="207" stroke-width="16"/>
+    <line x1="440" y1="358" x2="334" y2="297" stroke-width="16"/>
+    <line x1="72" y1="358" x2="178" y2="297" stroke-width="16"/>
+    <line x1="72" y1="146" x2="178" y2="207" stroke-width="16"/>
+    <polygon points="256,180 334,207 334,297 256,324 178,297 178,207" stroke-width="16"/>
+    <circle cx="256" cy="40" r="14" fill="url(#logo-grad)" stroke="none"/>
+    <circle cx="440" cy="146" r="14" fill="url(#logo-grad)" stroke="none"/>
+    <circle cx="440" cy="358" r="14" fill="url(#logo-grad)" stroke="none"/>
+    <circle cx="72" cy="358" r="14" fill="url(#logo-grad)" stroke="none"/>
+    <circle cx="72" cy="146" r="14" fill="url(#logo-grad)" stroke="none"/>
+    <circle cx="256" cy="252" r="20" fill="url(#logo-grad)" stroke="none"/>
+  </g>
+</svg>

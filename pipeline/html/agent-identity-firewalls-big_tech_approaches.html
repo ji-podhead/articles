@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+</head>
+<body>
+<h1>Four different teams, the same underlying answer: deterministic policy, outside the model</h1>
+
+<div class="col root"><div class="row"><div class="card red"><div class="t">Meta, LlamaFirewall (Purple Llama, real, arXiv 2505.03574)</div><div class="d">PromptGuard 2 (jailbreak detector) → Agent Alignment Checks (a chain-of-thought auditor reading the agent's own reasoning for goal misalignment) → CodeShield (static analysis before generated code executes).</div>
+<div class="d">Scope: content-safety, not authorization, answers &quot;is this dangerous,&quot; not &quot;is this agent allowed.&quot;</div></div>
+<div class="card red"><div class="t">OpenAI, tool approvals + moderation pipeline</div><div class="d">Separates prompt from tool execution; a synchronous moderation layer screens input/output before a tool call is even generated; human-in-the-loop approval is the default for higher-risk actions.</div>
+<div class="d">See the real July 2026 incident below, even this didn't stop a benchmark exploit chain.</div></div></div>
+<div class="row"><div class="card green"><div class="t">Google, Vertex AI / Agent Development Kit</div><div class="d">Tool calls are matched deterministically against a pre-defined OpenAPI schema: a call that doesn't exactly match the schema is rejected by the API gateway itself, not by asking the model to reconsider.</div>
+<div class="d">Same shape as a well-built capability gate: the schema/policy check is code, not a second model call.</div></div>
+<div class="card"><div class="t">AWS, Bedrock AgentCore (2025)</div><div class="d">AgentCore Identity brokers short-lived, per-agent STS credentials (AssumeRole + a per-call session policy) instead of a standing IAM role; AgentCore Gateway sits in front of every tool call, evaluated against Cedar, AWS's own deterministic, formally-verified policy language.</div></div></div>
+<div class="card green"><div class="t">The pattern every one of them converges on</div><div class="d">1. A short-lived, per-agent credential, never a standing role or a secret shared across every agent instance.</div>
+<div class="d">2. The identity is resolved server-side, from the credential, never trusted from what the agent's own output claims to be.</div>
+<div class="d">3. The allow/deny decision is deterministic code (Rego, Cedar, an OpenAPI schema match), not a second model asked to judge the first one's tool call.</div>
+<div class="d">4. Content-safety scanners (PromptGuard/CodeShield-style) are a SEPARATE, complementary layer, never a substitute for the authorization decision above.</div></div>
+<div class="card"><div class="t">A platform combining short-lived per-agent keys, server-side header re-stamping, and a deterministic policy gate is a working instance of the same shape.</div></div></div>
+
+
+</body>
+</html>

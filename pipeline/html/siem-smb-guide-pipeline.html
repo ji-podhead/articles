@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+</head>
+<body>
+<h1>How a SIEM actually works - the seven stages nobody shows you</h1>
+
+<div class="col root"><div><div style="font-weight:700;font-size:13px;color:#8b949e">1 · COLLECT</div></div>
+<div class="row"><div class="card"><div class="t">Logs</div><div class="d">app · proxy · agents</div></div>
+<div class="card"><div class="t">Network</div><div class="d">flow · eve.json · IDS</div></div>
+<div class="card"><div class="t">Identity</div><div class="d">auth events · API audit</div></div>
+<div class="card"><div class="t">Runtime</div><div class="d">syscalls (eBPF/Falco)</div></div>
+<div class="card"><div class="t">Posture</div><div class="d">IaC scan · config state</div></div></div>
+<div class="row"><div class="card blue"><div class="t">2 · Normalize (one schema)</div><div class="d">OCSF / ASFF / your own schema</div></div></div>
+<div class="row"><div class="card"><div class="t">3 · Detect - rules</div><div class="d">signatures · regex · FIM checks</div></div>
+<div class="card"><div class="t">4 · Detect - ML/behavior</div><div class="d">baselines · anomaly scores</div>
+<div class="d">carries confidence + model version</div></div></div>
+<div class="row"><div class="card blue"><div class="t">5 · Correlate + attribute</div><div class="d">container/workload → session → app (the attribution chain)</div>
+<div class="d">chained events within seconds = one incident, not three separate alerts</div></div></div>
+<div class="row"><div class="card"><div class="t">6 · Alert → triage (HITL)</div><div class="d">risk-score ranked queue · operator decides</div></div>
+<div class="arrow">→</div>
+<div class="card green"><div class="t">7 · Respond + retain</div><div class="d">block → isolate → revoke · long-term store</div></div></div>
+<div class="card"><div class="t">WASN'T</div><div class="d">A SIEM is not a scanner. It is a correlate-and-retain engine over EVERY log source - with the alert as the output,</div>
+<div class="d">not the feature.</div></div></div>
+<div class="flowstrip"><div>Posture &#8594; 2 · Normalize (one schema)</div>
+<div>2 · Normalize (one schema) &#8594; 3 · Detect - rules</div>
+<div>2 · Normalize (one schema) &#8594; 4 · Detect - ML/behavior</div>
+<div>3 · Detect - rules &#8594; 5 · Correlate + attribute</div>
+<div>4 · Detect - ML/behavior &#8594; 5 · Correlate + attribute</div>
+<div>5 · Correlate + attribute &#8594; 6 · Alert → triage (HITL)</div></div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --canvas: #0d1117; --panel: #161b22; --elevated: #1c2128;
+    --ink: #e6edf3; --ink2: #8b949e; --line: #30363d;
+    --green: #3fb950; --blue: #4493f8; --amber: #d29922; --red: #f85149;
+  }
+  * { margin: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; background: var(--canvas); color: var(--ink);
+    font-family: "Space Grotesk", "DejaVu Sans", sans-serif;
+    padding: 40px; display: flex; flex-direction: column; gap: 26px;
+  }
+  h1 { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; }
+  .sub { font-size: 17px; color: var(--ink2); }
+  .row { display: flex; flex-direction: row; gap: 20px; align-items: stretch; justify-content: center; }
+  .col { display: flex; flex-direction: column; gap: 18px; }
+  .card {
+    background: var(--panel); border: 2px solid var(--line); border-radius: 11px;
+    padding: 14px 18px; flex: 1 1 0; min-width: 0;
+  }
+  .card.green { border-color: var(--green); }
+  .card.green .t { color: var(--green); }
+  .card.blue { border-color: var(--blue); }
+  .card.blue .t { color: var(--blue); }
+  .card.amber { border-color: var(--amber); }
+  .card.amber .t { color: var(--amber); }
+  .t { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .d { font-size: 14px; line-height: 1.45; color: var(--ink2); }
+  .arrow {
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; color: var(--ink2); flex: 0 0 34px;
+  }
+  .arrow .lbl { font-size: 12px; margin-left: 6px; }
+  .chips { display: flex; flex-direction: row; gap: 14px; flex-wrap: wrap; }
+  .chip {
+    border: 1.5px solid var(--line); border-radius: 9px; padding: 8px 15px;
+    font-size: 14.5px; color: var(--ink);
+  }
+</style>
+</head>
+<body>
+  <div>
+    <h1>Adapters as Skills, Adapters as Conscience</h1>
+    <div class="sub">LoRA agents on Cloudflare Workers and self-hosted vLLM</div>
+  </div>
+
+  <div class="row">
+    <div class="card green"><div class="t">SKILL adapter</div><div class="d">SSH deploys, firewall ops, agent tools</div></div>
+    <div class="card green"><div class="t">MEMORY adapter</div><div class="d">knowledge baked in, not a claude.md</div></div>
+    <div class="card green"><div class="t">GUARDRAIL adapter</div><div class="d">expert switching, one swap per request</div></div>
+    <div class="arrow">&#8594;<span class="lbl">swap in</span></div>
+    <div class="card"><div class="t">Base Model</div><div class="d">serverless edge (Workers AI) or self-hosted GPU (vLLM) &mdash; same request, swapped adapter</div></div>
+    <div class="arrow">&#8594;<span class="lbl">review</span></div>
+    <div class="card blue"><div class="t">honest persona (SPT)</div><div class="d">reviews outputs, cannot influence them &mdash; flags, never edits</div></div>
+  </div>
+
+  <div class="chips">
+    <div class="chip">93-99% alignment faking flagged (SPT), 0% baseline</div>
+    <div class="chip">rank &le; 8 (to 32), adapter &lt; 300 MB</div>
+    <div class="chip">up to 100 adapters per account</div>
+  </div>
+</body>
+</html>

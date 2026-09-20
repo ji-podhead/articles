@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="JiMesh Variante: Satellite Orbit Cool (Satellit im Orbit mit Signal-Wellen)">
+  <defs>
+    <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="beamGradS" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <filter id="glowS" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Heller Grund, damit die Signale tragen -->
+  <rect width="800" height="600" fill="#f8fafc"/>
+
+  <g transform="translate(400, 230)">
+    <!-- Orbit-Ring + gestrichelter Echo-Ring + Begleit-Satellit -->
+    <circle cx="0" cy="0" r="95" fill="none" stroke="url(#orbitGrad)" stroke-width="8"/>
+    <circle cx="0" cy="0" r="112" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="3 9" opacity="0.6"/>
+    <circle cx="79" cy="-79" r="10" fill="none" stroke="#0ea5e9" stroke-width="2.5" opacity="0.5"/>
+    <circle cx="79" cy="-79" r="5" fill="#0ea5e9"/>
+
+    <!-- Signal-Beams: 3 von der Antennen-Schuessel, 1 vom Solarpanel -> Bodenstationen -->
+    <g stroke="url(#beamGradS)" stroke-width="6" stroke-linecap="round">
+      <line x1="0" y1="-52" x2="-67" y2="-67"/>
+      <line x1="-67" y1="-67" x2="-103" y2="-103"/>
+      <line x1="0" y1="-52" x2="0" y2="-95"/>
+      <line x1="0" y1="-95" x2="0" y2="-145"/>
+      <line x1="0" y1="-52" x2="67" y2="-67"/>
+      <line x1="67" y1="-67" x2="103" y2="-103"/>
+      <line x1="-84" y1="3" x2="-95" y2="0"/>
+      <line x1="-95" y1="0" x2="-145" y2="0"/>
+    </g>
+    <!-- Signal-Pulse: cyan Dash-Overlays auf denselben Beams (kein Versatz) -->
+    <g stroke="#0ea5e9" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2 11" opacity="0.8">
+      <line x1="0" y1="-52" x2="-67" y2="-67"/>
+      <line x1="-67" y1="-67" x2="-103" y2="-103"/>
+      <line x1="0" y1="-52" x2="0" y2="-95"/>
+      <line x1="0" y1="-95" x2="0" y2="-145"/>
+      <line x1="0" y1="-52" x2="67" y2="-67"/>
+      <line x1="67" y1="-67" x2="103" y2="-103"/>
+      <line x1="-84" y1="3" x2="-95" y2="0"/>
+      <line x1="-95" y1="0" x2="-145" y2="0"/>
+    </g>
+
+    <!-- Bodenstationen / Empfangs-Nodes mit Halo -->
+    <g filter="url(#glowS)">
+      <circle cx="-103" cy="-103" r="22" fill="none" stroke="#10b981" stroke-width="2.5" opacity="0.4"/>
+      <circle cx="-103" cy="-103" r="14" fill="#10b981"/>
+      <circle cx="-108" cy="-108" r="4" fill="#d1fae5"/>
+
+      <circle cx="0" cy="-145" r="27" fill="none" stroke="#0ea5e9" stroke-width="2.5" opacity="0.4"/>
+      <circle cx="0" cy="-145" r="18" fill="#0ea5e9"/>
+      <circle cx="-6" cy="-151" r="5" fill="#e0f2fe"/>
+
+      <circle cx="103" cy="-103" r="22" fill="none" stroke="#10b981" stroke-width="2.5" opacity="0.4"/>
+      <circle cx="103" cy="-103" r="14" fill="#10b981"/>
+      <circle cx="98" cy="-108" r="4" fill="#d1fae5"/>
+
+      <circle cx="-145" cy="0" r="19" fill="none" stroke="#64748b" stroke-width="2.5" opacity="0.4"/>
+      <circle cx="-145" cy="0" r="12" fill="#64748b"/>
+      <circle cx="-149" cy="-4" r="3.5" fill="#e2e8f0"/>
+    </g>
+
+    <!-- Signal-Wellen ueber der Top-Station -->
+    <path d="M -21.9 -166.9 A 31 31 0 0 1 21.9 -166.9" fill="none" stroke="#0ea5e9" stroke-width="3.5" stroke-linecap="round" opacity="0.85"/>
+    <path d="M -29.7 -174.7 A 42 42 0 0 1 29.7 -174.7" fill="none" stroke="#0ea5e9" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+
+    <!-- Satellit: Antennenmast+Schuessel, zwei Solarpanels, Rumpf -->
+    <g transform="translate(0, -7)">
+      <!-- Antennenmast + Schuessel -->
+      <line x1="0" y1="-3" x2="0" y2="-45" stroke="#0f172a" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="0" cy="-45" r="7" fill="#0f172a"/>
+      <circle cx="0" cy="-45" r="3" fill="#0ea5e9"/>
+
+      <!-- Solarpanel links -->
+      <line x1="-17" y1="10" x2="-40" y2="10" stroke="#0f172a" stroke-width="3"/>
+      <rect x="-84" y="0" width="44" height="20" rx="2" fill="#0f172a"/>
+      <line x1="-73" y1="0" x2="-73" y2="20" stroke="#334155" stroke-width="1.5"/>
+      <line x1="-62" y1="0" x2="-62" y2="20" stroke="#334155" stroke-width="1.5"/>
+      <line x1="-51" y1="0" x2="-51" y2="20" stroke="#334155" stroke-width="1.5"/>
+
+      <!-- Solarpanel rechts -->
+      <line x1="17" y1="10" x2="40" y2="10" stroke="#0f172a" stroke-width="3"/>
+      <rect x="40" y="0" width="44" height="20" rx="2" fill="#0f172a"/>
+      <line x1="51" y1="0" x2="51" y2="20" stroke="#334155" stroke-width="1.5"/>
+      <line x1="62" y1="0" x2="62" y2="20" stroke="#334155" stroke-width="1.5"/>
+      <line x1="73" y1="0" x2="73" y2="20" stroke="#334155" stroke-width="1.5"/>
+
+      <!-- Rumpf -->
+      <rect x="-17" y="-3" width="34" height="26" rx="5" fill="#0f172a"/>
+      <circle cx="0" cy="10" r="4" fill="#0ea5e9"/>
+    </g>
+
+    <!-- Dezente Sparkles im Hintergrund -->
+    <g stroke="#94a3b8" stroke-width="2" stroke-linecap="round" opacity="0.55">
+      <line x1="-190" y1="52" x2="-190" y2="68"/>
+      <line x1="-198" y1="60" x2="-182" y2="60"/>
+      <line x1="185" y1="-142" x2="185" y2="-154"/>
+      <line x1="179" y1="-148" x2="191" y2="-148"/>
+    </g>
+    <circle cx="120" cy="128" r="3" fill="#94a3b8" opacity="0.5"/>
+    <circle cx="-248" cy="-88" r="2.5" fill="#94a3b8" opacity="0.5"/>
+  </g>
+
+  <text x="400" y="460" font-family="system-ui, sans-serif" font-size="44" font-weight="700" fill="#0f172a" text-anchor="middle">JiMesh</text>
+  <text x="400" y="500" font-family="system-ui, sans-serif" font-size="16" font-weight="500" fill="#0ea5e9" text-anchor="middle" letter-spacing="4">INTELLIGENT LLM ROUTING</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="JiMesh Igel-Variante: Circular Hub Badge (App-Icon/Favicon)">
+  <defs>
+    <linearGradient id="badgeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Gefuellte Kreis-Flaeche: funktioniert auch klein (Favicon/Avatar) -->
+  <circle cx="400" cy="400" r="380" fill="url(#badgeBg)"/>
+  <circle cx="400" cy="400" r="360" fill="none" stroke="#334155" stroke-width="4"/>
+
+  <g transform="translate(400, 400)">
+    <!-- Ring + Nodes in hellem Cyan, damit sie auf dem dunklen Badge-Grund tragen -->
+    <circle cx="0" cy="0" r="230" fill="none" stroke="#38bdf8" stroke-width="16" opacity="0.85"/>
+
+    <g stroke="#e0f2fe" stroke-width="14" stroke-linecap="round">
+      <line x1="-94" y1="-94" x2="-162" y2="-162"/>
+      <line x1="-162" y1="-162" x2="-249" y2="-249"/>
+      <line x1="0" y1="-133" x2="0" y2="-230"/>
+      <line x1="0" y1="-230" x2="0" y2="-350"/>
+      <line x1="94" y1="-94" x2="162" y2="-162"/>
+      <line x1="162" y1="-162" x2="249" y2="-249"/>
+      <line x1="-133" y1="0" x2="-230" y2="0"/>
+      <line x1="-230" y1="0" x2="-350" y2="0"/>
+    </g>
+
+    <circle cx="-249" cy="-249" r="34" fill="#10b981"/>
+    <circle cx="0" cy="-350" r="44" fill="#38bdf8"/>
+    <circle cx="249" cy="-249" r="34" fill="#10b981"/>
+    <circle cx="-350" cy="0" r="29" fill="#94a3b8"/>
+
+    <!-- Igel-Kern: eingerollte Kugelform, hell auf dunklem Badge-Grund -->
+    <g transform="translate(0, -17)">
+      <circle cx="0" cy="0" r="133" fill="#f8fafc"/>
+      <circle cx="94" cy="65" r="34" fill="#f8fafc"/>
+      <circle cx="44" cy="2" r="24" fill="#0f172a"/>
+      <circle cx="51" cy="-5" r="8.5" fill="#38bdf8"/>
+    </g>
+  </g>
+</svg>

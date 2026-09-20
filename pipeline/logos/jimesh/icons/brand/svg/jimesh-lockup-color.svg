@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 705.1 260" width="705.1" height="260" role="img" aria-label="JiMesh Lockup Farbe">
+  <defs>
+    <linearGradient id="lockup-text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="75%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#00e5ff" />
+    </linearGradient>
+  </defs>
+  <rect width="705.1" height="260" fill="#0b0f16" class="lockup-bg"/>
+  <g transform="translate(20,20) scale(0.275)">
+
+  <defs>
+    <!-- Deep Tech Background Gradient -->
+    <radialGradient id="bg-grad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#111a2e" />
+      <stop offset="100%" stop-color="#05070b" />
+    </radialGradient>
+
+    <!-- Cyber Glow Filter -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="core-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="core-top" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ffcc" />
+      <stop offset="100%" stop-color="#00ff66" />
+    </linearGradient>
+    <linearGradient id="core-left" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00ff66" />
+      <stop offset="100%" stop-color="#00a344" />
+    </linearGradient>
+    <linearGradient id="core-right" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00d154" />
+      <stop offset="100%" stop-color="#008033" />
+    </linearGradient>
+
+    <linearGradient id="shield-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff" />
+      <stop offset="100%" stop-color="#0066ff" />
+    </linearGradient>
+
+    <linearGradient id="mesh-grad" gradientUnits="userSpaceOnUse" x1="140" y1="60" x2="660" y2="450">
+      <stop offset="0%" stop-color="#00ffcc" />
+      <stop offset="100%" stop-color="#00e5ff" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .bg-dark { fill: url(#bg-grad); }
+    .badge-bg { fill: #030508; stroke: #162238; stroke-width: 2; }
+    .node-bg { fill: #05070b; stroke: #1b2d4a; stroke-width: 1.5; }
+
+    /* Outer Cube Lines */
+    .sandbox-shield { stroke: url(#shield-grad); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; fill: none; filter: url(#glow); }
+    .sandbox-back { stroke: #00e5ff; stroke-width: 1.5; stroke-dasharray: 6 4; opacity: 0.25; fill: none; }
+    .sandbox-glass { fill: #00e5ff; fill-opacity: 0.02; }
+
+    /* Mesh Structure */
+    .mesh-edge { stroke: url(#mesh-grad); stroke-width: 2.5; stroke-dasharray: 8 5; stroke-linecap: round; opacity: 0.7; fill: none; }
+    .mesh-node { fill: #05070b; stroke: #00ffcc; stroke-width: 2.5; filter: url(#glow); }
+    .mesh-glow { fill: #00ffcc; }
+
+    /* Inner Matrix Scanner */
+    .scan-plane { fill: #00ff66; fill-opacity: 0.04; stroke: #00ff66; stroke-width: 1.5; stroke-dasharray: 5 4; }
+    .scan-line { stroke: #00e5ff; stroke-width: 1.5; opacity: 0.5; stroke-dasharray: 4 3; fill: none; filter: url(#glow); }
+
+    /* Typography */
+    .brand-text { font-family: 'Segoe UI', -apple-system, sans-serif; font-weight: 900; font-size: 46px; fill: #ffffff; letter-spacing: 5px; text-anchor: middle; }
+    .sub-text { font-family: 'Segoe UI', -apple-system, sans-serif; font-weight: 600; font-size: 14px; fill: #00e5ff; letter-spacing: 8px; text-anchor: middle; opacity: 0.8; }
+  </style>
+
+  <!-- Background Layer -->
+  <rect width="800" height="800" class="bg-dark" />
+
+  <!-- Alles (Kreis + Emblem) auf echtes Canvas-Zentrum (400,400) verschoben - Ursprungsgeometrie war auf 400,300 gebaut -->
+  <g transform="translate(0,100)">
+
+  <!-- MAIN EMBLEM GROUP (Center 400, 300) -->
+  <g id="emblem">
+
+    <!-- 1. MESH NETWORK LAYER -->
+    <g id="mesh-network">
+      <line x1="400" y1="60" x2="400" y2="150" class="mesh-edge" />
+      <line x1="192" y1="180" x2="270" y2="225" class="mesh-edge" />
+      <line x1="608" y1="180" x2="530" y2="225" class="mesh-edge" />
+      <line x1="192" y1="420" x2="270" y2="375" class="mesh-edge" />
+      <line x1="608" y1="420" x2="530" y2="375" class="mesh-edge" />
+      <!-- Bottom-Edge: Spiegelung des Top-Edges (400,60->150), gleicher Radius 240 vom Zentrum -->
+      <line x1="400" y1="540" x2="400" y2="450" class="mesh-edge" />
+
+      <!-- Outer Nodes -->
+      <circle cx="400" cy="60" r="16" class="node-bg" />  <circle cx="400" cy="60" r="7" class="mesh-node" />  <circle cx="400" cy="60" r="2.5" class="mesh-glow" />
+      <circle cx="192" cy="180" r="16" class="node-bg" /> <circle cx="192" cy="180" r="7" class="mesh-node" /> <circle cx="192" cy="180" r="2.5" class="mesh-glow" />
+      <circle cx="608" cy="180" r="16" class="node-bg" /> <circle cx="608" cy="180" r="7" class="mesh-node" /> <circle cx="608" cy="180" r="2.5" class="mesh-glow" />
+      <circle cx="192" cy="420" r="16" class="node-bg" /> <circle cx="192" cy="420" r="7" class="mesh-node" /> <circle cx="192" cy="420" r="2.5" class="mesh-glow" />
+      <circle cx="608" cy="420" r="16" class="node-bg" /> <circle cx="608" cy="420" r="7" class="mesh-node" /> <circle cx="608" cy="420" r="2.5" class="mesh-glow" />
+      <circle cx="400" cy="540" r="16" class="node-bg" /> <circle cx="400" cy="540" r="7" class="mesh-node" /> <circle cx="400" cy="540" r="2.5" class="mesh-glow" />
+    </g>
+
+    <!-- 2. OUTER CUBE LAYER -->
+    <g id="outer-cube">
+      <!-- Hidden Back Edges -->
+      <path d="M 400 150 L 400 300 M 400 300 L 270 375 M 400 300 L 530 375" class="sandbox-back" />
+
+      <!-- Semi-transparent Glass Faces -->
+      <polygon points="270,225 400,300 400,450 270,375" class="sandbox-glass" />
+      <polygon points="530,225 400,300 400,450 530,375" class="sandbox-glass" />
+
+      <!-- Front Visible Edges -->
+      <path d="M 270 375 L 400 450 L 530 375" class="sandbox-shield" />
+      <path d="M 270 375 L 270 225 M 530 375 L 530 225" class="sandbox-shield" />
+      <!-- Re-established original top parallelogram face (Centered at 400,300) -->
+      <path d="M 270 225 L 400 150 L 530 225 L 400 300 Z" class="sandbox-shield" />
+    </g>
+
+    <!-- 3. LLM CORE & MATRIX LAYER -->
+    <g id="llm-core">
+      <!-- Matrix Grid Plane -->
+            <g transform="translate(400, 400) scale(1.1) translate(-400, -345)">
+
+      <polygon points="400,255 478,300 400,345 322,300" class="scan-plane" />
+      </g>
+      <!-- Cleaned up inner vertical dashed line: startet am untersten Punkt des Core-Cube (transform: translate(400,400) scale(1.3) translate(-400,-390) auf lokal 400,355 -> 400,354.5) -->
+      <line x1="400" y1="354.5" x2="400" y2="450" class="scan-line" />
+
+      <!-- The Inner Core Cube -->
+
+      <g transform="translate(400, 400) scale(1.3) translate(-400, -390)">
+        <!-- Top Face -->
+        <polygon points="400,275 434.6,295 400,315 365.4,295" fill="url(#core-top)" />
+        <!-- Left Face -->
+        <polygon points="365.4,295 400,315 400,355 365.4,335" fill="url(#core-left)" opacity="0.9" />
+        <!-- Right Face -->
+        <polygon points="400,315 434.6,295 434.6,335 400,355" fill="url(#core-right)" opacity="0.8" />
+      </g>
+
+      <!-- Matrix Node Dots -->
+      <circle cx="270" cy="375" r="3.5" fill="#00ffcc" />
+      <circle cx="530" cy="375" r="3.5" fill="#00ffcc" />
+      <circle cx="400" cy="300" r="3.5" fill="#00ffcc" />
+      <circle cx="400" cy="450" r="3.5" fill="#00ffcc" />
+    </g>
+
+  </g>
+  </g>
+
+  <!-- TYPOGRAPHY LAYER
+  <g transform="translate(0, 670)">
+    <text x="400" y="0" class="brand-text">NETMESH</text>
+    <text x="400" y="38" class="sub-text">SANDBOX &amp; APP SECURITY</text>
+  </g> -->
+
+  </g>
+  <text x="244" y="165.0" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-weight="900" font-size="100" letter-spacing="6" fill="url(#lockup-text-grad)" text-anchor="start">JIMESH</text>
+</svg>

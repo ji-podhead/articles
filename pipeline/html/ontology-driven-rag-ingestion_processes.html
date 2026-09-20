@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+</head>
+<body>
+<h1>Two ingestion processes, one synthesis engine</h1>
+
+<div class="col root"><div class="row"><div class="card blue"><div class="t">Process A - build the knowledge base</div><div class="d">textbooks · guidelines · studies</div>
+<div class="d">smart chunk</div>
+<div class="d">entities</div>
+<div class="d">rerank</div>
+<div class="d">embed + store</div>
+<div class="d">expensive ONCE · LLM-intensive · reused forever</div>
+<div class="d">→ collection: medical_knowledge</div></div>
+<div class="card green"><div class="t">Process B - ingest instance data</div><div class="d">discharge letter · maintenance log · lab report</div>
+<div class="d">classify + metadata</div>
+<div class="d">simple chunk</div>
+<div class="d">embed + store</div>
+<div class="d">payload filter ✓</div>
+<div class="d">cheap PER DOCUMENT · schema-driven · repeatable</div>
+<div class="d">→ collection: patients_data / building_documents</div></div></div>
+<div class="row"><div class="card blue"><div class="t">RAG = synthesis engine</div><div class="d">filtered facts + deep context → answer</div></div></div>
+<div class="card"><div class="d">payloads: patient_id · document_type · date · device_id - the primary, exact filter</div></div></div>
+<div class="flowstrip"><div>Process A - build the knowledge base &#8594; RAG = synthesis engine</div>
+<div>Process B - ingest instance data &#8594; RAG = synthesis engine</div></div>
+
+</body>
+</html>

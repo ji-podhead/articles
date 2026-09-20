@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+</head>
+<body>
+
+
+<div class="col root"><div class="row"><div class="card blue"><div class="t">LLM Agent</div><div class="d">Calls SSL_write()</div>
+<div class="d">Plaintext in RAM</div>
+<div class="d">USERSPACE</div></div>
+<div class="arrow" style="color:var(--blue)">→<span class="lbl">SSL Hook</span></div>
+<div class="card"><div class="t">2. eBPF Engine</div><div class="d">uprobe / kprobe</div>
+<div class="d">Intercepts raw memory</div>
+<div class="d">KERNELSPACE</div></div>
+<div class="arrow">→<span class="lbl">Ring Buffer</span></div>
+<div class="card"><div class="t">3. Shield Daemon</div><div class="d">Prompt Guard (22M)</div>
+<div class="d">Classification &lt; 1ms</div></div>
+<div class="arrow">→</div>
+<div class="card red"><div class="t">4. Verdict: Map Update / SIGSTOP</div></div></div></div>
+
+
+</body>
+</html>

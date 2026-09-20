@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+</head>
+<body>
+<h1>A worked example: a per-agent scoping field that is written, but never checked</h1>
+
+<div class="col root"><div class="row" style="align-items:center"><div class="card green"><div class="t">WRITE TIME: this part is real</div><div class="d">A per-agent access-control field is written on</div>
+<div class="d">every secret creation and update.</div>
+<div class="d">Every access token records which agent</div>
+<div class="d">it was minted for.</div></div>
+<div><div style="font-weight:700;font-size:24px;color:var(--ink2)">≠</div></div>
+<div class="card red"><div class="t">ACCESS TIME: never checked</div><div class="d">The secret lookup does not filter by the</div>
+<div class="d">per-agent field at all.</div>
+<div class="d">Token validation checks name, revocation,</div>
+<div class="d">expiry, never the agent binding.</div></div></div>
+<div class="card"><div class="t">Practical consequence</div><div class="d">If a per-user OAuth token for a connected inbox were stored today, scoping it to one agent via that field would be purely decorative.</div>
+<div class="d">Any caller holding a valid token for that secret NAME can read it, whatever the field says.</div>
+<div class="d">Mitigating factor: reaching the store at all still requires passing the gateway identity chain first. This is not a wide-open hole.</div></div>
+<div class="card"><div class="t">Why this is the good kind of finding</div><div class="d">The data model for per-agent scoping already exists. This is a couple of missing comparisons in two functions, not a missing architecture: the verified identity already flows through every other code path in the system (the gateway diagram above). The store's own checks simply are not consuming it yet. Fixing it is small and surgical, precisely because everything else was built right.</div></div>
+<div><div style="font-size:14px;color:var(--ink2)">Flagged, not fixed silently. That is what shipping honest gaps instead of hiding them looks like in practice.</div></div></div>
+
+
+</body>
+</html>

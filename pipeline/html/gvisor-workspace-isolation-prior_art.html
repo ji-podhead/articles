@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+body { align-items: flex-start; }
+table.fig { border-collapse: collapse; width: 1120px; table-layout: fixed; }
+table.fig th { background: #1c2128; color: #e6edf3; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-align: left; padding: 13px 16px; border: 1px solid #30363d; }
+table.fig td { color: #c9d1d9; font-size: 14.5px; line-height: 1.5; padding: 13px 16px; border: 1px solid #30363d; vertical-align: top; }
+table.fig tbody tr:nth-child(odd) td { background: #161b22; }
+table.fig tbody tr:nth-child(even) td { background: #0d1117; }
+table.fig td:first-child { font-weight: 700; color: #e6edf3; }
+</style>
+</head>
+<body>
+<h1>Same three-layer pattern, three real production platforms</h1>
+<table class="fig">
+<colgroup><col style="width:28%"><col style="width:24%"><col style="width:24%"><col style="width:24%"></colgroup>
+<thead><tr><th>PLATFORM</th><th>LAYER A - KERNEL SANDBOX</th><th>LAYER B - LOCAL SEGMENTATION</th><th>LAYER C - PROXY</th></tr></thead>
+<tbody>
+<tr><td>Kubernetes Agent Sandbox (CNCF SIG, 2026 - official reference for AI agents / untrusted code on k8s)</td><td>gVisor via runtimeClassName: gvisor</td><td>Host-level L2/L3 segmentation below the pods</td><td>&quot;Sandbox Router&quot; - X-Sandbox-ID header-based routing</td></tr>
+<tr><td>Gitpod / Ona (dev-workspace platform, millions of parallel workspaces)</td><td>gVisor (runsc), default for every workspace</td><td>Cilium (eBPF) network policies + dedicated tunnels - tenants can't ping each other</td><td>Envoy ingress, subdomain + session-cookie routing, zero raw ports to internet</td></tr>
+<tr><td>Fly.io (production VM hosting - different sandbox tech, same 3-layer shape)</td><td>Firecracker microVMs (hardware-virtualized, own guest kernel per tenant)</td><td>Proprietary L2 network &quot;6PN&quot; - no local route between VMs</td><td>fly-proxy (Rust) - TLS termination + identity-based routing straight into the VM</td></tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+</head>
+<body>
+<h1>SNOMED CT concept model: IS-A hierarchy + defining attributes</h1>
+<div class="sub">a concept is defined by its parent (IS-A) plus attribute-value pairs, not by a label alone</div>
+<div class="col root"><div class="row"><div class="card"><div class="t">Disease</div><div class="d">(disorder)</div></div>
+<div class="arrow">&#8594;</div>
+<div class="card"><div class="t">Pneumonia</div><div class="d">(disorder)</div></div>
+<div class="arrow green">&#8594;<span class="lbl">IS A</span></div>
+<div class="card blue"><div class="t">Bacterial pneumonia</div><div class="d">(disorder) - the concept being defined</div></div></div>
+<div class="row"><div class="card blue"><div class="t">Structure of lung</div><div class="d">(body structure)</div></div>
+<div class="card blue"><div class="t">Inflammation</div><div class="d">(morphologic abnormality)</div></div>
+<div class="card blue"><div class="t">Bacterium</div><div class="d">(organism)</div></div></div>
+<div class="row"><div class="card"><div class="t">domain / range</div><div class="d">Each attribute has a fixed:</div>
+<div class="d">domain - which concepts may carry it</div>
+<div class="d">range - which concepts are valid values</div>
+<div class="d">e.g. |Finding site| ranges over |body structure| and its</div>
+<div class="d">descendants only - an agent cannot bind it to a random node.</div>
+<div class="d">Why RAG cares:</div>
+<div class="d">an LLM extracting &quot;treats&quot; or &quot;finding site&quot; edges can be</div>
+<div class="d">constrained to these domains - no more inventing relations.</div></div></div>
+<div class="card"><div class="d">polyhierarchy: IS-A can have multiple parents - one concept, several valid classifications</div>
+<div class="d">original figure, modeled on the SNOMED CT concept model (SNOMED International documentation, docs.snomed.org)</div></div></div>
+<div class="flowstrip"><div>Bacterial pneumonia &#8594; Finding site &#8594; Structure of lung</div>
+<div>Bacterial pneumonia &#8594; Associated morphology &#8594; Inflammation</div>
+<div>Bacterial pneumonia &#8594; Causative agent &#8594; Bacterium</div></div>
+
+</body>
+</html>

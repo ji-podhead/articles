@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 705.1 260" width="705.1" height="260" color="#ffffff" role="img" aria-label="JiMesh Lockup Mono Small">
+  <defs>
+    <linearGradient id="lockup-text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="75%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#00e5ff" />
+    </linearGradient>
+  </defs>
+  <rect width="705.1" height="260" fill="#0b0f16" class="lockup-bg"/>
+  <g transform="translate(20,20) scale(0.275)">
+
+  <!-- Eigener dunkler Hintergrund + fest verdrahtetes Weiss (nicht nur currentColor): als <img src="..."> eingebunden
+       erbt eine SVG die color/CSS der Host-Seite NICHT - ohne festen Kontrast waere das Icon auf dunklem Grund unsichtbar. -->
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" transform="translate(400,400)">
+
+    <!-- Aeussere Connector-Linien: verdickt, groebere Dashes, staerkere Opacity -->
+    <g stroke-width="7" stroke-dasharray="14 9" opacity="0.65">
+      <line x1="0" y1="-150" x2="0" y2="-240"/>
+      <line x1="130" y1="-75" x2="208" y2="-120"/>
+      <line x1="130" y1="75" x2="208" y2="120"/>
+      <line x1="0" y1="150" x2="0" y2="240"/>
+      <line x1="-130" y1="75" x2="-208" y2="120"/>
+      <line x1="-130" y1="-75" x2="-208" y2="-120"/>
+    </g>
+
+    <!-- Mesh-Nodes: nochmal vergroessert, damit sie gegen die 14px-Hex-Kontur nicht duenn wirken -->
+    <g stroke-width="9">
+      <circle cx="0" cy="-240" r="15"/>
+      <circle cx="208" cy="-120" r="15"/>
+      <circle cx="208" cy="120" r="15"/>
+      <circle cx="0" cy="240" r="15"/>
+      <circle cx="-208" cy="120" r="15"/>
+      <circle cx="-208" cy="-120" r="15"/>
+    </g>
+    <g fill="currentColor" stroke="none">
+      <circle cx="0" cy="-240" r="7"/>
+      <circle cx="208" cy="-120" r="7"/>
+      <circle cx="208" cy="120" r="7"/>
+      <circle cx="0" cy="240" r="7"/>
+      <circle cx="-208" cy="120" r="7"/>
+      <circle cx="-208" cy="-120" r="7"/>
+    </g>
+
+    <!-- Verdeckte Cube-Kanten: verdickt, groebere Dashes -->
+    <g stroke-width="5" stroke-dasharray="10 7" opacity="0.45">
+      <line x1="0" y1="0" x2="0" y2="-150"/>
+      <line x1="0" y1="0" x2="-130" y2="75"/>
+      <line x1="0" y1="0" x2="130" y2="75"/>
+    </g>
+
+    <!-- Sichtbare Cube-Kanten: deutlich verdickt fuer kleine Darstellung -->
+    <g stroke-width="14">
+      <polygon points="0,-150 130,-75 130,75 0,150 -130,75 -130,-75"/>
+      <line x1="0" y1="0" x2="130" y2="-75"/>
+      <line x1="0" y1="0" x2="-130" y2="-75"/>
+    </g>
+
+    <!-- Core-Cube: verdickt -->
+    <g stroke-width="8">
+      <polygon points="0,-49.5 44.98,-23.5 0,2.5 -44.98,-23.5"/>
+      <polygon points="-44.98,-23.5 0,2.5 0,54.5 -44.98,28.5"/>
+      <polygon points="0,2.5 44.98,-23.5 44.98,28.5 0,54.5"/>
+    </g>
+  </g>
+
+  </g>
+  <text x="244" y="165.0" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-weight="900" font-size="100" letter-spacing="6" fill="url(#lockup-text-grad)" text-anchor="start">JIMESH</text>
+</svg>

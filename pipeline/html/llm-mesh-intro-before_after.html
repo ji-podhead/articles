@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+</head>
+<body>
+<h1>Before / After - collapsing the N×M matrix</h1>
+<div class="sub">jimesh open-source AI gateway · the hub pattern</div>
+<div class="col root"><div class="row"><div class="card red"><div class="t">BEFORE</div><div class="d">N × M configs · N × M failure modes</div>
+<div class="d">each app: own keys, own retry logic, own .env</div></div></div>
+<div class="row"><div class="card"><div class="t">App A</div></div>
+<div class="card"><div class="t">App B</div></div>
+<div class="card"><div class="t">App C</div></div></div>
+<div class="row"><div class="card"><div class="t">OpenAI</div></div>
+<div class="card"><div class="t">Gemini</div></div>
+<div class="card"><div class="t">Groq / DeepSeek / …</div></div></div>
+<div class="row"><div class="card green"><div class="t">AFTER</div><div class="d">one OpenAI-compatible endpoint</div>
+<div class="d">keys live here, in the vault - never in apps</div></div></div>
+<div class="row"><div class="card"><div class="t">App A</div></div>
+<div class="card"><div class="t">App B</div></div>
+<div class="card"><div class="t">App C</div></div></div>
+<div class="row"><div class="card green"><div class="t">LLM Mesh</div><div class="d">keys · routing · fallback</div>
+<div class="d">budgets · analytics · security</div>
+<div class="d">one OpenAI-compatible endpoint</div></div></div>
+<div class="row"><div class="card"><div class="t">OpenAI</div></div>
+<div class="card"><div class="t">Gemini</div></div>
+<div class="card"><div class="t">Groq / DeepSeek / …</div></div></div></div>
+<div class="flowstrip"><div>App A &#8594; sk-…A1 &#8594; OpenAI</div>
+<div>App A &#8594; gem-…B2 &#8594; Gemini</div>
+<div>App B &#8594; sk-…A2 &#8594; OpenAI</div>
+<div>App B &#8594; gsk-…C1 &#8594; Groq / DeepSeek / …</div>
+<div>App C &#8594; ds-…C2 &#8594; Gemini</div>
+<div>App C &#8594; sk-…A3 &#8594; Groq / DeepSeek / …</div>
+<div>App A &#8594; 1 local key (or none) &#8594; LLM Mesh</div>
+<div>App B &#8594; LLM Mesh</div>
+<div>App C &#8594; LLM Mesh</div>
+<div>LLM Mesh &#8594; OpenAI</div>
+<div>LLM Mesh &#8594; Gemini</div>
+<div>LLM Mesh &#8594; Groq / DeepSeek / …</div></div>
+
+</body>
+</html>

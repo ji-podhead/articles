@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/_house.css">
+<style>
+.root { gap: 28px; }
+.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
+.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
+.card.code { background: var(--elevated); }
+.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+</style>
+</head>
+<body>
+<h1>ZERO-SHOT TABULAR ML: THE NEW LANDSCAPE</h1>
+<div class="sub">XGBoost vs River (online) vs Google TabFM (foundation model)</div>
+<div class="col root"><div class="row"><div class="card amber"><div class="t">XGBoost</div><div class="d">static tables champion</div>
+<div class="d"></div>
+<div class="d">PROS</div>
+<div class="d">✓ Battle-tested accuracy</div>
+<div class="d">✓ Interpretable features</div>
+<div class="d"></div>
+<div class="d">CONS</div>
+<div class="d">✗ Retrain per dataset</div>
+<div class="d">✗ No streaming</div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div></div>
+<div class="card"><div class="t">River (Online)</div><div class="d">incremental / streaming champion</div>
+<div class="d"></div>
+<div class="d">data points →</div>
+<div class="d">model</div>
+<div class="d">weights</div>
+<div class="d">↑↓ update</div>
+<div class="d"></div>
+<div class="d">PROS</div>
+<div class="d">✓ Ultra-low latency</div>
+<div class="d">✓ Adapts on-the-fly</div>
+<div class="d"></div>
+<div class="d">CONS</div>
+<div class="d">✗ Lightweight only</div>
+<div class="d">✗ Parametric limits</div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div></div>
+<div class="card green"><div class="t">TabFM ★ NEW</div><div class="d">zero-shot foundation model</div>
+<div class="d"></div>
+<div class="d">FROZEN</div>
+<div class="d">weights</div>
+<div class="d">never updated</div>
+<div class="d"></div>
+<div class="d">row-col attention</div>
+<div class="d">single forward pass</div>
+<div class="d">2D + orderless tables</div>
+<div class="d"></div>
+<div class="d">PROS</div>
+<div class="d">✓ Zero-shot predictions</div>
+<div class="d">✓ No retraining loops</div>
+<div class="d"></div>
+<div class="d">RISK</div>
+<div class="d">⚠ Synthetic pre-train</div>
+<div class="d">⚠ Hallucinated patterns</div></div></div>
+<div><div style="font-weight:700;font-size:15px">HOW TabFM WORKS: THE MECHANISM</div></div>
+<div class="row"><div class="card"><div class="t">Cross-Attention</div><div class="d">rows ↔ columns</div>
+<div class="d">permutation-aware</div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div></div>
+<div class="card"><div class="t">Row Compression</div><div class="d">2D → fixed context</div>
+<div class="d">orderless handling</div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div></div>
+<div class="card"><div class="t">Ensemble Variant</div><div class="d">+ SVD features</div>
+<div class="d">performance boost</div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div></div>
+<div class="card amber"><div class="t">⚠ THE SYNTHETIC BOTTLENECK</div><div class="d">Trained on millions of artificial data models</div>
+<div class="d">Risk: searches for non-existent patterns → hallucination</div></div>
+<div class="card"><div class="t">PRODUCTION VERDICT</div><div class="d">Streaming → River</div>
+<div class="d">Instant out-of-box → TabFM</div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div></div></div>
+<div><div style="font-weight:700;font-size:15px">RESOURCES</div></div>
+<div class="row"><div class="card"><div class="t">Google Research Blog</div><div class="d">research.google/blog</div>
+<div class="d">introducing-tabfm</div></div>
+<div class="card"><div class="t">GitHub Source Code</div><div class="d">github.com/google-research/tabfm</div>
+<div class="d">official implementation</div></div>
+<div class="card"><div class="t">Hugging Face Weights</div><div class="d">huggingface.co/google/tabfm-1.0.0</div>
+<div class="d">PyTorch + JAX/Flax variants</div></div></div>
+<div><div style="font-size:13px;color:var(--ink2)">&#35;MachineLearning &#35;DataEngineering &#35;MLOps &#35;DataScience &#35;TabularAI &#35;DeepLearning &#35;GoogleResearch</div></div></div>
+
+
+</body>
+</html>
