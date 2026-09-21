@@ -45,15 +45,15 @@
 <style>html, body { background: #0c0d18 !important; margin: 0 !important; }</style></head>
 <body class="min-h-screen bg-[#0c0d18] text-[#e2e1f1] flex flex-col justify-between p-8 md:p-14 lg:p-16 select-none box-border">
 <!-- Main Container -->
-<div class="max-w-[1400px] w-full mx-auto flex flex-col justify-between flex-1 py-4">
+<section class="max-w-[1400px] w-full mx-auto flex flex-col justify-between flex-1 py-4">
 <!-- Top Left Title -->
 <header class="mb-12">
-<div class="flex items-center gap-3">
+<section class="flex items-center gap-3">
 <span class="inline-block w-2 h-2 rounded-[2px] bg-[#d0bcff]"></span>
 <h1 class="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] text-[#d0bcff] font-semibold">
           The Agent Identity Chain
         </h1>
-</div>
+</section>
 <p class="text-[11px] font-mono text-[#9090a2] mt-1 pl-5 uppercase tracking-widest">
         Autonomous Gateway Security Specification // Rev. 2026.04
       </p><p class="text-base sm:text-lg text-[#d2bbff] font-normal tracking-wide mt-3 pl-5 max-w-3xl leading-relaxed">
@@ -61,167 +61,165 @@
       </p>
 </header>
 <!-- Main Diagram Flow: 4 Stage Panels Left to Right -->
-<main class="w-full my-auto">
-<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 xl:gap-6 items-stretch relative">
+<main class="w-full my-auto grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] gap-4 xl:gap-6 items-stretch">
 <!-- Stage 1: STRIP -->
-<div class="relative flex flex-col justify-between bg-[#12131d] border-2 border-[#333440] rounded-[2px] p-6 lg:p-7 xl:p-8 transition-all hover:border-[#d0bcff]/50 group">
-<div>
+<section class="flex flex-col justify-between bg-[#12131d] border-2 border-[#333440] rounded-[2px] p-6 lg:p-7 xl:p-8 transition-all hover:border-[#d0bcff]/50 group">
+<section>
 <!-- Step index & header -->
-<div class="flex items-center justify-between border-b border-[#333440]/60 pb-3 mb-5">
+<section class="flex items-center justify-between border-b border-[#333440]/60 pb-3 mb-5">
 <span class="font-mono text-xs font-bold text-[#9090a2] tracking-wider">01 // STAGE</span>
 <span class="font-mono text-[10px] text-[#9090a2] px-2 py-0.5 bg-[#0c0d18] border border-[#333440] rounded-[2px]">INGRESS</span>
-</div>
+</section>
 <h2 class="font-mono text-base xl:text-lg font-bold uppercase tracking-wider text-[#d0bcff] mb-4 flex items-center gap-2">
-<span class="text-xs text-[#9090a2]">1.</span> STRIP
+<small class="text-xs text-[#9090a2]">1.</small> STRIP
             </h2>
 <!-- Body lines -->
-<div class="space-y-2 text-sm xl:text-[15px] leading-relaxed text-[#e2e1f1] font-normal">
+<section class="space-y-2 text-sm xl:text-[15px] leading-relaxed text-[#e2e1f1] font-normal">
 <p>
                 Client-supplied identity headers deleted before any logic runs.
               </p>
 <p class="text-xs font-mono text-[#9090a2] pt-2 border-t border-[#333440]/40">
-                Incoming untrusted claims: <span class="text-[#ffb4ab]">DROP_UNCONDITIONAL</span>
+                Incoming untrusted claims: <small class="text-xs text-[#ffb4ab]">DROP_UNCONDITIONAL</small>
 </p>
-</div>
-</div>
+</section>
+</section>
 <!-- Bottom micro-spec badge -->
-<div class="mt-8 pt-4 border-t border-[#333440]/40 flex items-center justify-between text-[11px] font-mono text-[#9090a2]">
+<section class="mt-8 pt-4 border-t border-[#333440]/40 flex items-center justify-between text-[11px] font-mono text-[#9090a2]">
 <span>SOCKET BOUNDARY</span>
 <span class="text-[#d0bcff]">L1 FILTER</span>
-</div>
+</section>
+</section>
 <!-- Desktop Arrow Connector to next stage -->
-<div class="hidden lg:flex flex-col items-center justify-center absolute -right-6 xl:-right-7 top-1/2 -translate-y-1/2 z-30 pointer-events-none select-none drop-shadow">
-<div class="flex items-center gap-1.5 px-2.5 py-1 bg-[#0c0d18] border border-[#d0bcff]/40 rounded-[2px] shadow-lg">
-<span class="text-[#d0bcff] font-mono text-sm leading-none font-bold">→</span>
-<span class="font-mono text-[10px] xl:text-[11px] text-[#e2e1f1] uppercase tracking-wider font-semibold whitespace-nowrap">client claims removed</span>
-</div>
-</div>
-</div>
+<section class="hidden lg:flex flex-col items-center justify-center self-center pointer-events-none select-none">
+<section class="flex flex-col items-center gap-0.5 px-2 py-1.5 bg-[#0c0d18] border border-[#d0bcff]/40 rounded-[2px] shadow-lg">
+<span class="text-[#d0bcff] font-mono text-base leading-none font-bold">&#8594;</span>
+<span class="font-mono text-[10px] xl:text-[11px] text-[#e2e1f1] uppercase tracking-wider font-semibold text-center leading-tight max-w-[56px]">client claims removed</span>
+</section>
+</section>
 <!-- Stage 2: RESOLVE -->
-<div class="relative flex flex-col justify-between bg-[#12131d] border-2 border-[#333440] rounded-[2px] p-6 lg:p-7 xl:p-8 transition-all hover:border-[#d0bcff]/50 group">
-<div>
+<section class="flex flex-col justify-between bg-[#12131d] border-2 border-[#333440] rounded-[2px] p-6 lg:p-7 xl:p-8 transition-all hover:border-[#d0bcff]/50 group">
+<section>
 <!-- Step index & header -->
-<div class="flex items-center justify-between border-b border-[#333440]/60 pb-3 mb-5">
+<section class="flex items-center justify-between border-b border-[#333440]/60 pb-3 mb-5">
 <span class="font-mono text-xs font-bold text-[#9090a2] tracking-wider">02 // STAGE</span>
 <span class="font-mono text-[10px] text-[#9090a2] px-2 py-0.5 bg-[#0c0d18] border border-[#333440] rounded-[2px]">KERNEL ATTEST</span>
-</div>
+</section>
 <h2 class="font-mono text-base xl:text-lg font-bold uppercase tracking-wider text-[#d0bcff] mb-4 flex items-center gap-2">
-<span class="text-xs text-[#9090a2]">2.</span> RESOLVE
+<small class="text-xs text-[#9090a2]">2.</small> RESOLVE
             </h2>
 <!-- Body lines -->
-<div class="space-y-2 text-sm xl:text-[15px] leading-relaxed text-[#e2e1f1] font-normal">
+<section class="space-y-2 text-sm xl:text-[15px] leading-relaxed text-[#e2e1f1] font-normal">
 <p>
                 Identity resolved server-side from the authenticated credential:
               </p>
 <p class="font-mono text-xs text-[#e2e1f1] bg-[#0c0d18] p-2.5 rounded-[2px] border border-[#333440]/80">
                 hashed, revocable, per-agent.
               </p>
-</div>
-</div>
+</section>
+</section>
 <!-- Bottom micro-spec badge -->
-<div class="mt-8 pt-4 border-t border-[#333440]/40 flex items-center justify-between text-[11px] font-mono text-[#9090a2]">
+<section class="mt-8 pt-4 border-t border-[#333440]/40 flex items-center justify-between text-[11px] font-mono text-[#9090a2]">
 <span>mTLS / SPIFFE</span>
 <span class="text-[#d0bcff]">SERVER VERIFIED</span>
-</div>
+</section>
+</section>
 <!-- Desktop Arrow Connector to next stage -->
-<div class="hidden lg:flex flex-col items-center justify-center absolute -right-6 xl:-right-7 top-1/2 -translate-y-1/2 z-30 pointer-events-none select-none drop-shadow">
-<div class="flex items-center gap-1.5 px-2.5 py-1 bg-[#0c0d18] border border-[#d0bcff]/40 rounded-[2px] shadow-lg">
-<span class="text-[#d0bcff] font-mono text-sm leading-none font-bold">→</span>
-<span class="font-mono text-[10px] xl:text-[11px] text-[#e2e1f1] uppercase tracking-wider font-semibold whitespace-nowrap">verified identity</span>
-</div>
-</div>
-</div>
+<section class="hidden lg:flex flex-col items-center justify-center self-center pointer-events-none select-none">
+<section class="flex flex-col items-center gap-0.5 px-2 py-1.5 bg-[#0c0d18] border border-[#d0bcff]/40 rounded-[2px] shadow-lg">
+<span class="text-[#d0bcff] font-mono text-base leading-none font-bold">&#8594;</span>
+<span class="font-mono text-[10px] xl:text-[11px] text-[#e2e1f1] uppercase tracking-wider font-semibold text-center leading-tight max-w-[56px]">verified identity</span>
+</section>
+</section>
 <!-- Stage 3: RE-STAMP -->
-<div class="relative flex flex-col justify-between bg-[#12131d] border-2 border-[#333440] rounded-[2px] p-6 lg:p-7 xl:p-8 transition-all hover:border-[#d0bcff]/50 group">
-<div>
+<section class="flex flex-col justify-between bg-[#12131d] border-2 border-[#333440] rounded-[2px] p-6 lg:p-7 xl:p-8 transition-all hover:border-[#d0bcff]/50 group">
+<section>
 <!-- Step index & header -->
-<div class="flex items-center justify-between border-b border-[#333440]/60 pb-3 mb-5">
+<section class="flex items-center justify-between border-b border-[#333440]/60 pb-3 mb-5">
 <span class="font-mono text-xs font-bold text-[#9090a2] tracking-wider">03 // STAGE</span>
 <span class="font-mono text-[10px] text-[#9090a2] px-2 py-0.5 bg-[#0c0d18] border border-[#333440] rounded-[2px]">PIPELINE INJECT</span>
-</div>
+</section>
 <h2 class="font-mono text-base xl:text-lg font-bold uppercase tracking-wider text-[#d0bcff] mb-4 flex items-center gap-2">
-<span class="text-xs text-[#9090a2]">3.</span> RE-STAMP
+<small class="text-xs text-[#9090a2]">3.</small> RE-STAMP
             </h2>
 <!-- Body lines -->
-<div class="space-y-2 text-sm xl:text-[15px] leading-relaxed text-[#e2e1f1] font-normal">
+<section class="space-y-2 text-sm xl:text-[15px] leading-relaxed text-[#e2e1f1] font-normal">
 <p>
                 Downstream sees only the verified row, never the client claim.
               </p>
 <p class="text-xs font-mono text-[#9090a2] pt-2 border-t border-[#333440]/40">
                 Deterministic SVID context injection into downstream pipe.
               </p>
-</div>
-</div>
+</section>
+</section>
 <!-- Bottom micro-spec badge -->
-<div class="mt-8 pt-4 border-t border-[#333440]/40 flex items-center justify-between text-[11px] font-mono text-[#9090a2]">
+<section class="mt-8 pt-4 border-t border-[#333440]/40 flex items-center justify-between text-[11px] font-mono text-[#9090a2]">
 <span>HEADER STAMP</span>
 <span class="text-[#d0bcff]">TAMPER-PROOF</span>
-</div>
+</section>
+</section>
 <!-- Desktop Arrow Connector to next stage -->
-<div class="hidden lg:flex flex-col items-center justify-center absolute -right-6 xl:-right-7 top-1/2 -translate-y-1/2 z-30 pointer-events-none select-none drop-shadow">
-<div class="flex items-center gap-1.5 px-2.5 py-1 bg-[#0c0d18] border border-[#d0bcff]/40 rounded-[2px] shadow-lg">
-<span class="text-[#d0bcff] font-mono text-sm leading-none font-bold">→</span>
-<span class="font-mono text-[10px] xl:text-[11px] text-[#e2e1f1] uppercase tracking-wider font-semibold whitespace-nowrap">trusted headers only</span>
-</div>
-</div>
-</div>
+<section class="hidden lg:flex flex-col items-center justify-center self-center pointer-events-none select-none">
+<section class="flex flex-col items-center gap-0.5 px-2 py-1.5 bg-[#0c0d18] border border-[#d0bcff]/40 rounded-[2px] shadow-lg">
+<span class="text-[#d0bcff] font-mono text-base leading-none font-bold">&#8594;</span>
+<span class="font-mono text-[10px] xl:text-[11px] text-[#e2e1f1] uppercase tracking-wider font-semibold text-center leading-tight max-w-[56px]">trusted headers only</span>
+</section>
+</section>
 <!-- Stage 4: DECIDE -->
-<div class="relative flex flex-col justify-between bg-[#12131d] border-2 border-[#333440] rounded-[2px] p-6 lg:p-7 xl:p-8 transition-all hover:border-[#d0bcff]/50 group">
-<div>
+<section class="flex flex-col justify-between bg-[#12131d] border-2 border-[#333440] rounded-[2px] p-6 lg:p-7 xl:p-8 transition-all hover:border-[#d0bcff]/50 group">
+<section>
 <!-- Step index & header -->
-<div class="flex items-center justify-between border-b border-[#333440]/60 pb-3 mb-5">
+<section class="flex items-center justify-between border-b border-[#333440]/60 pb-3 mb-5">
 <span class="font-mono text-xs font-bold text-[#9090a2] tracking-wider">04 // STAGE</span>
 <span class="font-mono text-[10px] text-[#9090a2] px-2 py-0.5 bg-[#0c0d18] border border-[#333440] rounded-[2px]">OPA POLICY GATE</span>
-</div>
+</section>
 <h2 class="font-mono text-base xl:text-lg font-bold uppercase tracking-wider text-[#d0bcff] mb-4 flex items-center gap-2">
-<span class="text-xs text-[#9090a2]">4.</span> DECIDE
+<small class="text-xs text-[#9090a2]">4.</small> DECIDE
             </h2>
 <!-- Body lines -->
-<div class="space-y-2 text-sm xl:text-[15px] leading-relaxed text-[#e2e1f1] font-normal">
+<section class="space-y-2 text-sm xl:text-[15px] leading-relaxed text-[#e2e1f1] font-normal">
 <p>
                 OPA policy: allow, escalate, or deny;
               </p>
 <p class="font-mono text-xs text-[#d0bcff] bg-[#0c0d18] p-2.5 rounded-[2px] border border-[#333440]/80">
                 fail-closed, outside the model.
               </p>
-</div>
-</div>
+</section>
+</section>
 <!-- Bottom micro-spec badge -->
-<div class="mt-8 pt-4 border-t border-[#333440]/40 flex items-center justify-between text-[11px] font-mono text-[#9090a2]">
+<section class="mt-8 pt-4 border-t border-[#333440]/40 flex items-center justify-between text-[11px] font-mono text-[#9090a2]">
 <span>AST EVALUATION</span>
 <span class="text-[#d0bcff]">DETERMINISTIC</span>
-</div>
-</div>
-</div>
+</section>
+</section>
 </main>
 <!-- Bottom Architectural Invariant Chips -->
 <footer class="mt-14 pt-8 border-t border-[#333440]/50">
-<div class="flex items-center gap-2 mb-4">
+<section class="flex items-center gap-2 mb-4">
 <span class="w-1.5 h-1.5 rounded-[1px] bg-[#d0bcff]"></span>
 <h3 class="font-mono text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#d0bcff]">
           Why this chain works
         </h3>
 <span class="text-[11px] font-mono text-[#9090a2] tracking-wider pl-2 hidden sm:inline">// Architectural Invariants</span>
-</div><div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 xl:gap-4">
+</section><ul class="flex flex-wrap items-center justify-center sm:justify-start gap-3 xl:gap-4">
 <!-- Chip 1 -->
-<div class="inline-flex items-center gap-2 px-4 py-2.5 bg-[#12131d] border-2 border-[#333440] rounded-[2px] text-xs xl:text-sm font-mono text-[#e2e1f1]">
+<li class="inline-flex items-center gap-2 px-4 py-2.5 bg-[#12131d] border-2 border-[#333440] rounded-[2px] text-xs xl:text-sm font-mono text-[#e2e1f1]">
 <span class="w-1.5 h-1.5 rounded-[1px] bg-[#d0bcff]"></span>
 <span>client never gets a vote</span>
-</div>
+</li>
 <span class="hidden sm:inline text-[#333440] font-mono text-xs">|</span>
 <!-- Chip 2 -->
-<div class="inline-flex items-center gap-2 px-4 py-2.5 bg-[#12131d] border-2 border-[#333440] rounded-[2px] text-xs xl:text-sm font-mono text-[#e2e1f1]">
+<li class="inline-flex items-center gap-2 px-4 py-2.5 bg-[#12131d] border-2 border-[#333440] rounded-[2px] text-xs xl:text-sm font-mono text-[#e2e1f1]">
 <span class="w-1.5 h-1.5 rounded-[1px] bg-[#d0bcff]"></span>
 <span>fail-closed on error</span>
-</div>
+</li>
 <span class="hidden sm:inline text-[#333440] font-mono text-xs">|</span>
 <!-- Chip 3 -->
-<div class="inline-flex items-center gap-2 px-4 py-2.5 bg-[#12131d] border-2 border-[#333440] rounded-[2px] text-xs xl:text-sm font-mono text-[#e2e1f1]">
+<li class="inline-flex items-center gap-2 px-4 py-2.5 bg-[#12131d] border-2 border-[#333440] rounded-[2px] text-xs xl:text-sm font-mono text-[#e2e1f1]">
 <span class="w-1.5 h-1.5 rounded-[1px] bg-[#d0bcff]"></span>
 <span>immune to prompt injection</span>
-</div>
-</div>
+</li>
+</ul>
 </footer>
-</div>
+</section>
 </body>
 </html>
