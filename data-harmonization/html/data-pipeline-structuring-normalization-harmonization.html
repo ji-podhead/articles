@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 .root { gap: 26px; }
 .sect { font-size: 13px; font-weight: 700; letter-spacing: 1.4px; color: var(--ink3); }
@@ -13,65 +14,62 @@
 <body>
 <h1>Structuring · Normalization · Harmonization</h1>
 <div class="sub">Three distinct disciplines of a production data pipeline · mixing them up breaks schemas and skews models</div>
-
-<div class="col root">
-  <div class="row">
-    <div class="card blue">
-      <div class="t">1 · Structuring</div>
-      <div class="d">Raw, unorganized facts go into a defined, predictable format: tables, JSON files, or graphs.</div>
-      <div class="k">WHAT GOES IN</div>
-      <div class="d">Unstructured data follows no predefined format, lives in data lakes, and needs data-science work to read.</div>
-      <div class="k">WHAT COMES OUT</div>
-      <div class="d">Structured data: predefined categories and fields, like a contact form's name, phone, and email.</div>
-      <div class="k">WHY IT MATTERS</div>
-      <div class="d">Turns unorganized text and streams into machine-readable, queryable formats.</div>
-    </div>
-    <div class="arrow blue">&#8594;</div>
-    <div class="card blue">
-      <div class="t">2 · Normalization</div>
-      <div class="d">Cleaning and reorganizing the structured data to reduce duplication and improve integrity. Two disciplines share the name:</div>
-      <div class="k">DATABASE SCHEMAS</div>
-      <div class="d">1NF: atomic values, unique rows · 2NF: no partial dependencies · 3NF: no transitive dependencies</div>
-      <div class="k">STATISTICS / ML</div>
-      <div class="d">Min-Max scaling to a fixed range (typically 0 to 1) · Z-score to mean 0, standard deviation 1, so no feature dominates the model.</div>
-    </div>
-    <div class="arrow blue">&#8594;</div>
-    <div class="card green">
-      <div class="t">3 · Harmonization</div>
-      <div class="d">Consolidating data from disparate sources and aligning it with uniform standards: directly comparable, error-free, ready for joint analysis.</div>
-      <div class="k">MORE THAN INTEGRATION</div>
-      <div class="d">Integration merely gathers data in one place. Harmonization resolves substantive and logical inconsistencies.</div>
-      <div class="k">THE GOAL</div>
-      <div class="d">All data shares the same business meaning: semantic unity.</div>
-    </div>
-  </div>
-
-  <div class="sect">THE MULTI-SOURCE LIFECYCLE · REPEATS PER DATA BATCH</div>
-  <div class="row" style="gap: 16px">
-    <div class="card">
-      <div class="t">Ingestion</div>
-      <div class="d">Structuring, first pass: CSV, API responses, NoSQL, scrapers arrive unstructured or semi-structured and get a uniform, readable shape.</div>
-    </div>
-    <div class="arrow">&#8594;</div>
-    <div class="card">
-      <div class="t">Transformation</div>
-      <div class="d">Normalization: one date standard instead of DD/MM/YYYY vs YYYY-MM-DD, duplicate records removed across sources, EUR and USD converted to a uniform scale.</div>
-    </div>
-    <div class="arrow">&#8594;</div>
-    <div class="card">
-      <div class="t">Loading</div>
-      <div class="d">Structuring, second pass: final schema with tables, keys, and relationships; 1NF, 2NF, 3NF or a star schema for fast business reporting.</div>
-    </div>
-    <div class="arrow">&#8594;</div>
-    <div class="card">
-      <div class="t">Harmonization</div>
-      <div class="d">All three disciplines combined and cycled per batch: the pipeline keeps converging on one comparable, semantically unified view.</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="d"><b>The bottom line:</b> don't just structure your data, don't just normalize your features. Aim for harmonization, that is where the true business value lies.</div>
-  </div>
-</div>
+<section class="col root">
+<section class="row">
+<section class="card blue">
+<div class="t">1 · Structuring</div>
+<div class="d">Raw, unorganized facts go into a defined, predictable format: tables, JSON files, or graphs.</div>
+<div class="k">WHAT GOES IN</div>
+<div class="d">Unstructured data follows no predefined format, lives in data lakes, and needs data-science work to read.</div>
+<div class="k">WHAT COMES OUT</div>
+<div class="d">Structured data: predefined categories and fields, like a contact form's name, phone, and email.</div>
+<div class="k">WHY IT MATTERS</div>
+<div class="d">Turns unorganized text and streams into machine-readable, queryable formats.</div>
+</section>
+<div class="arrow blue">→</div>
+<section class="card blue">
+<div class="t">2 · Normalization</div>
+<div class="d">Cleaning and reorganizing the structured data to reduce duplication and improve integrity. Two disciplines share the name:</div>
+<div class="k">DATABASE SCHEMAS</div>
+<div class="d">1NF: atomic values, unique rows · 2NF: no partial dependencies · 3NF: no transitive dependencies</div>
+<div class="k">STATISTICS / ML</div>
+<div class="d">Min-Max scaling to a fixed range (typically 0 to 1) · Z-score to mean 0, standard deviation 1, so no feature dominates the model.</div>
+</section>
+<div class="arrow blue">→</div>
+<section class="card green">
+<div class="t">3 · Harmonization</div>
+<div class="d">Consolidating data from disparate sources and aligning it with uniform standards: directly comparable, error-free, ready for joint analysis.</div>
+<div class="k">MORE THAN INTEGRATION</div>
+<div class="d">Integration merely gathers data in one place. Harmonization resolves substantive and logical inconsistencies.</div>
+<div class="k">THE GOAL</div>
+<div class="d">All data shares the same business meaning: semantic unity.</div>
+</section>
+</section>
+<div class="sect">THE MULTI-SOURCE LIFECYCLE · REPEATS PER DATA BATCH</div>
+<section class="row" style="gap: 16px">
+<section class="card">
+<div class="t">Ingestion</div>
+<div class="d">Structuring, first pass: CSV, API responses, NoSQL, scrapers arrive unstructured or semi-structured and get a uniform, readable shape.</div>
+</section>
+<div class="arrow">→</div>
+<section class="card">
+<div class="t">Transformation</div>
+<div class="d">Normalization: one date standard instead of DD/MM/YYYY vs YYYY-MM-DD, duplicate records removed across sources, EUR and USD converted to a uniform scale.</div>
+</section>
+<div class="arrow">→</div>
+<section class="card">
+<div class="t">Loading</div>
+<div class="d">Structuring, second pass: final schema with tables, keys, and relationships; 1NF, 2NF, 3NF or a star schema for fast business reporting.</div>
+</section>
+<div class="arrow">→</div>
+<section class="card">
+<div class="t">Harmonization</div>
+<div class="d">All three disciplines combined and cycled per batch: the pipeline keeps converging on one comparable, semantically unified view.</div>
+</section>
+</section>
+<section class="card">
+<div class="d"><b>The bottom line:</b> don't just structure your data, don't just normalize your features. Aim for harmonization, that is where the true business value lies.</div>
+</section>
+</section>
 </body>
 </html>
