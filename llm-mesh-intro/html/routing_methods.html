@@ -29,8 +29,8 @@ table.fig tr.foot td { color: #8b949e; font-size: 13.5px; font-weight: 400; back
 <td><div>Static</div>
 <div>priority chains, weighted shuffle,</div>
 <div>least-busy, latency-, cost-based</div></td>
-<td><div>fixed rules - operator encodes the</div>
-<div>policy; identical for every request</div></td>
+<td><div>fixed rules - predictable and</div>
+<div>debuggable, blind to everything else</div></td>
 <td><div>nothing (config only)</div></td>
 <td><div>the floor - fallback graph</div>
 <div>every mesh needs anyway</div></td>
@@ -39,8 +39,9 @@ table.fig tr.foot td { color: #8b949e; font-size: 13.5px; font-weight: 400; back
 <td><div>Learned</div>
 <div>bandits from outcome feedback</div>
 <div>(with decay) · trained routers</div></td>
-<td><div>which provider:model served similar</div>
-<div>traffic reliably, fast - lately?</div></td>
+<td><div>outcome-updated bandits over</div>
+<div>provider:model pairs - providers</div>
+<div>drift weekly, hence the decay</div></td>
 <td><div>outcome stream (bandit), or</div>
 <div>preference data (RouteLLM)</div></td>
 <td><div>provider selection within</div>
@@ -52,8 +53,8 @@ table.fig tr.foot td { color: #8b949e; font-size: 13.5px; font-weight: 400; back
 <div>reading the model's own logprobs</div></td>
 <td><div>look at the request or the cheap</div>
 <div>answer: confident? serve. else escalate</div></td>
-<td><div>labeled data (scorer) or</div>
-<div>logprobs-capable provider (gate)</div></td>
+<td><div>a learned scorer, or a provider</div>
+<div>whose logprobs the gate can read</div></td>
 <td><div>cost gate in front of the chain:</div>
 <div>decide whether to spend at all</div></td>
 </tr>
@@ -64,10 +65,11 @@ table.fig tr.foot td { color: #8b949e; font-size: 13.5px; font-weight: 400; back
 <td><div>"which model served prompts like this</div>
 <div>well and cheap?" - your traffic is</div>
 <div>the classifier</div></td>
-<td><div>embedding calls (cheap) + history</div>
-<div>store; cold start needs seeds</div></td>
-<td><div>cache-like routing memory;</div>
-<div>great for repeated workloads</div></td>
+<td><div>embedding calls (fractions of a cent)</div>
+<div>+ history store; cold start needs</div>
+<div>seeds, drift needs re-embedding</div></td>
+<td><div>the router equivalent of a cache:</div>
+<div>past traffic becomes the classifier</div></td>
 </tr>
 <tr>
 <td><div>Mesh / graph routing</div>
@@ -79,6 +81,9 @@ table.fig tr.foot td { color: #8b949e; font-size: 13.5px; font-weight: 400; back
 <td><div>nothing - structure only</div></td>
 <td><div>the skeleton the other four</div>
 <div>families live inside</div></td>
+</tr>
+<tr class="foot">
+<td colspan="4"><div>They compose: static graph as the floor, learned selection in the middle, content-aware gates deciding whether to spend at all - typical mixed agent traffic is 80-90% easy, and the ladder free small model → paid small model → frontier model only pays off if something picks the rung.</div></td>
 </tr>
 <tr class="foot">
 <td colspan="4"><div>RouteLLM arXiv:2406.18665 · FrugalGPT arXiv:2305.05176 · entropy gate: previous article in this series</div></td>
