@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 .root { gap: 20px; }
 .card { padding: 15px 18px; }
@@ -16,23 +17,23 @@
 <body>
 <h1>Check your own system: a scoping field that is written, but never read</h1>
 <div class="sub">Found in our own gateway's secrets store during the audit for this piece</div>
-<div class="col root">
-  <div class="row">
-    <div class="card green"><div class="t">WRITE TIME: this part is real</div>
-      <div class="d">A per-agent access-control field is written on every secret creation, and every token mint records which agent it was minted for. The data model for per-agent scoping exists.</div></div>
-    <div class="ne">≠</div>
-    <div class="card red"><div class="t">READ TIME: never checked</div>
-      <div class="d">The secret lookup does not filter by the per-agent field at all. Token validation checks name, revocation, expiry, never the agent binding. Any caller holding a valid token for that secret name can read it, whatever the field says.</div></div>
-  </div>
-  <div class="row">
-    <div class="card"><div class="t">Practical consequence</div>
-      <div class="d">Scoping on paper, decorative in practice. Mitigated only by the identity chain in front of the store, so not a wide-open hole, but real.</div></div>
-    <div class="card"><div class="t">Why this is the good kind of finding</div>
-      <div class="d">The verified identity already flows through every other code path. The fix is two functions consuming a field that already exists: small, surgical, cheap to close.</div></div>
-  </div>
-  <div class="card blue audit"><div class="t">The five-minute audit for your own stack</div>
-    <div class="d">Does a per-agent access-control field in your secrets store get checked at read time, or only written at creation? A data model that looks right and a decision path that consults it are two different claims, and the gap between them is where "we thought we had this" lives.</div></div>
-  <div class="src">A gap with an existing data model is cheap to close. Flagged, not fixed silently.</div>
-</div>
+<section class="col root">
+<section class="row">
+<section class="card green"><div class="t">WRITE TIME: this part is real</div>
+<div class="d">A per-agent access-control field is written on every secret creation, and every token mint records which agent it was minted for. The data model for per-agent scoping exists.</div></section>
+<div class="ne">≠</div>
+<section class="card red"><div class="t">READ TIME: never checked</div>
+<div class="d">The secret lookup does not filter by the per-agent field at all. Token validation checks name, revocation, expiry, never the agent binding. Any caller holding a valid token for that secret name can read it, whatever the field says.</div></section>
+</section>
+<section class="row">
+<section class="card"><div class="t">Practical consequence</div>
+<div class="d">Scoping on paper, decorative in practice. Mitigated only by the identity chain in front of the store, so not a wide-open hole, but real.</div></section>
+<section class="card"><div class="t">Why this is the good kind of finding</div>
+<div class="d">The verified identity already flows through every other code path. The fix is two functions consuming a field that already exists: small, surgical, cheap to close.</div></section>
+</section>
+<section class="card blue audit"><div class="t">The five-minute audit for your own stack</div>
+<div class="d">Does a per-agent access-control field in your secrets store get checked at read time, or only written at creation? A data model that looks right and a decision path that consults it are two different claims, and the gap between them is where "we thought we had this" lives.</div></section>
+<div class="src">A gap with an existing data model is cheap to close. Flagged, not fixed silently.</div>
+</section>
 </body>
 </html>
