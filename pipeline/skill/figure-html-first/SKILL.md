@@ -30,15 +30,22 @@ cards with arrow glyphs as flex items, which cannot overlap.
 
 ## Workflow
 
-1. Write the HTML into `pipeline/html/<name>.html` (self-contained, inline
-   styles in the head, body is the figure).
-2. Lint: `pipeline/lint-fig.sh pipeline/html/<name>.html`
-3. Render + embed: `pipeline/render-fig.sh pipeline/html/<name>.html
-   <article-folder>` — produces `<article-folder>/png/<name>.png` at 2x
-   and prints the markdown embed snippet (alt text + caption pattern).
-4. Reference the PNG in the article markdown; the caption describes content
+1. Write the HTML into `<artikel>/html/<name>.html` (self-contained, inline
+   styles in the head, body is the figure; `styles/_house.css` lives in
+   `<artikel>/html/styles/`, template copy from `pipeline/html/styles/`).
+2. Lint: `pipeline/lint-fig.sh <artikel>/html/<name>.html`
+3. Render + embed: `bash pipeline/render-fig.sh <artikel> <name> [breite]
+   [hoehe]` — produces `<artikel>/png/<name>.png` at 2x and
+   `<artikel>/svg/<name>.svg`, and prints the markdown embed snippet
+   (alt text + caption pattern).
+4. Overlap check (PFlicht): node pipeline/check-overlap.js <artikel>/html/<name>.html
+   - misst alle Elemente paarweise via headless-chromium-Probe und meldet
+   Ueberschneidungen zwischen cards/arrows/chips/Text-Blöcken.
+   0 Overlaps sind Pflicht, sonst fixen (Abstand/position:static statt
+   absolut, negative Margins neutralisieren) und neu rendern.
+5. Reference the PNG in the article markdown; the caption describes content
    only (no process talk, no em-dashes).
-5. Commit the HTML (source of truth) and the PNG (artifact).
+6. Commit the HTML (source of truth) and the PNG (artifact).
 
 ## Traps
 

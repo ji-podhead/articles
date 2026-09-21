@@ -56,6 +56,12 @@ generous spacing, nothing overlapping.`
    (chromium, workspace paths — snap cannot write /tmp), export vector SVG
    via print-to-pdf + pdftocairo (@page in pt = px * 0.75)
 5. Pixel-verify: dark > 0.15, no near-100%-white areas
+6. Overlap check (PFlicht): node scripts/check-overlap.js <html> — misst
+   alle Elemente paarweise via headless-chromium-Probe; 0 Overlaps Pflicht
+   (Stitch-Layouts ueberlappen haeufig: Titel ueber Stage-Karten, Navbar
+   ueber Content). Fixe via edit_screens oder lokale CSS-Injektion
+   (Abstand statt z-index).
+7. Einmalig pro Repo: Settings > Pages > Source GitHub Actions.
 
 ## Local render chain
 
