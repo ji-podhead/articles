@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 .root { gap: 28px; }
 .flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
@@ -18,31 +19,29 @@
 <body>
 <h1>SANITATION STACK: MODELS &amp; GUARDRAILS</h1>
 <div class="sub">classify → generate → guard - the 3 AI layers between slop and clean OKF</div>
-<div class="col root"><div class="row"><div class="card red"><div class="t">RAW SLOP</div><div class="d">chat logs · exports · notes</div>
-<div class="d">paths, IPs, filler, tickets</div></div>
-<div class="arrow">&#8594;</div>
-<div class="card"><div class="t">LAYER 1 · CLASSIFY &amp; FLAG PII</div><div class="d">DeBERTa-v3 (NER)</div>
+<section class="col root"><section class="row"><section class="card red"><div class="t">RAW SLOP</div><div class="d">chat logs · exports · notes</div>
+<div class="d">paths, IPs, filler, tickets</div></section>
+<div class="arrow">→</div>
+<section class="card"><div class="t">LAYER 1 · CLASSIFY &amp; FLAG PII</div><div class="d">DeBERTa-v3 (NER)</div>
 <div class="d">flags IPs · passwords · AWS keys · paths</div>
 <div class="d">all-MiniLM-L6-v2 (embedding)</div>
 <div class="d">pre-matches raw text → proposes topic/subtopic</div>
-<div class="d">local CPU · deterministic · cheap</div></div>
-<div class="arrow">&#8594;</div>
-<div class="card"><div class="t">LAYER 2 · EXTRACT &amp; RESTRUCTURE</div><div class="d">Llama-3-8B / Mistral-7B (local, Ollama)</div>
+<div class="d">local CPU · deterministic · cheap</div></section>
+<div class="arrow">→</div>
+<section class="card"><div class="t">LAYER 2 · EXTRACT &amp; RESTRUCTURE</div><div class="d">Llama-3-8B / Mistral-7B (local, Ollama)</div>
 <div class="d">strips filler · splits into heading sections</div>
 <div class="d">Gemini response_schema / structured outputs</div>
 <div class="d">forces frontmatter to the OKF schema exactly</div>
-<div class="d">transformation, not invention - low hallucination risk</div></div></div>
-<div class="row"><div class="card green"><div class="t">CLEAN OKF</div><div class="d">frontmatter (v0.2 compliant)</div>
+<div class="d">transformation, not invention - low hallucination risk</div></section></section>
+<section class="row"><section class="card green"><div class="t">CLEAN OKF</div><div class="d">frontmatter (v0.2 compliant)</div>
 <div class="d">heading-bounded sections</div>
-<div class="d">lifecycle · sources · provenance</div></div>
-<div class="card"><div class="t">LAYER 3 · PROGRAMMATIC GUARDRAILS (PRE-COMMIT)</div><div class="d">NeMo Guardrails (NVIDIA)</div>
+<div class="d">lifecycle · sources · provenance</div></section>
+<section class="card"><div class="t">LAYER 3 · PROGRAMMATIC GUARDRAILS (PRE-COMMIT)</div><div class="d">NeMo Guardrails (NVIDIA)</div>
 <div class="d">blocks unverified code + conversational residue → triggers rewrite</div>
 <div class="d">Llama Guard 3</div>
 <div class="d">final scan: no proprietary leak ships as visibility: public</div>
-<div class="d">rules live in code - reviewable, testable, deterministic</div></div></div>
-<div class="row"><div class="card"><div class="d">⚠ ORDER MATTERS</div></div>
-<div class="card"><div class="d">redact PII with a CPU encoder BEFORE the generative pass - discovering it after it's woven into a summary is far too late</div></div></div></div>
-
-
+<div class="d">rules live in code - reviewable, testable, deterministic</div></section></section>
+<section class="row"><section class="card"><div class="d">⚠ ORDER MATTERS</div></section>
+<section class="card"><div class="d">redact PII with a CPU encoder BEFORE the generative pass - discovering it after it's woven into a summary is far too late</div></section></section></section>
 </body>
 </html>

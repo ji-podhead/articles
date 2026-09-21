@@ -1,13 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 .root { gap: 28px; }
 .flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
 .card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
 .card.code { background: var(--elevated); }
+.card .d code { font-family: inherit; }
 .cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
 .arrow.green { color: var(--green); }
 .arrow.blue { color: var(--blue); }
@@ -17,23 +19,20 @@
 </head>
 <body>
 <h1>Open Knowledge Format (OKF v1.0) Architecture</h1>
-
-<div class="col root"><div class="row"><div class="card blue"><div class="t">YAML Frontmatter Header</div><div class="d">okf_version: &quot;1.0&quot;</div>
-<div class="d">id: &quot;okf-net-con-gvisor-networking&quot;</div>
-<div class="d">title: &quot;gVisor Container Isolation&quot;</div>
-<div class="d">topic: &quot;general/networking&quot;</div>
-<div class="d">subtopic: &quot;container-networking&quot;</div>
-<div class="d">tags: [&quot;networking&quot;, &quot;sandboxing&quot;]</div>
-<div class="d">summary: &quot;Technical specification...&quot;</div>
-<div class="d">Indexed for Bi-Encoder Vector Embeddings</div></div>
-<div class="arrow blue">&#8594;</div>
-<div class="card green"><div class="t">Structured Markdown Body</div><div class="d"># Document Title</div>
+<section class="col root"><section class="row"><section class="card blue"><div class="t">YAML Frontmatter Header</div><div class="d">okf_version: "1.0"</div>
+<div class="d">id: "okf-net-con-gvisor-networking"</div>
+<div class="d">title: "gVisor Container Isolation"</div>
+<div class="d">topic: "general/networking"</div>
+<div class="d">subtopic: "container-networking"</div>
+<section class="d"><code>tags: ["networking", "sandboxing"]</code></section>
+<div class="d">summary: "Technical specification..."</div>
+<div class="d">Indexed for Bi-Encoder Vector Embeddings</div></section>
+<div class="arrow blue">→</div>
+<section class="card green"><div class="t">Structured Markdown Body</div><div class="d"># Document Title</div>
 <div class="d">## Executive Summary</div>
 <div class="d">Self-contained 300-800 token chunk...</div>
 <div class="d">## Technical Architecture</div>
 <div class="d">GraphRAG Entity-Relation Triples...</div>
-<div class="d">Optimized for Cross-Encoder Reranking</div></div></div></div>
-
-
+<div class="d">Optimized for Cross-Encoder Reranking</div></section></section></section>
 </body>
 </html>
