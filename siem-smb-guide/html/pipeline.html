@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 .stagelabel { font-size: 12.5px; font-weight: 700; letter-spacing: 1.6px; color: var(--ink3); }
 .varrow { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--ink2); font-size: 19px; }
@@ -14,40 +15,33 @@
 <body>
 <h1>How a SIEM actually works: the seven stages</h1>
 <div class="sub">The same seven stages whether you host it yourself or rent them from a cloud provider - the alert is the output, not the feature.</div>
-
 <div class="stagelabel">1 · COLLECT - EVERY LOG SOURCE YOU POINT AT IT</div>
-<div class="row">
-  <div class="card"><div class="t">Logs</div><div class="d">app · proxy · platform</div></div>
-  <div class="card"><div class="t">Network</div><div class="d">flow records · IDS alerts</div></div>
-  <div class="card"><div class="t">Identity</div><div class="d">auth events · API audit</div></div>
-  <div class="card"><div class="t">Runtime</div><div class="d">syscalls via eBPF sensors</div></div>
-  <div class="card"><div class="t">Posture</div><div class="d">IaC scans · config state</div></div>
-</div>
-<div class="varrow">↓ <span class="lbl">normalize into one schema</span></div>
-
+<section class="row">
+<section class="card"><div class="t">Logs</div><div class="d">app · proxy · platform</div></section>
+<section class="card"><div class="t">Network</div><div class="d">flow records · IDS alerts</div></section>
+<section class="card"><div class="t">Identity</div><div class="d">auth events · API audit</div></section>
+<section class="card"><div class="t">Runtime</div><div class="d">syscalls via eBPF sensors</div></section>
+<section class="card"><div class="t">Posture</div><div class="d">IaC scans · config state</div></section>
+</section>
+<section class="varrow">↓ <span class="lbl">normalize into one schema</span></section>
 <div class="stagelabel">2 · NORMALIZE</div>
-<div class="row"><div class="card blue"><div class="t">One schema: OCSF / ASFF - or your own</div>
-<div class="d">A firewall drop, a web-server access log and a Suricata alert share no schema by default. Detection rules and ML models only compose across sources once everything has the same shape - normalization is the hard part, not detection.</div></div></div>
-
+<section class="row"><section class="card blue"><div class="t">One schema: OCSF / ASFF - or your own</div>
+<div class="d">A firewall drop, a web-server access log and a Suricata alert share no schema by default. Detection rules and ML models only compose across sources once everything has the same shape - normalization is the hard part, not detection.</div></section></section>
 <div class="stagelabel">3 + 4 · DETECT</div>
-<div class="row">
-  <div class="card"><div class="t">3 · Rules</div><div class="d">signatures · regex · file-integrity checks · allowlist violations</div></div>
-  <div class="card"><div class="t">4 · ML / behavior</div><div class="d">baselines · anomaly scores - every finding carries confidence + model_version</div></div>
-</div>
-
+<section class="row">
+<section class="card"><div class="t">3 · Rules</div><div class="d">signatures · regex · file-integrity checks · allowlist violations</div></section>
+<section class="card"><div class="t">4 · ML / behavior</div><div class="d">baselines · anomaly scores - every finding carries confidence + model_version</div></section>
+</section>
 <div class="stagelabel">5 · CORRELATE + ATTRIBUTE</div>
-<div class="row"><div class="card blue"><div class="t">Chained events become one incident</div>
-<div class="d">"A dropped connection happened" is nothing. "Container checkout-api, three seconds after an unusual outbound connection, followed by a shell spawned inside the same container" is an incident. If the pipeline cannot chain events back to one workload, it collects logs - it does not detect threats.</div></div></div>
-
+<section class="row"><section class="card blue"><div class="t">Chained events become one incident</div>
+<div class="d">"A dropped connection happened" is nothing. "Container checkout-api, three seconds after an unusual outbound connection, followed by a shell spawned inside the same container" is an incident. If the pipeline cannot chain events back to one workload, it collects logs - it does not detect threats.</div></section></section>
 <div class="stagelabel">6 · ALERT - A RANKED TRIAGE QUEUE, NOT A WALL OF RED</div>
-<div class="row"><div class="card"><div class="t">Risk score ranks the queue, a human decides</div>
+<section class="row"><section class="card"><div class="t">Risk score ranks the queue, a human decides</div>
 <div class="formula">Risk Score = Exposure × Privilege × Data Sensitivity × Exploitability × Confidence</div>
-<div class="d" style="margin-top:7px">Weights are configurable per workload - a payments service weights PCI-relevant findings much higher than a marketing site.</div></div></div>
-
+<div class="d" style="margin-top:7px">Weights are configurable per workload - a payments service weights PCI-relevant findings much higher than a marketing site.</div></section></section>
 <div class="stagelabel">7 · RESPOND + RETAIN</div>
-<div class="row"><div class="card green"><div class="t">Block, isolate, revoke - and keep the evidence</div>
-<div class="d">Containment now, plus long-term retention: the store the investigation comes back to.</div></div></div>
-
+<section class="row"><section class="card green"><div class="t">Block, isolate, revoke - and keep the evidence</div>
+<div class="d">Containment now, plus long-term retention: the store the investigation comes back to.</div></section></section>
 <div class="note">A SIEM is not a scanner and not an alert generator. It is a <b>correlate-and-retain engine</b> over every log source you point at it.</div>
 </body>
 </html>

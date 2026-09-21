@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 .stagelabel { font-size: 12.5px; font-weight: 700; letter-spacing: 1.6px; color: var(--ink3); }
 .varrow { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--ink2); font-size: 19px; }
@@ -12,32 +13,28 @@
 <body>
 <h1>The AWS-native stack: same job, managed instead of self-hosted</h1>
 <div class="sub">Every self-hosted component of the open-source stack has a directly managed counterpart here - the trade is operational effort for a usage-based bill.</div>
-
 <div class="stagelabel">INGEST + EDGE</div>
-<div class="row">
-  <div class="card"><div class="t">CloudWatch Logs + Kinesis Firehose</div><div class="d">app and infra logs land here by default; subscription filters stream events onward, Firehose batches and delivers to OpenSearch, S3 or Security Lake.</div></div>
-  <div class="card"><div class="t">VPC Flow Logs</div><div class="d">metadata for every packet: IPs, ports, protocol, bytes, accept/reject - no payload. The raw material for network ML detection.</div></div>
-  <div class="card"><div class="t">AWS WAF + Shield</div><div class="d">managed L7 rule groups, rate limits and DDoS mitigation at the edge.</div></div>
-</div>
-<div class="varrow">↓ <span class="lbl">detection, audit and scoring</span></div>
-
+<section class="row">
+<section class="card"><div class="t">CloudWatch Logs + Kinesis Firehose</div><div class="d">app and infra logs land here by default; subscription filters stream events onward, Firehose batches and delivers to OpenSearch, S3 or Security Lake.</div></section>
+<section class="card"><div class="t">VPC Flow Logs</div><div class="d">metadata for every packet: IPs, ports, protocol, bytes, accept/reject - no payload. The raw material for network ML detection.</div></section>
+<section class="card"><div class="t">AWS WAF + Shield</div><div class="d">managed L7 rule groups, rate limits and DDoS mitigation at the edge.</div></section>
+</section>
+<section class="varrow">↓ <span class="lbl">detection, audit and scoring</span></section>
 <div class="stagelabel">DETECTION + AUDIT - MANAGED</div>
-<div class="row">
-  <div class="card"><div class="t">GuardDuty</div><div class="d">ML threat detection over flow logs, DNS and CloudTrail, plus runtime monitoring for ECS/EKS. You subscribe, you never train.</div></div>
-  <div class="card"><div class="t">Inspector</div><div class="d">CVE scanning across EC2 instances, ECR images and Lambda functions.</div></div>
-  <div class="card"><div class="t">CloudTrail</div><div class="d">signed, immutable log of every API call - who did what, from where, with a 90-day LookupEvents window.</div></div>
-  <div class="card"><div class="t">Config</div><div class="d">tracks resource state against rules - catches a 0.0.0.0/0 security group before it becomes an incident.</div></div>
-  <div class="card"><div class="t">SageMaker</div><div class="d">custom ML: Feature Store, training pipelines, Model Monitor for drift.</div></div>
-</div>
-<div class="varrow">↓ <span class="lbl">every finding normalized into ASFF</span></div>
-
-<div class="row"><div class="card blue"><div class="t">AWS Security Hub - aggregator and single pane of glass</div>
-<div class="d">Pulls findings from GuardDuty, Inspector and your own application via BatchImportFindings, scores the account against CIS, PCI-DSS and other benchmarks, and normalizes every finding into one consistent shape. The AWS equivalent of the Wazuh dashboard - except you don't run it.</div></div></div>
-<div class="varrow">↓ <span class="lbl">query, visualize, retain</span></div>
-
-<div class="row">
-  <div class="card green"><div class="t">OpenSearch Service</div><div class="d">managed search and retention layer - the same engine as the OSS stack, minus the operational burden; Security Analytics ships pre-built Sigma rules.</div></div>
-  <div class="card green"><div class="t">Security Lake</div><div class="d">OCSF-normalized long-term security storage, queryable with Athena, for retention that outgrows a hot index.</div></div>
-</div>
+<section class="row">
+<section class="card"><div class="t">GuardDuty</div><div class="d">ML threat detection over flow logs, DNS and CloudTrail, plus runtime monitoring for ECS/EKS. You subscribe, you never train.</div></section>
+<section class="card"><div class="t">Inspector</div><div class="d">CVE scanning across EC2 instances, ECR images and Lambda functions.</div></section>
+<section class="card"><div class="t">CloudTrail</div><div class="d">signed, immutable log of every API call - who did what, from where, with a 90-day LookupEvents window.</div></section>
+<section class="card"><div class="t">Config</div><div class="d">tracks resource state against rules - catches a 0.0.0.0/0 security group before it becomes an incident.</div></section>
+<section class="card"><div class="t">SageMaker</div><div class="d">custom ML: Feature Store, training pipelines, Model Monitor for drift.</div></section>
+</section>
+<section class="varrow">↓ <span class="lbl">every finding normalized into ASFF</span></section>
+<section class="row"><section class="card blue"><div class="t">AWS Security Hub - aggregator and single pane of glass</div>
+<div class="d">Pulls findings from GuardDuty, Inspector and your own application via BatchImportFindings, scores the account against CIS, PCI-DSS and other benchmarks, and normalizes every finding into one consistent shape. The AWS equivalent of the Wazuh dashboard - except you don't run it.</div></section></section>
+<section class="varrow">↓ <span class="lbl">query, visualize, retain</span></section>
+<section class="row">
+<section class="card green"><div class="t">OpenSearch Service</div><div class="d">managed search and retention layer - the same engine as the OSS stack, minus the operational burden; Security Analytics ships pre-built Sigma rules.</div></section>
+<section class="card green"><div class="t">Security Lake</div><div class="d">OCSF-normalized long-term security storage, queryable with Athena, for retention that outgrows a hot index.</div></section>
+</section>
 </body>
 </html>

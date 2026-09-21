@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 body { align-items: flex-start; }
 table.fig { border-collapse: collapse; width: 1120px; table-layout: fixed; }
@@ -20,7 +21,7 @@ table.fig td .m { font-family: var(--font-mono); color: var(--code); }
 <h1>Same eight functions, two ways to get them</h1>
 <div class="sub">Nothing on the open-source side is a toy - every entry is a production-grade project used at real scale.</div>
 <table class="fig">
-<colgroup><col style="width:24%"><col style="width:38%"><col style="width:38%"></colgroup>
+<colgroup><col style="width:24%"/><col style="width:38%"/><col style="width:38%"/></colgroup>
 <thead><tr><th>FUNCTION</th><th class="aws">AWS-NATIVE</th><th class="oss">OPEN SOURCE</th></tr></thead>
 <tbody>
 <tr><td>Network intrusion detection</td><td><span class="m">GuardDuty</span> - ML over flow logs, DNS, CloudTrail, container runtime</td><td><span class="m">Suricata</span> (signatures, XDP/eBPF capture) + <span class="m">Falco</span> (syscalls per container)</td></tr>
