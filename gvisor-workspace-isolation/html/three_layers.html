@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 .root { gap: 18px; }
 .card .t small { font-weight: 400; color: var(--ink2); font-size: 12.5px; }
@@ -13,30 +14,29 @@
 </head>
 <body>
 <h1>One request, three independent gates - and what each one is blind to</h1>
-<div class="sub">Figure 2 &middot; The same request passes all three checks in sequence; each layer's blind spot is exactly the next layer's job.</div>
-
-<div class="col root">
-  <div class="card"><div class="t">The request</div>
-    <div class="d"><span class="mono">GET 3000-ws-abc123x.platform.example</span> - the URL encodes both the target port and the workspace; the app keeps running on its natural port inside its own container, untouched.</div>
-  </div>
-  <div class="arrow">↓</div>
-  <div class="card amber"><div class="t">LAYER C &middot; Identity Proxy <small>(the bouncer)</small></div>
-    <div class="d">Terminates TLS &middot; verifies the session/JWT &middot; looks up an in-memory table <span class="mono">workspace_id → {ownerID, backendIP}</span> &middot; forwards only if the requester's identity matches the workspace's owner. No raw port is ever published on the internet.</div>
-    <div class="d blind"><span class="k">Blind spot:</span> anything a legitimate, authenticated user does once inside their own workspace - that east-west traffic never crosses the front door.</div>
-  </div>
-  <div class="arrow">↓ <span class="lbl">inside the tenant's own segment</span></div>
-  <div class="card"><div class="t">LAYER B &middot; VLAN / ipvlan <small>(the soundproof wall)</small></div>
-    <div class="d">Every tenant's frames are 802.1Q-tagged on their own sub-interface (<span class="mono">ip link add link eth0 name eth0.102 type vlan id 102</span>, then a macvlan/ipvlan Docker network - never the default bridge). Isolation is enforced in the kernel's frame-forwarding path, before any firewall rule is even consulted.</div>
-    <div class="d blind"><span class="k">Blind spot:</span> the host kernel itself - an attacker who breaks out of an unsandboxed container lands as root on the bare host, and one <span class="mono">ip link</span> command undoes every VLAN you configured.</div>
-  </div>
-  <div class="arrow">↓</div>
-  <div class="card green"><div class="t">LAYER A &middot; gVisor <small>(the straitjacket)</small></div>
-    <div class="d">Application syscalls never reach the real host kernel - the Sentry emulates them in a Go userspace process (see the architecture diagram above). A Sentry escape is a far rarer problem than a routine kernel CVE.</div>
-    <div class="d blind"><span class="k">Blind spot:</span> the local network - gVisor still hands ordinary frames to whatever Docker network it is attached to, and a sandboxed app can freely scan an unsegmented bridge.</div>
-  </div>
-  <div class="card"><div class="t">Each layer's blind spot is precisely the next layer's job</div>
-    <div class="d">That is the whole argument for running all three together - plus the fourth gate nobody puts in the diagram: an <b>egress allowlist</b>, default-deny outbound per workspace, which gates what a workload can send <i>out</i>. Identity gates who comes <i>in</i>, VLANs gate local reach, gVisor gates the kernel - none of them say anything about your own container quietly uploading data to an attacker's server.</div>
-  </div>
-</div>
+<div class="sub">Figure 2 · The same request passes all three checks in sequence; each layer's blind spot is exactly the next layer's job.</div>
+<section class="col root">
+<section class="card"><div class="t">The request</div>
+<section class="d"><span class="mono">GET 3000-ws-abc123x.platform.example</span> - the URL encodes both the target port and the workspace; the app keeps running on its natural port inside its own container, untouched.</section>
+</section>
+<div class="arrow">↓</div>
+<section class="card amber"><div class="t">LAYER C · Identity Proxy <small>(the bouncer)</small></div>
+<section class="d">Terminates TLS · verifies the session/JWT · looks up an in-memory table <span class="mono">workspace_id → {ownerID, backendIP}</span> · forwards only if the requester's identity matches the workspace's owner. No raw port is ever published on the internet.</section>
+<section class="d blind"><span class="k">Blind spot:</span> anything a legitimate, authenticated user does once inside their own workspace - that east-west traffic never crosses the front door.</section>
+</section>
+<section class="arrow">↓ <span class="lbl">inside the tenant's own segment</span></section>
+<section class="card"><div class="t">LAYER B · VLAN / ipvlan <small>(the soundproof wall)</small></div>
+<section class="d">Every tenant's frames are 802.1Q-tagged on their own sub-interface (<span class="mono">ip link add link eth0 name eth0.102 type vlan id 102</span>, then a macvlan/ipvlan Docker network - never the default bridge). Isolation is enforced in the kernel's frame-forwarding path, before any firewall rule is even consulted.</section>
+<section class="d blind"><span class="k">Blind spot:</span> the host kernel itself - an attacker who breaks out of an unsandboxed container lands as root on the bare host, and one <span class="mono">ip link</span> command undoes every VLAN you configured.</section>
+</section>
+<div class="arrow">↓</div>
+<section class="card green"><div class="t">LAYER A · gVisor <small>(the straitjacket)</small></div>
+<div class="d">Application syscalls never reach the real host kernel - the Sentry emulates them in a Go userspace process (see the architecture diagram above). A Sentry escape is a far rarer problem than a routine kernel CVE.</div>
+<section class="d blind"><span class="k">Blind spot:</span> the local network - gVisor still hands ordinary frames to whatever Docker network it is attached to, and a sandboxed app can freely scan an unsegmented bridge.</section>
+</section>
+<section class="card"><div class="t">Each layer's blind spot is precisely the next layer's job</div>
+<div class="d">That is the whole argument for running all three together - plus the fourth gate nobody puts in the diagram: an <b>egress allowlist</b>, default-deny outbound per workspace, which gates what a workload can send <i>out</i>. Identity gates who comes <i>in</i>, VLANs gate local reach, gVisor gates the kernel - none of them say anything about your own container quietly uploading data to an attacker's server.</div>
+</section>
+</section>
 </body>
 </html>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 .root { gap: 20px; }
 .sys { font-family: var(--font-mono); font-size: 13px; color: var(--code); }
@@ -13,35 +14,34 @@
 </head>
 <body>
 <h1>What actually happens inside gVisor when your app makes a syscall</h1>
-<div class="sub">Figure 1 &middot; The application never talks to the real host kernel - every arrow here is the redirection that guarantees it.</div>
-
-<div class="col root">
-  <div class="card red"><div class="t">UNTRUSTED USER SPACE</div>
-    <div class="d">App process (e.g. a Node.js server) fires a syscall: <span class="sys">open()</span> <span class="sys">read()</span> <span class="sys">socket()</span> <span class="sys">send()</span></div>
-  </div>
-  <div class="arrow">↓ <span class="lbl">intercepted before the host kernel ever sees it</span></div>
-  <div class="card"><div class="t">INTERCEPTION <small>- the syscall never leaves userspace</small></div>
-    <div class="d"><b>Systrap</b>, the default and fastest path as of 2026: lightweight per-CPU stub processes trap the instruction and hand it to the Sentry over a shared-memory queue &middot; <b>KVM</b>: the Sentry becomes a lightweight hypervisor via <span class="sys">/dev/kvm</span>, intercepting at the hardware-instruction level</div>
-  </div>
-  <div class="zone">TRUSTED USER SPACE - THE gVISOR SANDBOX, ONE PER CONTAINER</div>
-  <div class="row">
-    <div class="card green"><div class="t">Sentry - the Go userspace kernel</div>
-      <div class="d">A single Go process per sandbox implementing the Linux syscall surface: <b>300+ syscalls emulated in memory</b>. When your app calls <span class="sys">open()</span>, the Sentry answers - not the host.</div>
-      <div class="d"><b>Netstack</b> is embedded, not a separate process: a full TCP/IP stack as a Go library inside the Sentry, building real L2/L3 packets before anything reaches the host's network hardware.</div>
-    </div>
-    <div class="arrow">→<span class="lbl">LISAFS protocol over a<br>shared-memory ring buffer<br>(replaced the old 9P protocol)</span></div>
-    <div class="card green"><div class="t">Gofer - one separate process per container</div>
-      <div class="d">Owns the real filesystem: the sandbox's own mount namespace is <b>empty</b> - the Sentry has no path to the host FS unless the Gofer explicitly hands it something.</div>
-      <div class="d"><b>Directfs</b> (the modern default): the Gofer donates specific file descriptors for the mounts it approves; the sandbox then uses ordinary FD-based syscalls (<span class="sys">openat</span>, <span class="sys">fchownat</span>) on those handles only, with <span class="sys">O_NOFOLLOW</span> enforced via seccomp to stop symlink tricks.</div>
-      <div class="d">All writes land in a <b>writable tmpfs overlay</b> - the underlying container image is never modified, and containers restart clean.</div>
-    </div>
-  </div>
-  <div class="card"><div class="t">Both processes are seccomp-bpf caged</div>
-    <div class="d">Sentry: only network and memory syscalls reach the real host kernel &middot; Gofer: only file read/write on handles it has already validated.</div>
-  </div>
-  <div class="card"><div class="t">PRIVILEGED SYSTEM SPACE - the real Linux host kernel</div>
-    <div class="d">Only the two narrow, pre-approved paths above ever touch this box. A sandbox escape means exploiting the Sentry's own Go implementation of a syscall - a real but far rarer engineering problem than a routine kernel CVE.</div>
-  </div>
-</div>
+<div class="sub">Figure 1 · The application never talks to the real host kernel - every arrow here is the redirection that guarantees it.</div>
+<section class="col root">
+<section class="card red"><div class="t">UNTRUSTED USER SPACE</div>
+<section class="d">App process (e.g. a Node.js server) fires a syscall: <span class="sys">open()</span> <span class="sys">read()</span> <span class="sys">socket()</span> <span class="sys">send()</span></section>
+</section>
+<section class="arrow">↓ <span class="lbl">intercepted before the host kernel ever sees it</span></section>
+<section class="card"><div class="t">INTERCEPTION <small>- the syscall never leaves userspace</small></div>
+<section class="d"><b>Systrap</b>, the default and fastest path as of 2026: lightweight per-CPU stub processes trap the instruction and hand it to the Sentry over a shared-memory queue · <b>KVM</b>: the Sentry becomes a lightweight hypervisor via <span class="sys">/dev/kvm</span>, intercepting at the hardware-instruction level</section>
+</section>
+<div class="zone">TRUSTED USER SPACE - THE gVISOR SANDBOX, ONE PER CONTAINER</div>
+<section class="row">
+<section class="card green"><div class="t">Sentry - the Go userspace kernel</div>
+<section class="d">A single Go process per sandbox implementing the Linux syscall surface: <b>300+ syscalls emulated in memory</b>. When your app calls <span class="sys">open()</span>, the Sentry answers - not the host.</section>
+<div class="d"><b>Netstack</b> is embedded, not a separate process: a full TCP/IP stack as a Go library inside the Sentry, building real L2/L3 packets before anything reaches the host's network hardware.</div>
+</section>
+<section class="arrow">→<span class="lbl">LISAFS protocol over a<br/>shared-memory ring buffer<br/>(replaced the old 9P protocol)</span></section>
+<section class="card green"><div class="t">Gofer - one separate process per container</div>
+<div class="d">Owns the real filesystem: the sandbox's own mount namespace is <b>empty</b> - the Sentry has no path to the host FS unless the Gofer explicitly hands it something.</div>
+<section class="d"><b>Directfs</b> (the modern default): the Gofer donates specific file descriptors for the mounts it approves; the sandbox then uses ordinary FD-based syscalls (<span class="sys">openat</span>, <span class="sys">fchownat</span>) on those handles only, with <span class="sys">O_NOFOLLOW</span> enforced via seccomp to stop symlink tricks.</section>
+<div class="d">All writes land in a <b>writable tmpfs overlay</b> - the underlying container image is never modified, and containers restart clean.</div>
+</section>
+</section>
+<section class="card"><div class="t">Both processes are seccomp-bpf caged</div>
+<div class="d">Sentry: only network and memory syscalls reach the real host kernel · Gofer: only file read/write on handles it has already validated.</div>
+</section>
+<section class="card"><div class="t">PRIVILEGED SYSTEM SPACE - the real Linux host kernel</div>
+<div class="d">Only the two narrow, pre-approved paths above ever touch this box. A sandbox escape means exploiting the Sentry's own Go implementation of a syscall - a real but far rarer engineering problem than a routine kernel CVE.</div>
+</section>
+</section>
 </body>
 </html>
