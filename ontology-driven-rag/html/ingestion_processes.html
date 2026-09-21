@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 .root { gap: 24px; }
 .pane { gap: 14px; }
@@ -15,33 +16,32 @@
 <body>
 <h1>Two ingestion processes, one synthesis engine</h1>
 <div class="sub">The same architecture holds two very different intake paths: a curated knowledge base built once, and cheap schema-driven instance ingestion repeated for every document.</div>
-
-<div class="col root">
-  <div class="row">
-    <div class="card blue pane"><div class="t">Process A - building the knowledge base</div>
-      <div class="d">Unstructured expert knowledge: textbooks, guidelines, studies. Expensive once, LLM-intensive, reused forever.</div>
-      <div class="steps">
-        <div class="d"><b>Intelligent chunking</b> along semantic boundaries</div>
-        <div class="d"><b>Entity extraction</b> per chunk</div>
-        <div class="d"><b>Relevance reranking</b> to filter the junk</div>
-        <div class="d"><b>Embedding + storage</b> of the high-value remainder</div>
-      </div>
-      <div class="d mono">→ collection: medical_knowledge / technical_manuals</div>
-    </div>
-    <div class="card green pane"><div class="t">Process B - ingesting instance data</div>
-      <div class="d">A single document: a discharge letter, a maintenance log, a lab report. Cheap per document, schema-driven, repeatable.</div>
-      <div class="steps">
-        <div class="d"><b>Classification + metadata extraction</b> against the ontology schema - <span class="mono">patient_id, document_type, date</span>. No open-ended entity extraction.</div>
-        <div class="d"><b>Simple chunking</b></div>
-        <div class="d"><b>Embedding + storage</b> together with the rich payload</div>
-      </div>
-      <div class="d mono">→ collection: patients_data / building_documents</div>
-    </div>
-  </div>
-  <div class="arrow">↓ <span class="lbl">precise, filtered queries against instance data + deep context from the knowledge base</span></div>
-  <div class="card"><div class="t">RAG is the synthesis engine between the two</div>
-    <div class="d">The expensive investment in A is what makes every cheap document in B retrievable with surgical precision. Payloads - <span class="mono">patient_id &middot; document_type &middot; timestamp &middot; device_id</span> - are the primary, exact filter; the vector search only ranks within an already-correct subset.</div>
-  </div>
-</div>
+<section class="col root">
+<section class="row">
+<section class="card blue pane"><div class="t">Process A - building the knowledge base</div>
+<div class="d">Unstructured expert knowledge: textbooks, guidelines, studies. Expensive once, LLM-intensive, reused forever.</div>
+<section class="steps">
+<div class="d"><b>Intelligent chunking</b> along semantic boundaries</div>
+<div class="d"><b>Entity extraction</b> per chunk</div>
+<div class="d"><b>Relevance reranking</b> to filter the junk</div>
+<div class="d"><b>Embedding + storage</b> of the high-value remainder</div>
+</section>
+<div class="d mono">→ collection: medical_knowledge / technical_manuals</div>
+</section>
+<section class="card green pane"><div class="t">Process B - ingesting instance data</div>
+<div class="d">A single document: a discharge letter, a maintenance log, a lab report. Cheap per document, schema-driven, repeatable.</div>
+<section class="steps">
+<section class="d"><b>Classification + metadata extraction</b> against the ontology schema - <span class="mono">patient_id, document_type, date</span>. No open-ended entity extraction.</section>
+<div class="d"><b>Simple chunking</b></div>
+<div class="d"><b>Embedding + storage</b> together with the rich payload</div>
+</section>
+<div class="d mono">→ collection: patients_data / building_documents</div>
+</section>
+</section>
+<section class="arrow">↓ <span class="lbl">precise, filtered queries against instance data + deep context from the knowledge base</span></section>
+<section class="card"><div class="t">RAG is the synthesis engine between the two</div>
+<section class="d">The expensive investment in A is what makes every cheap document in B retrievable with surgical precision. Payloads - <span class="mono">patient_id · document_type · timestamp · device_id</span> - are the primary, exact filter; the vector search only ranks within an already-correct subset.</section>
+</section>
+</section>
 </body>
 </html>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 .root { gap: 24px; }
 .pane { gap: 16px; }
@@ -15,40 +16,39 @@
 <body>
 <h1>Taxonomy vs. ontology - the two halves of the blueprint of knowledge</h1>
 <div class="sub">A taxonomy routes: it decides in milliseconds what is irrelevant. An ontology reasons: it defines the concepts, properties and typed relations a domain is allowed to use.</div>
-
-<div class="col root">
-  <div class="row">
-    <div class="col pane">
-      <div class="card blue node"><div class="t">Taxonomy - a classification schema</div>
-        <div class="d">Objects sorted into categories by fixed criteria. Rigid by design: every document has exactly <b>one home</b> - and that rigidity is the superpower.</div>
-      </div>
-      <div class="card node"><div class="t">Incoming document or query</div><div class="d">"Discharge letter, cardiology" or "CO2 spike, wing B"</div></div>
-      <div class="arrow">↓ <span class="lbl">route: pick the one right branch, exclude everything else</span></div>
-      <div class="row">
-        <div class="card node"><div class="t">Medical corpus</div><div class="d">patients_data &middot; medical_knowledge</div></div>
-        <div class="card node"><div class="t">Building corpus</div><div class="d">building_documents &middot; technical_manuals</div></div>
-      </div>
-      <div class="card node"><div class="d tick">Deciding what is irrelevant takes milliseconds and requires no model at all - no embedding, no LLM, no similarity computation.</div></div>
-    </div>
-    <div class="col pane">
-      <div class="card green node"><div class="t">Ontology - a formal, machine-readable rule set</div>
-        <div class="d">Defines the concepts of a domain, their properties, and above all their <b>typed relations</b> to each other.</div>
-      </div>
-      <div class="card node"><div class="t">Examples of typed relations</div>
-        <div class="d"><span class="mono">medication</span> TREATS <span class="mono">diagnosis</span></div>
-        <div class="d"><span class="mono">diagnosis</span> HAS_SYMPTOM <span class="mono">finding</span></div>
-        <div class="d"><span class="mono">sensor</span> HAS_POINT <span class="mono">room</span></div>
-        <div class="d"><span class="mono">patient</span> HAS_DIAGNOSIS <span class="mono">code</span> &middot; <span class="mono">lab value</span> IS_INDICATOR_FOR <span class="mono">diagnosis</span></div>
-      </div>
-      <div class="card node"><div class="t">The blueprint is usually already drawn</div>
-        <div class="d">Mature industries maintain their ontologies: <b>SNOMED CT</b> and <b>ICD-10</b> for diagnoses &middot; <b>LOINC</b> for laboratory values &middot; <b>Brick Schema</b> for buildings. RAG architecture is about wiring your data into it, not inventing one.</div>
-      </div>
-      <div class="card node"><div class="d tick">Job: validate every hop - precise traversal, no logically impossible conclusions.</div></div>
-    </div>
-  </div>
-  <div class="card"><div class="t">Taxonomy routes &middot; ontology reasons - both together are the blueprint</div>
-    <div class="d">Use the taxonomy to exclude domains instantly; use the ontology to validate every hop the agent wants to take.</div>
-  </div>
-</div>
+<section class="col root">
+<section class="row">
+<section class="col pane">
+<section class="card blue node"><div class="t">Taxonomy - a classification schema</div>
+<div class="d">Objects sorted into categories by fixed criteria. Rigid by design: every document has exactly <b>one home</b> - and that rigidity is the superpower.</div>
+</section>
+<section class="card node"><div class="t">Incoming document or query</div><div class="d">"Discharge letter, cardiology" or "CO2 spike, wing B"</div></section>
+<section class="arrow">↓ <span class="lbl">route: pick the one right branch, exclude everything else</span></section>
+<section class="row">
+<section class="card node"><div class="t">Medical corpus</div><div class="d">patients_data · medical_knowledge</div></section>
+<section class="card node"><div class="t">Building corpus</div><div class="d">building_documents · technical_manuals</div></section>
+</section>
+<section class="card node"><div class="d tick">Deciding what is irrelevant takes milliseconds and requires no model at all - no embedding, no LLM, no similarity computation.</div></section>
+</section>
+<section class="col pane">
+<section class="card green node"><div class="t">Ontology - a formal, machine-readable rule set</div>
+<div class="d">Defines the concepts of a domain, their properties, and above all their <b>typed relations</b> to each other.</div>
+</section>
+<section class="card node"><div class="t">Examples of typed relations</div>
+<section class="d"><span class="mono">medication</span> TREATS <span class="mono">diagnosis</span></section>
+<section class="d"><span class="mono">diagnosis</span> HAS_SYMPTOM <span class="mono">finding</span></section>
+<section class="d"><span class="mono">sensor</span> HAS_POINT <span class="mono">room</span></section>
+<section class="d"><span class="mono">patient</span> HAS_DIAGNOSIS <span class="mono">code</span> · <span class="mono">lab value</span> IS_INDICATOR_FOR <span class="mono">diagnosis</span></section>
+</section>
+<section class="card node"><div class="t">The blueprint is usually already drawn</div>
+<div class="d">Mature industries maintain their ontologies: <b>SNOMED CT</b> and <b>ICD-10</b> for diagnoses · <b>LOINC</b> for laboratory values · <b>Brick Schema</b> for buildings. RAG architecture is about wiring your data into it, not inventing one.</div>
+</section>
+<section class="card node"><div class="d tick">Job: validate every hop - precise traversal, no logically impossible conclusions.</div></section>
+</section>
+</section>
+<section class="card"><div class="t">Taxonomy routes · ontology reasons - both together are the blueprint</div>
+<div class="d">Use the taxonomy to exclude domains instantly; use the ontology to validate every hop the agent wants to take.</div>
+</section>
+</section>
 </body>
 </html>
