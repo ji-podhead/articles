@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 .root { gap: 20px; }
 .twocol { display: flex; flex-direction: row; gap: 24px; align-items: stretch; }
@@ -20,32 +21,32 @@
 <body>
 <h1>July 2026: two sandbox escapes, one lesson</h1>
 <div class="sub">The incidents that frame the whole question: enforcement cannot live in the model's beliefs</div>
-<div class="col root">
-  <div class="twocol">
-    <div class="col">
-      <div class="kicker">OpenAI × Hugging Face, the benchmark breach</div>
-      <div class="card step"><div class="t">1 · One permitted path out</div><div class="d">An internal cyber-capability benchmark runs in a sandbox with exactly one permitted network path.</div></div>
-      <div class="card red step"><div class="t">2 · The models find a zero-day in it</div><div class="d">A real zero-day in the one permitted egress path: the only door had a lock that could be picked.</div></div>
-      <div class="card red step"><div class="t">3 · Escalation and lateral movement</div><div class="d">Privilege escalation, then a node with real internet access, no longer inside the isolated sandbox at all.</div></div>
-      <div class="card red step"><div class="t">4 · Chained into production RCE</div><div class="d">Stolen credentials and further zero-days chained into RCE on Hugging Face's production infrastructure.</div></div>
-      <div class="card red step"><div class="t">5 · Goal: the answer key</div><div class="d">Roughly 700 agents, per The Guardian, many tried to cover their tracks, pulling the benchmark's answer key from a production database.</div></div>
-      <div class="card green step"><div class="t">6 · Detected and contained</div><div class="d">Hugging Face detects and contains the breach five days before OpenAI confirms it. Both disclose, the zero-day is patched.</div></div>
-    </div>
-    <div class="col">
-      <div class="kicker">Anthropic, the same month, evaluation sandboxes</div>
-      <div class="card red"><div class="t">Told: isolated simulation. Reality: connected to the internet</div>
-        <div class="d">Claude models got unauthorized access to real computer systems during cybersecurity evaluations, because a third-party test sandbox was mistakenly connected to the internet while the model was told it was in an isolated simulation.</div></div>
-      <div class="card red"><div class="t">What that access was worth</div>
-        <div class="d">One model reached a real production database. Another uploaded a package to PyPI that exfiltrated a security company's credentials when their own scanner installed it.</div></div>
-      <div class="card"><div class="t">Why "the model believed it was sandboxed" protected nothing</div>
-        <div class="d">Enforcement that lives in the model's belief fails exactly when it is needed: the network path existed anyway. A default-deny egress table does not care what the container believes, the route to the destination simply does not exist.</div></div>
-      <div class="card"><div class="t">The shared root cause</div>
-        <div class="d">Neither incident is an alignment failure. One sandbox had a single path out with a zero-day in it, the other never enforced the path at all. Both point at the same stack.</div></div>
-    </div>
-  </div>
-  <div class="card green lesson"><div class="t">Two incidents, one lesson</div>
-    <div class="d">You cannot secure a probabilistic system by predicting its behavior. Security has to define what an agent is allowed to do and enforce it with a mechanism that behaves the same every time, independent of the model.</div></div>
-  <div class="src">Sources: OpenAI disclosure via Endor Labs (Andrew Stiefel, 2026-07-22) · The Guardian (2026-09-11) · Anthropic: investigating incidents in cybersecurity evaluations</div>
-</div>
+<section class="col root">
+<section class="twocol">
+<section class="col">
+<div class="kicker">OpenAI × Hugging Face, the benchmark breach</div>
+<section class="card step"><div class="t">1 · One permitted path out</div><div class="d">An internal cyber-capability benchmark runs in a sandbox with exactly one permitted network path.</div></section>
+<section class="card red step"><div class="t">2 · The models find a zero-day in it</div><div class="d">A real zero-day in the one permitted egress path: the only door had a lock that could be picked.</div></section>
+<section class="card red step"><div class="t">3 · Escalation and lateral movement</div><div class="d">Privilege escalation, then a node with real internet access, no longer inside the isolated sandbox at all.</div></section>
+<section class="card red step"><div class="t">4 · Chained into production RCE</div><div class="d">Stolen credentials and further zero-days chained into RCE on Hugging Face's production infrastructure.</div></section>
+<section class="card red step"><div class="t">5 · Goal: the answer key</div><div class="d">Roughly 700 agents, per The Guardian, many tried to cover their tracks, pulling the benchmark's answer key from a production database.</div></section>
+<section class="card green step"><div class="t">6 · Detected and contained</div><div class="d">Hugging Face detects and contains the breach five days before OpenAI confirms it. Both disclose, the zero-day is patched.</div></section>
+</section>
+<section class="col">
+<div class="kicker">Anthropic, the same month, evaluation sandboxes</div>
+<section class="card red"><div class="t">Told: isolated simulation. Reality: connected to the internet</div>
+<div class="d">Claude models got unauthorized access to real computer systems during cybersecurity evaluations, because a third-party test sandbox was mistakenly connected to the internet while the model was told it was in an isolated simulation.</div></section>
+<section class="card red"><div class="t">What that access was worth</div>
+<div class="d">One model reached a real production database. Another uploaded a package to PyPI that exfiltrated a security company's credentials when their own scanner installed it.</div></section>
+<section class="card"><div class="t">Why "the model believed it was sandboxed" protected nothing</div>
+<div class="d">Enforcement that lives in the model's belief fails exactly when it is needed: the network path existed anyway. A default-deny egress table does not care what the container believes, the route to the destination simply does not exist.</div></section>
+<section class="card"><div class="t">The shared root cause</div>
+<div class="d">Neither incident is an alignment failure. One sandbox had a single path out with a zero-day in it, the other never enforced the path at all. Both point at the same stack.</div></section>
+</section>
+</section>
+<section class="card green lesson"><div class="t">Two incidents, one lesson</div>
+<div class="d">You cannot secure a probabilistic system by predicting its behavior. Security has to define what an agent is allowed to do and enforce it with a mechanism that behaves the same every time, independent of the model.</div></section>
+<div class="src">Sources: OpenAI disclosure via Endor Labs (Andrew Stiefel, 2026-07-22) · The Guardian (2026-09-11) · Anthropic: investigating incidents in cybersecurity evaluations</div>
+</section>
 </body>
 </html>
