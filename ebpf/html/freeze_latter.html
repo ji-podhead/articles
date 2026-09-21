@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 .stagelabel { font-size: 12.5px; font-weight: 700; letter-spacing: 1.6px; color: var(--ink3); }
 .varrow { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--ink2); font-size: 19px; }
@@ -15,24 +16,23 @@
 <body>
 <h1>The identity chain and the response ladder</h1>
 <div class="sub">A verdict is worthless if you don't know whom to freeze - commercial LLM firewalls return a judgment, and that's where it ends. None of them can pause the container that made the call, because none of them provisioned it.</div>
-
-<div class="row">
-  <div class="col" style="flex:1.55; gap: 0">
-    <div class="stagelabel">IDENTITY - FLOWS DOWN FROM THE KERNEL-VISIBLE TRUTH</div>
-    <div class="card"><div class="t">Host / VM</div><div class="d">PID + socket → eBPF context. The kernel-visible truth about who is calling.</div></div>
-    <div class="varrow">↓ <span class="lbl">Docker / CRI API</span></div>
-    <div class="card"><div class="t">Container</div><div class="d">container ID → Docker API. Which workload the PID belongs to.</div></div>
-    <div class="varrow">↓ <span class="lbl">gateway lookup</span></div>
-    <div class="card blue"><div class="t">Session</div><div class="d">session ID, minted at provisioning - the agent <b>presents</b> it, never chooses it. Self-declared identity is fine for observability, worthless for enforcement. When network binding and token diverge, that divergence is itself a threat signal.</div></div>
-  </div>
-  <div class="arrow">→</div>
-  <div class="card red" style="flex:1">
-    <div class="t">Graduated incident response - enforcement escalates as identity becomes certain</div>
-    <div class="step"><span class="n">1</span><span>revoke the session token</span></div>
-    <div class="step"><span class="n">2</span><span>inject a controlled error response</span></div>
-    <div class="step"><span class="n">3</span><span>SIGSTOP the container - memory intact for forensics</span></div>
-    <div class="step"><span class="n">4</span><span>blackhole its egress</span></div>
-  </div>
-</div>
+<section class="row">
+<section class="col" style="flex:1.55; gap: 0">
+<div class="stagelabel">IDENTITY - FLOWS DOWN FROM THE KERNEL-VISIBLE TRUTH</div>
+<section class="card"><div class="t">Host / VM</div><div class="d">PID + socket → eBPF context. The kernel-visible truth about who is calling.</div></section>
+<section class="varrow">↓ <span class="lbl">Docker / CRI API</span></section>
+<section class="card"><div class="t">Container</div><div class="d">container ID → Docker API. Which workload the PID belongs to.</div></section>
+<section class="varrow">↓ <span class="lbl">gateway lookup</span></section>
+<section class="card blue"><div class="t">Session</div><div class="d">session ID, minted at provisioning - the agent <b>presents</b> it, never chooses it. Self-declared identity is fine for observability, worthless for enforcement. When network binding and token diverge, that divergence is itself a threat signal.</div></section>
+</section>
+<div class="arrow">→</div>
+<section class="card red" style="flex:1">
+<div class="t">Graduated incident response - enforcement escalates as identity becomes certain</div>
+<section class="step"><span class="n">1</span><span>revoke the session token</span></section>
+<section class="step"><span class="n">2</span><span>inject a controlled error response</span></section>
+<section class="step"><span class="n">3</span><span>SIGSTOP the container - memory intact for forensics</span></section>
+<section class="step"><span class="n">4</span><span>blackhole its egress</span></section>
+</section>
+</section>
 </body>
 </html>

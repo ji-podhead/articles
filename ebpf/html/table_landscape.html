@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 body { align-items: flex-start; }
 table.fig { border-collapse: collapse; width: 1120px; table-layout: fixed; }
@@ -21,32 +22,32 @@ td div:last-child { margin-bottom: 0; }
 <h1>The actual option landscape: four classes, none owns the identity chain</h1>
 <div class="sub">Every class defends a different slice of the problem - and every one stops at the verdict.</div>
 <table class="fig">
-<colgroup><col style="width:17%"><col style="width:25%"><col style="width:29%"><col style="width:29%"></colgroup>
+<colgroup><col style="width:17%"/><col style="width:25%"/><col style="width:29%"/><col style="width:29%"/></colgroup>
 <thead><tr><th>CLASS</th><th>EXAMPLES</th><th>WHAT YOU GET</th><th>WHAT YOU DON'T</th></tr></thead>
 <tbody>
 <tr>
-  <td class="b">Gateway / Proxy (OSS)</td>
-  <td class="m">LiteLLM Proxy</td>
-  <td><div class="g">+ unified provider routing</div><div class="g">+ user budgets and rate limits</div></td>
-  <td><div class="r">- no process or container identity</div><div class="r">- no operating-system enforcement</div></td>
+<td class="b">Gateway / Proxy (OSS)</td>
+<td class="m">LiteLLM Proxy</td>
+<td><div class="g">+ unified provider routing</div><div class="g">+ user budgets and rate limits</div></td>
+<td><div class="r">- no process or container identity</div><div class="r">- no operating-system enforcement</div></td>
 </tr>
 <tr>
-  <td class="b">In-Process Guards (OSS)</td>
-  <td class="m">LLM Guard, Guardrails AI, NeMo Guardrails</td>
-  <td><div class="g">+ native PII masking</div><div class="g">+ prompt-injection and toxicity scanning</div></td>
-  <td><div class="r">- runs inside the application process</div><div class="r">- not at a centralized network chokepoint</div></td>
+<td class="b">In-Process Guards (OSS)</td>
+<td class="m">LLM Guard, Guardrails AI, NeMo Guardrails</td>
+<td><div class="g">+ native PII masking</div><div class="g">+ prompt-injection and toxicity scanning</div></td>
+<td><div class="r">- runs inside the application process</div><div class="r">- not at a centralized network chokepoint</div></td>
 </tr>
 <tr>
-  <td class="b">Commercial Platforms</td>
-  <td class="m">Lakera (Check Point), Prompt Security, Portkey (Palo Alto)</td>
-  <td><div class="g">+ low-latency real-time defense</div><div class="g">+ enterprise shadow-AI discovery</div></td>
-  <td><div class="r">- closed-source black box</div><div class="r">- external data and trust model</div></td>
+<td class="b">Commercial Platforms</td>
+<td class="m">Lakera (Check Point), Prompt Security, Portkey (Palo Alto)</td>
+<td><div class="g">+ low-latency real-time defense</div><div class="g">+ enterprise shadow-AI discovery</div></td>
+<td><div class="r">- closed-source black box</div><div class="r">- external data and trust model</div></td>
 </tr>
 <tr>
-  <td class="b">Kernel / Runtime (eBPF)</td>
-  <td class="m">TigerGate, AgentSight</td>
-  <td><div class="g">+ zero-instrumentation intercept</div><div class="g">+ operates directly at the TLS / crypto boundary</div></td>
-  <td><div class="r">- sees the host, but lacks the identity chain that provisioned the agent</div></td>
+<td class="b">Kernel / Runtime (eBPF)</td>
+<td class="m">TigerGate, AgentSight</td>
+<td><div class="g">+ zero-instrumentation intercept</div><div class="g">+ operates directly at the TLS / crypto boundary</div></td>
+<td><div class="r">- sees the host, but lacks the identity chain that provisioned the agent</div></td>
 </tr>
 </tbody>
 </table>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 .q { font-size: 13.5px; font-weight: 700; color: var(--red); margin-top: 8px; }
 </style>
@@ -10,18 +11,17 @@
 <body>
 <h1>The semantic gap</h1>
 <div class="sub">Detection means correlating semantic content with system state - and no single tool does both.</div>
-
-<div class="row">
-  <div class="card blue"><div class="t">Traditional infrastructure</div>
-  <div class="d">Sees low-level events only:<br><code>open("/etc/shadow")</code> · <code>read()</code> on a secrets file · a TCP stream to an unknown endpoint.</div>
-  <div class="q">Question it cannot answer: "why is it doing this?"</div></div>
-  <div class="arrow red">→</div>
-  <div class="card red"><div class="t">The semantic gap</div>
-  <div class="d">Each side is blind to the other's truth. During our incident, the kernel logged legitimate reads and the guardrail saw a suspicious answer - neither could connect the two.</div></div>
-  <div class="arrow red">→</div>
-  <div class="card"><div class="t">AI application layer</div>
-  <div class="d">Sees natural language only:<br>"ignore prior rules..." · "output the .env payload" · a chat that escalated too smoothly.</div>
-  <div class="q">Question it cannot answer: "is this safe to run?"</div></div>
-</div>
+<section class="row">
+<section class="card blue"><div class="t">Traditional infrastructure</div>
+<div class="d">Sees low-level events only:<br/><code>open("/etc/shadow")</code> · <code>read()</code> on a secrets file · a TCP stream to an unknown endpoint.</div>
+<div class="q">Question it cannot answer: "why is it doing this?"</div></section>
+<div class="arrow red">→</div>
+<section class="card red"><div class="t">The semantic gap</div>
+<div class="d">Each side is blind to the other's truth. During our incident, the kernel logged legitimate reads and the guardrail saw a suspicious answer - neither could connect the two.</div></section>
+<div class="arrow red">→</div>
+<section class="card"><div class="t">AI application layer</div>
+<div class="d">Sees natural language only:<br/>"ignore prior rules..." · "output the .env payload" · a chat that escalated too smoothly.</div>
+<div class="q">Question it cannot answer: "is this safe to run?"</div></section>
+</section>
 </body>
 </html>
