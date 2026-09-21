@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 .root { gap: 24px; }
 .era { gap: 16px; }
@@ -14,24 +15,23 @@
 <body>
 <h1>From rule bases to ReAct: 40 years of knowledge-based AI</h1>
 <div class="sub">The hardware changed beyond recognition - the two-component playbook never left: a knowledge base, and an inference machine that processes it.</div>
-
-<div class="col root">
-  <div class="col era">
-    <div class="row">
-      <div class="card amber"><div class="t">1965 <small>Zadeh</small></div><div class="d">Fuzzy sets: degrees of truth, membership grades between 0 and 1 instead of crisp boundaries - reasoning under imprecision.</div></div>
-      <div class="card amber"><div class="t">1965-1976 <small>DENDRAL, MYCIN</small></div><div class="d">Expert systems encode the specialist: DENDRAL infers molecular structure, MYCIN recommends antibiotics.</div></div>
-      <div class="card amber"><div class="t">1980s <small>XCON at DEC</small></div><div class="d">Rule-based configurer saving DEC millions a year, running on Lisp machines the size of a small fridge. Then the stall: the knowledge acquisition bottleneck - manual, brittle, expensive - and systems that could not gracefully say "I do not know".</div></div>
-    </div>
-    <div class="row">
-      <div class="card green"><div class="t">2009 <small>Wooldridge</small></div><div class="d">Agents: no universal definition, but autonomy is the must - a system situated in an environment, acting independently toward goals. Statefulness (stored past shaping future decisions) becomes the precondition for memory.</div></div>
-      <div class="card green"><div class="t">2020 <small>Lewis et al.</small></div><div class="d">RAG: the curated collection is the knowledge base again - and ingestion pipelines become the first credible attack on the acquisition bottleneck.</div></div>
-      <div class="card green"><div class="t">2022 → <small>Yao et al.</small></div><div class="d">ReAct: the reasoning-acting loop with an LLM in the interpreter seat; proactive agents add anticipation. Agentic RAG re-imports what worked: explicit knowledge, explicit rules, explicit verification.</div></div>
-    </div>
-  </div>
-  <div class="card map"><div class="t">The constant: knowledge base + inference machine</div>
-    <div class="d"><b>rule base</b> → curated vector collection &middot; <b>rule interpreter</b> → retrieval verifier chaining evidence &middot; <b>fuzzy degrees of truth</b> → relevance scores and membership-style gates &middot; <b>"confidently wrong" outside its competence</b> → hallucination, the grounding problem under a new name</div>
-  </div>
-  <div class="card"><div class="d">Hallucination is the return of the 1980s grounding problem - and verification, not vibes, is still the fix.</div></div>
-</div>
+<section class="col root">
+<section class="col era">
+<section class="row">
+<section class="card amber"><div class="t">1965 <small>Zadeh</small></div><div class="d">Fuzzy sets: degrees of truth, membership grades between 0 and 1 instead of crisp boundaries - reasoning under imprecision.</div></section>
+<section class="card amber"><div class="t">1965-1976 <small>DENDRAL, MYCIN</small></div><div class="d">Expert systems encode the specialist: DENDRAL infers molecular structure, MYCIN recommends antibiotics.</div></section>
+<section class="card amber"><div class="t">1980s <small>XCON at DEC</small></div><div class="d">Rule-based configurer saving DEC millions a year, running on Lisp machines the size of a small fridge. Then the stall: the knowledge acquisition bottleneck - manual, brittle, expensive - and systems that could not gracefully say "I do not know".</div></section>
+</section>
+<section class="row">
+<section class="card green"><div class="t">2009 <small>Wooldridge</small></div><div class="d">Agents: no universal definition, but autonomy is the must - a system situated in an environment, acting independently toward goals. Statefulness (stored past shaping future decisions) becomes the precondition for memory.</div></section>
+<section class="card green"><div class="t">2020 <small>Lewis et al.</small></div><div class="d">RAG: the curated collection is the knowledge base again - and ingestion pipelines become the first credible attack on the acquisition bottleneck.</div></section>
+<section class="card green"><div class="t">2022 → <small>Yao et al.</small></div><div class="d">ReAct: the reasoning-acting loop with an LLM in the interpreter seat; proactive agents add anticipation. Agentic RAG re-imports what worked: explicit knowledge, explicit rules, explicit verification.</div></section>
+</section>
+</section>
+<section class="card map"><div class="t">The constant: knowledge base + inference machine</div>
+<div class="d"><b>rule base</b> → curated vector collection · <b>rule interpreter</b> → retrieval verifier chaining evidence · <b>fuzzy degrees of truth</b> → relevance scores and membership-style gates · <b>"confidently wrong" outside its competence</b> → hallucination, the grounding problem under a new name</div>
+</section>
+<section class="card"><div class="d">Hallucination is the return of the 1980s grounding problem - and verification, not vibes, is still the fix.</div></section>
+</section>
 </body>
 </html>
