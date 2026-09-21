@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 .root { gap: 26px; }
 .k { font-size: 11.5px; font-weight: 700; letter-spacing: 1px; color: var(--ink3); margin-top: 8px; }
@@ -13,38 +14,36 @@
 <body>
 <h1>Object Trackers: Kalman Filter + DeepSORT</h1>
 <div class="sub">Keeping identity alive through occlusion, motion blur, and objects that leave the frame</div>
-
-<div class="col root">
-  <div class="row" style="gap: 24px">
-    <div class="card blue">
-      <div class="t">Kalman Filter</div>
-      <div class="d">One of the most common and most powerful tracking techniques, still used today because it is very fast, and often combined with neural-network algorithms.</div>
-      <div class="k">STEP 1 · PREDICTION</div>
-      <div class="d">From the object's past known states (position, velocity), predict where it should be in the next moment.</div>
-      <div class="k">STEP 2 · CORRECTION</div>
-      <div class="d">When a new measurement arrives, compare it with the prediction and correct, weighting prediction vs. measurement by their respective uncertainties.</div>
-    </div>
-    <div class="card green">
-      <div class="t">DeepSORT</div>
-      <div class="d">Deep Learning-based Simple Online and Realtime Tracking: deep learning added to SORT for robust multi-object tracking.</div>
-      <div class="k">TWO MODULES, FUSED</div>
-      <div class="d"><b>Motion:</b> a Kalman filter predicts trajectories. <b>Appearance:</b> deep re-identification (ReID) holds identity across frames. Data association aligns detections with existing tracks.</div>
-      <div class="k">KEY ADVANTAGES</div>
-      <div class="d">Robust to occlusions, motion blur, and appearance changes; high accuracy from the motion + appearance synergy; efficient across many targets; suited to dynamic settings like gesture recognition.</div>
-    </div>
-  </div>
-
-  <div class="row" style="gap: 24px">
-    <div class="card blue">
-      <div class="t">MOTA · Multi-Object Tracking Accuracy</div>
-      <div class="formula">MOTA = 1 - (FP + FN + IDS) / GT</div>
-      <div class="d">FP: false positives (wrong detections) · FN: false negatives (missed objects) · IDS: identity switches (wrong ID assignment) · GT: ground-truth occurrences. Higher is better, 100% = perfect. MOTP covers position precision.</div>
-    </div>
-    <div class="card">
-      <div class="t">Tools &amp; benchmarks</div>
-      <div class="d"><b>py-motmetrics</b> (Python MOT evaluation) · <b>MOT Challenge</b> (official benchmark results) · <b>OpenCV</b> (all tracker models available, combinable with YOLO detections) · <b>OC-SORT + CMC</b> (refined motion modeling).</div>
-    </div>
-  </div>
-</div>
+<section class="col root">
+<section class="row" style="gap: 24px">
+<section class="card blue">
+<div class="t">Kalman Filter</div>
+<div class="d">One of the most common and most powerful tracking techniques, still used today because it is very fast, and often combined with neural-network algorithms.</div>
+<div class="k">STEP 1 · PREDICTION</div>
+<div class="d">From the object's past known states (position, velocity), predict where it should be in the next moment.</div>
+<div class="k">STEP 2 · CORRECTION</div>
+<div class="d">When a new measurement arrives, compare it with the prediction and correct, weighting prediction vs. measurement by their respective uncertainties.</div>
+</section>
+<section class="card green">
+<div class="t">DeepSORT</div>
+<div class="d">Deep Learning-based Simple Online and Realtime Tracking: deep learning added to SORT for robust multi-object tracking.</div>
+<div class="k">TWO MODULES, FUSED</div>
+<div class="d"><b>Motion:</b> a Kalman filter predicts trajectories. <b>Appearance:</b> deep re-identification (ReID) holds identity across frames. Data association aligns detections with existing tracks.</div>
+<div class="k">KEY ADVANTAGES</div>
+<div class="d">Robust to occlusions, motion blur, and appearance changes; high accuracy from the motion + appearance synergy; efficient across many targets; suited to dynamic settings like gesture recognition.</div>
+</section>
+</section>
+<section class="row" style="gap: 24px">
+<section class="card blue">
+<div class="t">MOTA · Multi-Object Tracking Accuracy</div>
+<div class="formula">MOTA = 1 - (FP + FN + IDS) / GT</div>
+<div class="d">FP: false positives (wrong detections) · FN: false negatives (missed objects) · IDS: identity switches (wrong ID assignment) · GT: ground-truth occurrences. Higher is better, 100% = perfect. MOTP covers position precision.</div>
+</section>
+<section class="card">
+<div class="t">Tools &amp; benchmarks</div>
+<div class="d"><b>py-motmetrics</b> (Python MOT evaluation) · <b>MOT Challenge</b> (official benchmark results) · <b>OpenCV</b> (all tracker models available, combinable with YOLO detections) · <b>OC-SORT + CMC</b> (refined motion modeling).</div>
+</section>
+</section>
+</section>
 </body>
 </html>
