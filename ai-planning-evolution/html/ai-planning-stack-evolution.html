@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 .root { gap: 26px; }
 .sect { font-size: 13px; font-weight: 700; letter-spacing: 1.4px; color: var(--ink3); }
@@ -16,55 +17,52 @@
 <body>
 <h1>The Evolution of AI Planning</h1>
 <div class="sub">From FSM state spaghetti to an LLM bridge into formal planners · the modern 3-layer stack</div>
-
-<div class="col root">
-  <div class="sect">THE EVOLUTION</div>
-  <div class="row evo">
-    <div class="card">
-      <div class="t">FSM</div>
-      <div class="d">Finite State Machines: hardcoded transitions; complexity turns into state spaghetti.</div>
-    </div>
-    <div class="arrow">&#8594;</div>
-    <div class="card">
-      <div class="t">GOAP</div>
-      <div class="d">Goal-Oriented Action Planning, showcased in F.E.A.R. (2005): dynamically sequences actions toward a goal.</div>
-    </div>
-    <div class="arrow">&#8594;</div>
-    <div class="card">
-      <div class="t">Behavior Trees</div>
-      <div class="d">The modern execution standard; in ROS 2, BehaviorTree.CPP orchestrates skills.</div>
-    </div>
-    <div class="arrow">&#8594;</div>
-    <div class="card">
-      <div class="t">PDDL</div>
-      <div class="d">Planning Domain Definition Language: ROSPlan solvers find optimal plans.</div>
-    </div>
-    <div class="arrow green">&#8594;</div>
-    <div class="card green">
-      <div class="t">LLM Bridge</div>
-      <div class="d">The current cutting edge: LLMs translate human intent into structured PDDL.</div>
-    </div>
-  </div>
-
-  <div class="sect">THE MODERN 3-LAYER STACK</div>
-  <div class="row stack" style="gap: 22px">
-    <div class="card blue">
-      <div class="t">1 · Execution · Behavior Trees</div>
-      <div class="d">Moment-to-moment reactive control. In ROS 2, BehaviorTree.CPP is the go-to for orchestrating skills, and many skills can be powered by neural networks.</div>
-    </div>
-    <div class="card blue">
-      <div class="t">2 · Strategy · Formal Planners</div>
-      <div class="d">Complex, multi-step tasks. Systems like ROSPlan use dedicated solvers to find optimal plans, which are then often executed by a Behavior Tree.</div>
-    </div>
-    <div class="card green">
-      <div class="t">3 · Interface · LLMs</div>
-      <div class="d">The cutting edge is not replacement but interfacing: recent papers train LLMs to translate high-level commands like "clean up the table" into structured PDDL a formal planner can solve.</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="d"><b>Key insight:</b> LLMs don't replace the planning stack, they interface with it.</div>
-  </div>
-</div>
+<section class="col root">
+<div class="sect">THE EVOLUTION</div>
+<section class="row evo">
+<section class="card">
+<div class="t">FSM</div>
+<div class="d">Finite State Machines: hardcoded transitions; complexity turns into state spaghetti.</div>
+</section>
+<div class="arrow">→</div>
+<section class="card">
+<div class="t">GOAP</div>
+<div class="d">Goal-Oriented Action Planning, showcased in F.E.A.R. (2005): dynamically sequences actions toward a goal.</div>
+</section>
+<div class="arrow">→</div>
+<section class="card">
+<div class="t">Behavior Trees</div>
+<div class="d">The modern execution standard; in ROS 2, BehaviorTree.CPP orchestrates skills.</div>
+</section>
+<div class="arrow">→</div>
+<section class="card">
+<div class="t">PDDL</div>
+<div class="d">Planning Domain Definition Language: ROSPlan solvers find optimal plans.</div>
+</section>
+<div class="arrow green">→</div>
+<section class="card green">
+<div class="t">LLM Bridge</div>
+<div class="d">The current cutting edge: LLMs translate human intent into structured PDDL.</div>
+</section>
+</section>
+<div class="sect">THE MODERN 3-LAYER STACK</div>
+<section class="row stack" style="gap: 22px">
+<section class="card blue">
+<div class="t">1 · Execution · Behavior Trees</div>
+<div class="d">Moment-to-moment reactive control. In ROS 2, BehaviorTree.CPP is the go-to for orchestrating skills, and many skills can be powered by neural networks.</div>
+</section>
+<section class="card blue">
+<div class="t">2 · Strategy · Formal Planners</div>
+<div class="d">Complex, multi-step tasks. Systems like ROSPlan use dedicated solvers to find optimal plans, which are then often executed by a Behavior Tree.</div>
+</section>
+<section class="card green">
+<div class="t">3 · Interface · LLMs</div>
+<div class="d">The cutting edge is not replacement but interfacing: recent papers train LLMs to translate high-level commands like "clean up the table" into structured PDDL a formal planner can solve.</div>
+</section>
+</section>
+<section class="card">
+<div class="d"><b>Key insight:</b> LLMs don't replace the planning stack, they interface with it.</div>
+</section>
+</section>
 </body>
 </html>
