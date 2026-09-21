@@ -17,15 +17,24 @@
 </style>
 </head>
 <body>
-<h1>Multi-Hop GraphRAG Entity &amp; Chunk Traversal</h1>
-<section class="col root"><section class="row"><section class="card blue"><div class="t">Domain</div><div class="d">networking</div></section>
-<section class="arrow blue">→<span class="lbl">contains</span></section>
-<section class="card green"><div class="t">OKF Document</div><div class="d">gVisor Sandboxing</div></section>
-<section class="arrow blue">→<span class="lbl">extracts entity</span></section>
-<section class="card"><div class="t">Entity</div><div class="d">gVisor Sentry</div></section>
-<section class="card"><div class="t">Chunk</div><div class="d">300-800 Tokens</div></section>
-<section class="card"><div class="t">Entity B</div><div class="d">Host Kernel</div></section></section></section>
-<section class="flowstrip"><div>OKF Document → chunks into → Chunk</div>
-<div>Entity → intercepts syscalls → Entity B</div></section>
+<h1>GraphRAG Multi-Hop Drill-Down in the Live Portal</h1>
+<div class="sub">the D3 force-directed graph over manifest.json - click a node to select its neighbors, double-click to open the document</div>
+<section class="col root"><section class="row"><section class="card blue"><div class="t">OKF document (hop 1)</div><div class="d">"gVisor Container Networking"</div>
+<div class="d">topic: general/networking</div>
+<div class="d">subtopic: container-networking</div></section>
+<div class="arrow blue">&#8594;<span class="lbl">shared structure</span></div>
+<section class="card"><div class="t">graph node</div><div class="d">container-networking</div>
+<div class="d">taxonomy member and tag at once</div></section>
+<div class="arrow green">←<span class="lbl">tag</span></div>
+<section class="card green"><div class="t">OKF document (hop 2)</div><div class="d">"Docker Bridge Isolation"</div>
+<div class="d">carries the same tag: container-networking</div></section></section>
+<section class="row"><section class="card"><div class="t">manifest.json</div><div class="d">nodes: every doc, topic, subtopic and tag</div>
+<div class="d">edges wherever documents share structure or cross-link</div>
+<div class="d">rebuilt by GitHub Actions on every push, alongside _sidebar.md</div></section>
+<section class="card"><div class="t">Docsify portal, zero build</div><div class="d">renders the raw .md files in the browser at request time</div>
+<div class="d">chunk explorer splits documents by headings</div>
+<div class="d">floating retrieval assistant on top</div></section></section>
+<section class="flowstrip"><div>Every push: GitHub Actions validate the frontmatter - a malformed document fails the workflow, never silently - then Pages deploys the raw .md files.</div>
+<div>Multi-hop: one document reaches another through shared topics, subtopics and tags - the graph an agent traverses.</div></section></section>
 </body>
 </html>

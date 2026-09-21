@@ -17,30 +17,18 @@
 </style>
 </head>
 <body>
-<h1>TAXONOMY + ONTOLOGY = OKF'S SUPERPOWER</h1>
-<div class="sub">rigid hierarchy for filtering · relational graph for traversal</div>
-<section class="col root"><section class="row"><section class="card green"><div class="t">gVisor</div><div class="d">Network.</div></section>
-<section class="arrow green">→<span class="lbl">isolates</span></section>
-<section class="card"><div class="t">Docker</div><div class="d">Bridge</div></section>
-<section class="card"><div class="t">Secure</div><div class="d">Gateway</div></section>
-<section class="arrow green">→<span class="lbl">verifies</span></section>
-<section class="card"><div class="t">Kubernetes</div><div class="d">Cluster</div></section></section>
-<section class="row"><section class="col"><section class="card blue"><div class="t">THE TAXONOMY - rigid tree</div><div class="d">directory structure + topic / subtopic · one home per document</div></section>
-<section class="card blue"><div class="t">general/</div><div class="d">networking/</div>
-<div class="d">container-networking/</div>
-<div class="d">gvisor.md</div>
-<div class="d">the document (leaf)</div></section>
-<section class="card blue"><div class="t">llm-orchestration/</div><div class="d">llama3-security.md</div>
-<div class="d">the document (leaf)</div></section>
-<section class="card blue"><div class="t">JOB: INSTANT EXCLUSION</div><div class="d">filter: topic == "general/networking"</div>
-<div class="d">→ irrelevant domains excluded with 100% certainty</div>
-<div class="d">controlled vocabulary: no wild folder names allowed</div></section></section>
-<section class="col"><section class="card green"><div class="t">THE ONTOLOGY - relation web</div><div class="d">Markdown cross-links · any document relates to any other</div></section>
-<section class="card green"><div class="t">JOB: PRECISE TRAVERSAL</div></section></section></section>
-<section class="card blue"><div class="t">THE BRIDGE: manifest.json</div><div class="d">nodes from frontmatter (taxonomy members) + edges from directory structure AND cross-links scanned from the bodies (ontology)</div>
-<div class="d">agent flow: taxonomy filter first → then follow the links - precise answers, no reranking, no cosine guessing</div></section>
-<section class="row"><section class="card"><div class="d">#OKF #KnowledgeEngineering #Taxonomy #Ontology #GraphRAG #AIAgents</div></section></section></section>
-<section class="flowstrip"><div>gVisor → is_used_by → Secure</div>
-<div>Docker → runs_on → Kubernetes</div></section>
+<h1>Taxonomy and Ontology: OKF's Secret Superpower</h1>
+<div class="sub">deterministic structure for instant exclusion - relational depth for traversal that semantic search can't fake</div>
+<section class="col root"><section class="row"><section class="card blue"><div class="t">THE TAXONOMY - rigid tree</div><div class="d">directory tree + topic / subtopic - rigid, predefined, one home per document</div>
+<div class="d">its job: instant, 100%-certain exclusion of irrelevant domains</div>
+<div class="d">filter: topic == "general/networking" - deterministic, no relevance guessing</div></section>
+<section class="card green"><div class="t">THE ONTOLOGY - relation web</div><div class="d">emerges from the Markdown cross-links - any document relates to any other, independent of folders</div>
+<div class="d">relation verbs: uses · isolates · depends on</div>
+<div class="d">its job: traversal that semantic search can't fake</div>
+<div class="d">example edge: "gVisor Container Networking" and "Docker Bridge Isolation" share the tag container-networking</div></section></section>
+<section class="card"><div class="t">THE BRIDGE: manifest.json</div><div class="d">nodes from the frontmatter - edges from taxonomy membership and the cross-links scanned out of the bodies</div>
+<div class="d">agent flow for "which security risks does our gVisor networking architecture create for the LLM gateway?": taxonomy filter first, then simply follow the links</div>
+<div class="d">a precise answer with no reranking - the relationships were wired by humans and the structuring model, not guessed by cosine similarity</div></section>
+<section class="flowstrip"><div>Classic RAG leans on vector similarity alone; OKF gives you both deterministic structure and relational depth - filter by tree, traverse by graph.</div></section></section>
 </body>
 </html>

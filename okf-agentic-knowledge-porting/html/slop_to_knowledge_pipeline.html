@@ -17,25 +17,28 @@
 </style>
 </head>
 <body>
-<h1>8-Stage Slop-to-Knowledge Deconstruction Pipeline</h1>
-<section class="col root"><section class="row"><section class="card red"><div class="t">1. Raw Slop &amp; Transcripts</div><div class="d">Chat logs, prompt dumps,</div>
-<div class="d">unformatted notes</div></section>
-<div class="arrow">→</div>
-<section class="card"><div class="t">2. Slop &amp; Fluff Removal</div><div class="d">Strip LLM greetings,</div>
-<div class="d">Q&amp;A headers &amp; transient UI</div></section>
-<div class="arrow">→</div>
-<section class="card"><div class="t">3. Dev Artifact Purging</div><div class="d">Remove tickets, sprints,</div>
-<div class="d">internal repo code paths</div></section>
-<div class="arrow">→</div>
-<section class="card green"><div class="t">4. Redaction &amp; Privacy</div><div class="d">Sanitize IPs, passwords,</div>
-<div class="d">tokens &amp; developer paths</div></section></section>
-<section class="row"><section class="card"><div class="t">5. Pattern Abstraction</div><div class="d">Convert product names</div>
-<div class="d">to generic architectures</div></section>
-<section class="card"><div class="t">6. Audit-to-Guide Rewrite</div><div class="d">Transform post-mortems</div>
-<div class="d">into technical guidebooks</div></section>
-<section class="card"><div class="t">7. English Translation</div><div class="d">Translate 100% of body</div>
-<div class="d">&amp; headings into English</div></section>
-<section class="card green"><div class="t">8. OKF + GraphRAG Synthesis</div><div class="d">Prepend YAML frontmatter,</div>
-<div class="d">optimize chunk boundaries</div></section></section></section>
+<h1>The 8-Stage Slop-to-Knowledge Pipeline</h1>
+<div class="sub">from raw research slop to v0.2-compliant OKF - the pipeline that ported ~60 heterogeneous research notes</div>
+<section class="col root"><section class="row"><section class="card red"><div class="t">1. Ingestion &amp; Parsing</div><div class="d">logs, exports, IDE chat records</div>
+<div class="d">into one uniform buffer</div></section>
+<div class="arrow">&#8594;</div>
+<section class="card"><div class="t">2. Scrubbing &amp; Anonymization</div><div class="d">regex purges: paths, tokens,</div>
+<div class="d">staging IPs</div></section>
+<div class="arrow">&#8594;</div>
+<section class="card"><div class="t">3. Token Reduction</div><div class="d">strip LLM filler phrases</div>
+<div class="d">entirely</div></section>
+<div class="arrow">&#8594;</div>
+<section class="card green"><div class="t">4. Schema Extraction</div><div class="d">deterministic type, topic,</div>
+<div class="d">summary &#8594; frontmatter</div></section></section>
+<section class="row"><section class="card"><div class="t">5. Cross-Linking</div><div class="d">inject relative links by</div>
+<div class="d">shared structure &#8594; graph</div></section>
+<section class="card"><div class="t">6. Trust Attestation</div><div class="d">lifecycle status + stale_after</div>
+<div class="d">+ sources</div></section>
+<section class="card"><div class="t">7. CI Validation</div><div class="d">GitHub Actions lint every</div>
+<div class="d">frontmatter before merge</div></section>
+<section class="card green"><div class="t">8. Zero-Build Serving</div><div class="d">static renderer for humans</div>
+<div class="d">and agents, concurrently</div></section></section>
+<section class="flowstrip"><div>Stages 2 and 3 are where most of the corpus value comes from - stripping the same filler patterns that would otherwise dominate the embeddings.</div>
+<div>Stage 6 is the v0.2 discipline: knowledge has an expiry date.</div></section></section>
 </body>
 </html>
