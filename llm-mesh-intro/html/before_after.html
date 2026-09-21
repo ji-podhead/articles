@@ -1,50 +1,81 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
-.root { gap: 28px; }
-.flowstrip { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 14px; }
-.card.code .d { font-family: var(--font-mono); font-size: 13.5px; color: var(--code); }
-.card.code { background: var(--elevated); }
-.cardlogo { height: 24px; opacity: 0.85; margin-left: 12px; }
+.root { gap: 26px; }
+.panel { display: flex; flex-direction: column; gap: 16px; flex: 1 1 0; min-width: 0; }
+.apps .card { text-align: center; padding: 10px 14px; }
+.mono { font-family: var(--font-mono); font-size: 12.5px; color: var(--code-ink); line-height: 1.6; }
+.card .d b { color: var(--ink); font-weight: 600; }
 </style>
 </head>
 <body>
-<h1>Before / After - collapsing the N×M matrix</h1>
-<div class="sub">jimesh open-source AI gateway · the hub pattern</div>
-<div class="col root"><div class="row"><div class="card red"><div class="t">BEFORE</div><div class="d">N × M configs · N × M failure modes</div>
-<div class="d">each app: own keys, own retry logic, own .env</div></div></div>
-<div class="row"><div class="card"><div class="t">App A</div></div>
-<div class="card"><div class="t">App B</div></div>
-<div class="card"><div class="t">App C</div></div></div>
-<div class="row"><div class="card"><div class="t">OpenAI</div></div>
-<div class="card"><div class="t">Gemini</div></div>
-<div class="card"><div class="t">Groq / DeepSeek / …</div></div></div>
-<div class="row"><div class="card green"><div class="t">AFTER</div><div class="d">one OpenAI-compatible endpoint</div>
-<div class="d">keys live here, in the vault - never in apps</div></div></div>
-<div class="row"><div class="card"><div class="t">App A</div></div>
-<div class="card"><div class="t">App B</div></div>
-<div class="card"><div class="t">App C</div></div></div>
-<div class="row"><div class="card green"><div class="t">LLM Mesh</div><div class="d">keys · routing · fallback</div>
-<div class="d">budgets · analytics · security</div>
-<div class="d">one OpenAI-compatible endpoint</div></div></div>
-<div class="row"><div class="card"><div class="t">OpenAI</div></div>
-<div class="card"><div class="t">Gemini</div></div>
-<div class="card"><div class="t">Groq / DeepSeek / …</div></div></div></div>
-<div class="flowstrip"><div>App A &#8594; sk-…A1 &#8594; OpenAI</div>
-<div>App A &#8594; gem-…B2 &#8594; Gemini</div>
-<div>App B &#8594; sk-…A2 &#8594; OpenAI</div>
-<div>App B &#8594; gsk-…C1 &#8594; Groq / DeepSeek / …</div>
-<div>App C &#8594; ds-…C2 &#8594; Gemini</div>
-<div>App C &#8594; sk-…A3 &#8594; Groq / DeepSeek / …</div>
-<div>App A &#8594; 1 local key (or none) &#8594; LLM Mesh</div>
-<div>App B &#8594; LLM Mesh</div>
-<div>App C &#8594; LLM Mesh</div>
-<div>LLM Mesh &#8594; OpenAI</div>
-<div>LLM Mesh &#8594; Gemini</div>
-<div>LLM Mesh &#8594; Groq / DeepSeek / …</div></div>
-
+<h1>Before / After: Collapsing the N×M Matrix</h1>
+<div class="sub">The hub pattern · every app solves the same problems badly, separately, or once and properly in one component</div>
+<section class="col root">
+<section class="row" style="gap: 26px">
+<section class="panel">
+<section class="card red">
+<div class="t">Before · every app talks to providers directly</div>
+<div class="d">N × M configs · N × M failure modes: each app holds its own keys, retry logic, rate-limit handling, and cost surprises.</div>
+</section>
+<section class="row apps" style="gap: 12px">
+<section class="card"><div class="t">App A</div><div class="d">sk-… · gem-…<br/>own .env</div></section>
+<section class="card"><div class="t">App B</div><div class="d">sk-… · gsk-…<br/>own .env</div></section>
+<section class="card"><div class="t">App C</div><div class="d">gem-… · sk-…<br/>own .env</div></section>
+</section>
+<section class="card">
+<div class="d">Six crossing key lines, one per app-provider pair:</div>
+<div class="mono">App A · sk-… ··→ OpenAI   App A · gem-… ··→ Gemini<br/>App B · sk-… ··→ OpenAI   App B · gsk-… ··→ Groq/DeepSeek<br/>App C · gem-… ··→ Gemini   App C · sk-… ··→ Groq/DeepSeek</div>
+</section>
+<section class="row apps" style="gap: 12px">
+<section class="card"><div class="t">OpenAI</div></section>
+<section class="card"><div class="t">Gemini</div></section>
+<section class="card"><div class="t">Groq / DeepSeek</div></section>
+</section>
+</section>
+<section class="panel">
+<section class="card green">
+<div class="t">After · one local LLM Mesh endpoint</div>
+<div class="d">N × 1: apps talk to one local endpoint that speaks the OpenAI format; the mesh owns everything the apps used to do badly.</div>
+</section>
+<section class="row apps" style="gap: 12px">
+<section class="card"><div class="t">App A</div><div class="d">one local key<br/>(or none)</div></section>
+<section class="card"><div class="t">App B</div><div class="d">one local key<br/>(or none)</div></section>
+<section class="card"><div class="t">App C</div><div class="d">one local key<br/>(or none)</div></section>
+</section>
+<section class="card green">
+<div class="t">LLM Mesh</div>
+<div class="d"><b>keys · routing · fallback · budgets · analytics · security</b>. Provider keys live once in its vault, never in apps. A mesh, not a proxy: the target is a graph of model pools, nested chains, and fallback edges between providers.</div>
+</section>
+<section class="row apps" style="gap: 12px">
+<section class="card"><div class="t">OpenAI</div></section>
+<section class="card"><div class="t">Gemini</div></section>
+<section class="card"><div class="t">Groq / DeepSeek / open-weight</div></section>
+</section>
+</section>
+</section>
+<section class="row" style="gap: 18px">
+<section class="card">
+<div class="t">Keys are infrastructure, not config</div>
+<div class="d">Vaulted once, rotated in one place; apps never see provider credentials. The .env-with-a-real-key-in-git problem disappears structurally.</div>
+</section>
+<section class="card">
+<div class="t">Routing + fallback</div>
+<div class="d">Free-first with paid keys as the last resort; a chain walk on 429/402/5xx turns a provider's bad minute into a log line.</div>
+</section>
+<section class="card">
+<div class="t">Budgets + analytics</div>
+<div class="d">Per-user and per-team credentials with budget caps, role scoping, and model whitelists; latency, time-to-first-byte, tokens, and cost per app, user, and model.</div>
+</section>
+<section class="card">
+<div class="t">Security once, at the choke point</div>
+<div class="d">Secret-pattern masking, injection guard models (Prompt Guard, Llama Guard), and budget circuit breakers, implemented once in the proxy.</div>
+</section>
+</section>
+</section>
 </body>
 </html>
