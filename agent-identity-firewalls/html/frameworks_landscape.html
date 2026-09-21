@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles/_house.css">
+<meta charset="utf-8"/>
+<link href="styles/_house.css" rel="stylesheet"/>
 <style>
 .root { gap: 18px; }
 table.fig { border-collapse: collapse; width: 100%; table-layout: fixed; }
@@ -21,32 +22,32 @@ table.fig td.lay { font-family: var(--font-mono); font-size: 13px; color: var(--
 <body>
 <h1>The landscape: who ships what</h1>
 <div class="sub">Every entry verified against a live primary source · none substitutes for the layers, each implements part of one</div>
-<div class="col root">
-  <table class="fig">
-    <tr><th style="width:285px">Tool</th><th style="width:170px">Layer</th><th>What it actually does</th></tr>
-    <tr><td>Pipelock<div class="m">github.com/luckyPipewrench/pipelock · Apache-2.0</div></td><td class="lay">network mediation</td>
-      <td>The agent holds secrets but no direct network access; Pipelock holds network access but no agent secrets. Emits mediator-signed action receipts per call, offline-verifiable proof of which agent or thread did what.</td></tr>
-    <tr><td>Agent Wall<div class="m">github.com/agent-wall/agent-wall · MIT</div></td><td class="lay">MCP reverse proxy</td>
-      <td>Wraps an MCP server transparently. Inbound: kill switches, injection detection. Outbound: scans responses for 14 secret patterns and 5 PII patterns before they reach the model. YAML policy, allow / deny / prompt per rule.</td></tr>
-    <tr><td>LlamaFirewall<div class="m">Meta · Purple Llama · arXiv 2505.03574</div></td><td class="lay">content safety</td>
-      <td>PromptGuard 2, Agent Alignment Checks, CodeShield. Audits and scans content; never authorizes a tool call, a separate layer by design.</td></tr>
-    <tr><td>Cedar / OPA<div class="m">cedarpolicy.com/en · openpolicyagent.org</div></td><td class="lay">policy as code</td>
-      <td>Deterministic, formally checkable allow/deny languages. An LLM cannot argue its way past a Rego or Cedar policy; any platform can build its capability gate on either engine.</td></tr>
-    <tr><td>SPIFFE / SPIRE<div class="m">spiffe.io · CNCF</div></td><td class="lay">workload identity</td>
-      <td>Short-lived X.509 or JWT SVIDs issued after a local attestor verifies how a process launched, distinguishing process A from process B on one host.</td></tr>
-    <tr><td>Coder<div class="m">coder.com/docs</div></td><td class="lay">control-plane isolation</td>
-      <td>The agent loop runs in Coder's control plane, never inside the workspace, so a workspace never holds an LLM-calling credential at all. No dedicated agent firewall described in its own docs.</td></tr>
-  </table>
-  <div class="secnote">A naming trap worth ten seconds, two projects, one hyphen apart</div>
-  <div class="row">
-    <div class="card trap"><div class="t">Agent Wall (with hyphen)</div>
-      <div class="d">The MCP reverse proxy from the table above, MIT license, the dashboard screenshot in this article runs it live.</div>
-      <div class="m">github.com/agent-wall/agent-wall</div></div>
-    <div class="card red trap"><div class="t">AgentWall (no hyphen), a different project, Apache-2.0</div>
-      <div class="d">Has the published paper (arXiv 2605.16265): 92.9% enforcement accuracy with sub-millisecond overhead across 14 benchmarks, and stateful taint tracking that blocks outbound calls after a credential read. In February 2026 a runaway OpenClaw agent deleted a user's inbox with 142 bulk calls that AgentWall would have denied at call #1.</div>
-      <div class="m">github.com/agentwall/Agentwall</div></div>
-  </div>
-  <div class="foot">Cite the right one. And provisioning the network and containers is the part none of these tools can do for you.</div>
-</div>
+<section class="col root">
+<table class="fig">
+<tr><th style="width:285px">Tool</th><th style="width:170px">Layer</th><th>What it actually does</th></tr>
+<tr><td>Pipelock<div class="m">github.com/luckyPipewrench/pipelock · Apache-2.0</div></td><td class="lay">network mediation</td>
+<td>The agent holds secrets but no direct network access; Pipelock holds network access but no agent secrets. Emits mediator-signed action receipts per call, offline-verifiable proof of which agent or thread did what.</td></tr>
+<tr><td>Agent Wall<div class="m">github.com/agent-wall/agent-wall · MIT</div></td><td class="lay">MCP reverse proxy</td>
+<td>Wraps an MCP server transparently. Inbound: kill switches, injection detection. Outbound: scans responses for 14 secret patterns and 5 PII patterns before they reach the model. YAML policy, allow / deny / prompt per rule.</td></tr>
+<tr><td>LlamaFirewall<div class="m">Meta · Purple Llama · arXiv 2505.03574</div></td><td class="lay">content safety</td>
+<td>PromptGuard 2, Agent Alignment Checks, CodeShield. Audits and scans content; never authorizes a tool call, a separate layer by design.</td></tr>
+<tr><td>Cedar / OPA<div class="m">cedarpolicy.com/en · openpolicyagent.org</div></td><td class="lay">policy as code</td>
+<td>Deterministic, formally checkable allow/deny languages. An LLM cannot argue its way past a Rego or Cedar policy; any platform can build its capability gate on either engine.</td></tr>
+<tr><td>SPIFFE / SPIRE<div class="m">spiffe.io · CNCF</div></td><td class="lay">workload identity</td>
+<td>Short-lived X.509 or JWT SVIDs issued after a local attestor verifies how a process launched, distinguishing process A from process B on one host.</td></tr>
+<tr><td>Coder<div class="m">coder.com/docs</div></td><td class="lay">control-plane isolation</td>
+<td>The agent loop runs in Coder's control plane, never inside the workspace, so a workspace never holds an LLM-calling credential at all. No dedicated agent firewall described in its own docs.</td></tr>
+</table>
+<div class="secnote">A naming trap worth ten seconds, two projects, one hyphen apart</div>
+<section class="row">
+<section class="card trap"><div class="t">Agent Wall (with hyphen)</div>
+<div class="d">The MCP reverse proxy from the table above, MIT license, the dashboard screenshot in this article runs it live.</div>
+<div class="m">github.com/agent-wall/agent-wall</div></section>
+<section class="card red trap"><div class="t">AgentWall (no hyphen), a different project, Apache-2.0</div>
+<div class="d">Has the published paper (arXiv 2605.16265): 92.9% enforcement accuracy with sub-millisecond overhead across 14 benchmarks, and stateful taint tracking that blocks outbound calls after a credential read. In February 2026 a runaway OpenClaw agent deleted a user's inbox with 142 bulk calls that AgentWall would have denied at call #1.</div>
+<div class="m">github.com/agentwall/Agentwall</div></section>
+</section>
+<div class="foot">Cite the right one. And provisioning the network and containers is the part none of these tools can do for you.</div>
+</section>
 </body>
 </html>
