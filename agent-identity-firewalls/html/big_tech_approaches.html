@@ -20,28 +20,28 @@
 <body>
 <h1>Layer 2, tool-call policy: four teams converged on the same shape</h1>
 <div class="sub">That convergence is a signal, not a coincidence: the decision is deterministic code, outside the model</div>
-<div class="col root">
-  <div class="row">
-    <div class="card team"><div class="t">Meta · LlamaFirewall (Purple Llama, arXiv 2505.03574)</div>
+<section class="col root">
+  <section class="row">
+    <section class="card team"><div class="t">Meta · LlamaFirewall (Purple Llama, arXiv 2505.03574)</div>
       <div class="d">PromptGuard 2 and CodeShield are content layers; Agent Alignment Checks audit the reasoning, they don't authorize. Kept separate on purpose.</div>
-      <div class="d">CodeShield's engineering spec: Insecure Code Detector covers 7 languages and 50+ CWEs, and a two-stage scan keeps ~99% of requests under 70 ms, with only suspicious code paying a 450 ms p90 deep scan. That latency shape is what makes a scanning stage viable inside a gateway.</div></div>
-    <div class="card team"><div class="t">OpenAI · Operator, the ask layer in numbers</div>
+      <div class="d">CodeShield's engineering spec: Insecure Code Detector covers 7 languages and 50+ CWEs, and a two-stage scan keeps ~99% of requests under 70 ms, with only suspicious code paying a 450 ms p90 deep scan. That latency shape is what makes a scanning stage viable inside a gateway.</div></section>
+    <section class="card team"><div class="t">OpenAI · Operator, the ask layer in numbers</div>
       <div class="d">Proactive refusals: 97% recall on agentic harms, 94% on high-risk categories like banking. Model mistakes: a 13-per-100-task baseline (5 irreversible or severe) cut by ~90% through confirmations with 92% recall. Watch mode pauses execution on email sites when the user looks away.</div>
-      <div class="d">The honest bill: the tightened ask layer overrefuses much more than GPT-4o, 55% vs 90% on their not-overrefuse metric. A safer ask layer costs convenience, OpenAI published the invoice.</div></div>
-  </div>
-  <div class="row">
-    <div class="card team"><div class="t">Google · Vertex AI / Agent Development Kit</div>
-      <div class="d">Tool calls are matched deterministically against a pre-defined OpenAPI schema: a call that doesn't exactly match is rejected by the API gateway itself, not by asking the model to reconsider. The schema check is code, not a second model call.</div></div>
-    <div class="card team"><div class="t">AWS · Bedrock AgentCore (2025)</div>
-      <div class="d">AgentCore Identity brokers short-lived, per-agent STS credentials (AssumeRole plus a per-call session policy) instead of a standing IAM role; AgentCore Gateway sits in front of every tool call, evaluated against Cedar, AWS's own deterministic, formally verified policy language.</div></div>
-  </div>
-  <div class="card green conv"><div class="t">The pattern all four converge on</div>
-    <div class="num"><div class="n">1</div><div class="d">A short-lived, per-agent credential, never a standing role or a secret shared across every agent instance.</div></div>
-    <div class="num"><div class="n">2</div><div class="d">Identity resolved server-side, from the credential, never from what the request or the model's output claims.</div></div>
-    <div class="num"><div class="n">3</div><div class="d">The allow/deny decision is deterministic code: Rego, Cedar, an OpenAPI schema match, not a second model judging the first one's tool call.</div></div>
-    <div class="num"><div class="n">4</div><div class="d">Content-safety scanners are a separate, complementary layer, never a substitute for the authorization decision.</div></div>
-  </div>
+      <div class="d">The honest bill: the tightened ask layer overrefuses much more than GPT-4o, 55% vs 90% on their not-overrefuse metric. A safer ask layer costs convenience, OpenAI published the invoice.</div></section>
+  </section>
+  <section class="row">
+    <section class="card team"><div class="t">Google · Vertex AI / Agent Development Kit</div>
+      <div class="d">Tool calls are matched deterministically against a pre-defined OpenAPI schema: a call that doesn't exactly match is rejected by the API gateway itself, not by asking the model to reconsider. The schema check is code, not a second model call.</div></section>
+    <section class="card team"><div class="t">AWS · Bedrock AgentCore (2025)</div>
+      <div class="d">AgentCore Identity brokers short-lived, per-agent STS credentials (AssumeRole plus a per-call session policy) instead of a standing IAM role; AgentCore Gateway sits in front of every tool call, evaluated against Cedar, AWS's own deterministic, formally verified policy language.</div></section>
+  </section>
+  <section class="card green conv"><div class="t">The pattern all four converge on</div>
+    <section class="num"><div class="n">1</div><div class="d">A short-lived, per-agent credential, never a standing role or a secret shared across every agent instance.</div></section>
+    <section class="num"><div class="n">2</div><div class="d">Identity resolved server-side, from the credential, never from what the request or the model's output claims.</div></section>
+    <section class="num"><div class="n">3</div><div class="d">The allow/deny decision is deterministic code: Rego, Cedar, an OpenAPI schema match, not a second model judging the first one's tool call.</div></section>
+    <section class="num"><div class="n">4</div><div class="d">Content-safety scanners are a separate, complementary layer, never a substitute for the authorization decision.</div></section>
+  </section>
   <div class="foot"><b>The most common conflation in this space:</b> content-safety scanners answer "is this text or code dangerous." They don't answer "is this agent allowed to call this tool."</div>
-</div>
+</section>
 </body>
 </html>
