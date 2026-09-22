@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --canvas: #0c0d18; --surface: #12131d; --elevated: #282935; --line: #494454;
+    --primary: #d0bcff; --text: #e2e1f1; --text2: #b0a8c9;
+    --green: #3fb950; --blue: #4493f8; --amber: #d29922; --red: #f85149;
+  }
+  * { margin: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 675px; background: var(--canvas); color: var(--text);
+    font-family: "Space Grotesk", "DejaVu Sans", sans-serif;
+    display: flex; flex-direction: column; padding: 44px 50px; gap: 22px;
+  }
+  .kick { font-family: "JetBrains Mono", monospace; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: var(--primary); }
+  h1 { font-size: 44px; font-weight: 700; letter-spacing: -0.5px; line-height: 1.12; }
+  h1 .muted { color: var(--text2); }
+  .sub { font-size: 18px; color: var(--text2); line-height: 1.4; max-width: 900px; }
+  .row { display: flex; flex-direction: row; gap: 16px; align-items: stretch; }
+  .fw { background: var(--surface); border: 2px solid var(--line); border-radius: 6px; padding: 13px 16px; flex: 1 1 0; min-width: 0; }
+  .fw .n { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .fw .d { font-size: 12.5px; line-height: 1.35; color: var(--text2); }
+  .fw.a .n { color: #e2e1f1; } .fw.a { border-color: var(--line); }
+  .fw.b .n { color: var(--primary); } .fw.b { border-color: var(--primary); }
+  .fw.c .n { color: #9ee493; } .fw.c { border-color: #9ee493; }
+  .fw.d .n { color: #82aaff; } .fw.d { border-color: #82aaff; }
+  .chips { display: flex; flex-direction: row; gap: 12px; margin-top: auto; }
+  .chip { border: 1.5px solid var(--line); border-radius: 4px; padding: 7px 13px; font-size: 13.5px; color: var(--text); font-family: "JetBrains Mono", monospace; }
+</style>
+</head>
+<body>
+  <div class="kick">Multi-Agent Orchestration &middot; Field Comparison</div>
+  <h1>Beyond the pitch:<br><span class="muted">which framework survives production?</span></h1>
+  <div class="sub">Raven, AG2, MetaGPT, LangGraph &mdash; how they actually handle discussion, consensus, inbox bloat and model rivalry. The questions the launches go quiet on: race conditions on shared state, agents that terminate their teammates, and passive watchdogs that only speak when it matters.</div>
+  <div class="row">
+    <div class="fw a"><div class="n">Raven</div><div class="d">Centralized harness + EverOS memory. Top-down delegation, no organic peer discussion &mdash; by design.</div></div>
+    <div class="fw b"><div class="n">AG2 / AutoGen</div><div class="d">Group chat with dynamic speaker selection. Real debate, real token burn.</div></div>
+    <div class="fw c"><div class="n">MetaGPT</div><div class="d">SOP roles on a publish-subscribe event bus. Passive listeners without inbox spam.</div></div>
+    <div class="fw d"><div class="n">LangGraph</div><div class="d">Cyclic state graph with deterministic edges, interrupts and checkpointers.</div></div>
+  </div>
+  <div class="chips">
+    <div class="chip">git worktrees or state corruption</div>
+    <div class="chip">gVisor: agents that cannot terminate their runtime</div>
+    <div class="chip">model rivalry is real (Claude vs. Gemini)</div>
+  </div>
+</body>
+</html>
